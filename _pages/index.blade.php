@@ -46,7 +46,7 @@
 	</div>
 	</div>
 	<div class="sm:my-4 max-w-full flex flex-wrap justify-center">
-		<a href="docs/master/index.html" class="btn btn-primary">Documentation</a>
+		<a href="{{ Hyde::relativeLink('docs/master/index.html') }}" class="btn btn-primary">Documentation</a>
 		<a href="#features" class="btn btn-default">Explore the Features</a>
 	</div>
 </header>
