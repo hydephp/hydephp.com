@@ -23,7 +23,7 @@
 		</p>
 	</div>
 	<div id="slide2" class="slide mx-auto items-center">
-		<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-white px-3 my-3">
+		<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-white px-3 my-3 mt-20">
 			<div id="pagesSectionHeader">
 				Or use Laravel's Blade
 			</div>
