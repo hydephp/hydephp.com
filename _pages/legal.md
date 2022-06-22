@@ -97,8 +97,8 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 
 ### This website
 
-- The HydePHP.com landing page uses components from https://devdojo.com/tails/app{:rel="nofollow noopener"}
-- Landing page illustrations by <a href="https://icons8.com/illustrations/author/d7G1hwdhjPTV" rel="noopener noreferrer nofollow">Semenin Egor</a> from <a href="https://icons8.com/illustrations" rel="noopener noreferrer nofollow">Ouch!</a>.
+- The HydePHP.com about page uses components from https://devdojo.com/tails/app{:rel="nofollow noopener"}
+- About page illustrations by <a href="https://icons8.com/illustrations/author/d7G1hwdhjPTV" rel="noopener noreferrer nofollow">Semenin Egor</a> from <a href="https://icons8.com/illustrations" rel="noopener noreferrer nofollow">Ouch!</a>.
 - Buttons based on https://tailwindcomponents.com/component/tailwind-css-buttons{:rel="nofollow noopener"}
 - Syntax highlighting provided by [Torchlight.dev](https://torchlight.dev/){:rel="nofollow noopener"}
 - Gradients by https://uigradients.com/{:rel="nofollow noopener"}
