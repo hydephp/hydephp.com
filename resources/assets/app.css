@@ -6,3 +6,76 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+blockquote.info {
+	border-color: DodgerBlue;
+}
+blockquote.warning {
+	border-color: orange;
+}
+blockquote.danger {
+	border-color: red;
+}
+
+.bg-standard {
+	background: #ffffff;
+	color: #000000;
+}
+
+.bg-offset {
+	background-color: #f6f6f7;
+	color: #000000;
+}
+
+.dark .bg-standard {
+	background-color: #1e293b;
+	color: #ffffff;
+}
+
+.dark .bg-offset {
+	background-color: #172133;
+	color: #ffffff;
+}
+
+
+/* Hyde UI Kit */
+
+
+.btn {
+	@apply px-6 py-2 mx-2 my-1 rounded;
+}
+.btn-lg {
+	@apply px-10 py-3 mx-3 my-1 rounded;
+}
+.btn-default {
+	@apply text-white rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300;
+}
+.btn-primary {
+	@apply text-white rounded-md bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300;
+}
+.btn-secondary {
+	@apply text-white rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring focus:ring-slate-300;
+}
+
+img.ext-link {
+	display: inline;
+	margin: 0;
+	margin-left: 2px;
+	margin-top: -4px;
+}
+
+.dark img.ext-link {
+	filter: invert(100%);
+}
+
+.flex-list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.flex-list li {
+	white-space: nowrap;
+	margin-right: 2.5rem;
+}
