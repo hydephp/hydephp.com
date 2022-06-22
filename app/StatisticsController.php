@@ -39,28 +39,15 @@ class StatisticsController
     
     protected function getLinesOfCode()
     {
-        // Mock
-        // $object = new \stdClass();
-        // $object->framework =  intval(str_replace('K', '', '11k')) * 1000;
-        // $object->hyde =  intval(str_replace('K', '', '9k')) * 1000;
-        // $object->total = $object->framework + $object->hyde;
-        // return $object;
-
         $response = Http::withHeaders([
             'Accept' => 'application/json',
             'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
-        ])->get('https://img.shields.io/tokei/lines/github/hydephp/framework.json');
+        ])->get('https://tokei.ekzhang.com/b1/github/hydephp/develop');
 
+        
         $object = new \stdClass();
-        $object->framework =  intval(str_replace('K', '', $response->object()->value)) * 1000;
 
-        $response = Http::withHeaders([
-            'Accept' => 'application/json',
-            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
-        ])->get('https://img.shields.io/tokei/lines/github/hydephp/hyde.json');
-        $object->hyde =  intval(str_replace('K', '', $response->object()->value)) * 1000;
-
-        $object->total = $object->framework + $object->hyde;
+        $object->total = $response->object()->lines;
 
         return $object;
     }
