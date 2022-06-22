@@ -21,7 +21,7 @@ return [
     |
     */
 
-    'header_title' => config('hyde.name', 'HydePHP').' Docs',
+    'header_title' => 'HydePHP Docs',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return [
     |
     */
 
-    'output_directory' => 'docs',
+    'output_directory' => 'docs/master',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,8 +61,8 @@ return [
     |
     */
 
-    // 'source_file_location_base' => 'https://github.com/<user>/<repo>/<[blob/edit]>/<branch>',
-    'edit_source_link_text' => 'Edit Source',
+    'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
+    'edit_source_link_text' => 'Edit Page',
     'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
 
     /*
@@ -100,7 +100,7 @@ return [
     'table_of_contents' => [
         'enabled' => true,
         'min_heading_level' => 2,
-        'max_heading_level' => 4,
+        'max_heading_level' => 3,
     ],
 
     /*
