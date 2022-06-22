@@ -210,6 +210,12 @@ return [
         [
             'title' => 'Blog',
             'slug' => 'posts',
+            'priority' => 1000,
+        ],
+        [
+            'title' => 'Documentation',
+            'slug' => 'docs',
+            'priority' => 1100,
         ]
     ],
 
@@ -234,7 +240,7 @@ return [
         'contributing',
         'code-of-conduct',
         'community',
-        'index-alt'
+        'docs',
     ],
 
     /*
