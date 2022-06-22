@@ -8,7 +8,7 @@
 	</p>
 </header>
 <div class="max-w-xl mx-auto">
-	@foreach(Hyde::getLatestPosts() as $post)
+	@foreach(\Hyde\Framework\Models\MarkdownPost::getLatestPosts() as $post)
 	@include('hyde::components.article-excerpt')
 	@endforeach
 </div>
