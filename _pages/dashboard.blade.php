@@ -7,6 +7,7 @@
     <p class="text-lg prose dark:prose-invert text-center mx-auto">
         Data compiled {{ Carbon\Carbon::now() }}.
         See more at <a href="https://packagist.org/packages/hyde/framework/stats">Packagist</a>
+        and the <a href="https://git.desilva.se/GitHubAnalyticsExplorer/">Open GitHub Data Analytics Explorer</a>
     </p>
     <div>
         @include('components.statistics')
