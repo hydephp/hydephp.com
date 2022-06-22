@@ -51,9 +51,6 @@
 	</div>
 </header>
 
-
-<link rel="stylesheet" href="https://github.githubassets.com/assets/gist-embed-d3de7836d004.css">
-
 <script>
 	// Are animations enabled?
 	var animationsEnabled = true;
@@ -71,7 +68,7 @@
 	}
 </script>
 <section id="first" class="py-16 px-4 text-center">
-	<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+	<h1 id="features" class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
 		Turn Markdown into Blog Posts
 	</h1>
 	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
@@ -131,13 +128,13 @@
 			<div class="shrink-0 w-4 sm:w-48"></div>
 		</div>
 		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 200px" data-aos="fade-left" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_example_ios_8.png" />
+			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-left" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_example_ios_8.png" />
 		</div>
 		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 200px" data-aos="fade-up" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_feed_ios_8.png" />
+			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-up" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_feed_ios_8.png" />
 		</div>
 		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 200px" data-aos="fade-right" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/docs_example_ios_8.png" />
+			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-right" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/docs_example_ios_8.png" />
 		</div>
 		<div class="snap-center shrink-0">
 			<div class="shrink-0 w-4 sm:w-48"></div>
@@ -163,11 +160,11 @@
 	<style>
 		.explorer-section {
 			margin: 40px auto;
-			max-width: 1200px;
+			max-width: 1000px;
 		}
 		.explorer-section iframe {
 			min-width: 640px;
-			min-height: 800px;
+			min-height: 660px;
 			margin: 40px auto;
 		}
 	</style>
