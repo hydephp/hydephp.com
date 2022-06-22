@@ -288,7 +288,7 @@ especially the first time, but no sweat because we got ourselves some beautiful 
 I think that brings this tutorial to a close.
 Send me a Tweet if you have any questions or suggestions! I'm [@CodeWithCaen](https://twitter.com/CodeWithCaen).
 
-- The homepage for Hyde is [hydephp.github.io](https://hydephp.com/).
-- The documentation is hosted at [hydephp.github.io/docs](https://hydephp.com/docs/).
+- The homepage for Hyde is [hydephp.com](https://hydephp.com/).
+- The documentation is hosted at [hydephp.com/docs](https://hydephp.com/docs/).
 - Find the source code on [GitHub](https://github.com/hydephp/hyde).
 

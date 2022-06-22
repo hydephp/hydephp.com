@@ -110,7 +110,7 @@ date: 2022-04-11 15:51
 image:
   description: "Image of a small kitten with its head tilted, sitting in a basket weaved from nature material."
   title: "Kitten Gray Kitty [sic]"
-  uri: https://raw.githubusercontent.com/hydephp/hydephp.github.io/gh-pages/media/kitten-756956_640-min.jpg
+  uri: https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg
   copyright: Copyright (c) 2022
   license: Pixabay License
   licenseUrl: https://pixabay.com/service/license/
@@ -124,7 +124,7 @@ image:
 ### Parsed HTML output
 ```html
 <figure role="doc-cover" itemprop="image" itemscope="" itemtype="https://schema.org/ImageObject"> 
-    <img src="https://raw.githubusercontent.com/hydephp/hydephp.github.io/gh-pages/media/kitten-756956_640-min.jpg" alt="Image of a small kitten with its head tilted, sitting in a basket weaved from nature material." title="Kitten Gray Kitty [sic]" itemprop="image" class="mb-0"> 
+    <img src="https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg" alt="Image of a small kitten with its head tilted, sitting in a basket weaved from nature material." title="Kitten Gray Kitty [sic]" itemprop="image" class="mb-0"> 
     <figcaption itemprop="caption"> 
         Image by <span itemprop="creator" itemscope="" itemtype="https://schema.org/Person"><a href="https://pixabay.com/photos/kitten-gray-kitty-kitty-756956/" rel="author noopener" itemprop="url"><span itemprop="name">Godsgirl_madi</span></a></span>. <span itemprop="copyrightNotice">Copyright (c) 2022</span>. License by <a href="https://pixabay.com/service/license/" rel="license nofollow noopener" itemprop="license">Pixabay License</a> 
     </figcaption> 
@@ -134,7 +134,7 @@ image:
 ```
 
 ### Screenshot of the output
-![](https://raw.githubusercontent.com/hydephp/hydephp.github.io/gh-pages/media/post-with-kitten-image.jpg)
+![](https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/post-with-kitten-image.jpg)
 
 ## Deep dive into the Image object
 If you are a package developer, or just curious, here is an overview of how the Image object is created internally.
