@@ -25,6 +25,10 @@
 <meta name="author" content="Caen De Silva">
 <meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation">
+
+<meta name="twitter:image" content="media/og-image-index.png">
+<meta property="og:image" content="media/og-image-index.png">
+
 @endpush
 
 <header id="content" class="app-gradient w-full py-32 lg:pt-44 flex flex-col text-center items-center justify-center min-h-screen -mt-16">
