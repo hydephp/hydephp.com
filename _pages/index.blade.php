@@ -42,8 +42,8 @@
 		<!-- Syntax highlighted by torchlight.dev -->
 		<pre class="hidden sm:block" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B;">composer</span> <span style="color: #C3E88D;">create-project hyde/hyde</span> <span style="color: #CCCCCC">--stability=dev</span></code></pre>
 		<div class="sm:hidden">
-		<pre class="max-w-full" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight flex flex-wrap justify-center" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B; margin: 0 4px;">composer</span> <span style="color: #C3E88D; margin: 0 4px;">create-project hyde/hyde</span> <span style="color: #CCCCCC" margin: 0 4px;>--stability=dev</span></code></pre>
-	</div>
+			<pre class="max-w-full" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight flex flex-wrap justify-center" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B; margin: 0 4px;">composer</span> <span style="color: #C3E88D; margin: 0 4px;">create-project hyde/hyde</span> <span style="color: #CCCCCC" margin: 0 4px;>--stability=dev</span></code></pre>
+		</div>
 	</div>
 	<div class="sm:my-4 max-w-full flex flex-wrap justify-center">
 		<a href="{{ Hyde::relativeLink('docs/master/index.html') }}" class="btn btn-primary">Documentation</a>
@@ -67,10 +67,11 @@
 		document.head.appendChild(link);
 	}
 </script>
+
 <section id="first" class="py-16 px-4 text-center">
-	<h1 id="features" class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+	<h2 id="features" class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
 		Turn Markdown into Blog Posts
-	</h1>
+	</h2>
 	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
 		Write content. Not code.*
 	</strong>
@@ -95,11 +96,12 @@
 	</div>
 	<div class="clear-both"></div>
 </section>
+
 @include('components.gallery.section-pages')
 <section class="mx-auto items-center text-center py-16 px-4 bg-white dark:bg-slate-800">
-	<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
 		Beautiful Documentation Pages
-	</h1>
+	</h2>
 	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
 		All without breaking a sweat.
 	</strong>
@@ -117,9 +119,9 @@
 	</p>
 </section>
 <section class="mx-auto items-center text-center py-16 px-4">
-	<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
 		Fully Mobile Friendly, of course.
-	</h1>
+	</h2>
 	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
 		Enjoy your site in any size of screen.
 	</strong>
@@ -143,9 +145,9 @@
 </section>
 <section class="mx-auto items-center py-16 px-4  bg-white dark:bg-slate-800">
 	<header class="text-center">
-		<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3 text-center ">
+		<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3 text-center ">
 			Clean Semantic HTML
-		</h1>
+		</h2>
 		<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3 text-center ">
 			Data Rich, SEO Friendly, and Accessible.
 		</strong>

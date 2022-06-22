@@ -215,7 +215,7 @@ return [
         [
             'title' => 'Documentation',
             'slug' => 'docs',
-            'priority' => 1100,
+            'priority' => 500,
         ]
     ],
 
