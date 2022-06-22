@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 /**
@@ -11,12 +12,17 @@ class StatisticsController
 {
     public object $framework;
 
+    public object $views;
+
     public object $linesOfCode;
+
 
     public function __construct()
     {
         $this->framework = $this->getFrameworkStats();
         unset($this->framework->versions);
+
+        $this->views = $this->getViewStats();
 
         $this->linesOfCode = $this->getLinesOfCode();
     }
@@ -35,6 +41,41 @@ class StatisticsController
         ])->get('https://packagist.org/packages/hyde/framework/stats.json');
 
         return $response->object();
+    }
+
+    protected function getViewStats()
+    {
+        $response = Http::withHeaders([
+            'Accept' => 'application/json',
+            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
+        ])->get('https://git.desilva.se/GitHubAnalyticsExplorer/table.json');
+
+        $collection = $response->collect();
+
+        $views = new Collection();
+
+        foreach ($collection as $item) {
+            if ($item['type'] === 'traffic/views') {
+                $views->push((object) $item);
+            }
+        }
+
+        $views = $views->sortBy('bucket');
+
+        $oldest = $views->first();
+        $newest = $views->last();
+
+        // Calculate the number of weeks between the oldest and newest view (the date is string)
+        $weeks = ((strtotime($newest->bucket) - strtotime($oldest->bucket)) / (60 * 60 * 24 * 7));
+
+        $object = new \stdClass();
+        $object->oldest = $oldest;
+        $object->newest = $newest;
+        $object->weeks = $weeks;
+        $object->views = $views;
+        $object->weekly = (int) ($views->sum('total') / $weeks);
+
+        return $object;
     }
     
     protected function getLinesOfCode()

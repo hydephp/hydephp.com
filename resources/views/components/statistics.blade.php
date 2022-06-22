@@ -18,9 +18,9 @@ $statistics = new \App\StatisticsController();
 		<div class="bg-white text-slate-900 p-4 pb-8 rounded-lg shadow-xl h-full relative">
 			<h3 class="font-bold text-2xl text-center mb-3 pb-3">Weekly GitHub Views</h3>
 			<strong id="weekly-views-total" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-600">
-				1591 <!-- Manually entered 2022-05-07 with combined data for hydephp/framework and hydephp/hyde averaged over the period 2022-02-21-2022-05-04 -->
+				{{ $statistics->views->weekly }}
 			</strong>
-			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Manually entered 2022-05-07 with combined data for hydephp/framework and hydephp/hyde averaged over the period 2022-02-21-2022-05-04 ">&#9432;</span>
+			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Average weekly data for hydephp/framework, hydephp/hyde, and hydephp/hydefront, with data between {{ $statistics->views->oldest->bucket }} {{ $statistics->views->newest->bucket }}">&#9432;</span>
 		</div>
 	</div>
 	<div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md h-auto">
@@ -29,7 +29,7 @@ $statistics = new \App\StatisticsController();
 			<strong id="counter-lines-total" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-600">
 				{{ ($statistics->linesOfCode->total) }}
 			</strong>
-			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Total combined lines of code for Hyde/Framework and Hyde/Hyde, counted by tokei {{ Carbon\Carbon::now() }}">&#9432;</span>
+			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Total lines of code in the Hyde monorepo, counted by tokei {{ Carbon\Carbon::now() }}">&#9432;</span>
 		</div>
 	</div>
 </div>
