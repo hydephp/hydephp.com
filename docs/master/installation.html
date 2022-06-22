@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HydePHP -</title>
+
+    <link
+      rel="shortcut icon"
+      href="../../media/favicon.ico"
+      type="image/x-icon" />
+
+    <meta name="author" content="Caen De Silva" />
+    <meta
+      name="description"
+      content="HydePHP - Elegant and Powerful Static App Builder" />
+    <meta
+      name="keywords"
+      content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation" />
+    <meta name="generator" content="HydePHP v0.40.0-beta" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hyde_php" />
+    <meta name="twitter:creator" content="@CodeWithCaen" />
+    <meta
+      name="twitter:description"
+      content="Make static websites, blogs, and documentation pages with the tools you already know and love." />
+    <meta
+      name="twitter:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:site_name" content="HydePHP" />
+    <meta property="og:url" content="https://hydephp.com/" />
+    <meta
+      property="og:description"
+      content="HydePHP - Elegant and Powerful Static App Builder" />
+    <meta
+      property="og:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:image:alt" content="GitHub OpenGraph Image" />
+    <script type="text/javascript">
+      (function () {
+        var pioneerAnalytics = (window.pioneerAnalytics =
+          window.pioneerAnalytics || []);
+        if (pioneerAnalytics.initialize) return;
+        if (pioneerAnalytics.invoked) {
+          if (window.console && console.error) {
+            console.error("Pioneer snippet included twice.");
+          }
+          return;
+        }
+        pioneerAnalytics.invoked = true;
+        pioneerAnalytics.debugMode = false;
+        pioneerAnalytics.methods = [
+          "page",
+          "identify",
+          "active",
+          "reset",
+          "debug",
+          "trackSubmit",
+          "trackClick",
+          "trackLink",
+          "trackForm",
+          "pageview",
+          "group",
+          "track",
+          "ready",
+          "alias",
+          "once",
+          "off",
+          "on",
+          "addSourceMiddleware",
+          "addIntegrationMiddleware",
+          "setAnonymousId",
+          "addDestinationMiddleware",
+          "initialize",
+        ];
+        pioneerAnalytics.requestQueue = [];
+        pioneerAnalytics.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            pioneerAnalytics.push(args);
+            return pioneerAnalytics;
+          };
+        };
+        for (var i = 0; i < pioneerAnalytics.methods.length; i++) {
+          var key = pioneerAnalytics.methods[i];
+          pioneerAnalytics[key] = pioneerAnalytics.factory(key);
+        }
+        pioneerAnalytics.load = function (key, options) {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src = "https://assets.pioneer.app/pioneer-analytics.min.js";
+          var first = document.getElementsByTagName("script")[0];
+          first.parentNode.insertBefore(script, first);
+          pioneerAnalytics._loadOptions = options;
+        };
+        pioneerAnalytics.SNIPPET_VERSION = 1;
+        pioneerAnalytics._writeKey = "fa1f4d9f12a5f775c3b983d1090081a2";
+        pioneerAnalytics.load(pioneerAnalytics._writeKey);
+        pioneerAnalytics.page();
+        pioneerAnalytics.debug(false);
+      })();
+    </script>
+    <link rel="canonical" href="https://hydephp.com/docs/master/installation" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://hydephp.com/sitemap.xml" />
+    <meta name="twitter:title" content="HydePHP - " />
+    <meta property="og:title" content="HydePHP - " />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.css" />
+
+    <link rel="stylesheet" href="../../media/app.css" />
+
+    <meta id="meta-color-scheme" name="color-scheme" content="light" />
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        document
+          .getElementById("meta-color-scheme")
+          .setAttribute("content", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+
+  <body id="lagrafo-app" class="bg-white dark:bg-gray-900">
+    <a href="#content" id="skip-to-content">Skip to content</a>
+
+    <script>
+      document.body.classList.add("js-enabled");
+    </script>
+
+    <nav id="mobile-navigation">
+      <strong class="mr-auto">
+        <a href="../../docs/master"> HydePHP Docs </a>
+      </strong>
+      <button
+        class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+        title="Toggle theme">
+        <span class="sr-only">Toggle dark theme</span>
+        <figure class="theme-icon" role="presentation"></figure>
+      </button>
+      <button
+        id="sidebar-toggle"
+        title="Toggle sidebar"
+        aria-label="Toggle sidebar navigation menu">
+        <span class="icon-bar" role="presentation"></span>
+        <span class="icon-bar" role="presentation"></span>
+        <span class="icon-bar" role="presentation"></span>
+        <span class="icon-bar" role="presentation"></span>
+      </button>
+    </nav>
+    <aside id="sidebar">
+      <header id="sidebar-header">
+        <div id="sidebar-brand">
+          <strong>
+            <a href="../../docs/master"> HydePHP Docs </a>
+          </strong>
+          <button
+            class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+            title="Toggle theme">
+            <span class="sr-only">Toggle dark theme</span>
+            <figure class="theme-icon" role="presentation"></figure>
+          </button>
+        </div>
+      </header>
+      <nav id="sidebar-navigation">
+        <ul id="sidebar-navigation-menu" role="list">
+          <li class="sidebar-category" role="listitem">
+            <h4 class="sidebar-category-heading">Getting Started</h4>
+            <ul class="sidebar-category-list" role="list">
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="quickstart">Quickstart Guide</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="console-commands">Console Commands</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="architecture-concepts">Architecture Concepts</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-category" role="listitem">
+            <h4 class="sidebar-category-heading">Creating Content</h4>
+            <ul class="sidebar-category-list" role="list">
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="blog-posts">Creating Blog Posts</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="static-pages">Markdown &amp; Blade Pages</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="documentation-pages">Documentation Pages</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="managing-assets">Managing Assets</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="compile-and-deploy">Compile &amp; Deploy</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-category" role="listitem">
+            <h4 class="sidebar-category-heading">Digging Deeper</h4>
+            <ul class="sidebar-category-list" role="list">
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="customization">Customizing your Site</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="advanced-markdown">Advanced Markdown</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="extensions">Extensions &amp; Integrations</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="advanced-customization">Advanced Customization</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="troubleshooting">Troubleshooting</a>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="updating-hyde">Updating Hyde</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <footer id="sidebar-footer">
+        <p>
+          <a href="../../">Back to home page</a>
+        </p>
+      </footer>
+    </aside>
+    <main id="content">
+      <article
+        id="document"
+        itemscope
+        itemtype="http://schema.org/Article"
+        class="mx-auto lg:ml-8 prose dark:prose-invert max-w-3xl">
+        <header id="document-header">
+          <meta http-equiv="refresh" content="0;url=quickstart.html" />
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+          <p>Redirecting you to <a href="quickstart.html">quickstart</a></p>
+          <!-- Note to self, if we need a lot of these in the future it may make more sense to put them in a CI that loads redirects from a config -->
+        </section>
+        <footer id="document-footer">
+          <p class="edit-page-link">
+            <a
+              href="https://github.com/hydephp/develop/blob/master/docs/installation.md"
+              >Edit Page</a
+            >
+          </p>
+        </footer>
+      </article>
+    </main>
+
+    <button
+      id="searchMenuButton"
+      onclick="toggleSearchMenu()"
+      aria-label="Toggle search menu">
+      Search
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        role="presentation">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+      </svg>
+    </button>
+    <button
+      id="searchMenuButtonMobile"
+      onclick="toggleSearchMenu()"
+      aria-label="Toggle search menu">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24"
+        viewBox="0 0 24 24"
+        width="24"
+        role="presentation">
+        <path d="M0 0h24v24H0z" fill="none" />
+        <path
+          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+      </svg>
+    </button>
+    <script
+      src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js"
+      defer></script>
+    <script>
+      window.addEventListener("load", function () {
+        const searchIndexLocation = "search.json";
+        const Search = new HydeSearch(searchIndexLocation);
+
+        Search.init();
+      });
+    </script>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.js"></script>
+
+    <script defer src="../../media/app.js"></script>
+
+    <dialog
+      id="searchMenu"
+      class="prose dark:prose-invert bg-gray-100 dark:bg-gray-800 fixed">
+      <div id="hyde-search">
+        <noscript>
+          The search feature requires JavaScript to be enabled in your browser.
+        </noscript>
+        <input
+          type="search"
+          name="search"
+          id="search-input"
+          placeholder="Search..."
+          autocomplete="off"
+          autofocus />
+      </div>
+      <footer>
+        <small>
+          Press <code><kbd title="Forward slash">/</kbd></code> to open search
+          window. Use <code><kbd title="Escape key">esc</kbd></code> to close.
+        </small>
+      </footer>
+    </dialog>
+
+    <script>
+      if (typeof HTMLDialogElement === "function") {
+        const searchMenu = document.getElementById("searchMenu");
+
+        function toggleSearchMenu() {
+          if (searchMenu.hasAttribute("open")) {
+            closeSearchMenu();
+          } else {
+            openSearchMenu();
+          }
+        }
+
+        function closeSearchMenu() {
+          searchMenu.removeAttribute("open");
+
+          document.getElementById("searchMenuBackdrop").remove();
+          document.getElementById("searchMenuCloseButton").remove();
+
+          document.getElementById("searchMenuButton").style.visibility =
+            "visible";
+        }
+
+        function openSearchMenu() {
+          searchMenu.setAttribute("open", "");
+
+          createBackdrop();
+          createCloseButton();
+          document.getElementById("searchMenuButton").style.visibility =
+            "hidden";
+
+          document.getElementById("search-input").focus();
+
+          function createBackdrop() {
+            const backdrop = document.createElement("div");
+            backdrop.id = "searchMenuBackdrop";
+            backdrop.classList.add("backdrop", "active");
+            backdrop.addEventListener("click", () => {
+              closeSearchMenu();
+            });
+            document.body.appendChild(backdrop);
+          }
+
+          function createCloseButton() {
+            const closeButton = document.createElement("button");
+            closeButton.id = "searchMenuCloseButton";
+            closeButton.classList.add("fixed");
+            closeButton.setAttribute("aria-label", "Close search menu");
+            closeButton.addEventListener("click", () => {
+              closeSearchMenu();
+            });
+            closeButton.innerHTML = `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+				</svg>`;
+
+            document.body.appendChild(closeButton);
+          }
+        }
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && searchMenu.hasAttribute("open")) {
+            closeSearchMenu();
+          }
+        });
+
+        document.addEventListener("keypress", (e) => {
+          if (e.key === "/" && !searchMenu.hasAttribute("open")) {
+            e.preventDefault();
+            openSearchMenu();
+          }
+        });
+      } else {
+        // The browser does not support the <dialog> element
+        document.getElementById("searchMenu").remove();
+
+        function toggleSearchMenu() {
+          window.location.href = "search.html";
+        }
+      }
+    </script>
+  </body>
+</html>

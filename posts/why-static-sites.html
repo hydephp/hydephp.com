@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HydePHP - Why static sites?</title>
+
+    <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon" />
+
+    <meta name="generator" content="HydePHP v0.40.0-beta" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hyde_php" />
+    <meta name="twitter:creator" content="@CodeWithCaen" />
+    <meta
+      name="twitter:description"
+      content="Make static websites, blogs, and documentation pages with the tools you already know and love." />
+    <meta
+      name="twitter:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:site_name" content="HydePHP" />
+    <meta
+      property="og:description"
+      content="HydePHP - Elegant and Powerful Static App Builder" />
+    <meta
+      property="og:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:image:alt" content="GitHub OpenGraph Image" />
+    <script type="text/javascript">
+      (function () {
+        var pioneerAnalytics = (window.pioneerAnalytics =
+          window.pioneerAnalytics || []);
+        if (pioneerAnalytics.initialize) return;
+        if (pioneerAnalytics.invoked) {
+          if (window.console && console.error) {
+            console.error("Pioneer snippet included twice.");
+          }
+          return;
+        }
+        pioneerAnalytics.invoked = true;
+        pioneerAnalytics.debugMode = false;
+        pioneerAnalytics.methods = [
+          "page",
+          "identify",
+          "active",
+          "reset",
+          "debug",
+          "trackSubmit",
+          "trackClick",
+          "trackLink",
+          "trackForm",
+          "pageview",
+          "group",
+          "track",
+          "ready",
+          "alias",
+          "once",
+          "off",
+          "on",
+          "addSourceMiddleware",
+          "addIntegrationMiddleware",
+          "setAnonymousId",
+          "addDestinationMiddleware",
+          "initialize",
+        ];
+        pioneerAnalytics.requestQueue = [];
+        pioneerAnalytics.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            pioneerAnalytics.push(args);
+            return pioneerAnalytics;
+          };
+        };
+        for (var i = 0; i < pioneerAnalytics.methods.length; i++) {
+          var key = pioneerAnalytics.methods[i];
+          pioneerAnalytics[key] = pioneerAnalytics.factory(key);
+        }
+        pioneerAnalytics.load = function (key, options) {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src = "https://assets.pioneer.app/pioneer-analytics.min.js";
+          var first = document.getElementsByTagName("script")[0];
+          first.parentNode.insertBefore(script, first);
+          pioneerAnalytics._loadOptions = options;
+        };
+        pioneerAnalytics.SNIPPET_VERSION = 1;
+        pioneerAnalytics._writeKey = "fa1f4d9f12a5f775c3b983d1090081a2";
+        pioneerAnalytics.load(pioneerAnalytics._writeKey);
+        pioneerAnalytics.page();
+        pioneerAnalytics.debug(false);
+      })();
+    </script>
+    <link rel="canonical" href="https://hydephp.com/posts/why-static-sites" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://hydephp.com/sitemap.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="HydePHP RSS Feed"
+      href="https://hydephp.com/feed.xml" />
+    <meta name="twitter:title" content="HydePHP - Why static sites?" />
+
+    <!-- Blog Post Meta Tags -->
+    <meta
+      name="description"
+      content="A quick run-down of the benefits of static websites" />
+    <meta name="author" content="Caen" />
+    <meta name="keywords" content="general" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://hydephp.com/posts/why-static-sites" />
+    <meta property="og:title" content="Why static sites?" />
+    <meta
+      property="og:article:published_time"
+      content="2022-03-19T20:02:00+00:00" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.css" />
+
+    <link rel="stylesheet" href="../media/app.css" />
+
+    <meta id="meta-color-scheme" name="color-scheme" content="light" />
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        document
+          .getElementById("meta-color-scheme")
+          .setAttribute("content", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    id="app"
+    class="flex flex-col min-h-screen overflow-x-hidden bg-standard">
+    <a href="#content" id="skip-to-content">Skip to content</a>
+    <nav
+      aria-label="Main navigation"
+      id="main-navigation"
+      class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+      <div
+        class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+        <a aria-label="Home page link" href="../" class="font-bold px-4">
+          HydePHP
+        </a>
+        <div class="ml-auto">
+          <button
+            class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+            title="Toggle theme">
+            <span class="sr-only">Toggle dark theme</span>
+            <figure class="theme-icon" role="presentation"></figure>
+          </button>
+        </div>
+      </div>
+
+      <div class="block md:hidden">
+        <button
+          id="navigation-toggle-button"
+          class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+          aria-label="Toggle navigation menu">
+          <svg
+            title="Open Navigation Menu"
+            class="dark:fill-gray-200"
+            style="display: block"
+            id="open-main-navigation-menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24">
+            <title>Open Menu</title>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+          <svg
+            title="Close Navigation Menu"
+            class="dark:fill-gray-200"
+            style="display: none"
+            id="close-main-navigation-menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24">
+            <title>Close Menu</title>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="main-navigation-links"
+        class="w-full hidden md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700">
+        <ul
+          aria-label="Navigation links"
+          class="md:flex-grow md:flex justify-end">
+          <li class="md:mx-2">
+            <a
+              href="../"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Home
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../docs"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Documentation
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../about"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              About
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../posts"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Blog
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="https://github.com/hydephp/hyde"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section>
+      <main id="content" class="mx-auto max-w-7xl py-16 px-8">
+        <article
+          aria-label="Article"
+          id="https://hydephp.com/posts/why-static-sites"
+          itemscope
+          itemtype="http://schema.org/Article"
+          class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+          <meta itemprop="identifier" content="why-static-sites" />
+          <meta
+            itemprop="url"
+            content="https://hydephp.com/posts/why-static-sites" />
+
+          <header aria-label="Header section" role="doc-pageheader">
+            <h1 itemprop="headline" class="mb-4">Why static sites?</h1>
+            <div
+              id="byline"
+              aria-label="About the post"
+              role="doc-introduction">
+              Posted
+              <time
+                itemprop="dateCreated datePublished"
+                datetime="2022-03-19T20:02:00+00:00"
+                title="Saturday Mar 19th, 2022, at 8:02pm"
+                >Mar 19th, 2022</time
+              >
+              by author
+              <address
+                itemprop="author"
+                itemscope
+                itemtype="http://schema.org/Person"
+                aria-label="The post author"
+                style="display: inline">
+                <span
+                  itemprop="name"
+                  aria-label="The author's name"
+                  title="@Caen"
+                  >Caen</span
+                >
+              </address>
+              in the category "general"
+            </div>
+          </header>
+          <div aria-label="Article body" itemprop="articleBody">
+            <p class="lead">
+              At this point, you may be wondering: "Why use static sites?"
+              <br />
+              Here is a rundown of my top reasons to go static.
+            </p>
+            <h2>Speed, scalability, simplicity</h2>
+            <p>
+              With a static site, you don't need to worry about setting up
+              databases. This makes the site so much faster as you don't need to
+              wait for a database to process requests. By pre-compiling the
+              sites you also don't need to waste time and processing power on
+              server-side rendering which also speeds up your site. Furthermore,
+              it makes your site incredibly scalable as you don't need to worry
+              about keeping replica databases in sync.
+            </p>
+            <p>
+              You can even serve the site from global CDNs on the Edge for
+              amazing speed.
+            </p>
+            <h2>Security, stability, and cost</h2>
+            <p>
+              You don't need to worry about keeping your database secure since
+              there is no database. You can also rest easy knowing your site is
+              stable and that you don't need to maintain a complex backend. You
+              can also rest assured that there won't be any unexpected runtime
+              errors that are hard to find.
+            </p>
+            <p>
+              You can also use create a Git powered CMS to collaborate on
+              Markdown posts.
+            </p>
+            <p>
+              Static web hosting has become incredibly cheap, to the point where
+              dozens of companies offer free hosting.
+            </p>
+            <h2>Conclusion</h2>
+            <p>
+              Are you ready to go static? Why not give HydePHP a spin! That's
+              what this blog uses. It's stupidly simple, endlessly hackable, and
+              in my opinion: totally awesome.
+            </p>
+            <p>
+              -&gt; Dive in to the source code at
+              <a href="https://github.com/hydephp/hyde">GitHub</a> -&gt; Check
+              out the
+              <a href="https://hydephp.com/docs">documentation</a> (built with
+              Hyde of course)
+            </p>
+            <p>You can also create a new project using Composer:</p>
+            <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span></div></code></pre>
+            <br />
+            <p>
+              <i>
+                Syntax highlighting by
+                <a href="https://torchlight.dev/" rel="noopener nofollow"
+                  >Torchlight.dev</a
+                >
+              </i>
+            </p>
+          </div>
+          <span class="sr-only">End of article</span>
+        </article>
+      </main>
+    </section>
+
+    <footer
+      aria-label="Page footer"
+      class="flex py-4 px-6 w-full text-center mt-auto bg-offset relative">
+      <div
+        class="prose dark:prose-invert text-center mx-auto prose-p:mb-2 dark:prose-a:text-indigo-400">
+        <p>
+          Site proudly built with
+          <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩
+        </p>
+
+        <ul
+          class="not-prose whitespace-nowrap sm:justify-center flex-wrap flex-row flex sm:items-center mt-2 mx-1 text-sm text-gray-500 dark:text-gray-300 sm:mr-4 sm:pr-4 list-none pl-0 ml-0 sm:pl-4 sm:ml-4 border-t border-gray-300 dark:border-gray-700">
+          <li class="my-2 mx-1">
+            <a
+              href="../community"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Resources
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="../docs/master"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Documentation
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="https://github.com/hydephp/"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center">
+              GitHub
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="https://www.buymeacoffee.com/caen"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Sponsor
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a
+        href="#app"
+        aria-label="Go to top of page"
+        class="float-right bottom-4 right-4 absolute">
+        <button title="Scroll to top">
+          <svg
+            role="presentation"
+            class="fill-current text-gray-500 h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+          </svg>
+        </button>
+      </a>
+    </footer>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.js"></script>
+
+    <script defer src="../media/app.js"></script>
+  </body>
+</html>

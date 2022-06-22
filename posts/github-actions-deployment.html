@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      HydePHP - Automate HydePHP sites using GitHub Actions and GitHub Pages
+    </title>
+
+    <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon" />
+
+    <meta name="generator" content="HydePHP v0.40.0-beta" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@hyde_php" />
+    <meta name="twitter:creator" content="@CodeWithCaen" />
+    <meta
+      name="twitter:description"
+      content="Make static websites, blogs, and documentation pages with the tools you already know and love." />
+    <meta
+      name="twitter:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:site_name" content="HydePHP" />
+    <meta
+      property="og:description"
+      content="HydePHP - Elegant and Powerful Static App Builder" />
+    <meta
+      property="og:image"
+      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
+    <meta property="og:image:alt" content="GitHub OpenGraph Image" />
+    <script type="text/javascript">
+      (function () {
+        var pioneerAnalytics = (window.pioneerAnalytics =
+          window.pioneerAnalytics || []);
+        if (pioneerAnalytics.initialize) return;
+        if (pioneerAnalytics.invoked) {
+          if (window.console && console.error) {
+            console.error("Pioneer snippet included twice.");
+          }
+          return;
+        }
+        pioneerAnalytics.invoked = true;
+        pioneerAnalytics.debugMode = false;
+        pioneerAnalytics.methods = [
+          "page",
+          "identify",
+          "active",
+          "reset",
+          "debug",
+          "trackSubmit",
+          "trackClick",
+          "trackLink",
+          "trackForm",
+          "pageview",
+          "group",
+          "track",
+          "ready",
+          "alias",
+          "once",
+          "off",
+          "on",
+          "addSourceMiddleware",
+          "addIntegrationMiddleware",
+          "setAnonymousId",
+          "addDestinationMiddleware",
+          "initialize",
+        ];
+        pioneerAnalytics.requestQueue = [];
+        pioneerAnalytics.factory = function (method) {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            args.unshift(method);
+            pioneerAnalytics.push(args);
+            return pioneerAnalytics;
+          };
+        };
+        for (var i = 0; i < pioneerAnalytics.methods.length; i++) {
+          var key = pioneerAnalytics.methods[i];
+          pioneerAnalytics[key] = pioneerAnalytics.factory(key);
+        }
+        pioneerAnalytics.load = function (key, options) {
+          var script = document.createElement("script");
+          script.type = "text/javascript";
+          script.async = true;
+          script.src = "https://assets.pioneer.app/pioneer-analytics.min.js";
+          var first = document.getElementsByTagName("script")[0];
+          first.parentNode.insertBefore(script, first);
+          pioneerAnalytics._loadOptions = options;
+        };
+        pioneerAnalytics.SNIPPET_VERSION = 1;
+        pioneerAnalytics._writeKey = "fa1f4d9f12a5f775c3b983d1090081a2";
+        pioneerAnalytics.load(pioneerAnalytics._writeKey);
+        pioneerAnalytics.page();
+        pioneerAnalytics.debug(false);
+      })();
+    </script>
+    <link
+      rel="canonical"
+      href="https://hydephp.com/posts/github-actions-deployment" />
+    <link
+      rel="sitemap"
+      type="application/xml"
+      title="Sitemap"
+      href="https://hydephp.com/sitemap.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="HydePHP RSS Feed"
+      href="https://hydephp.com/feed.xml" />
+    <meta
+      name="twitter:title"
+      content="HydePHP - Automate HydePHP sites using GitHub Actions and GitHub Pages" />
+
+    <!-- Blog Post Meta Tags -->
+    <meta
+      name="description"
+      content="HydePHP is a framework for building static websites. While the most common way to interact with HydePHP is through the command line, you can actually manage an entire site using GitHub." />
+    <meta name="author" content="Caen" />
+    <meta name="keywords" content="Guides" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://hydephp.com/posts/github-actions-deployment" />
+    <meta
+      property="og:title"
+      content="Automate HydePHP sites using GitHub Actions and GitHub Pages" />
+    <meta
+      property="og:article:published_time"
+      content="2022-06-20T12:09:00+00:00" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.css" />
+
+    <link rel="stylesheet" href="../media/app.css" />
+
+    <meta id="meta-color-scheme" name="color-scheme" content="light" />
+    <script>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+        document
+          .getElementById("meta-color-scheme")
+          .setAttribute("content", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body
+    id="app"
+    class="flex flex-col min-h-screen overflow-x-hidden bg-standard">
+    <a href="#content" id="skip-to-content">Skip to content</a>
+    <nav
+      aria-label="Main navigation"
+      id="main-navigation"
+      class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+      <div
+        class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+        <a aria-label="Home page link" href="../" class="font-bold px-4">
+          HydePHP
+        </a>
+        <div class="ml-auto">
+          <button
+            class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+            title="Toggle theme">
+            <span class="sr-only">Toggle dark theme</span>
+            <figure class="theme-icon" role="presentation"></figure>
+          </button>
+        </div>
+      </div>
+
+      <div class="block md:hidden">
+        <button
+          id="navigation-toggle-button"
+          class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+          aria-label="Toggle navigation menu">
+          <svg
+            title="Open Navigation Menu"
+            class="dark:fill-gray-200"
+            style="display: block"
+            id="open-main-navigation-menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24">
+            <title>Open Menu</title>
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+          </svg>
+          <svg
+            title="Close Navigation Menu"
+            class="dark:fill-gray-200"
+            style="display: none"
+            id="close-main-navigation-menu-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            height="24"
+            viewBox="0 0 24 24"
+            width="24">
+            <title>Close Menu</title>
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div
+        id="main-navigation-links"
+        class="w-full hidden md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700">
+        <ul
+          aria-label="Navigation links"
+          class="md:flex-grow md:flex justify-end">
+          <li class="md:mx-2">
+            <a
+              href="../"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Home
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../docs"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Documentation
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../about"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              About
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="../posts"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              Blog
+            </a>
+          </li>
+          <li class="md:mx-2">
+            <a
+              href="https://github.com/hydephp/hyde"
+              class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section>
+      <main id="content" class="mx-auto max-w-7xl py-16 px-8">
+        <article
+          aria-label="Article"
+          id="https://hydephp.com/posts/github-actions-deployment"
+          itemscope
+          itemtype="http://schema.org/Article"
+          class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+          <meta itemprop="identifier" content="github-actions-deployment" />
+          <meta
+            itemprop="url"
+            content="https://hydephp.com/posts/github-actions-deployment" />
+
+          <header aria-label="Header section" role="doc-pageheader">
+            <h1 itemprop="headline" class="mb-4">
+              Automate HydePHP sites using GitHub Actions and GitHub Pages
+            </h1>
+            <div
+              id="byline"
+              aria-label="About the post"
+              role="doc-introduction">
+              Posted
+              <time
+                itemprop="dateCreated datePublished"
+                datetime="2022-06-20T12:09:00+00:00"
+                title="Monday Jun 20th, 2022, at 12:09pm"
+                >Jun 20th, 2022</time
+              >
+              by author
+              <address
+                itemprop="author"
+                itemscope
+                itemtype="http://schema.org/Person"
+                aria-label="The post author"
+                style="display: inline">
+                <span
+                  itemprop="name"
+                  aria-label="The author's name"
+                  title="@Caen"
+                  >Caen</span
+                >
+              </address>
+              in the category "Guides"
+            </div>
+          </header>
+          <div aria-label="Article body" itemprop="articleBody">
+            <h2>Introduction</h2>
+            <p>
+              <a href="https://hydephp.com/">HydePHP</a> is a framework for
+              building static websites. While the most common way to interact
+              with HydePHP is through the command line, you can actually manage
+              an entire site using GitHub.
+            </p>
+            <p>
+              In this tutorial, we will do the following, right in our browser!
+            </p>
+            <ol>
+              <li>Create a new Hyde project.</li>
+              <li>Setup a CI/CD pipeline to automatically compile the site.</li>
+              <li>Deploy the site to GitHub Pages.</li>
+            </ol>
+            <h2>TL;DR</h2>
+            <p>
+              Impatient? Here is a link to the workflow we'll be creating:
+              <a
+                href="https://github.com/hyde-staging/ci-demo/blob/master/.github/workflows/main.yml"
+                >https://github.com/hyde-staging/ci-demo/blob/master/.github/workflows/main.yml</a
+              >, and here is a live preview:
+              <a href="https://hyde-staging.github.io/ci-demo/"
+                >https://hyde-staging.github.io/ci-demo/</a
+              >
+            </p>
+            <h2>Prerequisites</h2>
+            <p>
+              This guide assumes you are moderately familiar with GitHub and
+              Actions and will not go into detail on the basics. There are links
+              to the GitHub documentation at the end of the article in case you
+              get stuck.
+            </p>
+            <h2>Step 1: Create a new Hyde project</h2>
+            <p>
+              While the traditional way to create a new Hyde project is using
+              composer in the command line, here we'll take advantage of the
+              fact that the Hyde repository acts as a complete template.
+            </p>
+            <p>
+              To create our project, navigate tohttps://github.com/hydephp/hyde.
+              On this page, you will see a big green button that says &quot;Use
+              this template&quot;.
+            </p>
+            <p>
+              Let's click it! Tip: You can also use this direct link
+              <a href="https://github.com/hydephp/hyde/generate"
+                >https://github.com/hydephp/hyde/generate</a
+              >
+            </p>
+            <p>
+              Next, fill in the repository details, then press the &quot;Create
+              repository from template&quot; button. This will then create a
+              brand new repository with everything we need to set up our Hyde
+              site!
+            </p>
+            <blockquote>
+              <p>
+                Having issues? Check out the
+                <a
+                  href="https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template"
+                  >GitHub documentation for this subject</a
+                >.
+              </p>
+            </blockquote>
+            <h2>Step 2: Setting up the GitHub Actions workflow</h2>
+            <p>
+              There are many ways and methods to use GitHub Actions, I
+              personally like decoupling jobs. So for our workflow, we will use
+              two jobs, one to build the site, and one to deploy it.
+            </p>
+            <p>
+              We will use
+              <a
+                href="https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts"
+                >workflow artifacts</a
+              >
+              to pass the built data between the jobs. Don't take this as gospel
+              though, you can use any method you like.
+            </p>
+            <p>
+              From your GitHub repository page, head on over to the Actions tab,
+              and hit the &quot;New workflow&quot; button. On this page, you
+              want to select the &quot;set up a workflow yourself&quot; button.
+              This will create a new workflow file in your repository. Here
+              we'll add the first job, to build the site.
+            </p>
+            <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #676E95;"># This is a basic workflow to help you get started with using HydePHP with GitHub Actions</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build &amp; Deploy</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #676E95;"># Controls when the workflow will run</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #FF9CAC;">on</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># We only want to run this workflow when changes are pushed to the master/main branch</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">push</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">branches</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">master</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># Allows you to run this workflow manually from the Actions tab</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">workflow_dispatch</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span><span style="color: #676E95;"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #F07178;">jobs</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># First we need to build the site</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">build</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">18</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># The type of runner that the job will run on</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">19</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">20</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">21</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Steps represent a sequence of tasks that will be executed as part of the job</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">22</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">23</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">24</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v3</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">25</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">26</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># (optional) Validate the Composer files to catch any errors early on</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">27</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Validate composer.json and composer.lock</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">28</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer validate --strict</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">29</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">30</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># (optional) Cache the Composer packages to speed up future builds</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">31</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Cache Composer packages</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">32</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">id</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer-cache</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">33</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/cache@v3</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">34</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">35</span><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">36</span><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">key</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">${{ runner.os }}-php-${{ hashFiles(&#39;**/composer.lock&#39;) }}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">37</span><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">restore-keys</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">|</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">38</span><span style="color: #C3E88D;">            ${{ runner.os }}-php-</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">39</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">40</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Install the Composer packages</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">41</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Install dependencies</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">42</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer install --prefer-dist --no-progress</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">43</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">44</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Now we can build the site! We do this using the HydeCLI</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">45</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build the site</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">46</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">php hyde build --no-interaction</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">47</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">48</span><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Our site is now compiled into the _site directory, so we&#39;ll upload it to an artifact to use in the next job</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">49</span><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Upload site artifact</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">50</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/upload-artifact@v3</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">51</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">52</span><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">site</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">53</span><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_site</span></div></code></pre>
+            <p>
+              Paste the code above into the web editor and commit the changes.
+            </p>
+            <p>
+              Head on over to the Actions tab, here you'll see a new workflow
+              called &quot;Build &amp; Deploy&quot; which should already be
+              running, otherwise it will start shortly. When it's finished,
+              which for me took just half a minute, click on the run link. This
+              will take you to a page where you will see that an artifact called
+              &quot;site&quot; has been created.
+            </p>
+            <p>
+              If you want, you can click on the artifact to download the zip
+              file to your computer. Open it up, and you'll see that your site
+              is now built and ready to be deployed!
+            </p>
+            <h2>Step 3: Deploying the site to GitHub Pages</h2>
+            <p>
+              We're almost there! Now we need to deploy the site to GitHub
+              Pages. There are two routes we can go here, we could just upload
+              the compiled site into the docs/ directory, however, I prefer to
+              have it on a dedicated branch, so that's what we will do here, but
+              you can use any method you like.
+            </p>
+            <h3>Preparing the repository</h3>
+            <blockquote>
+              <p>
+                Stuck? See
+                <a href="https://docs.github.com/en/pages/quickstart"
+                  >https://docs.github.com/en/pages/quickstart</a
+                >
+                for help.
+              </p>
+            </blockquote>
+            <p>
+              First, you need to enable the Pages feature on your repository.
+              This is done by going to the repository settings page, and
+              clicking on the &quot;Pages&quot; tab, and selecting the
+              <code>gh-pages</code> branch as your site source.
+            </p>
+            <blockquote>
+              <p>
+                Don't have a gh-pages branch? I created mine in the web
+                interface by selecting a Jekyll theme on the pages settings tab
+                and then removing the two generated files. This quickly left me
+                with an empty gh-pages branch. If you know a better way to do
+                this using the web editor, please let me know!
+              </p>
+            </blockquote>
+            <h3>Updating the workflow</h3>
+            <p>
+              Now that our repository is ready, we need to update our workflow
+              to upload the site to the new GitHub Pages branch.
+            </p>
+            <p>
+              Add the following code after the build job in the workflow we made
+              before:
+            </p>
+            <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #676E95;"># Now we can deploy the site to GitHub Pages!</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">deploy</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">needs</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Run the build job first, otherwise we won&#39;t have anything to deploy</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v3</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">ref</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">gh-pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Checkout the gh-pages branch</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># (optional) Remove any old files from the gh-pages branch</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Empty site directory</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rm -rf *</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Download the compiled site into the current directory</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Download site artifact</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/download-artifact@v3</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">18</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">19</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">site</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">20</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">.</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">21</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">22</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Create a .nojekyll file to prevent GitHub from attempting to compile a Jekyll site</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">23</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Create .nojekyll file</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">24</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">touch .nojekyll</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">25</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">26</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Commit the changes to the gh-pages branch</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">27</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Commit changes</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">28</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">EndBug/add-and-commit@v9</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">29</span><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">30</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">add</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">.</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">31</span><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">message</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Upload compiled site ${{ github.sha }}</span><span style="color: #89DDFF;">&#39;</span></div></code></pre>
+            <p>
+              Now when you commit the changes, the site will be built and
+              uploaded to GitHub Pages.
+            </p>
+            <p>
+              Congratulations! You've now set up a new site with HydePHP and
+              GitHub Actions. From here on, the opportunities are limitless. Why
+              not try out creating a few new pages? You can also customize your
+              site in the config files.
+            </p>
+            <p>
+              You can keep managing your site in the cloud using GitHub, or you
+              can clone the repository to take advantage of the powerful
+              realtime compiling and content scaffolding offered by the HydeCLI.
+            </p>
+            <h2>Next steps</h2>
+            <p>
+              If you want to take your CI further, here are some ideas that the
+              <a
+                href="https://github.com/hydephp/DocsCI/blob/master/.github/workflows/build.yml"
+                >HydePHP.com DocsCI</a
+              >
+              uses:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  Hyde already comes with compiled Tailwind CSS for all the
+                  built-in templates, however, if you add your own classes, you
+                  can always use the pre-installed Laravel Mix feature to
+                  compile the assets in the CI build process.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Want to enable code syntax highlighting? Hyde has first-party
+                  support for
+                  <a href="https://torchlight.dev/">Torchlight.dev</a>, an API
+                  service for amazing syntax highlighting. Note that Torchlight
+                  requires a (free) API token. You should never store
+                  credentials in your GitHub repository. Instead, store the API
+                  key in your
+                  <a
+                    href="https://docs.github.com/en/actions/security-guides/encrypted-secrets"
+                    >GitHub Action Secrets</a
+                  >
+                  and add it to your .env file during the CI build process.
+                </p>
+              </li>
+            </ul>
+            <br />
+            <p>
+              <i>
+                Syntax highlighting by
+                <a href="https://torchlight.dev/" rel="noopener nofollow"
+                  >Torchlight.dev</a
+                >
+              </i>
+            </p>
+          </div>
+          <span class="sr-only">End of article</span>
+        </article>
+      </main>
+    </section>
+
+    <footer
+      aria-label="Page footer"
+      class="flex py-4 px-6 w-full text-center mt-auto bg-offset relative">
+      <div
+        class="prose dark:prose-invert text-center mx-auto prose-p:mb-2 dark:prose-a:text-indigo-400">
+        <p>
+          Site proudly built with
+          <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩
+        </p>
+
+        <ul
+          class="not-prose whitespace-nowrap sm:justify-center flex-wrap flex-row flex sm:items-center mt-2 mx-1 text-sm text-gray-500 dark:text-gray-300 sm:mr-4 sm:pr-4 list-none pl-0 ml-0 sm:pl-4 sm:ml-4 border-t border-gray-300 dark:border-gray-700">
+          <li class="my-2 mx-1">
+            <a
+              href="../community"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Resources
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="../docs/master"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Documentation
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="https://github.com/hydephp/"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center">
+              GitHub
+            </a>
+          </li>
+          <li class="my-2 mx-1">
+            <a
+              href="https://www.buymeacoffee.com/caen"
+              class="text-gray-500 dark:text-gray-300 dark:hover:text-gray-100 hover:text-gray-900 flex items-center sm:mx-2">
+              Sponsor
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a
+        href="#app"
+        aria-label="Go to top of page"
+        class="float-right bottom-4 right-4 absolute">
+        <button title="Scroll to top">
+          <svg
+            role="presentation"
+            class="fill-current text-gray-500 h-6 w-6"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20">
+            <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z" />
+          </svg>
+        </button>
+      </a>
+    </footer>
+
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/hydefront@v1.11/dist/hyde.js"></script>
+
+    <script defer src="../media/app.js"></script>
+  </body>
+</html>
