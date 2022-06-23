@@ -26,8 +26,8 @@
 <meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation">
 
-<meta name="twitter:image" content="media/og-image-index.png">
-<meta property="og:image" content="media/og-image-index.png">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
 
 @endpush
 
