@@ -121,6 +121,4 @@ return [
         'changelog',
     ],
 
-    'navigation_link_priority' => 500
-
 ];
