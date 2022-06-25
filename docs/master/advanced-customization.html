@@ -248,8 +248,15 @@
                   </li>
                   <li>
                     <a href="#customizing-the-output-directory-"
-                      >Customizing the output directory 💔</a
+                      >Customizing the output directory ⚠</a
                     >
+                    <ul>
+                      <li>
+                        <a href="#setting-an-absolute-path-"
+                          >Setting an absolute path 💔</a
+                        >
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     <a href="#adding-custom-post-build-hooks-"
@@ -270,6 +277,9 @@
                     </ul>
                   </li>
                 </ul>
+              </li>
+              <li class="sidebar-navigation-item" role="listitem">
+                <a href="collections">File-based Collections</a>
               </li>
               <li class="sidebar-navigation-item" role="listitem">
                 <a href="troubleshooting">Troubleshooting</a>
@@ -368,7 +378,7 @@
           </p>
           <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>Hyde\Framework\HydeServiceProvider</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Concerns</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">RegistersDefaultDirectories</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">register</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">registerDefaultDirectories</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">BladePage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">MarkdownPage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">DocumentationPage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">}</span></div></code></pre>
           <h2>
-            Customizing the output directory 💔<a
+            Customizing the output directory ⚠<a
               id="customizing-the-output-directory-"
               href="#customizing-the-output-directory-"
               class="heading-permalink"
@@ -383,11 +393,29 @@
             files!
           </blockquote>
           <p>
-            <em
-              >The internal workings of this process is being rewritten, and
-              such the documentation is deferred until the implementation.</em
-            >
+            If you want to store your compiled website in a different directory
+            than the default <code>_pages</code>, you can change the path using
+            the following configuration option in config/hyde.php. The path is
+            expected to be relative to your project root.
           </p>
+          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">output_directory</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">];</span></div></code></pre>
+          <h3>
+            Setting an absolute path 💔<a
+              id="setting-an-absolute-path-"
+              href="#setting-an-absolute-path-"
+              class="heading-permalink"
+              aria-hidden="true"
+              title="Permalink"
+              >#</a
+            >
+          </h3>
+          <p>
+            If you want to store the output website outside your project with an
+            absolute path you may do so at your own risk using a service
+            provider. This is not supported or recommended as it may cause
+            unintentional file deletions.
+          </p>
+          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>Boot method of a service provider</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">StaticPageBuilder</span><span style="color: #89DDFF;">::$</span><span style="color: #A6ACCD;">outputPath </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/var/www/my-project/</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div></code></pre>
           <h2>
             Adding custom post-build hooks 🧪<a
               id="adding-custom-post-build-hooks-"
