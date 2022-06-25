@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2667fecc72569e78bf58872a92149927",
+    "content-hash": "c7d3604ff7a8f51d9e1729bac641ce1e",
     "packages": [
         {
             "name": "brick/math",
@@ -875,16 +875,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v0.40.0-beta",
+            "version": "v0.43.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "0ff183b3551ccde9826b99f09f7fab7e696f0040"
+                "reference": "d4ae8dca006d7a5188885b453a561605f5fe4335"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/0ff183b3551ccde9826b99f09f7fab7e696f0040",
-                "reference": "0ff183b3551ccde9826b99f09f7fab7e696f0040",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/d4ae8dca006d7a5188885b453a561605f5fe4335",
+                "reference": "d4ae8dca006d7a5188885b453a561605f5fe4335",
                 "shasum": ""
             },
             "require": {
@@ -920,7 +920,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v0.40.0-beta"
+                "source": "https://github.com/hydephp/framework/tree/v0.43.0-beta"
             },
             "funding": [
                 {
@@ -928,7 +928,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-06-22T15:39:14+00:00"
+            "time": "2022-06-25T15:38:09+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -6076,16 +6076,16 @@
         },
         {
             "name": "hyde/realtime-compiler",
-            "version": "v2.1.0",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/realtime-compiler.git",
-                "reference": "5088e71f39879917cda2bc4a060e3c7677add47f"
+                "reference": "efbcd9dd5952a8258a358fb280f7c1a343cbedfa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/5088e71f39879917cda2bc4a060e3c7677add47f",
-                "reference": "5088e71f39879917cda2bc4a060e3c7677add47f",
+                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/efbcd9dd5952a8258a358fb280f7c1a343cbedfa",
+                "reference": "efbcd9dd5952a8258a358fb280f7c1a343cbedfa",
                 "shasum": ""
             },
             "require": {
@@ -6095,7 +6095,7 @@
                 "hyde/framework": "dev-master"
             },
             "suggest": {
-                "hyde/framework": ">=v0.35.0-beta"
+                "hyde/framework": ">=v0.42.0-beta"
             },
             "bin": [
                 "bin/server.php"
@@ -6118,9 +6118,15 @@
             ],
             "support": {
                 "issues": "https://github.com/hydephp/realtime-compiler/issues",
-                "source": "https://github.com/hydephp/realtime-compiler/tree/v2.1.0"
+                "source": "https://github.com/hydephp/realtime-compiler/tree/v2.2.1"
             },
-            "time": "2022-06-14T17:18:14+00:00"
+            "funding": [
+                {
+                    "url": "https://www.buymeacoffee.com/caen",
+                    "type": "custom"
+                }
+            ],
+            "time": "2022-06-24T21:02:34+00:00"
         },
         {
             "name": "mockery/mockery",
