@@ -241,6 +241,7 @@ return [
         'code-of-conduct',
         'community',
         'docs',
+        'testimonials'
     ],
 
     /*
