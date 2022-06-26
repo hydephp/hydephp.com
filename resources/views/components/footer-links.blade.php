@@ -14,6 +14,9 @@
 			Sitemap
 		</a>
 	</li>
+	<li class="my-2 mx-1" role="presentation">
+		<span class="sm:mr-2 opacity-50 select-none">|</span>
+	</li>
 	<li class="my-2 mx-1">
 		<a href="https://github.com/hydephp/" class="text-gray-500 dark:text-gray-300   dark:hover:text-gray-100   hover:text-gray-900 flex items-center">
 			GitHub
