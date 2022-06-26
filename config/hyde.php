@@ -243,6 +243,7 @@ return [
         'docs',
         'testimonials',
         'accessibility',
+        'sitemap',
     ],
 
     /*
