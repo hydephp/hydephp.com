@@ -10,6 +10,11 @@
 		</a>
 	</li>
 	<li class="my-2 mx-1">
+		<a href="{{ Hyde::relativeLink('sitemap.html', $currentPage) }}" class="text-gray-500 dark:text-gray-300   dark:hover:text-gray-100   hover:text-gray-900 flex items-center sm:mx-2">
+			Sitemap
+		</a>
+	</li>
+	<li class="my-2 mx-1">
 		<a href="https://github.com/hydephp/" class="text-gray-500 dark:text-gray-300   dark:hover:text-gray-100   hover:text-gray-900 flex items-center">
 			GitHub
 		</a>
