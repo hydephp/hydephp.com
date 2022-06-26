@@ -69,5 +69,5 @@ return [
     |
     */
 
-    'enable_blade' => false,
+    'enable_blade' => true,
 ];
