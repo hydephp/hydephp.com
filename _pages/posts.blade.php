@@ -10,7 +10,7 @@
     </header>
 
     <div class="max-w-3xl mx-auto">
-    	@foreach(\Hyde\Framework\Models\MarkdownPost::getLatestPosts() as $post)
+    	@foreach(MarkdownPost::getLatestPosts() as $post)
         @include('hyde::components.article-excerpt')
         @endforeach
     </div>
