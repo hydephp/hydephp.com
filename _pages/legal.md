@@ -76,6 +76,8 @@ This list may not be exhaustive, feel free to
 
 > Please see the respective authors' repositories for their license files
 
+[Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. Copyright © 2011-2022 Laravel LLC. HydePHP is not affiliated with Laravel.
+
 ### General
 
 - The Hyde core is built with [Laravel Zero](https://laravel-zero.com/) which is based on [Laravel](https://laravel.com/){:rel="nofollow noopener"}
