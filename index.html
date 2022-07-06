@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,9 +55,6 @@
 
 
 
-
-<meta id="meta-color-scheme" name="color-scheme" content="light">
-<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
 </head>
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden bg-standard">
     <a href="#content" id="skip-to-content">Skip to content</a>
@@ -134,6 +131,9 @@
 	}
 	#main-navigation {
 		z-index: 10;
+	}
+	.theme-toggle-button {
+		display: none!important;
 	}
 </style>
 
