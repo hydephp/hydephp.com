@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('hyde.language', 'en') }}">
+<html lang="{{ config('hyde.language', 'en') }}" class="{{ $currentPage === 'index' ? 'dark' : '' }}">
 <head>
     @include('hyde::layouts.head')
 </head>

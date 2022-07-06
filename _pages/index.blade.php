@@ -20,6 +20,9 @@
 	#main-navigation {
 		z-index: 10;
 	}
+	.theme-toggle-button {
+		display: none!important;
+	}
 </style>
 @push('meta')
 <meta name="author" content="Caen De Silva">
