@@ -55,22 +55,8 @@
 	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
 		Enjoy your site in any size of screen.
 	</strong>
-	<div class="devices relative w-full flex gap-6 lg:gap-10 snap-x snap-mandatory overflow-x-auto lg:overflow-hidden justify-center py-8 lg:mt-4">
-		<div class="snap-center shrink-0">
-			<div class="shrink-0 w-4 sm:w-48"></div>
-		</div>
-		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-left" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_example_ios_8.png" />
-		</div>
-		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-up" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/post_feed_ios_8.png" />
-		</div>
-		<div class="snap-center shrink-0 first:pl-8 last:pr-8">
-			<img class="shrink-0 rounded-lg w-auto lg:w-70" style="max-width: 240px" data-aos="fade-right" src="https://raw.githubusercontent.com/hydephp/examples/master/media/devices/docs_example_ios_8.png" />
-		</div>
-		<div class="snap-center shrink-0">
-			<div class="shrink-0 w-4 sm:w-48"></div>
-		</div>
+	<div class=" w-full max-w-7xl mx-auto flex justify-center py-8 lg:mt-4">
+		<img src="/media/all-devices-black-shadow.png" alt="Lineup of a Hyde website shown on different sized devices">
 	</div>
 </section>
 <section class="mx-auto items-center py-16 px-4  bg-white dark:bg-slate-800">

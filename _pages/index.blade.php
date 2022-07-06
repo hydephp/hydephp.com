@@ -47,10 +47,12 @@
 			Create, websites, blogs, documentation sites, and more,
 			with the power of Laravel and the simplicity of Markdown.
 		</p>
-		<!-- Syntax highlighted by torchlight.dev -->
-		<pre class="hidden sm:block" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B;">composer</span> <span style="color: #C3E88D;">create-project hyde/hyde</span> <span style="color: #CCCCCC">--stability=dev</span></code></pre>
-		<div class="sm:hidden">
-			<pre class="max-w-full" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight flex flex-wrap justify-center" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B; margin: 0 4px;">composer</span> <span style="color: #C3E88D; margin: 0 4px;">create-project hyde/hyde</span> <span style="color: #CCCCCC" margin: 0 4px;>--stability=dev</span></code></pre>
+		<div>
+			<!-- Syntax highlighted by torchlight.dev -->
+			<pre class="hidden sm:block" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B;">composer</span> <span style="color: #C3E88D;">create-project hyde/hyde</span> <span style="color: #CCCCCC">--stability=dev</span></code></pre>
+			<div class="sm:hidden">
+				<pre class="max-w-full" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight flex flex-wrap justify-center" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B; margin: 0 4px;">composer</span> <span style="color: #C3E88D; margin: 0 4px;">create-project hyde/hyde</span> <span style="color: #CCCCCC; margin: 0 4px;">--stability=dev</span></code></pre>
+			</div>
 		</div>
 	</div>
 	<div class="sm:my-4 max-w-full flex flex-wrap justify-center">
@@ -60,7 +62,7 @@
 </header>
 
 <section id="features">
-	@include('features')
+	@include('components.features')
 </section>
 
 <section id="mobile" class="lg:hidden">
@@ -69,7 +71,7 @@
 
 
 <section id="desktop" class="hidden lg:block">
-@include('sections.interactive')
+
 </section>
 
 @include('sections.posts')
