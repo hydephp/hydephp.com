@@ -1,21 +1,3 @@
-
-<script>
-	// Are animations enabled?
-	var animationsEnabled = true;
-	
-	// Disable animations if prefers-reduced-motion is enabled
-	if (window.matchMedia && window.matchMedia('(prefers-reduced-motion)').matches) {
-		console.log('Prefers reduced motion detected. Animations disabled.');
-		animationsEnabled = false;
-	} else {
-		// Add the stylesheet
-		var link = document.createElement('link');
-		link.rel = 'stylesheet';
-		link.href = 'https://unpkg.com/aos@next/dist/aos.css';
-		document.head.appendChild(link);
-	}
-</script>
-
 <section id="first" class="py-16 px-4 text-center">
 	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
 		Turn Markdown into Blog Posts
@@ -126,10 +108,3 @@
 		max-height: 80vh;
 	}
 </style>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-	// If animations are enabled
-	if (animationsEnabled === true) {
-		AOS.init();
-	}
-</script> 

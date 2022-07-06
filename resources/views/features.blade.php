@@ -1,3 +1,11 @@
+<div class="w-full py-16">
+	<h2 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl font-heading text-center">What is HydePHP?</h2>
+	<p class="mb-4 font-medium tracking-tight text-gray-700 xl:mb-6 dark:text-gray-300 max-w-5xl text-center mx-auto">
+		HydePHP is a content-first Laravel-powered console application that allows you to create static HTML pages, blog posts, and documentation sites, using your choice of Markdown and/or Blade.
+		Build sites in record-time with a full batteries-included TailwindCSS frontend that just works without any fuzz.
+	</p>
+</div>
+
 
 <div class="w-full py-16">
 	<h3 class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-3xl font-heading text-center">Who is Hyde for?</h3>
