@@ -1,8 +1,7 @@
 @php
-use Hyde\Framework\Services\CollectionService;
-$pages = array_merge(
-    CollectionService::getBladePageList(),
-    CollectionService::getMarkdownPageList(),
+$pages= array_merge(
+    \Hyde\Framework\Models\Pages\BladePage::files(),
+    \Hyde\Framework\Models\Pages\MarkdownPage::files(),
 );
 
 // sort alphabetically
@@ -21,7 +20,7 @@ unset ($pages[array_search('404', $pages)]);
 	
 		<ul>
 			@foreach($pages as $page)
-			<li><a href="{{ $page }}">{{ Hyde::titleFromSlug($page) }}</a></li>
+			<li><a href="{{ $page }}">{{ Hyde::makeTitle($page) }}</a></li>
 			@endforeach
 		</ul>
 	</section>
@@ -31,8 +30,8 @@ unset ($pages[array_search('404', $pages)]);
 		<h2>Documentation Pages</h2>
 	
 		<ul>
-			@foreach(CollectionService::getDocumentationPageList() as $page)
-			<li><a href="{{ $page }}">{{ Hyde::titleFromSlug($page) }}</a></li>
+			@foreach(\Hyde\Framework\Models\Pages\DocumentationPage::files() as $page)
+			<li><a href="{{ $page }}">{{ Hyde::makeTitle($page) }}</a></li>
 			@endforeach
 		</ul>
 	</section>
