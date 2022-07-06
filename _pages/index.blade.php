@@ -59,12 +59,14 @@
 	</div>
 </header>
 
-<span id="features"></span>
+<section id="features">
+	@include('features')
+</section>
 
 <section id="mobile" class="lg:hidden">
 	@include('sections.features')
 </section>
-	
+
 
 <section id="desktop" class="hidden lg:block">
 @include('sections.interactive')
