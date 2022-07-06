@@ -40,11 +40,12 @@
 	</h1>
 	<div class="max-w-full sm:max-w-3xl p-8 mt-4">
 		<strong role="doc-subtitle" class="text-3xl sm:text-4xl leading-8">
-			A Laravel-powered 
-			<strong>Static App Generator</strong>
+			<strong>Next-Level Static App Generator</strong>
 		</strong>
 		<p class="text-xl sm:text-2xl mt-4 sm:mt-2">
-			that allows you to create blogs, documentation sites, and more. 
+
+			Create, websites, blogs, documentation sites, and more,
+			with the power of Laravel and the simplicity of Markdown.
 		</p>
 		<!-- Syntax highlighted by torchlight.dev -->
 		<pre class="hidden sm:block" style="margin-top: 2.5rem; margin-bottom: 0.5rem;"><code data-theme="material-theme-palenight" data-lang="bash" class="torchlight" style="background-color: #292D3E; padding: 0.5rem 1rem; border-radius: 0.25rem;"><span style="color: #FFCB6B;">composer</span> <span style="color: #C3E88D;">create-project hyde/hyde</span> <span style="color: #CCCCCC">--stability=dev</span></code></pre>
