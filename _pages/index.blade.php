@@ -21,7 +21,7 @@
     z-index: 10;
     }
     .theme-toggle-button {
-    /* display: none!important; */
+        display: none!important;
     }
 	#app {
 		min-width: 100vw;
