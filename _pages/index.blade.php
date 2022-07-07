@@ -199,7 +199,7 @@
                                     </svg>
                                     <h3 class="my-2 ml-3 text-lg font-bold text-gray-800">Built-in Frontend</h3>
                                 </div>
-                                <p class="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">Batteries Included</p>
+                                <p class="mt-3 mb-1 text-xs font-medium text-purple-500 uppercase">Batteries (and more) Included</p>
                                 <p class="mb-2 text-gray-600">
                                     Hyde comes shipped with a full-featured frontend using TailwindCSS and customizable Laravel Blade templates.
                                 </p>
