@@ -183,7 +183,7 @@ return [
 
     'footer' => [
         'enabled' => true,
-        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
+        'markdown' => 'Site proudly built with HydePHP',
     ],
 
     /*
