@@ -253,7 +253,7 @@
                 <div class="absolute w-full w-screen max-w-4xl pl-12 -mt-20">
                     <div class="absolute top-0 left-0 w-full h-full mt-2 ml-10 bg-gray-900 rounded-lg"></div>
                     <div class="relative overflow-hidden border-2 border-black rounded-lg">
-                        <img src="https://cdn.devdojo.com/images/october2020/screenshot2.png" alt="Screen shot of Flare's hero component" class="object-cover w-full h-full">
+                        <img src="media/markdown-pages.png" alt="Screenshot of the HydePHP Homepage" class="object-cover w-full h-full">
                     </div>
                 </div>
             </div>
