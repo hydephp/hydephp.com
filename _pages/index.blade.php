@@ -26,6 +26,9 @@
 	#app {
 		min-width: 100vw;
 	}
+    #docs-nav-button {
+        margin-right: 0.75rem;
+    }
 </style>
 @push('meta')
 <meta name="author" content="Caen De Silva">
