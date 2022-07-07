@@ -14,7 +14,7 @@
 	</div>
 	
 	<footer class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto">
-		<p class="sm:text-center text-lg mx-auto mt-4 mb-8 prose">
+		<p class="sm:text-center text-lg mx-auto mt-8 mb-8 prose">
 			See more on the <a href="posts">posts page</a>!
 		</p>
 	</footer>
