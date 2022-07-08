@@ -421,9 +421,9 @@
                             
                         </ul>
                         
-                        <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center">
-                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded"></span>
-                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold">Architecture Concepts</span>
+                        <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center group">
+                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded  group-hover:m-0 "></span>
+                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-red-300 ">Architecture Concepts</span>
                         </a>
                         
                     </div>
@@ -463,10 +463,10 @@
                                 Automatic RSS feed
                             </li>
                         </ul>
-                        
-                        <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center">
-                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded"></span>
-                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold">Markdown Documentation</span>
+
+                        <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center group">
+                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded group-hover:m-0 "></span>
+                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-blue-300 ">Markdown Documentation</span>
                         </a>
                         
                     </div>
@@ -508,10 +508,10 @@
                             </li>
                             
                         </ul>
-                        
-                        <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center">
-                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded"></span>
-                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold">Installation Guide</span>
+                   
+                        <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center group">
+                            <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded   group-hover:m-0 "></span>
+                            <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-green-300">Installation Guide</span>
                         </a>
                         
                     </div>
