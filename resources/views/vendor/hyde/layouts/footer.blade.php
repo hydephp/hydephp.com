@@ -3,7 +3,7 @@
        <div class="block w-1/3">
             <span class="flex items-center w-fit">
 				<a href="{{ Hyde::relativeLink('index.html', $currentPage) }}" class="flex items-center mr-4">
-					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="https://cdn.jsdelivr.net/gh/hydephp/hydephp@fea08bf761d2a19c6c6149ed30c950b011bcf794/assets/logo/logo.svg" />
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 						<span class="ml-2 text-lg font-black">HydePHP</span>
 				</a>

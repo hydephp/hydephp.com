@@ -48,17 +48,8 @@
                 <small class="relative mb-4 text-xl font-black leading-none text-center text-black lg:text-2xl xl:text-3xl md:text-left">
                 The Static Site Generator You've Been Waiting For.
                 </small>
-                {{-- <svg class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-90 lg:block xl:mr-48 xl:-mt-14" viewBox="0 0 89 96" xmlns="http://www.w3.org/2000/svg">
-                    <g transform="rotate(-80 49.934 46.34)" fill-rule="nonzero" fill="none">
-                        <path d="M57.5 74.93c0 4.239 3.451 7.676 7.708 7.676 4.256 0 7.707-3.437 7.707-7.677s-3.45-7.676-7.707-7.676-7.707 3.437-7.707 7.676zm10.277 0a2.564 2.564 0 01-2.569 2.558 2.564 2.564 0 01-2.57-2.559 2.564 2.564 0 012.57-2.559 2.564 2.564 0 012.569 2.56zM35.914 44.836c0-4.24-3.45-7.676-7.707-7.676-4.256 0-7.707 3.437-7.707 7.676 0 4.24 3.45 7.677 7.707 7.677s7.707-3.437 7.707-7.677zm-10.276 0a2.564 2.564 0 012.57-2.558 2.564 2.564 0 012.568 2.558 2.564 2.564 0 01-2.569 2.56 2.564 2.564 0 01-2.569-2.56z" fill="#9D45FF" />
-                        <ellipse fill="#2F36FF" cx="5.281" cy="49.345" rx="5.138" ry="5.118" />
-                        <path d="M60.656 26.976a2.564 2.564 0 002.57 2.559 2.564 2.564 0 002.568-2.56v-2.558a2.564 2.564 0 00-2.569-2.559 2.564 2.564 0 00-2.569 2.56v2.558zM63.225 9.064a2.564 2.564 0 00-2.569 2.559v2.559a2.564 2.564 0 002.57 2.558 2.564 2.564 0 002.568-2.558v-2.56a2.564 2.564 0 00-2.569-2.558zM70.932 16.74h-2.569a2.564 2.564 0 00-2.569 2.56 2.564 2.564 0 002.57 2.558h2.568a2.564 2.564 0 002.57-2.559 2.564 2.564 0 00-2.57-2.559zM58.087 16.74h-2.569a2.564 2.564 0 00-2.569 2.56 2.564 2.564 0 002.57 2.558h2.568a2.564 2.564 0 002.57-2.559 2.564 2.564 0 00-2.57-2.559zM91.068 44.466a2.564 2.564 0 00-2.421 2.7 2.564 2.564 0 002.69 2.431l2.555-.134a2.564 2.564 0 002.421-2.7 2.564 2.564 0 00-2.69-2.43l-2.555.133zM85.404 48.852a2.564 2.564 0 00-2.69-2.432l-2.556.134a2.564 2.564 0 00-2.42 2.7 2.564 2.564 0 002.69 2.431l2.555-.134a2.564 2.564 0 002.42-2.7zM88.24 42.85l-.134-2.565a2.564 2.564 0 00-2.69-2.432 2.564 2.564 0 00-2.421 2.7l.134 2.565a2.564 2.564 0 002.69 2.432 2.564 2.564 0 002.421-2.7zM91.78 55.198l-.134-2.566a2.564 2.564 0 00-2.69-2.431 2.564 2.564 0 00-2.42 2.7l.134 2.565a2.564 2.564 0 002.69 2.431 2.564 2.564 0 002.42-2.699z" fill="#FFCE27" />
-                        <path d="M61.132 60.396a2.564 2.564 0 002.569-2.559V44.99a2.564 2.564 0 00-2.57-2.559H48.234a2.564 2.564 0 00-2.57 2.56v12.847a2.564 2.564 0 002.57 2.56h12.899zm-10.33-12.848h7.76v7.73h-7.76v-7.73z" fill="#2F36FF" />
-                        <path d="M38.127 11.425a2.566 2.566 0 00-2.073-1.74l-7.54-1.093-3.363-6.804A2.676 2.676 0 0022.846.476c-.947 0-1.823.5-2.304 1.312l-3.378 6.804-7.54 1.093a2.566 2.566 0 00-2.076 1.74 2.552 2.552 0 00.647 2.623l5.454 5.297-1.284 7.48a2.554 2.554 0 001.017 2.512c.793.576 1.846.651 2.713.194l6.744-3.541 6.743 3.531a2.578 2.578 0 002.706-.194 2.554 2.554 0 001.022-2.503l-1.284-7.48 5.456-5.296a2.552 2.552 0 00.645-2.623zm-10.664 5.194a2.553 2.553 0 00-.74 2.262l.637 3.698-3.327-1.748a2.578 2.578 0 00-2.389 0l-3.34 1.745.638-3.697a2.553 2.553 0 00-.728-2.26l-2.7-2.617 3.728-.54a2.568 2.568 0 001.935-1.4l1.662-3.36 1.664 3.36a2.568 2.568 0 001.932 1.4l3.725.54-2.697 2.617z" fill="#FFCE27" />
-                    </g>
-                </svg> --}}
                  <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
-				 	src="https://cdn.jsdelivr.net/gh/hydephp/hydephp@fea08bf761d2a19c6c6149ed30c950b011bcf794/assets/logo/logo.svg" alt="HydePHP Logo">
+				 	src="/media/logo.svg" alt="HydePHP Logo">
 
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left">
@@ -126,7 +117,7 @@
 <!-- Second Section -->
 <div class="relative w-full px-8 py-20 bg-violet-300 sm:py-32 md:py-40">
     <div class="container flex flex-col items-center justify-center h-full max-w-6xl mx-auto sm:flex-row sm:justify-between">
-        <div class="relative flex flex-col items-start justify-center w-full mb-10 sm:w-5/6 sm:w-1/3 lg:w-2/5 sm:mb-0 sm:pr-10">
+        <div class="relative flex flex-col items-start justify-center w-full mb-10 sm:w-1/3 lg:w-2/5 sm:mb-0 sm:pr-10">
             <h2 class="mb-5 text-2xl font-black leading-tight xl:text-4xl">New to Hyde?
                 <small><br>Start your journey here.</small>
             </h2>
@@ -138,10 +129,7 @@
             <span class="relative inline-block w-full h-full px-5 py-3 text-lg font-bold transition duration-100 bg-white border-2 border-black rounded fold-bold hover:bg-violet-500 hover:text-white">GET STARTED</span>
             </a>
         </div>
-        <div class="relative flex flex-col justify-center w-full h-full -mr-0 sm:w-5/6 sm:w-2/3 lg:w-3/5 sm:-mr-20">
-            {{-- <div class="overflow-hidden border-2 border-black rounded-lg aspect-w-16 aspect-h-9">
-                <iframe class="object-cover w-full h-full" width="100%" height="100%" src="https://www.youtube-nocookie.com/embed/FnjOuynU6dQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div> --}}
+        <div class="relative flex flex-col justify-center w-full h-full -mr-0 sm:w-2/3 lg:w-3/5 sm:-mr-20">
 			<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/727679114?h=839eaecd83&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="HydePHP in 100 seconds"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
         </div>
     </div>
@@ -157,7 +145,7 @@
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto xl:px-0">
         <header class="mb-8">
             <div class="flex mb-2">
-                <h2 class="relative flex items-center self-start inline-block w-auto text-4xl font-black">
+                <h2 class="relative  items-center self-start inline-block w-auto text-4xl font-black">
                     <span class="absolute inline-block w-full h-4 mt-3 -ml-2 bg-violet-300"></span>
                     <span class="relative">Feature List</span>
                 </h2>
@@ -250,7 +238,7 @@
                 </div>
             </div>
             <div class="hidden w-1/3 lg:block">
-                <div class="absolute w-full w-screen max-w-4xl pl-12 -mt-20">
+                <div class="absolute w-screen max-w-4xl pl-12 -mt-20">
                     <div class="absolute top-0 left-0 w-full h-full mt-2 ml-10 bg-gray-900 rounded-lg"></div>
                     <div class="relative overflow-hidden border-2 border-black rounded-lg">
                         <img src="media/markdown-pages.png" alt="Screenshot of the HydePHP Homepage" class="object-cover w-full h-full">
@@ -402,7 +390,7 @@
 
 	<div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto">
 		<div class="flex flex-col justify-center w-full">
-			<h2 class="relative flex items-center self-center inline-block w-auto mb-5 text-4xl font-black">
+			<h2 class="relative  items-center self-center inline-block w-auto mb-5 text-4xl font-black">
 				<span class="absolute inline-block w-full h-4 mt-3 -ml-2 bg-violet-300"></span>
 				<span class="relative">Who's it for?</span>
 			</h2>
@@ -420,7 +408,6 @@
 
 						<h4 class="flex items-center my-2 text-2xl font-black">Laravel Artisans</h4>
 						<div class="font-light text-center whitespace-nowrap">Are  <span class="font-bold text-red-500">first class citizens</span> in the Hyde world.</div>
-						{{-- <span class="w-1/2 h-1 bg-red-400"></span> --}}
 
 						<div class="flex flex-col justify-start w-full px-2 py-10">
 
@@ -465,7 +452,6 @@
 
 						<h4 class="flex items-center my-2 text-2xl font-black">Markdown&nbsp;Aficionados</h4>
 						<div class="font-light text-center whitespace-nowrap">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
-						{{-- <span class="w-1/2 h-1 bg-blue-400"></span> --}}
 
 						<div class="flex flex-col justify-start w-full px-2 py-10">
 
@@ -510,7 +496,6 @@
 						<h4 class="flex items-center my-2 text-2xl font-black">Developers & More</h4>
 						<div class="font-light text-center whitespace-nowrap">And some <span class="font-bold text-green-500">more features</span>.</div>
 						
-						{{-- <span class="w-1/2 h-1 bg-green-400"></span> --}}
 
 						<div class="flex flex-col justify-start w-full px-2 py-10">
 
