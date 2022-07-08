@@ -1823,6 +1823,12 @@ video {
 .pr-4 {
   padding-right: 1rem;
 }
+.pb-48 {
+  padding-bottom: 12rem;
+}
+.pb-32 {
+  padding-bottom: 8rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2735,6 +2741,10 @@ img.ext-link {
     padding-left: 3rem;
   }
 
+  .sm\:pb-56 {
+    padding-bottom: 14rem;
+  }
+
   .sm\:text-center {
     text-align: center;
   }
@@ -3012,6 +3022,10 @@ img.ext-link {
 
   .md\:pl-0 {
     padding-left: 0px;
+  }
+
+  .md\:pb-56 {
+    padding-bottom: 14rem;
   }
 
   .md\:text-left {

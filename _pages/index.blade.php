@@ -373,7 +373,7 @@
 
 <!-- Begin Breakdown Section -->
 
-<div class="relative w-full pt-24 pb-56 bg-gray-100">
+<div class="relative w-full pt-24 pb-32 md:pb-56 bg-gray-100">
     
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto">
         <div class="flex flex-col justify-center w-full">
