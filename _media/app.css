@@ -1811,6 +1811,9 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pl-1 {
+  padding-left: 0.25rem;
+}
 .text-left {
   text-align: left;
 }
@@ -2275,6 +2278,14 @@ img.ext-link {
 .hover\:bg-red-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+}
+
+.hover\:font-medium:hover {
+  font-weight: 500;
+}
+
+.hover\:font-normal:hover {
+  font-weight: 400;
 }
 
 .hover\:text-white:hover {
@@ -3213,6 +3224,10 @@ img.ext-link {
 
   .lg\:pr-32 {
     padding-right: 8rem;
+  }
+
+  .lg\:pr-8 {
+    padding-right: 2rem;
   }
 
   .lg\:text-4xl {
