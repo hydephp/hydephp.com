@@ -1,6 +1,6 @@
 <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
-		<div class="block w-1/3">
+		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
 				<a href="{{ Hyde::relativeLink('index.html', $currentPage) }}" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
@@ -13,9 +13,9 @@
 				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
 			</p>
 		</div>
-		<div class="block w-2/3 mt-6 mb-4 text-sm sm:flex lg:mt-0">
+		<div class="block w-2/3 mt-3 sm:mt-6 mb-4 text-sm sm:flex lg:mt-0">
 			<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
-				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase">Resources</li>
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
 				<li><a href="{{ Hyde::relativeLink(DocumentationPage::indexPath(), $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
@@ -28,7 +28,7 @@
 					</a></li>
 				</ul>
 				<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
-					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase">Developers</li>
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
 					<li><a href="{{ Hyde::relativeLink('community.html#developers', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Developer Resources
 					</a></li>
@@ -36,7 +36,7 @@
 					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
 				</ul>
 				<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
-					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase">Extra</li>
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
 					<li><a href="{{ Hyde::relativeLink('sitemap.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
@@ -49,7 +49,7 @@
 					</a></li>
 				</ul>
 				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
-					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase">Connect</div>
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
 					<div class="flex justify-start pl-4 mt-2">
 						
 						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
