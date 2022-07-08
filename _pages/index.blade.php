@@ -125,7 +125,7 @@
                 <small><br>Start your journey here.</small>
             </h2>
             <p class="mb-8 text-base text-violet-900 md:text-lg xl:text-xl md:max-w-lg">
-                While you don't need to know PHP or Laravel, Hyde is a command-line application that is aimed at developers.
+                HydePHP is an open source console application that turns easy to use Markdown text files into amazing static websites, backed by the power of Laravel.
             </p>
             <a href="docs/master/quickstart" class="relative">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded"></span>
