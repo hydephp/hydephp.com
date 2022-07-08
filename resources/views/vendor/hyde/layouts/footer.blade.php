@@ -10,7 +10,7 @@
 			</span>
 			
 			<p class=" font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
-				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality
+				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
 			</p>
 		</div>
 		<div class="block w-2/3 mt-6 mb-4 text-sm sm:flex lg:mt-0">

@@ -56,7 +56,7 @@
                 
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left">
-                Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown.
+                Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
             <a href="docs" class="relative mt-5 group">
@@ -128,7 +128,7 @@
                 <small><br>Start your journey here.</small>
             </h2>
             <p class="mb-8 text-base text-violet-900 md:text-lg xl:text-xl md:max-w-lg">
-                HydePHP is an open source console application that turns easy to use Markdown text files into amazing static websites, backed by the power of Laravel.
+                HydePHP is an open-source console application that turns easy-to-use Markdown text files into amazing static websites, backed by the power of Laravel.
             </p>
             <a href="docs/master/quickstart" class="relative group">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
@@ -208,7 +208,7 @@
                                 </div>
                                 <p class="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">Based on Laravel Zero</p>
                                 <p class="mb-2 text-gray-600">Laravel Developers will feel right at home with Hyde.
-                                    Scaffold files using the Artisan based HydeCLI and use Blade templates.
+                                    Scaffold files using the Artisan-based HydeCLI and use Blade templates.
                                 </p>
                             </div>
                         </div>
@@ -382,7 +382,7 @@
                 <span class="relative">Who's it for?</span>
             </h2>
             <p class="self-center mb-12 font-medium text-gray-600 mx-auto max-w-3xl text-center">
-                While you don't need to know PHP or Laravel, Hyde is aimed at developers and requires basic command line knowledge.
+                While you don't need to know PHP or Laravel, Hyde is aimed at developers and requires basic command-line knowledge.
                 Here is a breakdown of some key bullet points tailored to various use cases.
             </p>
             
@@ -394,7 +394,7 @@
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 bg-white border-2 border-black rounded-lg lg:px-5 xl:px-12 lg:rounded-r-none lg:rounded-l-lg">
                         
                         <h4 class="flex text-center items-center my-2 text-2xl font-black">Laravel Artisans</h4>
-                        <div class="font-light text-center">Are Hyde <span class="font-bold text-red-500">first class citizens</span>.</div>
+                        <div class="font-light text-center">Are Hyde <span class="font-bold text-red-500">first-class citizens</span>.</div>
                         
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
                             
