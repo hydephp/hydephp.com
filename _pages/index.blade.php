@@ -41,9 +41,9 @@
 <meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
 @endpush
 <!-- BEGIN HERO SECTION -->
-<div class="relative items-center justify-center w-screen h-screen">
-    <div class="pt-16 container flex flex-col items-center justify-center h-full max-w-6xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between">
-        <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-3/5 lg:mt-10">
+<div class="relative items-center justify-center w-screen min-h-screen">
+    <div class="pt-36 md:pt-64 container self-center my-auto flex flex-col items-center justify-center h-full max-w-6xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between">
+        <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-3/5 lg:-mt-4">
             <div class="relative md:text-left text-center">
                 <h1 class="relative mb-4 text-4xl font-black leading-none text-center text-black lg:text-5xl xl:text-6xl md:text-left">
                     HydePHP
@@ -66,7 +66,7 @@
                 </span>
             </a>
         </div>
-        <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-20 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3">
+        <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3 lg:-mt-4">
             <!-- HERO SVG IMAGE -->
             <svg class="w-full h-auto" viewBox="0 0 273 190" xmlns="http://www.w3.org/2000/svg">
                 <g transform="translate(-1)" fill-rule="nonzero" fill="none">
