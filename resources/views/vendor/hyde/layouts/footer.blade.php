@@ -74,10 +74,17 @@
 		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
 			@stack('footer')
 		</div>
-		<div class="pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
 				{!! Hyde\Framework\Actions\ConvertsFooterMarkdown::execute() !!}
 			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
 		</div>
 	</footer>
 	
