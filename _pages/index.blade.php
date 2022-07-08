@@ -59,12 +59,15 @@
                 Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
-            <a href="docs" class="relative mt-5">
-                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded"></span>
-                <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded hover:bg-violet-400 xl:text-xl fold-bold">
+            <a href="docs" class="relative mt-5 group">
+                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
+                <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded group-hover:bg-violet-400 xl:text-xl fold-bold">
                     To the Documentation!
                 </span>
             </a>
+
+            
+            
         </div>
         <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-10 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3">
             <!-- HERO SVG IMAGE -->
@@ -127,9 +130,9 @@
             <p class="mb-8 text-base text-violet-900 md:text-lg xl:text-xl md:max-w-lg">
                 HydePHP is an open source console application that turns easy to use Markdown text files into amazing static websites, backed by the power of Laravel.
             </p>
-            <a href="docs/master/quickstart" class="relative">
-                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded"></span>
-                <span class="relative inline-block w-full h-full px-5 py-3 text-lg font-bold transition duration-100 bg-white border-2 border-black rounded fold-bold hover:bg-violet-500 hover:text-white">GET STARTED</span>
+            <a href="docs/master/quickstart" class="relative group">
+                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
+                <span class="relative inline-block w-full h-full px-5 py-3 text-lg font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-500 group-hover:text-white">GET STARTED</span>
             </a>
         </div>
         <div class="relative flex flex-col justify-center w-full h-full -mr-0 sm:w-2/3 lg:w-3/5 sm:-mr-20">
