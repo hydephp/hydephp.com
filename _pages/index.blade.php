@@ -29,6 +29,9 @@
     #docs-nav-button {
         margin-right: 0.75rem;
     }
+    .pricing-list li::marker {
+        color: #777;
+    }
 </style>
 @push('meta')
 <meta name="author" content="Caen De Silva">
@@ -266,7 +269,56 @@
             <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
                 <div class="w-full xl:w-1/2 xl:pr-8">
                     <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-                    <div class="flex flex-col sm:pr-8">
+                        <div class="flex flex-col sm:pr-8">
+                            <div class="relative sm:pl-12">
+                                <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                <path
+                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                            </svg>
+                            <p class="mt-2 text-base text-gray-600 prose">
+                                Caen (<a href="https://twitter.com/CodeWithCaen?ref_src=twsrc%5Etfw">@CodeWithCaen</a>) has made a website for his PHP-based static-site generator.
+                                <br><br>What I&#39;m mostly impressed with is how clean and straightforward the documentation is. Writing good documentation is an art and Caen did an amazing job at it.
+                                ⭐️⭐️⭐️⭐️
+                            </p>
+                        </div>
+                        <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                            <a href="https://twitter.com/SavvasStephnds" rel="author nofollow">@SavvasStephnds</a>
+                            <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw">Via Twitter</a></span>
+                        </h3>
+                        <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                    </div>
+                    <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                    src="https://pbs.twimg.com/profile_images/1479839481821904899/h2z7ovvl_200x200.jpg"
+                    alt="Profile image">
+                </blockquote>
+                <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                    <div class="flex flex-col sm:pr-10">
+                        <div class="relative sm:pl-12">
+                            <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                            <path
+                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                        </svg>
+                        <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
+                            <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
+                            <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+                        </p>
+                    </div>
+                    <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                        This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
+                            SomeCompany</span>
+                        </h3>
+                        <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                    </div>
+                    <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                    alt="">
+                </blockquote>
+            </div>
+            <div class="w-full xl:w-1/2 xl:pl-8">
+                <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                    <div class="flex flex-col sm:pr-10">
                         <div class="relative sm:pl-12">
                             <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
@@ -274,100 +326,51 @@
                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                         </svg>
                         <p class="mt-2 text-base text-gray-600 prose">
-                            Caen (<a href="https://twitter.com/CodeWithCaen?ref_src=twsrc%5Etfw">@CodeWithCaen</a>) has made a website for his PHP-based static-site generator.
-                            <br><br>What I&#39;m mostly impressed with is how clean and straightforward the documentation is. Writing good documentation is an art and Caen did an amazing job at it.
-                            ⭐️⭐️⭐️⭐️
+                            HydePHP is actually simple to setup. Now, I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises.
+                            <br><br>
+                            Docs: 10/10
+                            Project: 10/10
                         </p>
                     </div>
                     <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                        <a href="https://twitter.com/SavvasStephnds" rel="author nofollow">@SavvasStephnds</a>
-                        <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw">Via Twitter</a></span>
+                        <a href="https://twitter.com/peteralexbizjak" rel="author nofollow">@peteralexbizjak</a>
+                        <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/peteralexbizjak/status/1535177275649536001">Via Twitter</a></span>
                     </h3>
                     <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
                 </div>
                 <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                src="https://pbs.twimg.com/profile_images/1479839481821904899/h2z7ovvl_200x200.jpg"
+                src="https://pbs.twimg.com/profile_images/1543562487320268805/iCrWcyG-_200x200.jpg"
                 alt="Profile image">
             </blockquote>
-            <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-            <div class="flex flex-col sm:pr-10">
-                <div class="relative sm:pl-12">
-                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                    <path
-                    d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                </svg>
-                <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
-                    <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
-                    <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
-                </p>
-            </div>
-            <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
-                    SomeCompany</span>
-                </h3>
-                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
-            </div>
-            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-            src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-            alt="">
-        </blockquote>
-    </div>
-    <div class="w-full xl:w-1/2 xl:pl-8">
-        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-        <div class="flex flex-col sm:pr-10">
-            <div class="relative sm:pl-12">
-                <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                <path
-                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-            </svg>
-            <p class="mt-2 text-base text-gray-600 prose">
-                HydePHP is actually simple to setup. Now, I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises.
-                <br><br>
-                Docs: 10/10
-                Project: 10/10
-            </p>
+            <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                <div class="flex flex-col sm:pr-10">
+                    <div class="relative sm:pl-12">
+                        <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                        <path
+                        d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                    </svg>
+                    <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
+                        <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
+                        <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+                    </p>
+                </div>
+                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                    This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
+                        SomeCompany</span>
+                    </h3>
+                    <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                </div>
+                <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                alt="">
+            </blockquote>
         </div>
-        <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-            <a href="https://twitter.com/peteralexbizjak" rel="author nofollow">@peteralexbizjak</a>
-            <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/peteralexbizjak/status/1535177275649536001">Via Twitter</a></span>
-        </h3>
-        <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
     </div>
-    <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-    src="https://pbs.twimg.com/profile_images/1543562487320268805/iCrWcyG-_200x200.jpg"
-    alt="Profile image">
-</blockquote>
-<blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-<div class="flex flex-col sm:pr-10">
-    <div class="relative sm:pl-12">
-        <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-        <path
-        d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-    </svg>
-    <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
-        <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
-        <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
-    </p>
-</div>
-<h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-    This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
-        SomeCompany</span>
-    </h3>
-    <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
-</div>
-<img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-alt="">
-</blockquote>
-</div>
-</div>
-<footer class="text-center opacity-75">
-    <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
-    <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/testimonials.blade.php">page is open source</a>.</small>
-</footer>
+    <footer class="text-center opacity-75">
+        <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
+        <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/testimonials.blade.php">page is open source</a>.</small>
+    </footer>
 </div>
 </div>
 </section>
@@ -392,7 +395,7 @@ alt="">
             </h2>
             <p class="self-center mb-12 font-medium text-gray-600 mx-auto max-w-3xl text-center">
                 While you don't need to know PHP or Laravel, Hyde is aimed at developers and requires basic command line knowledge.
-                Here is a breakdown of some key bullet points.
+                Here is a breakdown of some key bullet points tailored to various use cases.
             </p>
             
             
@@ -405,33 +408,33 @@ alt="">
                         <h4 class="flex items-center my-2 text-2xl font-black">Laravel Artisans</h4>
                         <div class="font-light text-center whitespace-nowrap">Are  <span class="font-bold text-red-500">first class citizens</span> in the Hyde world.</div>
                         
-                        <div class="flex flex-col justify-start w-full px-2 py-10">
+                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
                             
-                            <div class="flex items-start w-full">
-                                <p class="ml-2 whitespace-nowrap">HydePHP is based on Laravel Zero</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                HydePHP is based on Laravel Zero
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Render <span class="">Blade</span> files to HTML</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Render <span class="">Blade</span> files to HTML
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Artisan-based CLI interface</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Artisan-based CLI interface
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Automatic <span class="">pseudo-routing</span></p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Automatic <span class="">pseudo-routing</span>
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Preconfigured Laravel Mix</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Preconfigured Laravel Mix
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">File-based <span class="">Collections</span></p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                File-based <span class="">Collections</span>
+                            </li>
                             
-                        </div>
+                        </ul>
                         
                         <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded"></span>
@@ -449,32 +452,32 @@ alt="">
                         <h4 class="flex items-center my-2 text-2xl font-black">Markdown&nbsp;Aficionados</h4>
                         <div class="font-light text-center whitespace-nowrap">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
                         
-                        <div class="flex flex-col justify-start w-full px-2 py-10">
+                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
                             
-                            <div class="flex items-start w-full">
-                                <p class="ml-2 whitespace-nowrap"><span class=""></span> Simple Markdown Pages</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class=""></span> Simple Markdown Pages
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap"><span class="">Easy</span> Documentation sites</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class="">Easy</span> Documentation sites
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap"><span class="">Smart</span> Blog Posts</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class="">Smart</span> Blog Posts
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Torchlight Syntax Highlighting</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Torchlight Syntax Highlighting
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">YAML Front Matter</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                YAML Front Matter
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Automatic RSS feed</p>
-                            </div>
-                        </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Automatic RSS feed
+                            </li>
+                        </ul>
                         
                         <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded"></span>
@@ -493,33 +496,33 @@ alt="">
                         <div class="font-light text-center whitespace-nowrap">And some <span class="font-bold text-green-500">more features</span>.</div>
                         
                         
-                        <div class="flex flex-col justify-start w-full px-2 py-10">
+                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
                             
-                            <div class="flex items-start w-full">
-                                <p class="ml-2 whitespace-nowrap"><span class="">Free</span> and Open Source</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class="">Free</span> and Open Source
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap"><span class="">Automatic</span> Navigation Menus</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class="">Automatic</span> Navigation Menus
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap"><span class="">Customizable</span> & Configurable</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                <span class="">Customizable</span> & Configurable
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">No databases needed</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                No databases needed
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">Version controllable</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                Version controllable
+                            </li>
                             
-                            <div class="flex items-start w-full mt-3">
-                                <p class="ml-2 whitespace-nowrap">And Much More</p>
-                            </div>
+                            <li class="mt-2 whitespace-nowrap">
+                                And Much More
+                            </li>
                             
-                        </div>
+                        </ul>
                         
                         <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded"></span>
