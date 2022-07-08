@@ -183,7 +183,7 @@ return [
 
     'footer' => [
         'enabled' => true,
-        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
+        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde)',
     ],
 
     /*
@@ -212,11 +212,6 @@ return [
             'slug' => 'posts',
             'priority' => 1000,
         ],
-        [
-            'title' => 'Documentation',
-            'slug' => 'docs',
-            'priority' => 500,
-        ]
     ],
 
     /*

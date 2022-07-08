@@ -26,7 +26,7 @@
 
 <style> html, body { scroll-behavior: smooth; } </style>
 @push('footer')
-<div class="mt-1 pt-1 border-t border-slate-200 dark:border-slate-700">
+<div>
 	<small>
 		About page components from <a href="https://devdojo.com/tails" rel="noopener noreferrer nofollow">Tails</a>
 		with illustrations by <a href="https://icons8.com/illustrations" rel="noopener noreferrer nofollow">Ouch!</a>.

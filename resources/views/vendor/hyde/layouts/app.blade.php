@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="{{ config('hyde.language', 'en') }}" class="{{ $currentPage === 'index' ? 'dark' : '' }}">
+<html lang="{{ config('hyde.language', 'en') }}">
 <head>
     @include('hyde::layouts.head')
 </head>
-<body id="app" class="flex flex-col min-h-screen overflow-x-hidden bg-standard">
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard">
     <a href="#content" id="skip-to-content">Skip to content</a>
     @include('hyde::layouts.navigation') 
 
