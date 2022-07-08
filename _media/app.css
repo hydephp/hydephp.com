@@ -1188,6 +1188,9 @@ video {
 .mt-12 {
   margin-top: 3rem;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1804,6 +1807,9 @@ video {
 }
 .pl-5 {
   padding-left: 1.25rem;
+}
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 .text-left {
   text-align: left;

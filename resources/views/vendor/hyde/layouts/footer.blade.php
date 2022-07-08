@@ -1,4 +1,4 @@
-<footer class="px-4 pt-12 pb-8  dark:text-white dark:bg-slate-900 bg-gray-100">
+<footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
     <div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
        <div class="block w-1/3">
             <span class="flex items-center w-fit">
@@ -13,7 +13,7 @@
 			Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality
 		</p>
 	   </div>
-        <div class="block w-2/3 mt-6 text-sm sm:flex lg:mt-0">
+        <div class="block w-2/3 mt-6 mb-4 text-sm sm:flex lg:mt-0">
             <ul class="flex flex-col w-full p-0 font-thin text-left text-gray-300 dark:text-gray-700 list-none">
                 <li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase">Resources</li>
                 <li><a href="{{ Hyde::relativeLink(DocumentationPage::indexPath(), $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
@@ -71,7 +71,10 @@
             </div>
         </div>
     </div>
-    <div class="pt-4 pt-6 mt-10 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+	<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+		@stack('footer')
+	</div>
+    <div class="pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 		<div class="prose mx-auto text-center text-sm dark:prose-invert">
 			{!! Hyde\Framework\Actions\ConvertsFooterMarkdown::execute() !!}
 		</div>
