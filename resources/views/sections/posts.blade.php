@@ -1,5 +1,5 @@
-<section id="posts" class="w-screen py-16  lg:mt-8 relative px-8">
-	<header class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto">
+<section id="posts" class="w-screen py-16  lg:mt-8 relative">
+	<header class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto px-8">
 		<h2 class="text-3xl text-left opacity-75 dark:opacity-90 leading-10 tracking-tight font-extrabold sm:leading-none sm:mb-8 md:text-4xl md:text-center lg:text-5xl">
 			Latest Posts
 		</h2>
@@ -7,13 +7,13 @@
 			Here are the latest posts from the Hyde Blog! Fully created using Hyde, of course!
 		</p>
 	</header>
-	<div class="max-w-xl mx-auto">
+	<div class="max-w-xl mx-auto px-8">
 		@foreach(MarkdownPost::getLatestPosts()->take(3) as $post)
 		@include('hyde::components.article-excerpt')
 		@endforeach
 	</div>
 	
-	<footer class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto">
+	<footer class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto px-8">
 		<p class="sm:text-center text-lg mx-auto mt-8 mb-8 prose dark:prose-invert">
 			See more on the <a href="posts">posts page</a>!
 		</p>
