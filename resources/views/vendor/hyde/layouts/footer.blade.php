@@ -13,8 +13,8 @@
 				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
 			</p>
 		</div>
-		<div class="block w-2/3 mt-3 sm:mt-6 mb-4 text-sm sm:flex lg:mt-0">
-			<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
 				<li><a href="{{ Hyde::relativeLink(DocumentationPage::indexPath(), $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
@@ -27,7 +27,7 @@
 						Legal Information
 					</a></li>
 				</ul>
-				<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
 					<li><a href="{{ Hyde::relativeLink('community.html#developers', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Developer Resources
@@ -35,7 +35,7 @@
 					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
 					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
 				</ul>
-				<ul class="flex flex-col w-full p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
 					<li><a href="{{ Hyde::relativeLink('sitemap.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
