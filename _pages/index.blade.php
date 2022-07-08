@@ -368,7 +368,7 @@
 
 <!-- End Features Section -->
 
-<!-- Begin Pricing Section -->
+<!-- Begin Breakdown Section -->
 
 <div class="relative w-full pt-24 pb-56 bg-gray-100">
     
@@ -537,7 +537,7 @@
 
 <!-- Blob SVG Border -->
 
-<!-- END PRICING SECTION -->
+<!-- END Breakdown SECTION -->
 
 
 <style> html, body { scroll-behavior: smooth; } </style>
