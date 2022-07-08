@@ -2431,6 +2431,16 @@ img.ext-link {
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
 
+.dark .dark\:bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:bg-gray-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(75 85 99 / var(--tw-bg-opacity));
+}
+
 .dark .dark\:fill-gray-200 {
   fill: #e5e7eb;
 }
@@ -2487,6 +2497,16 @@ img.ext-link {
 .dark .dark\:hover\:bg-violet-400:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(167 139 250 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-violet-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(196 181 253 / var(--tw-bg-opacity));
+}
+
+.dark .dark\:hover\:bg-violet-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 214 254 / var(--tw-bg-opacity));
 }
 
 .dark .dark\:hover\:text-gray-100:hover {

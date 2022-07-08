@@ -28,8 +28,8 @@ $homeRoute = ($links[array_search('Home', array_column($links, 'title'))])['rout
 			@endforeach
 		</ul>
 		<a id="docs-nav-button" href="docs" class="relative mb-5 ml-4 sm:mb-0">
-			<span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded"></span>
-			<span class="relative inline-block w-full h-full px-3 py-1 text-base font-bold transition duration-100 bg-white border-2 border-black rounded fold-bold hover:bg-violet-300 dark:hover:bg-violet-400 hover:text-gray-900 dark:text-black">Documentation</span>
+			<span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black dark:bg-gray-600 rounded"></span>
+			<span class="relative inline-block w-full h-full px-3 py-1 text-base font-bold transition duration-100 bg-white border-2 border-black rounded fold-bold hover:bg-violet-300 dark:hover:bg-violet-200 hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>
 	</div>
 </nav>
