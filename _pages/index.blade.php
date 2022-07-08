@@ -44,18 +44,18 @@
 <div class="relative items-center justify-center w-screen h-screen">
     <div class="container flex flex-col items-center justify-center h-full max-w-6xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between">
         <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-3/5 lg:mt-10">
-            <div class="relative">
+            <div class="relative md:text-left text-center">
                 <h1 class="relative mb-4 text-4xl font-black leading-none text-center text-black lg:text-5xl xl:text-6xl md:text-left">
                     HydePHP
                 </h1>
-                <small class="relative mb-4 text-xl font-black leading-none text-center text-black lg:text-2xl xl:text-3xl md:text-left">
+                <small class="relative mb-4  text-xl font-black leading-none  text-black lg:text-2xl xl:text-3xl md:text-left text-center">
                     The Static Site Generator You've Been Waiting For.
                 </small>
                 <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
                 src="/media/logo.svg" alt="HydePHP Logo">
                 
             </div>
-            <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left">
+            <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
                 Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
