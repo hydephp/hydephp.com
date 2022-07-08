@@ -384,44 +384,44 @@
             </p>
             
             
-            <div class="flex flex-col md:flex-row">
+            <div class="flex flex-col sm:flex-row items-center lg:items-stretch justify-center h-full sm:flex-wrap ">
                 
                 <!-- FEATURE 1 -->
-                <div class="w-full md:w-1/3">
-                    <div class="flex flex-col items-center px-2 py-12 bg-white border-2 border-black rounded-lg lg:px-5 xl:px-12 md:rounded-r-none md:rounded-l-lg">
+                <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
+                    <div class="flex flex-col h-full flex-auto items-center px-4 py-12 bg-white border-2 border-black rounded-lg lg:px-5 xl:px-12 lg:rounded-r-none lg:rounded-l-lg">
                         
-                        <h4 class="flex items-center my-2 text-2xl font-black">Laravel Artisans</h4>
-                        <div class="font-light text-center whitespace-nowrap">Are  <span class="font-bold text-red-500">first class citizens</span> in the Hyde world.</div>
+                        <h4 class="flex text-center items-center my-2 text-2xl font-black">Laravel Artisans</h4>
+                        <div class="font-light text-center">Are Hyde <span class="font-bold text-red-500">first class citizens</span>.</div>
                         
-                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
+                        <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 HydePHP is based on Laravel Zero
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Render <span class="">Blade</span> files to HTML
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Artisan-based CLI interface
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Automatic <span class="">pseudo-routing</span>
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Preconfigured Laravel Mix
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 File-based <span class="">Collections</span>
                             </li>
                             
                         </ul>
                         
-                        <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center group">
+                        <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded  group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-red-300 ">Architecture Concepts</span>
                         </a>
@@ -431,40 +431,40 @@
                 <!-- End FEATURE 1 -->
                 
                 <!-- FEATURE 2-->
-                <div class="w-full md:w-1/3">
-                    <div class="flex flex-col items-center px-2 py-12 my-8 bg-white border-2 border-black rounded-lg md:border-l-0 md:border-r-0 md:my-0 md:rounded-none lg:px-5 xl:px-12">
+                <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
+                    <div class="flex flex-col h-full flex-auto items-center px-4 py-12 my-8 bg-white border-2 border-black rounded-lg lg:border-l-0 lg:border-r-0 lg:my-0 lg:rounded-none lg:px-5 xl:px-12">
                         
-                        <h4 class="flex items-center my-2 text-2xl font-black">Markdown&nbsp;Aficionados</h4>
-                        <div class="font-light text-center whitespace-nowrap">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
+                        <h4 class="flex text-center items-center my-2 text-2xl font-black sm:whitespace-nowrap">Markdown Aficionados</h4>
+                        <div class="font-light text-center">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
                         
-                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
+                        <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class=""></span> Simple Markdown Pages
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class="">Easy</span> Documentation sites
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class="">Smart</span> Blog Posts
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Torchlight Syntax Highlighting
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 YAML Front Matter
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Automatic RSS feed
                             </li>
                         </ul>
 
-                        <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center group">
+                        <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-blue-300 ">Markdown Documentation</span>
                         </a>
@@ -474,42 +474,42 @@
                 <!-- END FEATURE 2 -->
                 
                 <!-- FEATURE 3 -->
-                <div class="w-full md:w-1/3">
-                    <div class="flex flex-col items-center px-2 py-12 ml-0 bg-white border-2 border-black rounded-lg lg:px-6 xl:px-12 md:rounded-l-none md:rounded-r-lg">
+                <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
+                    <div class="flex flex-col h-full flex-auto items-center px-4 py-12 ml-0 bg-white border-2 border-black rounded-lg lg:px-6 xl:px-12 lg:rounded-l-none lg:rounded-r-lg">
                         
-                        <h4 class="flex items-center my-2 text-2xl font-black">Developers & More</h4>
-                        <div class="font-light text-center whitespace-nowrap">And some <span class="font-bold text-green-500">more features</span>.</div>
+                        <h4 class="flex text-center items-center my-2 text-2xl font-black">Developers & More</h4>
+                        <div class="font-light text-center">And some <span class="font-bold text-green-500">more features</span>.</div>
                         
                         
-                        <ul class="flex flex-col justify-start w-full px-2 py-10 list-disc pricing-list">
+                        <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class="">Free</span> and Open Source
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class="">Automatic</span> Navigation Menus
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 <span class="">Customizable</span> & Configurable
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 No databases needed
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 Version controllable
                             </li>
                             
-                            <li class="mt-2 whitespace-nowrap">
+                            <li class="mt-2">
                                 And Much More
                             </li>
                             
                         </ul>
                    
-                        <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center group">
+                        <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded   group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-green-300">Installation Guide</span>
                         </a>
