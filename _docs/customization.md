@@ -31,6 +31,76 @@ With a concept directly inspired by [Laravel Jetstream](https://jetstream.larave
 ],
 ```
 
+### Site URL Configuration
+
+
+Hyde offers a few options to configure URLs and links for compiled files. Here is an overview.
+
+#### Site URL
+
+If you want, you can set your site's URL in the Hyde config, or in the .env file.
+
+The URL will then be used in meta tags to create permalinks.
+If you are serving your site from a subdirectory, you will
+need to include that in the path without a trailing slash.
+
+
+```php
+// Default
+'site_url' => env('SITE_URL', null),
+
+// Examples
+'site_url' => env('https://example.org'),
+'site_url' => env('https://example.org/blog'),
+```
+
+#### Pretty URLs (Links that do not end in .html)
+
+Introduced in v0.25.0, you can now enable "pretty URLs". When the setting
+is enabled, generated links in the compiled HTML site are without the
+`.html` extension. Since this breaks local browsing you can leave
+the setting disabled, and instead add the `--pretty-urls` flag
+when running the `php hyde build` command for deployment.
+
+
+```php
+'prettyUrls' => false, // Default is false
+```
+
+
+#### Generate sitemap.xml
+
+When enabled, a sitemap.xml will automatically be generated when you compile your static site.
+Note that this requires that a site_url is set!
+
+```php // config/hyde.php
+'generateSitemap' => true, // Default is true
+```
+
+#### RSS feed generation
+
+When enabled, an RSS feed with your Markdown blog posts will be generated when you compile your static site.
+Note that this requires that a site_url is set!
+
+```php // config/hyde.php
+'generateRssFeed' => true, // Default is true
+```
+
+You can customize the output filename using the following:
+
+```php // config/hyde.php
+'rssFilename' => 'feed.rss', // Default is feed.xml
+```
+
+You can set the RSS channel description using the following:
+
+```php // config/hyde.php
+'rssDescription' => 'A collection of articles and tutorials from my blog', // Example
+```
+
+If an rssDescription is not set one is created by appending "RSS Feed" to your site name.
+
+
 ### Authors
 Hyde has support for adding authors in front matter, for example to
 automatically add a link to your website or social media profiles.
@@ -83,9 +153,9 @@ One of my (the author's) favourite features with Hyde is its automatic navigatio
 #### How it works:
 The sidebar works by creating a list of all the documentation pages.
 
-The navigation menu is a bit more sophisticated, it adds all the top-level Blade and Markdown pages. It also adds an automatic link to the docs if there is an `index.md` or `readme.md` in the `_docs` directory.
+The navigation menu is a bit more sophisticated, it adds all the top-level Blade and Markdown pages. It also adds an automatic link to the docs if there is an `index.md` in the `_docs` directory.
 
-#### Reordering Items
+#### Reordering Sidebar Items
 Sadly, Hyde is not intelligent enough to determine what order items should be in (blame Dr Jekyll for this), so you will probably want to set a custom order.
 
 Reordering items in the documentation sidebar is as easy as can be. In the hyde config, there is an array just for this. When the sidebar is generated it looks through this config array. If a slug is found here it will get priority according to its position in the list. If a page does not exist in the list they get priority 999, which puts them last.
@@ -102,41 +172,91 @@ Let's see an example:
 ]
 ```
 
-> Navigation menu items will be ordered in the same way in a coming update, but for now, they can be reordered by overriding them which you can learn in the next section.
 
-#### Adding Custom Navigation Menu Links
-> Until the navigation link order is implemented, you can use this feature to reorder navigation menu items.
+#### Reordering Navigation Menu Items
 
-The links are added in the config/hyde.php file, and the syntax for adding custom links is documented in the config. Here are some examples:
+Hyde makes an effort to organize the menu items in a sensible way. Putting your most important pages first. This of course may not always be how you want, so it's easy to reorder the menu items. Simply override the `navigation.order` array in the Hyde config. The priorities set will determine the order of the menu items. Lower values are higher in the menu. Any pages not listed will get priority 999.
 
 ```php
-// torchlight! {"lineNumbers": false}
-// External link
-[
-    'title' => 'GitHub',
-    'destination' => 'https://github.com/hydephp/hyde',
-    'priority' => 1200,
-],
-
-// Internal link (Hyde automatically resolves relative paths)
-[
-    'title' => 'Featured Blog Post',
-    'slug' => 'posts/hello-world',
-    // The 'priority' is not required.
+// filepath config/hyde.php
+'navigation' => [
+    'order' => [
+        'index' => 0, // _pages/index.md (or .blade.php)
+        'posts' => 10, // _pages/posts.md (or .blade.php)
+        'docs' => 100, // _docs/index.md
+    ]
 ]
 ```
 
-#### Removing Items (Blacklist)
+You can also set the priority of a page directly in the front matter. This will override any dynamically infered or config defined priority. While this is useful for one-offs, it can make it harder to reorder items later on. It's up to you which method you prefer to use.
 
-Sometimes, especially if you have a lot of pages, you may want to prevent links from showing up in the main navigation menu. To remove items from being automatically added, simply add the slug to the blacklist. As you can see, the `404` page has already been filled in for you.
-
-```php
-'navigationMenuBlacklist' => [
-    '404'
-],
+```markdown
+---
+navigation:
+    priority: 10
+---
 ```
 
-> Tip: You can publish the included 404 page using `php hyde publish:404`!
+Note that since Blade pages do not support front matter, this will only work for Markdown pages.
+
+#### Adding Custom Navigation Menu Links
+
+You can easily add custom navigation menu links similar how we add Authors. Simply add a `NavItem` model to the `navigation.custom` array. 
+
+When linking to an external site, you should use the `NavItem::toLink()` method facade. The first two arguments are the destination and label, both required. Third argument is the priority, which is optional.
+
+```php
+// filepath config/hyde.php
+'navigation' => [
+    'custom' => [
+        NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 200),
+    ]
+]
+```
+
+Simplified, this will then be rendered as follows:
+
+```html
+<a href="https://github.com/hydephp/hyde">GitHub</a>
+```
+
+
+#### Excluding Items (Blacklist)
+
+Sometimes, especially if you have a lot of pages, you may want to prevent links from showing up in the main navigation menu. To remove items from being automatically added, simply add the slug to the blacklist. As you can see, the `404` page has already been filled in for you. Note that we don't specify the page type, since only top level pages are added to the navigation menu.
+
+```php
+'navigation' => [
+    'exclude' => [
+        '404'
+    ]
+]
+```
+
+You can also specify that a page should be excluded by setting the page front matter. Note that since Blade pages do not support front matter, this will only work for Markdown pages.
+
+```markdown
+---
+navigation:
+    hidden: true
+---
+```
+
+#### Changing the menu item labels
+
+Hyde makes a few attempts to find a suitable label for the navigation menu items to automatically create helpful titles. You can override the title using the `navigation.title` front matter property.
+
+From the Hyde config you can also override the title of the documentation label and home page link using the following options:
+    
+```php
+// filepath config/hyde.php
+'navigation' => [
+    'labels' => [
+        'docs' => 'Documentation',
+        'index' => 'Start',
+    ]
+]
+```
 
 ## Blade Views
 Hyde uses the Laravel templating system called Blade. Most parts have been extracted into components to be customized easily.
