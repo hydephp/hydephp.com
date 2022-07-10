@@ -17,9 +17,11 @@
 |
 */
 
+use Hyde\Framework\Facades\Route;
 use Hyde\Framework\Helpers\Author;
 use Hyde\Framework\Helpers\Features;
 use Hyde\Framework\Helpers\Meta;
+use Hyde\Framework\Models\NavItem;
 
 return [
 
@@ -186,59 +188,46 @@ return [
         'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde)',
     ],
 
-    /*
+      /*
     |--------------------------------------------------------------------------
-    | Custom Navigation Menu Links
+    | Navigation Menu Configuration
     |--------------------------------------------------------------------------
     |
-    | If you are looking to add custom navigation menu links, this is the place!
+    | If you are looking to customize the navigation menu links, this is the place!
     |
-    | Linking to an external site? Supply the full URI to the 'destination'.
-    | Keeping it internal? Pass the 'slug' relative to the document root.
-    |
-    | To get started quickly, you can uncomment the defaults here.
-    | Tip: Only the title and slug parameters are required.
+    | See the documentation for the full list of options:
+    | https://hydephp.com/docs/master/customization#navigation-menu--sidebar
     |
     */
 
-    'navigation_menu_links' => [
-        [
-            'title' => 'GitHub',
-            'destination' => 'https://github.com/hydephp/hyde',
-            'priority' => 1200,
+    'navigation' => [
+        // These are the pages that should not show up in the navigation menu.
+        'exclude' => [
+            '404',
+            'dashboard',
+            'posts',
+            'privacy',
+            'legal',
+            'changelog',
+            'license',
+            'security',
+            'contributing',
+            'code-of-conduct',
+            'community',
+            'docs/index',
+            'testimonials',
+            'accessibility',
+            'sitemap',
+            'docs'
         ],
-        [
-            'title' => 'Blog',
-            'slug' => 'posts',
-            'priority' => 1000,
+
+        // Any extra links you want to add to the navigation menu can be added here.
+        // To get started quickly, you can uncomment the defaults here.
+        // See the documentation link above for more information.
+        'custom' => [
+            NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
+            NavItem::toRoute(Route::get('posts'), 'Blog', 1000),
         ],
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Navigation Menu Blacklist
-    |--------------------------------------------------------------------------
-    | There may be pages you want to exclude from the automatic navigation menu,
-    | such as error pages. Add their slugs here and they will not be included.
-    |
-    */
-
-    'navigation_menu_blacklist' => [
-        '404',
-        'dashboard',
-        'posts',
-        'privacy',
-        'legal',
-        'changelog',
-        'license',
-        'security',
-        'contributing',
-        'code-of-conduct',
-        'community',
-        'docs',
-        'testimonials',
-        'accessibility',
-        'sitemap',
     ],
 
     /*
