@@ -9,13 +9,14 @@
 <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 
 
-<meta name="generator" content="HydePHP v0.47.1-beta.1">
+<meta name="generator" content="HydePHP v0.48.2-beta">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@hyde_php">
 <meta name="twitter:creator" content="@CodeWithCaen">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
 <meta property="og:description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 <script type="text/javascript">
@@ -36,7 +37,6 @@
 <meta name="author" content="Caen">
 <meta name="keywords" content="deepdives">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-3.html">
 <meta property="og:title" content="Internal Architecture of HydePHP - Part 3: Page Models">
 <meta property="og:article:published_time" content="2022-05-13T20:00:00+00:00">
 <meta property="og:image" content="../media/tech-5090539_1920.jpg">
@@ -58,15 +58,15 @@
 </head>
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard">
     <a href="#content" id="skip-to-content">Skip to content</a>
-    <nav aria-label="Main navigation" id="main-navigation" class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+    <nav aria-label="Main navigation" id="main-navigation"
+	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="../" class="font-bold px-4">
 	<img src="/media/logo-masked32-min.png" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
-
 		<div class="ml-auto">
-		<button class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+			<button class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
 	<span class="sr-only">Toggle dark theme</span>
 	<figure class="theme-icon" role="presentation"></figure>
 </button>
@@ -74,39 +74,51 @@
 	</div>
 
 	<div class="block md:hidden">
-		<button id="navigation-toggle-button" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" aria-label="Toggle navigation menu">
-			<svg title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;" id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><title>Open Menu</title><path d="M0 0h24v24H0z" fill="none"/><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
-			<svg title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;" id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><title>Close Menu</title> <path d="M0 0h24v24H0z" fill="none"></path> <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path> </svg>
+		<button id="navigation-toggle-button" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+				aria-label="Toggle navigation menu">
+			<svg title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Open Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+			<svg title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Close Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</svg>
 		</button>
 	</div>
 
-	<div id="main-navigation-links" class="w-full hidden md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700">
+	<div id="main-navigation-links"
+		 class="w-full hidden md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700">
 		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
-						<li class="md:mx-2">
-				<a href="../" 
+							<li class="md:mx-2">
+					<a href="../" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-	Home
-</a>			</li>
-						<li class="md:mx-2">
-				<a href="../about" 
+    Home
+</a>				</li>
+							<li class="md:mx-2">
+					<a href="../about" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-	About
-</a>			</li>
-						<li class="md:mx-2">
-				<a href="../features" 
+    About
+</a>				</li>
+							<li class="md:mx-2">
+					<a href="../features" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-	Features
-</a>			</li>
-						<li class="md:mx-2">
-				<a href="../posts" 
+    Features
+</a>				</li>
+							<li class="md:mx-2">
+					<a href="../posts" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-	Blog
-</a>			</li>
-						<li class="md:mx-2">
-				<a href="https://github.com/hydephp/hyde" 
+    Blog
+</a>				</li>
+							<li class="md:mx-2">
+					<a href="https://github.com/hydephp/hyde" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-	GitHub
-</a>			</li>
+    GitHub
+</a>				</li>
 					</ul>
 		<a id="docs-nav-button" href="docs" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
