@@ -41,11 +41,16 @@ $app->singleton(
 | Set Important Hyde Configurations
 |--------------------------------------------------------------------------
 |
-| Next, we need to configure Hyde to to use our project's base path.
+| Next, we need to configure Hyde to use our project's base path.
+|
+| There are two ways we can do this, previously we were using getcwd(),
+| which allows for a lot of flexibility, but can also cause problems.
+| See this issue: https://github.com/hydephp/develop/issues/212
 |
 */
 
-\Hyde\Framework\Hyde::setBasePath(getcwd());
+// @deprecated usage \Hyde\Framework\Hyde::setBasePath(getcwd());
+\Hyde\Framework\Hyde::setBasePath(dirname(__DIR__));
 
 /*
 |--------------------------------------------------------------------------
