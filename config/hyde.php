@@ -221,12 +221,16 @@ return [
             'docs'
         ],
 
+        'order' => [
+            'live-demos' => 1000
+        ],
+
         // Any extra links you want to add to the navigation menu can be added here.
         // To get started quickly, you can uncomment the defaults here.
         // See the documentation link above for more information.
         'custom' => [
             NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
-            NavItem::toRoute(Route::get('posts'), 'Blog', 1000),
+            NavItem::toRoute(Route::get('posts'), 'Blog', 1050),
         ],
     ],
 
