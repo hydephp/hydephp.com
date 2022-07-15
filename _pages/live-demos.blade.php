@@ -25,7 +25,7 @@
 				</div>
 				<div class="px-6 pb-4 text-center mt-3">
 					<a href="https://github.com/hydephp/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a href="https://hydephp.github.io/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-400 rounded-full">Live Demo</a>
+					<a href="https://hydephp.github.io/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 				</div>
 				<div class="px-6 pb-4 text-center mt-3">
 					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-400 rounded-full">Live Demo</a>
+					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 				</div>
 			</div>
 		</div>
