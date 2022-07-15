@@ -29,7 +29,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
+		{{-- <div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
 			<div class="flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 				<img class="h-56 rounded-t-lg" alt="article image"
 					src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1343&q=80">
@@ -45,7 +45,7 @@
 					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 				</div>
 			</div>
-		</div>
+		</div> --}}
 	</div>
 </main>
 
