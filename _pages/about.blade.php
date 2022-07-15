@@ -24,6 +24,11 @@
 
 @include('sections.features')
 
+<section id="features">
+@include('sections.interactive')
+</section>
+
+
 <style> html, body { scroll-behavior: smooth; } </style>
 @push('footer')
 <div>

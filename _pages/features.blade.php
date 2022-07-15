@@ -1,7 +1,1 @@
-@extends('hyde::layouts.app')
-@section('content')
-@php($title = "Features")
-
-@include('sections.interactive')
-
-@endsection
+<meta http-equiv="refresh" content="0; URL=about#features" />

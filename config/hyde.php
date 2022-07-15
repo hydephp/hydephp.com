@@ -218,7 +218,8 @@ return [
             'testimonials',
             'accessibility',
             'sitemap',
-            'docs'
+            'docs',
+            'features' // merged with about
         ],
 
         'order' => [
