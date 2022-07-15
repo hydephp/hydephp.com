@@ -223,7 +223,7 @@ return [
         ],
 
         'order' => [
-            'live-demos' => 1000
+            'live-demos' => 1100
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
