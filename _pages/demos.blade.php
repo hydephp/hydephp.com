@@ -13,7 +13,7 @@
 
 	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
 		<div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
-			<div class="flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 				<a href="https://hydephp.github.io/portfolio-demo"><img class="h-56 rounded-t-lg" alt="article image"
 					src="/media/portfolio-composite-min.png"></a>
 				<div class="px-6 pt-4 mb-2 text-xl font-bold">
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		{{-- <div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
-			<div class="flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 				<img class="h-56 rounded-t-lg" alt="article image"
 					src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1343&q=80">
 				<div class="px-6 pt-4 mb-2 text-xl font-bold">
