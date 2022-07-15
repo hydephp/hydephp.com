@@ -100,9 +100,9 @@
     About
 </a>				</li>
 							<li class="md:mx-2">
-					<a href="features" 
+					<a href="demos" 
 	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    Features
+    Demos
 </a>				</li>
 							<li class="md:mx-2">
 					<a href="posts" 
@@ -325,6 +325,328 @@
 		</div>
 	</div>
 </section>
+
+<section id="features">
+<section id="first" class="py-16 px-4 text-center">
+	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+		Turn Markdown into Blog Posts
+	</h2>
+	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
+		Write content. Not code.*
+	</strong>
+	<div class="text-xl text-slate-700  dark:text-gray-100">
+		<small>*Unless you want to, of course.</small>
+	</div>
+	<style>
+		#argon-section-header {
+			align-items: center;
+		}
+	</style>
+	<div class="lg:hidden sm:px-8 py-4">
+		<style>
+	#delta {
+		width: 600px;
+		height: 350px;
+		overflow: hidden;
+		position: relative;
+	}
+	
+	#delta figure {
+		width: 600px;
+		height: 350px;
+		padding: 20px;
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+	
+	#delta #start {
+		background-image: url('./media/argon-d00ed0ae01ca464d63a18c80d1d403521877c210728df0d94d57511d5f76adfe.png');
+	}
+	#delta #end {
+		background-image: url('./media/example_post_hello_world_mbp.png');
+	}
+	#delta #mask {
+		width: 600px;
+		height: 350px;
+		z-index: 10;
+		position: relative;
+		overflow: hidden;
+		top: 0;
+	}
+	#delta-container {
+		position: relative;
+		width: fit-content;
+		margin: 0 auto;
+	}
+	#delta-container #slider {
+		width: 350px;
+		transform: rotate(90deg);
+		position: absolute;
+		z-index: 30;
+		top: 175px;
+		left: 400px;
+	}
+	#slider {
+		transition: opacity 0.5s ease-in-out;
+	}
+	@media  screen and (max-width: 600px) {
+		#delta-container {
+			width: 100%;
+		}
+
+		#delta {
+			min-width: 280px;
+			width: 100%;
+			max-width: 100vw;
+		}
+		
+		#delta figure {
+			min-width: 280px;
+			width: 100%;
+			max-width: 100vw;
+		}
+		
+		#delta #mask {
+			min-width: 280px;
+			width: 100%;
+			max-width: 100vw;
+		}
+	}
+</style>
+
+<div id="delta-container">
+	<div id="delta" >
+	
+		<figure id="start"></figure>
+		
+		<div id="mask" style="max-height: 0%;">
+			<figure id="end"></figure>
+		</div>
+	</div>
+	<input type="range" min="0" max="100" value="0" class="slider" id="slider" style="opacity: 0;">
+</div>
+<script>
+	// Check if user has prefers reduced motion enabled
+	if (window.matchMedia && window.matchMedia('(prefers-reduced-motion)').matches) {
+		console.log('Prefers reduced motion detected. Animations disabled.');
+	} else {
+		var slider = document.getElementById("slider");
+		
+		var end = document.getElementById("end");
+		var mask = document.getElementById("mask");
+
+		slider.oninput = function() {
+			end.style.top = this.value;
+				
+			var endPos = parseInt(this.value) + 1.5;
+		
+			mask.style.maxHeight = endPos + "%";
+		}
+			
+		let lastKnownScrollPosition = 0;
+		let ticking = false;
+
+		function reactToScroll(scrollPos) {
+			value = (scrollPos - 20) * ((Math.exp(0.3) - 1) * (scrollPos * 0.01));
+			slider.value = value;
+			slider.dispatchEvent(new Event('input'));
+		}
+
+		document.addEventListener('scroll', function(e) {
+		lastKnownScrollPosition = window.scrollY;
+
+		if (!ticking) {
+			window.requestAnimationFrame(function() {
+			reactToScroll(lastKnownScrollPosition);
+			ticking = false;
+			});
+
+			ticking = true;
+		}
+		});
+
+		// Show the slider on load
+		window.addEventListener('load', function(e) {
+			slider.style.opacity = 1;
+		});
+
+
+	}
+</script>	</div>
+	<div id="argon-section-header" class="hidden lg:flex max-w-7xl my-8 mx-auto items-center clear-both lg:px-8">
+		<div class="float-left z-10" style="margin-right: -40px;" data-aos="fade-right">
+			<style>#argon-21119f2 pre{border-radius:.25rem;margin-top:1rem;margin-bottom:1rem;overflow-x:auto}#argon-21119f2 pre code.torchlight{display:block;min-width:-webkit-max-content;min-width:-moz-max-content;min-width:max-content;padding-top:1rem;padding-bottom:1rem}#argon-21119f2 pre code.torchlight .line{padding-left:1rem;padding-right:1rem}#argon-21119f2 pre code.torchlight .line-number{margin-right:1rem}.argon-card{min-width:320px;max-width:800px;border-radius:16px;overflow:hidden;background:#292d3e;width:fit-content}.argon-card article,code,menu,pre{margin:0;padding:0}.argon-card pre>code{font-family:'Fira Code',monospace}.argon-card header{padding:8px 4px;background:#212529;color:#fff;display:flex;align-items:center}.argon-card header h1{font-size:14px;font-weight:400;margin:0 auto;color:rgba(255,255,255,.75);font-family:sans-serif}.argon-card header menu{user-select:none;margin-left:8px;float:left;position:absolute}.argon-card header menu button{all:unset;display:inline-block;width:12px;height:12px;border-radius:50%;cursor:pointer;opacity:.75}.argon-card header menu button:hover{opacity:1}.argon-card header menu button.red{background-color:#f3615a}.argon-card header menu button.yellow{background-color:#f4c036}.argon-card header menu button.green{background-color:#3ccb3e}</style>
+
+<style>
+    #argon-21119f2 {
+        z-index: 1;
+        font-size: 50%;
+    }
+    #argon-21119f2 header {
+        padding: 4px 4px;
+        font-size: 10px;
+    }
+    #argon-21119f2 header menu button {
+        width: 8px;
+        height: 8px;
+    }
+
+    @media (min-width: 1000px) {
+        #argon-21119f2 {
+            font-size: 62.5%;
+        }
+    }
+    @media (min-width: 1400px) {
+        #argon-21119f2 {
+            font-size: 75%;
+            margin-top: 40px;
+        }
+    }
+</style>
+<section class="argon-card text-left shadow-2xl" id="argon-21119f2">
+    <header>
+        <menu> <button class="red"></button> <button class="yellow"></button> <button class="green"></button> </menu>
+        <h1 style="font-size: 10px;">_posts/hello-world.md</h1>
+    </header>
+    <article>
+        <pre><code data-theme="material-theme-palenight" data-lang="markdown" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Hello World!</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Short post excerpt for previews and meta tags</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">demo</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-03-29 09:16</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem markdownum Austri occupat redire sum sponte arcus,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">ferae</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">http://www.aetheraet.net/lacrimissortita.aspx</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> longo,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">timuit magnanimus aera, violentam. Tractu ter.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">1.</span><span style="color: #A6ACCD;"> Pelopeia et terras iussa cavernas</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">2.</span><span style="color: #A6ACCD;"> Petit ignoscite ac nuda miserum Tereus</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">3.</span><span style="color: #A6ACCD;"> Tuli facinus Panaque virgo sentire copia</span></div></code></pre>
+    </article>
+</section>
+		</div>
+		<div class="float-right" data-aos="fade-up">
+			<style>
+    #argon-df2fd49 {
+        height: fit-content;
+    }
+    #argon-df2fd49 header {
+        padding: 6px 4px;
+        font-size: 10px;
+        background: #343434;
+    }
+    #argon-df2fd49 header menu button {
+        width: 8px;
+        height: 8px;
+    }
+</style>
+<section class="argon-card shadow-2xl" id="argon-df2fd49">
+    <header>
+        <menu> <button class="red"></button> <button class="yellow"></button> <button class="green"></button> </menu>
+        <h1 style="font-size: 10px;">_site/posts/hello-world.html</h1>
+    </header>
+    <article>
+        <img src="./media/example_post_hello_world_mbp.png" alt="Markdown page example screenshot">
+    </article>
+</section>
+		</div>
+	</div>
+	<div class="clear-both"></div>
+</section>
+
+<section id="pages-section-wrapper" class="mx-auto items-center text-center py-16 px-4 bg-slate-100 dark:bg-slate-800">
+	<div  id="pages-section">
+		
+	<div id="slide1" class="slide mx-auto items-center">
+		<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-white px-3 my-3">
+			<div id="pagesSectionHeader">
+				Create Markdown Driven Pages
+			</div>
+		</h1>
+		<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-slate-200 px-3">
+			With ease. Front Matter included, if you want.
+		</strong>
+		<div class="p-8  max-w-5xl mx-auto" data-aos="fade-up">
+			<picture class="shadow-2xl mx-auto">
+				<source media="(max-width: 425px)" srcset="./media/markdown-page-example-ios.png">
+				<img 
+					src="./media/markdown-pages.png"
+					alt="markdown-page-example">
+			</picture>
+		</div>
+	</div>
+	<div id="slide2" class="slide mx-auto items-center mt-32">
+		<h1 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-white px-3 my-3 mt-20">
+			<div id="pagesSectionHeader">
+				Or use Laravel's Blade
+			</div>
+		</h1>
+		<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-slate-200 px-3">
+			For those times you need full control.
+		</strong>
+		<div class="p-8  max-w-5xl mx-auto">
+			<iframe loading="lazy" width="100%" height="100%" style="min-height: 550px; overflow: hidden; border-radius: 1rem;" src="https://cdn.desilva.se/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/argon-blade-example-animated.html?1" frameborder="0"></iframe>
+		</div>
+	</div>
+</div>
+
+</section><section class="mx-auto items-center text-center py-16 px-4 bg-white dark:bg-slate-800">
+	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+		Beautiful Documentation Pages
+	</h2>
+	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
+		All without breaking a sweat.
+	</strong>
+
+	<div class="p-8  max-w-5xl mx-auto" data-aos="fade-up">
+		<picture>
+			<source media="(max-width: 425px)" srcset="./media/documentation-page-example-ios.png">
+			<img class="shadow-2xl mx-auto"
+				src="./media/documentation-page-example-mbp.png"
+				alt="documentation-page-example">
+		</picture>
+	</div>
+	<p>
+		<a href="https://github.com/hydephp/examples/blob/24218d98cf86aea217729337ad80801d6930f5a0/examples/markdown-documentation/installation.md">View source on GitHub</a>
+	</p>
+</section>
+<section class="mx-auto items-center text-center py-16 px-4">
+	<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3">
+		Fully Mobile Friendly, of course.
+	</h2>
+	<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3">
+		Enjoy your site in any size of screen.
+	</strong>
+	<div class=" w-full max-w-7xl mx-auto flex justify-center py-8 lg:mt-4">
+		<img src="/media/all-devices-black-shadow.png" alt="Lineup of a Hyde website shown on different sized devices">
+	</div>
+</section>
+<section class="mx-auto items-center py-16 px-4  bg-white dark:bg-slate-800">
+	<header class="text-center">
+		<h2 class="text-2xl md:3-xl lg:text-5xl font-black text-slate-700 dark:text-gray-100 px-3 my-3 text-center ">
+			Clean Semantic HTML
+		</h2>
+		<strong class="text-xl md:text-2xl lg:text-3xl text-slate-800 dark:text-gray-200 px-3 text-center ">
+			Data Rich, SEO Friendly, and Accessible.
+		</strong>
+		<p class="text-md max-w-2xl mx-auto mt-4">
+			The Hyde Blogging Module is compiles your Markdown into Semantic HTML enriched with Microdata.
+			Automatic ARIA-roles ensure that your content is accessible to screenreaders.
+		</p>
+	</header>
+	<style>
+		.explorer-section {
+			margin: 40px auto;
+			max-width: 1000px;
+		}
+		.explorer-section iframe {
+			min-width: 640px;
+			min-height: 660px;
+			margin: 40px auto;
+		}
+	</style>
+	
+	<section class="explorer-section hidden sm:block">
+		<iframe loading="lazy" width="100%" height="100%" src="https://cdn.desilva.se/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/explorer.html" frameborder="0"></iframe>
+	</section>
+</section>
+
+<style>
+	.devices img {
+		max-height: 80vh;
+	}
+</style>
+</section>
+
 
 <style> html, body { scroll-behavior: smooth; } </style>
  

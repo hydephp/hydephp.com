@@ -1,926 +1,444 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>HydePHP - Customizing your Site</title>
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Customizing your Site</title>
 
-    <link
-      rel="shortcut icon"
-      href="../../media/favicon.ico"
-      type="image/x-icon" />
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
-    <meta name="author" content="Caen De Silva" />
-    <meta
-      name="description"
-      content="HydePHP - Elegant and Powerful Static App Builder" />
-    <meta
-      name="keywords"
-      content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation" />
-    <meta name="generator" content="HydePHP v0.48.2-beta" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="@hyde_php" />
-    <meta name="twitter:creator" content="@CodeWithCaen" />
-    <meta
-      name="twitter:description"
-      content="Make static websites, blogs, and documentation pages with the tools you already know and love." />
-    <meta
-      name="twitter:image"
-      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
-    <meta property="og:site_name" content="HydePHP" />
-    <meta property="og:url" content="https://hydephp.com/" />
-    <meta
-      property="og:description"
-      content="HydePHP - Elegant and Powerful Static App Builder" />
-    <meta
-      property="og:image"
-      content="https://opengraph.githubassets.com/1/hydephp/hyde" />
-    <meta property="og:image:alt" content="GitHub OpenGraph Image" />
-    <script type="text/javascript">
-      (function () {
-        var pioneerAnalytics = (window.pioneerAnalytics =
-          window.pioneerAnalytics || []);
-        if (pioneerAnalytics.initialize) return;
-        if (pioneerAnalytics.invoked) {
-          if (window.console && console.error) {
-            console.error("Pioneer snippet included twice.");
-          }
-          return;
-        }
-        pioneerAnalytics.invoked = true;
-        pioneerAnalytics.debugMode = false;
-        pioneerAnalytics.methods = [
-          "page",
-          "identify",
-          "active",
-          "reset",
-          "debug",
-          "trackSubmit",
-          "trackClick",
-          "trackLink",
-          "trackForm",
-          "pageview",
-          "group",
-          "track",
-          "ready",
-          "alias",
-          "once",
-          "off",
-          "on",
-          "addSourceMiddleware",
-          "addIntegrationMiddleware",
-          "setAnonymousId",
-          "addDestinationMiddleware",
-          "initialize",
-        ];
-        pioneerAnalytics.requestQueue = [];
-        pioneerAnalytics.factory = function (method) {
-          return function () {
-            var args = Array.prototype.slice.call(arguments);
-            args.unshift(method);
-            pioneerAnalytics.push(args);
-            return pioneerAnalytics;
-          };
-        };
-        for (var i = 0; i < pioneerAnalytics.methods.length; i++) {
-          var key = pioneerAnalytics.methods[i];
-          pioneerAnalytics[key] = pioneerAnalytics.factory(key);
-        }
-        pioneerAnalytics.load = function (key, options) {
-          var script = document.createElement("script");
-          script.type = "text/javascript";
-          script.async = true;
-          script.src = "https://assets.pioneer.app/pioneer-analytics.min.js";
-          var first = document.getElementsByTagName("script")[0];
-          first.parentNode.insertBefore(script, first);
-          pioneerAnalytics._loadOptions = options;
-        };
-        pioneerAnalytics.SNIPPET_VERSION = 1;
-        pioneerAnalytics._writeKey = "fa1f4d9f12a5f775c3b983d1090081a2";
-        pioneerAnalytics.load(pioneerAnalytics._writeKey);
-        pioneerAnalytics.page();
-        pioneerAnalytics.debug(false);
-      })();
-    </script>
-    <link
-      rel="canonical"
-      href="https://hydephp.com/docs/master/customization" />
-    <link
-      rel="sitemap"
-      type="application/xml"
-      title="Sitemap"
-      href="https://hydephp.com/sitemap.xml" />
-    <meta
-      name="twitter:title"
-      content="HydePHP - Customizing your Site
-" />
-    <meta
-      property="og:title"
-      content="HydePHP - Customizing your Site
-" />
 
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.css" />
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.48.2-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image:alt" content="GitHub OpenGraph Image">
+<script type="text/javascript">
+              (function(){var pioneerAnalytics=window.pioneerAnalytics=window.pioneerAnalytics||[];if(pioneerAnalytics.initialize)return;if(pioneerAnalytics.invoked){if(window.console&&console.error){console.error("Pioneer snippet included twice.")}return}pioneerAnalytics.invoked=true;pioneerAnalytics.debugMode=false;pioneerAnalytics.methods=["page","identify","active","reset","debug","trackSubmit","trackClick","trackLink","trackForm","pageview","group","track","ready","alias","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","initialize"];pioneerAnalytics.requestQueue=[];pioneerAnalytics.factory=function(method){return function(){var args=Array.prototype.slice.call(arguments);args.unshift(method);pioneerAnalytics.push(args);return pioneerAnalytics}};for(var i=0;i<pioneerAnalytics.methods.length;i++){var key=pioneerAnalytics.methods[i];pioneerAnalytics[key]=pioneerAnalytics.factory(key)}pioneerAnalytics.load=function(key,options){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src="https://assets.pioneer.app/pioneer-analytics.min.js";var first=document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script,first);pioneerAnalytics._loadOptions=options};pioneerAnalytics.SNIPPET_VERSION=1;
+                pioneerAnalytics._writeKey="fa1f4d9f12a5f775c3b983d1090081a2";
+                pioneerAnalytics.load(pioneerAnalytics._writeKey);
+                pioneerAnalytics.page();
+                pioneerAnalytics.debug(false);
+              })();
+          </script>
+<link rel="canonical" href="https://hydephp.com/docs/master/customization" />
+<link rel="sitemap" type="application/xml" title="Sitemap" href="https://hydephp.com/sitemap.xml" />
+<meta name="twitter:title" content="HydePHP - Customizing your Site" />
+<meta property="og:title" content="HydePHP - Customizing your Site" />
 
-    <link rel="stylesheet" href="../../media/app.css" />
 
-    <meta id="meta-color-scheme" name="color-scheme" content="light" />
-    <script>
-      if (
-        localStorage.getItem("color-theme") === "dark" ||
-        (!("color-theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        document.documentElement.classList.add("dark");
-        document
-          .getElementById("meta-color-scheme")
-          .setAttribute("content", "dark");
-      } else {
-        document.documentElement.classList.remove("dark");
-      }
-    </script>
-  </head>
+ 
 
-  <body id="lagrafo-app" class="bg-white dark:bg-gray-900">
-    <a href="#content" id="skip-to-content">Skip to content</a>
 
-    <script>
-      document.body.classList.add("js-enabled");
-    </script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.css">
 
-    <nav id="mobile-navigation">
-      <strong class="mr-auto">
-        <a href="../../docs/master"> HydePHP Docs </a>
-      </strong>
-      <button
-        class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-        title="Toggle theme">
-        <span class="sr-only">Toggle dark theme</span>
-        <figure class="theme-icon" role="presentation"></figure>
-      </button>
-      <button
-        id="sidebar-toggle"
-        title="Toggle sidebar"
-        aria-label="Toggle sidebar navigation menu">
-        <span class="icon-bar" role="presentation"></span>
-        <span class="icon-bar" role="presentation"></span>
-        <span class="icon-bar" role="presentation"></span>
-        <span class="icon-bar" role="presentation"></span>
-      </button>
-    </nav>
-    <aside id="sidebar">
-      <header id="sidebar-header">
-        <div id="sidebar-brand">
-          <strong>
-            <a href="../../docs/master"> HydePHP Docs </a>
-          </strong>
-          <button
-            class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-            title="Toggle theme">
-            <span class="sr-only">Toggle dark theme</span>
-            <figure class="theme-icon" role="presentation"></figure>
-          </button>
-        </div>
-      </header>
-      <nav id="sidebar-navigation">
-        <ul id="sidebar-navigation-menu" role="list">
-          <li class="sidebar-category" role="listitem">
-            <h4 class="sidebar-category-heading">Getting Started</h4>
-            <ul class="sidebar-category-list" role="list">
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="quickstart">Quickstart Guide</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="console-commands">Console Commands</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="architecture-concepts">Architecture Concepts</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidebar-category" role="listitem">
-            <h4 class="sidebar-category-heading">Creating Content</h4>
-            <ul class="sidebar-category-list" role="list">
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="blog-posts">Creating Blog Posts</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="static-pages">Markdown &amp; Blade Pages</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="documentation-pages">Documentation Pages</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="managing-assets">Managing assets</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="compile-and-deploy">Compile &amp; Deploy</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sidebar-category" role="listitem">
-            <h4 class="sidebar-category-heading">Digging Deeper</h4>
-            <ul class="sidebar-category-list" role="list">
-              <li class="sidebar-navigation-item active" role="listitem">
-                <a href="customization" aria-current="true"
-                  >Customizing your Site</a
-                >
-                <span class="sr-only">Table of contents</span>
-                <ul class="table-of-contents">
-                  <li>
-                    <a href="#introduction">Introduction</a>
-                  </li>
-                  <li>
-                    <a href="#main-configuration-file"
-                      >Main Configuration File</a
-                    >
-                    <ul>
-                      <li>
-                        <a href="#modules">Modules</a>
-                      </li>
-                      <li>
-                        <a href="#site-url-configuration"
-                          >Site URL Configuration</a
-                        >
-                      </li>
-                      <li>
-                        <a href="#authors">Authors</a>
-                      </li>
-                      <li>
-                        <a href="#footer">Footer</a>
-                      </li>
-                      <li>
-                        <a href="#navigation-menu--sidebar"
-                          >Navigation Menu &amp; Sidebar</a
-                        >
-                      </li>
-                    </ul>
-                  </li>
-                  <li>
-                    <a href="#blade-views">Blade Views</a>
-                  </li>
-                  <li>
-                    <a href="#frontend-styles">Frontend Styles</a>
-                  </li>
-                  <li>
-                    <a href="#commonmark-environment">CommonMark environment</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="advanced-markdown">Advanced Markdown</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="extensions">Extensions &amp; Integrations</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="advanced-customization">Advanced Customization</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="collections">File-based Collections</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="troubleshooting">Troubleshooting</a>
-              </li>
-              <li class="sidebar-navigation-item" role="listitem">
-                <a href="updating-hyde">Updating Hyde</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </nav>
-      <footer id="sidebar-footer">
-        <p>
-          <a href="../../">Back to home page</a>
-        </p>
-      </footer>
-    </aside>
-    <main id="content">
-      <article
-        id="document"
-        itemscope
-        itemtype="http://schema.org/Article"
-        class="mx-auto lg:ml-8 prose dark:prose-invert max-w-3xl torchlight-enabled">
-        <header id="document-header">
-          <h1>Customizing your Site</h1>
-        </header>
-        <section id="document-main-content" itemprop="articleBody">
-          <h2>
-            Introduction<a
-              id="introduction"
-              href="#introduction"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h2>
-          <p>
-            Hyde favours
-            <a
-              href="https://en.wikipedia.org/wiki/Convention_over_configuration"
-              >&quot;Convention over Configuration&quot;</a
-            >
-            and thus comes preconfigured with sensible defaults. However, Hyde
-            also strives to be modular and endlessly customizable hackable if
-            you need it. This page guides you through the endless options
-            available!
-          </p>
-          <h2>
-            Main Configuration File<a
-              id="main-configuration-file"
-              href="#main-configuration-file"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h2>
-          <p>
-            The main configuration file is in <code>config/hyde.php</code>. The
-            <a
-              href="https://github.com/hydephp/hyde/blob/master/config/hyde.php"
-              >config file</a
-            >
-            is fully documented, so I recommend you take a look to see all the
-            options.
-          </p>
-          <p>
-            In this config file, you can customize the site name, what modules
-            to enable, and programmatically customize the navigation menu and
-            documentation sidebar.
-          </p>
-          <p>Here are a few examples of the config options.</p>
-          <h3>
-            Modules<a
-              id="modules"
-              href="#modules"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h3>
-          <p>
-            With a concept directly inspired by
-            <a href="https://jetstream.laravel.com/">Laravel Jetstream</a>, this
-            setting allows you to toggle various modules.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">blogPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">bladePages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdownPages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Features::documentationPages(),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-          <h3>
-            Site URL Configuration<a
-              id="site-url-configuration"
-              href="#site-url-configuration"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h3>
-          <p>
-            Hyde offers a few options to configure URLs and links for compiled
-            files. Here is an overview.
-          </p>
-          <h4>
-            Site URL<a
-              id="site-url"
-              href="#site-url"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            If you want, you can set your site's URL in the Hyde config, or in
-            the .env file.
-          </p>
-          <p>
-            The URL will then be used in meta tags to create permalinks. If you
-            are serving your site from a subdirectory, you will need to include
-            that in the path without a trailing slash.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #676E95;">// Default</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SITE_URL</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #676E95;">// Examples</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.org</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.org/blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div></code></pre>
-          <h4>
-            Pretty URLs (Links that do not end in .html)<a
-              id="pretty-urls-links-that-do-not-end-in-html"
-              href="#pretty-urls-links-that-do-not-end-in-html"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            Introduced in v0.25.0, you can now enable &quot;pretty URLs&quot;.
-            When the setting is enabled, generated links in the compiled HTML
-            site are without the <code>.html</code> extension. Since this breaks
-            local browsing you can leave the setting disabled, and instead add
-            the <code>--pretty-urls</code> flag when running the
-            <code>php hyde build</code> command for deployment.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">prettyUrls</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">false,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is false</span></div></code></pre>
-          <h4>
-            Generate sitemap.xml<a
-              id="generate-sitemapxml"
-              href="#generate-sitemapxml"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            When enabled, a sitemap.xml will automatically be generated when you
-            compile your static site. Note that this requires that a site_url is
-            set!
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">generateSitemap</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is true</span></div></code></pre>
-          <h4>
-            RSS feed generation<a
-              id="rss-feed-generation"
-              href="#rss-feed-generation"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            When enabled, an RSS feed with your Markdown blog posts will be
-            generated when you compile your static site. Note that this requires
-            that a site_url is set!
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">generateRssFeed</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is true</span></div></code></pre>
-          <p>You can customize the output filename using the following:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">rssFilename</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">feed.rss</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is feed.xml</span></div></code></pre>
-          <p>You can set the RSS channel description using the following:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">rssDescription</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">A collection of articles and tutorials from my blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Example</span></div></code></pre>
-          <p>
-            If an rssDescription is not set one is created by appending
-            &quot;RSS Feed&quot; to your site name.
-          </p>
-          <h3>
-            Authors<a
-              id="authors"
-              href="#authors"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h3>
-          <p>
-            Hyde has support for adding authors in front matter, for example to
-            automatically add a link to your website or social media profiles.
-            However, it's tedious to have to add those to each and every post
-            you make, and keeping them updated is even harder.
-          </p>
-          <p>
-            You can predefine authors in the Hyde config. When writing posts,
-            just specify the username in the front matter, and the rest of the
-            data will be pulled from a matching entry.
-          </p>
-          <h4>
-            Example<a
-              id="example"
-              href="#example"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>// torchlight! {&quot;lineNumbers&quot;: false}</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">username</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">mr_hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Required username</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Mr. Hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Optional display name</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://hydephp.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Optional website URL</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">],</span></div></code></pre>
-          <p>This is equivalent to the following front matter:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">username</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Mr. Hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://hydephp.com</span></div></code></pre>
-          <p>But you only have to specify the username:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div></code></pre>
-          <h3>
-            Footer<a
-              id="footer"
-              href="#footer"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h3>
-          <p>
-            The footer can be customized using Markdown, and even disabled
-            completely.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Site built with [HydePHP](https://github.com/hydephp/hyde).</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-          <h3>
-            Navigation Menu &amp; Sidebar<a
-              id="navigation-menu--sidebar"
-              href="#navigation-menu--sidebar"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h3>
-          <p>
-            One of my (the author's) favourite features with Hyde is its
-            automatic navigation menu and documentation sidebar generator.
-          </p>
-          <h4>
-            How it works:<a
-              id="how-it-works"
-              href="#how-it-works"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            The sidebar works by creating a list of all the documentation pages.
-          </p>
-          <p>
-            The navigation menu is a bit more sophisticated, it adds all the
-            top-level Blade and Markdown pages. It also adds an automatic link
-            to the docs if there is an <code>index.md</code> in the
-            <code>_docs</code> directory.
-          </p>
-          <h4>
-            Reordering Sidebar Items<a
-              id="reordering-sidebar-items"
-              href="#reordering-sidebar-items"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            Sadly, Hyde is not intelligent enough to determine what order items
-            should be in (blame Dr Jekyll for this), so you will probably want
-            to set a custom order.
-          </p>
-          <p>
-            Reordering items in the documentation sidebar is as easy as can be.
-            In the hyde config, there is an array just for this. When the
-            sidebar is generated it looks through this config array. If a slug
-            is found here it will get priority according to its position in the
-            list. If a page does not exist in the list they get priority 999,
-            which puts them last.
-          </p>
-          <p>Let's see an example:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// This is the default values in the config. It puts the readme.md first in order.</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">documentationPageOrder</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// This is the first entry, so it gets the priority 0</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// This gets priority 1</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">getting-started</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// And this gets priority 2</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Any other pages not listed will get priority 999</span></div><div class='line'><span style="color: #89DDFF;">]</span></div></code></pre>
-          <h4>
-            Reordering Navigation Menu Items<a
-              id="reordering-navigation-menu-items"
-              href="#reordering-navigation-menu-items"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            Hyde makes an effort to organize the menu items in a sensible way.
-            Putting your most important pages first. This of course may not
-            always be how you want, so it's easy to reorder the menu items.
-            Simply override the <code>navigation.order</code> array in the Hyde
-            config. The priorities set will determine the order of the menu
-            items. Lower values are higher in the menu. Any pages not listed
-            will get priority 999.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">0</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _pages/index.md (or .blade.php)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">10</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _pages/posts.md (or .blade.php)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">100</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _docs/index.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">]</span></div></code></pre>
-          <p>
-            You can also set the priority of a page directly in the front
-            matter. This will override any dynamically infered or config defined
-            priority. While this is useful for one-offs, it can make it harder
-            to reorder items later on. It's up to you which method you prefer to
-            use.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">10</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">---</span></div></code></pre>
-          <p>
-            Note that since Blade pages do not support front matter, this will
-            only work for Markdown pages.
-          </p>
-          <h4>
-            Adding Custom Navigation Menu Links<a
-              id="adding-custom-navigation-menu-links"
-              href="#adding-custom-navigation-menu-links"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            You can easily add custom navigation menu links similar how we add
-            Authors. Simply add a <code>NavItem</code> model to the
-            <code>navigation.custom</code> array.
-          </p>
-          <p>
-            When linking to an external site, you should use the
-            <code>NavItem::toLink()</code> method facade. The first two
-            arguments are the destination and label, both required. Third
-            argument is the priority, which is optional.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">NavItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">toLink</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://github.com/hydephp/hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">GitHub</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">200</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">]</span></div></code></pre>
-          <p>Simplified, this will then be rendered as follows:</p>
-          <pre><code data-theme="material-theme-palenight" data-lang="html" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://github.com/hydephp/hyde</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">GitHub</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-          <h4>
-            Excluding Items (Blacklist)<a
-              id="excluding-items-blacklist"
-              href="#excluding-items-blacklist"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            Sometimes, especially if you have a lot of pages, you may want to
-            prevent links from showing up in the main navigation menu. To remove
-            items from being automatically added, simply add the slug to the
-            blacklist. As you can see, the <code>404</code> page has already
-            been filled in for you. Note that we don't specify the page type,
-            since only top level pages are added to the navigation menu.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">exclude</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">404</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">]</span></div></code></pre>
-          <p>
-            You can also specify that a page should be excluded by setting the
-            page front matter. Note that since Blade pages do not support front
-            matter, this will only work for Markdown pages.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">---</span></div></code></pre>
-          <h4>
-            Changing the menu item labels<a
-              id="changing-the-menu-item-labels"
-              href="#changing-the-menu-item-labels"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h4>
-          <p>
-            Hyde makes a few attempts to find a suitable label for the
-            navigation menu items to automatically create helpful titles. You
-            can override the title using the <code>navigation.title</code> front
-            matter property.
-          </p>
-          <p>
-            From the Hyde config you can also override the title of the
-            documentation label and home page link using the following options:
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Documentation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Start</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #89DDFF;">]</span></div></code></pre>
-          <h2>
-            Blade Views<a
-              id="blade-views"
-              href="#blade-views"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h2>
-          <p>
-            Hyde uses the Laravel templating system called Blade. Most parts
-            have been extracted into components to be customized easily.
-          </p>
-          <blockquote>
-            <p>
-              Before editing Blade views you should familiarize yourself with
-              how they work in the official documentation
-              <a href="https://laravel.com/docs/9.x/blade"
-                >https://laravel.com/docs/9.x/blade</a
-              >.
-            </p>
-          </blockquote>
-          <p>
-            To edit the default component you need to publish them first using
-            the <code>hyde publish:views</code> command.
-          </p>
-          <p>
-            The files will then be available in the
-            <code>resources/views/vendor/hyde</code> directory.
-          </p>
-          <h2>
-            Frontend Styles<a
-              id="frontend-styles"
-              href="#frontend-styles"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h2>
-          <p>
-            Hyde is designed to not only serve as a framework but a whole
-            starter kit and comes with a Tailwind starter template for you to
-            get up and running quickly. If you want to customize these, you are
-            free to do so. Please see the
-            <a href="managing-assets.html">Managing Assets</a> page to learn
-            more.
-          </p>
-          <h2>
-            CommonMark environment<a
-              id="commonmark-environment"
-              href="#commonmark-environment"
-              class="heading-permalink"
-              aria-hidden="true"
-              title="Permalink"
-              >#</a
-            >
-          </h2>
-          <p>
-            Hyde uses
-            <a href="https://commonmark.thephpleague.com/">League CommonMark</a>
-            for converting Markdown into HTML.
-          </p>
-          <p>
-            Hyde ships with the GitHub Flavored Markdown extension, and the
-            Torchlight extension is enabled automatically when needed.
-          </p>
-          <p>
-            You can add extra CommonMark extensions, or change the default ones,
-            in the <code>config/markdown.php</code> file.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">extensions</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">GithubFlavoredMarkdownExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Attributes</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">AttributesExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DisallowedRawHtml</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">DisallowedRawHtmlExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">],</span></div></code></pre>
-          <p>
-            In the same file you can also change the config to be passed to the
-            CommonMark environment.
-          </p>
-          <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">config</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">disallowed_raw_html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">disallowed_tags</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[],</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">],</span></div></code></pre>
-        </section>
-        <footer id="document-footer">
-          <p>
-            <i>
-              Syntax highlighting by
-              <a href="https://torchlight.dev/" rel="noopener nofollow"
-                >Torchlight.dev</a
-              >
-            </i>
-          </p>
-          <p class="edit-page-link">
-            <a
-              href="https://github.com/hydephp/develop/blob/master/docs/customization.md"
-              >Edit Page</a
-            >
-          </p>
-        </footer>
-      </article>
-    </main>
 
-    <button
-      id="searchMenuButton"
-      onclick="toggleSearchMenu()"
-      aria-label="Toggle search menu">
-      Search
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        role="presentation">
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path
-          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-      </svg>
-    </button>
-    <button
-      id="searchMenuButtonMobile"
-      onclick="toggleSearchMenu()"
-      aria-label="Toggle search menu">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        role="presentation">
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path
-          d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
-      </svg>
-    </button>
-    <script
-      src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js"
-      defer></script>
-    <script>
-      window.addEventListener("load", function () {
-        const searchIndexLocation = "search.json";
-        const Search = new HydeSearch(searchIndexLocation);
+<link rel="stylesheet" href="../../media/app.css">
 
-        Search.init();
-      });
-    </script>
 
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.js"></script>
 
-    <script defer src="../../media/app.js"></script>
 
-    <dialog
-      id="searchMenu"
-      class="prose dark:prose-invert bg-gray-100 dark:bg-gray-800 fixed">
-      <div id="hyde-search">
-        <noscript>
-          The search feature requires JavaScript to be enabled in your browser.
-        </noscript>
-        <input
-          type="search"
-          name="search"
-          id="search-input"
-          placeholder="Search..."
-          autocomplete="off"
-          autofocus />
-      </div>
-      <footer>
-        <small>
-          Press <code><kbd title="Forward slash">/</kbd></code> to open search
-          window. Use <code><kbd title="Escape key">esc</kbd></code> to close.
-        </small>
-      </footer>
-    </dialog>
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+	
+<body id="lagrafo-app" class="bg-white dark:bg-gray-900">
+	<a href="#content" id="skip-to-content">Skip to content</a>
+	
+	<script>
+		document.body.classList.add('js-enabled');
+	</script>
 
-    <script>
-      if (typeof HTMLDialogElement === "function") {
-        const searchMenu = document.getElementById("searchMenu");
+	<nav id="mobile-navigation">
+		<strong class="mr-auto">
+						<a href="../../docs/master">
+				HydePHP Docs
+			</a>
+					</strong>
+        <button class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<figure class="theme-icon" role="presentation"></figure>
+</button>
+		<button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu">
+			<span class="icon-bar" role="presentation"></span>
+			<span class="icon-bar" role="presentation"></span>
+			<span class="icon-bar" role="presentation"></span>
+			<span class="icon-bar" role="presentation"></span>
+		</button>
+	</nav>
+	<aside id="sidebar">
+		<header id="sidebar-header">
+			<div id="sidebar-brand">
+				<strong>
+										<a href="../../docs/master">
+						HydePHP Docs
+					</a>
+									</strong>
+				<button class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<figure class="theme-icon" role="presentation"></figure>
+</button>
+			</div>
+		</header>
+		<nav id="sidebar-navigation">
+			
+						<ul id="sidebar-navigation-menu" role="list">
+		<li class="sidebar-category" role="listitem">
+		<h4 class="sidebar-category-heading">Getting Started</h4>
+		<ul class="sidebar-category-list" role="list">
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="quickstart">Quickstart Guide</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="console-commands">Console Commands</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="architecture-concepts">Architecture Concepts</a>
+							</li>
+					</ul>
+	</li>
+		<li class="sidebar-category" role="listitem">
+		<h4 class="sidebar-category-heading">Creating Content</h4>
+		<ul class="sidebar-category-list" role="list">
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="blog-posts">Creating Blog Posts</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="static-pages">Markdown &amp; Blade Pages</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="documentation-pages">Documentation Pages</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="managing-assets">Managing assets</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="compile-and-deploy">Compile &amp; Deploy</a>
+							</li>
+					</ul>
+	</li>
+		<li class="sidebar-category" role="listitem">
+		<h4 class="sidebar-category-heading">Digging Deeper</h4>
+		<ul class="sidebar-category-list" role="list">
+						<li class="sidebar-navigation-item active" role="listitem">
+								<a href="customization" aria-current="true">Customizing your Site</a>
+								<span class="sr-only">Table of contents</span>
+				<ul class="table-of-contents">
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#main-configuration-file">Main Configuration File</a>
+<ul>
+<li>
+<a href="#modules">Modules</a>
+</li>
+<li>
+<a href="#site-url-configuration">Site URL Configuration</a>
+</li>
+<li>
+<a href="#authors">Authors</a>
+</li>
+<li>
+<a href="#footer">Footer</a>
+</li>
+<li>
+<a href="#navigation-menu--sidebar">Navigation Menu &amp; Sidebar</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#blade-views">Blade Views</a>
+</li>
+<li>
+<a href="#frontend-styles">Frontend Styles</a>
+</li>
+<li>
+<a href="#commonmark-environment">CommonMark environment</a>
+</li>
+</ul>
 
-        function toggleSearchMenu() {
-          if (searchMenu.hasAttribute("open")) {
-            closeSearchMenu();
-          } else {
-            openSearchMenu();
-          }
-        }
+											</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="advanced-markdown">Advanced Markdown</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="extensions">Extensions &amp; Integrations</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="advanced-customization">Advanced Customization</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="collections">File-based Collections</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="troubleshooting">Troubleshooting</a>
+							</li>
+						<li class="sidebar-navigation-item" role="listitem">
+								<a href="updating-hyde">Updating Hyde</a>
+							</li>
+					</ul>
+	</li>
+	</ul>
+					</nav>
+		<footer id="sidebar-footer">
+			<p>
+				<a href="../../">Back to home page</a>
+			</p>
+		</footer>
+	</aside>
+	<main id="content">
+				<article id="document" itemscope itemtype="http://schema.org/Article" class="mx-auto lg:ml-8 prose dark:prose-invert
+			max-w-3xl torchlight-enabled">
+			
+			
+			<header id="document-header">
+				<h1>Customizing your Site</h1>
+			</header>
+			<section id="document-main-content" itemprop="articleBody">
+				<h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Hyde favours <a href="https://en.wikipedia.org/wiki/Convention_over_configuration">&quot;Convention over Configuration&quot;</a>
+and thus comes preconfigured with sensible defaults. However, Hyde also strives to be modular and endlessly customizable hackable if you need it. This page guides you through the endless options available!</p>
+<h2>Main Configuration File<a id="main-configuration-file" href="#main-configuration-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>The main configuration file is in <code>config/hyde.php</code>. The <a href="https://github.com/hydephp/hyde/blob/master/config/hyde.php">config file</a> is fully documented, so I recommend you take a look to see all the options.</p>
+<p>In this config file, you can customize the site name, what modules to enable, and programmatically customize the navigation menu and documentation sidebar.</p>
+<p>Here are a few examples of the config options.</p>
+<h3>Modules<a id="modules" href="#modules" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>With a concept directly inspired by <a href="https://jetstream.laravel.com/">Laravel Jetstream</a>, this setting allows you to toggle various modules.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">blogPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">bladePages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdownPages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Features::documentationPages(),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3>Site URL Configuration<a id="site-url-configuration" href="#site-url-configuration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Hyde offers a few options to configure URLs and links for compiled files. Here is an overview.</p>
+<h4>Site URL<a id="site-url" href="#site-url" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>If you want, you can set your site's URL in the Hyde config, or in the .env file.</p>
+<p>The URL will then be used in meta tags to create permalinks.
+If you are serving your site from a subdirectory, you will
+need to include that in the path without a trailing slash.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #676E95;">// Default</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SITE_URL</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #676E95;">// Examples</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.org</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">site_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.org/blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div></code></pre>
+<h4>Pretty URLs (Links that do not end in .html)<a id="pretty-urls-links-that-do-not-end-in-html" href="#pretty-urls-links-that-do-not-end-in-html" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Introduced in v0.25.0, you can now enable &quot;pretty URLs&quot;. When the setting
+is enabled, generated links in the compiled HTML site are without the
+<code>.html</code> extension. Since this breaks local browsing you can leave
+the setting disabled, and instead add the <code>--pretty-urls</code> flag
+when running the <code>php hyde build</code> command for deployment.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">prettyUrls</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">false,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is false</span></div></code></pre>
+<h4>Generate sitemap.xml<a id="generate-sitemapxml" href="#generate-sitemapxml" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>When enabled, a sitemap.xml will automatically be generated when you compile your static site.
+Note that this requires that a site_url is set!</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">generateSitemap</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is true</span></div></code></pre>
+<h4>RSS feed generation<a id="rss-feed-generation" href="#rss-feed-generation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>When enabled, an RSS feed with your Markdown blog posts will be generated when you compile your static site.
+Note that this requires that a site_url is set!</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">generateRssFeed</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is true</span></div></code></pre>
+<p>You can customize the output filename using the following:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">rssFilename</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">feed.rss</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Default is feed.xml</span></div></code></pre>
+<p>You can set the RSS channel description using the following:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">rssDescription</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">A collection of articles and tutorials from my blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Example</span></div></code></pre>
+<p>If an rssDescription is not set one is created by appending &quot;RSS Feed&quot; to your site name.</p>
+<h3>Authors<a id="authors" href="#authors" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Hyde has support for adding authors in front matter, for example to
+automatically add a link to your website or social media profiles.
+However, it's tedious to have to add those to each and every
+post you make, and keeping them updated is even harder.</p>
+<p>You can predefine authors in the Hyde config.
+When writing posts, just specify the username in the front matter,
+and the rest of the data will be pulled from a matching entry.</p>
+<h4>Example<a id="example" href="#example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>// torchlight! {&quot;lineNumbers&quot;: false}</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">username</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">mr_hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Required username</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Mr. Hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Optional display name</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://hydephp.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Optional website URL</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>This is equivalent to the following front matter:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">username</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Mr. Hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://hydephp.com</span></div></code></pre>
+<p>But you only have to specify the username:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div></code></pre>
+<h3>Footer<a id="footer" href="#footer" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The footer can be customized using Markdown, and even disabled completely.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Site built with [HydePHP](https://github.com/hydephp/hyde).</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3>Navigation Menu &amp; Sidebar<a id="navigation-menu--sidebar" href="#navigation-menu--sidebar" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>One of my (the author's) favourite features with Hyde is its automatic navigation menu and documentation sidebar generator.</p>
+<h4>How it works:<a id="how-it-works" href="#how-it-works" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The sidebar works by creating a list of all the documentation pages.</p>
+<p>The navigation menu is a bit more sophisticated, it adds all the top-level Blade and Markdown pages. It also adds an automatic link to the docs if there is an <code>index.md</code> in the <code>_docs</code> directory.</p>
+<h4>Reordering Sidebar Items<a id="reordering-sidebar-items" href="#reordering-sidebar-items" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Sadly, Hyde is not intelligent enough to determine what order items should be in (blame Dr Jekyll for this), so you will probably want to set a custom order.</p>
+<p>Reordering items in the documentation sidebar is as easy as can be. In the hyde config, there is an array just for this. When the sidebar is generated it looks through this config array. If a slug is found here it will get priority according to its position in the list. If a page does not exist in the list they get priority 999, which puts them last.</p>
+<p>Let's see an example:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// This is the default values in the config. It puts the readme.md first in order.</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">documentationPageOrder</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// This is the first entry, so it gets the priority 0</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// This gets priority 1</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">getting-started</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// And this gets priority 2</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Any other pages not listed will get priority 999</span></div><div class='line'><span style="color: #89DDFF;">]</span></div></code></pre>
+<h4>Reordering Navigation Menu Items<a id="reordering-navigation-menu-items" href="#reordering-navigation-menu-items" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Hyde makes an effort to organize the menu items in a sensible way. Putting your most important pages first. This of course may not always be how you want, so it's easy to reorder the menu items. Simply override the <code>navigation.order</code> array in the Hyde config. The priorities set will determine the order of the menu items. Lower values are higher in the menu. Any pages not listed will get priority 999.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">0</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _pages/index.md (or .blade.php)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">10</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _pages/posts.md (or .blade.php)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">100</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// _docs/index.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<p>You can also set the priority of a page directly in the front matter. This will override any dynamically infered or config defined priority. While this is useful for one-offs, it can make it harder to reorder items later on. It's up to you which method you prefer to use.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">10</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">---</span></div></code></pre>
+<p>Note that since Blade pages do not support front matter, this will only work for Markdown pages.</p>
+<h4>Adding Custom Navigation Menu Links<a id="adding-custom-navigation-menu-links" href="#adding-custom-navigation-menu-links" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>You can easily add custom navigation menu links similar how we add Authors. Simply add a <code>NavItem</code> model to the <code>navigation.custom</code> array.</p>
+<p>When linking to an external site, you should use the <code>NavItem::toLink()</code> method facade. The first two arguments are the destination and label, both required. Third argument is the priority, which is optional.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">NavItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">toLink</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://github.com/hydephp/hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">GitHub</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">200</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<p>Simplified, this will then be rendered as follows:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="html" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://github.com/hydephp/hyde</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">GitHub</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<h4>Excluding Items (Blacklist)<a id="excluding-items-blacklist" href="#excluding-items-blacklist" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Sometimes, especially if you have a lot of pages, you may want to prevent links from showing up in the main navigation menu. To remove items from being automatically added, simply add the slug to the blacklist. As you can see, the <code>404</code> page has already been filled in for you. Note that we don't specify the page type, since only top level pages are added to the navigation menu.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">exclude</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">404</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<p>You can also specify that a page should be excluded by setting the page front matter. Note that since Blade pages do not support front matter, this will only work for Markdown pages.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">---</span></div></code></pre>
+<h4>Changing the menu item labels<a id="changing-the-menu-item-labels" href="#changing-the-menu-item-labels" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Hyde makes a few attempts to find a suitable label for the navigation menu items to automatically create helpful titles. You can override the title using the <code>navigation.title</code> front matter property.</p>
+<p>From the Hyde config you can also override the title of the documentation label and home page link using the following options:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Documentation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Start</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<h2>Blade Views<a id="blade-views" href="#blade-views" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Hyde uses the Laravel templating system called Blade. Most parts have been extracted into components to be customized easily.</p>
+<blockquote>
+<p>Before editing Blade views you should familiarize yourself with how they work in the official documentation <a href="https://laravel.com/docs/9.x/blade">https://laravel.com/docs/9.x/blade</a>.</p>
+</blockquote>
+<p>To edit the default component you need to publish them first using the <code>hyde publish:views</code> command.</p>
+<p>The files will then be available in the <code>resources/views/vendor/hyde</code> directory.</p>
+<h2>Frontend Styles<a id="frontend-styles" href="#frontend-styles" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Hyde is designed to not only serve as a framework but a whole starter kit and comes with a Tailwind starter template for you to get up and running quickly. If you want to customize these, you are free to do so. Please see the <a href="managing-assets.html">Managing Assets</a> page to learn more.</p>
+<h2>CommonMark environment<a id="commonmark-environment" href="#commonmark-environment" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Hyde uses <a href="https://commonmark.thephpleague.com/">League CommonMark</a> for converting Markdown into HTML.</p>
+<p>Hyde ships with the GitHub Flavored Markdown extension, and
+the Torchlight extension is enabled automatically when needed.</p>
+<p>You can add extra CommonMark extensions, or change the default ones, in the <code>config/markdown.php</code> file.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">extensions</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">GithubFlavoredMarkdownExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Attributes</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">AttributesExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">League</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">CommonMark</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Extension</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DisallowedRawHtml</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">DisallowedRawHtmlExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>In the same file you can also change the config to be passed to the CommonMark environment.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">config</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">disallowed_raw_html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">disallowed_tags</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[],</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">],</span></div></code></pre>
 
-        function closeSearchMenu() {
-          searchMenu.removeAttribute("open");
+			</section>
+			<footer id="document-footer">
+				<p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link"><a href="https://github.com/hydephp/develop/blob/master/docs/customization.md">Edit Page</a></p>
+			</footer>
+		</article>
+	</main>
 
-          document.getElementById("searchMenuBackdrop").remove();
-          document.getElementById("searchMenuCloseButton").remove();
+		<button id="searchMenuButton" onclick="toggleSearchMenu()" aria-label="Toggle search menu">
+	Search 
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+<button id="searchMenuButtonMobile" onclick="toggleSearchMenu()" aria-label="Toggle search menu">
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+		<script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
+		<script>
+			window.addEventListener('load', function() {
+				const searchIndexLocation = 'search.json';
+				const Search = new HydeSearch(searchIndexLocation);
 
-          document.getElementById("searchMenuButton").style.visibility =
-            "visible";
-        }
+				Search.init();
+			});
+	</script>
+	
+	<script defer src="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.js"></script>
 
-        function openSearchMenu() {
-          searchMenu.setAttribute("open", "");
 
-          createBackdrop();
-          createCloseButton();
-          document.getElementById("searchMenuButton").style.visibility =
-            "hidden";
+<script defer src="../../media/app.js"></script>
 
-          document.getElementById("search-input").focus();
 
-          function createBackdrop() {
-            const backdrop = document.createElement("div");
-            backdrop.id = "searchMenuBackdrop";
-            backdrop.classList.add("backdrop", "active");
-            backdrop.addEventListener("click", () => {
-              closeSearchMenu();
-            });
-            document.body.appendChild(backdrop);
-          }
+	
+<dialog id="searchMenu" class="prose dark:prose-invert bg-gray-100 dark:bg-gray-800 fixed">
+	<div id="hyde-search">
+    <noscript>
+        The search feature requires JavaScript to be enabled in your browser.
+    </noscript>
+    <input type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
+</div>	<footer>
+		<small>
+			Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
+			Use <code><kbd title="Escape key">esc</kbd></code> to close.
+		</small>
+	</footer>
+</dialog>
 
-          function createCloseButton() {
-            const closeButton = document.createElement("button");
-            closeButton.id = "searchMenuCloseButton";
-            closeButton.classList.add("fixed");
-            closeButton.setAttribute("aria-label", "Close search menu");
-            closeButton.addEventListener("click", () => {
-              closeSearchMenu();
-            });
-            closeButton.innerHTML = `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+<script>
+	
+if (typeof HTMLDialogElement === 'function') {
+	const searchMenu = document.getElementById('searchMenu');
+
+	function toggleSearchMenu() {
+		if (searchMenu.hasAttribute('open')) {
+			closeSearchMenu();
+		} else {
+			openSearchMenu();
+		}
+	}
+
+	function closeSearchMenu() {
+		searchMenu.removeAttribute('open');
+
+		document.getElementById('searchMenuBackdrop').remove();
+		document.getElementById('searchMenuCloseButton').remove();
+
+		document.getElementById('searchMenuButton').style.visibility = 'visible';
+	}
+
+	function openSearchMenu() {
+		searchMenu.setAttribute('open', '');
+
+		createBackdrop();
+		createCloseButton();
+		document.getElementById('searchMenuButton').style.visibility = 'hidden';
+
+		document.getElementById('search-input').focus();
+
+		function createBackdrop() {
+			const backdrop = document.createElement('div');
+			backdrop.id = 'searchMenuBackdrop';
+			backdrop.classList.add('backdrop', 'active');
+			backdrop.addEventListener('click', () => {
+				closeSearchMenu();
+			});
+			document.body.appendChild(backdrop);
+		}
+
+		function createCloseButton() {
+			const closeButton = document.createElement('button');
+			closeButton.id = 'searchMenuCloseButton';
+			closeButton.classList.add('fixed');
+			closeButton.setAttribute('aria-label', 'Close search menu');
+			closeButton.addEventListener('click', () => {
+				closeSearchMenu();
+			});
+			closeButton.innerHTML = `<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
 					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
 				</svg>`;
 
-            document.body.appendChild(closeButton);
-          }
-        }
+			document.body.appendChild(closeButton);
+		}
+	}
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && searchMenu.hasAttribute("open")) {
-            closeSearchMenu();
-          }
-        });
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && searchMenu.hasAttribute('open')) {
+			closeSearchMenu();
+		}
+	});
 
-        document.addEventListener("keypress", (e) => {
-          if (e.key === "/" && !searchMenu.hasAttribute("open")) {
-            e.preventDefault();
-            openSearchMenu();
-          }
-        });
-      } else {
-        // The browser does not support the <dialog> element
-        document.getElementById("searchMenu").remove();
+	document.addEventListener('keypress', (e) => {
+		if (e.key === '/' && !searchMenu.hasAttribute('open')) {
+			e.preventDefault();
+			openSearchMenu();
+		}
+	});
 
-        function toggleSearchMenu() {
-          window.location.href = "search.html";
-        }
-      }
-    </script>
-  </body>
+	} else {
+		// The browser does not support the <dialog> element
+		document.getElementById('searchMenu').remove();
+		
+		function toggleSearchMenu() {
+			window.location.href = 'search.html';
+		}
+	}
+</script>
+</body>
 </html>

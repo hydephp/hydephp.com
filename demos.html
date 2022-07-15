@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - Contributing</title>
+<title>HydePHP - Live Demos</title>
 
  
 <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
@@ -16,10 +16,12 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@hyde_php">
 <meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
 <meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP">
 <meta property="og:description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
@@ -31,10 +33,8 @@
                 pioneerAnalytics.debug(false);
               })();
           </script>
-<link rel="canonical" href="https://hydephp.com/contributing" />
+<link rel="canonical" href="https://hydephp.com/demos" />
 <link rel="sitemap" type="application/xml" title="Sitemap" href="https://hydephp.com/sitemap.xml" />
-<meta name="twitter:title" content="HydePHP - Contributing" />
-<meta property="og:title" content="HydePHP - Contributing" />
 
 
  
@@ -100,8 +100,8 @@
     About
 </a>				</li>
 							<li class="md:mx-2">
-					<a href="demos" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
+					<a href="demos" aria-current=&quot;page&quot;
+	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">
     Demos
 </a>				</li>
 							<li class="md:mx-2">
@@ -125,68 +125,51 @@
 
     <section>
         
-<main id="content" class="mx-auto max-w-7xl py-16 px-8">
-	<article class="mx-auto prose dark:prose-invert torchlight-enabled">
-		<h1>Contributing</h1>
-<p>Contributions are <strong>welcome</strong> and will be fully <strong>credited</strong>.</p>
-<p>Please read and understand the contribution guide before creating an issue or pull request.</p>
-<h2>Resources</h2>
-<p>Learn more about the Hyde ecosystem at <a href="https://hydephp.com/community">https://hydephp.com/community</a>.</p>
-<h2>Etiquette</h2>
-<p>This project is open source, and as such, the maintainers give their free time to build and maintain the source code
-held within. They make the code freely available in the hope that it will be of use to other developers. It would be
-extremely unfair for them to suffer abuse or anger for their hard work.</p>
-<p>Please be considerate towards maintainers when raising issues or presenting pull requests. Let's show the
-world that developers are civilized and selfless people.</p>
-<p>It's the duty of the maintainer to ensure that all submissions to the project are of sufficient
-quality to benefit the project. Many developers have different skill sets, strengths, and weaknesses. Respect the maintainer's decision, and do not be upset or abusive if your submission is not used.</p>
-<h2>Viability</h2>
-<p>When requesting or submitting new features, first consider whether it might be useful to others. Open
-source projects are used by many developers, who may have entirely different needs to your own. Think about
-whether or not your feature is likely to be used by other users of the project.</p>
-<h2>Procedure</h2>
-<p>Before filing an issue:</p>
-<ul>
-<li>Attempt to replicate the problem, to ensure that it wasn't a coincidental incident.</li>
-<li>Check to make sure your feature suggestion isn't already present within the project.</li>
-<li>Check the pull requests tab to ensure that the bug doesn't have a fix in progress.</li>
-<li>Check the pull requests tab to ensure that the feature isn't already in progress.</li>
-</ul>
-<p>Before submitting a pull request:</p>
-<ul>
-<li>Check the codebase to ensure that your feature doesn't already exist.</li>
-<li>Check the pull requests to ensure that another person hasn't already submitted the feature or fix.</li>
-</ul>
-<h2>Requirements</h2>
-<p>If the project maintainer has any additional requirements, you will find them listed here.</p>
-<p>We try to follow the Laravel standards, <a href="https://laravel.com/docs/9.x/contributions#coding-style">https://laravel.com/docs/9.x/contributions#coding-style</a></p>
-<ul>
-<li>
-<strong><a href="https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md">PSR-2 Coding Standard</a></strong>
-</li>
-</ul>
-<p><strong>Please add tests!</strong></p>
-<ul>
-<li>
-<p><strong>Add tests!</strong> - Your patch might not be accepted if it doesn't have tests.</p>
-</li>
-<li>
-<p><strong>Document any change in behavior</strong> - Make sure the <code>README.md</code> and any other relevant documentation are kept up-to-date.</p>
-</li>
-</ul>
-<!-- Will be enabled once we enter GA 
-- **Consider our release cycle** - We try to follow [SemVer v2.0.0](https://semver.org/). Randomly breaking public APIs is not an option. -->
-<ul>
-<li>
-<p><strong>One pull request per feature</strong> - If you want to do more than one thing, send multiple pull requests. This makes it easier to keep track of changes.</p>
-</li>
-<li>
-<p><strong>Send coherent history</strong> - Make sure each individual commit in your pull request is meaningful. If you had to make multiple intermediate commits while developing, please <a href="https://www.git-scm.com/book/en/v2/Git-Tools-Rewriting-History#Changing-Multiple-Commit-Messages">squash them</a> before submitting.</p>
-</li>
-</ul>
-<p><strong>Happy coding</strong>!</p>
+<main class="mx-auto max-w-7xl py-16 px-8">
+	<header>
+		<h1 class="text-center mb-5 text-2xl font-black leading-tight xl:text-4xl">Live Demos</h1>
+		<div class="prose dark:prose-invert mx-auto text-center">
+			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com">Make a pull request</a>!</p>
+		</div>
+	</header>
 
-	</article>
+
+	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
+		<div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
+			<div class="flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+				<a href="https://hydephp.github.io/portfolio-demo"><img class="h-56 rounded-t-lg" alt="article image"
+					src="/media/portfolio-composite-min.png"></a>
+				<div class="px-6 pt-4 mb-2 text-xl font-bold">
+					<span>Markdown Portfolio Site</span>
+				</div>
+				<div class="px-6 pt-2">
+					<small>By HydePHP.com | 2022-07-15</small>
+					<div class="overflow-hidden h-16 mt-2">A simple one-page photography portfolio made with Markdown.</div>
+				</div>
+				<div class="px-6 pb-4 text-center mt-3">
+					<a href="https://github.com/hydephp/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+					<a href="https://hydephp.github.io/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+				</div>
+			</div>
+		</div>
+		<div class="p-4 px-6 sm:w-1/2 lg:w-1/3">
+			<div class="flex flex-col overflow-hidden bg-white dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+				<img class="h-56 rounded-t-lg" alt="article image"
+					src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1343&q=80">
+				<div class="px-6 pt-4 mb-2 text-xl font-bold">
+					<span>More coming soon!</span>
+				</div>
+				<div class="px-6 pt-2">
+					<small>John Doe | 2022-01-01</small>
+					<div class="overflow-hidden h-16 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+				</div>
+				<div class="px-6 pb-4 text-center mt-3">
+					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+				</div>
+			</div>
+		</div>
+	</div>
 </main>
 
  
