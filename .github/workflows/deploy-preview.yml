@@ -77,13 +77,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: "site"
+          path: _site
       
       - name: Upload files to GitHub Pages
         uses: cpina/github-action-push-to-another-repository@v1.4.2
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "site"
+          source-directory: "_site"
           destination-github-username: "hydephp"
           destination-repository-name: "previews"
           target-branch: master
