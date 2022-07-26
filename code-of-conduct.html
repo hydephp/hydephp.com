@@ -12,7 +12,7 @@
 <meta name="author" content="Caen De Silva">
 <meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation">
-<meta name="generator" content="HydePHP v0.48.2-beta">
+<meta name="generator" content="HydePHP v0.50.0-beta">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@hyde_php">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -40,9 +40,6 @@
  
 
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.css">
-
-
 <link rel="stylesheet" href="media/app.css">
 
 
@@ -51,9 +48,9 @@
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
 </head>
-<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard">
-    <a href="#content" id="skip-to-content">Skip to content</a>
-    <nav aria-label="Main navigation" id="main-navigation"
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="/" class="font-bold px-4">
@@ -61,23 +58,24 @@
 	HydePHP
 </a>
 		<div class="ml-auto">
-			<button class="theme-toggle-button flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
 	<span class="sr-only">Toggle dark theme</span>
-	<figure class="theme-icon" role="presentation"></figure>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 </button>
 		</div>
 	</div>
 
 	<div class="block md:hidden">
-		<button id="navigation-toggle-button" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
 				aria-label="Toggle navigation menu">
-			<svg title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
 				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
 				 width="24"><title>Open Menu</title>
 				<path d="M0 0h24v24H0z" fill="none"/>
 				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
 			</svg>
-			<svg title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
 				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
 				 width="24"><title>Close Menu</title>
 				<path d="M0 0h24v24H0z" fill="none"></path>
@@ -87,33 +85,19 @@
 	</div>
 
 	<div id="main-navigation-links"
-		 class="w-full hidden md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700">
+		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
 		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="/" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    Home
-</a>				</li>
+					<a href="/"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    About
-</a>				</li>
+					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    Demos
-</a>				</li>
+					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    Blog
-</a>				</li>
+					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde" 
-	class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">
-    GitHub
-</a>				</li>
+					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
 		<a id="docs-nav-button" href="/docs/master" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
@@ -307,7 +291,7 @@ enforcement ladder</a>.</p>
 					</div>
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
-				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a></p>
+				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
 
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
@@ -321,10 +305,24 @@ enforcement ladder</a>.</p>
 	</div>
 </footer> 
 
-    <script defer src="https://cdn.jsdelivr.net/npm/hydefront@v1.12/dist/hyde.js"></script>
+    <script defer src="media/app.js"></script>
 
 
-<script defer src="media/app.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
 
 
  
