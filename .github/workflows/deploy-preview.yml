@@ -86,8 +86,8 @@ jobs:
           source-directory: "site"
           destination-github-username: "hydephp"
           destination-repository-name: "previews"
-          target-branch: gh-pages
-          target-directory: "hydephp-com/${{ github.sha }}"
+          target-branch: master
+          target-directory: "docs/hydephp-com/${{ github.sha }}"
 
       - name: Output the URL
         run: echo "https://hydephp.github.io/previews/hydephp-com/${{ github.sha }}"
