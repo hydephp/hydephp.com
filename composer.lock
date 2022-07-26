@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c9c889e85fe8415134217c033eac717",
+    "content-hash": "6e8de2f9a1bcdf1d47a34186b28a9e41",
     "packages": [
         {
             "name": "brick/math",
@@ -875,16 +875,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "dev-master",
+            "version": "v0.50.0-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "27254794b31517ea3eb6d8bfce5d2a0b133d9f76"
+                "reference": "c3a6f0d673fcc65bbe1cf6a6f2279a2b61e13ad3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/27254794b31517ea3eb6d8bfce5d2a0b133d9f76",
-                "reference": "27254794b31517ea3eb6d8bfce5d2a0b133d9f76",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/c3a6f0d673fcc65bbe1cf6a6f2279a2b61e13ad3",
+                "reference": "c3a6f0d673fcc65bbe1cf6a6f2279a2b61e13ad3",
                 "shasum": ""
             },
             "require": {
@@ -901,7 +901,6 @@
                 "hyde/hyde": "The Framework package contains the Hyde Core. To create your site you should use the Hyde/Hyde project.",
                 "laravel-zero/framework": "^9.1"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "files": [
@@ -924,7 +923,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/master"
+                "source": "https://github.com/hydephp/framework/tree/v0.50.0-beta"
             },
             "funding": [
                 {
@@ -932,11 +931,11 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-07-26T13:23:07+00:00"
+            "time": "2022-07-26T17:49:18+00:00"
         },
         {
             "name": "illuminate/bus",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/bus.git",
@@ -989,7 +988,7 @@
         },
         {
             "name": "illuminate/cache",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/cache.git",
@@ -1049,7 +1048,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -1104,7 +1103,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -1150,7 +1149,7 @@
         },
         {
             "name": "illuminate/config",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/config.git",
@@ -1198,7 +1197,7 @@
         },
         {
             "name": "illuminate/console",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/console.git",
@@ -1260,7 +1259,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -1311,16 +1310,16 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "e014cf88ef46065b8b1f078893c01189b95ffb11"
+                "reference": "ac7f63520e18721f214e80fa7e8f0a5c77ed2719"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/e014cf88ef46065b8b1f078893c01189b95ffb11",
-                "reference": "e014cf88ef46065b8b1f078893c01189b95ffb11",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/ac7f63520e18721f214e80fa7e8f0a5c77ed2719",
+                "reference": "ac7f63520e18721f214e80fa7e8f0a5c77ed2719",
                 "shasum": ""
             },
             "require": {
@@ -1355,11 +1354,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-06-07T19:28:00+00:00"
+            "time": "2022-07-26T14:41:38+00:00"
         },
         {
             "name": "illuminate/events",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/events.git",
@@ -1414,7 +1413,7 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
@@ -1476,7 +1475,7 @@
         },
         {
             "name": "illuminate/http",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
@@ -1535,7 +1534,7 @@
         },
         {
             "name": "illuminate/macroable",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -1581,7 +1580,7 @@
         },
         {
             "name": "illuminate/pipeline",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/pipeline.git",
@@ -1629,7 +1628,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -1685,7 +1684,7 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
@@ -1754,7 +1753,7 @@
         },
         {
             "name": "illuminate/testing",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/testing.git",
@@ -1812,7 +1811,7 @@
         },
         {
             "name": "illuminate/view",
-            "version": "v9.22.0",
+            "version": "v9.22.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/view.git",
@@ -6294,16 +6293,16 @@
         },
         {
             "name": "laravel/dusk",
-            "version": "v6.25.0",
+            "version": "v6.25.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/dusk.git",
-                "reference": "b4632b7493a187d31afc5c9ddec437c81b16421a"
+                "reference": "cd93e41d610965842e4b61f4691a0a0889737790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/dusk/zipball/b4632b7493a187d31afc5c9ddec437c81b16421a",
-                "reference": "b4632b7493a187d31afc5c9ddec437c81b16421a",
+                "url": "https://api.github.com/repos/laravel/dusk/zipball/cd93e41d610965842e4b61f4691a0a0889737790",
+                "reference": "cd93e41d610965842e4b61f4691a0a0889737790",
                 "shasum": ""
             },
             "require": {
@@ -6361,9 +6360,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/dusk/issues",
-                "source": "https://github.com/laravel/dusk/tree/v6.25.0"
+                "source": "https://github.com/laravel/dusk/tree/v6.25.1"
             },
-            "time": "2022-07-11T11:38:43+00:00"
+            "time": "2022-07-25T13:51:51+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8578,7 +8577,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "hyde/framework": 20,
         "hyde/testing": 20
     },
     "prefer-stable": true,
