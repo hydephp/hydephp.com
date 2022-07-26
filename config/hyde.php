@@ -15,6 +15,7 @@ use Hyde\Framework\Helpers\Author;
 use Hyde\Framework\Helpers\Features;
 use Hyde\Framework\Helpers\Meta;
 use Hyde\Framework\Models\NavItem;
+use Hyde\Framework\Models\Route;
 
 return [
 
@@ -224,7 +225,7 @@ return [
         // See the documentation link above for more information.
         'custom' => [
             NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
-            NavItem::toRoute(Route::get('posts'), 'Blog', 1050),
+            NavItem::toRoute('posts', 'Blog', 1050),
         ],
     ],
 
