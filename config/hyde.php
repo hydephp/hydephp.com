@@ -2,26 +2,20 @@
 
 /*
 |--------------------------------------------------------------------------
-|      __ __        __    ___  __ _____
-|     / // /_ _____/ /__ / _ \/ // / _ \
-|    / _  / // / _  / -_) ___/ _  / ___/
-|   /_//_/\_, /\_,_/\__/_/  /_//_/_/
-|        /___/
+| The HydePHP Configuration File
 |--------------------------------------------------------------------------
 |
-| Welcome to HydePHP! In this file, you can customize your new Static Site!
-|
-| HydePHP favours convention over configuration and as such requires virtually
-| no configuration out of the box to get started. Though, you may want to
-| change the options to personalize your site and make it your own!
+| This configuration file lets you change and customize the behaviour
+| of your HydePHP site. To customize the presentation options, like
+| the site name, please see the new config/site.php file instead.
 |
 */
 
-use Hyde\Framework\Facades\Route;
 use Hyde\Framework\Helpers\Author;
 use Hyde\Framework\Helpers\Features;
 use Hyde\Framework\Helpers\Meta;
 use Hyde\Framework\Models\NavItem;
+use Hyde\Framework\Models\Route;
 
 return [
 
@@ -136,6 +130,7 @@ return [
         Features::bladePages(),
         Features::markdownPages(),
         Features::documentationPages(),
+        // Features::dataCollections(),
 
         // Frontend Features
         Features::darkmode(),
@@ -174,21 +169,20 @@ return [
     | Footer Text
     |--------------------------------------------------------------------------
     |
-    | Most websites have a footer with copyright details and contact information.
-    | You probably want to change the Markdown to include your information,
-    | though you are of course welcome to keep the attribution link!
+    | Here you can customize the footer Markdown text for your site.
     |
-    | You can also customize the blade view if you want a more complex footer.
-    | You can disable it completely by setting `enabled` to `false`.
+    | If you don't want to write Markdown here, you use a Markdown include.
+    | You can also customize the Blade view if you want a more complex footer.
+    | You can disable it completely by changing the setting to `false`.
+    |
+    | To read about the many configuration options here, visit:
+    | https://hydephp.com/docs/master/customization#footer
     |
     */
 
-    'footer' => [
-        'enabled' => true,
-        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde)',
-    ],
+    'footer' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
 
-      /*
+    /*
     |--------------------------------------------------------------------------
     | Navigation Menu Configuration
     |--------------------------------------------------------------------------
@@ -231,36 +225,19 @@ return [
         // See the documentation link above for more information.
         'custom' => [
             NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
-            NavItem::toRoute(Route::get('posts'), 'Blog', 1050),
+            NavItem::toLink('posts', 'Blog', 1050),
         ],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Site Output Directory (Experimental 🧪)
+    | Load app.css from CDN
     |--------------------------------------------------------------------------
     |
-    | This setting specifies the output path for your site, useful to for
-    | example, store the site in the docs/ directory for GitHub Pages.
-    | The path is relative to the root of your project.
-    |
-    | To use an absolute path, or just to learn more:
-    | @see https://hydephp.com/docs/master/advanced-customization#customizing-the-output-directory-
-    |
+    | Hyde ships with an app.css file containing compiled TailwindCSS styles
+    | in the _media/ directory. If you want to load this file from the
+    | HydeFront JsDelivr CDN, you can set this setting to true.
     */
 
-    'output_directory' => '_site',
-
-    /*
-    |--------------------------------------------------------------------------
-    | Warn about outdated config?
-    |--------------------------------------------------------------------------
-    |
-    | If your config needs updating, a message will be shown in the
-    | HydeCLI info screen, unless disabled below.
-    |
-    */
-
-    'warn_about_outdated_config' => true,
-
+    'load_app_styles_from_cdn' => false,
 ];
