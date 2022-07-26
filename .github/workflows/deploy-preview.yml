@@ -26,7 +26,7 @@ jobs:
 
     - name: Create dotenv
       run: |
-        echo "SITE_NAME=HydePHP.com PR Preview" >> txt
+        echo "SITE_NAME='HydePHP.com PR Preview'" >> txt
         echo "SITE_URL=https://hydephp.github.io/previews/hydephp-com/{{ github.sha }}" > .env
         echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
         echo "ROBOTS_NOINDEX=true" >> .env
