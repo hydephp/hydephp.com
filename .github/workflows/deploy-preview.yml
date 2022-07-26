@@ -98,7 +98,6 @@ jobs:
     steps:
       - uses: actions/github-script@v5
         with:
-          github-token: ${{secrets.API_TOKEN_GITHUB}}
           script: |
             github.rest.issues.createComment({
               issue_number: context.issue.number,
