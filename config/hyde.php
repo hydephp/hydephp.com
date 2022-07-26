@@ -225,7 +225,7 @@ return [
         // See the documentation link above for more information.
         'custom' => [
             NavItem::toLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
-            NavItem::toRoute('posts', 'Blog', 1050),
+            NavItem::toLink('posts', 'Blog', 1050),
         ],
     ],
 
