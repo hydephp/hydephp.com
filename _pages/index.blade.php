@@ -274,7 +274,7 @@
                         <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
                     </div>
                     <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                    src="https://pbs.twimg.com/profile_images/1479839481821904899/h2z7ovvl_200x200.jpg"
+                    src="https://pbs.twimg.com/profile_images/1549670036654137346/lCVEgOZD_200x200.png"
                     alt="Profile image">
                 </blockquote>
                 <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
