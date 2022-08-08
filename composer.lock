@@ -871,16 +871,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v0.58.1-beta",
+            "version": "v0.58.3-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "2ab42a1b7d0d4e8f4d91e45b7ce6692e65468e5c"
+                "reference": "bcd4b698598964b8edcc5111effc01843d51e1d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/2ab42a1b7d0d4e8f4d91e45b7ce6692e65468e5c",
-                "reference": "2ab42a1b7d0d4e8f4d91e45b7ce6692e65468e5c",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/bcd4b698598964b8edcc5111effc01843d51e1d9",
+                "reference": "bcd4b698598964b8edcc5111effc01843d51e1d9",
                 "shasum": ""
             },
             "require": {
@@ -919,7 +919,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v0.58.1-beta"
+                "source": "https://github.com/hydephp/framework/tree/v0.58.3-beta"
             },
             "funding": [
                 {
@@ -927,7 +927,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-08-08T20:05:23+00:00"
+            "time": "2022-08-08T20:42:23+00:00"
         },
         {
             "name": "illuminate/bus",
