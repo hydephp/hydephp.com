@@ -1,7 +1,6 @@
 ---
 label: Documentation Pages
 priority: 12
-category: "Creating Content"
 ---
 
 # Creating Documentation Pages
@@ -86,7 +85,7 @@ and where the data is from as well as where it can be overridden.
 | `title` (string)     | The title of the page used in the HTML `<title>` tag   | The first H1 heading (`# Foo`) | Front matter         |
 | `label` (string)     | The label for the page shown in the sidebar            | The page filename (slug)       | Front matter         |
 | `hidden` (boolean)   | Hides the page from the sidebar                        | _null_                         | Front matter         |
-| `priority` (integer) | The priority of the page used for ordering the sidebar | Defaults to 999                | Front matter, config |
+| `priority` (integer) | The priority of the page used for ordering the sidebar | Defaults to 500                | Front matter, config |
 
 
 ## Sidebar
@@ -134,11 +133,21 @@ The feature is enabled automatically when one or more of your documentation page
 in the front matter. This will then switch to a slightly more compact sidebar layout with pages sorted into categories.
 Any pages without the category front matter will get put in the "Other" category.
 
+#### Using Front Matter
+
 To enable sidebar grouping, you can add the following front matter to your documentation pages:
 
 ```yaml
 category: "Getting Started"
 ```
+
+#### Using sub-directories
+
+Since [v0.52.0-beta](https://github.com/hydephp/develop/releases/tag/v0.52.0-beta), you can also automatically group your documentation pages by placing source files in sub-directories.
+
+For example, putting a Markdown file in `_docs/getting-started/`, is equivalent to adding the same front matter in the step above.
+
+> Note that the file will still be compiled to the `_site/docs/` directory like it would be if you didn't use the sub-directories.
 
 
 ### Hiding items
@@ -152,7 +161,6 @@ hidden: true
 This can be useful to create redirects or other items that should not be shown in the sidebar.
 
 > The index page is by default not shown as a sidebar item, but instead is linked in the sidebar header. <br>
-> In the future, this might be disabled by setting the `hidden` property to `false` in the front matter.
 
 ## Customization
 
@@ -181,6 +189,8 @@ You can change this in the Docs configuration file.
 ```php
 'title' => 'API Documentation',
 ```
+
+> Tip: The header will link to the docs/index page, if it exists.
 
 ### Sidebar page order
 
