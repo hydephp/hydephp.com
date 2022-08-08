@@ -103,15 +103,7 @@ return [
         Meta::property('description', 'HydePHP - Elegant and Powerful Static App Builder'),
         Meta::property('image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
         Meta::property('image:alt', 'GitHub OpenGraph Image'),
-        '<script type="text/javascript">
-              (function(){var pioneerAnalytics=window.pioneerAnalytics=window.pioneerAnalytics||[];if(pioneerAnalytics.initialize)return;if(pioneerAnalytics.invoked){if(window.console&&console.error){console.error("Pioneer snippet included twice.")}return}pioneerAnalytics.invoked=true;pioneerAnalytics.debugMode=false;pioneerAnalytics.methods=["page","identify","active","reset","debug","trackSubmit","trackClick","trackLink","trackForm","pageview","group","track","ready","alias","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","initialize"];pioneerAnalytics.requestQueue=[];pioneerAnalytics.factory=function(method){return function(){var args=Array.prototype.slice.call(arguments);args.unshift(method);pioneerAnalytics.push(args);return pioneerAnalytics}};for(var i=0;i<pioneerAnalytics.methods.length;i++){var key=pioneerAnalytics.methods[i];pioneerAnalytics[key]=pioneerAnalytics.factory(key)}pioneerAnalytics.load=function(key,options){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src="https://assets.pioneer.app/pioneer-analytics.min.js";var first=document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script,first);pioneerAnalytics._loadOptions=options};pioneerAnalytics.SNIPPET_VERSION=1;
-                pioneerAnalytics._writeKey="fa1f4d9f12a5f775c3b983d1090081a2";
-                pioneerAnalytics.load(pioneerAnalytics._writeKey);
-                pioneerAnalytics.page();
-                pioneerAnalytics.debug(false);
-              })();
-          </script>',
-        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
