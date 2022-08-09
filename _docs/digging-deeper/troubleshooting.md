@@ -1,6 +1,5 @@
 ---
 priority: 35
-category: "Digging Deeper"
 ---
 
 # Troubleshooting
@@ -21,9 +20,7 @@ did you find a new one? Send a PR to [update the docs](https://github.com/hydeph
 2. You don't need to set an H1 heading in blog posts. The H1 is set by Hyde based on the front matter title.
 3. You never need front matter, though it is often useful. 
    For example, Hyde makes attempts to guess the title for a page depending on the content. (Headings, filenames, etc).
-4. Currently, Hyde does not support nested directories besides those already defined.
-   This means that for example files in `_posts/foo/bar/` will not be compiled.
-   This is a feature that will be added in the future.
+4. Currently, Hyde support for nested directories besides those already defined is experimental.
 
 
 ## Conventions to follow
@@ -58,7 +55,7 @@ Based on [this blog post](https://github.com/hydephp/DocsCI/blob/ff4589b175c2794
 - **HydeCLI**: The command-line interface for Hyde.
 - **Framework**: The Hyde core codebase.
 
-- **Slug**: The filename without the extension (basename).  Example: `hello-world`
+- **Slug**: The filename without the extension (basename) (internally also known as `identifier`).  Example: `hello-world` 
 - **Filename**: The full name of a file with the extension. Example: `hello-world.md`
 - **Filepath**: The full file path including extension (almost always relative to the Hyde project) Example: `_posts/hello-world.md`
 

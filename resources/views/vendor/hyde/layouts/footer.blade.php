@@ -2,7 +2,7 @@
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="{{ Hyde::relativeLink('index.html', $currentPage) }}" class="flex items-center mr-4">
+				<a href="{{ Hyde::relativeLink('index.html') }}" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -16,20 +16,20 @@
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="{{ Hyde::relativeLink(DocumentationPage::indexPath(), $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="{{ Hyde::relativeLink(DocumentationPage::home()) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="{{ Hyde::relativeLink('community.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('community.html') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="{{ Hyde::relativeLink('legal.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('legal.html') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
-					<li><a href="{{ Hyde::relativeLink('community.html#developers', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('community.html#developers') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Developer Resources
 					</a></li>
 					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
@@ -37,14 +37,14 @@
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="{{ Hyde::relativeLink('sitemap.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('sitemap.html') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="{{ Hyde::relativeLink('posts.html', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('posts.html') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					
-					<li><a href="{{ Hyde::relativeLink('feed.xml', $currentPage) }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="{{ Hyde::relativeLink('feed.xml') }}" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						RSS Feed
 					</a></li>
 				</ul>

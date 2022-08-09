@@ -25,10 +25,6 @@ for more information on how they handle data.
 [^1]: While we do not use cookies on our side (since this is a static site without a backend),
       some external services may use cookies, for example if a YouTube video is embedded.
 
-### Ticker analytics (June 2022)
-Since mid-June, HydePHP.com is testing an analytics service from Pioneer.app called Ticker
-to collect anonymous page view statistics. See Pioneer's privacy policy at https://pioneer.app/privacy.
-
 
 ## Community Guidelines and Code of Conduct
 

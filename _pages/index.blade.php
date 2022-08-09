@@ -34,8 +34,6 @@
     }
 </style>
 @push('meta')
-<meta name="author" content="Caen De Silva">
-<meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
 <meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation, Static Site Generator, Hyde, PHP, PHP Framework">
 <meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
 <meta property="og:image" content="https://hydephp.com/media/og-image-index.png">

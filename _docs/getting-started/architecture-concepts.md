@@ -1,9 +1,13 @@
 ---
 priority: 10
-category: "Getting Started"
 ---
 
-# Some key concepts in Hyde
+# Key HydePHP Concepts
+
+## Introduction to Hyde
+
+HydePHP contains a few "magic" features so that you can focus on your content. It's encouraged that you read this page to get a high-level overview of what's going on behind the scenes.
+
 
 ## The HydeCLI
 
@@ -70,10 +74,17 @@ Take a look at the [customization and configuration guide](customization.html) t
 
 ## Front Matter
 
+### About
+
+Front matter is heavily used in HydePHP to store metadata about about pages. Hyde uses the front matter data to generate rich and dynamic content. For example, a blog post category, author website, or featured image.
+
+Using front matter is optional, as Hyde will dynamically generate data based on the content itself. (Though any matter you provide will take precedence over the automatically generated data.)
+
+### Markdown
+
 All Markdown content files support Front Matter. Blog posts for example make heavy use of it.
 
-The specific usage and schemas used for pages are documented in their respective documentation,
-however, here is a primer on the fundamentals.
+The specific usage and schemas used for pages are documented in their respective documentation, however, here is a primer on the fundamentals.
 
 - Front matter is stored in a block of YAML that starts and ends with a `---` line.
 - The front matter should be the very first thing in the Markdown file.
@@ -92,6 +103,21 @@ author:
 
 Lorem ipsum dolor sit amet, etc.
 ```
+
+### Blade
+
+>warning 🧪 This feature is experimental, and currently does not support multidimensional arrays or multi-line directives as the BladeMatter is statically parsed.
+
+Hyde v0.58.0-beta brings experimental support for creating front-matter in Blade templates, called BladeMatter. The actual syntax is does not use YAML; but instead PHP. However, the parsed end result is the same.
+
+To create BladeMatter, you simply use the default Laravel Blade `@php` directive to declare a variable anywhere in the template.
+
+**Example:**
+```blade
+@php($title = 'BladeMatter Demo')
+```
+
+It will then be available through the global `$page` variable, `$page->matter('title')`.
 
 
 ## Automatic Routing
@@ -136,10 +162,41 @@ You can of course, use it just like a normal anchor tag like so:
 But where it really shines is when you supply a route. This will then resolve the proper relative link, and format it to use pretty URLs if your site is configured to use them.
 
 ```blade
-<x-link href="Route::get('index')">Home</x-link>
+<x-link :href="Route::get('index')">Home</x-link>
 ```
 
 You can of course, also supply extra attributes like classes:
 ```blade
-<x-link href="Route::get('index')" class="btn btn-primary">Home</x-link>
+<x-link :href="Route::get('index')" class="btn btn-primary">Home</x-link>
 ```
+
+## Nested directories
+
+### Introduction
+
+Starting with Hyde v0.52.x-beta, there is limited support for nested directories, please be mindful that the behaviour of this may change until the next few versions. Please report any issues you encounter on [GitHub](https://github.com/hydephp/develop/issues).
+
+#### First of, what do we mean by "nested directories"?
+
+Simply put, a nested directory in Hyde is a source directory that contains a subdirectory. For example, if you have a directory _inside_ the `_pages` directory, that's a nested directory.
+
+### Behaviour of nested pages
+
+#### Automatically routed pages
+
+As it is now, when you put a source file within a subdirectory of one of the following, it will be compiled into the corresponding output directory. 
+
+The following page types use this behaviour:
+- Blade pages (`_pages/`)
+- Markdown pages (`_pages/`)
+- Markdown blog posts (`_posts/`)
+
+For example, a source file stored as `_pages/about/contact.md` will be compiled into `_site/about/contact.html`, and a blog post stored as `_posts/2022/my-post.md` will be compiled into `_site/posts/2022/my-post.html`.
+
+#### Documentation pages
+
+Documentation pages behave a bit differently. Here, all documentation source files will still be compiled to the `_site/docs/` directory, but the subdirectory name will be used to assign a sidebar group/category to the page.
+
+So for example, a source file stored as `_docs/getting-started/installation.md` will be compiled into `_site/docs/installation.html`, and placed in the sidebar group `Getting Started`.
+
+You can learn more about this in the [documentation pages documentation](documentation-pages.html#using-sub-directories).

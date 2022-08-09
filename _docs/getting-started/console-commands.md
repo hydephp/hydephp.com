@@ -1,6 +1,5 @@
 ---
 priority: 5
-category: "Getting Started"
 ---
 
 # Console Commands
@@ -170,6 +169,10 @@ php hyde make:page About # Defaults to Markdown
 php hyde make:page "Photo Gallery" --type=blade
 php hyde make:page "Hyde CLI Guide" --type=docs
 ```
+
+> Tip: You can also use the shorthand `--blade` or `--docs` instead of `--type=blade` or `--type=docs`.
+
+> Tip: You can also tell Hyde to place the file in a subdirectory by specifying it before the title, just separate them with a slash. For example: `php hyde make:page "getting-started/installation" --type="docs"`
 
 ### Publish a default homepage
 ```bash
