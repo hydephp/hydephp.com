@@ -1,1 +1,1 @@
-This website is [Open Source](https://github.com/hydephp/hydephp.com) and proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩 <hr>Copyright &copy; 2022 [Caen De Silva](https://twitter.com/CodeWithCaen) and the [HydePHP contributors](https://github.com/hydephp/hydephp.com/graphs/contributors).
+This website is [Open Source](https://github.com/hydephp/hydephp.com) and proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩
