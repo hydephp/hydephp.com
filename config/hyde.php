@@ -203,7 +203,7 @@ return [
             'contributing',
             'code-of-conduct',
             'community',
-            'docs/index',
+            'docs/master/index',
             'testimonials',
             'accessibility',
             'sitemap',
