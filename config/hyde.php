@@ -203,7 +203,7 @@ return [
             'contributing',
             'code-of-conduct',
             'community',
-            'docs/index',
+            'docs/master/index',
             'testimonials',
             'accessibility',
             'sitemap',
@@ -212,6 +212,7 @@ return [
         ],
 
         'order' => [
+            'index' => 1,
             'live-demos' => 1100
         ],
 
