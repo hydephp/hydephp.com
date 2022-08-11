@@ -212,6 +212,7 @@ return [
         ],
 
         'order' => [
+            'index' => 1,
             'live-demos' => 1100
         ],
 
