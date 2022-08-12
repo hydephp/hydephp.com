@@ -124,6 +124,6 @@ return [
     |
     */
 
-    'output_directory' => '_site',
+    'output_directory' => 'docs',
 
 ];

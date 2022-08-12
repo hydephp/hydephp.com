@@ -56,55 +56,21 @@ jobs:
     - name: Build frontend assets
       run: npm run prod
 
-
     - name: Run the Hyde Builder
-      run: php hyde build --pretty-urls --run-prettier  --no-interaction
-
+      run: php hyde build --pretty-urls --run-prettier --no-interaction
 
     - name: Create .nojekyll
-      run: touch _site/.nojekyll
+      run: touch docs/.nojekyll
       
     - name: Create CNAME
-      run: echo "hydephp.com" > _site/CNAME
+      run: echo "hydephp.com" > docs/CNAME
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > _site/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > docs/docs/index.html
 
-    - name: Upload site artifact
-      uses: actions/upload-artifact@v3
+    - name: Commit changes
+      uses: EndBug/add-and-commit@v9 
       with:
-        name: site
-        path: _site
-
-
-  # Now we can deploy the site to GitHub Pages!
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build # Run the build job first, otherwise we won't have anything to deploy
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: 'gh-pages' # Checkout the gh-pages branch
-      
-      # (optional) Remove any old files from the gh-pages branch
-      - name: Empty site directory
-        run: rm -rf *
-      
-      # Download the compiled site into the current directory
-      - name: Download site artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: site
-          path: '.'
-
-      # Create a .nojekyll file to prevent GitHub from attempting to compile a Jekyll site
-      - name: Create .nojekyll file
-        run: touch .nojekyll
-
-      # Commit the changes to the gh-pages branch
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9 
-        with:
-          add: '.'
-          message: 'Upload compiled site ${{ github.sha }}' 
+        add: 'docs'
+        message: 'Build the site'
+        
