@@ -1,3 +1,7 @@
+---
+title: "Creating a static photography portfolio landing site with HydePHP"
+---
+
 ## Introduction
 
 HydePHP is a new framework for rapidly building static websites using tools you may already know from popular frameworks like Laravel.
