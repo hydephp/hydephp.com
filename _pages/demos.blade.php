@@ -50,27 +50,37 @@
 				</div>
 			</div>
 		</div>
-		{{-- <div class="py-4 sm:px-6 w-96 max-w-full">
+        
+		{{-- 
+        
+            TEMPLATE FOR ADDING NEW DEMOS
+            1. Copy the entire div below
+            2. Paste it above the closing div tag
+            3. Update the image, title, description, and links
+            
+        <div class="py-4 sm:px-6 w-96 max-w-full">
 			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 				<img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-					src="https://images.unsplash.com/photo-1593720219276-0b1eacd0aef4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1343&q=80">
+					src="/media/your-image-here.png">
 				<div class="px-6 pt-4 mb-2 text-xl font-bold">
-					<span>More coming soon!</span>
+					<span>Website Name</span>
 				</div>
 				<div class="px-6 pt-2">
 					<small>John Doe | 2022-01-01</small>
-					<div class="overflow-hidden h-16 mt-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</div>
+					<div class="overflow-hidden h-16 mt-2">A short description of the site. Maybe a sentence or two.</div>
 				</div>
 				<div class="px-6 pb-4 text-center mt-3">
-					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+					<a href="https://github.com/username/repository" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+					<a href="https://example.com" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 				</div>
 			</div>
-		</div> --}}
+		</div>
+        
+        --}}
 	</div>
 	<footer>
 		<div class="prose dark:prose-invert mx-auto text-center">
-			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com">Make a pull request</a>!</p>
+			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/edit/master/_pages/demos.blade.php">Make a pull request</a>!</p>
 		</div>
 	</footer>
 </main>
