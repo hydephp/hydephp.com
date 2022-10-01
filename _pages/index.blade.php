@@ -1,6 +1,6 @@
 @extends('hyde::layouts.app')
 @section('content')
-@php($title = 'Elegant and Powerful Static App Builder')
+@php($title = 'Elegant and Powerful Static Site Generator')
 <style>
     mark {
         background: linear-gradient(-100deg, #fece2f2f, #fddf47a4 95%, #fece2f27);
