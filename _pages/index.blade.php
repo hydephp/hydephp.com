@@ -283,14 +283,12 @@
                             <path
                             d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
                         </svg>
-                        <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
-                            <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
-                            <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+                        <p class="mt-2 text-base text-gray-600 prose">Holy f. Your project is definitely one of my favorites of the whole <small>[startup]</small> tournament, I constantly keep an eye on the top 50 for it.
                         </p>
                     </div>
                     <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                        This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
-                            SomeCompany</span>
+                        Felipe Lecot <span class="mt-1 text-sm leading-5 text-gray-500 ">- Director 
+                            - <a href="https://do2software.com" class="text-indigo-500" rel="author nofollow" title="External website">Do2 Software</a></span>
                         </h3>
                         <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
                     </div>
