@@ -57,13 +57,13 @@ jobs:
       run: php hyde build --pretty-urls --run-prettier  --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > _site/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > docs/docs/index.html
 
     - name: Upload site artifact
       uses: actions/upload-artifact@v3
       with:
         name: site
-        path: _site
+        path: docs
 
   deploy:
     needs: build
@@ -77,14 +77,14 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: "site"
-          path: _site
+          path: docs
       
       - name: Upload files to GitHub Pages
         uses: cpina/github-action-push-to-another-repository@v1.4.2
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source-directory: "_site"
+          source-directory: "docs"
           destination-github-username: "hydephp"
           destination-repository-name: "previews"
           target-branch: master
