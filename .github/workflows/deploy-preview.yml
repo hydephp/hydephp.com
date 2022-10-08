@@ -96,6 +96,8 @@ jobs:
 
   comment-on-pull-request:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - uses: actions/github-script@v5
         with:
