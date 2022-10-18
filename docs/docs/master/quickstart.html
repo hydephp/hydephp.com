@@ -232,12 +232,12 @@
 <p>Hyde is based on <a href="https://laravel.com/docs/9.x/releases">Laravel 9</a>
 which requires a minimum PHP version of 8.0.
 You should also have <a href="https://getcomposer.org/">Composer</a> installed.</p>
-<p>To use some features like <a href="managing-assets.html">compiling your own assets</a>
+<p>To use some features like <a href="managing-assets">compiling your own assets</a>
 you also need NodeJS and NPM.</p>
 <h2>Using the Hyde CLI<a id="using-the-hyde-cli" href="#using-the-hyde-cli" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>The main way to interact with Hyde is through HydeCLI.</p>
 <p>If you are familiar with Laravel Artisan you will feel right at home.</p>
-<p>Learn more about the HydeCLI in the <a href="console-commands.html">console commands</a> documentation.</p>
+<p>Learn more about the HydeCLI in the <a href="console-commands">console commands</a> documentation.</p>
 <h2>Starting a development server<a id="starting-a-development-server" href="#starting-a-development-server" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>To make previewing your site a breeze you can use the real-time compiler
 which builds your pages on the fly. Start it using the HydeCLI:</p>
@@ -248,7 +248,7 @@ which builds your pages on the fly. Start it using the HydeCLI:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">├── _docs  // For documentation pages</span></div><div class='line'><span style="color: #A6ACCD;">├── _posts // For blog posts</span></div><div class='line'><span style="color: #A6ACCD;">└── _pages // For static Markdown and Blade pages</span></div></code></pre>
 <blockquote>
 <p>There are a few more directories that you should know about. Please see the
-<a href="architecture-concepts.html#directory-structure">directory structure</a> section.</p>
+<a href="architecture-concepts#directory-structure">directory structure</a> section.</p>
 </blockquote>
 <h3>Scaffolding files<a id="scaffolding-files" href="#scaffolding-files" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>You can scaffold blog post files using the <code>php hyde make:post</code> command with automatically creates the front matter based on your input selections.</p>
@@ -265,7 +265,7 @@ as Hyde takes care of that, including creating navigation menus!</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p><strong>Your site is then stored in the <code>_site</code> directory.</strong></p>
 <h3>Managing assets<a id="managing-assets" href="#managing-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Hyde comes bundled with a precompiled and minified <code>app.css</code> containing all the Tailwind you need for the default views meaning that you don't even need to use NPM. However, Hyde is already configured to use Laravel Mix to compile your assets if you feel like there's a need to. See more on the <a href="managing-assets.html">Managing Assets</a> page.</p>
+<p>Hyde comes bundled with a precompiled and minified <code>app.css</code> containing all the Tailwind you need for the default views meaning that you don't even need to use NPM. However, Hyde is already configured to use Laravel Mix to compile your assets if you feel like there's a need to. See more on the <a href="managing-assets">Managing Assets</a> page.</p>
 <h3>Deploying your site<a id="deploying-your-site" href="#deploying-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>You are now ready to show your site to the world!</p>
 <p>Simply copy the <code>_site</code> directory to your web server's document root, and you're ready to go.</p>
@@ -275,13 +275,13 @@ using a CI that automatically builds and deploys this site.</p>
 <p>Here's some ideas of what to read next:</p>
 <ul>
 <li>
-<a href="architecture-concepts.html">Architecture Concepts &amp; Directory Structure</a>
+<a href="architecture-concepts">Architecture Concepts &amp; Directory Structure</a>
 </li>
 <li>
-<a href="console-commands.html">Console Commands with the HydeCLI</a>
+<a href="console-commands">Console Commands with the HydeCLI</a>
 </li>
 <li>
-<a href="blog-posts.html">Creating Blog Posts</a>
+<a href="blog-posts">Creating Blog Posts</a>
 </li>
 </ul>
 
