@@ -30,14 +30,14 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 
 ## Creating Markdown Pages
 
-Markdown pages are the easiest way to create static pages, and are similar to [blog posts](blog-posts.html).
-You may want to read that page first as it explains [how front matter works](blog-posts.html#supported-front-matter-properties)
+Markdown pages are the easiest way to create static pages, and are similar to [blog posts](blog-posts).
+You may want to read that page first as it explains [how front matter works](blog-posts#supported-front-matter-properties)
 and how to use it.
 
 You can create a Markdown page by adding a file to the `_pages` directory where the filename ends in `.md`.
 
 ### Scaffolding Markdown Pages
-Scaffolding a Markdown page is as easy as using the [HydeCLI](console-commands.html).
+Scaffolding a Markdown page is as easy as using the [HydeCLI](console-commands).
 
 ```bash
 php hyde make:page "Page Title"
@@ -124,17 +124,15 @@ If you are comfortable with it, and have the need for it, use Blade to create mo
 | ➖ Not as flexible as Blade pages                    | ➕ Use arbitrary PHP right in the page to create dynamic content                          |
 |                                                     | ➕ Access to all Blade helper directives like @foreach, @if, etc.                         |
 |                                                     | ➖ Takes longer to create as as you need to write the markup                              |
-|                                                     | ➖ You may need to [recompile your CSS](managing-assets.html) if you add Tailwind classes |
+|                                                     | ➖ You may need to [recompile your CSS](managing-assets) if you add Tailwind classes |
 
 
 ### Live Demos
 
-The Hyde website ([hydephp.com](https://hydephp.com/)) uses both Markdown and Blade pages.
+The Hyde website ([hydephp.com](https://hydephp.com/)) uses both Markdown and Blade pages. The homepage for example, is a Blade page and uses a bunch of custom HTML.
 
-The "Privacy" which you can find at [hydephp.com/privacy](https://hydephp.com/privacy) is a Markdown page,
-which is a perfect fit for this task, where the goal was to simply inform about the privacy policy.
+A great example of a Markdown page can be found at [hydephp.github.io/portfolio-demo](https://hydephp.github.io/portfolio-demo), you can see the [page source here on GitHub](https://github.com/hydephp/portfolio-demo/blob/master/_pages/index.md).
 
-The "Gallery" which you can find at [hydephp.com/gallery](https://hydephp.com/gallery) is a Blade page.
-While a photo gallery could be used in a Markdown page, here I opted to use a Blade page instead. This allowed me
-to create a bunch of cool and dynamic interactions and animations as I had full control over the HTML and could
-easily add scripts, styles, and iframes. I also seperated sections into components to make them easier to manage.
+## Bonus: Creating HTML Pages
+
+If you have an already created HTML page, simply drop it into the `_pages` directory and Hyde will copy it over as it is into the `_site` directory. Like all other Hyde pages, the page will show up in the navigation menu using a title parsed from the filename.

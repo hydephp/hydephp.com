@@ -8,7 +8,7 @@ date: 2022-04-11 14:57
 
 The v0.10.0 release introduces featured images for blog posts.
 
-Add images to your posts by setting the `image` in the front matter. If you pass a string it will be used to find an image in the `_media` directory if the file is local. If you supply a full URI starting with `https://` it will be used as-is.
+Add images to your posts by setting the `image` in the front matter. If you pass a string it will be used to find an image in the `_media` directory if the file is local. If you supply a full URL starting with `https://` it will be used as-is.
 
 ## Adding basic images
 ### Add a Local image
@@ -21,7 +21,7 @@ image: image.jpg # Will load the following `_site/_media/image.jpg`
 ### Add a Remote image
 ```markdown
 ---
-image: https://cdn.example.com/image.jpg # Will load the URI directly
+image: https://cdn.example.com/image.jpg # Will load the URL directly
 ---
 ```
 
@@ -47,11 +47,11 @@ Here are the properties supported by the Image object, paired with examples and 
 path: _media/image.jpg
 ```
 
-### Remote image URI
+### Remote image URL
 
 Will override the path property if both are set.
 ```yaml
-uri: https://example.com/media/image.jpg
+url: https://example.com/media/image.jpg
 ```
 
 ### Alt description
@@ -110,7 +110,7 @@ date: 2022-04-11 15:51
 image:
   description: "Image of a small kitten with its head tilted, sitting in a basket weaved from nature material."
   title: "Kitten Gray Kitty [sic]"
-  uri: https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg
+  url: https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg
   copyright: Copyright (c) 2022
   license: Pixabay License
   licenseUrl: https://pixabay.com/service/license/
@@ -148,7 +148,7 @@ public static function exampleImage(): self
 {
   return new Hyde\Framework\Models\Image([
     'path' => '_media/image.jpg',
-    'uri' => 'https://picsum.photos/300/200',
+    'url' => 'https://picsum.photos/300/200',
     'description' => 'A random image.',
     'title' => 'An image from Picsum',
     'copyright' => 'Copyright (c) 2022',
