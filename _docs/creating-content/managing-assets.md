@@ -86,6 +86,7 @@ Then edit the files found in `resources/views/vendor/hyde/layouts` directory of 
 
 For the absolute majority of the cases, you don't need to mess with these files. Hyde will automatically load the app.css file when it exists in the `_media` directory.
 
+#### Loading from CDN
 If you want to load the same pre-compiled file included with Hyde but from a CDN, you can set `load_app_styles_from_cdn` to `true` in the `config/hyde.php` file. While you lose the ability to customize it, your styles will be automatically updated when needed.
 
 
@@ -118,5 +119,5 @@ To improve accessibility, you should always add an `alt` text. Here is a full ex
 
 Hyde offers great support for creating data-rich and accessible featured images for blog posts.
 
-You can read more about this in the [creating blog posts page](blog-posts.html#image).
+You can read more about this in the [creating blog posts page](blog-posts#image).
 

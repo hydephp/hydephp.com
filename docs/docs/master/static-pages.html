@@ -161,6 +161,9 @@
 </li>
 </ul>
 </li>
+<li>
+<a href="#bonus-creating-html-pages">Bonus: Creating HTML Pages</a>
+</li>
 </ul>
 
 			</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
@@ -238,12 +241,12 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 <li>Blade pages will override any Markdown pages with the same filename when compiled</li>
 </ul>
 <h2>Creating Markdown Pages<a id="creating-markdown-pages" href="#creating-markdown-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>Markdown pages are the easiest way to create static pages, and are similar to <a href="blog-posts.html">blog posts</a>.
-You may want to read that page first as it explains <a href="blog-posts.html#supported-front-matter-properties">how front matter works</a>
+<p>Markdown pages are the easiest way to create static pages, and are similar to <a href="blog-posts">blog posts</a>.
+You may want to read that page first as it explains <a href="blog-posts#supported-front-matter-properties">how front matter works</a>
 and how to use it.</p>
 <p>You can create a Markdown page by adding a file to the <code>_pages</code> directory where the filename ends in <code>.md</code>.</p>
 <h3>Scaffolding Markdown Pages<a id="scaffolding-markdown-pages" href="#scaffolding-markdown-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Scaffolding a Markdown page is as easy as using the <a href="console-commands.html">HydeCLI</a>.</p>
+<p>Scaffolding a Markdown page is as easy as using the <a href="console-commands">HydeCLI</a>.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This will create the following file saved as <code>_pages/page-title.md</code></p>
 <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Page Title</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Page Title</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #A6ACCD;">// Write your content here</span></div></code></pre>
@@ -310,18 +313,15 @@ however you still need to use the <code>blade.php</code> extension so Hyde can r
 </tr>
 <tr>
 <td></td>
-<td>➖ You may need to <a href="managing-assets.html">recompile your CSS</a> if you add Tailwind classes</td>
+<td>➖ You may need to <a href="managing-assets">recompile your CSS</a> if you add Tailwind classes</td>
 </tr>
 </tbody>
 </table>
 <h3>Live Demos<a id="live-demos" href="#live-demos" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>The Hyde website (<a href="https://hydephp.com/">hydephp.com</a>) uses both Markdown and Blade pages.</p>
-<p>The &quot;Privacy&quot; which you can find at <a href="https://hydephp.com/privacy">hydephp.com/privacy</a> is a Markdown page,
-which is a perfect fit for this task, where the goal was to simply inform about the privacy policy.</p>
-<p>The &quot;Gallery&quot; which you can find at <a href="https://hydephp.com/gallery">hydephp.com/gallery</a> is a Blade page.
-While a photo gallery could be used in a Markdown page, here I opted to use a Blade page instead. This allowed me
-to create a bunch of cool and dynamic interactions and animations as I had full control over the HTML and could
-easily add scripts, styles, and iframes. I also seperated sections into components to make them easier to manage.</p>
+<p>The Hyde website (<a href="https://hydephp.com/">hydephp.com</a>) uses both Markdown and Blade pages. The homepage for example, is a Blade page and uses a bunch of custom HTML.</p>
+<p>A great example of a Markdown page can be found at <a href="https://hydephp.github.io/portfolio-demo">hydephp.github.io/portfolio-demo</a>, you can see the <a href="https://github.com/hydephp/portfolio-demo/blob/master/_pages/index.md">page source here on GitHub</a>.</p>
+<h2>Bonus: Creating HTML Pages<a id="bonus-creating-html-pages" href="#bonus-creating-html-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>If you have an already created HTML page, simply drop it into the <code>_pages</code> directory and Hyde will copy it over as it is into the <code>_site</code> directory. Like all other Hyde pages, the page will show up in the navigation menu using a title parsed from the filename.</p>
 
 			</section>
 			<footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">

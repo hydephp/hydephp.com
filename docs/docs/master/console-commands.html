@@ -146,6 +146,9 @@
 <a href="#republish-the-configuration-files">Republish the configuration files</a>
 </li>
 <li>
+<a href="#list-the-available-pagesroutes">List the available pages/routes</a>
+</li>
+<li>
 <a href="#run-validation-tests-to-optimize-your-site">Run validation tests to optimize your site</a>
 </li>
 </ul>
@@ -355,6 +358,9 @@ you can use this command to republish the configuration files.</p>
 <p>Warning: This command will overwrite any existing files in the <code>config</code> directory. <br>
 You should be sure to have backups, or version control such as Git, before running this command.</p>
 </blockquote>
+<h3>List the available pages/routes<a id="list-the-available-pagesroutes" href="#list-the-available-pagesroutes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
+<p>Display a list of all the discovered pages, their route keys, and their source and output paths.</p>
 <h3>Run validation tests to optimize your site<a id="run-validation-tests-to-optimize-your-site" href="#run-validation-tests-to-optimize-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">validate</span></div></code></pre>
 <p>Hyde ships with a very useful command that runs a series of checks to validate your setup and catch any potential issues.</p>

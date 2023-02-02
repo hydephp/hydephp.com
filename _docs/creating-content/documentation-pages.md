@@ -21,7 +21,7 @@ What is "the rest", you may ask? Well, for starters:
 - If you have an `index.md` in the `_docs/` directory,
   a link to it will be added to the site navigation menu named "Docs".
 - If you have a Torchlight API token in your .env file, Hyde will even automatically enable Syntax Highlighting for you.
-  See more about this in the [extensions page](extensions.html#torchlight).
+  See more about this in the [extensions page](extensions#torchlight).
 
 ### Best Practices and Hyde Expectations
 
@@ -37,11 +37,16 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 - You should always have an `index.md` file in the `_docs/` directory
 - Your page will be stored in `_site/docs/<slug>.html` unless you [change it in the config](#output-directory)
 
+### Advanced usage and customization
+
+Like most of HydePHP, the Hyde Documentation module is highly customizable. Much of the frontend is composed using Blade templates and components, which you can customize to your heart's content.
+Since there are so many components, it's hard to list them all here in the documentation, so I encourage you to check out the [source code](https://github.com/hydephp/framework/tree/master/resources/views/components/docs) to see how it's all put together and find the customizations you are looking for.
+
 
 ## Creating Documentation Pages
 You can create a Documentation page by adding a file to the `_docs` directory where the filename ends in `.md`.
 
-You can also scaffold one quickly by using the [HydeCLI](console-commands.html).
+You can also scaffold one quickly by using the [HydeCLI](console-commands).
 
 ```bash
 php hyde make:page "Page Title" --type="docs"
@@ -55,7 +60,7 @@ This will create the following file saved as `_docs/page-title.md`
 
 ### Front Matter is optional
 
-You don't need to use [front matter](blog-posts.html#supported-front-matter-properties) to create a documentation page.
+You don't need to use [front matter](blog-posts#supported-front-matter-properties) to create a documentation page.
 
 However, Hyde still supports front matter here as it allows you to quickly override the default values.
 
@@ -64,9 +69,10 @@ Here is a quick reference, however, you should take a look at the [dynamic conte
 ```yaml
 ---
 title: "Page Title"
-label: "Sidebar Label"
-hidden: true
-priority: 5
+navigation:
+  label: "Sidebar Label"
+  hidden: true
+  priority: 5
 ---
 ```
 
@@ -80,25 +86,25 @@ Before we look at how to override things, here is an overview of the relevant co
 and where the data is from as well as where it can be overridden.
 
 
-| Property             | Description                                            | Source                         | Override in          |
-|----------------------|--------------------------------------------------------|--------------------------------|----------------------|
-| `title` (string)     | The title of the page used in the HTML `<title>` tag   | The first H1 heading (`# Foo`) | Front matter         |
-| `label` (string)     | The label for the page shown in the sidebar            | The page filename (slug)       | Front matter         |
-| `hidden` (boolean)   | Hides the page from the sidebar                        | _null_                         | Front matter         |
-| `priority` (integer) | The priority of the page used for ordering the sidebar | Defaults to 500                | Front matter, config |
+| Property                        | Description                                            | Source                              | Override in          |
+|---------------------------------|--------------------------------------------------------|-------------------------------------|----------------------|
+| `title` (string)                | The title of the page used in the HTML `<title>` tag   | The first H1 heading (`# Foo`)      | Front matter         |
+| `navigation.label` (string)     | The label for the page shown in the sidebar            | The page identifier/basename (slug) | Front matter, config |
+| `navigation.hidden` (boolean)   | Hides the page from the sidebar                        | _null_                              | Front matter, config |
+| `navigation.priority` (integer) | The priority of the page used for ordering the sidebar | Defaults to 500                     | Front matter, config |
 
 
 ## Sidebar
 
 The sidebar is automatically generated from the files in the `_docs` directory. You will probably want to change the order
-of these items. You can do this in two ways, either in the config or with front matter.
+of these items. You can do this in two ways, either in the config or with front matter using the navigation array.
 
 ### Table of contents
 
 Hyde automatically generates a table of contents for the page and adds it to the sidebar.
 
 The behaviour of this can be changed in the configuration file.
-See [the customization page](customization.html#navigation-menu--sidebar) for more details.
+See [the customization page](customization#navigation-menu--sidebar) for more details.
 
 
 ### Sidebar ordering
@@ -107,11 +113,12 @@ The sidebar is sorted/ordered by the `priority` property. The higher the priorit
 The default priority is 500. You can override the priority using the following front matter:
 
 ```yaml
-priority: 5
+navigation:
+  priority: 5
 ```
 
 You can also change the order in the Docs configuration file.
-See [the chapter in the customization page](customization.html#navigation-menu--sidebar) for more details. <br>
+See [the chapter in the customization page](customization#navigation-menu--sidebar) for more details. <br>
  _I personally think the config route is easier as it gives an instant overview, however the first way is nice as well._
 
 ### Sidebar labels
@@ -120,28 +127,29 @@ The sidebar items are labeled with the `label` property. The default label is th
 You can change it with the following front matter:
 
 ```yaml
-label: "My Custom Sidebar Label"
+navigation:
+  label: "My Custom Sidebar Label"
 ```
 
 ### Sidebar grouping
 
-Sidebar grouping was introduced in Hyde [v0.24.0-beta](https://github.com/hydephp/framework/releases/tag/v0.24.0-beta)
-and allows you to group items in the sidebar into categories. This is useful for creating a sidebar with a lot of items.
+Sidebar grouping allows you to group items in the sidebar into categories. This is useful for creating a sidebar with a lot of items.
 The Hyde docs for instance use this.
 
-The feature is enabled automatically when one or more of your documentation pages have the category property set
+The feature is enabled automatically when one or more of your documentation pages have the navigation.group property set
 in the front matter. This will then switch to a slightly more compact sidebar layout with pages sorted into categories.
-Any pages without the category front matter will get put in the "Other" category.
+Any pages without the group front matter will get put in the "Other" group.
 
 #### Using Front Matter
 
 To enable sidebar grouping, you can add the following front matter to your documentation pages:
 
 ```yaml
-category: "Getting Started"
+navigation:
+  group: "Getting Started"
 ```
 
-#### Using sub-directories
+#### Using subdirectories
 
 Since [v0.52.0-beta](https://github.com/hydephp/develop/releases/tag/v0.52.0-beta), you can also automatically group your documentation pages by placing source files in sub-directories.
 
@@ -155,7 +163,8 @@ For example, putting a Markdown file in `_docs/getting-started/`, is equivalent 
 You can hide items from the sidebar by adding the `hidden` property to the front matter:
 
 ```yaml
-hidden: true
+navigation:
+  hidden: true
 ```
 
 This can be useful to create redirects or other items that should not be shown in the sidebar.
@@ -164,7 +173,7 @@ This can be useful to create redirects or other items that should not be shown i
 
 ## Customization
 
-Please see the [customization page](customization.html) for in-depth information on how to customize Hyde,
+Please see the [customization page](customization) for in-depth information on how to customize Hyde,
 including the documentation pages. Here is a high level overview for quick reference though.
 
 ### Output directory
@@ -179,7 +188,7 @@ for example to specify a version like the Hyde docs does, you can specify the ou
 
 ### Automatic navigation menu
 
-By default, a link to the documentation page is added to the navigation menu when an index.md file is found in the `_docs` directory. Please see the [the customization page](customization.html#navigation-menu--sidebar) for more information.
+By default, a link to the documentation page is added to the navigation menu when an index.md file is found in the `_docs` directory. Please see the [the customization page](customization#navigation-menu--sidebar) for more information.
 
 ### Sidebar header name
 
@@ -205,7 +214,7 @@ Link items without an entry here will have fall back to the default priority of 
 ]
 ```
 
-See [the chapter in the customization page](customization.html#navigation-menu--sidebar) for more details. <br>
+See [the chapter in the customization page](customization#navigation-menu--sidebar) for more details. <br>
 
 
 ### Table of contents settings
@@ -227,7 +236,7 @@ You can also disable the feature completely.
 
 #### Introduction
 
-The HydeSearch plugin was introduced in v0.29.0-beta and adds a search feature to documentation pages.
+The HydeSearch plugin adds a search feature to documentation pages.
 
 The search feature is enabled by default.
 You can disable it by removing the `documentationSearch` from the Hyde `Features` config array.
@@ -246,8 +255,6 @@ You can also open the dialog using the keyboard shortcut `/`.
 
 #### Hiding pages from indexing
 
-> This feature was added in v0.40.0-beta.
-
 If you have a large page, like a changelog, on your documentation sites you may want to hide it from the search index. You can do this by adding the page slug to the `exclude_from_search` array in the `docs` config, similar to how navigation menu items are hidden.
 
 ```php
@@ -265,7 +272,7 @@ The page will still be accessible via the URL, but will be added to the search i
 
 #### Introduction
 
-Added in v0.31, Hyde can automatically add links to documentation pages that takes the user
+Hyde can automatically add links to documentation pages that takes the user
 to a GitHub page (or similar) to edit the page. This makes it great for open-source projects
 looking to allow others to contribute to the documentation in a quick and easy manner.
 
@@ -311,3 +318,7 @@ Just target the `.edit-page-link` class.
 // filepath e.g. app.css
 .edit-page-link::before {content: "✏ "}
 ```
+
+#### Changing the Blade view
+
+You can also publish the `edit-source-button.blade.php` view and change it to your liking.

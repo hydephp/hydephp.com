@@ -36,6 +36,7 @@ These are the main configuration files for HydePHP and lets you customize the lo
 | <a href="https://github.com/hydephp/hyde/blob/master/config/markdown.php" rel="nofollow noopener">markdown.php</a> | Configure Markdown related services, as well as change the CommonMark extensions.   |
 {.align-top}
 
+>info Tip: The values in site.php can also be set in YAML by creating a hyde.yml file in the root of your project. See [#yaml-configuration](#yaml-configuration) for more information.
 
 ### Laravel & Package Configuration Files
 
@@ -253,9 +254,9 @@ navigation:
 
 #### Changing the menu item labels
 
-Hyde makes a few attempts to find a suitable label for the navigation menu items to automatically create helpful titles. You can override the title using the `navigation.title` front matter property.
+Hyde makes a few attempts to find a suitable label for the navigation menu items to automatically create helpful titles. You can override the label using the `navigation.label` front matter property.
 
-From the Hyde config you can also override the title of navigation links using the by mapping the slug (relative to the site root) to a title. Note that the front matter property will take precedence over the config property.
+From the Hyde config you can also override the label of navigation links using the by mapping the route key (identifier/slug relative to the site root) to the desired title. Note that the front matter property will take precedence over the config property.
 
     
 ```php
@@ -279,7 +280,7 @@ To edit the default component you need to publish them first using the `hyde pub
 The files will then be available in the `resources/views/vendor/hyde` directory.
 
 ## Frontend Styles
-Hyde is designed to not only serve as a framework but a whole starter kit and comes with a Tailwind starter template for you to get up and running quickly. If you want to customize these, you are free to do so. Please see the [Managing Assets](managing-assets.html) page to learn more.
+Hyde is designed to not only serve as a framework but a whole starter kit and comes with a Tailwind starter template for you to get up and running quickly. If you want to customize these, you are free to do so. Please see the [Managing Assets](managing-assets) page to learn more.
 
 
 ## CommonMark environment
@@ -307,4 +308,25 @@ In the same file you can also change the config to be passed to the CommonMark e
 		'disallowed_tags' => [],
 	],
 ],
+```
+
+## YAML Configuration
+
+As a relatively new and experimental feature, the settings in the config/site.php can also be overridden by creating
+a hyde.yml file in the root of your project directory. Note that these cannot reference environment variables, 
+and their values override any made in the PHP config.
+
+Here is an example hyde.yml file matching the default site.yml:
+
+```yaml
+# filepath hyde.yml
+name: HydePHP
+url: http://localhost
+pretty_urls: false
+generate_sitemap: true
+generate_rss_feed: true
+rss_filename: feed.xml
+# rss_description:
+language: en
+output_directory: _site
 ```

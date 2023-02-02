@@ -1,4 +1,4 @@
-# Elegant and Powerful Static App Builder
+# Elegant and Powerful Static Site Generator
 
 <p> 
     <!-- <a href="https://packagist.org/packages/hyde/hyde"><img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/hyde/hyde" alt="Latest Version on Packagist" title="Latest version of Hyde/Hyde"></a> -->
@@ -38,4 +38,4 @@ composer create-project hyde/hyde --stability=dev
 
 For the best experience you should have PHP >= 8.0, Composer, and NPM installed.
 
-### To learn more, head over to the [quickstart page](quickstart.html).
+### To learn more, head over to the [quickstart page](quickstart).

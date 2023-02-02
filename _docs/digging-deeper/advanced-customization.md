@@ -29,7 +29,7 @@ When Hyde references files, especially when passing filenames between components
 
 ## Customizing source directories 🧪
 
->warning This may cause integrations such as the realtime compiler to break.
+>warning This may cause integrations such as the realtime compiler to break. You'll also likely need to update route key names in your templates.
 
 The source directory paths are stored in the PageModel objects. 
 You can change them by modifying the static property, for example in a service provider.
@@ -65,25 +65,22 @@ return [
 ];
 ```
 
-### Setting an absolute path 💔
-If you want to store the output website outside your project with an absolute path you may do so at your own risk using a service provider. This is not supported or recommended as it may cause unintentional file deletions.
+### Setting an absolute path
 
-```php
-// filepath Boot method of a service provider
-StaticPageBuilder::$outputPath = '/var/www/my-project/';
-```
+Since Hyde v0.64.0-beta, the site output directory will always be resolved within the project root. If you want to compile the site to an absolute path outside your project, it's instead recommended that you use a build task to copy the files to the desired location automatically after the site has been compiled. 
 
-## Adding custom post-build hooks 🧪
->info This feature should not be in danger of breaking things. However, it was added very recently and the implementation may change at any moment. See <a href=" https://github.com/hydephp/develop/issues/79">this GitHub issue</a> for up to date information.
+## Adding custom post-build tasks
 
-Since v0.40.0 you can create custom post-build hooks. These hooks are code that is executed automatically after the site has been built using the `php hyde build` command.
+These tasks are code that is executed automatically after the site has been built using the `php hyde build` command. The built-in features in Hyde like sitemap generation and RSS feeds are created using tasks like these.
+
+Maybe you want to create your own, to for example upload the site to FTP or copy the files to a public directory? It's easy to do, here's how!
 
 ### Minimal example
 
 Here is a minimal example to get you started. For all these examples we assume you put the file in the `App/Actions` directory, but you can put them anywhere.
 
 ```php
-class SimpleHook extends AbstractBuildTask
+class SimpleTask extends AbstractBuildTask
 {
     public function run(): void
     {
@@ -102,16 +99,16 @@ This will then output the following, where you can see that some extra output, i
 
 ### Full example
 
-You can also set the description, and an optional `then()` method to run after the main hook has been executed.
+You can also set the description, and an optional `then()` method to run after the main task has been executed. The then method is great if you want to display a status message.
 
 ```php
 <?php
 
 namespace App\Actions;
 
-use Hyde\Framework\Contracts\AbstractBuildTask;
+use Hyde\Framework\Concerns\AbstractBuildTask;
 
-class ExampleHook extends AbstractBuildTask
+class ExampleTask extends AbstractBuildTask
 {
     public static string $description = 'Say hello';
 
@@ -134,17 +131,18 @@ class ExampleHook extends AbstractBuildTask
 </pre>
 
 
-### Registering the hooks
+### Registering the tasks
 
-An autoloading feature is planned, but for now, you will need to register the hooks somewhere. There is a convenient place to do this, which is in the main configuration file, `config/hyde.php`.
+There are a few ways to register these tasks so Hyde can find them. There is a convenient place to do this, which is in the main configuration file, `config/hyde.php`.
 
 ```php
 // filepath config/hyde.php
 'post_build_tasks' => [
-    \App\Actions\SimpleHook::class,
-    \App\Actions\ExampleHook::class,
+    \App\Actions\SimpleTask::class,
+    \App\Actions\ExampleTask::class,
 ],
 ```
 
-If you are developing an extension, I recommend you do this in the `boot` method of a service provider so that it can be loaded automatically. Do this by adding the fully qualified class name to the `BuildHookService::$postBuildTasks` array.
+If you are developing an extension, I recommend you do this in the `boot` method of a service provider so that it can be loaded automatically. Do this by adding the fully qualified class name to the `BuildTaskService::$postBuildTasks` array.
 
+Hyde can also autoload them if you store the files in the `app/Actions` directory and the names end in `BuildTask.php`. For example `app/Actions/ExampleBuildTask.php`.
