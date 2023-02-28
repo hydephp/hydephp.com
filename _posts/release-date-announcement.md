@@ -22,7 +22,7 @@ The first HydePHP v1.0-RC version will be published tied to the feature freeze. 
 
 ### Learn more
 
-This release is being tracked in the [GitHub Development Monorepository](https://github.com/hydephp/develop/issues) in issue [#570](https://github.com/hydephp/develop/issues/570) and [#1000](https://github.com/hydephp/develop/issues/1000)
+This release is being tracked in the [GitHub Development Monorepository](https://github.com/hydephp/develop/issues) in issues [#570](https://github.com/hydephp/develop/issues/570) and [#1000](https://github.com/hydephp/develop/issues/1000)
 
 ### Get involved
 
