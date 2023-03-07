@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Announcing the First Release Candidate of HydePHP</title>
+
+ 
+<link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/posts/announcing-the-first-release-candidate-of-hydephp.html">
+<meta name="author" content="Caen">
+<meta name="description" content="We&#039;re excited to announce the first release candidate of HydePHP, a Laravel-based static site generator!">
+<meta name="keywords" content="announcements">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Announcing the First Release Candidate of HydePHP">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/posts/announcing-the-first-release-candidate-of-hydephp.html">
+<meta property="og:title" content="Announcing the First Release Candidate of HydePHP">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="../media/1500x500.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+<meta property="og:article:published_time" content="2023-03-07T22:33:00+00:00">
+<meta property="og:type" content="article">
+
+
+ 
+
+
+<link rel="stylesheet" href="../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+		<a aria-label="Home page link" href="../" class="font-bold px-4">
+	<img src="/media/logo-masked32-min.png" alt="HydePHP Logo" class="inline">
+	HydePHP
+</a>
+		<div class="ml-auto">
+			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+		</div>
+	</div>
+
+	<div class="block md:hidden">
+		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+				aria-label="Toggle navigation menu">
+			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Open Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Close Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</svg>
+		</button>
+	</div>
+
+	<div id="main-navigation-links"
+		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
+		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+							<li class="md:mx-2">
+					<a href="../"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+							<li class="md:mx-2">
+					<a href="../about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+							<li class="md:mx-2">
+					<a href="../demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+							<li class="md:mx-2">
+					<a href="/posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+							<li class="md:mx-2">
+					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					</ul>
+		<a id="docs-nav-button" href="/docs/master" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+		</a>
+	</div>
+</nav>
+ 
+
+    <section>
+        
+<main id="content" class="mx-auto max-w-7xl py-16 px-8">
+	<article aria-label="Article" id="https://hydephp.com/posts/announcing-the-first-release-candidate-of-hydephp" itemscope itemtype="http://schema.org/Article"
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    <meta itemprop="identifier" content="announcing-the-first-release-candidate-of-hydephp">
+        <meta itemprop="url" content="https://hydephp.com/posts/announcing-the-first-release-candidate-of-hydephp">
+        
+    <header aria-label="Header section" role="doc-pageheader">
+        <h1 itemprop="headline" class="mb-4">Announcing the First Release Candidate of HydePHP</h1>
+		<div id="byline" aria-label="About the post" role="doc-introduction">
+            Posted <time itemprop="dateCreated datePublished" datetime="2023-03-07T22:33:00+00:00" title="Tuesday Mar 7th, 2023, at 10:33pm">Mar 7th, 2023</time>
+		    by author
+<address itemprop="author" itemscope itemtype="http://schema.org/Person" aria-label="The post author" style="display: inline;"> 
+		<span itemprop="name" aria-label="The author's name" title=@Caen>Caen</span> 
+	</address> 
+            in the category "announcements"
+        </div>
+    </header>
+    <figure aria-label="Cover image" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" role="doc-cover">
+    <img src="../media/1500x500.png" alt="" title="" itemprop="image" class="mb-0"> 
+    <figcaption aria-label="Image caption" itemprop="caption"> 
+         
+    </figcaption> 
+     
+	<meta itemprop="url" content="../media/1500x500.png"> 
+     
+	<meta itemprop="contentUrl" content="../media/1500x500.png"> 
+     
+</figure> 
+    <div aria-label="Article body" itemprop="articleBody">
+        <h2>Release Announcement</h2>
+<p>We're excited to announce the first release candidate of HydePHP, a Laravel-based static site generator! HydePHP is a powerful and flexible tool that allows you to build static websites with ease, using the familiar syntax and functionality of the Laravel framework.</p>
+<h3>What is HydePHP?</h3>
+<p>HydePHP is a static site generator that is built on top of Laravel, one of the most popular PHP frameworks out there. This means that if you're already familiar with Laravel, you'll find HydePHP to be very intuitive and easy to use.</p>
+<h3>Release Candidate</h3>
+<p>With this release, we're one step closer to the first stable version of HydePHP. We encourage you to try out this release candidate and provide any feedback you may have, so that we can continue to improve the tool and make it even better.</p>
+<h3>How to Install</h3>
+<p>To get started with HydePHP, you can install it using Composer with the following command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--stability</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">RC</span></div></code></pre>
+<h3>First Stable Release</h3>
+<p>We're planning to release the first stable version of HydePHP exactly one week from now, on March 14th, 2023. In the meantime, please give this release candidate a try and let us know what you think. Thanks for your support, and happy building!</p>
+<h3>More Information</h3>
+<p>You can also visit our website at <a href="https://hydephp.com/">HydePHP.com</a> for more information, or follow us on Twitter at <a href="https://twitter.com/HydeFramework">@HydeFramework</a> for updates and news.</p>
+<p><em>Disclaimer: We would like to clarify that HydePHP is an independent open-source project and is not affiliated with or endorsed by Laravel or its creators.</em></p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+
+    </div>
+    <span class="sr-only">End of article</span>
+</article>
+</main>
+
+ 
+    </section>
+
+    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+		<div class="block md:w-1/3 px-2 mx:px-0">
+			<span class="flex items-center w-fit">
+				<a href="../" class="flex items-center mr-4">
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
+					
+					<span class="ml-2 text-lg font-black">HydePHP</span>
+				</a>
+			</span>
+			
+			<p class="font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
+				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
+			</p>
+		</div>
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
+				<li><a href="../docs/master/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					Documentation</a></li>
+					
+					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Community Portal
+					</a></li>
+					
+					<li><a href="../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Legal Information
+					</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
+					<li><a href="../community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Developer Resources
+					</a></li>
+					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
+					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
+					<li><a href="../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Sitemap
+					</a></li>
+					<li><a href="../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Blog Posts
+					</a></li>
+					
+					<li><a href="../feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						RSS Feed
+					</a></li>
+				</ul>
+				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
+					<div class="flex justify-start pl-4 mt-2">
+						
+						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+							</svg>
+						</a>
+						<a title="Twitter &commat;HydeFramework" class="items-center block  mr-4  dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://twitter.com/HydeFramework">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+							</svg>
+						</a>
+						<a title="Discord Server" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
+						</a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+					</div>
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+			<div class="prose mx-auto text-center text-sm dark:prose-invert">
+				<p>This website is <a href="https://github.com/hydephp/hydephp.com">Open Source</a> and proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
+
+			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
+		</div>
+	</div>
+</footer> 
+
+    <script defer src="../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+ 
+</body>
+</html>
