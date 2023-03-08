@@ -54,7 +54,7 @@ jobs:
       run: npm run prod
 
     - name: Run the Hyde Builder
-      run: php hyde build --pretty-urls --run-prettier  --no-interaction
+      run: php hyde build --pretty-urls --no-interaction
 
     - name: Create docs redirect
       run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
