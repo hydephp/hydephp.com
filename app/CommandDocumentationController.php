@@ -63,7 +63,7 @@ class CommandDocumentationController
 
         $description = $option['description'];
 
-        return "{$name}" . $description;
+        return "{$name}" . strip_tags($description);
     }
 
     private function getLengthOfLongestArgument(array $commands)
