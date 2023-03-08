@@ -318,7 +318,7 @@ return [
         // Lower values show up first in the menu.
         'order' => [
             'index' => 0,
-            'posts' => 10,
+            'posts' => 1200,
             'docs/index' => 100,
         ],
 
@@ -327,13 +327,13 @@ return [
         'labels' => [
             'index' => 'Home',
             'docs/index' => 'Docs',
+            'posts' => 'Blog',
         ],
 
         // These are the pages that should not show up in the navigation menu.
         'exclude' => [
             '404',
             'dashboard',
-            'posts',
             'privacy',
             'legal',
             'changelog',
@@ -355,8 +355,6 @@ return [
         // See the documentation link above for more information.
         'custom' => [
             NavItem::forLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
-            NavItem::forLink('https://hydephp.com/posts', 'Blog', 1000),
-            NavItem::forLink('https://hydephp.com/docs', 'Documentation', 500),
         ],
 
         // How should pages in subdirectories be displayed in the menu?
