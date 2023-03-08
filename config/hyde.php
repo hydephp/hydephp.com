@@ -183,7 +183,7 @@ return [
         \Hyde\Pages\BladePage::class => '',
         \Hyde\Pages\MarkdownPage::class => '',
         \Hyde\Pages\MarkdownPost::class => 'posts',
-        \Hyde\Pages\DocumentationPage::class => 'docs/master',
+        \Hyde\Pages\DocumentationPage::class => 'docs/1.x',
     ],
 
     /*
@@ -296,7 +296,7 @@ return [
     | You can disable it completely by changing the setting to `false`.
     |
     | To read about the many configuration options here, visit:
-    | https://hydephp.com/docs/master/customization#footer
+    | https://hydephp.com/docs/1.x/customization#footer
     |
     */
 
@@ -342,7 +342,7 @@ return [
             'contributing',
             'code-of-conduct',
             'community',
-            'docs/master/index',
+            'docs/1.x/index',
             'testimonials',
             'accessibility',
             'sitemap',

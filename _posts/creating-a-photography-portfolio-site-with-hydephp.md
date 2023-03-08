@@ -63,7 +63,7 @@ php hyde new --help
 
 ![The help flag](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8or6y4lz8r9n0ttiztwq.png)
 
-You can also always refer to the online [HydePHP CLI documentation](https://hydephp.com/docs/master/console-commands) for more information.
+You can also always refer to the online [HydePHP CLI documentation](https://hydephp.com/docs/1.x/console-commands) for more information.
 
 ## Running the Development Server
 
@@ -166,7 +166,7 @@ Now if you refresh the page in your browser, you should see the images we just a
 
 We added a CSS class before called `.gallery`, so let's add some styles to that class.
 
-If you want to add a lot of styles, you may want to take a look at the [Compiling assets documentation](https://hydephp.com/docs/master/managing-assets), but for this demo, we just want to add a single class, so we'll use a shortcut.
+If you want to add a lot of styles, you may want to take a look at the [Compiling assets documentation](https://hydephp.com/docs/1.x/managing-assets), but for this demo, we just want to add a single class, so we'll use a shortcut.
 
 HydePHP comes with a complete frontend with components to create everything from blog posts to documentation sites. These templates are built with [TailwindCSS](https://tailwindcss.com). To make things easier for you, a pre-compiled and minified version of all the Tailwind classes needed for the built-in templates is included in the base installation. You'll find them in the `app.css` file in the `_media/` directory.
 
@@ -207,7 +207,7 @@ This will take all of our source content and compile it into a static site that 
 
 ## Publishing the Site
 
-Static sites are super easy to publish. You can publish them anywhere you can host a website, like GitHub Pages, Netlify, and traditional shared hosting, just to name a few. That's one of the reasons why I love static sites so much! However, that's outside the scope of this tutorial, but do check out the [Deployment documentation](https://hydephp.com/docs/master/compile-and-deploy) for more information.
+Static sites are super easy to publish. You can publish them anywhere you can host a website, like GitHub Pages, Netlify, and traditional shared hosting, just to name a few. That's one of the reasons why I love static sites so much! However, that's outside the scope of this tutorial, but do check out the [Deployment documentation](https://hydephp.com/docs/1.x/compile-and-deploy) for more information.
 
 In short though, just drop the contents of the `_site/` directory into the root/public directory of your web server and you're done!
 

@@ -57,7 +57,7 @@ jobs:
       run: php hyde build --pretty-urls --run-prettier  --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > docs/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
 
     - name: Upload site artifact
       uses: actions/upload-artifact@v3

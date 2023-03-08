@@ -66,7 +66,7 @@ jobs:
       run: echo "hydephp.com" > docs/CNAME
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > docs/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9 
