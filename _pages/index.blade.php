@@ -57,7 +57,7 @@
                 Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
-            <a href="docs" class="relative mt-5 group">
+            <a href="{{ DocumentationPage::home() }}" class="relative mt-5 group">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
                 <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded group-hover:bg-violet-400 xl:text-xl fold-bold">
                     To the Documentation!
