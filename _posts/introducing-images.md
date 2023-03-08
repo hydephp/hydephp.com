@@ -31,7 +31,7 @@ If you want to be fancy you can supply extra data to the image. To do this you i
 ```markdown
 ---
 image:
-  path: image.jpg
+  source: image.jpg
   description: Alt text
   title: Tooltip
 ---
