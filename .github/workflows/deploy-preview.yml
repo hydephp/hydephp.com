@@ -32,7 +32,7 @@ jobs:
         echo "ROBOTS_NOINDEX=true" >> .env
 
     - name: Install composer dependencies
-      run: composer install --prefer-dist
+      run: composer install
 
     - name: Cache node modules
       uses: actions/cache@v3
