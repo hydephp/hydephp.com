@@ -50,8 +50,8 @@
                     The Static Site Generator You've Been Waiting For.
                 </small>
                 <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
-                src="/media/logo.svg" alt="HydePHP Logo">
-                
+                src="{{ Asset::mediaLink('logo.svg') }}" alt="HydePHP Logo">
+
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
                 Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
