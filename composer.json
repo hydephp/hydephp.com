@@ -1,10 +1,14 @@
 {
     "name": "hyde/hyde",
-    "description": "Static Site Generator to rapidly create Blogs, Documentation, and more, using Markdown and Blade.",
+    "description": "Static Site Generator to rapidly create Blogs, Documentation Sites, and more, using Markdown and Blade.",
     "keywords": [
         "framework",
         "hyde",
-        "hyde framework"
+        "hyde framework",
+        "hydephp",
+        "static site generator",
+        "static site framework",
+        "ssg"
     ],
     "homepage": "https://hydephp.com",
     "type": "project",
@@ -20,13 +24,12 @@
         }
     ],
     "require": {
-        "php": "^8.0",
-        "hyde/framework": "^0.44"
+        "php": "^8.1",
+        "hyde/framework": "^1.0",
+        "laravel-zero/framework": "^10.0"
     },
     "require-dev": {
-        "mockery/mockery": "^1.4.4",
-        "pestphp/pest": "^1.21.1",
-        "hyde/realtime-compiler": "^2.2"
+        "hyde/realtime-compiler": "^3.0"
     },
     "autoload": {
         "psr-4": {
@@ -40,6 +43,7 @@
     },
     "scripts": {
         "post-autoload-dump": [
+            "@php -r \"@unlink('./app/storage/framework/cache/packages.php');\"",
             "@php hyde package:discover --ansi"
         ]
     },
