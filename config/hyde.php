@@ -15,11 +15,16 @@
 | no configuration out of the box to get started. Though, you may want to
 | change the options to personalize your site and make it your own!
 |
+| Tip: The settings here can also be overridden by creating a hyde.yml file
+| in the root of your project directory. Note that these cannot call any
+| PHP functions, so you can't use env() or similar helpers. Also, note
+| that any settings in the yml file will override settings here.
+|
 */
 
-use Hyde\Framework\Helpers\Author;
-use Hyde\Framework\Helpers\Features;
-use Hyde\Framework\Helpers\Meta;
+use Hyde\Facades\Author;
+use Hyde\Facades\Features;
+use Hyde\Facades\Meta;
 
 return [
 
@@ -31,37 +36,24 @@ return [
     | This value sets the name of your site and is, for example, used in
     | the compiled page titles and more. The default value is HydePHP.
     |
-    | The name is stored in the $siteName variable so it can be
-    | used again later on in this config.
-    |
     */
 
-    'name' => $siteName = env('SITE_NAME', 'HydePHP'),
+    'name' => env('SITE_NAME', 'HydePHP'),
 
     /*
     |--------------------------------------------------------------------------
-    | Site URL Configuration
+    | Site Base URL
     |--------------------------------------------------------------------------
     |
-    | Here are some configuration options for URL generation.
+    | Setting a base URL is highly recommended, and is required to use some
+    | HydePHP features, like automatic sitemaps and RSS feeds.
     |
-    | A site_url is required to use sitemaps and RSS feeds.
-    |
-    | `site_url` is used to create canonical URLs and permalinks.
-    | `prettyUrls` will when enabled create links that do not end in .html.
-    | `generateSitemap` determines if a sitemap.xml file should be generated.
-    |
-    | To see the full documentation, please visit the (temporary link) below.
-    | https://github.com/hydephp/framework/wiki/Documentation-Page-Drafts
-    |
+    | If you are serving your site from a subdirectory,
+    | you will need to include that in the path.
     |
     */
 
-    'site_url' => 'https://hydephp.com/',
-
-    'pretty_urls' => false,
-
-    'generate_sitemap' => true,
+    'url' => 'https://hydephp.com/',
 
     /*
     |--------------------------------------------------------------------------
@@ -74,6 +66,137 @@ return [
     */
 
     'language' => 'en',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Pretty URLs
+    |--------------------------------------------------------------------------
+    |
+    | When the setting is enabled, generated links in the compiled HTML site
+    | are without the .html extension, in other words, "pretty" URLs.
+    |
+    | This setting can also be enabled on a per-compile basis by supplying
+    | the `--pretty-urls` option when you run the build command.
+    |
+    */
+
+    'pretty_urls' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Sitemap Generation
+    |--------------------------------------------------------------------------
+    |
+    | When the setting is enabled, a sitemap.xml file will automatically be
+    | generated when you compile your static site.
+    |
+    | This feature requires that a site base URL has been set.
+    |
+    */
+
+    'generate_sitemap' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | RSS Feed Generation
+    |--------------------------------------------------------------------------
+    |
+    | When enabled, an RSS feed with your Markdown blog posts will be
+    | generated when you compile your static site.
+    |
+    | This feature requires that a site base URL has been set.
+    |
+    */
+
+    // Should the RSS feed be generated?
+    'generate_rss_feed' => true,
+
+    // What filename should the RSS file use?
+    'rss_filename' => 'feed.xml',
+
+    // The channel description. By default this is "Site Name + RSS Feed".
+    // 'rss_description' => '',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Source Root Directory
+    |--------------------------------------------------------------------------
+    |
+    | HydePHP will by default look for the underscored source directories in the
+    | root of your project. For example, you might want everything in a 'src'
+    | subdirectory. That's easy enough, just set the value below to "src"!
+    |
+    */
+
+    'source_root' => '',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Site Output Directory
+    |--------------------------------------------------------------------------
+    |
+    | This setting specifies the output path for your site, useful to for
+    | example, store the site in the docs/ directory for GitHub Pages.
+    | The path is relative to the root of your project.
+    |
+    */
+
+    'output_directory' => '_site',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Source Directories
+    |--------------------------------------------------------------------------
+    |
+    | The directories you place your content in are important. The directory
+    | will be used to determine the proper page type and the templates used.
+    | If you are not happy with these defaults, you can change them here.
+    | Note that these are relative to the `source_root` setting above.
+    |
+    */
+
+    'source_directories' => [
+        \Hyde\Pages\HtmlPage::class => '_pages',
+        \Hyde\Pages\BladePage::class => '_pages',
+        \Hyde\Pages\MarkdownPage::class => '_pages',
+        \Hyde\Pages\MarkdownPost::class => '_posts',
+        \Hyde\Pages\DocumentationPage::class => '_docs',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Output Directories
+    |--------------------------------------------------------------------------
+    |
+    | Like the source directories, the output directories are also important
+    | as they determine the final output path for each page type in your
+    | compiled static site. This change also affects the route keys.
+    |
+    | Note that these are relative to the site's `output_directory` setting.
+    | Setting the value to '' will output the page to the root of the site.
+    |
+    */
+
+    'output_directories' => [
+        \Hyde\Pages\HtmlPage::class => '',
+        \Hyde\Pages\BladePage::class => '',
+        \Hyde\Pages\MarkdownPage::class => '',
+        \Hyde\Pages\MarkdownPost::class => 'posts',
+        \Hyde\Pages\DocumentationPage::class => 'docs/master',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Media Directory
+    |--------------------------------------------------------------------------
+    |
+    | This setting specifies the directory where your media files are stored.
+    | Note that this affects both the source and output directories.
+    | The path is relative to the root of your project.
+    |
+    */
+
+    'media_directory' => '_media',
 
     /*
     |--------------------------------------------------------------------------
@@ -94,28 +217,20 @@ return [
         Meta::name('author', 'Caen De Silva'),
         Meta::name('description', 'HydePHP - Elegant and Powerful Static App Builder'),
         Meta::name('keywords', 'HydePHP, Static App Builder, Static Sites, Blogs, Documentation'),
-        Meta::name('generator', 'HydePHP '.Hyde\Framework\Hyde::version()),
+        Meta::name('generator', 'HydePHP '.Hyde\Hyde::version()),
         Meta::name('twitter:card', 'summary'),
         Meta::name('twitter:site', '@hyde_php'),
         Meta::name('twitter:creator', '@CodeWithCaen'),
         Meta::name('twitter:title', 'HydePHP - Elegant and Powerful Static App Builder'),
         Meta::name('twitter:description', 'Make static websites, blogs, and documentation pages with the tools you already know and love.'),
         Meta::name('twitter:image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
-        Meta::property('site_name', $siteName),
+        Meta::property('site_name', env('SITE_NAME', 'HydePHP')),
         Meta::property('url', 'https://hydephp.com/'),
         Meta::property('title', 'HydePHP'),
         Meta::property('description', 'HydePHP - Elegant and Powerful Static App Builder'),
         Meta::property('image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
         Meta::property('image:alt', 'GitHub OpenGraph Image'),
-        '<script type="text/javascript">
-              (function(){var pioneerAnalytics=window.pioneerAnalytics=window.pioneerAnalytics||[];if(pioneerAnalytics.initialize)return;if(pioneerAnalytics.invoked){if(window.console&&console.error){console.error("Pioneer snippet included twice.")}return}pioneerAnalytics.invoked=true;pioneerAnalytics.debugMode=false;pioneerAnalytics.methods=["page","identify","active","reset","debug","trackSubmit","trackClick","trackLink","trackForm","pageview","group","track","ready","alias","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","initialize"];pioneerAnalytics.requestQueue=[];pioneerAnalytics.factory=function(method){return function(){var args=Array.prototype.slice.call(arguments);args.unshift(method);pioneerAnalytics.push(args);return pioneerAnalytics}};for(var i=0;i<pioneerAnalytics.methods.length;i++){var key=pioneerAnalytics.methods[i];pioneerAnalytics[key]=pioneerAnalytics.factory(key)}pioneerAnalytics.load=function(key,options){var script=document.createElement("script");script.type="text/javascript";script.async=true;script.src="https://assets.pioneer.app/pioneer-analytics.min.js";var first=document.getElementsByTagName("script")[0];first.parentNode.insertBefore(script,first);pioneerAnalytics._loadOptions=options};pioneerAnalytics.SNIPPET_VERSION=1;
-                pioneerAnalytics._writeKey="fa1f4d9f12a5f775c3b983d1090081a2";
-                pioneerAnalytics.load(pioneerAnalytics._writeKey);
-                pioneerAnalytics.page();
-                pioneerAnalytics.debug(false);
-              })();
-          </script>',
-        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -130,7 +245,8 @@ return [
 
     'features' => [
         // Page Modules
-        Features::blogPosts(),
+        Features::htmlPages(),
+        Features::markdownPosts(),
         Features::bladePages(),
         Features::markdownPages(),
         Features::documentationPages(),
@@ -172,104 +288,161 @@ return [
     | Footer Text
     |--------------------------------------------------------------------------
     |
-    | Most websites have a footer with copyright details and contact information.
-    | You probably want to change the Markdown to include your information,
-    | though you are of course welcome to keep the attribution link!
+    | Here you can customize the footer Markdown text for your site.
     |
-    | You can also customize the blade view if you want a more complex footer.
-    | You can disable it completely by setting `enabled` to `false`.
+    | If you don't want to write Markdown here, you use a Markdown include.
+    | You can also customize the Blade view if you want a more complex footer.
+    | You can disable it completely by changing the setting to `false`.
+    |
+    | To read about the many configuration options here, visit:
+    | https://hydephp.com/docs/master/customization#footer
     |
     */
 
-    'footer' => [
-        'enabled' => true,
-        'markdown' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
-    ],
+    'footer' => 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩',
 
     /*
     |--------------------------------------------------------------------------
-    | Custom Navigation Menu Links
+    | Navigation Menu Configuration
     |--------------------------------------------------------------------------
     |
-    | If you are looking to add custom navigation menu links, this is the place!
-    |
-    | Linking to an external site? Supply the full URI to the 'destination'.
-    | Keeping it internal? Pass the 'slug' relative to the document root.
-    |
-    | To get started quickly, you can uncomment the defaults here.
-    | Tip: Only the title and slug parameters are required.
+    | If you are looking to customize the main navigation menu, this is the place!
     |
     */
 
-    'navigation_menu_links' => [
-        [
-            'title' => 'GitHub',
-            'destination' => 'https://github.com/hydephp/hyde',
-            'priority' => 1200,
+    'navigation' => [
+        // This configuration sets the priorities used to determine the order of the menu.
+        // The default values have been added below for reference and easy editing.
+        // The array key should match the page's route key (slug).
+        // Lower values show up first in the menu.
+        'order' => [
+            'index' => 0,
+            'posts' => 10,
+            'docs/index' => 100,
         ],
-        [
-            'title' => 'Blog',
-            'slug' => 'posts',
-            'priority' => 1000,
+
+        // In case you want to customize the labels for the menu items, you can do so here.
+        // Simply add the route key (slug) as the key, and the label as the value.
+        'labels' => [
+            'index' => 'Home',
+            'docs/index' => 'Docs',
         ],
-        [
-            'title' => 'Documentation',
-            'slug' => 'docs',
-            'priority' => 500,
-        ]
+
+        // These are the pages that should not show up in the navigation menu.
+        'exclude' => [
+            '404',
+        ],
+
+        // Any extra links you want to add to the navigation menu can be added here.
+        // To get started quickly, you can uncomment the defaults here.
+        // See the documentation link above for more information.
+        'custom' => [
+            NavItem::forLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
+            NavItem::forLink('https://hydephp.com/posts', 'Blog', 1000),
+            NavItem::forLink('https://hydephp.com/docs', 'Documentation', 500),
+        ],
+
+        // How should pages in subdirectories be displayed in the menu?
+        // You can choose between 'dropdown', 'flat', and 'hidden'.
+        'subdirectories' => 'hidden',
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Navigation Menu Blacklist
+    | Cache Busting
     |--------------------------------------------------------------------------
-    | There may be pages you want to exclude from the automatic navigation menu,
-    | such as error pages. Add their slugs here and they will not be included.
+    |
+    | Any assets loaded using the Asset::mediaLink() helper will automatically
+    | have a cache busting query string appended to the URL. This is useful
+    | when you want to force browsers to load a new version of an asset.
+    |
+    | The mediaLink helper is used in the built-in views to load the
+    | default stylesheets and scripts, and thus use this feature.
+    |
+    | To disable cache busting, set this setting to false.
     |
     */
 
-    'navigation_menu_blacklist' => [
-        '404',
-        'dashboard',
-        'posts',
-        'privacy',
-        'legal',
-        'changelog',
-        'license',
-        'security',
-        'contributing',
-        'code-of-conduct',
-        'community',
-        'docs',
-        'testimonials'
+    'enable_cache_busting' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Load app.css from CDN
+    |--------------------------------------------------------------------------
+    |
+    | Hyde ships with an app.css file containing compiled TailwindCSS styles
+    | in the _media/ directory. If you want to load this file from the
+    | HydeFront JsDelivr CDN, you can set this setting to true.
+    |
+    */
+
+    'load_app_styles_from_cdn' => false,
+
+    /*
+     |--------------------------------------------------------------------------
+     | Tailwind Play CDN
+     |--------------------------------------------------------------------------
+     |
+     | The next setting enables a script for the TailwindCSS Play CDN which will
+     | compile CSS in the browser. While this is useful for local development
+     | it's not recommended for production use. To keep things consistent,
+     | your Tailwind configuration file will be injected into the HTML.
+     */
+
+    'use_play_cdn' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Color Scheme
+    |--------------------------------------------------------------------------
+    |
+    | The default color scheme for the meta color-scheme tag, note that this
+    | is just a hint to the user-agent and does not force a specific theme.
+    |
+    */
+
+    'default_color_scheme' => 'light',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Built-in Server
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure settings for the built-in realtime compiler server.
+    |
+    */
+
+    'server' => [
+        'port' => env('SERVER_PORT', 8080),
+        'host' => env('SERVER_HOST', 'localhost'),
+        'dashboard' => env('SERVER_DASHBOARD', true),
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Site Output Directory (Experimental 🧪)
+    | Additional Advanced Options
     |--------------------------------------------------------------------------
     |
-    | This setting specifies the output path for your site, useful to for
-    | example, store the site in the docs/ directory for GitHub Pages.
-    | The path is relative to the root of your project.
-    |
-    | To use an absolute path, or just to learn more:
-    | @see https://hydephp.com/docs/master/advanced-customization#customizing-the-output-directory-
+    | Finally, here are some additional configuration options that you most
+    | likely won't need to change. These are intended for advanced users,
+    | and some should only be changed if you know what you're doing.
     |
     */
 
-    'output_directory' => '_site',
+    // The list of directories that are considered to be safe to empty upon site build.
+    // If the site output directory is set to a directory that is not in this list,
+    // the build command will prompt for confirmation before emptying it.
+    'safe_output_directories' => ['_site', 'docs', 'build'],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Warn about outdated config?
-    |--------------------------------------------------------------------------
-    |
-    | If your config needs updating, a message will be shown in the
-    | HydeCLI info screen, unless disabled below.
-    |
-    */
+    // Should a JSON build manifest with metadata about the build be generated?
+    'generate_build_manifest' => true,
 
-    'warn_about_outdated_config' => true,
+    // Where should the build manifest be saved? (Relative to project root, for example _site/build-manifest.json)
+    'build_manifest_path' => 'app/storage/framework/cache/build-manifest.json',
+
+    // Here you can specify HydeFront version and URL for when loading app.css from the CDN.
+    // Only change these if you know what you're doing as some versions may incompatible with your Hyde version.
+    'hydefront_version' => \Hyde\Framework\Services\AssetService::HYDEFRONT_VERSION,
+    'hydefront_cdn_url' => \Hyde\Framework\Services\AssetService::HYDEFRONT_CDN_URL,
 
 ];
