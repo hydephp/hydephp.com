@@ -11,7 +11,7 @@
 |
 */
 
-$app = new Hyde\Framework\Application(
+$app = new \Hyde\Foundation\Application(
     dirname(__DIR__)
 );
 
@@ -28,7 +28,7 @@ $app = new Hyde\Framework\Application(
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    LaravelZero\Framework\Kernel::class
+    \Hyde\Foundation\ConsoleKernel::class
 );
 
 $app->singleton(
@@ -41,11 +41,23 @@ $app->singleton(
 | Set Important Hyde Configurations
 |--------------------------------------------------------------------------
 |
-| Next, we need to configure Hyde to to use our project's base path.
+| Now, we create a new instance of the HydeKernel, which encapsulates
+| our Hyde project and provides helpful methods for interacting with it.
+| Then, we bind the kernel into the application service container.
 |
 */
 
-\Hyde\Framework\Hyde::setBasePath(getcwd());
+$hyde = new \Hyde\Foundation\HydeKernel(
+    dirname(__DIR__)
+);
+
+$app->singleton(
+    \Hyde\Foundation\HydeKernel::class, function (): \Hyde\Foundation\HydeKernel {
+        return \Hyde\Foundation\HydeKernel::getInstance();
+    }
+);
+
+\Hyde\Foundation\HydeKernel::setInstance($hyde);
 
 /*
 |--------------------------------------------------------------------------
