@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pull-request-preview
-      url: https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}}
+      url: https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}
 
     steps:
       - name: Download the artifact
@@ -88,7 +88,7 @@ jobs:
           destination-github-username: "hydephp"
           destination-repository-name: "previews"
           target-branch: master
-          target-directory: "docs/hydephp-com/${{ github.event.pull_request.number }}}"
+          target-directory: "docs/hydephp-com/${{ github.event.pull_request.number }}"
 
       - name: Output the URL
         run: echo "https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}"
