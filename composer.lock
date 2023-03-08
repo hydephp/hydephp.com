@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f501908337da5f521ee134c1062ab832",
+    "content-hash": "28dcc34c298ec02e3515e63203acefc8",
     "packages": [
         {
             "name": "brick/math",
@@ -910,16 +910,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v1.0.0-RC.1.1",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "c9561f98d0f195b0bd0176c38dba02c6c6f7918d"
+                "reference": "bcc5f3a81c92b97687d7ea0acce5360179db6697"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/c9561f98d0f195b0bd0176c38dba02c6c6f7918d",
-                "reference": "c9561f98d0f195b0bd0176c38dba02c6c6f7918d",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/bcc5f3a81c92b97687d7ea0acce5360179db6697",
+                "reference": "bcc5f3a81c92b97687d7ea0acce5360179db6697",
                 "shasum": ""
             },
             "require": {
@@ -958,7 +958,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v1.0.0-RC.1.1"
+                "source": "https://github.com/hydephp/framework/tree/develop"
             },
             "funding": [
                 {
@@ -966,7 +966,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2023-03-07T22:06:36+00:00"
+            "time": "2023-03-08T12:11:32+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -6172,7 +6172,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "hyde/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
