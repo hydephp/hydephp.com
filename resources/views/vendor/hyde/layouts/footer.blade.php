@@ -76,7 +76,7 @@
 		</div>
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
-				{!! \Hyde\Framework\Facades\Includes::markdown('footer',
+				{!! Includes::markdown('footer',
 					config('hyde.footer', 'Site proudly built with [HydePHP](https://github.com/hydephp/hyde) 🎩')) !!}
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
