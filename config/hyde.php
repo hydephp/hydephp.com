@@ -25,6 +25,7 @@
 use Hyde\Facades\Author;
 use Hyde\Facades\Features;
 use Hyde\Facades\Meta;
+use Hyde\Framework\Features\Navigation\NavItem;
 
 return [
 
