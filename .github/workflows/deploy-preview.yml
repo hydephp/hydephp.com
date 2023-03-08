@@ -54,7 +54,9 @@ jobs:
       run: npm run prod
 
     - name: Output debug information
-      run: php hyde debug
+      run: |
+        php hyde --version
+        php hyde debug
 
     - name: Run the Hyde Builder
       run: php hyde build --pretty-urls --no-interaction
