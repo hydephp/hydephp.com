@@ -30,7 +30,7 @@ Here's a refresher on Hyde:
 
 - HydePHP is a static site generator written in PHP and is based on Laravel Zero.
 - Hyde is different from many other SSGs as it offers a complete full-stack experience and has a built-in frontend.
-- The key principle of Hyde is to keep things stupidly simple to start with while offering the power to do anything you need it to.
+- The key principle of Hyde is to keep things seriously simple to start with while offering the power to do anything you need it to.
 
 ## The Components
 

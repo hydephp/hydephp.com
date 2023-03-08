@@ -26,7 +26,7 @@ You can also use create a Git powered CMS to collaborate on Markdown posts.
 Static web hosting has become incredibly cheap, to the point where dozens of companies offer free hosting.
 
 ## Conclusion
-Are you ready to go static? Why not give HydePHP a spin! That's what this blog uses. It's stupidly simple, endlessly hackable, and in my opinion: totally awesome.
+Are you ready to go static? Why not give HydePHP a spin! That's what this blog uses. It's seriously simple, endlessly hackable, and in my opinion: totally awesome.
 
 -> Dive in to the source code at [GitHub](https://github.com/hydephp/hyde)
 -> Check out the [documentation](https://hydephp.com/docs) (built with Hyde of course) 

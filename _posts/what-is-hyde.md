@@ -29,6 +29,6 @@ Not at all! The default templates are great to get started quickly, but if you w
 If you are happy with the default templates, but you want to sprinkle in some custom content, that's fine too!
 You can create full Blade pages by placing them in the `_pages/` directory to be rendered by Hyde.
 
-The Hyde website [hydephp.com](https://hydephp.com/index.html) is fully built with the default templates.
+The Hyde website [hydephp.com](https://hydephp.com/index) is fully built with the default templates.
 We used the default blog post homepage and added a custom heading section using TailwindCSS for the front page.
-But for the [Photo Gallery](https://hydephp.com/gallery.html) we needed more control so we created a custom Blade page. It was then compiled by Hyde into static HTML, but we could still extend the default layout and include custom Blade components. [See the source](https://github.com/hydephp/DocsCI/blob/b66d7ceccca363348472ba18702e51b3c654302a/resources/views/pages/gallery.blade.php)!
+But for the [Photo Gallery](https://hydephp.com/about) we needed more control so we created a custom Blade page. It was then compiled by Hyde into static HTML, but we could still extend the default layout and include custom Blade components. [See the source](https://github.com/hydephp/DocsCI/blob/b66d7ceccca363348472ba18702e51b3c654302a/resources/views/pages/gallery.blade.php)!

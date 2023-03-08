@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Extensions and Integrations</title>
+
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/docs/master/extensions.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Extensions and Integrations">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP - Extensions and Integrations">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+
+
+ 
+
+
+<link rel="stylesheet" href="../../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+
+<body id="hyde-docs"
+	class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
+	x-data="{ sidebarOpen: false, searchWindowOpen: false }"
+	x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
+	<a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+	<script>
+		document.body.classList.add('js-enabled');
+	</script>
+
+	<nav id="mobile-navigation"
+		class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+		<strong class="px-2 mr-auto">
+					<a href="../../docs/master/">
+				HydePHP Docs
+			</a>
+					</strong>
+		<ul class="flex items-center">
+			<li class="h-8 flex mr-1">
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</li>
+			<li class="h-8 flex">
+				<button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu"
+					@click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+				</button>
+			</li>
+		</ul>
+	</nav>
+	<aside id="sidebar"
+		class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:block shadow-lg md:shadow-none transition-all duration-300"
+		:class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" x-cloak>
+		<header id="sidebar-header" class="h-16">
+			<div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
+				<strong class="px-2">
+									<a href="../../docs/master/">
+						HydePHP Docs
+					</a>
+									</strong>
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</div>
+		</header>
+		<nav id="sidebar-navigation"
+			class="p-4 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-[calc(100vh_-_8rem)]">
+			
+							<ul id="sidebar" role="list">
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Getting Started</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/quickstart">Quickstart Guide</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/console-commands">Console Commands</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/architecture-concepts">Architecture Concepts</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Creating Content</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/blog-posts">Creating Blog Posts</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/static-pages">Markdown &amp; Blade Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/documentation-pages">Documentation Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/managing-assets">Managing assets</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/compile-and-deploy">Compile &amp; Deploy</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Digging Deeper</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/customization">Customizing your Site</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-markdown">Advanced Markdown</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300	ease-in-out	hover:bg-black/10"
+	href="../../docs/master/extensions" aria-current="true">Extensions &amp; Integrations</a>
+				<span class="sr-only">Table of contents</span>
+		<ul class="table-of-contents">
+<li>
+<a href="#first-party-extensions">First party extensions</a>
+<ul>
+<li>
+<a href="#realtime-compiler">Realtime Compiler</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#integrations-with-third-party-tools">Integrations with third-party tools</a>
+<ul>
+<li>
+<a href="#torchlight">Torchlight</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#contribute">Contribute</a>
+</li>
+</ul>
+
+			</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-customization">Advanced Customization</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/collections">File-based Collections</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/troubleshooting">Troubleshooting</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/updating-hyde">Updating Hyde</a>
+	</li>					</ul>
+	</li>
+	</ul>
+					</nav>
+		<footer id="sidebar-footer" class="h-16 absolute p-4 w-full bottom-0 left-0 text-center leading-8">
+			<p>
+				<a href="../../">Back to home page</a>
+			</p>
+		</footer>
+	</aside>
+	<main id="content"
+		class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+
+				<article id="document" itemscope itemtype="http://schema.org/Article" class="mx-auto lg:ml-8 prose
+			dark:prose-invert max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] torchlight-enabled">
+			
+			<header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
+				<h1>Extensions and Integrations</h1>
+			</header>
+			<section id="document-main-content" itemprop="articleBody">
+				<h2>First party extensions<a id="first-party-extensions" href="#first-party-extensions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h3>Realtime Compiler<a id="realtime-compiler" href="#realtime-compiler" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The Hyde Realtime Compiler is now included with Hyde
+installations and is what powers the <code>php hyde serve</code> command.</p>
+<ul>
+<li>
+<strong>GitHub</strong>: <a href="https://github.com/hydephp/realtime-compiler">hydephp/realtime-compiler</a>
+</li>
+<li>
+<strong>Packagist</strong>: <a href="https://packagist.org/packages/hyde/realtime-compiler">hydephp/realtime-compiler</a>
+</li>
+<li>
+<strong>YouTube video</strong>: <a href="https://www.youtube.com/watch?v=1ZM4fQMKi64">Introducing the Hyde Realtime Compiler</a>
+</li>
+</ul>
+<h2>Integrations with third-party tools<a id="integrations-with-third-party-tools" href="#integrations-with-third-party-tools" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h3>Torchlight<a id="torchlight" href="#torchlight" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h4>About Torchlight<a id="about-torchlight" href="#about-torchlight" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Torchlight is an amazing API for syntax highlighting and is what this site uses.
+I cannot recommend it highly enough, especially for documentation sites and code-heavy blogs!</p>
+<h4>Getting started<a id="getting-started" href="#getting-started" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>To get started you need an API token which you can get through the <a href="https://torchlight.dev/">torchlight.dev website</a>.
+It is entirely <a href="https://torchlight.dev/#pricing">free for personal and open source projects</a>.</p>
+<p>When you have an API token, set it in the <code>.env</code> file in the root directory of your project.
+Once a token is set, Hyde will automatically enable the CommonMark extension.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="env" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">TORCHLIGHT_TOKEN</span><span style="color: #89DDFF;">=</span><span style="color: #C3E88D;">torch_&lt;your-api-token&gt;</span></div></code></pre>
+<h4>Attribution and configuration<a id="attribution-and-configuration" href="#attribution-and-configuration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Note that you need to provide an attribution link, thankfully Hyde injects a customizable link automatically to all pages
+that use Torchlight. You can of course disable this in the <code>config/torchlight.php</code> file.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">attribution</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Syntax highlighting by &lt;a href=&quot;https://torchlight.dev/&quot; rel=&quot;noopener nofollow&quot;&gt;Torchlight.dev&lt;/a&gt;</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<h2>Contribute<a id="contribute" href="#contribute" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Have an idea for an extension or integration? Let me know! I'd love to hear from you.</p>
+<p>Get in touch on <a href="https://github.com/hydephp/Hyde">GitHub</a> or send me a DM on <a href="https://twitter.com/CodeWithCaen">Twitter</a>.</p>
+
+			</section>
+			<footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+				<p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link"><a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/extensions.md">Edit Page</a></p>
+			</footer>
+		</article>
+	</main>
+
+	<div id="support">
+		<div id="sidebar-backdrop" x-show="sidebarOpen" x-transition @click="sidebarOpen = false"
+			title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50">
+		</div>
+					<button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
+	<span x-show="! searchWindowOpen">
+		Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+	</span>
+	<span x-show="searchWindowOpen">
+		<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+			<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+		</svg>
+	</span>
+</button>
+<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700" aria-label="Toggle search menu">
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+	<aside x-on:click.away="searchWindowOpen = false" id="searchMenu" class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+		<header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+			<strong>Search the documentation site</strong>
+			<button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100" aria-label="Close search window">
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</header>
+		<div>
+			<div id="hyde-search">
+    <noscript>
+        The search feature requires JavaScript to be enabled in your browser.
+    </noscript>
+    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
+</div>		</div>
+		<footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+			<small>
+				Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
+				Use <code><kbd title="Escape key">esc</kbd></code> to close.
+			</small>
+		</footer>
+	</aside>
+
+	<div id="search-window-backdrop" title="Click to close search window"
+		class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>			<script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
+			<script>
+				window.addEventListener('load', function() {
+					const searchIndexLocation = 'search.json';
+					const Search = new HydeSearch(searchIndexLocation);
+
+					Search.init();
+				});
+			</script>
+			</div>
+
+	<script defer src="../../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+</body>
+</html>

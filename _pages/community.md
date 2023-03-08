@@ -48,7 +48,7 @@ Most of the Hyde development is made in the monorepo found on GitHub in the [Hyd
 - [Documentation](https://github.com/hydephp/develop/tree/master/docs)
 - [Frontend](https://github.com/hydephp/develop/tree/master/packages/hydefront)
 - [Test Suite](https://github.com/hydephp/develop/tree/master/tests)
-- [Website](https://github.com/hydephp/docsci)
+- [Website](https://github.com/hydephp/hydephp.com)
 {.flex-list}
 
 ---
