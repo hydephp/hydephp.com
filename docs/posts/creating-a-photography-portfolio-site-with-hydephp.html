@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Creating a static photography portfolio landing site with HydePHP</title>
+
+ 
+<link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="## Introduction
+
+HydePHP is a new framework for rapidly building static websites using tools you may already know from popula...">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Creating a static photography portfolio landing site with HydePHP">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp.html">
+<meta property="og:title" content="Creating a static photography portfolio landing site with HydePHP">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+<meta property="og:type" content="article">
+
+
+ 
+
+
+<link rel="stylesheet" href="../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+		<a aria-label="Home page link" href="../" class="font-bold px-4">
+	<img src="/media/logo-masked32-min.png" alt="HydePHP Logo" class="inline">
+	HydePHP
+</a>
+		<div class="ml-auto">
+			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+		</div>
+	</div>
+
+	<div class="block md:hidden">
+		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+				aria-label="Toggle navigation menu">
+			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Open Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Close Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</svg>
+		</button>
+	</div>
+
+	<div id="main-navigation-links"
+		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
+		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+							<li class="md:mx-2">
+					<a href="../"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+							<li class="md:mx-2">
+					<a href="../about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+							<li class="md:mx-2">
+					<a href="../demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+							<li class="md:mx-2">
+					<a href="/posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+							<li class="md:mx-2">
+					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					</ul>
+		<a id="docs-nav-button" href="/docs/master" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+		</a>
+	</div>
+</nav>
+ 
+
+    <section>
+        
+<main id="content" class="mx-auto max-w-7xl py-16 px-8">
+	<article aria-label="Article" id="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp" itemscope itemtype="http://schema.org/Article"
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    <meta itemprop="identifier" content="creating-a-photography-portfolio-site-with-hydephp">
+        <meta itemprop="url" content="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp">
+        
+    <header aria-label="Header section" role="doc-pageheader">
+        <h1 itemprop="headline" class="mb-4">Creating a static photography portfolio landing site with HydePHP</h1>
+		<div id="byline" aria-label="About the post" role="doc-introduction">
+            		                        </div>
+    </header>
+        <div aria-label="Article body" itemprop="articleBody">
+        <h2>Introduction</h2>
+<p>HydePHP is a new framework for rapidly building static websites using tools you may already know from popular frameworks like Laravel.</p>
+<p>In this blog post, we'll be recreating this simple photography portfolio site using HydePHP and Markdown. No coding is needed!</p>
+<p>You can find the <a href="https://github.com/hydephp/portfolio-demo">source code on GitHub</a> and the <a href="https://hydephp.github.io/portfolio-demo">live demo here</a>.</p>
+<p><a href="https://hydephp.github.io/portfolio-demo"><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yeo5liueiqkjejyodcw2.png" alt="Screenshot of the site we'll be recreating" /></a></p>
+<h2>Prerequisites</h2>
+<p>This post is aimed at beginners and will guide you through both the installation and basic usage of HydePHP. You don't need to know PHP to get started, though you should have it installed on your system as well as Composer is required to download and run HydePHP.</p>
+<p>HydePHP is a command-line application, however, it's very easy to use, as long as you've ever seen a terminal in your life, you can follow right along!</p>
+<h2>Installation</h2>
+<p>HydePHP is installed on a per-project basis using Composer, a PHP package manager. If you don't have Composer installed, you can download it from <a href="https://getcomposer.org/download/">getcomposer.org</a>.</p>
+<p>Once you have Composer installed, you can create a new HydePHP project by running the following command in your <a href="https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">terminal or command prompt</a>:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--stability</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">dev</span></div></code></pre>
+<blockquote>
+<p>Since HydePHP is still in development, you'll need to specify the <code>--stability dev</code> flag to install the latest version.</p>
+</blockquote>
+<p>Once you run the command, Composer will download HydePHP and all of its dependencies. This may take a few seconds up to a few minutes depending on your internet connection. Once it's done, you'll see a new directory called <code>hyde</code> show up in the directory you ran the command in.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9h6czj6ojpe1vc9o98du.gif" alt="Screenshot of the command and output" /></p>
+<p>You can now navigate into the <code>hyde</code> directory using the command line with the <code>cd</code> (change-directory) command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #82AAFF;">cd</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span></div></code></pre>
+<p>Now that you're in the <code>hyde</code> directory, you have a fully functional HydePHP project. We interact with the software through the HydeCLI, which is accessed by running <code>php hyde</code> followed by a command name. Make sure to run this command from within the <code>hyde</code> directory which we just navigated into.</p>
+<p>To show the welcome screen with a list of the available commands, run the following command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">list</span></div></code></pre>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ub4hubwlrs3u4qa3tre1.png" alt="The list command" /></p>
+<p>If you are unsure what a command does, you can always add the <code>--help</code> flag to any command to get more information about it. For example:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--help</span></div></code></pre>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8or6y4lz8r9n0ttiztwq.png" alt="The help flag" /></p>
+<p>You can also always refer to the online <a href="https://hydephp.com/docs/master/console-commands">HydePHP CLI documentation</a> for more information.</p>
+<h2>Running the Development Server</h2>
+<p>HydePHP comes with a built-in development server that you can use to preview your site as you work on it. To start the development server, run the following command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
+<p>This will start a local web server that will compile your site on the fly. You can access the site by visiting <a href="http://localhost:8080">http://localhost:8080</a> in your browser. Once you visit this link, you should see the HydePHP welcome screen.</p>
+<p>The default welcome page is compiled from a Blade file you may recognize from Laravel. The source page is stored in the <code>_pages/</code> directory as <code>index.blade.php</code>. When we compile our site later on, this file will be compiled to <code>index.html</code> in the <code>_site/</code> directory.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3o0gw00bxjszrn8r5p2p.png" alt="Default welcome page" /></p>
+<h2>Creating our First Page</h2>
+<p>The welcome page is nice and all, but I promised we'd be creating a photography portfolio site, so let's get to it! Since this is a simple site, we'll be using Markdown to create our pages. Markdown is a simple markup language that is easy to read and write. It's also fully supported by HydePHP, making it perfect for what we want to do. For when you want something more complex or dynamic, Laravel Blade is also supported.</p>
+<p>Since we'll be replacing the default page, let's first remove it. You can delete the file directly using your app of choice, like Finder or Windows Explorer. But since we're already in the terminal, let's use the <code>rm</code> (remove) command to delete the file:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">rm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_pages/index.blade.php</span></div></code></pre>
+<p>Now, to creating our page. Since everything in HydePHP is file-based, we can just create a new file in the <code>_pages/</code> directory and call it <code>index.md</code>. But Hyde offers a neat command to create new pages for us, so let's use that instead:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">index</span></div></code></pre>
+<p>This command will create the <code>_pages/index.md</code> file for us. Now, let's open the file in your favourite text editor and take a look!</p>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">index</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">index</span></div></code></pre>
+<p>As you can see, a special section at the top of the file called the &quot;front-matter&quot; is used to define the page's title. The front matter is written in YAML, a simple markup language that used by HydePHP to define metadata.</p>
+<p>The front matter is followed by the page's content, which is written in Markdown. Using front matter is optional, as HydePHP can infer many types of metadata, like page titles, from other sources like headings and filenames. But if you want to override these inferred values, you can do so by defining them in the front matter as is shown here.</p>
+<p>Now that we have our page, let's add some content. I have already written some content for this site, so I'll just copy and paste it into the file. If you're following along yourself, simply copy the following into the file:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Hey there, I&#39;m Jane Doe!</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Freelance photographer</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Jane Doe</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/photographer.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">About</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">This is a demo website built with </span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">HydePHP</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://hydephp.com/</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;">, a free and open-source static site generator. This entire site is built using just Markdown text that is transformed into a fast and secure website that can be published anywhere.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl aliquet nisi, euismod consectetur nisi nisi euismod nisi.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Gallery</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Austria</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/austria.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Boat</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/boat.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Croatia</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/croatia.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">18</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Fireworks</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/fireworks.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">19</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Hallstatt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/hallstatt.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">20</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Lemonade</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/lemonade.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">21</span><span style="color: #A6ACCD;">{.gallery}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">22</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">23</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">24</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Contact</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">25</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">26</span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Phone: +1 (123) 456-7890</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">27</span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Email: jane.doe@example.com</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">28</span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Address: 123 Main St, Anytown, CA 12345</span></div></code></pre>
+<p>As you can see, I removed the front matter, letting Hyde infer it automatically from the heading. I also added some images to the page, as well as a CSS class that we can use to add some styles to the images later on.</p>
+<p>If you now refresh the page in your browser, you should see the page we just created. But it's of course missing the images, so let's add them!</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lwwkioorezzhzbqvqwdv.png" alt="Added page has broken images" /></p>
+<h2>Adding Images</h2>
+<p>Adding images to HydePHP sites is easy. Just drop them inside the <code>_media/</code> directory. When you compile your site, HydePHP will automatically copy all the files in this directory to the <code>_site/media/</code> directory. This means that you can reference your images using relative paths, like <code>media/photographer.jpg</code> in the example above.</p>
+<p>If you are following along, you can download the demo images from the <a href="https://github.com/hydephp/portfolio-demo">GitHub repository</a>.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8d2j4wzikoiwknx6mu2w.png" alt="Screenshot of Windows Explorer in the _media directory" /></p>
+<p>Now if you refresh the page in your browser, you should see the images we just added. But the images are a bit too big, so let's fix that!</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ppb29hftxn6nmfgscbqb.png" alt="Images on the website are too large" /></p>
+<h3>Adding Basic Styles</h3>
+<p>We added a CSS class before called <code>.gallery</code>, so let's add some styles to that class.</p>
+<p>If you want to add a lot of styles, you may want to take a look at the <a href="https://hydephp.com/docs/master/managing-assets">Compiling assets documentation</a>, but for this demo, we just want to add a single class, so we'll use a shortcut.</p>
+<p>HydePHP comes with a complete frontend with components to create everything from blog posts to documentation sites. These templates are built with <a href="https://tailwindcss.com">TailwindCSS</a>. To make things easier for you, a pre-compiled and minified version of all the Tailwind classes needed for the built-in templates is included in the base installation. You'll find them in the <code>app.css</code> file in the <code>_media/</code> directory.</p>
+<p>Generally, you shouldn't edit compiled files, but since we're just adding a single class, it's fine. Just make sure to add the class again if you ever update HydePHP.</p>
+<p>With that out of the way, open the file in your favorite text editor and add the following to the bottom of the file:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">gallery</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">display</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> flex</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">flex-wrap</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> wrap</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">justify-content</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> space-between</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">gallery</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">img</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">max-width</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">65vw</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">width</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">44ch</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">margin</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">3ch</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">2ch</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<p>Now if you refresh the page in your browser, you should see the images are now smaller and fit nicely on the page.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a0w4gp5vxiy3h8n06ni2.png" alt="Images are now in a neat grid" /></p>
+<h2>Compiling the Site</h2>
+<p>Now that we have our site, let's compile it. We do this by running the <code>hyde build</code> command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
+<p>This will take all of our source content and compile it into a static site that can be published anywhere. The compiled site will be placed in the <code>_site/</code> directory.</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yt1fkoqkhkv3oeqowul2.png" alt="Screenshot of terminal output" /></p>
+<h2>Publishing the Site</h2>
+<p>Static sites are super easy to publish. You can publish them anywhere you can host a website, like GitHub Pages, Netlify, and traditional shared hosting, just to name a few. That's one of the reasons why I love static sites so much! However, that's outside the scope of this tutorial, but do check out the <a href="https://hydephp.com/docs/master/compile-and-deploy">Deployment documentation</a> for more information.</p>
+<p>In short though, just drop the contents of the <code>_site/</code> directory into the root/public directory of your web server and you're done!</p>
+<p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/oq5ufc6x8m8f6xir8mqr.png" alt="The compiled site files" /></p>
+<h2>What's Next?</h2>
+<p>Now that we have a basic site, the world is yours! There are plenty of customizations we can do, for example adding some links to the navigation, or adding a blog. But that's for another tutorial. For now, I hope you enjoyed this tutorial and learned something new.</p>
+<p>If you have any questions, feel free to ask them in the <a href="https://discord.hydephp.com/">HydePHP Discord server</a> or <a href="https://github.com/hydephp/hyde">open an issue on GitHub</a>.</p>
+<p>You can also check out the <a href="https://hydephp.com/docs/">HydePHP documentation</a> for more information on how to use HydePHP. You can always also reach out to me on Twitter, <a href="https://twitter.com/CodeWithCaen">@CodeWithCaen</a>.</p>
+<p><a href="https://hydephp.com"><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uqs8yq9luyoqd1tdxl5f.png" alt="HydePHP.com" /></a></p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+
+    </div>
+    <span class="sr-only">End of article</span>
+</article>
+</main>
+
+ 
+    </section>
+
+    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+		<div class="block md:w-1/3 px-2 mx:px-0">
+			<span class="flex items-center w-fit">
+				<a href="../" class="flex items-center mr-4">
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
+					
+					<span class="ml-2 text-lg font-black">HydePHP</span>
+				</a>
+			</span>
+			
+			<p class="font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
+				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
+			</p>
+		</div>
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
+				<li><a href="../docs/master/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					Documentation</a></li>
+					
+					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Community Portal
+					</a></li>
+					
+					<li><a href="../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Legal Information
+					</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
+					<li><a href="../community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Developer Resources
+					</a></li>
+					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
+					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
+					<li><a href="../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Sitemap
+					</a></li>
+					<li><a href="../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Blog Posts
+					</a></li>
+					
+					<li><a href="../feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						RSS Feed
+					</a></li>
+				</ul>
+				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
+					<div class="flex justify-start pl-4 mt-2">
+						
+						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+							</svg>
+						</a>
+						<a title="Twitter &commat;HydeFramework" class="items-center block  mr-4  dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://twitter.com/HydeFramework">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+							</svg>
+						</a>
+						<a title="Discord Server" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
+						</a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+					</div>
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+			<div class="prose mx-auto text-center text-sm dark:prose-invert">
+				<p>This website is <a href="https://github.com/hydephp/hydephp.com">Open Source</a> and proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
+
+			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
+		</div>
+	</div>
+</footer> 
+
+    <script defer src="../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+ 
+</body>
+</html>

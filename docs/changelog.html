@@ -1,0 +1,2455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Changelog</title>
+
+ 
+<link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/changelog.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Changelog">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP - Changelog">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+
+
+ 
+
+
+<link rel="stylesheet" href="media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+		<a aria-label="Home page link" href="/" class="font-bold px-4">
+	<img src="/media/logo-masked32-min.png" alt="HydePHP Logo" class="inline">
+	HydePHP
+</a>
+		<div class="ml-auto">
+			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+		</div>
+	</div>
+
+	<div class="block md:hidden">
+		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+				aria-label="Toggle navigation menu">
+			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Open Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Close Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</svg>
+		</button>
+	</div>
+
+	<div id="main-navigation-links"
+		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
+		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+							<li class="md:mx-2">
+					<a href="/"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+							<li class="md:mx-2">
+					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+							<li class="md:mx-2">
+					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+							<li class="md:mx-2">
+					<a href="/posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+							<li class="md:mx-2">
+					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					</ul>
+		<a id="docs-nav-button" href="/docs/master" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+		</a>
+	</div>
+</nav>
+ 
+
+    <section>
+        
+<main id="content" class="mx-auto max-w-7xl py-16 px-8">
+	<article class="mx-auto prose dark:prose-invert torchlight-enabled">
+		<!-- NOTE FOR EDITORS: -->
+<!-- Part of this file is machine edited, please leave the comment markers as they are. 
+	 Also, please make sure to keep an empty line before and after each marker. -->
+<h1>Changelog</h1>
+<p>All notable changes to this project will be documented in this file.</p>
+<p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
+and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semantic Versioning</a>.</p>
+<!-- UNRELEASED_START -->
+<h2>[Unreleased] - YYYY-MM-DD</h2>
+<h3>About</h3>
+<p>Keep an Unreleased section at the top to track upcoming changes.</p>
+<p>This serves two purposes:</p>
+<ol>
+<li>People can see what changes they might expect in upcoming releases</li>
+<li>At release time, you can move the Unreleased section changes into a new release version section.</li>
+</ol>
+<h3>Added</h3>
+<ul>
+<li>for new features.</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>for changes in existing functionality.</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>for soon-to-be removed features.</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>for now removed features.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>for any bug fixes.</li>
+</ul>
+<h3>Security</h3>
+<ul>
+<li>in case of vulnerabilities.</li>
+</ul>
+<!-- UNRELEASED_END -->
+<hr />
+<h3>Changelog</h3>
+<!-- CHANGELOG_START -->
+<h2>v0.39.0-beta - 2022-06-20</h2>
+<h3>Added</h3>
+<ul>
+<li>Added a helper to all page models to get an array of all its source files <a href="https://github.com/hydephp/develop/issues/44">https://github.com/hydephp/develop/issues/44</a>
+</li>
+<li>Added a helper to all page models to parse source files directly into an object <a href="https://github.com/hydephp/develop/issues/40">https://github.com/hydephp/develop/issues/40</a>
+</li>
+<li>Adds the MarkdownDocumentContract interface to markdown based pages to keep a consistent and predictable state</li>
+<li>Adds .gitkeep files to persist empty directories</li>
+<li>internal: Add more tests</li>
+<li>internal: Add packages/hyde/composer.json for persisted data instead of removed update script</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed welcome page title <a href="https://github.com/hydephp/develop/issues/52">https://github.com/hydephp/develop/issues/52</a>
+</li>
+<li>Add <code>rel=&quot;nofollow&quot;</code> to the image author links <a href="https://github.com/hydephp/develop/issues/19">https://github.com/hydephp/develop/issues/19</a>
+</li>
+<li>Changed the default position of the automatic navigation menu link to the right, also making it configurable</li>
+<li>Renamed deprecated Hyde::docsDirectory() helper to suggested Hyde::getDocumentationOutputDirectory()</li>
+<li>Makes the constructor arguments for Markdown page models optional <a href="https://github.com/hydephp/develop/issues/65">https://github.com/hydephp/develop/issues/65</a>
+</li>
+<li>Added the Hyde/Framework composer.lock to .gitignore as we keep a master lock file in the monorepo</li>
+<li>Changed namespace for Hyde/Framework tests from <code>Hyde\Testing\Framework</code> to <code>Hyde\Framework\Testing</code>
+</li>
+<li>Directories are created when needed, instead of each time the service provider boots up</li>
+<li>internal: Add back codecov.io to pull request tests <a href="https://github.com/hydephp/develop/issues/37">https://github.com/hydephp/develop/issues/37</a>
+</li>
+<li>internal: Refactor test that interact with the filesystem to be more granular</li>
+<li>internal: Update Monorepo structure to move persisted data for the Hyde package into the packages directory</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Removed the Hyde::getLatestPosts() helper which was deprecated in v0.34.x and was replaced with MarkdownPost::getLatestPosts()</li>
+<li>Removes the long deprecated CreatesDefaultDirectories class</li>
+<li>internal: Removed composer update script</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Add changelog to export-ignore, <a href="https://github.com/hydephp/framework/issues/537">https://github.com/hydephp/framework/issues/537</a>
+</li>
+</ul>
+<h2>v0.38.0-beta - 2022-06-18</h2>
+<h3>About</h3>
+<p>This release refactors the test suite, compartmentalizing test code into the respective package directories.
+This does not affect the behavior of the library, but it does affect how package developers run the test suites.</p>
+<h3>Added</h3>
+<ul>
+<li>internal: Adds high level tests for the Hyde package.</li>
+<li>internal: Add GitHub test workflows for Hyde/Hyde and Hyde/Framework</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>
+<p>Formats code to the PSR-2 standard.</p>
+</li>
+<li>
+<p>internal: Move Framework tests from the monorepo into the Framework package.</p>
+</li>
+<li>
+<p>internal: Rename monorepo workflow <code>build-test.yml</code> to <code>continuous-integration.yml</code>.</p>
+</li>
+<li>
+<p>internal: Change testing namespaces update <code>phpunit.xml.dist</code> correspondingly.</p>
+</li>
+<li>
+<p>internal: Add static analysis tests to the continuous integration workflow.</p>
+</li>
+<li>
+<p>internal: Add matrix test runners to the continuous integration workflow.</p>
+</li>
+</ul>
+<h2>v0.37.2-beta - 2022-06-17</h2>
+<h3>About</h3>
+<p>This release brings internal restructuring to the Hyde monorepo,
+adding a helper command to manage the new release cycle.</p>
+<h3>Added</h3>
+<ul>
+<li>Add internal <code>monorepo:release</code> command</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed to keep only a single <code>CHANGELOG.md</code> file for Hyde/Hyde and Hyde/Framework</li>
+</ul>
+<h2>v0.37.1-beta - 2022-06-16 - Update validation test</h2>
+<h3>About</h3>
+<p>If there are no documentation pages there is no need for an index page, and the test can safely be skipped.</p>
+<h3>What's Changed</h3>
+<ul>
+<li>v0.37.0-beta - Create custom validator test framework by @caendesilva in <a href="https://github.com/hydephp/develop/pull/45">https://github.com/hydephp/develop/pull/45</a>
+</li>
+<li>Skip documentation index validation test if the _docs directory is empty by @caendesilva in <a href="https://github.com/hydephp/develop/pull/48">https://github.com/hydephp/develop/pull/48</a>
+</li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.1-beta">https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.1-beta</a></p>
+<h2>v0.37.0-beta - 2022-06-16 - Replace dependency with custom validator implementation</h2>
+<h3>What's Changed</h3>
+<ul>
+<li>v0.37.0-beta - Create custom validator test framework by @caendesilva in <a href="https://github.com/hydephp/develop/pull/45">https://github.com/hydephp/develop/pull/45</a>
+</li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.0-beta.1">https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.0-beta.1</a></p>
+<h2>v0.36.0-beta - 2022-06-16 - Add package auto-discovery</h2>
+<h3>What's Changed</h3>
+<ul>
+<li>Improve transformation of the hyde/hyde composer.json in the monorepo split job by @caendesilva in <a href="https://github.com/hydephp/develop/pull/33">https://github.com/hydephp/develop/pull/33</a>
+</li>
+<li>v0.36.x - Add package auto-discovery by @caendesilva in <a href="https://github.com/hydephp/develop/pull/35">https://github.com/hydephp/develop/pull/35</a>
+</li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/hydephp/develop/compare/v0.35.0-beta.1...v0.36.0-beta">https://github.com/hydephp/develop/compare/v0.35.0-beta.1...v0.36.0-beta</a></p>
+<h2>v0.35.0-beta - 2022-06-14 - Initial Monorepo Release</h2>
+<h3>What's Changed</h3>
+<ul>
+<li>Restore master project by @caendesilva in <a href="https://github.com/hydephp/develop/pull/1">https://github.com/hydephp/develop/pull/1</a>
+</li>
+<li>Merge Hyde/Framework into packages/framework by @caendesilva in <a href="https://github.com/hydephp/develop/pull/2">https://github.com/hydephp/develop/pull/2</a>
+</li>
+<li>Refactor test suite, moving tests into Hyde root and updating some of them by @caendesilva in <a href="https://github.com/hydephp/develop/pull/3">https://github.com/hydephp/develop/pull/3</a>
+</li>
+<li>Remove default AppServiceProvider.php, fix #5 by @caendesilva in <a href="https://github.com/hydephp/develop/pull/6">https://github.com/hydephp/develop/pull/6</a>
+</li>
+<li>Fix #7: Remove unrelated configuration files from the framework package by @caendesilva in <a href="https://github.com/hydephp/develop/pull/8">https://github.com/hydephp/develop/pull/8</a>
+</li>
+<li>Refactor bootstrapping process by @caendesilva in <a href="https://github.com/hydephp/develop/pull/9">https://github.com/hydephp/develop/pull/9</a>
+</li>
+<li>Remove layover framework test files by @caendesilva in <a href="https://github.com/hydephp/develop/pull/10">https://github.com/hydephp/develop/pull/10</a>
+</li>
+<li>Import hydefront package by @caendesilva in <a href="https://github.com/hydephp/develop/pull/11">https://github.com/hydephp/develop/pull/11</a>
+</li>
+<li>Import hydephp/realtime-compiler to packages/ by @caendesilva in <a href="https://github.com/hydephp/develop/pull/16">https://github.com/hydephp/develop/pull/16</a>
+</li>
+<li>Handle moving of the bootstrap file to provide backwards compatibility for the migration period by @caendesilva in <a href="https://github.com/hydephp/develop/pull/17">https://github.com/hydephp/develop/pull/17</a>
+</li>
+<li>Import hydephp/docs by @caendesilva in <a href="https://github.com/hydephp/develop/pull/18">https://github.com/hydephp/develop/pull/18</a>
+</li>
+<li>Create readonly mirrors by @caendesilva in <a href="https://github.com/hydephp/develop/pull/21">https://github.com/hydephp/develop/pull/21</a>
+</li>
+<li>Add Rocket dashboard subrepository by @caendesilva in <a href="https://github.com/hydephp/develop/pull/25">https://github.com/hydephp/develop/pull/25</a>
+</li>
+<li>Work in progress single-file dashboard for the HydeRC by @caendesilva in <a href="https://github.com/hydephp/develop/pull/26">https://github.com/hydephp/develop/pull/26</a>
+</li>
+<li>Create dashboard template by @caendesilva in <a href="https://github.com/hydephp/develop/pull/27">https://github.com/hydephp/develop/pull/27</a>
+</li>
+</ul>
+<p><strong>Full Changelog</strong>: <a href="https://github.com/hydephp/develop/commits/v0.35.0-beta">https://github.com/hydephp/develop/commits/v0.35.0-beta</a></p>
+<!-- CHANGELOG_END -->
+<hr />
+<h2>Archive (pre v0.35.0)</h2>
+<p>In v0.35.0 the Hyde project source was moved into the <a href="https://github.com/hydephp/develop">HydePHP/Develop monorepo</a> where the changelog is now handled. Releases in Hyde/Hyde and Hyde/Framework are synced one-to-one since this change.</p>
+<ul>
+<li>
+<a href="#hydehyde-archive-pre-v0350">Hyde/Hyde Archive (pre v0.35.0)</a>
+</li>
+<li>
+<a href="#hydeframework-archive-pre-v0350">Hyde/Framework Archive (pre v0.35.0)</a>
+</li>
+</ul>
+<h3>Hyde/Hyde Archive (pre v0.35.0)</h3>
+<p>All notable changes to this project will be documented in this file. Dates are displayed in UTC.</p>
+<p>Generated by <a href="https://github.com/CookPete/auto-changelog"><code>auto-changelog</code></a>.</p>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.34.0-beta...v0.34.1-beta">v0.34.1-beta</a></h4>
+<blockquote>
+<p>11 June 2022</p>
+</blockquote>
+<ul>
+<li>Bump guzzlehttp/guzzle from 7.4.3 to 7.4.4 <a href="https://github.com/hydephp/hyde/pull/187"><code>#187</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.33.0-beta...v0.34.0-beta">v0.34.0-beta</a></h4>
+<blockquote>
+<p>6 June 2022</p>
+</blockquote>
+<ul>
+<li>Update Framework to v0.34.x <a href="https://github.com/hydephp/hyde/commit/c5c4f05fb65306768df1b7db53e41c19c0a34915"><code>c5c4f05</code></a>
+</li>
+<li>Update README.md <a href="https://github.com/hydephp/hyde/commit/6cbcf8b4eb99dde9ac09d94125ccb71c857b5ddd"><code>6cbcf8b</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.32.3-beta...v0.33.0-beta">v0.33.0-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.32.2-beta...v0.32.3-beta">v0.32.3-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Move back hyde/realtime-compiler to hyde/hyde <a href="https://github.com/hydephp/hyde/pull/184"><code>#184</code></a>
+</li>
+<li>Update composer.lock <a href="https://github.com/hydephp/hyde/commit/b36937d5a2c354fd102d5bb4244bb1e167f0dde7"><code>b36937d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.32.1-beta...v0.32.2-beta">v0.32.2-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Persist file cache data directory <a href="https://github.com/hydephp/hyde/commit/347e3936f4914c73eb10c9ecf637521dc43d3308"><code>347e393</code></a>
+</li>
+<li>Create cache .gitignore <a href="https://github.com/hydephp/hyde/commit/14e57b6846e551cf138afc2313254a2c226ecc5f"><code>14e57b6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.32.0-beta...v0.32.1-beta">v0.32.1-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/180"><code>#180</code></a>
+</li>
+<li>Update composer.lock <a href="https://github.com/hydephp/hyde/commit/62b9b4e697fa0687a24f3a50e0700419f10b9b01"><code>62b9b4e</code></a>
+</li>
+<li>Automatic build update <a href="https://github.com/hydephp/hyde/commit/626983ae06299d467acdeac07564db603ae017fc"><code>626983a</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.31.0-beta...v0.32.0-beta">v0.32.0-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Update composer.lock <a href="https://github.com/hydephp/hyde/commit/e26171a3f9bda19a589c59f8d06b1432d100459c"><code>e26171a</code></a>
+</li>
+<li>Remove composer requirements handled by Framework <a href="https://github.com/hydephp/hyde/commit/b04754b9021011e8e7ae13deb83b3cee97bfc0b2"><code>b04754b</code></a>
+</li>
+<li>Update Hyde/Framework to v0.32.x <a href="https://github.com/hydephp/hyde/commit/4cd11619225acf73971960b7a3caca74abdfc08b"><code>4cd1161</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.30.1-beta...v0.31.0-beta">v0.31.0-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/177"><code>#177</code></a>
+</li>
+<li>Update to Framework 0.31.x <a href="https://github.com/hydephp/hyde/commit/2da64b47738f08fc4119db43fc90a2c848f2f162"><code>2da64b4</code></a>
+</li>
+<li>Automatic build update <a href="https://github.com/hydephp/hyde/commit/9a59cb60d8f80fc51bd9fe31e86902c4e63667d6"><code>9a59cb6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.30.0-beta...v0.30.1-beta">v0.30.1-beta</a></h4>
+<blockquote>
+<p>31 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix package.json version formatting error <a href="https://github.com/hydephp/hyde/pull/175"><code>#175</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.29.0-beta...v0.30.0-beta">v0.30.0-beta</a></h4>
+<blockquote>
+<p>31 May 2022</p>
+</blockquote>
+<ul>
+<li>Update Hyde to v0.30.x <a href="https://github.com/hydephp/hyde/commit/80d91b5e050de7ff7eb9e97508f5ccef97d91525"><code>80d91b5</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.28.1-beta...v0.29.0-beta">v0.29.0-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/172"><code>#172</code></a>
+</li>
+<li>Fix #169: remove white-space: pre from &lt;code&gt;, allowing it to wrap <a href="https://github.com/hydephp/hyde/pull/170"><code>#170</code></a>
+</li>
+<li>Merge pull request #170 from hydephp/Update-tailwind-config-to-allow-code-tags-to-wrap <a href="https://github.com/hydephp/hyde/issues/169"><code>#169</code></a>
+</li>
+<li>Fix #169: remove white-space: pre from &lt;code&gt; <a href="https://github.com/hydephp/hyde/issues/169"><code>#169</code></a>
+</li>
+<li>Update lock file <a href="https://github.com/hydephp/hyde/commit/f037c4d3fd6d677d742ae57c18c4a712e59e6cef"><code>f037c4d</code></a>
+</li>
+<li>Update hyde/realtime-compiler to v1.3.0 <a href="https://github.com/hydephp/hyde/commit/91e822a29efeb02b6d1d481c0123a8130e6b6685"><code>91e822a</code></a>
+</li>
+<li>Update to Framework v0.29.0-beta <a href="https://github.com/hydephp/hyde/commit/9a624de76b573dc5fc9911a4aae907cf9a5f2b1e"><code>9a624de</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.28.0-beta...v0.28.1-beta">v0.28.1-beta</a></h4>
+<blockquote>
+<p>29 May 2022</p>
+</blockquote>
+<ul>
+<li>Bump guzzlehttp/guzzle from 7.4.2 to 7.4.3 <a href="https://github.com/hydephp/hyde/pull/167"><code>#167</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.27.1-beta...v0.28.0-beta">v0.28.0-beta</a></h4>
+<blockquote>
+<p>23 May 2022</p>
+</blockquote>
+<ul>
+<li>Update Hyde to v0.28.x <a href="https://github.com/hydephp/hyde/commit/16da0b3fc6791f6c8abd1b31d213a47e9d7bb5cb"><code>16da0b3</code></a>
+</li>
+<li>Create FUNDING.yml <a href="https://github.com/hydephp/hyde/commit/1272144340f0f123db9a3b9e002383409a255050"><code>1272144</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.27.0-beta...v0.27.1-beta">v0.27.1-beta</a></h4>
+<blockquote>
+<p>21 May 2022</p>
+</blockquote>
+<ul>
+<li>Upgrade hyde/framework v0.27.5-beta =&gt; v0.27.11-beta <a href="https://github.com/hydephp/hyde/commit/809c7000595af120fa39971d9c5f6770d046c4a5"><code>809c700</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.26.0-beta...v0.27.0-beta">v0.27.0-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Update to v0.27.x <a href="https://github.com/hydephp/hyde/commit/ecc8fd1cf052d4f2ac8ae798c2a8a778a46d605d"><code>ecc8fd1</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.25.0-beta...v0.26.0-beta">v0.26.0-beta</a></h4>
+<blockquote>
+<p>18 May 2022</p>
+</blockquote>
+<ul>
+<li>Update to v0.26.x <a href="https://github.com/hydephp/hyde/commit/123bdebd7d08541507a1ef3f92c5c0ea115f2edc"><code>123bdeb</code></a>
+</li>
+<li>Breaking: Update config to v0.26.x-dev-master <a href="https://github.com/hydephp/hyde/commit/268b2a6ed8be4a8f9efa7f977ae9ba25fd963bc3"><code>268b2a6</code></a>
+</li>
+<li>Update framework to dev-master <a href="https://github.com/hydephp/hyde/commit/ddc37cf6d3e1ade1a3a121b165dc75b45e743d72"><code>ddc37cf</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.24.1-beta...v0.25.0-beta">v0.25.0-beta</a></h4>
+<blockquote>
+<p>17 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/161"><code>#161</code></a>
+</li>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/159"><code>#159</code></a>
+</li>
+<li>Update to v0.25.x <a href="https://github.com/hydephp/hyde/commit/497d540953c95adc8ec08df9424ff33328477d91"><code>497d540</code></a>
+</li>
+<li>Automatic build update <a href="https://github.com/hydephp/hyde/commit/64c2bd6b106f19d0255c0ed2bf599e555a2cdd69"><code>64c2bd6</code></a>
+</li>
+<li>Automatic build update <a href="https://github.com/hydephp/hyde/commit/915cab8802758a7fbb2d31df7d8bfba3d1a781d2"><code>915cab8</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.24.0-beta...v0.24.1-beta">v0.24.1-beta</a></h4>
+<blockquote>
+<p>11 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/157"><code>#157</code></a>
+</li>
+<li>Disable cache <a href="https://github.com/hydephp/hyde/commit/8a48e3e54bdda7b0568b189fd609bacb05d1298e"><code>8a48e3e</code></a>
+</li>
+<li>Update SECURITY.md <a href="https://github.com/hydephp/hyde/commit/958d92e4782a37b9f655e0fee50ad3941354fce2"><code>958d92e</code></a>
+</li>
+<li>Bump Hyde/Framework <a href="https://github.com/hydephp/hyde/commit/cfed837ad3b16b2691d83b4c8af70697df317e9b"><code>cfed837</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.23.0-beta...v0.24.0-beta">v0.24.0-beta</a></h4>
+<blockquote>
+<p>11 May 2022</p>
+</blockquote>
+<ul>
+<li>Update dependencies for release <a href="https://github.com/hydephp/hyde/commit/575338d6caaafeb60aa14e94286726a1d590ddb5"><code>575338d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.22.0-beta...v0.23.0-beta">v0.23.0-beta</a></h4>
+<blockquote>
+<p>6 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/152"><code>#152</code></a>
+</li>
+<li>Run cache after installing <a href="https://github.com/hydephp/hyde/commit/25f8581739417ff4e3f642cebdeb2ffca5cd5924"><code>25f8581</code></a>
+</li>
+<li>Update hyde/framework <a href="https://github.com/hydephp/hyde/commit/cc6639558289c3cd5c4d6307fbca380016b6ae57"><code>cc66395</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.21.0-beta...v0.22.0-beta">v0.22.0-beta</a></h4>
+<blockquote>
+<p>4 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/149"><code>#149</code></a>
+</li>
+<li>Fix #146 by adding _pages to Tailwind content <a href="https://github.com/hydephp/hyde/pull/148"><code>#148</code></a>
+</li>
+<li>Add back _site to Tailwind content array <a href="https://github.com/hydephp/hyde/pull/147"><code>#147</code></a>
+</li>
+<li>Update frontend and framework files <a href="https://github.com/hydephp/hyde/pull/143"><code>#143</code></a>
+</li>
+<li>Merge pull request #148 from hydephp/caendesilva-patch-1 <a href="https://github.com/hydephp/hyde/issues/146"><code>#146</code></a>
+</li>
+<li>Fix #146 by adding _pages to Tailwind content <a href="https://github.com/hydephp/hyde/issues/146"><code>#146</code></a>
+</li>
+<li>Automatic build update <a href="https://github.com/hydephp/hyde/commit/5f656d04ea94fc8d9fa63b99d681c561a503d1aa"><code>5f656d0</code></a>
+</li>
+<li>Remove reliance on deprecated service <a href="https://github.com/hydephp/hyde/commit/71bb359fa959b17f175adff406dd86b9bfa6dfd5"><code>71bb359</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.20.0-beta...v0.21.0-beta">v0.21.0-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.19.0-beta...v0.20.0-beta">v0.20.0-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Update max-width for blog posts <a href="https://github.com/hydephp/hyde/pull/139"><code>#139</code></a>
+</li>
+<li>Update config to v0.20.x <a href="https://github.com/hydephp/hyde/commit/87c6748825247bcc558fdbf1dbdad6cac70748b3"><code>87c6748</code></a>
+</li>
+<li>Rename workflow and jobs <a href="https://github.com/hydephp/hyde/commit/c67f2c08a25d28a7ec8520a2ccb79e3fa2227c11"><code>c67f2c0</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.18.0-beta...v0.19.0-beta">v0.19.0-beta</a></h4>
+<blockquote>
+<p>1 May 2022</p>
+</blockquote>
+<ul>
+<li>Update frontend assets <a href="https://github.com/hydephp/hyde/pull/136"><code>#136</code></a>
+</li>
+<li>Update frontend assets <a href="https://github.com/hydephp/hyde/pull/134"><code>#134</code></a>
+</li>
+<li>Add Laravel Mix #124 <a href="https://github.com/hydephp/hyde/pull/129"><code>#129</code></a>
+</li>
+<li>Fix #127 <a href="https://github.com/hydephp/hyde/issues/127"><code>#127</code></a>
+</li>
+<li>Clone repo directly to fix #133 <a href="https://github.com/hydephp/hyde/issues/133"><code>#133</code></a>
+</li>
+<li>Fix #131 <a href="https://github.com/hydephp/hyde/issues/131"><code>#131</code></a>
+</li>
+<li>Add Laravel Mix <a href="https://github.com/hydephp/hyde/commit/dc624383bdb4ca8d3e88209dc10c66d2c9e082a1"><code>dc62438</code></a>
+</li>
+<li>Remove laminas/laminas-text <a href="https://github.com/hydephp/hyde/commit/fa23c60cfaa42805dfc6a04efb3794620d0239dc"><code>fa23c60</code></a>
+</li>
+<li>Add PostCSS <a href="https://github.com/hydephp/hyde/commit/db399c439b0fe8f07ba45566a5d8825545160de7"><code>db399c4</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.17.1-beta...v0.18.0-beta">v0.18.0-beta</a></h4>
+<blockquote>
+<p>29 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix <a href="https://github.com/hydephp/hydefront/issues/1">https://github.com/hydephp/hydefront/issues/1</a> <a href="https://github.com/hydephp/hydefront/issues/1"><code>#1</code></a>
+</li>
+<li>Fix <a href="https://github.com/hydephp/hyde/issues/120">https://github.com/hydephp/hyde/issues/120</a> <a href="https://github.com/hydephp/hyde/issues/120"><code>#120</code></a>
+</li>
+<li>Reset the application only once <a href="https://github.com/hydephp/hyde/commit/8d2dec786d52117e778d6d2ed38595f3a1a887e4"><code>8d2dec7</code></a>
+</li>
+<li>Create build-and-update-hydefront.yml <a href="https://github.com/hydephp/hyde/commit/eca910c7bd45b47b4f4d8a369468c810533fba35"><code>eca910c</code></a>
+</li>
+<li>Implement <a href="https://github.com/hydephp/framework/issues/182">https://github.com/hydephp/framework/issues/182</a> <a href="https://github.com/hydephp/hyde/commit/f0b6da09caa8e906dba549792cc6dfb48fdeee41"><code>f0b6da0</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.17.0-beta...v0.17.1-beta">v0.17.1-beta</a></h4>
+<blockquote>
+<p>28 April 2022</p>
+</blockquote>
+<ul>
+<li>Remove compiled files and fix wrong homepage layout <a href="https://github.com/hydephp/hyde/commit/f92e4b7afee871dd69570a6a1f5915a6bc26a041"><code>f92e4b7</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.16.1-beta...v0.17.0-beta">v0.17.0-beta</a></h4>
+<blockquote>
+<p>28 April 2022</p>
+</blockquote>
+<ul>
+<li>Remove GitHub test workflows from Hyde/Hyde, moving them into Hyde/Framework  <a href="https://github.com/hydephp/hyde/pull/116"><code>#116</code></a>
+</li>
+<li>Move Framework tests to the Hyde/Framework package <a href="https://github.com/hydephp/hyde/pull/115"><code>#115</code></a>
+</li>
+<li>Resolve <a href="https://github.com/hydephp/framework/issues/186">https://github.com/hydephp/framework/issues/186</a> <a href="https://github.com/hydephp/framework/issues/186"><code>#186</code></a>
+</li>
+<li>Move tests to Framework <a href="https://github.com/hydephp/hyde/commit/eba459c6ea9ce717ae1d7490eeb73b8523c0834a"><code>eba459c</code></a>
+</li>
+<li>Remove deprecated trait <a href="https://github.com/hydephp/hyde/commit/87f1659179be5254d6650fed5bd1ded6ce312df5"><code>87f1659</code></a>
+</li>
+<li>Remove deprecated Setup directory <a href="https://github.com/hydephp/hyde/commit/f5a9be5218b7dc1378928d12bd7fafc80a377b1a"><code>f5a9be5</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.16.0-beta...v0.16.1-beta">v0.16.1-beta</a></h4>
+<blockquote>
+<p>28 April 2022</p>
+</blockquote>
+<ul>
+<li>Delete codeql as the JS has moved to HydeFront <a href="https://github.com/hydephp/hyde/commit/ef7e94e07c870e672ef39811addf87964c21df1c"><code>ef7e94e</code></a>
+</li>
+<li>Change test coverage to code reports <a href="https://github.com/hydephp/hyde/commit/b1fd3e94221d1468d932a5eecee729662729fe34"><code>b1fd3e9</code></a>
+</li>
+<li>Add more reporting outputs <a href="https://github.com/hydephp/hyde/commit/a4ac8e696e31f7b4f4fd81c1be042853495267d8"><code>a4ac8e6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.15.0-beta...v0.16.0-beta">v0.16.0-beta</a></h4>
+<blockquote>
+<p>27 April 2022</p>
+</blockquote>
+<ul>
+<li>Update namespace <a href="https://github.com/hydephp/hyde/commit/50695fc097f3bab0d4380e6a07e2a87f7b937675"><code>50695fc</code></a>
+</li>
+<li>0.15.x Update namespace <a href="https://github.com/hydephp/hyde/commit/8c084b9e866f814d16e8085be65d9e0cb28d9663"><code>8c084b9</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.14.0-beta...v0.15.0-beta">v0.15.0-beta</a></h4>
+<blockquote>
+<p>27 April 2022</p>
+</blockquote>
+<ul>
+<li>Remove files moved to CDN <a href="https://github.com/hydephp/hyde/commit/521d79005537edb65ed5e740091385bd1a9d96c3"><code>521d790</code></a>
+</li>
+<li>Update tests for removed frontend assets <a href="https://github.com/hydephp/hyde/commit/fa68c3718b1454663089e3a53791b6996f5d1a1d"><code>fa68c37</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.13.0-beta...v0.14.0-beta">v0.14.0-beta</a></h4>
+<blockquote>
+<p>21 April 2022</p>
+</blockquote>
+<ul>
+<li>Change update:resources command signature to update:assets <a href="https://github.com/hydephp/hyde/pull/100"><code>#100</code></a>
+</li>
+<li>Rename directory resources/frontend to resources/assets <a href="https://github.com/hydephp/hyde/pull/99"><code>#99</code></a>
+</li>
+<li>Fix <a href="https://github.com/hydephp/framework/issues/156">https://github.com/hydephp/framework/issues/156</a> <a href="https://github.com/hydephp/framework/issues/156"><code>#156</code></a>
+</li>
+<li>Publish the assets <a href="https://github.com/hydephp/hyde/commit/330971d30bc77dc8ff89c4b724af6bd6f9600eb3"><code>330971d</code></a>
+</li>
+<li>Add the Markdown features tests <a href="https://github.com/hydephp/hyde/commit/71c093657af227ea7c58167a6ceaca9b291ecf38"><code>71c0936</code></a>
+</li>
+<li>Update composer dependencies <a href="https://github.com/hydephp/hyde/commit/8a1ebe4480f9bc6fea553d8136c5c68fcec18b95"><code>8a1ebe4</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.12.0-beta...v0.13.0-beta">v0.13.0-beta</a></h4>
+<blockquote>
+<p>20 April 2022</p>
+</blockquote>
+<ul>
+<li>Remove BrowserSync and other dependencies <a href="https://github.com/hydephp/hyde/pull/93"><code>#93</code></a>
+</li>
+<li>Create the tests <a href="https://github.com/hydephp/hyde/commit/f30c375c9c1c88182bff58d31ac430ce0029f35b"><code>f30c375</code></a>
+</li>
+<li>Republish the config <a href="https://github.com/hydephp/hyde/commit/c290249cd52a0cc07211290bb49b4223a4687217"><code>c290249</code></a>
+</li>
+<li>Update tests for 0.13.x <a href="https://github.com/hydephp/hyde/commit/f6de7469594dc3d40a94fa461a201371b0124e63"><code>f6de746</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.11.0-beta...v0.12.0-beta">v0.12.0-beta</a></h4>
+<blockquote>
+<p>19 April 2022</p>
+</blockquote>
+<ul>
+<li>Clean up Readme <a href="https://github.com/hydephp/hyde/commit/5eb9e5ee114a55a76984fdd163f683770b53afad"><code>5eb9e5e</code></a>
+</li>
+<li>Create the test <a href="https://github.com/hydephp/hyde/commit/7a02299b41ba45ac1b7fc25e0081ae891c136ca2"><code>7a02299</code></a>
+</li>
+<li>Add Features section <a href="https://github.com/hydephp/hyde/commit/85e8a4fd8275f8cf5b979dfed118d55164ecea92"><code>85e8a4f</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.10.0-beta...v0.11.0-beta">v0.11.0-beta</a></h4>
+<blockquote>
+<p>17 April 2022</p>
+</blockquote>
+<ul>
+<li>Add the realtime compiler extension <a href="https://github.com/hydephp/hyde/commit/90989c13a7cf87ef637a58e545acee16d8607716"><code>90989c1</code></a>
+</li>
+<li>Streamline Readme <a href="https://github.com/hydephp/hyde/commit/5860c0447e85571b5ead852ac1dfc5e3ff88fd80"><code>5860c04</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.9.0-alpha...v0.10.0-beta">v0.10.0-beta</a></h4>
+<blockquote>
+<p>12 April 2022</p>
+</blockquote>
+<ul>
+<li>Add darkmode support <a href="https://github.com/hydephp/hyde/pull/86"><code>#86</code></a>
+</li>
+<li>Remove the deprecated and unused service provider <a href="https://github.com/hydephp/hyde/pull/85"><code>#85</code></a>
+</li>
+<li>Updates the frontend and adds the tests for <a href="https://github.com/hydephp/framework/pull/102">https://github.com/hydephp/framework/pull/102</a> <a href="https://github.com/hydephp/hyde/pull/84"><code>#84</code></a>
+</li>
+<li>Refactor tests <a href="https://github.com/hydephp/hyde/pull/82"><code>#82</code></a>
+</li>
+<li>Clean up repo <a href="https://github.com/hydephp/hyde/pull/79"><code>#79</code></a>
+</li>
+<li>Change blade source directory <a href="https://github.com/hydephp/hyde/pull/75"><code>#75</code></a>
+</li>
+<li>Bump composer packages <a href="https://github.com/hydephp/hyde/pull/72"><code>#72</code></a>
+</li>
+<li>Companion branch to <a href="https://github.com/hydephp/framework/pull/84">https://github.com/hydephp/framework/pull/84</a> <a href="https://github.com/hydephp/hyde/pull/71"><code>#71</code></a>
+</li>
+<li>Internal build service refactor tie in <a href="https://github.com/hydephp/hyde/pull/65"><code>#65</code></a>
+</li>
+<li>Remove versioning from matrix, fix <a href="https://github.com/hydephp/framework/issues/93">https://github.com/hydephp/framework/issues/93</a> <a href="https://github.com/hydephp/framework/issues/93"><code>#93</code></a>
+</li>
+<li>Publish the compiled assets <a href="https://github.com/hydephp/hyde/commit/7a248146f4ce3ba2296171af26760a141cbd912f"><code>7a24814</code></a>
+</li>
+<li>Update tests for Build Service refactor <a href="https://github.com/hydephp/hyde/commit/06c80480a6a5fc2221e4fd3d457c06a3748cbedb"><code>06c8048</code></a>
+</li>
+<li>Update the test <a href="https://github.com/hydephp/hyde/commit/874c2a41aebaab4510e70e2430dfb283607129b1"><code>874c2a4</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.8.0-alpha...v0.9.0-alpha">v0.9.0-alpha</a></h4>
+<blockquote>
+<p>7 April 2022</p>
+</blockquote>
+<ul>
+<li>Change where and how stylesheets and scripts are stored and handled <a href="https://github.com/hydephp/hyde/pull/63"><code>#63</code></a>
+</li>
+<li>Move the resource files <a href="https://github.com/hydephp/hyde/commit/fb3b660bd5377d60658bdd83ac38a6bbab80fe0e"><code>fb3b660</code></a>
+</li>
+<li>Add the test <a href="https://github.com/hydephp/hyde/commit/51d99b2e0d752266d4cf6161cb6c5b57ada153de"><code>51d99b2</code></a>
+</li>
+<li>Publish the resources <a href="https://github.com/hydephp/hyde/commit/bf3b20d99d62b913d8d96bd6250e47de8e2a126a"><code>bf3b20d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.7.3-alpha...v0.8.0-alpha">v0.8.0-alpha</a></h4>
+<blockquote>
+<p>3 April 2022</p>
+</blockquote>
+<ul>
+<li>Clean up test code and fix mismatched test namespace <a href="https://github.com/hydephp/hyde/pull/59"><code>#59</code></a>
+</li>
+<li>Update the navigation menu frontend <a href="https://github.com/hydephp/hyde/pull/58"><code>#58</code></a>
+</li>
+<li>Add Changelog.md <a href="https://github.com/hydephp/hyde/commit/9bff522faa4970d5742d3238f11f0d3b0335fa77"><code>9bff522</code></a>
+</li>
+<li>Create CODE_OF_CONDUCT.md <a href="https://github.com/hydephp/hyde/commit/ffde383cdd51d9e8a691f3d17c7d09fb5d174a33"><code>ffde383</code></a>
+</li>
+<li>Create a test runner with a backup feature <a href="https://github.com/hydephp/hyde/commit/605ed463809e7da716512709017f8a62b8d93167"><code>605ed46</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.7.2-alpha...v0.7.3-alpha">v0.7.3-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix outdated welcome page links <a href="https://github.com/hydephp/hyde/commit/323ea176294f517a335e0c8ee7e1c1af0b46981d"><code>323ea17</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.7.1-alpha...v0.7.2-alpha">v0.7.2-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Create the test <a href="https://github.com/hydephp/hyde/commit/0a8a00e9b6516f655495dc0fd1365a92283917ef"><code>0a8a00e</code></a>
+</li>
+<li>Create the test <a href="https://github.com/hydephp/hyde/commit/f445bd57aff02d1619320ecd5dcbea9a09112c68"><code>f445bd5</code></a>
+</li>
+<li>Implement the --force option <a href="https://github.com/hydephp/hyde/commit/2fe366cfc7ee418eeb4305cfa4dfecac0053a0ab"><code>2fe366c</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.7.0-alpha...v0.7.1-alpha">v0.7.1-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Add SASS as a dev dependency <a href="https://github.com/hydephp/hyde/pull/55"><code>#55</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.6.0-alpha...v0.7.0-alpha">v0.7.0-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Remove _authors and _drafts directories #48 <a href="https://github.com/hydephp/hyde/pull/53"><code>#53</code></a>
+</li>
+<li>Create the first two tests <a href="https://github.com/hydephp/hyde/commit/fdd197c0e8ef6657f289ac3a3c20dbc654a6c9f8"><code>fdd197c</code></a>
+</li>
+<li>Create the test <a href="https://github.com/hydephp/hyde/commit/6c43c414a2bb029e61160067c5f479d357271c98"><code>6c43c41</code></a>
+</li>
+<li>Update author yml config path <a href="https://github.com/hydephp/hyde/commit/67af952e2d5f5c909e68ec8138a601c8349fe61c"><code>67af952</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.5.0-alpha...v0.6.0-alpha">v0.6.0-alpha</a></h4>
+<blockquote>
+<p>30 March 2022</p>
+</blockquote>
+<ul>
+<li>Move scripts into app.js <a href="https://github.com/hydephp/hyde/pull/51"><code>#51</code></a>
+</li>
+<li>Update command class names <a href="https://github.com/hydephp/hyde/pull/49"><code>#49</code></a>
+</li>
+<li>Update to latest Framework version <a href="https://github.com/hydephp/hyde/commit/24d666d4d326dfcab92e7a21aca7c0d0e551897a"><code>24d666d</code></a>
+</li>
+<li>Add the test <a href="https://github.com/hydephp/hyde/commit/3554c332756e7b44dad0921f45cb00075519125f"><code>3554c33</code></a>
+</li>
+<li>0.6.0 Add the test <a href="https://github.com/hydephp/hyde/commit/0e99c569e7fe8bb866890e7869bf5de74a987eab"><code>0e99c56</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.4.1-alpha...v0.5.0-alpha">v0.5.0-alpha</a></h4>
+<blockquote>
+<p>25 March 2022</p>
+</blockquote>
+<ul>
+<li>Remove legacy test <a href="https://github.com/hydephp/hyde/commit/7cee2080f57a3d8bc9cd4a6479ab71486dfdabf6"><code>7cee208</code></a>
+</li>
+<li>Add tests for installer <a href="https://github.com/hydephp/hyde/commit/dfed2d2ee55bf51694f138f8aa1e7ef2794c7fbf"><code>dfed2d2</code></a>
+</li>
+<li>#37 Add more tests: DebugCommand <a href="https://github.com/hydephp/hyde/commit/ab1758fb5781b92e6814382b2e0613ad8ab27fd7"><code>ab1758f</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.4.0-alpha...v0.4.1-alpha">v0.4.1-alpha</a></h4>
+<blockquote>
+<p>25 March 2022</p>
+</blockquote>
+<ul>
+<li>Bump minimist from 1.2.5 to 1.2.6 <a href="https://github.com/hydephp/hyde/pull/47"><code>#47</code></a>
+</li>
+<li>#37 Add more tests: HydeServiceProvider <a href="https://github.com/hydephp/hyde/commit/ae8673f6ae4afde43395e52ea2023a48b3bf73b4"><code>ae8673f</code></a>
+</li>
+<li>Inline the stream variable to fix missing file error <a href="https://github.com/hydephp/hyde/commit/bca234c40ba35f3d90c4a4cb756d75070938ec9d"><code>bca234c</code></a>
+</li>
+<li>Update to Framework 0.5.1 <a href="https://github.com/hydephp/hyde/commit/449e0511e43b9b735ca4cc0cea6e3da037c8c572"><code>449e051</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.3.3-alpha...v0.4.0-alpha">v0.4.0-alpha</a></h4>
+<blockquote>
+<p>24 March 2022</p>
+</blockquote>
+<ul>
+<li>0.4.0 Update which adds several new tests tying into framework v0.5.0 <a href="https://github.com/hydephp/hyde/pull/46"><code>#46</code></a>
+</li>
+<li>Format tests to PSR2 <a href="https://github.com/hydephp/hyde/commit/e08aba6ef4d7214990dc5f8f3869761e61ee553f"><code>e08aba6</code></a>
+</li>
+<li>Create test for publish homepage command <a href="https://github.com/hydephp/hyde/commit/4e0f828bc7284c38c10e46ed1e47a48b7c316c60"><code>4e0f828</code></a>
+</li>
+<li>Update framework version to tie into new release <a href="https://github.com/hydephp/hyde/commit/e4944c8442a992b26585d8933fe0d01282a5ee7e"><code>e4944c8</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.3.2-alpha...v0.3.3-alpha">v0.3.3-alpha</a></h4>
+<blockquote>
+<p>23 March 2022</p>
+</blockquote>
+<ul>
+<li>Unlock framework version to patch error in last release <a href="https://github.com/hydephp/hyde/commit/4423513ba82672c4bf19042330e8d684559209bb"><code>4423513</code></a>
+</li>
+<li>Update config <a href="https://github.com/hydephp/hyde/commit/a480b0a876b260d7a6e271713ad5489fb99581e2"><code>a480b0a</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.3.1-alpha...v0.3.2-alpha">v0.3.2-alpha</a></h4>
+<blockquote>
+<p>23 March 2022</p>
+</blockquote>
+<ul>
+<li>Increase link contrast to fix accessibility issue <a href="https://github.com/hydephp/hyde/pull/45"><code>#45</code></a>
+</li>
+<li>Add the Site URL setting <a href="https://github.com/hydephp/hyde/commit/05211b9c55859588ba402b48c38c5d5e2fdd21a5"><code>05211b9</code></a>
+</li>
+<li>Update config <a href="https://github.com/hydephp/hyde/commit/8c0d33158941579cf309847e865c8a0dda3772ad"><code>8c0d331</code></a>
+</li>
+<li>Remove dev files from gitignore <a href="https://github.com/hydephp/hyde/commit/f52d4718b7764e4e379cd931bbd195be4369ffba"><code>f52d471</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.3.0-alpha...v0.3.1-alpha">v0.3.1-alpha</a></h4>
+<blockquote>
+<p>23 March 2022</p>
+</blockquote>
+<ul>
+<li>Replace the default empty blog listing index page with a new welcome screen <a href="https://github.com/hydephp/hyde/pull/44"><code>#44</code></a>
+</li>
+<li>Replace the default page <a href="https://github.com/hydephp/hyde/commit/d74729050fa36d988b36a978cedaba1bf3e77a4f"><code>d747290</code></a>
+</li>
+<li>Add the links <a href="https://github.com/hydephp/hyde/commit/b8cd49c2927c70b0c11e6d990c47adebdcdba8e4"><code>b8cd49c</code></a>
+</li>
+<li>Add info about the new build --clean option <a href="https://github.com/hydephp/hyde/commit/efca81f9d222a8409bdd079f67d1048e48c9d30a"><code>efca81f</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.2.1-alpha...v0.3.0-alpha">v0.3.0-alpha</a></h4>
+<blockquote>
+<p>22 March 2022</p>
+</blockquote>
+<ul>
+<li>v0.3 - Hyde Core Separation - Contains breaking changes <a href="https://github.com/hydephp/hyde/pull/36"><code>#36</code></a>
+</li>
+<li>Hyde Core Separation - Contains breaking changes <a href="https://github.com/hydephp/hyde/pull/35"><code>#35</code></a>
+</li>
+<li>Allow the view source directory to be modified at runtime <a href="https://github.com/hydephp/hyde/pull/34"><code>#34</code></a>
+</li>
+<li>Add a path helper to unify path referencing <a href="https://github.com/hydephp/hyde/pull/33"><code>#33</code></a>
+</li>
+<li>Successfully moved Core into temporary package <a href="https://github.com/hydephp/hyde/commit/d5a8dc15db87a980144fe3330d778ad69e9e61aa"><code>d5a8dc1</code></a>
+</li>
+<li>Move app font to vendor <a href="https://github.com/hydephp/hyde/commit/e43da1d1845f2837af0273df59f9f8623cce8b2b"><code>e43da1d</code></a>
+</li>
+<li>Remove legacy stubs and test <a href="https://github.com/hydephp/hyde/commit/8740cc2996fc9e66df40b2ff6b0f58ec0c32fc34"><code>8740cc2</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.2.0-alpha...v0.2.1-alpha">v0.2.1-alpha</a></h4>
+<blockquote>
+<p>21 March 2022</p>
+</blockquote>
+<ul>
+<li>Add a customizable footer <a href="https://github.com/hydephp/hyde/pull/31"><code>#31</code></a>
+</li>
+<li>Adds a customizable footer <a href="https://github.com/hydephp/hyde/commit/09813cf6810a8e94e8b4301e9c460aa794ad656d"><code>09813cf</code></a>
+</li>
+<li>Clarify comments in configuration file <a href="https://github.com/hydephp/hyde/commit/09a7e6480db8ff72af02db85d160c656ca19fee7"><code>09a7e64</code></a>
+</li>
+<li>Compile frontend assets <a href="https://github.com/hydephp/hyde/commit/fdb68d537e7dd671c033c295815a7c9994e5381b"><code>fdb68d5</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.1.1-pre.patch...v0.2.0-alpha">v0.2.0-alpha</a></h4>
+<blockquote>
+<p>21 March 2022</p>
+</blockquote>
+<ul>
+<li>Add responsive navigation to resolve #7 <a href="https://github.com/hydephp/hyde/pull/30"><code>#30</code></a>
+</li>
+<li>Add support for images <a href="https://github.com/hydephp/hyde/pull/29"><code>#29</code></a>
+</li>
+<li>Fix bug #22 where the feed was not sorting the posts by date <a href="https://github.com/hydephp/hyde/pull/28"><code>#28</code></a>
+</li>
+<li>Overhaul the navigation menu to add configuration options <a href="https://github.com/hydephp/hyde/pull/27"><code>#27</code></a>
+</li>
+<li>Improve the front matter parser to fix #21 <a href="https://github.com/hydephp/hyde/pull/23"><code>#23</code></a>
+</li>
+<li>Check for the app env in the .env file <a href="https://github.com/hydephp/hyde/pull/20"><code>#20</code></a>
+</li>
+<li>Add the Torchlight badge automatically <a href="https://github.com/hydephp/hyde/pull/19"><code>#19</code></a>
+</li>
+<li>#14 Add publishable 404 pages <a href="https://github.com/hydephp/hyde/pull/18"><code>#18</code></a>
+</li>
+<li>Create Validator command to help catch any issues in the setup <a href="https://github.com/hydephp/hyde/pull/17"><code>#17</code></a>
+</li>
+<li>Merge pull request #30 from hydephp/7-feature-make-the-navigation-menu-responsive <a href="https://github.com/hydephp/hyde/issues/7"><code>#7</code></a>
+</li>
+<li>Add a navigation menu blacklist, fixes #26 <a href="https://github.com/hydephp/hyde/issues/26"><code>#26</code></a>
+</li>
+<li>Fix #25, automatically add link to docs <a href="https://github.com/hydephp/hyde/issues/25"><code>#25</code></a>
+</li>
+<li>Merge pull request #23 from hydephp/21-bug-front-matter-parser-not-stripping-quotes <a href="https://github.com/hydephp/hyde/issues/21"><code>#21</code></a>
+</li>
+<li>Improve the front matter parser to fix #21 <a href="https://github.com/hydephp/hyde/issues/21"><code>#21</code></a>
+</li>
+<li>Fix #15, remove redundant values from created file <a href="https://github.com/hydephp/hyde/issues/15"><code>#15</code></a>
+</li>
+<li>Add the stubs <a href="https://github.com/hydephp/hyde/commit/5416fd22198cc3e5912911aa8547e3a3aa92f734"><code>5416fd2</code></a>
+</li>
+<li>Add tests <a href="https://github.com/hydephp/hyde/commit/9284a5a037c8a6afd72dca12d4109b308a432d0b"><code>9284a5a</code></a>
+</li>
+<li>Implement  #16, add custom navigation links <a href="https://github.com/hydephp/hyde/commit/1007d0de0a15064157ad7bf4bb801abfb1d2281e"><code>1007d0d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.1.1-pre...v0.1.1-pre.patch">v0.1.1-pre.patch</a></h4>
+<blockquote>
+<p>19 March 2022</p>
+</blockquote>
+<ul>
+<li>Patches #12, Sev2 Bug: Compiler not using Markdown <a href="https://github.com/hydephp/hyde/commit/ad640de7bc603330846e025588ea477df55f3962"><code>ad640de</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/hyde/compare/v0.1.0-pre...v0.1.1-pre">v0.1.1-pre</a></h4>
+<blockquote>
+<p>19 March 2022</p>
+</blockquote>
+<ul>
+<li>Merge 1.x <a href="https://github.com/hydephp/hyde/pull/2"><code>#2</code></a>
+</li>
+<li>Fix #6, handle missing docs index <a href="https://github.com/hydephp/hyde/issues/6"><code>#6</code></a>
+</li>
+<li>Update installation instructions <a href="https://github.com/hydephp/hyde/commit/785a450c2f72faeb3c87a4863e3a27564eece60a"><code>785a450</code></a>
+</li>
+<li>Add command for making arbitrary navigation links <a href="https://github.com/hydephp/hyde/commit/3970d5712da4478b5ce2adb828e7cedd1b443526"><code>3970d57</code></a>
+</li>
+<li>Create codeql-analysis.yml <a href="https://github.com/hydephp/hyde/commit/5a6f7ad1ae218a1138f955faf569fe9aecb54e2f"><code>5a6f7ad</code></a>
+</li>
+</ul>
+<h4>v0.1.0-pre</h4>
+<blockquote>
+<p>18 March 2022</p>
+</blockquote>
+<ul>
+<li>Delete _pages directory <a href="https://github.com/hydephp/hyde/pull/1"><code>#1</code></a>
+</li>
+<li>Initial Commit <a href="https://github.com/hydephp/hyde/commit/109bddb7b6144ba704e283c220754759276f1a23"><code>109bddb</code></a>
+</li>
+<li>Add Torchlight support <a href="https://github.com/hydephp/hyde/commit/300e06fc6d8600ed8db1b3407a500b5189236eff"><code>300e06f</code></a>
+</li>
+<li>Add the Logo <a href="https://github.com/hydephp/hyde/commit/1d063479460fdb4cf621f606b2beafaa7d7d0c61"><code>1d06347</code></a>
+</li>
+</ul>
+<h3>Hyde/Framework Archive (pre v0.35.0)</h3>
+<p>All notable changes to this project will be documented in this file. Dates are displayed in UTC.</p>
+<p>Generated by <a href="https://github.com/CookPete/auto-changelog"><code>auto-changelog</code></a>.</p>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.33.0-beta...v0.34.0">v0.34.0</a></h4>
+<blockquote>
+<p>6 June 2022</p>
+</blockquote>
+<ul>
+<li>Deprecate Hyde::features(), use Hyde::hasFeature() instead <a href="https://github.com/hydephp/framework/pull/523"><code>#523</code></a>
+</li>
+<li>Create image link helper, fix #434 <a href="https://github.com/hydephp/framework/pull/522"><code>#522</code></a>
+</li>
+<li>Create a PageModel contract and helpers to get parsed model collections <a href="https://github.com/hydephp/framework/pull/521"><code>#521</code></a>
+</li>
+<li>Merge pull request #522 from hydephp/create-image-file-object <a href="https://github.com/hydephp/framework/issues/434"><code>#434</code></a>
+</li>
+<li>Add image path helper, fix #434 <a href="https://github.com/hydephp/framework/issues/434"><code>#434</code></a>
+</li>
+<li>Fix #516 Add Composer validation to the test suite <a href="https://github.com/hydephp/framework/issues/516"><code>#516</code></a>
+</li>
+<li>Move the static::all() helper to AbstractPage <a href="https://github.com/hydephp/framework/commit/c726ad73cf30eff59bc2425f8c35eacbe499f2e4"><code>c726ad7</code></a>
+</li>
+<li>Create MarkdownPost::latest() <a href="https://github.com/hydephp/framework/commit/e6d9e4a1b2689e58cef44d7109c0594bc3df972f"><code>e6d9e4a</code></a>
+</li>
+<li>Implement MarkdownPost::all() <a href="https://github.com/hydephp/framework/commit/cda201052547935d545869d651bc297f45617011"><code>cda2010</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.32.1-beta...v0.33.0-beta">v0.33.0-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.32.0-beta...v0.32.1-beta">v0.32.1-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Move back hyde/realtime-compiler to hyde/hyde <a href="https://github.com/hydephp/framework/pull/517"><code>#517</code></a>
+</li>
+<li>Update composer.lock <a href="https://github.com/hydephp/framework/commit/246da42b693a07175e861bf653763cfa9af42ec2"><code>246da42</code></a>
+</li>
+<li>Update composer.lock <a href="https://github.com/hydephp/framework/commit/9e835b6cec2ef64fb81d9378a3bab3c090f460bf"><code>9e835b6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.31.1-beta...v0.32.0-beta">v0.32.0-beta</a></h4>
+<blockquote>
+<p>4 June 2022</p>
+</blockquote>
+<ul>
+<li>Refactor to use Laravel cache helper instead of custom implementation <a href="https://github.com/hydephp/framework/pull/514"><code>#514</code></a>
+</li>
+<li>Improve metadata for featured post images <a href="https://github.com/hydephp/framework/pull/512"><code>#512</code></a>
+</li>
+<li>Skip generating auxiliary files in the main built loop when there is no underlying content <a href="https://github.com/hydephp/framework/pull/511"><code>#511</code></a>
+</li>
+<li>Fix: #506: Move ext-simplexml in composer.json to suggest as it is not a strict dependency <a href="https://github.com/hydephp/framework/pull/510"><code>#510</code></a>
+</li>
+<li>Rewrite Realtime Compiler <a href="https://github.com/hydephp/framework/pull/508"><code>#508</code></a>
+</li>
+<li>Fix #496: Missing image &quot;contentUrl&quot; metadata <a href="https://github.com/hydephp/framework/issues/496"><code>#496</code></a>
+</li>
+<li>Don't create search files when there are no pages <a href="https://github.com/hydephp/framework/issues/482"><code>#482</code></a>
+</li>
+<li>Update Hyde Realtime Compiler to v2.0 <a href="https://github.com/hydephp/framework/commit/f917319149bfce3249f9921b6bc3ecf0a6307f42"><code>f917319</code></a>
+</li>
+<li>Delete RELEASE-NOTES-DRAFT.md <a href="https://github.com/hydephp/framework/commit/9853526ec23b8fe7a325126d8e740e354a1b4eb2"><code>9853526</code></a>
+</li>
+<li>Remove pre-check as package is always included <a href="https://github.com/hydephp/framework/commit/076a1bef2ae68117d092b38d9ee8d6f2fef64172"><code>076a1be</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.31.0-beta...v0.31.1-beta">v0.31.1-beta</a></h4>
+<blockquote>
+<p>3 June 2022</p>
+</blockquote>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.30.1-beta...v0.31.0-beta">v0.31.0-beta</a></h4>
+<blockquote>
+<p>2 June 2022</p>
+</blockquote>
+<ul>
+<li>Fix #499: Make the search dialog positioning fixed <a href="https://github.com/hydephp/framework/pull/503"><code>#503</code></a>
+</li>
+<li>Make documentation pages smarter <a href="https://github.com/hydephp/framework/pull/501"><code>#501</code></a>
+</li>
+<li>Link to markdown source files <a href="https://github.com/hydephp/framework/pull/498"><code>#498</code></a>
+</li>
+<li>Fix #490 Make heading permalinks visible <a href="https://github.com/hydephp/framework/pull/493"><code>#493</code></a>
+</li>
+<li>Add Markdown Post/Preprocessors  <a href="https://github.com/hydephp/framework/pull/488"><code>#488</code></a>
+</li>
+<li>Merge pull request #503 from hydephp/499-make-the-search-menu-dialog-position-fixed <a href="https://github.com/hydephp/framework/issues/499"><code>#499</code></a>
+</li>
+<li>Fix #499: Make the search dialog positioning fixed <a href="https://github.com/hydephp/framework/issues/499"><code>#499</code></a>
+</li>
+<li>Merge pull request #493 from hydephp/make-heading-permalinks-visible <a href="https://github.com/hydephp/framework/issues/490"><code>#490</code></a>
+</li>
+<li>Fix #490 Make heading permalinks visible <a href="https://github.com/hydephp/framework/issues/490"><code>#490</code></a>
+</li>
+<li>Merge unit tests into single feature test <a href="https://github.com/hydephp/framework/commit/c455d1c0246d9361fd2115528ce616ea797915ea"><code>c455d1c</code></a>
+</li>
+<li>Use the same static transformation instead of DOM <a href="https://github.com/hydephp/framework/commit/bdba27386df05a46ca27071601aed1f6f3f00b59"><code>bdba273</code></a>
+</li>
+<li>Document the edit button feature <a href="https://github.com/hydephp/framework/commit/dc0d9d750e0b61701557472ebd1ce1b1e556058a"><code>dc0d9d7</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.30.0-beta...v0.30.1-beta">v0.30.1-beta</a></h4>
+<blockquote>
+<p>31 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix support for outputting documentation pages to root output directory <a href="https://github.com/hydephp/framework/pull/480"><code>#480</code></a>
+</li>
+<li>Fix <a href="https://github.com/hydephp/framework/issues/462#issuecomment-1142408337">https://github.com/hydephp/framework/issues/462#issuecomment-1142408337</a> <a href="https://github.com/hydephp/framework/issues/462"><code>#462</code></a>
+</li>
+<li>Fix bug #462 caused by trailing slash in docs path <a href="https://github.com/hydephp/framework/commit/6be5055633b4ef9be358fdc82dfcc5fc1aad068b"><code>6be5055</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.5-beta...v0.30.0-beta">v0.30.0-beta</a></h4>
+<blockquote>
+<p>31 May 2022</p>
+</blockquote>
+<ul>
+<li>Add inline Blade support to markdown <a href="https://github.com/hydephp/framework/pull/478"><code>#478</code></a>
+</li>
+<li>Create page and document Blade-supported Markdown <a href="https://github.com/hydephp/framework/commit/0d7ae0f213eba74a61257f9207f184169a36127d"><code>0d7ae0f</code></a>
+</li>
+<li>Add base tests <a href="https://github.com/hydephp/framework/commit/ae4b0dc24568483ed2be4330c290839f4382571a"><code>ae4b0dc</code></a>
+</li>
+<li>Sketch out the service class <a href="https://github.com/hydephp/framework/commit/4b8821447f7375d2cae20a685b76a8102972ee40"><code>4b88214</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.4-beta...v0.29.5-beta">v0.29.5-beta</a></h4>
+<blockquote>
+<p>31 May 2022</p>
+</blockquote>
+<ul>
+<li>Bump HydeFront to v1.10 <a href="https://github.com/hydephp/framework/commit/0f28947f2b197177b1b30626d161408d46f71335"><code>0f28947</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.3-beta...v0.29.4-beta">v0.29.4-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Add color-scheme meta, fix #460 <a href="https://github.com/hydephp/framework/issues/460"><code>#460</code></a>
+</li>
+<li>Try to figure out why Codecov is not working <a href="https://github.com/hydephp/framework/commit/9d3371cab5606c280261c2f3e209beeff3289f5a"><code>9d3371c</code></a>
+</li>
+<li>Revert codecov changes <a href="https://github.com/hydephp/framework/commit/b2539690fa4d013b06082a162f05816eff99e6bd"><code>b253969</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.2-beta...v0.29.3-beta">v0.29.3-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix Bug #471: og:title and twitter:title should use the page title, and only use config one as fallback <a href="https://github.com/hydephp/framework/pull/473"><code>#473</code></a>
+</li>
+<li>Fix bug #471, make title metadata dynamic <a href="https://github.com/hydephp/framework/commit/b9ac1c8d1fa0c484d2d95fad891c2c3c5c7f039c"><code>b9ac1c8</code></a>
+</li>
+<li>Make dynamic meta title use title property instead <a href="https://github.com/hydephp/framework/commit/6aaa612b80600ae4ef8136fb779623b66206119b"><code>6aaa612</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.1-beta...v0.29.2-beta">v0.29.2-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Add !important to style override <a href="https://github.com/hydephp/framework/commit/3e28b1dcd91802596edf5dfa454fe2178432688f"><code>3e28b1d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.29.0-beta...v0.29.1-beta">v0.29.1-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Use the config defined output path <a href="https://github.com/hydephp/framework/commit/927072e725624d39239845a681e744e2d309694c"><code>927072e</code></a>
+</li>
+<li>Update Readme heading to &quot;The Core Framework&quot; <a href="https://github.com/hydephp/framework/commit/7a89486509ea68071cb5268956dd771766bf327a"><code>7a89486</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.28.1-beta...v0.29.0-beta">v0.29.0-beta</a></h4>
+<blockquote>
+<p>30 May 2022</p>
+</blockquote>
+<ul>
+<li>Load HydeFront v1.9.x needed for HydeSearch <a href="https://github.com/hydephp/framework/pull/468"><code>#468</code></a>
+</li>
+<li>Make the search feature configurable and toggleable <a href="https://github.com/hydephp/framework/pull/467"><code>#467</code></a>
+</li>
+<li>Add the HydeSearch frontend integration for documentation pages <a href="https://github.com/hydephp/framework/pull/465"><code>#465</code></a>
+</li>
+<li>Create the backend search index generation for documentation pages <a href="https://github.com/hydephp/framework/pull/459"><code>#459</code></a>
+</li>
+<li>Bump guzzlehttp/guzzle from 7.4.2 to 7.4.3 <a href="https://github.com/hydephp/framework/pull/456"><code>#456</code></a>
+</li>
+<li>Refactor inline styles to HydeFront Sass <a href="https://github.com/hydephp/framework/commit/86fff1d9dc7f5d5e5ca171cf79517af0d2fb1639"><code>86fff1d</code></a>
+</li>
+<li>Begin sketching out the class <a href="https://github.com/hydephp/framework/commit/ed131bd4196afbcf1684bb999c5a7fe98d1948b8"><code>ed131bd</code></a>
+</li>
+<li>Extract search widget to component <a href="https://github.com/hydephp/framework/commit/420f662a3040cc4c0f3f8e48d6a350686fb02803"><code>420f662</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.28.0-beta-pre...v0.28.1-beta">v0.28.1-beta</a></h4>
+<blockquote>
+<p>25 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #450: Add custom exceptions <a href="https://github.com/hydephp/framework/pull/454"><code>#454</code></a>
+</li>
+<li>Refactor author configuration system <a href="https://github.com/hydephp/framework/pull/449"><code>#449</code></a>
+</li>
+<li>Merge pull request #454 from hydephp/450-add-custom-exceptions <a href="https://github.com/hydephp/framework/issues/450"><code>#450</code></a>
+</li>
+<li>Remove AuthorService <a href="https://github.com/hydephp/framework/commit/9f9d64dc4f232e6c0a695088cd43dc28f8535fc3"><code>9f9d64d</code></a>
+</li>
+<li>Clean up code <a href="https://github.com/hydephp/framework/commit/f8452b9d697505733f147bf3f59e92abfb307727"><code>f8452b9</code></a>
+</li>
+<li>Create FileConflictException <a href="https://github.com/hydephp/framework/commit/02d534cd801ed19fac264373685c30b3f6858c34"><code>02d534c</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.28.0-beta...v0.28.0-beta-pre">v0.28.0-beta-pre</a></h4>
+<blockquote>
+<p>22 May 2022</p>
+</blockquote>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.12-beta...v0.28.0-beta">v0.28.0-beta</a></h4>
+<blockquote>
+<p>23 May 2022</p>
+</blockquote>
+<ul>
+<li>Refactor author configuration system <a href="https://github.com/hydephp/framework/pull/449"><code>#449</code></a>
+</li>
+<li>Refactor configuration to use snake_case for all options, and extract documentation settings to own file <a href="https://github.com/hydephp/framework/pull/444"><code>#444</code></a>
+</li>
+<li>Remove AuthorService <a href="https://github.com/hydephp/framework/commit/9f9d64dc4f232e6c0a695088cd43dc28f8535fc3"><code>9f9d64d</code></a>
+</li>
+<li>Extract documentation configuration options to docs.php <a href="https://github.com/hydephp/framework/commit/92b9ae5fc4f2c7743206ebcfce48d81e4df7746d"><code>92b9ae5</code></a>
+</li>
+<li>Use the snake_case config format <a href="https://github.com/hydephp/framework/commit/f578855047113c3181c9869f1ec9d4d521c3bd62"><code>f578855</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.11-beta...v0.27.12-beta">v0.27.12-beta</a></h4>
+<blockquote>
+<p>22 May 2022</p>
+</blockquote>
+<ul>
+<li>Code cleanup without affecting functionality  <a href="https://github.com/hydephp/framework/pull/440"><code>#440</code></a>
+</li>
+<li>Add missing return type declarations <a href="https://github.com/hydephp/framework/commit/684b792796e330c958a312d914057771eb72f2da"><code>684b792</code></a>
+</li>
+<li>Add PHPDoc comments with @throws tags <a href="https://github.com/hydephp/framework/commit/ae44806cb3c23249bc68a39bd1ede6fa0c4e8e56"><code>ae44806</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.10-beta...v0.27.11-beta">v0.27.11-beta</a></h4>
+<blockquote>
+<p>21 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #429: Add page priorities to sitemap generation <a href="https://github.com/hydephp/framework/pull/437"><code>#437</code></a>
+</li>
+<li>Merge pull request #437 from hydephp/add-dynamic-page-priorities-for-sitemap <a href="https://github.com/hydephp/framework/issues/429"><code>#429</code></a>
+</li>
+<li>Add page priority support <a href="https://github.com/hydephp/framework/commit/0bfbbba07fd8d1720fe6a693089e62dbc0dc018a"><code>0bfbbba</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.9-beta...v0.27.10-beta">v0.27.10-beta</a></h4>
+<blockquote>
+<p>20 May 2022</p>
+</blockquote>
+<ul>
+<li>Improve RSS image handling and feed and sitemap generation processes <a href="https://github.com/hydephp/framework/pull/435"><code>#435</code></a>
+</li>
+<li>Create HydeBuildRssFeedCommand.php <a href="https://github.com/hydephp/framework/commit/ac4788f987cb517d51a6d0a4fddc5684777c9a0a"><code>ac4788f</code></a>
+</li>
+<li>Create build:sitemap command <a href="https://github.com/hydephp/framework/commit/82c73a392350dff171b496220d8d1f70d363102d"><code>82c73a3</code></a>
+</li>
+<li>Fetch information for local images <a href="https://github.com/hydephp/framework/commit/a10c1c361852154e9eb52947b003a65ede09c3ef"><code>a10c1c3</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.8-beta...v0.27.9-beta">v0.27.9-beta</a></h4>
+<blockquote>
+<p>20 May 2022</p>
+</blockquote>
+<ul>
+<li>Rename and restructure internal hooks <a href="https://github.com/hydephp/framework/commit/0562ae3558363afddfeb63a7148f967940ed4966"><code>0562ae3</code></a>
+</li>
+<li>Update test code formatting <a href="https://github.com/hydephp/framework/commit/1a9dcaf670a9757985013c7c3a3e01fa93f75579"><code>1a9dcaf</code></a>
+</li>
+<li>Add sitemap link test <a href="https://github.com/hydephp/framework/commit/9ba7b109560881867ee9ba81a5e37bb10b370616"><code>9ba7b10</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.7-beta...v0.27.8-beta">v0.27.8-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Update the tests <a href="https://github.com/hydephp/framework/commit/a80593e1ac6fc79c3d78ea2d736c89955e6b6805"><code>a80593e</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.6-beta...v0.27.7-beta">v0.27.7-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Normalize the site URL <a href="https://github.com/hydephp/framework/commit/a4b9ce7a32321e3e67df5aaed477fbfc54c6c524"><code>a4b9ce7</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.5-beta...v0.27.6-beta">v0.27.6-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Add deployment documentation <a href="https://github.com/hydephp/framework/commit/4b188f20848e87cd3b3e77af9cdde5b373e2e4d3"><code>4b188f2</code></a>
+</li>
+<li>Merge sections to be more compact <a href="https://github.com/hydephp/framework/commit/baadd4891d719123720f8bc79a1a82a4837e547e"><code>baadd48</code></a>
+</li>
+<li>Restructure document flow <a href="https://github.com/hydephp/framework/commit/40f4a3d37b835b40b392f5f72a4ab46563df5042"><code>40f4a3d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.4-beta...v0.27.5-beta">v0.27.5-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix bug where categorized documentation sidebar items were not sorted <a href="https://github.com/hydephp/framework/pull/422"><code>#422</code></a>
+</li>
+<li>Fix #367: Add upcoming documentation files <a href="https://github.com/hydephp/framework/issues/367"><code>#367</code></a>
+</li>
+<li>Create building-your-site.md <a href="https://github.com/hydephp/framework/commit/6989bd59d33d84cebf3e0ef134f4107d149c6fd5"><code>6989bd5</code></a>
+</li>
+<li>Update documentation page orders <a href="https://github.com/hydephp/framework/commit/b38c58bba32312d932d1a005b3015b3ce9dd7329"><code>b38c58b</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.3-beta...v0.27.4-beta">v0.27.4-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #419: Add meta links to the RSS feed <a href="https://github.com/hydephp/framework/issues/419"><code>#419</code></a>
+</li>
+<li>Refactor internal helpers to be public static <a href="https://github.com/hydephp/framework/commit/283e5d2154862f114e82f1e5e036924d449e7ebf"><code>283e5d2</code></a>
+</li>
+<li>Add page slug for compatibility, fixing bug where Blade pages did not get canonical link tags <a href="https://github.com/hydephp/framework/commit/d3ac8e492bb01ba538111ba8c7f4dfb48cbc5785"><code>d3ac8e4</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.2-beta...v0.27.3-beta">v0.27.3-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Add unit test for fluent Markdown post helpers <a href="https://github.com/hydephp/framework/commit/2a3b90bbf2ffab9709a49447b9a4aa80cd14ca9e"><code>2a3b90b</code></a>
+</li>
+<li>Add Author::getName() unit test <a href="https://github.com/hydephp/framework/commit/64616a6d24d8335e890bde35c8fafa37ef9bb4ba"><code>64616a6</code></a>
+</li>
+<li>Change RSS feed default filename to feed.xml <a href="https://github.com/hydephp/framework/commit/d545b07130cb58c42cb9701b3c2322ac133e617e"><code>d545b07</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.1-beta...v0.27.2-beta">v0.27.2-beta</a></h4>
+<blockquote>
+<p>19 May 2022</p>
+</blockquote>
+<ul>
+<li>Add RSS feed for Markdown blog posts <a href="https://github.com/hydephp/framework/pull/413"><code>#413</code></a>
+</li>
+<li>Add the RSSFeedService test <a href="https://github.com/hydephp/framework/commit/a21596f68792d313c551789f713950a6c2410975"><code>a21596f</code></a>
+</li>
+<li>Add the initial channel items <a href="https://github.com/hydephp/framework/commit/9cb9b302662de3d1dc80ba0ea09a48c3a53f2e78"><code>9cb9b30</code></a>
+</li>
+<li>Update sitemap tests and add rss feed tests <a href="https://github.com/hydephp/framework/commit/fe93f5b7cd1dea1f3bbb5a851b8185e5288f50de"><code>fe93f5b</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.27.0-beta...v0.27.1-beta">v0.27.1-beta</a></h4>
+<blockquote>
+<p>18 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #403: Remove @HydeConfigVersion annotation from config/hyde.php <a href="https://github.com/hydephp/framework/pull/408"><code>#408</code></a>
+</li>
+<li>Merge pull request #408 from hydephp/remove-hydeconfigversion-annotation-from-hyde-config <a href="https://github.com/hydephp/framework/issues/403"><code>#403</code></a>
+</li>
+<li>Remove HydeConfigVersion annotation <a href="https://github.com/hydephp/framework/commit/84b1602fc3280ef66637799c8aaa9d9513c3142c"><code>84b1602</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.26.0-beta...v0.27.0-beta">v0.27.0-beta</a></h4>
+<blockquote>
+<p>18 May 2022</p>
+</blockquote>
+<ul>
+<li>Add sitemap.xml generation <a href="https://github.com/hydephp/framework/pull/404"><code>#404</code></a>
+</li>
+<li>Add SitemapService tests <a href="https://github.com/hydephp/framework/commit/ce5d8ed089546a8262e637d3ce399bf190672ba0"><code>ce5d8ed</code></a>
+</li>
+<li>Refactor shared code into new helper <a href="https://github.com/hydephp/framework/commit/46f41d6848a5562006f4290aa00df221d25d815a"><code>46f41d6</code></a>
+</li>
+<li>Create basic sitemap generator <a href="https://github.com/hydephp/framework/commit/1f669282d727042df5074f0182bf5e0563d07a91"><code>1f66928</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.25.0-beta...v0.26.0-beta">v0.26.0-beta</a></h4>
+<blockquote>
+<p>18 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #398: Remove the deprecated Metadata model <a href="https://github.com/hydephp/framework/pull/400"><code>#400</code></a>
+</li>
+<li>Fix #379: Extract menu logo to component <a href="https://github.com/hydephp/framework/pull/396"><code>#396</code></a>
+</li>
+<li>Update helper namespaces <a href="https://github.com/hydephp/framework/pull/395"><code>#395</code></a>
+</li>
+<li>Fix #385: Move page parsers into models/parsers namespace <a href="https://github.com/hydephp/framework/pull/394"><code>#394</code></a>
+</li>
+<li>Remove redundancy and merge Meta and Metadata models #384 <a href="https://github.com/hydephp/framework/pull/390"><code>#390</code></a>
+</li>
+<li>Unify the $page property and add a fluent metadata helper  <a href="https://github.com/hydephp/framework/pull/388"><code>#388</code></a>
+</li>
+<li>Merge pull request #400 from hydephp/398-remove-legacy-metadata-model <a href="https://github.com/hydephp/framework/issues/398"><code>#398</code></a>
+</li>
+<li>Merge pull request #396 from hydephp/extract-navigation-menu-logo-to-component-to-make-it-easier-to-customize <a href="https://github.com/hydephp/framework/issues/379"><code>#379</code></a>
+</li>
+<li>Fix #379: Extract menu logo to component <a href="https://github.com/hydephp/framework/issues/379"><code>#379</code></a> <a href="https://github.com/hydephp/framework/issues/379"><code>#379</code></a>
+</li>
+<li>Merge pull request #394 from hydephp/385-move-page-parsers-into-a-namespace <a href="https://github.com/hydephp/framework/issues/385"><code>#385</code></a>
+</li>
+<li>Fix #385: Move page parsers into a namespace <a href="https://github.com/hydephp/framework/issues/385"><code>#385</code></a>
+</li>
+<li>Fix #382: Unify the $page property <a href="https://github.com/hydephp/framework/issues/382"><code>#382</code></a>
+</li>
+<li>Fix #375, Add config option to add og:properties <a href="https://github.com/hydephp/framework/issues/375"><code>#375</code></a>
+</li>
+<li>Extract metadata helpers to concern <a href="https://github.com/hydephp/framework/commit/72b1356298ae0537356a88630e144df07fc6adf8"><code>72b1356</code></a>
+</li>
+<li>Add test for, and improve Meta helper <a href="https://github.com/hydephp/framework/commit/15ccd271706ddf38f8011287ed28f04a60cd4076"><code>15ccd27</code></a>
+</li>
+<li>Refactor concern to not be dependent on Metadata model <a href="https://github.com/hydephp/framework/commit/b247bb0627dc481c08bb8e47f7c38ec57816154a"><code>b247bb0</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.24.0-beta...v0.25.0-beta">v0.25.0-beta</a></h4>
+<blockquote>
+<p>17 May 2022</p>
+</blockquote>
+<ul>
+<li>Load asset service from the service container <a href="https://github.com/hydephp/framework/pull/373"><code>#373</code></a>
+</li>
+<li>Rename --pretty option to --run-prettier to distinguish it better in build command  <a href="https://github.com/hydephp/framework/pull/368"><code>#368</code></a>
+</li>
+<li>Allow site output directory to be customized <a href="https://github.com/hydephp/framework/pull/362"><code>#362</code></a>
+</li>
+<li>Configuration and autodiscovery improvements <a href="https://github.com/hydephp/framework/pull/340"><code>#340</code></a>
+</li>
+<li>Add configurable &quot;pretty URLs&quot; <a href="https://github.com/hydephp/framework/pull/354"><code>#354</code></a>
+</li>
+<li>Add sidebar config offset, fix #307 <a href="https://github.com/hydephp/framework/pull/348"><code>#348</code></a>
+</li>
+<li>Change BuildService to DiscoveryService <a href="https://github.com/hydephp/framework/pull/347"><code>#347</code></a>
+</li>
+<li>Fix #361 Rename --pretty option to --run-prettier <a href="https://github.com/hydephp/framework/issues/361"><code>#361</code></a>
+</li>
+<li>Fix #350, Use the model path properties <a href="https://github.com/hydephp/framework/issues/350"><code>#350</code></a>
+</li>
+<li>Add option for pretty urls fix #330 <a href="https://github.com/hydephp/framework/issues/330"><code>#330</code></a>
+</li>
+<li>Rewrite index docs path to pretty url, fix #353 <a href="https://github.com/hydephp/framework/issues/353"><code>#353</code></a>
+</li>
+<li>Fix #330, Create helper to make pretty URLs if enabled <a href="https://github.com/hydephp/framework/issues/330"><code>#330</code></a>
+</li>
+<li>Merge pull request #348 from hydephp/add-sidebar-priority-offset-for-config-defined-values <a href="https://github.com/hydephp/framework/issues/307"><code>#307</code></a>
+</li>
+<li>Add sidebar config offset, fix #307 <a href="https://github.com/hydephp/framework/issues/307"><code>#307</code></a>
+</li>
+<li>Fix #343 <a href="https://github.com/hydephp/framework/issues/343"><code>#343</code></a>
+</li>
+<li>Restructure the tests <a href="https://github.com/hydephp/framework/commit/41bd0560fb014e3a042909e3162e2a2da28c0b77"><code>41bd056</code></a>
+</li>
+<li>Add helpers to make it easier to refactor source paths <a href="https://github.com/hydephp/framework/commit/10e145ea345d2aca22c81ec15d7af073c5ee803c"><code>10e145e</code></a>
+</li>
+<li>Utalize the $sourceDirectory property in build services <a href="https://github.com/hydephp/framework/commit/9d9cbff800d1422461dfcee6f3983662c51c5606"><code>9d9cbff</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.5-beta...v0.24.0-beta">v0.24.0-beta</a></h4>
+<blockquote>
+<p>11 May 2022</p>
+</blockquote>
+<ul>
+<li>Add documentation sidebar category labels, fixes #309 <a href="https://github.com/hydephp/framework/pull/326"><code>#326</code></a>
+</li>
+<li>Merge pull request #326 from hydephp/309-add-documentation-sidebar-category-labels <a href="https://github.com/hydephp/framework/issues/309"><code>#309</code></a>
+</li>
+<li>Sketch out the files for the category integration <a href="https://github.com/hydephp/framework/commit/d6c81bbcce78f0d72f131f49e1c61716e0cd26d6"><code>d6c81bb</code></a>
+</li>
+<li>Implement category creation <a href="https://github.com/hydephp/framework/commit/70448b14ac6d8be3c8162ec78d12901f7a5c7579"><code>70448b1</code></a>
+</li>
+<li>Set category of uncategorized items <a href="https://github.com/hydephp/framework/commit/9f0feb364a0fa8be9401a5453d8a1ded4b0ae40a"><code>9f0feb3</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.4-beta...v0.23.5-beta">v0.23.5-beta</a></h4>
+<blockquote>
+<p>11 May 2022</p>
+</blockquote>
+<ul>
+<li>Add back skip to content button to Lagrafo docs layout, fix #300 <a href="https://github.com/hydephp/framework/pull/322"><code>#322</code></a>
+</li>
+<li>Change max prose width of markdown pages to match blog posts, fix #303 <a href="https://github.com/hydephp/framework/pull/321"><code>#321</code></a>
+</li>
+<li>Fix #153, bug where config option uses app name instead of Hyde name. <a href="https://github.com/hydephp/framework/pull/320"><code>#320</code></a>
+</li>
+<li>Add option to mark site as installed, fix #289 <a href="https://github.com/hydephp/framework/issues/289"><code>#289</code></a>
+</li>
+<li>Merge pull request #322 from hydephp/300-add-back-skip-to-content-button-to-lagrafo-docs-layout <a href="https://github.com/hydephp/framework/issues/300"><code>#300</code></a>
+</li>
+<li>Add skip to content button docs layout, fix #300 <a href="https://github.com/hydephp/framework/issues/300"><code>#300</code></a>
+</li>
+<li>Merge pull request #321 from hydephp/303-change-max-width-of-markdown-pages-to-match-blog-posts <a href="https://github.com/hydephp/framework/issues/303"><code>#303</code></a>
+</li>
+<li>Change max width to match blog posts, fix #303 <a href="https://github.com/hydephp/framework/issues/303"><code>#303</code></a>
+</li>
+<li>Merge pull request #320 from hydephp/294-fix-bug-where-config-option-uses-app-name-instead-of-hyde-name <a href="https://github.com/hydephp/framework/issues/153"><code>#153</code></a>
+</li>
+<li>#153 Fix bug where config option uses app name instead of Hyde name. <a href="https://github.com/hydephp/framework/commit/c90977cf942cad214b8ea8218be3d5773d1fc633"><code>c90977c</code></a>
+</li>
+<li>Update install command for new site name syntax <a href="https://github.com/hydephp/framework/commit/06873511064dd2b5ed2faa6ff1ad87c3210185ea"><code>0687351</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.3-beta...v0.23.4-beta">v0.23.4-beta</a></h4>
+<blockquote>
+<p>11 May 2022</p>
+</blockquote>
+<ul>
+<li>Refactor post excerpt component to be less reliant on directly using front matter and add view test <a href="https://github.com/hydephp/framework/pull/318"><code>#318</code></a>
+</li>
+<li>Formatting: Add newline after console output when running build without API calls, fix #313 <a href="https://github.com/hydephp/framework/pull/316"><code>#316</code></a>
+</li>
+<li>Fix #314, add background color fallback to documentation page body <a href="https://github.com/hydephp/framework/pull/315"><code>#315</code></a>
+</li>
+<li>Restructure and format component, fix #306 <a href="https://github.com/hydephp/framework/issues/306"><code>#306</code></a>
+</li>
+<li>Merge pull request #316 from hydephp/313-formatting-add-newline-after-disabling-external-api-calls-in-build-command <a href="https://github.com/hydephp/framework/issues/313"><code>#313</code></a>
+</li>
+<li>Formatting: Add newline after --no-api info, fix #313 <a href="https://github.com/hydephp/framework/issues/313"><code>#313</code></a>
+</li>
+<li>Merge pull request #315 from hydephp/314-add-dark-mode-background-to-body-in-documentation-pages-to-prevent-fouc <a href="https://github.com/hydephp/framework/issues/314"><code>#314</code></a>
+</li>
+<li>Fix #314, add background color fallback to docs body <a href="https://github.com/hydephp/framework/issues/314"><code>#314</code></a>
+</li>
+<li>Implement hidden: true front matter to hide documentation pages from sidebar, fix #310 <a href="https://github.com/hydephp/framework/issues/310"><code>#310</code></a>
+</li>
+<li>Create ArticleExcerptViewTest.php <a href="https://github.com/hydephp/framework/commit/4a3ecaa02134583c36d3b8685fa5005f586f4293"><code>4a3ecaa</code></a>
+</li>
+<li>Add tests for the fluent date-author string <a href="https://github.com/hydephp/framework/commit/30f7f6762c6481c148908c26a5930f6e2daf1d80"><code>30f7f67</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.2-beta...v0.23.3-beta">v0.23.3-beta</a></h4>
+<blockquote>
+<p>10 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #310, allow documentation pages to be hidden from sidebar using front matter <a href="https://github.com/hydephp/framework/pull/311"><code>#311</code></a>
+</li>
+<li>Merge pull request #311 from hydephp/310-implement-hidden-true-front-matter-to-hide-documentation-pages-from-sidebar <a href="https://github.com/hydephp/framework/issues/310"><code>#310</code></a>
+</li>
+<li>Fix #310, allow items to be hidden from sidebar with front matter <a href="https://github.com/hydephp/framework/issues/310"><code>#310</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.1-beta...v0.23.2-beta">v0.23.2-beta</a></h4>
+<blockquote>
+<p>7 May 2022</p>
+</blockquote>
+<ul>
+<li>Refactor documentation sidebar internals <a href="https://github.com/hydephp/framework/pull/299"><code>#299</code></a>
+</li>
+<li>Create feature test for the new sidebar service <a href="https://github.com/hydephp/framework/commit/0adf94889c36e0b77fb63018221b16c7f1fc8374"><code>0adf948</code></a>
+</li>
+<li>Remove deprecated action <a href="https://github.com/hydephp/framework/commit/063a85aa8979fa5780ba5622c9d9f395c2c159b3"><code>063a85a</code></a>
+</li>
+<li>Create the sidebar models <a href="https://github.com/hydephp/framework/commit/fbcae7cacd100267440b362a97f97d7bbdee09a9"><code>fbcae7c</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.23.0-beta...v0.23.1-beta">v0.23.1-beta</a></h4>
+<blockquote>
+<p>6 May 2022</p>
+</blockquote>
+<ul>
+<li>Add the test helper files <a href="https://github.com/hydephp/framework/commit/3cd5a56aec24fde17bc1a40c6760d6fc24db3113"><code>3cd5a56</code></a>
+</li>
+<li>Test description has warning for out of date config <a href="https://github.com/hydephp/framework/commit/a90c0b17663683737cea8fa75dd3d3d39e743f66"><code>a90c0b1</code></a>
+</li>
+<li>Delete .run directory <a href="https://github.com/hydephp/framework/commit/8cd71fc4f98efb514c9995a665e5f47f839fa940"><code>8cd71fc</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.22.0-beta...v0.23.0-beta">v0.23.0-beta</a></h4>
+<blockquote>
+<p>6 May 2022</p>
+</blockquote>
+<ul>
+<li>Refactor docs layout to use Lagrafo instead of Laradocgen <a href="https://github.com/hydephp/framework/pull/292"><code>#292</code></a>
+</li>
+<li>Port lagrafo (wip) <a href="https://github.com/hydephp/framework/commit/6ca230964211c79fe19df5954a65ad846500ba5e"><code>6ca2309</code></a>
+</li>
+<li>Move all head tags into blade component <a href="https://github.com/hydephp/framework/commit/3093ebf65556e185649a40fd8459caa3fa250d7d"><code>3093ebf</code></a>
+</li>
+<li>Use the Hyde layout <a href="https://github.com/hydephp/framework/commit/e09e301dba196f6d3336a3f9cf8a265c8939af6c"><code>e09e301</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.6-beta...v0.22.0-beta">v0.22.0-beta</a></h4>
+<blockquote>
+<p>5 May 2022</p>
+</blockquote>
+<ul>
+<li>Update HydeFront version to v1.5.x <a href="https://github.com/hydephp/framework/pull/287"><code>#287</code></a>
+</li>
+<li>Refactor script interactions <a href="https://github.com/hydephp/framework/pull/286"><code>#286</code></a>
+</li>
+<li>Hide the install command once it has been run, fix #280 <a href="https://github.com/hydephp/framework/issues/280"><code>#280</code></a>
+</li>
+<li>Hide the install command once it has been run, fix #280 <a href="https://github.com/hydephp/framework/issues/280"><code>#280</code></a>
+</li>
+<li>Replace onclick with element IDs <a href="https://github.com/hydephp/framework/commit/e97d5457117e4980425d12fea97bb0dc81eae904"><code>e97d545</code></a>
+</li>
+<li>Move dark mode switch <a href="https://github.com/hydephp/framework/commit/9f6fdf83561f4f4e1f8d2e5d4b44e0a923963c94"><code>9f6fdf8</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.5-beta...v0.21.6-beta">v0.21.6-beta</a></h4>
+<blockquote>
+<p>4 May 2022</p>
+</blockquote>
+<ul>
+<li>Create installer command, fix #149 <a href="https://github.com/hydephp/framework/pull/279"><code>#279</code></a>
+</li>
+<li>Merge pull request #279 from hydephp/149-create-installer-command <a href="https://github.com/hydephp/framework/issues/149"><code>#149</code></a>
+</li>
+<li>Create Install command that can publish a homepage <a href="https://github.com/hydephp/framework/commit/b890eb790fddc7ad8e23785b3677e304343b6616"><code>b890eb7</code></a>
+</li>
+<li>Use installer to set the site name in config <a href="https://github.com/hydephp/framework/commit/3f0c843955b8dbfa0cc14879771c50397670cae0"><code>3f0c843</code></a>
+</li>
+<li>Use installer to set the site URL in config <a href="https://github.com/hydephp/framework/commit/d5f56ac20d82eb362363b382695c016157f66e42"><code>d5f56ac</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.4-beta...v0.21.5-beta">v0.21.5-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Update the test to fix updated exception output and remove comments <a href="https://github.com/hydephp/framework/commit/cd5a70d3f8a7b9cf0d97e584191d35ebc642cf5a"><code>cd5a70d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.3-beta...v0.21.4-beta">v0.21.4-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Fix #231 <a href="https://github.com/hydephp/framework/issues/231"><code>#231</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.2-beta...v0.21.3-beta">v0.21.3-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Allow documentation pages to be scaffolded using the make:page command <a href="https://github.com/hydephp/framework/pull/273"><code>#273</code></a>
+</li>
+<li>Allow documentation pages to be scaffolded using the command <a href="https://github.com/hydephp/framework/commit/7bbe0123f0e7b609954ca8e52216d19453c96f1a"><code>7bbe012</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.1-beta...v0.21.2-beta">v0.21.2-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Send a non-intrusive warning when the config file is out of date <a href="https://github.com/hydephp/framework/pull/270"><code>#270</code></a>
+</li>
+<li>Create crude action to check if a config file is up to date <a href="https://github.com/hydephp/framework/commit/e31210f055dea4ca6d76750b9b2ad24c61c05850"><code>e31210f</code></a>
+</li>
+<li>Create FileCacheServiceTest <a href="https://github.com/hydephp/framework/commit/d9141cca4125c055f927c53edf7bf2b7bde9c9d0"><code>d9141cc</code></a>
+</li>
+<li>Add the test <a href="https://github.com/hydephp/framework/commit/ee4a64d9a22314339b002bbd856b2f79c08bffea"><code>ee4a64d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.21.0-beta...v0.21.1-beta">v0.21.1-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Create filecache at runtime instead of relying on a JSON file that needs to be up to date <a href="https://github.com/hydephp/framework/pull/265"><code>#265</code></a>
+</li>
+<li>Create the filecache at runtime, resolves #243, #246 <a href="https://github.com/hydephp/framework/issues/243"><code>#243</code></a>
+</li>
+<li>Remove deprecated filecache store and generator <a href="https://github.com/hydephp/framework/commit/7a1eb32aae22f749611ed95bc6b2fb1fce36bd20"><code>7a1eb32</code></a>
+</li>
+<li>Remove &quot;Update Filecache&quot; workflow <a href="https://github.com/hydephp/framework/commit/81564c0d19ca6d622a4949830e2007ed10731e99"><code>81564c0</code></a>
+</li>
+<li>Remove legacy try/catch <a href="https://github.com/hydephp/framework/commit/34733ddfb5a53463688ae20f1357f09b8aec33f2"><code>34733dd</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.20.0-beta...v0.21.0-beta">v0.21.0-beta</a></h4>
+<blockquote>
+<p>3 May 2022</p>
+</blockquote>
+<ul>
+<li>Always empty the _site directory when running the static site build command <a href="https://github.com/hydephp/framework/pull/262"><code>#262</code></a>
+</li>
+<li>Always purge output directory when running builder <a href="https://github.com/hydephp/framework/commit/a86ad7d56cbe42bc4541224d951cdf349b5a84ed"><code>a86ad7d</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.19.0-beta...v0.20.0-beta">v0.20.0-beta</a></h4>
+<blockquote>
+<p>2 May 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/258"><code>#258</code></a>
+</li>
+<li>Remove HydeFront from being bundled as a subrepo <a href="https://github.com/hydephp/framework/pull/257"><code>#257</code></a>
+</li>
+<li>Change the action used to create pull requests <a href="https://github.com/hydephp/framework/pull/255"><code>#255</code></a>
+</li>
+<li>Exclude files starting with an  underscore from being compiled into pages, fix #220 <a href="https://github.com/hydephp/framework/pull/254"><code>#254</code></a>
+</li>
+<li>Create .gitattributes, fixes #223 <a href="https://github.com/hydephp/framework/pull/250"><code>#250</code></a>
+</li>
+<li>Deprecate filecache.json and related services <a href="https://github.com/hydephp/framework/pull/248"><code>#248</code></a>
+</li>
+<li>Allow documentation sidebar header name to be changed <a href="https://github.com/hydephp/framework/pull/245"><code>#245</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/242"><code>#242</code></a>
+</li>
+<li>Fix bugs in article and excerpts not fluently constructing descriptions <a href="https://github.com/hydephp/framework/pull/241"><code>#241</code></a>
+</li>
+<li>Handle undefined array key title in article-excerpt.blade.php  <a href="https://github.com/hydephp/framework/pull/238"><code>#238</code></a>
+</li>
+<li>Fix test matrix not fetching proper branch on PRs <a href="https://github.com/hydephp/framework/pull/235"><code>#235</code></a>
+</li>
+<li>Fix sidebar ordering bug by using null coalescing operator instead of elvis operator <a href="https://github.com/hydephp/framework/pull/234"><code>#234</code></a>
+</li>
+<li>Add unit test for hasDarkmode, fix #259 <a href="https://github.com/hydephp/framework/issues/259"><code>#259</code></a>
+</li>
+<li>Add the test, resolves #259 <a href="https://github.com/hydephp/framework/issues/259"><code>#259</code></a>
+</li>
+<li>Merge pull request #254 from hydephp/220-exclude-files-starting-with-an-_underscore-from-being-compiled-into-pages <a href="https://github.com/hydephp/framework/issues/220"><code>#220</code></a>
+</li>
+<li>Merge pull request #250 from hydephp/add-gitattributes <a href="https://github.com/hydephp/framework/issues/223"><code>#223</code></a>
+</li>
+<li>Create .gitattributes, fixes #223 <a href="https://github.com/hydephp/framework/issues/223"><code>#223</code></a>
+</li>
+<li>Make category nullable, fixes #230 <a href="https://github.com/hydephp/framework/issues/230"><code>#230</code></a>
+</li>
+<li>Fix #240 <a href="https://github.com/hydephp/framework/issues/240"><code>#240</code></a>
+</li>
+<li>Handle undefined array key, fixes #229 <a href="https://github.com/hydephp/framework/issues/229"><code>#229</code></a>
+</li>
+<li>Remove the HydeFront subrepo <a href="https://github.com/hydephp/framework/commit/d406202d5f24d0cb543ac02fd2b9dc980c86d966"><code>d406202</code></a>
+</li>
+<li>Add test to ensure that post front matter can be omitted <a href="https://github.com/hydephp/framework/commit/875c6d46b822a7e5d02b1f281ca00189a222d06b"><code>875c6d4</code></a>
+</li>
+<li>Exclude files starting with an _underscore from being discovered <a href="https://github.com/hydephp/framework/commit/0dcdcb6a35969094533429345a0108915db388f4"><code>0dcdcb6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.18.0-beta...v0.19.0-beta">v0.19.0-beta</a></h4>
+<blockquote>
+<p>1 May 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/226"><code>#226</code></a>
+</li>
+<li>Add config option to disable dark mode <a href="https://github.com/hydephp/framework/pull/225"><code>#225</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/222"><code>#222</code></a>
+</li>
+<li>Refactor assets managing, allowing for Laravel Mix, removing CDN support for Tailwind <a href="https://github.com/hydephp/framework/pull/221"><code>#221</code></a>
+</li>
+<li>Fix #211 <a href="https://github.com/hydephp/framework/issues/211"><code>#211</code></a>
+</li>
+<li>Add test and clean up docs for HasMetadata <a href="https://github.com/hydephp/framework/commit/976cb6c39c2bc7fffcbe160987fa8ba08146f9b0"><code>976cb6c</code></a>
+</li>
+<li>Revert &quot;Update update-filecache.yml&quot; <a href="https://github.com/hydephp/framework/commit/abc21e7fcf07d28dc09b99afdafd2764c131936c"><code>abc21e7</code></a>
+</li>
+<li>Update update-filecache.yml <a href="https://github.com/hydephp/framework/commit/c25196aebb77e8f052a604681523b54f3fc978b7"><code>c25196a</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.17.0-beta...v0.18.0-beta">v0.18.0-beta</a></h4>
+<blockquote>
+<p>29 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/201"><code>#201</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/199"><code>#199</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/197"><code>#197</code></a>
+</li>
+<li>Change priority of stylesheets <a href="https://github.com/hydephp/framework/pull/195"><code>#195</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/194"><code>#194</code></a>
+</li>
+<li>Switch jsDelivr source to NPM, fix #200 <a href="https://github.com/hydephp/framework/issues/200"><code>#200</code></a>
+</li>
+<li>Update dependencies <a href="https://github.com/hydephp/framework/commit/b5057268abd0a9b0aa128cc169e606d1a7a4ebfb"><code>b505726</code></a>
+</li>
+<li>Switch to using TypeScript <a href="https://github.com/hydephp/framework/commit/6fa9e6c4a762f16eac328648d9ad15dc977e4097"><code>6fa9e6c</code></a>
+</li>
+<li>Create service class to help with #182 <a href="https://github.com/hydephp/framework/commit/fb0033c4a9da66e7ee6dcdd9b8a137fe37c82a2f"><code>fb0033c</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.16.1-beta...v0.17.0-beta">v0.17.0-beta</a></h4>
+<blockquote>
+<p>28 April 2022</p>
+</blockquote>
+<ul>
+<li>Add the code reports workflow <a href="https://github.com/hydephp/framework/pull/191"><code>#191</code></a>
+</li>
+<li>Move test suite actions to framework <a href="https://github.com/hydephp/framework/pull/190"><code>#190</code></a>
+</li>
+<li>Merge with master <a href="https://github.com/hydephp/framework/pull/189"><code>#189</code></a>
+</li>
+<li>Add matrix tests <a href="https://github.com/hydephp/framework/pull/188"><code>#188</code></a>
+</li>
+<li>Move part one of the test suite <a href="https://github.com/hydephp/framework/pull/187"><code>#187</code></a>
+</li>
+<li>Move Framework tests from Hyde/Hyde to the Hyde/Framework package <a href="https://github.com/hydephp/framework/pull/185"><code>#185</code></a>
+</li>
+<li>Move tests from Hyde to Framework <a href="https://github.com/hydephp/framework/commit/22ca6731a489b576f578186cd777df4bda9e52d0"><code>22ca673</code></a>
+</li>
+<li>Format YAML <a href="https://github.com/hydephp/framework/commit/e6da9ada1f83c3e2540dec9f719ce59f2169bcf0"><code>e6da9ad</code></a>
+</li>
+<li>Add the workflow <a href="https://github.com/hydephp/framework/commit/b20cbd6c9341c5f0666fdda25ebb472bc512654a"><code>b20cbd6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.16.0-beta...v0.16.1-beta">v0.16.1-beta</a></h4>
+<blockquote>
+<p>28 April 2022</p>
+</blockquote>
+<ul>
+<li>Manage asset logic in service class <a href="https://github.com/hydephp/framework/commit/c72905fcbe8bfd748ec84536e836e8fe154230ec"><code>c72905f</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.15.0-beta...v0.16.0-beta">v0.16.0-beta</a></h4>
+<blockquote>
+<p>27 April 2022</p>
+</blockquote>
+<ul>
+<li>Refactor internal codebase by sorting traits into relevant namespaces <a href="https://github.com/hydephp/framework/pull/175"><code>#175</code></a>
+</li>
+<li>Refactor: Move Hyde facade methods to traits <a href="https://github.com/hydephp/framework/commit/9b5e4ca31a21a858c26c712f73021504ab99b019"><code>9b5e4ca</code></a>
+</li>
+<li>Refactor: Update namespaces <a href="https://github.com/hydephp/framework/commit/96c73aa01946e5f6b862dbf66ffd974d65a3b97f"><code>96c73aa</code></a>
+</li>
+<li>Docs: Remove PHPDocs <a href="https://github.com/hydephp/framework/commit/ef2f44604e61e109dcf6d03e96a4ab20cbce8b81"><code>ef2f446</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.14.0-beta...v0.15.0-beta">v0.15.0-beta</a></h4>
+<blockquote>
+<p>27 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/170"><code>#170</code></a>
+</li>
+<li>Merge HydeFront v1.3.1 <a href="https://github.com/hydephp/framework/commit/727c8f3b96f595b6b8a13ba7427106765583ce4c"><code>727c8f3</code></a>
+</li>
+<li>Remove asset publishing commands <a href="https://github.com/hydephp/framework/commit/0f49d16105d211df7990ec6f75c042c4bf530071"><code>0f49d16</code></a>
+</li>
+<li>Rework internals, loading styles from CDN <a href="https://github.com/hydephp/framework/commit/c5283c011b078a28117477a201ac56a1179dcf1b"><code>c5283c0</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.13.0-beta...v0.14.0-beta">v0.14.0-beta</a></h4>
+<blockquote>
+<p>21 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/154"><code>#154</code></a>
+</li>
+<li>Change update:resources command signature to update:assets <a href="https://github.com/hydephp/framework/pull/153"><code>#153</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/152"><code>#152</code></a>
+</li>
+<li>Change resources/frontend to resources/assets <a href="https://github.com/hydephp/framework/pull/151"><code>#151</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/148"><code>#148</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/147"><code>#147</code></a>
+</li>
+<li>Overhaul the Markdown Converter Service to make it easier to customize and extend <a href="https://github.com/hydephp/framework/pull/146"><code>#146</code></a>
+</li>
+<li>Refactor to fix <a href="https://github.com/hydephp/framework/issues/161">https://github.com/hydephp/framework/issues/161</a> <a href="https://github.com/hydephp/framework/issues/161"><code>#161</code></a>
+</li>
+<li>Fix <a href="https://github.com/hydephp/framework/issues/156">https://github.com/hydephp/framework/issues/156</a> <a href="https://github.com/hydephp/framework/issues/156"><code>#156</code></a>
+</li>
+<li>Move frontend files to resources/assets <a href="https://github.com/hydephp/framework/commit/e85036765df5ce1398da370c50b489bd72bef797"><code>e850367</code></a>
+</li>
+<li>Add back asset files <a href="https://github.com/hydephp/framework/commit/bd218df813c8f1496edc09500016bb21be5164b5"><code>bd218df</code></a>
+</li>
+<li>Merge with Hydefront <a href="https://github.com/hydephp/framework/commit/8b477de5793194bb9e5c4c39dee762b0f7934930"><code>8b477de</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.12.0-beta...v0.13.0-beta">v0.13.0-beta</a></h4>
+<blockquote>
+<p>20 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/141"><code>#141</code></a>
+</li>
+<li>Add table of contents to the documentation page sidebar <a href="https://github.com/hydephp/framework/pull/140"><code>#140</code></a>
+</li>
+<li>Add the table of contents to the frontend <a href="https://github.com/hydephp/framework/commit/f728810ff34cb6a5b9f88552f5ca58b27d61e0dc"><code>f728810</code></a>
+</li>
+<li>Add the table of contents generation <a href="https://github.com/hydephp/framework/commit/2c4c1b9a7a45d527a876474af4c692bdeec1b502"><code>2c4c1b9</code></a>
+</li>
+<li>Allow table of contents to be disabled in config <a href="https://github.com/hydephp/framework/commit/fc9cba16e92baf584c360e0b6a230a7e99c605e9"><code>fc9cba1</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.11.0-beta...v0.12.0-beta">v0.12.0-beta</a></h4>
+<blockquote>
+<p>19 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/135"><code>#135</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/134"><code>#134</code></a>
+</li>
+<li>Allow author array data to be added in front matter <a href="https://github.com/hydephp/framework/pull/133"><code>#133</code></a>
+</li>
+<li>Strip front matter from documentation pages <a href="https://github.com/hydephp/framework/pull/130"><code>#130</code></a>
+</li>
+<li>Add trait to handle Authors in the data layer <a href="https://github.com/hydephp/framework/commit/62f3793138a108478a72e8e8176c8ca0c680be20"><code>62f3793</code></a>
+</li>
+<li>Update the views to move logic to data layer <a href="https://github.com/hydephp/framework/commit/2ebc62c0927ee13e1a01395e59a2316b0f826427"><code>2ebc62c</code></a>
+</li>
+<li>Parse the documentation pages using the fileservice <a href="https://github.com/hydephp/framework/commit/041bf98d8b20b6874cfd8c2edc7fa43bb88d2844"><code>041bf98</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.10.0-beta...v0.11.0-beta">v0.11.0-beta</a></h4>
+<blockquote>
+<p>17 April 2022</p>
+</blockquote>
+<ul>
+<li>Add command for the new realtime compiler <a href="https://github.com/hydephp/framework/commit/9be80eb34ed1415654465d4cd1b485d17086f59d"><code>9be80eb</code></a>
+</li>
+<li>Allow the host and port to be specified <a href="https://github.com/hydephp/framework/commit/e54a394665213d712a6ce30cec98a84045d42738"><code>e54a394</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.9.0-beta...v0.10.0-beta">v0.10.0-beta</a></h4>
+<blockquote>
+<p>12 April 2022</p>
+</blockquote>
+<ul>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/124"><code>#124</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/122"><code>#122</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/120"><code>#120</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/118"><code>#118</code></a>
+</li>
+<li>Update Filecache <a href="https://github.com/hydephp/framework/pull/117"><code>#117</code></a>
+</li>
+<li>Add darkmode support and refactor blade components <a href="https://github.com/hydephp/framework/pull/116"><code>#116</code></a>
+</li>
+<li>Add skip to content link <a href="https://github.com/hydephp/framework/pull/113"><code>#113</code></a>
+</li>
+<li>Update the welcome page to be more accessible <a href="https://github.com/hydephp/framework/pull/112"><code>#112</code></a>
+</li>
+<li>Remove the deprecated and unused service provider <a href="https://github.com/hydephp/framework/pull/108"><code>#108</code></a>
+</li>
+<li>Update Blade components, internal data handling, add a11y features <a href="https://github.com/hydephp/framework/pull/102"><code>#102</code></a>
+</li>
+<li>Refactor tests <a href="https://github.com/hydephp/framework/pull/98"><code>#98</code></a>
+</li>
+<li>Deprecate internal abstract class HydeBasePublishingCommand <a href="https://github.com/hydephp/framework/pull/97"><code>#97</code></a>
+</li>
+<li>Update and simplify the command and rename signature from publish:configs to update:configs, making overwriting files the default. <a href="https://github.com/hydephp/framework/pull/95"><code>#95</code></a>
+</li>
+<li>Change blade source directory to _pages <a href="https://github.com/hydephp/framework/pull/90"><code>#90</code></a>
+</li>
+<li>Fix line ending sequence issue in checksums <a href="https://github.com/hydephp/framework/pull/86"><code>#86</code></a>
+</li>
+<li>Refactor internal file handling logic to be more intelligent to provide a safer, more intuitive, user experience  <a href="https://github.com/hydephp/framework/pull/84"><code>#84</code></a>
+</li>
+<li>Fix improper article ID usage - remember to re-publish styles <a href="https://github.com/hydephp/framework/pull/81"><code>#81</code></a>
+</li>
+<li>Fix #63, update component to show formatted dates <a href="https://github.com/hydephp/framework/pull/80"><code>#80</code></a>
+</li>
+<li>Update Spatie YAML Front Matter Package to fix #36 <a href="https://github.com/hydephp/framework/pull/79"><code>#79</code></a>
+</li>
+<li>Add base styles to documentation layout <a href="https://github.com/hydephp/framework/pull/77"><code>#77</code></a>
+</li>
+<li>Refactor code to extend base classes and remove shared code <a href="https://github.com/hydephp/framework/pull/74"><code>#74</code></a>
+</li>
+<li>Refactor the backend structure of the static page builder command process <a href="https://github.com/hydephp/framework/pull/72"><code>#72</code></a>
+</li>
+<li>Supply <code>_media</code> as the path argument in the <code>hyde:rebuild</code> command to copy all media files. <a href="https://github.com/hydephp/framework/pull/71"><code>#71</code></a>
+</li>
+<li>Add more relevant targets for the skip to content link, fix #123 <a href="https://github.com/hydephp/framework/issues/123"><code>#123</code></a>
+</li>
+<li>Add the image model, fix #100 <a href="https://github.com/hydephp/framework/issues/100"><code>#100</code></a>
+</li>
+<li>Merge pull request #80 from hydephp/63-fix-up-the-post-date-component-to-show-the-readable-name <a href="https://github.com/hydephp/framework/issues/63"><code>#63</code></a>
+</li>
+<li>Fix #63, update component to show formatted dates <a href="https://github.com/hydephp/framework/issues/63"><code>#63</code></a>
+</li>
+<li>Merge pull request #79 from hydephp/36-spatie-yaml-front-matter-package-not-properly-handling-markdown-documents-with-markdown-inside <a href="https://github.com/hydephp/framework/issues/36"><code>#36</code></a>
+</li>
+<li>Compress CSS, 5.48 KB to 3.37 KB (38.56%) <a href="https://github.com/hydephp/framework/commit/d7f2054420f6c8a6ac786a705e2a0fc472bc4b92"><code>d7f2054</code></a>
+</li>
+<li>Update dependencies <a href="https://github.com/hydephp/framework/commit/f851978e0e2bf733a933504880333aebfd052fb1"><code>f851978</code></a>
+</li>
+<li>Remove the deprecated and now unused base command <a href="https://github.com/hydephp/framework/commit/0f137c8303cc6041011b82f80a67906b2bccfc8a"><code>0f137c8</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.8.1-beta...v0.9.0-beta">v0.9.0-beta</a></h4>
+<blockquote>
+<p>7 April 2022</p>
+</blockquote>
+<ul>
+<li>Rework how frontend assets (stylesheets and main script) are handled <a href="https://github.com/hydephp/framework/pull/69"><code>#69</code></a>
+</li>
+<li>Move the resource files <a href="https://github.com/hydephp/framework/commit/7c70467499c429d99813e095f0e775bf74ff0c68"><code>7c70467</code></a>
+</li>
+<li>Add the update frontend resources command <a href="https://github.com/hydephp/framework/commit/551df0a3813963aaecad3b11e5d7c1f15248241a"><code>551df0a</code></a>
+</li>
+<li>Add the action to publish the frontend resources <a href="https://github.com/hydephp/framework/commit/e2c82fbc6dda89c6144c949d92f1d8b147f4ab69"><code>e2c82fb</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.8.0-beta...v0.8.1-beta">v0.8.1-beta</a></h4>
+<blockquote>
+<p>3 April 2022</p>
+</blockquote>
+<ul>
+<li>Add --no-api option to disable Torchlight at runtime, fix #53 <a href="https://github.com/hydephp/framework/issues/53"><code>#53</code></a>
+</li>
+<li>Add Changelog.md <a href="https://github.com/hydephp/framework/commit/fe2fdf8e4e3a43cfcde766ac84bbcbb2c55d4890"><code>fe2fdf8</code></a>
+</li>
+<li>Create CODE_OF_CONDUCT.md <a href="https://github.com/hydephp/framework/commit/9361d1df2615048f01448ab26ef09e5b2de75eb0"><code>9361d1d</code></a>
+</li>
+<li>Create CONTRIBUTING.md <a href="https://github.com/hydephp/framework/commit/a5811466c4ee67ea5ab4b819959ab80984da6770"><code>a581146</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.5-alpha...v0.8.0-beta">v0.8.0-beta</a></h4>
+<blockquote>
+<p>2 April 2022</p>
+</blockquote>
+<ul>
+<li>Rewrite main navigation menu <a href="https://github.com/hydephp/framework/pull/60"><code>#60</code></a>
+</li>
+<li>Fix #59, unify sidebar elements <a href="https://github.com/hydephp/framework/issues/59"><code>#59</code></a>
+</li>
+<li>Unify the navigation menu <a href="https://github.com/hydephp/framework/commit/f0e6cfc28eae7c0325a89ab0cce4ab67329e3be5"><code>f0e6cfc</code></a>
+</li>
+<li>Add the interaction <a href="https://github.com/hydephp/framework/commit/c5b4f7eb71166bce556b19ddf84861798ea2bda4"><code>c5b4f7e</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.4-alpha...v0.7.5-alpha">v0.7.5-alpha</a></h4>
+<blockquote>
+<p>2 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix broken meta url in schema prop <a href="https://github.com/hydephp/framework/commit/b54cfe4a1aa1441584cd0b209fcb89a99fa4ce7a"><code>b54cfe4</code></a>
+</li>
+<li>Fix broken meta url in schema prop <a href="https://github.com/hydephp/framework/commit/80b552305c3d5730a951ae2f5115bed21c9a4b84"><code>80b5523</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.3-alpha...v0.7.4-alpha">v0.7.4-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix bug #47 <a href="https://github.com/hydephp/framework/commit/b7cdaf67e626855c3df7513dd0b58a563f9030be"><code>b7cdaf6</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.2-alpha...v0.7.3-alpha">v0.7.3-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix #58 <a href="https://github.com/hydephp/framework/issues/58"><code>#58</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.1-alpha...v0.7.2-alpha">v0.7.2-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Create new command to scaffold pages <a href="https://github.com/hydephp/framework/pull/55"><code>#55</code></a>
+</li>
+<li>Create the action <a href="https://github.com/hydephp/framework/commit/b788de22a3175c3b09eadf15249d152026f0a160"><code>b788de2</code></a>
+</li>
+<li>Create the command <a href="https://github.com/hydephp/framework/commit/eac5258268a152496cf10bff05a23aa2977617eb"><code>eac5258</code></a>
+</li>
+<li>Clean up and format code <a href="https://github.com/hydephp/framework/commit/dc5c5eef20df88b729bf749004001a0832d31302"><code>dc5c5ee</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.7.0-alpha...v0.7.1-alpha">v0.7.1-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Add a favicon link automatically if the file exists <a href="https://github.com/hydephp/framework/pull/54"><code>#54</code></a>
+</li>
+<li>Create LICENSE.md <a href="https://github.com/hydephp/framework/commit/57d4a1b6122e7fcef021d84bff76a97b53424d0a"><code>57d4a1b</code></a>
+</li>
+<li>Use getPrettyVersion for composer version <a href="https://github.com/hydephp/framework/commit/7569fb7616bcbaa22b30aad00bf559cb81578feb"><code>7569fb7</code></a>
+</li>
+<li>Change version to the (pretty) framework version <a href="https://github.com/hydephp/framework/commit/973cc7414c8a398801e2cb52364f9eb44269cf3e"><code>973cc74</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.6.2-alpha...v0.7.0-alpha">v0.7.0-alpha</a></h4>
+<blockquote>
+<p>1 April 2022</p>
+</blockquote>
+<ul>
+<li>Fix bug #47 StaticPageBuilder not able to create nested documentation directories <a href="https://github.com/hydephp/framework/pull/51"><code>#51</code></a>
+</li>
+<li>Remove _authors and _drafts directories #48 <a href="https://github.com/hydephp/framework/pull/49"><code>#49</code></a>
+</li>
+<li>Delete phpdoc.dist.xml <a href="https://github.com/hydephp/framework/commit/b28afb712f7ea522e1fb9b2175223812d910b3a0"><code>b28afb7</code></a>
+</li>
+<li>Remove _data directory <a href="https://github.com/hydephp/framework/commit/a11ff9266ff3086c4e7a3ed17f7320e90cbd8788"><code>a11ff92</code></a>
+</li>
+<li>Update author yml config path <a href="https://github.com/hydephp/framework/commit/e0578bb8938c48b62540573fa88240932e629b4f"><code>e0578bb</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.6.1-alpha...v0.6.2-alpha">v0.6.2-alpha</a></h4>
+<blockquote>
+<p>30 March 2022</p>
+</blockquote>
+<ul>
+<li>Fix the documentation page header link <a href="https://github.com/hydephp/framework/pull/46"><code>#46</code></a>
+</li>
+<li>Use the indexpath basename for the doc header <a href="https://github.com/hydephp/framework/commit/e188eb54f7d5c4fdc784fc16ffd7a60ad9ab458c"><code>e188eb5</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.6.0-alpha...v0.6.1-alpha">v0.6.1-alpha</a></h4>
+<blockquote>
+<p>30 March 2022</p>
+</blockquote>
+<ul>
+<li>Use relative path helper for links <a href="https://github.com/hydephp/framework/pull/45"><code>#45</code></a>
+</li>
+<li>Add support for nesting the documentation pages <a href="https://github.com/hydephp/framework/pull/42"><code>#42</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.5.3-alpha...v0.6.0-alpha">v0.6.0-alpha</a></h4>
+<blockquote>
+<p>30 March 2022</p>
+</blockquote>
+<ul>
+<li>Fix the 404 route bug <a href="https://github.com/hydephp/framework/pull/41"><code>#41</code></a>
+</li>
+<li>#38 Add a rebuild command to the Hyde CLI to rebuild a specific file <a href="https://github.com/hydephp/framework/pull/39"><code>#39</code></a>
+</li>
+<li>Move scripts into app.js <a href="https://github.com/hydephp/framework/pull/35"><code>#35</code></a>
+</li>
+<li>#32 refactor command class names to be consistent <a href="https://github.com/hydephp/framework/pull/33"><code>#33</code></a>
+</li>
+<li>Add internal PHPDoc class descriptions <a href="https://github.com/hydephp/framework/pull/30"><code>#30</code></a>
+</li>
+<li>Require Torchlight <a href="https://github.com/hydephp/framework/pull/27"><code>#27</code></a>
+</li>
+<li>Restructure backend models <a href="https://github.com/hydephp/framework/pull/26"><code>#26</code></a>
+</li>
+<li>Rework how Markdown files are handled to improve maintainability and testing <a href="https://github.com/hydephp/framework/pull/25"><code>#25</code></a>
+</li>
+<li>0.6.0 Remove support for Front Matter in Markdown Pages <a href="https://github.com/hydephp/framework/pull/24"><code>#24</code></a>
+</li>
+<li>Fix #21 by dynamically routing to the docs index <a href="https://github.com/hydephp/framework/pull/23"><code>#23</code></a>
+</li>
+<li>Merge pull request #23 from hydephp/21-bug-documentation-sidebar-header-should-link-to-readme-if-that-exists-but-an-index-does-not <a href="https://github.com/hydephp/framework/issues/21"><code>#21</code></a>
+</li>
+<li>Fix #21 by dynamically routing to the docs index <a href="https://github.com/hydephp/framework/issues/21"><code>#21</code></a>
+</li>
+<li>Add PHPUnit <a href="https://github.com/hydephp/framework/commit/0d59ea032a8b2be2f5c09db06563ab504e233d05"><code>0d59ea0</code></a>
+</li>
+<li>Create the HydeRebuildStaticSiteCommand <a href="https://github.com/hydephp/framework/commit/92b1d20069482f851ee18629a0845a69e8f5a43a"><code>92b1d20</code></a>
+</li>
+<li>Refactor to use the MarkdownFileService <a href="https://github.com/hydephp/framework/commit/48a27a2799fd6a27e3bfa55417c2eb7fda3a4c43"><code>48a27a2</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.5.2-alpha...v0.5.3-alpha">v0.5.3-alpha</a></h4>
+<blockquote>
+<p>26 March 2022</p>
+</blockquote>
+<ul>
+<li>Remove deprecated methods <a href="https://github.com/hydephp/framework/pull/19"><code>#19</code></a>
+</li>
+<li>Make the command extend the base command <a href="https://github.com/hydephp/framework/commit/eaba9dac5a9849804ccfdfc2798129fbe5cb0daf"><code>eaba9da</code></a>
+</li>
+<li>Remove deprecated class <a href="https://github.com/hydephp/framework/commit/24753c1776c5f887baed82c93f02b632032ffde1"><code>24753c1</code></a>
+</li>
+<li>Format to PSR2 <a href="https://github.com/hydephp/framework/commit/8307b65087f73c3bbb40ecc7eb469db83c7777be"><code>8307b65</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.5.1-alpha...v0.5.2-alpha">v0.5.2-alpha</a></h4>
+<blockquote>
+<p>25 March 2022</p>
+</blockquote>
+<ul>
+<li>Remove the Hyde installer <a href="https://github.com/hydephp/framework/pull/18"><code>#18</code></a>
+</li>
+<li>0.6.x Remove deprecated command <a href="https://github.com/hydephp/framework/pull/17"><code>#17</code></a>
+</li>
+<li>Improve Docgen Feature by allowing the output directory to be dynamically changed <a href="https://github.com/hydephp/framework/pull/16"><code>#16</code></a>
+</li>
+<li>Rework installer prompts and fix wrong directory <a href="https://github.com/hydephp/framework/commit/c15a4acdf76e71221f3ba4c8d028ce2d0a7e3b0a"><code>c15a4ac</code></a>
+</li>
+<li>Allow the documentation output directory to be changed <a href="https://github.com/hydephp/framework/commit/6cf07a35aa3517d6691da3bb0ded266dea0e812a"><code>6cf07a3</code></a>
+</li>
+<li>Allow the homepage argument to be set from cli <a href="https://github.com/hydephp/framework/commit/ab8deddbebd73e458712cbde51a8c40a33fae38e"><code>ab8dedd</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.5.0-alpha...v0.5.1-alpha">v0.5.1-alpha</a></h4>
+<blockquote>
+<p>24 March 2022</p>
+</blockquote>
+<ul>
+<li>Fix visual bug caused by setting max-width on body instead of article <a href="https://github.com/hydephp/framework/pull/15"><code>#15</code></a>
+</li>
+<li>Load commands in service provider instead of config/commands.php <a href="https://github.com/hydephp/framework/pull/13"><code>#13</code></a>
+</li>
+<li>Load commands in service provider instead of config <a href="https://github.com/hydephp/framework/commit/46397fd28e6cec25ec92ce44e047183b87346331"><code>46397fd</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.4.3-alpha...v0.5.0-alpha">v0.5.0-alpha</a></h4>
+<blockquote>
+<p>24 March 2022</p>
+</blockquote>
+<ul>
+<li>Merge 0.5.0 into Master - Adds a multitude of new tests, code refactors and quality of life features <a href="https://github.com/hydephp/framework/pull/12"><code>#12</code></a>
+</li>
+<li>Sync branch with Master <a href="https://github.com/hydephp/framework/pull/11"><code>#11</code></a>
+</li>
+<li>Merge 0.5.x progress <a href="https://github.com/hydephp/framework/pull/10"><code>#10</code></a>
+</li>
+<li>Add _data directory and Authors object as well as stubs to aid in testing <a href="https://github.com/hydephp/framework/pull/9"><code>#9</code></a>
+</li>
+<li>Add required depedency to framework <a href="https://github.com/hydephp/framework/commit/e5f0ec58df1163ef1de85a0b3233a347c45be136"><code>e5f0ec5</code></a>
+</li>
+<li>Implement the Authors backend feature <a href="https://github.com/hydephp/framework/commit/d7679f5b8d9ac900229a91d59099974cb82568e1"><code>d7679f5</code></a>
+</li>
+<li>Add Commonmark as an explicit dependency <a href="https://github.com/hydephp/framework/commit/bf915b130f418433ee2b47cc158229614883b090"><code>bf915b1</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.4.2-alpha...v0.4.3-alpha">v0.4.3-alpha</a></h4>
+<blockquote>
+<p>23 March 2022</p>
+</blockquote>
+<ul>
+<li>Add bindings for the package versions <a href="https://github.com/hydephp/framework/commit/a9ce58d2a9583866c05451ecf0da1dac4f84260b"><code>a9ce58d</code></a>
+</li>
+<li>Get version from facade <a href="https://github.com/hydephp/framework/commit/465bafc59fd0d20c5df91148d148d4c89a36e988"><code>465bafc</code></a>
+</li>
+<li>Replace Git version with Hyde version <a href="https://github.com/hydephp/framework/commit/bcb7357f637138239bbee3ece007ff45564718bd"><code>bcb7357</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.4.1-alpha...v0.4.2-alpha">v0.4.2-alpha</a></h4>
+<blockquote>
+<p>23 March 2022</p>
+</blockquote>
+<ul>
+<li>v0.4.2-alpha Adds new meta tags and more data rich HTML <a href="https://github.com/hydephp/framework/pull/8"><code>#8</code></a>
+</li>
+<li>Add new meta tag options <a href="https://github.com/hydephp/framework/commit/78a74c7c5342d6a8b528134022ba822e506cb12e"><code>78a74c7</code></a>
+</li>
+<li>Add the Site URL feature, remember to update config! <a href="https://github.com/hydephp/framework/commit/ee2f5c6b542ec3eb20412a8ef718b11cc1a9e23c"><code>ee2f5c6</code></a>
+</li>
+<li>Add more rich HTML content <a href="https://github.com/hydephp/framework/commit/8eb677849a655a30dffe5bfb3d48921ff4b24821"><code>8eb6778</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.4.0-alpha...v0.4.1-alpha">v0.4.1-alpha</a></h4>
+<blockquote>
+<p>22 March 2022</p>
+</blockquote>
+<ul>
+<li>Add the Hyde::getLatestPosts() shorthand to get the latest posts collection <a href="https://github.com/hydephp/framework/pull/4"><code>#4</code></a>
+</li>
+<li>Add new options to the build command to improve the user experience  <a href="https://github.com/hydephp/framework/pull/3"><code>#3</code></a>
+</li>
+<li>Remove progress bar from empty collections <a href="https://github.com/hydephp/framework/commit/40d3203d5494d37cea1b921f2a4447bc924d18d7"><code>40d3203</code></a>
+</li>
+<li>Add option to remove old files before building <a href="https://github.com/hydephp/framework/commit/26509974c02a0c2d14f6fec490bdedc89a9b7725"><code>2650997</code></a>
+</li>
+<li>Add options to automatically build frontend assets <a href="https://github.com/hydephp/framework/commit/f789c2fc840e5bbffbf1df2b6a56576a846d48f5"><code>f789c2f</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.3.1-alpha...v0.4.0-alpha">v0.4.0-alpha</a></h4>
+<blockquote>
+<p>22 March 2022</p>
+</blockquote>
+<ul>
+<li>Add the console logo font <a href="https://github.com/hydephp/framework/commit/2683a4b06d6ea646d2d3f6eaab32746df8a02da0"><code>2683a4b</code></a>
+</li>
+<li>Add the config files <a href="https://github.com/hydephp/framework/commit/47e9044c3f63a02c8c5858d0a32861031126387c"><code>47e9044</code></a>
+</li>
+<li>Add the 404 page <a href="https://github.com/hydephp/framework/commit/962cbe2886f2815a5c46de56b73e594cd3b12d1b"><code>962cbe2</code></a>
+</li>
+</ul>
+<h4><a href="https://github.com/hydephp/framework/compare/v0.3.0-alpha...v0.3.1-alpha">v0.3.1-alpha</a></h4>
+<blockquote>
+<p>22 March 2022</p>
+</blockquote>
+<ul>
+<li>Delete vendor directory <a href="https://github.com/hydephp/framework/commit/4f96627679a2e6de95520010a6f1bc98f30bca9f"><code>4f96627</code></a>
+</li>
+<li>0.3.1 Move commands to framework <a href="https://github.com/hydephp/framework/commit/70dd8df956e7fc1bc1c9b67a14e2b23a8fea4d76"><code>70dd8df</code></a>
+</li>
+<li>Add php 8 require, and suggest hyde/hyde <a href="https://github.com/hydephp/framework/commit/a8ff6ad9b3db7fe5bf69c638dd03b21309b85e42"><code>a8ff6ad</code></a>
+</li>
+</ul>
+<h4>v0.3.0-alpha</h4>
+<blockquote>
+<p>21 March 2022</p>
+</blockquote>
+<ul>
+<li>Add the Core files (with temporary namespace) <a href="https://github.com/hydephp/framework/commit/816ad3a24e5f95dff5aa1f1cfd581764fd1a1389"><code>816ad3a</code></a>
+</li>
+<li>Initial Commit <a href="https://github.com/hydephp/framework/commit/fa007876e36ca6588147b05d44f927d7e8fbf997"><code>fa00787</code></a>
+</li>
+<li>Successfully move namespace Core to Framework <a href="https://github.com/hydephp/framework/commit/0c9160f33124701e6ed21a1e5b2bd70f46aaa65a"><code>0c9160f</code></a>
+</li>
+</ul>
+
+	</article>
+</main>
+
+ 
+    </section>
+
+    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+		<div class="block md:w-1/3 px-2 mx:px-0">
+			<span class="flex items-center w-fit">
+				<a href="/" class="flex items-center mr-4">
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
+					
+					<span class="ml-2 text-lg font-black">HydePHP</span>
+				</a>
+			</span>
+			
+			<p class="font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
+				Create, websites, blogs, documentation sites, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
+			</p>
+		</div>
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
+				<li><a href="docs/master/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					Documentation</a></li>
+					
+					<li><a href="community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Community Portal
+					</a></li>
+					
+					<li><a href="legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Legal Information
+					</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
+					<li><a href="community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Developer Resources
+					</a></li>
+					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
+					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
+					<li><a href="sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Sitemap
+					</a></li>
+					<li><a href="posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Blog Posts
+					</a></li>
+					
+					<li><a href="feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						RSS Feed
+					</a></li>
+				</ul>
+				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
+					<div class="flex justify-start pl-4 mt-2">
+						
+						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+							</svg>
+						</a>
+						<a title="Twitter &commat;HydeFramework" class="items-center block  mr-4  dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://twitter.com/HydeFramework">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+							</svg>
+						</a>
+						<a title="Discord Server" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
+						</a>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+					</div>
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+			<div class="prose mx-auto text-center text-sm dark:prose-invert">
+				<p>This website is <a href="https://github.com/hydephp/hydephp.com">Open Source</a> and proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
+
+			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
+		</div>
+	</div>
+</footer> 
+
+    <script defer src="media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+ 
+</body>
+</html>

@@ -25,10 +25,6 @@ for more information on how they handle data.
 [^1]: While we do not use cookies on our side (since this is a static site without a backend),
       some external services may use cookies, for example if a YouTube video is embedded.
 
-### Ticker analytics (June 2022)
-Since mid-June, HydePHP.com is testing an analytics service from Pioneer.app called Ticker
-to collect anonymous page view statistics. See Pioneer's privacy policy at https://pioneer.app/privacy.
-
 
 ## Community Guidelines and Code of Conduct
 
@@ -74,7 +70,12 @@ Hyde would not be possible without the open source community.
 This list may not be exhaustive, feel free to
 [contribute to this page](https://github.com/hydephp/DocsCI/blob/master/_pages/legal.md)
 
+
+[Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. HydePHP is not affiliated with Laravel.
+
 > Please see the respective authors' repositories for their license files
+
+[Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. Copyright © 2011-2022 Laravel LLC. HydePHP is not affiliated with Laravel.
 
 ### General
 
@@ -103,3 +104,4 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 - Syntax highlighting provided by [Torchlight.dev](https://torchlight.dev/){:rel="nofollow noopener"}
 - Gradients by https://uigradients.com/{:rel="nofollow noopener"}
 - The external link icon used on this site is licensed under MIT/Expat and is provided by [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:VisualEditor_-_Icon_-_External-link.svg){:rel="nofollow noopener"}
+- Additional icons provided by Google Material Design under the Apache 2.0 license. https://fonts.google.com/icons?selected=Material+Icons

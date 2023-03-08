@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Console Commands</title>
+
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/docs/master/console-commands.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Console Commands">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP - Console Commands">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+
+
+ 
+
+
+<link rel="stylesheet" href="../../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+
+<body id="hyde-docs"
+	class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
+	x-data="{ sidebarOpen: false, searchWindowOpen: false }"
+	x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
+	<a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+	<script>
+		document.body.classList.add('js-enabled');
+	</script>
+
+	<nav id="mobile-navigation"
+		class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+		<strong class="px-2 mr-auto">
+					<a href="../../docs/master/">
+				HydePHP Docs
+			</a>
+					</strong>
+		<ul class="flex items-center">
+			<li class="h-8 flex mr-1">
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</li>
+			<li class="h-8 flex">
+				<button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu"
+					@click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+				</button>
+			</li>
+		</ul>
+	</nav>
+	<aside id="sidebar"
+		class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:block shadow-lg md:shadow-none transition-all duration-300"
+		:class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" x-cloak>
+		<header id="sidebar-header" class="h-16">
+			<div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
+				<strong class="px-2">
+									<a href="../../docs/master/">
+						HydePHP Docs
+					</a>
+									</strong>
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</div>
+		</header>
+		<nav id="sidebar-navigation"
+			class="p-4 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-[calc(100vh_-_8rem)]">
+			
+							<ul id="sidebar" role="list">
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Getting Started</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/quickstart">Quickstart Guide</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300	ease-in-out	hover:bg-black/10"
+	href="../../docs/master/console-commands" aria-current="true">Console Commands</a>
+				<span class="sr-only">Table of contents</span>
+		<ul class="table-of-contents">
+<li>
+<a href="#hyde-commands">Hyde Commands</a>
+<ul>
+<li>
+<a href="#documentation-syntax">Documentation syntax</a>
+</li>
+<li>
+<a href="#got-stuck-the-cli-can-help">Got stuck? The CLI can help.</a>
+</li>
+<li>
+<a href="#initialize-a-new-hyde-project">Initialize a new Hyde project</a>
+</li>
+<li>
+<a href="#build-the-static-site">Build the static site</a>
+</li>
+<li>
+<a href="#build-a-single-file">Build a single file</a>
+</li>
+<li>
+<a href="#start-the-realtime-compiler">Start the realtime compiler.</a>
+</li>
+<li>
+<a href="#scaffold-a-new-blog-post-file">Scaffold a new blog post file</a>
+</li>
+<li>
+<a href="#scaffold-a-new-page-file">Scaffold a new page file</a>
+</li>
+<li>
+<a href="#publish-a-default-homepage">Publish a default homepage</a>
+</li>
+<li>
+<a href="#publish-the-hyde-blade-views">Publish the Hyde Blade views</a>
+</li>
+<li>
+<a href="#republish-the-configuration-files">Republish the configuration files</a>
+</li>
+<li>
+<a href="#list-the-available-pagesroutes">List the available pages/routes</a>
+</li>
+<li>
+<a href="#run-validation-tests-to-optimize-your-site">Run validation tests to optimize your site</a>
+</li>
+</ul>
+</li>
+</ul>
+
+			</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/architecture-concepts">Architecture Concepts</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Creating Content</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/blog-posts">Creating Blog Posts</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/static-pages">Markdown &amp; Blade Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/documentation-pages">Documentation Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/managing-assets">Managing assets</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/compile-and-deploy">Compile &amp; Deploy</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Digging Deeper</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/customization">Customizing your Site</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-markdown">Advanced Markdown</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/extensions">Extensions &amp; Integrations</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-customization">Advanced Customization</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/collections">File-based Collections</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/troubleshooting">Troubleshooting</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/updating-hyde">Updating Hyde</a>
+	</li>					</ul>
+	</li>
+	</ul>
+					</nav>
+		<footer id="sidebar-footer" class="h-16 absolute p-4 w-full bottom-0 left-0 text-center leading-8">
+			<p>
+				<a href="../../">Back to home page</a>
+			</p>
+		</footer>
+	</aside>
+	<main id="content"
+		class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+
+				<article id="document" itemscope itemtype="http://schema.org/Article" class="mx-auto lg:ml-8 prose
+			dark:prose-invert max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] torchlight-enabled">
+			
+			<header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
+				<h1>Console Commands</h1>
+			</header>
+			<section id="document-main-content" itemprop="articleBody">
+				<p>The primary way of interacting with Hyde is through the command line using the HydeCLI.</p>
+<p>If you have ever used the Artisan Console in Laravel you will feel right at home,
+the Hyde CLI is based on Artisan after all!</p>
+<h2>Hyde Commands<a id="hyde-commands" href="#hyde-commands" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>To use the HydeCLI, run <code>php hyde</code> from your project directory followed by a command.</p>
+<h3>Documentation syntax<a id="documentation-syntax" href="#documentation-syntax" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Wondering what the different formatting in examples means? Here's a quick guide:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">argument</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Comes after the command name.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">argument</span><span style="color: #89DDFF;">&gt;]</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional argument.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #FFCB6B;">--option</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Sometimes referred to as a flag.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #FFCB6B;">--option=</span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">value</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Option which takes an value.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--option</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional option.</span></div></code></pre>
+<p>All HydeCLI commands start with <code>php hyde</code>. Anything in <code>[brackets]</code> is optional.
+If an argument or option value has a space in it, it needs to be wrapped in quotes.</p>
+<h3>Got stuck? The CLI can help.<a id="got-stuck-the-cli-can-help" href="#got-stuck-the-cli-can-help" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>You can always run the base command <code>php hyde</code>, or <code>php hyde list</code>, to show the list of commands.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># or `php hyde list`</span></div></code></pre>
+<p>You can also always add <code>--help</code> to a command to show detailed usage information.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--help</span></div></code></pre>
+<h3>Initialize a new Hyde project<a id="initialize-a-new-hyde-project" href="#initialize-a-new-hyde-project" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">install</span></div></code></pre>
+<p>While Hyde doesn't need much configuration to get started, this command speeds up the little there is.</p>
+<p>For example, it updates the config file with the supplied site name and URL,
+and can also publish a starter homepage and rebuild the site.</p>
+<h3>Build the static site<a id="build-the-static-site" href="#build-the-static-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
+<p>Maybe the most important command is the Build command, which -- you guessed it -- builds your static site!</p>
+<p><strong>Supports the following options:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">--run-dev       Run the NPM dev script after build</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">--run-prod      Run the NPM prod script after build</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">--run-prettier  Format the output using NPM Prettier*</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">--no-api        Disable API calls, for example, Torchlight</span></div></code></pre>
+<h4>Sitemaps and RSS feeds<a id="sitemaps-and-rss-feeds" href="#sitemaps-and-rss-feeds" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Sitemaps and RSS feeds require that you have a base site URL set, (and that you have not disabled them).</p>
+<p>When the features are available the build command will generate a sitemap and RSS feed.</p>
+<p>You can also rebuild just the sitemap and RSS feed by using their respective commands:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build:sitemap</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build:rss</span></div></code></pre>
+<h3>Build a single file<a id="build-a-single-file" href="#build-a-single-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">filepath</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<p>Using the php hyde build command is great and all that,
+but when you just need to update <em>that one file</em> it gets a little... overkill.
+To solve this problem, you can use the <code>rebuild</code> command to compile a single file.</p>
+<p><strong>Requires the following Arguments:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">path   The relative file path</span></div></code></pre>
+<p><strong>Example:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_posts/hello-world.md</span></div></code></pre>
+<h3>Start the realtime compiler.<a id="start-the-realtime-compiler" href="#start-the-realtime-compiler" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
+<p>The serve command feels similar to the Laravel Artisan serve command, but works by
+starting a local PHP server. When you visit a page, the server will use the
+realtime compiler to locate the source file, recompile it, and proxy
+the resulting HTML and any media files to your browser.</p>
+<p>If you are missing the extension, you can always reinstall it with Composer <code>composer require hyde/realtime-compiler</code>.
+You can also learn more on the <a href="https://github.com/hydephp/realtime-compiler">GitHub page</a>.</p>
+<p><strong>Supports the following options:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">--port[=PORT] [default: &quot;8080&quot;]</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">--host[=HOST] [default: &quot;localhost&quot;]</span></div></code></pre>
+<h3>Scaffold a new blog post file<a id="scaffold-a-new-blog-post-file" href="#scaffold-a-new-blog-post-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span></div></code></pre>
+<p>At the core, blog posts are just pain ol' Markdown files.
+However, by adding a special YAML syntax called Front Matter, you can add metadata to your posts.
+But who can remember the syntax? You can use the <code>make:post</code> command to scaffold a new blog post file.
+The command will ask you a series of interactive questions, letting you fill in the blanks.
+It will then create a file, converting your input into front matter. It automatically
+sets the date and time for you, and the file name will be based on the title.</p>
+<h3>Scaffold a new page file<a id="scaffold-a-new-page-file" href="#scaffold-a-new-page-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">title</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--type</span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;">TYPE</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<p>The <code>make:page</code> command is similar to the <code>make:post</code> command and lets you quickly
+create one of the following page types:</p>
+<ul>
+<li>
+<strong>Markdown</strong>:
+Creates a Markdown file in the <code>_pages</code> directory.</li>
+<li>
+<strong>Blade</strong>:
+Creates a Blade file using the app layout in the <code>_pages</code> directory.</li>
+<li>
+<strong>Docs</strong>:
+Creates a Markdown file in the <code>_docs</code> directory.</li>
+</ul>
+<p>In all cases, the title will be used in the created file as the page title, and to generate the filename.</p>
+<p><strong>Requires the following Arguments:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">title   The name of the page file to create</span></div></code></pre>
+<p><strong>Supports the following options:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">--type[=TYPE] The type of page to create (markdown, blade, or docs) [default: &quot;markdown&quot;]</span></div></code></pre>
+<p><strong>Example:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">About</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Defaults to Markdown</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Photo Gallery</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=blade</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Hyde CLI Guide</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=docs</span></div></code></pre>
+<blockquote>
+<p>Tip: You can also use the shorthand <code>--blade</code> or <code>--docs</code> instead of <code>--type=blade</code> or <code>--type=docs</code>.</p>
+</blockquote>
+<blockquote>
+<p>Tip: You can also tell Hyde to place the file in a subdirectory by specifying it before the title, just separate them with a slash. For example: <code>php hyde make:page &quot;getting-started/installation&quot; --type=&quot;docs&quot;</code></p>
+</blockquote>
+<h3>Publish a default homepage<a id="publish-a-default-homepage" href="#publish-a-default-homepage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:homepage</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<p>Hyde comes with three homepage options to choose from. The homepage you select is stored as
+<code>_pages/index.blade.php</code> and becomes the <code>index.html</code> file when compiling the site.</p>
+<p>On a fresh install the page 'welcome' is installed.
+However, you can use this command to publish another one.
+If you have modified the file, you will need to supply the --force option to overwrite it.</p>
+<p>The available homepages are:</p>
+<ul>
+<li>
+<strong>welcome:</strong> The default welcome page. Unlike the other pages, the styles are defined inline.</li>
+<li>
+<strong>posts:</strong> A Blade feed of your latest blog posts. Perfect for a blog site!</li>
+<li>
+<strong>blank:</strong> A blank Blade template with just the base app layout.</li>
+</ul>
+<p>You can supply the homepage name directly to the command, otherwise you will be prompted to select one.</p>
+<h3>Publish the Hyde Blade views<a id="publish-the-hyde-blade-views" href="#publish-the-hyde-blade-views" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">category</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<p>Since Hyde is based on the Laravel view system the compiler uses Blade views and components.
+Laravel actually registers two locations for the Hyde views: your site's <code>resources/views/vendor/hyde</code> directory and the <code>resources</code> directory located in the Framework package.</p>
+<blockquote class="warning">
+<p>Warning: This command will overwrite any existing files in the <code>resources/views/vendor</code> directory. <br>
+You should be sure to have backups, or version control such as Git, before running this command.</p>
+</blockquote>
+<p>So, when compiling a site, Laravel will first check if a custom version of the view has been placed in the <code>resources/views/vendor/hyde</code> directory by the developer (you). Then, if the view has not been customized, Laravel will search the Hyde framework view directory. This makes it easy for you to customize / override the package's views.</p>
+<p>The available views you can publish are:</p>
+<ul>
+<li>
+<strong>all:</strong> Publish all categories listed below</li>
+<li>
+<strong>layouts:</strong> Global layout views, such as the app layout, navigation menu, and Markdown page templates.</li>
+<li>
+<strong>components:</strong> More or less self-contained components, extracted for customizability and DRY code.</li>
+<li>
+<strong>404:</strong> A beautiful 404 error page by the Laravel Collective. This file is already published by default.</li>
+</ul>
+<p>You can supply the category name directly to the command, otherwise you will be prompted to select one.</p>
+<blockquote class="info">
+Note that when a view is updated in the framework you will need to republish the views to get the new changes!
+</blockquote>
+<h3>Republish the configuration files<a id="republish-the-configuration-files" href="#republish-the-configuration-files" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update:configs</span></div></code></pre>
+<p>When updating Hyde to a new version (or if you mess up your config files),
+you can use this command to republish the configuration files.</p>
+<blockquote class="warning">
+<p>Warning: This command will overwrite any existing files in the <code>config</code> directory. <br>
+You should be sure to have backups, or version control such as Git, before running this command.</p>
+</blockquote>
+<h3>List the available pages/routes<a id="list-the-available-pagesroutes" href="#list-the-available-pagesroutes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
+<p>Display a list of all the discovered pages, their route keys, and their source and output paths.</p>
+<h3>Run validation tests to optimize your site<a id="run-validation-tests-to-optimize-your-site" href="#run-validation-tests-to-optimize-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">validate</span></div></code></pre>
+<p>Hyde ships with a very useful command that runs a series of checks to validate your setup and catch any potential issues.</p>
+
+			</section>
+			<footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+				<p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link"><a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/console-commands.md">Edit Page</a></p>
+			</footer>
+		</article>
+	</main>
+
+	<div id="support">
+		<div id="sidebar-backdrop" x-show="sidebarOpen" x-transition @click="sidebarOpen = false"
+			title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50">
+		</div>
+					<button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
+	<span x-show="! searchWindowOpen">
+		Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+	</span>
+	<span x-show="searchWindowOpen">
+		<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+			<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+		</svg>
+	</span>
+</button>
+<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700" aria-label="Toggle search menu">
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+	<aside x-on:click.away="searchWindowOpen = false" id="searchMenu" class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+		<header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+			<strong>Search the documentation site</strong>
+			<button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100" aria-label="Close search window">
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</header>
+		<div>
+			<div id="hyde-search">
+    <noscript>
+        The search feature requires JavaScript to be enabled in your browser.
+    </noscript>
+    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
+</div>		</div>
+		<footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+			<small>
+				Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
+				Use <code><kbd title="Escape key">esc</kbd></code> to close.
+			</small>
+		</footer>
+	</aside>
+
+	<div id="search-window-backdrop" title="Click to close search window"
+		class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>			<script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
+			<script>
+				window.addEventListener('load', function() {
+					const searchIndexLocation = 'search.json';
+					const Search = new HydeSearch(searchIndexLocation);
+
+					Search.init();
+				});
+			</script>
+			</div>
+
+	<script defer src="../../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+</body>
+</html>

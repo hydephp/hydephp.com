@@ -86,8 +86,6 @@
 	if (window.matchMedia && window.matchMedia('(prefers-reduced-motion)').matches) {
 		console.log('Prefers reduced motion detected. Animations disabled.');
 	} else {
-		console.log('Prefers reduced motion not detected. Animations enabled.');
-
 		var slider = document.getElementById("slider");
 		
 		var end = document.getElementById("end");

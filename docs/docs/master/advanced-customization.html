@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Advanced Customization</title>
+
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/docs/master/advanced-customization.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Advanced Customization">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP - Advanced Customization">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+
+
+ 
+
+
+<link rel="stylesheet" href="../../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+
+<body id="hyde-docs"
+	class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
+	x-data="{ sidebarOpen: false, searchWindowOpen: false }"
+	x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
+	<a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+	<script>
+		document.body.classList.add('js-enabled');
+	</script>
+
+	<nav id="mobile-navigation"
+		class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+		<strong class="px-2 mr-auto">
+					<a href="../../docs/master/">
+				HydePHP Docs
+			</a>
+					</strong>
+		<ul class="flex items-center">
+			<li class="h-8 flex mr-1">
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</li>
+			<li class="h-8 flex">
+				<button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu"
+					@click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+				</button>
+			</li>
+		</ul>
+	</nav>
+	<aside id="sidebar"
+		class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:block shadow-lg md:shadow-none transition-all duration-300"
+		:class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" x-cloak>
+		<header id="sidebar-header" class="h-16">
+			<div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
+				<strong class="px-2">
+									<a href="../../docs/master/">
+						HydePHP Docs
+					</a>
+									</strong>
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</div>
+		</header>
+		<nav id="sidebar-navigation"
+			class="p-4 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-[calc(100vh_-_8rem)]">
+			
+							<ul id="sidebar" role="list">
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Getting Started</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/quickstart">Quickstart Guide</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/console-commands">Console Commands</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/architecture-concepts">Architecture Concepts</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Creating Content</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/blog-posts">Creating Blog Posts</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/static-pages">Markdown &amp; Blade Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/documentation-pages">Documentation Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/managing-assets">Managing assets</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/compile-and-deploy">Compile &amp; Deploy</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Digging Deeper</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/customization">Customizing your Site</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-markdown">Advanced Markdown</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/extensions">Extensions &amp; Integrations</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300	ease-in-out	hover:bg-black/10"
+	href="../../docs/master/advanced-customization" aria-current="true">Advanced Customization</a>
+				<span class="sr-only">Table of contents</span>
+		<ul class="table-of-contents">
+<li>
+<a href="#introduction--warning">Introduction &amp; Warning</a>
+<ul>
+<li>
+<a href="#emoji-legend">Emoji legend</a>
+</li>
+<li>
+<a href="#a-note-on-file-paths">A note on file paths</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#customizing-source-directories-">Customizing source directories 🧪</a>
+</li>
+<li>
+<a href="#customizing-the-output-directory-">Customizing the output directory ⚠</a>
+<ul>
+<li>
+<a href="#setting-an-absolute-path">Setting an absolute path</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#adding-custom-post-build-tasks">Adding custom post-build tasks</a>
+<ul>
+<li>
+<a href="#minimal-example">Minimal example</a>
+</li>
+<li>
+<a href="#full-example">Full example</a>
+</li>
+<li>
+<a href="#registering-the-tasks">Registering the tasks</a>
+</li>
+</ul>
+</li>
+</ul>
+
+			</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/collections">File-based Collections</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/troubleshooting">Troubleshooting</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/updating-hyde">Updating Hyde</a>
+	</li>					</ul>
+	</li>
+	</ul>
+					</nav>
+		<footer id="sidebar-footer" class="h-16 absolute p-4 w-full bottom-0 left-0 text-center leading-8">
+			<p>
+				<a href="../../">Back to home page</a>
+			</p>
+		</footer>
+	</aside>
+	<main id="content"
+		class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+
+				<article id="document" itemscope itemtype="http://schema.org/Article" class="mx-auto lg:ml-8 prose
+			dark:prose-invert max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] torchlight-enabled">
+			
+			<header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
+				<h1>Advanced Customization</h1>
+			</header>
+			<section id="document-main-content" itemprop="articleBody">
+				<h2>Introduction &amp; Warning<a id="introduction--warning" href="#introduction--warning" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<blockquote class="danger">Danger lies ahead! Read this before you proceed.</blockquote>
+<p>This page covers advanced usage of potentially experimental and unstable features and is intended for developers
+who know what they are doing and can handle the risk of breaking things. The article will also cover things
+that you <em>can</em> do, but that you maybe should not. With great power comes great responsibility. You have been warned.</p>
+<p>Documentation here will be mainly example driven, as it is assumed you have somewhat of an understanding of what you are doing already.</p>
+<h3>Emoji legend<a id="emoji-legend" href="#emoji-legend" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Each section is marked with an emoji that indicates the level of risk. Note that pretty much all of these
+are experimental features, and are not at all supported. Use at your own risk.</p>
+<ul>
+<li>🧪 = Indicates experimental features bound to change at any time.</li>
+<li>⚠ = Exercise caution when using this feature.</li>
+<li>💔 = This could seriously break things</li>
+</ul>
+<h3>A note on file paths<a id="a-note-on-file-paths" href="#a-note-on-file-paths" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>When Hyde references files, especially when passing filenames between components, the file path is almost always relative to the root of the project. When an absolute path is required, the path is resolved through the <code>Hyde::path()</code> helper. Specifying absolute paths yourself will likely lead to unforeseen problems.</p>
+<h2>Customizing source directories 🧪<a id="customizing-source-directories-" href="#customizing-source-directories-" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<blockquote class="warning">This may cause integrations such as the realtime compiler to break. You'll also likely need to update route key names in your templates.</blockquote>
+<p>The source directory paths are stored in the PageModel objects.
+You can change them by modifying the static property, for example in a service provider.</p>
+<p>Internally, the paths are registered in the HydeServiceProvider using the following method:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>Hyde\Framework\HydeServiceProvider</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Concerns</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">RegistersFileLocations</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">register</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">registerSourceDirectories</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">BladePage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">MarkdownPage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">DocumentationPage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<h2>Customizing the output directory ⚠<a id="customizing-the-output-directory-" href="#customizing-the-output-directory-" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<blockquote class="danger">Hyde deletes all files in the output directory before compiling the site. Don't set this path to a directory that contains important files!</blockquote>
+<p>If you want to store your compiled website in a different directory than
+the default <code>_pages</code>, you can change the path using the following configuration option in config/hyde.php. The path is expected to be relative to your project root.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">output_directory</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">];</span></div></code></pre>
+<h3>Setting an absolute path<a id="setting-an-absolute-path" href="#setting-an-absolute-path" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Since Hyde v0.64.0-beta, the site output directory will always be resolved within the project root. If you want to compile the site to an absolute path outside your project, it's instead recommended that you use a build task to copy the files to the desired location automatically after the site has been compiled.</p>
+<h2>Adding custom post-build tasks<a id="adding-custom-post-build-tasks" href="#adding-custom-post-build-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>These tasks are code that is executed automatically after the site has been built using the <code>php hyde build</code> command. The built-in features in Hyde like sitemap generation and RSS feeds are created using tasks like these.</p>
+<p>Maybe you want to create your own, to for example upload the site to FTP or copy the files to a public directory? It's easy to do, here's how!</p>
+<h3>Minimal example<a id="minimal-example" href="#minimal-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Here is a minimal example to get you started. For all these examples we assume you put the file in the <code>App/Actions</code> directory, but you can put them anywhere.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">SimpleTask</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">AbstractBuildTask</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">run</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">info</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<p>This will then output the following, where you can see that some extra output, including execution time tracking is added for us. We can of course customize this if we want, as you can see in the next example.</p>
+<pre>
+<small style="color: gray">$ php hyde build</small>
+  <span style="color: gold">Generic build task...</span> Hello World! <span style="color: gray">Done in 0.26ms</span>
+</pre>
+<h3>Full example<a id="full-example" href="#full-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>You can also set the description, and an optional <code>then()</code> method to run after the main task has been executed. The then method is great if you want to display a status message.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #89DDFF;">&lt;?php</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F78C6C;">namespace</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">App</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Actions</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Concerns</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">AbstractBuildTask</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ExampleTask</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">AbstractBuildTask</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">description </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Say hello</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">run</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">info</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">then</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">18</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">line</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Goodbye World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">19</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">20</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<pre>
+<small style="color: gray">$ php hyde build</small>
+  <span style="color: gold">Say hello...</span> <span style="color: green">Hello World!</span>
+  Goodbye World!
+</pre>
+<h3>Registering the tasks<a id="registering-the-tasks" href="#registering-the-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>There are a few ways to register these tasks so Hyde can find them. There is a convenient place to do this, which is in the main configuration file, <code>config/hyde.php</code>.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">post_build_tasks</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">App</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Actions</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">SimpleTask</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">App</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Actions</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">ExampleTask</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>If you are developing an extension, I recommend you do this in the <code>boot</code> method of a service provider so that it can be loaded automatically. Do this by adding the fully qualified class name to the <code>BuildTaskService::$postBuildTasks</code> array.</p>
+<p>Hyde can also autoload them if you store the files in the <code>app/Actions</code> directory and the names end in <code>BuildTask.php</code>. For example <code>app/Actions/ExampleBuildTask.php</code>.</p>
+
+			</section>
+			<footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+				<p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link"><a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-customization.md">Edit Page</a></p>
+			</footer>
+		</article>
+	</main>
+
+	<div id="support">
+		<div id="sidebar-backdrop" x-show="sidebarOpen" x-transition @click="sidebarOpen = false"
+			title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50">
+		</div>
+					<button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
+	<span x-show="! searchWindowOpen">
+		Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+	</span>
+	<span x-show="searchWindowOpen">
+		<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+			<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+		</svg>
+	</span>
+</button>
+<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700" aria-label="Toggle search menu">
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+	<aside x-on:click.away="searchWindowOpen = false" id="searchMenu" class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+		<header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+			<strong>Search the documentation site</strong>
+			<button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100" aria-label="Close search window">
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</header>
+		<div>
+			<div id="hyde-search">
+    <noscript>
+        The search feature requires JavaScript to be enabled in your browser.
+    </noscript>
+    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
+</div>		</div>
+		<footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+			<small>
+				Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
+				Use <code><kbd title="Escape key">esc</kbd></code> to close.
+			</small>
+		</footer>
+	</aside>
+
+	<div id="search-window-backdrop" title="Click to close search window"
+		class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>			<script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
+			<script>
+				window.addEventListener('load', function() {
+					const searchIndexLocation = 'search.json';
+					const Search = new HydeSearch(searchIndexLocation);
+
+					Search.init();
+				});
+			</script>
+			</div>
+
+	<script defer src="../../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+</body>
+</html>

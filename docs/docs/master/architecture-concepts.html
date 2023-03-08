@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Key HydePHP Concepts</title>
+
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<link rel="canonical" href="https://hydephp.com/docs/master/architecture-concepts.html">
+<meta name="author" content="Caen De Silva">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Sites, Blogs, Documentation">
+<meta name="generator" content="HydePHP v0.59.0-beta">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:title" content="HydePHP - Key HydePHP Concepts">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:title" content="HydePHP - Key HydePHP Concepts">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://hydephp.com/media/og-image-index.png">
+<meta property="og:image:alt" content="OpenGraph Image">
+
+
+ 
+
+
+<link rel="stylesheet" href="../../media/app.css">
+
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+</head>
+
+<body id="hyde-docs"
+	class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
+	x-data="{ sidebarOpen: false, searchWindowOpen: false }"
+	x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
+	<a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+	<script>
+		document.body.classList.add('js-enabled');
+	</script>
+
+	<nav id="mobile-navigation"
+		class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+		<strong class="px-2 mr-auto">
+					<a href="../../docs/master/">
+				HydePHP Docs
+			</a>
+					</strong>
+		<ul class="flex items-center">
+			<li class="h-8 flex mr-1">
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</li>
+			<li class="h-8 flex">
+				<button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu"
+					@click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+					<span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+				</button>
+			</li>
+		</ul>
+	</nav>
+	<aside id="sidebar"
+		class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:block shadow-lg md:shadow-none transition-all duration-300"
+		:class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" x-cloak>
+		<header id="sidebar-header" class="h-16">
+			<div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
+				<strong class="px-2">
+									<a href="../../docs/master/">
+						HydePHP Docs
+					</a>
+									</strong>
+				<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
+	<span class="sr-only">Toggle dark theme</span>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+	<svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+</button>
+			</div>
+		</header>
+		<nav id="sidebar-navigation"
+			class="p-4 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-[calc(100vh_-_8rem)]">
+			
+							<ul id="sidebar" role="list">
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Getting Started</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/quickstart">Quickstart Guide</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/console-commands">Console Commands</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300	ease-in-out	hover:bg-black/10"
+	href="../../docs/master/architecture-concepts" aria-current="true">Architecture Concepts</a>
+				<span class="sr-only">Table of contents</span>
+		<ul class="table-of-contents">
+<li>
+<a href="#introduction-to-hyde">Introduction to Hyde</a>
+</li>
+<li>
+<a href="#the-hydecli">The HydeCLI</a>
+</li>
+<li>
+<a href="#directory-structure">Directory structure</a>
+</li>
+<li>
+<a href="#file-autodiscovery">File Autodiscovery</a>
+</li>
+<li>
+<a href="#convention-over-configuration">Convention over Configuration</a>
+</li>
+<li>
+<a href="#front-matter">Front Matter</a>
+<ul>
+<li>
+<a href="#about">About</a>
+</li>
+<li>
+<a href="#markdown">Markdown</a>
+</li>
+<li>
+<a href="#blade">Blade</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#automatic-routing">Automatic Routing</a>
+<ul>
+<li>
+<a href="#high-level-overview">High-level overview</a>
+</li>
+<li>
+<a href="#accessing-routes">Accessing routes</a>
+</li>
+<li>
+<a href="#using-the-x-link-component">Using the x-link component</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#nested-directories">Nested directories</a>
+<ul>
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#behaviour-of-nested-pages">Behaviour of nested pages</a>
+</li>
+</ul>
+</li>
+</ul>
+
+			</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Creating Content</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/blog-posts">Creating Blog Posts</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/static-pages">Markdown &amp; Blade Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/documentation-pages">Documentation Pages</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/managing-assets">Managing assets</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/compile-and-deploy">Compile &amp; Deploy</a>
+	</li>					</ul>
+	</li>
+		<li class="sidebar-category mb-4 mt-4 first:mt-0" role="listitem">
+		<h4 class="sidebar-category-heading text-base font-semibold mb-2 -ml-1">Digging Deeper</h4>
+		<ul class="sidebar-category-list ml-4" role="list">
+							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/customization">Customizing your Site</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-markdown">Advanced Markdown</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/extensions">Extensions &amp; Integrations</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/advanced-customization">Advanced Customization</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/collections">File-based Collections</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/troubleshooting">Troubleshooting</a>
+	</li>							<li class="sidebar-navigation-item -ml-4 pl-4"  role="listitem">
+		<a class="-ml-8 pl-4 py-1 px-2  block  border-l-[0.325rem] border-transparent transition-colors duration-300	ease-in-out hover:bg-black/10	"
+	href="../../docs/master/updating-hyde">Updating Hyde</a>
+	</li>					</ul>
+	</li>
+	</ul>
+					</nav>
+		<footer id="sidebar-footer" class="h-16 absolute p-4 w-full bottom-0 left-0 text-center leading-8">
+			<p>
+				<a href="../../">Back to home page</a>
+			</p>
+		</footer>
+	</aside>
+	<main id="content"
+		class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+
+				<article id="document" itemscope itemtype="http://schema.org/Article" class="mx-auto lg:ml-8 prose
+			dark:prose-invert max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] torchlight-enabled">
+			
+			<header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
+				<h1>Key HydePHP Concepts</h1>
+			</header>
+			<section id="document-main-content" itemprop="articleBody">
+				<h2>Introduction to Hyde<a id="introduction-to-hyde" href="#introduction-to-hyde" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>HydePHP contains a few &quot;magic&quot; features so that you can focus on your content. It's encouraged that you read this page to get a high-level overview of what's going on behind the scenes.</p>
+<h2>The HydeCLI<a id="the-hydecli" href="#the-hydecli" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>When you are not writing Markdown and Blade, most of your interactions with Hyde will be through the
+Hyde Command Line Interface (CLI).
+Since the CLI is based on the Laravel Artisan Console, so you may actually already be familiar with it.</p>
+<p>You should take a look at <a href="console-commands">the Console Commands page</a>
+to learn more and see the available commands and their usage.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--help</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<h2>Directory structure<a id="directory-structure" href="#directory-structure" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>To take full advantage of the framework, it may first be good to familiarize ourselves with the directory structure.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">├── _docs  // For documentation pages</span></div><div class='line'><span style="color: #A6ACCD;">├── _posts // For blog posts</span></div><div class='line'><span style="color: #A6ACCD;">├── _pages // For static Markdown and Blade pages</span></div><div class='line'><span style="color: #A6ACCD;">├── _media // Store static assets to be copied to the build directory</span></div><div class='line'><span style="color: #A6ACCD;">├── _site  // The build directory where your compiled site will be stored</span></div><div class='line'><span style="color: #A6ACCD;">├── config // Configuration files for Hyde and integrations</span></div><div class='line'><span style="color: #A6ACCD;">├── resources/assets // Location for Laravel Mix source files (optional)</span></div><div class='line'><span style="color: #A6ACCD;">└── resources/views/components // Location for Blade components (optional)</span></div></code></pre>
+<blockquote>
+<p>Note that the <code>_site</code> directory is emptied every time you run the <code>hyde build</code> command.
+It's intended that you keep the directory out of your VCS, for example by adding it to your .gitignore file.</p>
+</blockquote>
+<h2>File Autodiscovery<a id="file-autodiscovery" href="#file-autodiscovery" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Content files, meaning source Markdown and Blade files, are automatically
+discovered by Hyde and compiled to HTML when building the site.
+This means that you don't need to worry about routing and controllers!</p>
+<p>The directory a source file is in will determine the Blade template that is used to render it.</p>
+<p>Here is an overview of the content source directories, the output directory of the compiled files,
+and the file extensions supported by each. Files starting with an <code>_underscore</code> are ignored.</p>
+<table>
+<thead>
+<tr>
+<th>Page/File Type</th>
+<th>Source Directory</th>
+<th>Output Directory</th>
+<th>File Extensions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Static Pages</td>
+<td><code>_pages/</code></td>
+<td><code>_site/</code></td>
+<td><code>.md</code>, <code>.blade.php</code></td>
+</tr>
+<tr>
+<td>Blog Posts</td>
+<td><code>_posts/</code></td>
+<td><code>_site/posts/</code></td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>Documentation</td>
+<td><code>_docs/</code></td>
+<td><code>_site/docs/</code></td>
+<td><code>.md</code></td>
+</tr>
+<tr>
+<td>Media Assets</td>
+<td><code>_media/</code></td>
+<td><code>_site/media/</code></td>
+<td>See full list below</td>
+</tr>
+</tbody>
+</table>
+<small>
+<blockquote>
+Default media file types supported: `.png`, `.svg`, `.jpg`, `.jpeg`, `.gif`, `.ico`, `.css`, `.js`. Can be changed using the `hyde.media_extensions` config setting.
+</blockquote>
+</small>
+<h2>Convention over Configuration<a id="convention-over-configuration" href="#convention-over-configuration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Hyde favours the &quot;Convention over Configuration&quot; paradigm and thus comes preconfigured with sensible defaults.
+However, Hyde also strives to be modular and endlessly customizable hackable if you need it.
+Take a look at the <a href="customization">customization and configuration guide</a> to see the endless options available!</p>
+<h2>Front Matter<a id="front-matter" href="#front-matter" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h3>About<a id="about" href="#about" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Front matter is heavily used in HydePHP to store metadata about about pages. Hyde uses the front matter data to generate rich and dynamic content. For example, a blog post category, author website, or featured image.</p>
+<p>Using front matter is optional, as Hyde will dynamically generate data based on the content itself. (Though any matter you provide will take precedence over the automatically generated data.)</p>
+<h3>Markdown<a id="markdown" href="#markdown" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>All Markdown content files support Front Matter. Blog posts for example make heavy use of it.</p>
+<p>The specific usage and schemas used for pages are documented in their respective documentation, however, here is a primer on the fundamentals.</p>
+<ul>
+<li>Front matter is stored in a block of YAML that starts and ends with a <code>---</code> line.</li>
+<li>The front matter should be the very first thing in the Markdown file.</li>
+<li>Each key-pair value should be on its own line.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My New Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://mrhyde.example.com</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Markdown comes here</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, etc.</span></div></code></pre>
+<h3>Blade<a id="blade" href="#blade" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<blockquote class="warning">🧪 This feature is experimental, and currently does not support multidimensional arrays or multi-line directives as the BladeMatter is statically parsed.</blockquote>
+<p>Hyde v0.58.0-beta brings experimental support for creating front-matter in Blade templates, called BladeMatter. The actual syntax is does not use YAML; but instead PHP. However, the parsed end result is the same.</p>
+<p>To create BladeMatter, you simply use the default Laravel Blade <code>@php</code> directive to declare a variable anywhere in the template.</p>
+<p><strong>Example:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">BladeMatter Demo</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div></code></pre>
+<p>It will then be available through the global <code>$page</code> variable, <code>$page-&gt;matter('title')</code>.</p>
+<h2>Automatic Routing<a id="automatic-routing" href="#automatic-routing" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<blockquote class="info">This covers an intermediate topic which is not required for basic usage, but is useful if you want to use the framework to design custom Blade templates.</blockquote>
+<h3>High-level overview<a id="high-level-overview" href="#high-level-overview" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>If you've ever worked in a MVC framework, you are probably familiar with the concept of routing. And you are probably also familiar with how boring and tedious it can be. Hyde takes the pain out of routing through the Hyde Autodiscovery process.</p>
+<p>Internally, when booting the Hyde application, Hyde will automatically discover all of the content files in the source directory and create a routing index for them. This index works as a two-way link between source files and compiled files.</p>
+<p>Don't worry if this sounds complex, as the key takeaway is that the index is created and maintained automatically. There is currently no way to manually add or remove files from the index. Making it function more like a source map than a proper router. Nevertheless, the routing system provides several helpers that you can optionally use in your Blade views to automatically resolve relative links and other useful features.</p>
+<h3>Accessing routes<a id="accessing-routes" href="#accessing-routes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Each route in your site is represented by a Route object. It's very easy to get a Route object instance from the Router's index. There are a few ways to do this, but most commonly you'll use the Route facade's <code>get()</code> method where you provide a route key, and it will return the Route object. The route key is generally <code>&lt;output-directory/slug&gt;</code>. Here are some examples:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #676E95;">// Source file: _pages/index.md/index.blade.php</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #676E95;">// Compiled file: _site/index.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #FFCB6B;">Route</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #676E95;">// Source file: _posts/my-post.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #676E95;">// Compiled file: _site/posts/my-post.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #FFCB6B;">Route</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #676E95;">// Source file: _docs/readme.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #676E95;">// Compiled file: _site/docs/readme.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #FFCB6B;">Route</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs/readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
+<blockquote class="info">Tip: You can also use "dot notation" instead of slashes, for example `Route::get('posts.my-post')`.</blockquote>
+<h3>Using the <code>x-link</code> component<a id="using-the-x-link-component" href="#using-the-x-link-component" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>When designing Blade layouts it can be useful to use the <code>x-link</code> component to automatically resolve relative links.</p>
+<p>You can of course, use it just like a normal anchor tag like so:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<p>But where it really shines is when you supply a route. This will then resolve the proper relative link, and format it to use pretty URLs if your site is configured to use them.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">:href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Route::get(&#39;index&#39;)</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<p>You can of course, also supply extra attributes like classes:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">:href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Route::get(&#39;index&#39;)</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">btn btn-primary</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<h2>Nested directories<a id="nested-directories" href="#nested-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h3>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Starting with Hyde v0.52.x-beta, there is limited support for nested directories, please be mindful that the behaviour of this may change until the next few versions. Please report any issues you encounter on <a href="https://github.com/hydephp/develop/issues">GitHub</a>.</p>
+<h4>First of, what do we mean by &quot;nested directories&quot;?<a id="first-of-what-do-we-mean-by-nested-directories" href="#first-of-what-do-we-mean-by-nested-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Simply put, a nested directory in Hyde is a source directory that contains a subdirectory. For example, if you have a directory <em>inside</em> the <code>_pages</code> directory, that's a nested directory.</p>
+<h3>Behaviour of nested pages<a id="behaviour-of-nested-pages" href="#behaviour-of-nested-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h4>Automatically routed pages<a id="automatically-routed-pages" href="#automatically-routed-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>As it is now, when you put a source file within a subdirectory of one of the following, it will be compiled into the corresponding output directory.</p>
+<p>The following page types use this behaviour:</p>
+<ul>
+<li>Blade pages (<code>_pages/</code>)</li>
+<li>Markdown pages (<code>_pages/</code>)</li>
+<li>Markdown blog posts (<code>_posts/</code>)</li>
+</ul>
+<p>For example, a source file stored as <code>_pages/about/contact.md</code> will be compiled into <code>_site/about/contact.html</code>, and a blog post stored as <code>_posts/2022/my-post.md</code> will be compiled into <code>_site/posts/2022/my-post.html</code>.</p>
+<h4>Documentation pages<a id="documentation-pages" href="#documentation-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Documentation pages behave a bit differently. Here, all documentation source files will still be compiled to the <code>_site/docs/</code> directory, but the subdirectory name will be used to assign a sidebar group/category to the page.</p>
+<p>So for example, a source file stored as <code>_docs/getting-started/installation.md</code> will be compiled into <code>_site/docs/installation</code>, and placed in the sidebar group <code>Getting Started</code>.</p>
+<p>You can learn more about this in the <a href="documentation-pages#using-sub-directories">documentation pages documentation</a>.</p>
+
+			</section>
+			<footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+				<p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link"><a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/architecture-concepts.md">Edit Page</a></p>
+			</footer>
+		</article>
+	</main>
+
+	<div id="support">
+		<div id="sidebar-backdrop" x-show="sidebarOpen" x-transition @click="sidebarOpen = false"
+			title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50">
+		</div>
+					<button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
+	<span x-show="! searchWindowOpen">
+		Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+	</span>
+	<span x-show="searchWindowOpen">
+		<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+			<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+		</svg>
+	</span>
+</button>
+<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen" :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });" class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700" aria-label="Toggle search menu">
+	<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation"><path d="M0 0h24v24H0z" fill="none"/><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+</button>
+
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+	<aside x-on:click.away="searchWindowOpen = false" id="searchMenu" class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+		<header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+			<strong>Search the documentation site</strong>
+			<button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100" aria-label="Close search window">
+				<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</header>
+		<div>
+			<div id="hyde-search">
+    <noscript>
+        The search feature requires JavaScript to be enabled in your browser.
+    </noscript>
+    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
+</div>		</div>
+		<footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+			<small>
+				Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
+				Use <code><kbd title="Escape key">esc</kbd></code> to close.
+			</small>
+		</footer>
+	</aside>
+
+	<div id="search-window-backdrop" title="Click to close search window"
+		class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>			<script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
+			<script>
+				window.addEventListener('load', function() {
+					const searchIndexLocation = 'search.json';
+					const Search = new HydeSearch(searchIndexLocation);
+
+					Search.init();
+				});
+			</script>
+			</div>
+
+	<script defer src="../../media/app.js"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+	function toggleTheme() {
+		if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			document.documentElement.classList.remove("dark");
+			localStorage.setItem('color-theme', 'light');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+		} else {
+			document.documentElement.classList.add("dark");
+			localStorage.setItem('color-theme', 'dark');
+			document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+		}
+	}
+</script>
+
+
+</body>
+</html>
