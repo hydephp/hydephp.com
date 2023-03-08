@@ -332,6 +332,22 @@ return [
         // These are the pages that should not show up in the navigation menu.
         'exclude' => [
             '404',
+            'dashboard',
+            'posts',
+            'privacy',
+            'legal',
+            'changelog',
+            'license',
+            'security',
+            'contributing',
+            'code-of-conduct',
+            'community',
+            'docs/master/index',
+            'testimonials',
+            'accessibility',
+            'sitemap',
+            'docs',
+            'features' // merged with about
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
