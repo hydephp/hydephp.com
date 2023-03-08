@@ -1,7 +1,7 @@
 @php
 $pages= array_merge(
-    \Hyde\Framework\Models\Pages\BladePage::files(),
-    \Hyde\Framework\Models\Pages\MarkdownPage::files(),
+    BladePage::files(),
+    MarkdownPage::files(),
 );
 
 // sort alphabetically
@@ -30,7 +30,7 @@ unset ($pages[array_search('404', $pages)]);
 		<h2>Documentation Pages</h2>
 	
 		<ul>
-			@foreach(\Hyde\Framework\Models\Pages\DocumentationPage::files() as $page)
+			@foreach(DocumentationPage::files() as $page)
 			<li><a href="{{ $page }}">{{ Hyde::makeTitle($page) }}</a></li>
 			@endforeach
 		</ul>
