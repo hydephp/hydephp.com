@@ -6,6 +6,8 @@ author: Caen
 date: 2022-04-11 14:57
 ---
 
+>warning Heads up! This article is quite old. Take a look at the official documentation for the latest information.
+
 The v0.10.0 release introduces featured images for blog posts.
 
 Add images to your posts by setting the `image` in the front matter. If you pass a string it will be used to find an image in the `_media` directory if the file is local. If you supply a full URL starting with `https://` it will be used as-is.
