@@ -2,7 +2,7 @@ name: Build and Deploy Preview
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ master, upcoming ]
 
 jobs:
   build:
@@ -27,12 +27,12 @@ jobs:
     - name: Create dotenv
       run: |
         echo 'SITE_NAME="HydePHP.com PR Preview"' > .env
-        echo "SITE_URL=https://hydephp.github.io/previews/hydephp-com/${{ github.sha }}" >> .env
+        echo "SITE_URL=https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}" >> .env
         echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
         echo "ROBOTS_NOINDEX=true" >> .env
 
     - name: Install composer dependencies
-      run: composer install --prefer-dist
+      run: composer install
 
     - name: Cache node modules
       uses: actions/cache@v3
@@ -53,11 +53,16 @@ jobs:
     - name: Build frontend assets
       run: npm run prod
 
+    - name: Output debug information
+      run: |
+        php hyde --version
+        php hyde debug
+
     - name: Run the Hyde Builder
-      run: php hyde build --pretty-urls --run-prettier  --no-interaction
+      run: php hyde build --pretty-urls --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/master" />' > docs/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
 
     - name: Upload site artifact
       uses: actions/upload-artifact@v3
@@ -70,7 +75,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pull-request-preview
-      url: https://hydephp.github.io/previews/hydephp-com/${{ github.sha }}
+      url: https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}
 
     steps:
       - name: Download the artifact
@@ -88,16 +93,18 @@ jobs:
           destination-github-username: "hydephp"
           destination-repository-name: "previews"
           target-branch: master
-          target-directory: "docs/hydephp-com/${{ github.sha }}"
+          target-directory: "docs/hydephp-com/${{ github.event.pull_request.number }}"
 
       - name: Output the URL
-        run: echo "https://hydephp.github.io/previews/hydephp-com/${{ github.sha }}"
+        run: echo "https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}"
 
 
   comment-on-pull-request:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+    # Only run if a comment was not already made
+    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && !contains(github.event.pull_request.body, 'A [live preview]') }}
     steps:
       - uses: actions/github-script@v5
         with:
@@ -106,5 +113,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'A [live preview](https://hydephp.github.io/previews/hydephp-com/${{ github.sha }}) is being deployed!<br><br>Please note that it may take a few seconds for GitHub Pages to build and deploy. The preview will be removed at midnight UTC.'
+              body: 'A [live preview](https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}) is being deployed!<br><br>Please note that it may take a few seconds for GitHub Pages to build and deploy. The preview will be removed at midnight UTC.'
             })

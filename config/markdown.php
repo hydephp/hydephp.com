@@ -23,7 +23,7 @@ return [
     | Remember that you may need to install any third party extensions
     | through Composer before you can use them.
     |
-    | Hyde ships with the Github Flavored Markdown extension.
+    | Hyde ships with the GitHub Flavored Markdown extension.
     | The Torchlight extension is enabled automatically when needed.
     |
     */
@@ -31,7 +31,6 @@ return [
     'extensions' => [
         \League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
         \League\CommonMark\Extension\Attributes\AttributesExtension::class,
-        \League\CommonMark\Extension\DisallowedRawHtml\DisallowedRawHtmlExtension::class,
         \League\CommonMark\Extension\Footnote\FootnoteExtension::class,
     ],
 
@@ -49,9 +48,7 @@ return [
     */
 
     'config' => [
-        'disallowed_raw_html' => [
-            'disallowed_tags' => [],
-        ],
+        //
     ],
 
     /*
@@ -66,20 +63,20 @@ return [
     |
     */
 
-    'allow_html' => false,
+    'allow_html' => true,
 
     /*
     |--------------------------------------------------------------------------
     | Blade-supported Markdown
     |--------------------------------------------------------------------------
     |
-    | Since Hyde v0.30.x you can use Laravel Blade in Markdown files.
+    | This feature allows you to use basic Laravel Blade in Markdown files.
     |
     | It's disabled by default since can be a security risk as it allows
     | arbitrary PHP to run. But if your Markdown is trusted, try it out!
     |
     | To see the syntax and usage, see the documentation:
-    | @see https://hydephp.com/docs/master/advanced-markdown#blade-support
+    | @see https://hydephp.com/docs/1.x/advanced-markdown#blade-support
     |
     */
 

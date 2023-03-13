@@ -11,59 +11,28 @@
 */
 
 return [
-    /*
-    |--------------------------------------------------------------------------
-    | Sidebar Header Name
-    |--------------------------------------------------------------------------
-    |
-    | By default, the sidebar title shown in the documentation page layouts uses
-    | the app name suffixed with "docs". You can change it with this setting.
-    |
-    */
-
-    'header_title' => 'HydePHP Docs',
 
     /*
     |--------------------------------------------------------------------------
-    | Documentation Site Output Directory
+    | Sidebar Settings
     |--------------------------------------------------------------------------
     |
-    | If you want to store the compiled documentation pages in a different
-    | directory than the default 'docs' directory, for example to set the
-    | specified version, you can specify the directory here.
-    |
-    | Note that you need to take care as to not set it to something that
-    | may conflict with other parts, such as media or posts directories.
-    |
-    | The default value is 'docs'. For easy versioning you can do what
-    | HydePHP.com does, setting it to 'docs/master'.
+    | The Hyde Documentation Module comes with a fancy Sidebar that is
+    | automatically populated with links to your documentation pages.
+    | Here, you can configure its behavior, content, look and feel.
     |
     */
 
-    'output_directory' => 'docs/master',
+    'sidebar' => [
+        // The title in the sidebar header
+        'header' => env('SITE_NAME', 'HydePHP').' Docs',
 
-    /*
-    |--------------------------------------------------------------------------
-    | Collaborative Source Editing Location
-    |--------------------------------------------------------------------------
-    |
-    | @see https://hydephp.com/docs/master/documentation-pages#automatic-edit-page-button
-    |
-    | By adding a base URL here, Hyde will use it to create "edit source" links
-    | to your documentation pages. Hyde expects this to be a GitHub path, but
-    | it will probably work with other methods as well, if not, send a PR!
-    |
-    | You can also change the link text with the `edit_source_link_text` setting.
-    |
-    | Example: https://github.com/hydephp/docs/blob/master
-    |          Do not specify the filename or extension, Hyde will do that for you.
-    | Setting the setting to null will disable the feature.
-    |
-    */
+        // When using a grouped sidebar, should the groups be collapsible?
+        'collapsible' => true,
 
-    'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
-    'edit_source_link_text' => 'Edit Page',
-    'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
+        // Should the sidebar footer be shown?
+        'footer' => true,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -71,10 +40,11 @@ return [
     |--------------------------------------------------------------------------
     |
     | In the generated Documentation pages the navigation links in the sidebar
-    | are sorted alphabetically by default. As this rarely makes sense, you
-    | can reorder the page slugs in the list and the links will be sorted
-    | in that order. Link items without an entry here will have fall
-    | back to the default priority of 999, putting them last.
+    | default to sort alphabetically. You can reorder the page identifiers
+    | in the list below, and the links will get sorted in that order.
+    |
+    | Internally, the items listed will get a position priority of 500 + the order its found in the list.
+    | Link items without an entry here will have fall back to the default priority of 999, putting them last.
     |
     | You can also set explicit priorities in front matter.
     |
@@ -105,11 +75,34 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Collaborative Source Editing Location
+    |--------------------------------------------------------------------------
+    |
+    | @see https://hydephp.com/docs/1.x/documentation-pages#automatic-edit-page-button
+    |
+    | By adding a base URL here, Hyde will use it to create "edit source" links
+    | to your documentation pages. Hyde expects this to be a GitHub path, but
+    | it will probably work with other methods as well, if not, send a PR!
+    |
+    | You can also change the link text with the `edit_source_link_text` setting.
+    |
+    | Example: https://github.com/hydephp/docs/blob/master
+    |          Do not specify the filename or extension, Hyde will do that for you.
+    | Setting the setting to null will disable the feature.
+    |
+    */
+
+    'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
+    'edit_source_link_text' => 'Edit Page',
+    'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
+
+    /*
+    |--------------------------------------------------------------------------
     | Search Customization
     |--------------------------------------------------------------------------
     |
     | Hyde comes with an easy to use search feature for documentation pages.
-    | @see https://hydephp.com/docs/master/documentation-pages#search-feature
+    | @see https://hydephp.com/docs/1.x/documentation-pages#search-feature
     |
     */
 
@@ -121,4 +114,22 @@ return [
         'changelog',
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Flattened Output Paths
+    |--------------------------------------------------------------------------
+    |
+    | If this setting is set to true, Hyde will output all documentation pages
+    | into the same configured documentation output directory. This means
+    | that you can use the automatic directory based grouping feature,
+    | but still have a "flat" output structure. Note that this means
+    | that you can't have two documentation pages with the same
+    | filename or navigation menu label as they will overwrite each other.
+    |
+    | If you set this to false, Hyde will match the directory structure
+    | of the source files (just like all other pages).
+    |
+    */
+
+    'flattened_output_paths' => true,
 ];

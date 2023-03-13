@@ -5,7 +5,7 @@ category: deepdives
 author: Caen
 date: 2022-05-12 19:54
 image:
-  path: "../media/tech-5090539_1920.jpg"
+  source: "../media/tech-5090539_1920.jpg"
   description: "Background image of futuristic circles"
   license: "Pixabay License"
   licenseUrl: https://pixabay.com/service/license/

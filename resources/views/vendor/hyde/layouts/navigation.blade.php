@@ -1,5 +1,5 @@
 @php
-	$navigation = \Hyde\Framework\Models\NavigationMenu::create($page->getRoute());
+	$navigation = \Hyde\Framework\Features\Navigation\NavigationMenu::create();
 @endphp
 
 <nav aria-label="Main navigation" id="main-navigation"
@@ -40,7 +40,7 @@
 				</li>
 			@endforeach
 		</ul>
-		<a id="docs-nav-button" href="/docs/master" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+		<a id="docs-nav-button" href="{{ DocumentationPage::home() }}" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>

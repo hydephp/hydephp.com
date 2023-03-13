@@ -120,7 +120,7 @@ return [
     | The path is relative to the root of your project.
     |
     | To use an absolute path, or just to learn more, see the following:
-    | https://hydephp.com/docs/master/advanced-customization#customizing-the-output-directory-
+    | https://hydephp.com/docs/1.x/advanced-customization#customizing-the-output-directory-
     |
     */
 

@@ -50,14 +50,14 @@
                     The Static Site Generator You've Been Waiting For.
                 </small>
                 <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
-                src="/media/logo.svg" alt="HydePHP Logo">
-                
+                src="{{ Asset::mediaLink('logo.svg') }}" alt="HydePHP Logo">
+
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
                 Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
-            <a href="docs" class="relative mt-5 group">
+            <a href="{{ DocumentationPage::home() }}" class="relative mt-5 group">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
                 <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded group-hover:bg-violet-400 xl:text-xl fold-bold">
                     To the Documentation!
@@ -217,7 +217,7 @@
             <p class="mb-8 text-base text-violet-900 md:text-lg xl:text-xl md:max-w-lg">
                 HydePHP is an open-source console application that turns easy-to-use Markdown text files into amazing static websites, backed by the power of Laravel.
             </p>
-            <a href="docs/master/quickstart" class="relative group">
+            <a href="docs/1.x/quickstart" class="relative group">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
                 <span class="relative inline-block w-full h-full px-5 py-3 text-lg font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-500 group-hover:text-white">GET STARTED</span>
             </a>
@@ -509,7 +509,7 @@
                             
                         </ul>
                         
-                        <a href="https://hydephp.com/docs/master/architecture-concepts" class="relative w-full text-center group mt-auto">
+                        <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded  group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-red-300 ">Architecture Concepts</span>
                         </a>
@@ -552,7 +552,7 @@
                             </li>
                         </ul>
 
-                        <a href="https://hydephp.com/docs/master/blog-posts" class="relative w-full text-center group mt-auto">
+                        <a href="https://hydephp.com/docs/1.x/blog-posts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-blue-300 ">Markdown Documentation</span>
                         </a>
@@ -597,7 +597,7 @@
                             
                         </ul>
                    
-                        <a href="https://hydephp.com/docs/master/quickstart" class="relative w-full text-center group mt-auto">
+                        <a href="https://hydephp.com/docs/1.x/quickstart" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded   group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-green-300">Installation Guide</span>
                         </a>
