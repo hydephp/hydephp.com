@@ -68,7 +68,7 @@ SOFTWARE.
 
 Hyde would not be possible without the open source community.
 This list may not be exhaustive, feel free to
-[contribute to this page](https://github.com/hydephp/DocsCI/blob/master/_pages/legal.md)
+[contribute to this page](https://github.com/hydephp/hydephp.com/blob/master/_pages/legal.md)
 
 
 > Please see the respective authors' repositories for their license files
