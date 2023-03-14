@@ -177,7 +177,7 @@
             </style>
 
             <script>
-                const countDownDate = new Date("2023 03 14 12:00").getTime();
+                const countDownDate = new Date("2023 03 14 20:00 GMT+1").getTime();
 
                 const handler = function () {
                     const now = new Date().getTime();
