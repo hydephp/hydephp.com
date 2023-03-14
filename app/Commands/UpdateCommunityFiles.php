@@ -2,7 +2,7 @@
 
 namespace App\Commands;
 
-use Hyde\Framework\Hyde;
+use Hyde\Hyde;
 use LaravelZero\Framework\Commands\Command;
 
 /**
