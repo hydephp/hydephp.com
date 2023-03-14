@@ -68,10 +68,8 @@ SOFTWARE.
 
 Hyde would not be possible without the open source community.
 This list may not be exhaustive, feel free to
-[contribute to this page](https://github.com/hydephp/DocsCI/blob/master/_pages/legal.md)
+[contribute to this page](https://github.com/hydephp/hydephp.com/blob/master/_pages/legal.md)
 
-
-[Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. HydePHP is not affiliated with Laravel.
 
 > Please see the respective authors' repositories for their license files
 
@@ -80,7 +78,7 @@ This list may not be exhaustive, feel free to
 ### General
 
 - The Hyde core is built with [Laravel Zero](https://laravel-zero.com/) which is based on [Laravel](https://laravel.com/){:rel="nofollow noopener"}
-- The documentation frontend is based on [Lagrafo - Docs for Laravel apps](https://github.com/caendesilva/lagrafo){:rel="nofollow noopener"}
+- The documentation frontend was based on [Lagrafo - Docs for Laravel apps](https://github.com/caendesilva/lagrafo){:rel="nofollow noopener"}
 - The dark mode switch is based on a component from [Flowbite](https://flowbite.com/docs/customize/dark-mode/){:rel="nofollow noopener"}
 - The frontend is built with [TailwindCSS](https://tailwindcss.com/){:rel="nofollow noopener"}
 - The default 404 error page and illustration is by [LaravelCollective](https://github.com/LaravelCollective/errors){:rel="nofollow noopener"} (License MIT)  
