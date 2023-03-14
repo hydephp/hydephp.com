@@ -112,10 +112,10 @@
             <aside id="countdown-container">
                 <p id="countdown"></p>
                 <p id="countdown-body">
-                    HydePHP v1.0 is launching soon
+                    HydePHP v1.0 is released! 🎉
                 </p>
                 <p id="countdown-footer" class="mt-3">
-                    <a href="posts/announcing-the-first-release-candidate-of-hydephp" class="text-indigo-600">Try the Release Candidate Now!</a>
+                    <a href="posts/announcing-the-first-release-of-hydephp" class="text-indigo-600">Read the announcement!</a>
                 </p>
             </aside>
 
@@ -127,7 +127,7 @@
                 }
 
                 #countdown-body {
-                    font-size: 20px;
+                    font-size: 36px;
                     font-weight: bold;
                 }
 
@@ -145,7 +145,7 @@
                     }
 
                     #countdown-body {
-                        font-size: 24px;
+                        font-size: 34px;
                     }
                 }
 
@@ -175,7 +175,6 @@
                 }
 
             </style>
-
         </div>
     </div>
     <!-- CURVED SVG BORDER -->
