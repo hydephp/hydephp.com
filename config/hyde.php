@@ -217,7 +217,7 @@ return [
     'meta' => [
         Meta::name('author', 'Caen De Silva'),
         Meta::name('description', 'HydePHP - Elegant and Powerful Static App Builder'),
-        Meta::name('keywords', 'HydePHP, Static App Builder, Static Sites, Blogs, Documentation'),
+        Meta::name('keywords', 'HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP'),
         Meta::name('generator', 'HydePHP '.Hyde\Hyde::version()),
         Meta::name('twitter:card', 'summary'),
         Meta::name('twitter:site', '@hyde_php'),
