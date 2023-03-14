@@ -22,3 +22,25 @@
 
 {{-- Add any extra scripts to include before the closing <body> tag --}}
 @stack('scripts')
+
+@if($page instanceof DocumentationPage)
+    <script>
+        // Intercept clicks on links to anchor tags and scroll to the target without setting the hash in the URL
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function (e) {
+                    // If not click on .heading-permalink
+                    if (e.target.classList.contains('heading-permalink')) {
+                        return;
+                    }
+
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+@endif
