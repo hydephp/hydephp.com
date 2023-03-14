@@ -71,8 +71,6 @@ This list may not be exhaustive, feel free to
 [contribute to this page](https://github.com/hydephp/DocsCI/blob/master/_pages/legal.md)
 
 
-[Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. HydePHP is not affiliated with Laravel.
-
 > Please see the respective authors' repositories for their license files
 
 [Laravel](https://laravel.com/) is a Trademark of Taylor Otwell. Copyright © 2011-2022 Laravel LLC. HydePHP is not affiliated with Laravel.
