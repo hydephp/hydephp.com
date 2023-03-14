@@ -112,7 +112,7 @@
             <aside id="countdown-container">
                 <p id="countdown"></p>
                 <p id="countdown-body">
-                    Until HydePHP 1.0 Launch
+                    HydePHP v1.0 is launching soon
                 </p>
                 <p id="countdown-footer" class="mt-3">
                     <a href="posts/announcing-the-first-release-candidate-of-hydephp" class="text-indigo-600">Try the Release Candidate Now!</a>
@@ -175,29 +175,6 @@
                 }
 
             </style>
-
-            <script>
-                const countDownDate = new Date("2023 03 14 20:00 GMT+1").getTime();
-
-                const handler = function () {
-                    const now = new Date().getTime();
-                    const distance = countDownDate - now;
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-                        + minutes + "m " + seconds + "s ";
-
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "LAUNCHING SOON";
-                    }
-                }, x = setInterval(handler, 1000);
-
-                // Call the function to display the timer on page load
-                handler();
-            </script>
 
         </div>
     </div>
