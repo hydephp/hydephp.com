@@ -513,5 +513,25 @@ the <code>allow_html</code> option to <code>true</code> in your <code>config/mar
 </script>
 
 
+
+    <script>
+        // Intercept clicks on links to anchor tags and scroll to the target without setting the hash in the URL
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function (e) {
+                    // If not click on .heading-permalink
+                    if (e.target.classList.contains('heading-permalink')) {
+                        return;
+                    }
+
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
