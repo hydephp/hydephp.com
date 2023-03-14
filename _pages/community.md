@@ -53,6 +53,8 @@ Most of the Hyde development is made in the monorepo found on GitHub in the [Hyd
 
 ---
 
+<a id="developers"></a>
+
 # Developer Resources
 This section is written for those who are interested in contributing to the HydePHP Framework.
 
