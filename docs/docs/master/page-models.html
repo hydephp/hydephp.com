@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP Upcoming Documentation - Creating Blog Posts</title>
+<title>HydePHP Upcoming Documentation - Page models</title>
 
 
 
-<link rel="canonical" href="https://hydephp.com/docs/master/blog-posts.html">
-<meta name="twitter:title" content="HydePHP Upcoming Documentation - Creating Blog Posts">
-<meta property="og:title" content="HydePHP Upcoming Documentation - Creating Blog Posts">
+<link rel="canonical" href="https://hydephp.com/docs/master/page-models.html">
+<meta name="twitter:title" content="HydePHP Upcoming Documentation - Page models">
+<meta property="og:title" content="HydePHP Upcoming Documentation - Page models">
 
 
 <link rel="sitemap" href="https://hydephp.com/docs/master/sitemap.xml" type="application/xml" title="Sitemap">
@@ -104,7 +104,7 @@
         </a>
     </li>                                    </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -116,87 +116,11 @@
     </svg>
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
-                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
-            <a href="../master/blog-posts.html" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../master/blog-posts.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Creating Blog Posts
         </a>
-
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li>
-<a href="#introduction-to-hyde-posts">Introduction to Hyde Posts</a>
-</li>
-<li>
-<a href="#short-video-tutorial">Short Video Tutorial</a>
-</li>
-<li>
-<a href="#best-practices-and-hyde-expectations">Best Practices and Hyde Expectations</a>
-<ul>
-<li>
-<a href="#filenames">Filenames</a>
-</li>
-<li>
-<a href="#front-matter">Front Matter</a>
-</li>
-<li>
-<a href="#blog-post-example">Blog Post Example</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#supported-front-matter-properties">Supported Front Matter properties</a>
-<ul>
-<li>
-<a href="#post-front-matter-schema">Post Front Matter Schema</a>
-</li>
-<li>
-<a href="#title">Title</a>
-</li>
-<li>
-<a href="#description">Description</a>
-</li>
-<li>
-<a href="#category">Category</a>
-</li>
-<li>
-<a href="#date">Date</a>
-</li>
-<li>
-<a href="#author">Author</a>
-<ul>
-<li>
-<a href="#arbitrary-name-displayed-as-is">Arbitrary name displayed &quot;as is&quot;</a>
-</li>
-<li>
-<a href="#username-defined-in-authors-config">Username defined in authors config</a>
-</li>
-<li>
-<a href="#array-of-author-data">Array of author data</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#image">Image</a>
-<ul>
-<li>
-<a href="#local-image-path">Local image path</a>
-</li>
-<li>
-<a href="#full-url">Full URL</a>
-</li>
-<li>
-<a href="#data-rich-image">Data-rich image</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="#using-images-in-posts">Using images in posts</a>
-</li>
-</ul>
-
-            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../master/static-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown &amp; Blade Pages
         </a>
@@ -286,7 +210,7 @@
         </a>
     </li>                                    </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -314,11 +238,44 @@
             <a href="../master/dynamic-data-discovery.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Dynamic Data Discovery
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../master/page-models.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
+            <a href="../master/page-models.html" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
             Page models
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents">
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#the-short-version">The short version</a>
+<ul>
+<li>
+<a href="#page-models-are-classes-that-have-two-primary-concerns">Page models are classes that have two primary concerns:</a>
+</li>
+<li>
+<a href="#other-key-points">Other key points:</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#the-page-model">The Page Model</a>
+</li>
+<li>
+<a href="#page-models-as-blueprints">Page Models as Blueprints</a>
+<ul>
+<li>
+<a href="#what-each-property-does">What each property does</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#page-models-as-data-containers">Page Models as Data Containers</a>
+</li>
+</ul>
+
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../master/the-hydekernel.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The HydeKernel
         </a>
@@ -338,172 +295,87 @@
     </blockquote>
 
     <header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
-        <h1>Creating Blog Posts</h1>
+        <h1>The Hyde Page Models</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction to Hyde Posts<a id="introduction-to-hyde-posts" href="#introduction-to-hyde-posts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>Making blog posts with Hyde is easy. At the most basic level, all you need is to add a Markdown file to your <code>_posts</code> folder.</p>
-<p>To use the full power of the Hyde post module however, you'll want to add YAML <a href="front-matter">Front Matter</a> to your posts.</p>
-<p><strong>You can interactively scaffold posts with automatic front matter using the HydeCLI:</strong></p>
-<pre><code class="language-bash">php hyde make:post
-</code></pre>
-<p>Learn more about scaffolding posts, and other files, in the <a href="console-commands">console commands</a> documentation.</p>
-<h2>Short Video Tutorial<a id="short-video-tutorial" href="#short-video-tutorial" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gjpE1U527h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>Since Hyde does a lot of things automatically, there are some things you may need
-to keep in mind when creating blog posts so that you don't get unexpected results.</p>
-<h3>Filenames<a id="filenames" href="#filenames" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>The Hyde page models are an integral part of how HydePHP creates your static site. Each page in your site is represented
+by a page model. These are simply PHP classes that in addition to holding both the source content and computed data
+for your pages, also house instructions to Hyde on how to parse, process, and render the pages to static HTML.</p>
+<p>In this article, you'll get a high-level overview of the page models, and some code examples to give you a look inside.</p>
+<h2>The short version<a id="the-short-version" href="#the-short-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h4>Page models are classes that have two primary concerns:<a id="page-models-are-classes-that-have-two-primary-concerns" href="#page-models-are-classes-that-have-two-primary-concerns" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<ol>
+<li>They act as blueprints containing <em>static</em> instructions for how to parse, process, and, render pages.</li>
+<li>Each class <em>instance</em> also holds the page source contents, as well as the computed data.</li>
+</ol>
+<h4>Other key points:<a id="other-key-points" href="#other-key-points" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <ul>
-<li>Markdown post files are stored in the <code>_posts</code> directory</li>
-<li>The filename is used as the filename for the compiled HTML</li>
-<li>Filenames should use <code>kebab-case-name</code> followed by the extension <code>.md</code>
-</li>
-<li>Files prefixed with <code>_underscores</code> are ignored by Hyde</li>
-<li>Your post will be stored in <code>_site/posts/&lt;identifier&gt;.html</code>
-</li>
+<li>HydePHP, at the time of writing, comes with five different page classes, one for each supported type.</li>
+<li>You don't construct page models yourself. HydePHP does it for you by the <a href="autodiscovery">autodiscovery process</a>.</li>
+<li>Page models are just PHP classes. You can extend them, and you can implement your own.</li>
 </ul>
-<p><strong>Example:</strong></p>
-<pre><code class="language-bash">✔ _posts/hello-world.md # Valid and will be compiled to _site/posts/hello-world.html
-</code></pre>
-<h3>Front Matter<a id="front-matter" href="#front-matter" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Front matter is optional, but highly recommended for blog posts as the front matter is used to construct dynamic HTML
-markup for the post as well as meta tags and post feeds.</p>
-<p>You are encouraged to look at the compiled HTML to learn
-and understand how your front matter is used. You can read more about the Front Matter format in the <a href="front-matter">Front Matter</a> documentation.</p>
-<h3>Blog Post Example<a id="blog-post-example" href="#blog-post-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Before digging in deeper on all the supported options, let's take a look at what a basic post with front matter looks like.</p>
-<pre><code class="language-markdown"><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_posts/my-new-post.md</small>---
-title: My New Post
-description: A short description used in previews and SEO
-category: blog
-author: Mr. Hyde
-date: 2022-05-09 18:38
----
+<h2>The Page Model<a id="the-page-model" href="#the-page-model" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>To give you an idea of what a page model class looks like, here's a simplified version of the base <code>MarkdownPost</code> class,
+Don't worry if you don't understand everything yet, we'll talk more about these parts later.</p>
+<pre><code class="language-php">class MarkdownPost extends BaseMarkdownPage
+{
+    public static string $sourceDirectory = '_posts';
+    public static string $outputDirectory = 'posts';
+    public static string $fileExtension = '.md';
+    public static string $template = 'post';
 
-## Write your Markdown here
+    public string $identifier;
+    public string $routeKey;
+    public string $title;
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Autem aliquid alias explicabo consequatur similique,
-animi distinctio earum ducimus minus, magnam.
+    public FrontMatter $matter;
+    public Markdown $markdown;
+}
 </code></pre>
-<h2>Supported Front Matter properties<a id="supported-front-matter-properties" href="#supported-front-matter-properties" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Post Front Matter Schema<a id="post-front-matter-schema" href="#post-front-matter-schema" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Here is a quick reference of the supported front matter properties.
-Keep on reading to see further explanations, details, and examples.</p>
-<table>
-<thead>
-<tr>
-<th><strong>KEY NAME</strong></th>
-<th><strong>VALUE TYPE</strong></th>
-<th><strong>EXAMPLE / FORMAT</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>title</code></td>
-<td>string</td>
-<td>&quot;My New Post&quot;</td>
-</tr>
-<tr>
-<td><code>description</code></td>
-<td>string</td>
-<td>&quot;A short description&quot;</td>
-</tr>
-<tr>
-<td><code>category</code></td>
-<td>string</td>
-<td>&quot;my favorite recipes&quot;</td>
-</tr>
-<tr>
-<td><code>date</code></td>
-<td>string</td>
-<td>&quot;YYYY-MM-DD [HH:MM]&quot;</td>
-</tr>
-<tr>
-<td><code>author</code></td>
-<td>string/array</td>
-<td><em>See <a href="#author">author</a> section</em></td>
-</tr>
-<tr>
-<td><code>image</code></td>
-<td>string/array</td>
-<td><em>See <a href="#image">image</a> section</em></td>
-</tr>
-</tbody>
-</table>
-<p>Note that YAML here is pretty forgiving. In most cases you do not need to wrap strings in quotes,
-but it can help in certain edge cases, for example if the text contains special Yaml characters, thus they are included here.</p>
-<p>In the examples below, when there are multiple examples, they signify various ways to use the same property.</p>
-<p>When specifying an array you don't need all the sub-properties. The examples generally show all the supported values.</p>
-<h3>Title<a id="title" href="#title" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<pre><code class="language-yaml">title: &quot;My New Post&quot;
+<p><em>Note that since Hyde pages are modular through class inheritance and traits, this example has been simplified and
+edited to show all the relevant parts inlined into one class.</em></p>
+<h2>Page Models as Blueprints<a id="page-models-as-blueprints" href="#page-models-as-blueprints" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>All page models have some static properties (that is, they belong to the class, not the instance) that are used as
+blueprints, defining information for Hyde to know how to parse a file, and what data around it should be generated.</p>
+<p>Let's again take the simplified <code>MarkdownPost</code> class as an example, this time only showing the static properties:</p>
+<pre><code class="language-php">class MarkdownPost extends BaseMarkdownPage
+{
+    public static string $sourceDirectory = '_posts';
+    public static string $outputDirectory = 'posts';
+    public static string $fileExtension = '.md';
+    public static string $template = 'post';
+}
 </code></pre>
-<h3>Description<a id="description" href="#description" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<pre><code class="language-yaml">description: &quot;A short description used in previews and SEO&quot;
+<h4>What each property does<a id="what-each-property-does" href="#what-each-property-does" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The properties should be self-explanatory, but here's a quick rundown to give some context on how they are used,
+and how the paths relate to each other. So for the class above, Hyde will thanks to this blueprint, know to:</p>
+<ul>
+<li>Look for files in the <code>_posts</code> directory, with the <code>.md</code> extension</li>
+<li>Compile the page using the <code>post</code> Blade template</li>
+<li>Output the compiled page to the <code>_site/posts</code> directory</li>
+</ul>
+<h2>Page Models as Data Containers<a id="page-models-as-data-containers" href="#page-models-as-data-containers" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>As mentioned above, each page model instance also holds the page source contents, as well as the computed data.</p>
+<p>Let's again take the simplified <code>MarkdownPost</code> class as an example, this time only showing the instance properties:</p>
+<pre><code class="language-php">class MarkdownPost extends BaseMarkdownPage
+{
+    public string $identifier;
+    public string $routeKey;
+    public string $title;
+
+    public FrontMatter $matter;
+    public Markdown $markdown;
+}
 </code></pre>
-<h3>Category<a id="category" href="#category" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<pre><code class="language-yaml">category: blog
-</code></pre>
-<pre><code class="language-yaml">category: &quot;My favorite recipes&quot;
-</code></pre>
-<h3>Date<a id="date" href="#date" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<pre><code class="language-yaml">date: &quot;2022-01-01&quot;
-</code></pre>
-<pre><code class="language-yaml">date: &quot;2022-01-01 12:00&quot;
-</code></pre>
-<h3>Author<a id="author" href="#author" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Specify a page author, either by a username for an author defined in the <code>authors</code> config, or by an arbitrary name,
-or by an array of author data. See the <a href="#post-authors">Post Author</a> section for more details.</p>
-<h4>Arbitrary name displayed &quot;as is&quot;<a id="arbitrary-name-displayed-as-is" href="#arbitrary-name-displayed-as-is" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<pre><code class="language-yaml">author: &quot;Mr. Hyde&quot;
-</code></pre>
-<h4>Username defined in <code>authors</code> config<a id="username-defined-in-authors-config" href="#username-defined-in-authors-config" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<pre><code class="language-yaml">author: mr_hyde
-</code></pre>
-<h4>Array of author data<a id="array-of-author-data" href="#array-of-author-data" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<pre><code class="language-yaml">author:
-    name: &quot;Mr. Hyde&quot;
-    username: mr_hyde
-    website: https://twitter.com/HydeFramework
-</code></pre>
-<p>When specifying an array you don't need all the sub-properties. The example just shows all the supported values.
-Array values here will override all the values in the <code>authors</code> config entry.</p>
-<h3>Image<a id="image" href="#image" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Specify a cover image for the post, either by a local image path for a file in the <code>_media/</code> directory, or by a full URL.
-Any array data is constructed into a dynamic fluent caption, and injected into post and page metadata.</p>
-<h4>Local image path<a id="local-image-path" href="#local-image-path" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>When supplying an image source with a local image path, the image is expected to be stored in the <code>_media/</code> directory.
-Like all other media files, it will be copied to <code>_site/media/</code> when the site is built, so Hyde will resolve links accordingly.</p>
-<pre><code class="language-yaml">image: image.jpg
-</code></pre>
-<h4>Full URL<a id="full-url" href="#full-url" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>Full URL starting with <code>http(s)://</code>) or <code>//</code> (protocol-relative).
-The image source will be used as-is, and no additional processing is done.</p>
-<pre><code class="language-yaml">image: https://cdn.example.com/image.jpg
-</code></pre>
-<h4>Data-rich image<a id="data-rich-image" href="#data-rich-image" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>You can also supply an array of data to construct a rich image with a fluent caption.</p>
-<pre><code class="language-yaml">image:
-    source: Local image path or full URL
-    altText: &quot;Alt text for image&quot;
-    titleText: &quot;Tooltip title&quot;
-    copyright: &quot;Copyright (c) 2022&quot;
-    licenseName: &quot;CC-BY-SA-4.0&quot;
-    licenseUrl: https://example.com/license/
-    authorUrl: https://photographer.example.com/
-    authorName: &quot;John Doe&quot;
-</code></pre>
-<blockquote class="info">
-<p>See <a href="https://hydephp.com/posts/introducing-images">posts/introducing-images</a>
-for a detailed blog post with examples and schema information!</p>
-</blockquote>
-<h2>Using images in posts<a id="using-images-in-posts" href="#using-images-in-posts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>To use images stored in the <code>_media/</code> directory, you can use the following syntax:</p>
-<pre><code class="language-markdown">![Image Alt](../media/image.png &quot;Image Title&quot;)
-</code></pre>
-<p><em>Note the relative path since the blog post is compiled to <code>posts/example.html</code></em></p>
-<p>To learn more, check out the <a href="managing-assets#managing-images">chapter in managing assets</a></p>
+<p>There are some more properties than shown here, for example, various metadata properties, but these are the most common
+and important ones.</p>
+<p>While the static data gives instructions to Hyde on how to process all pages of the type, the instance data tells Hyde
+how to process a specific page. For example, the identifier property is used to uniquely identify the page, and
+the routeKey property is used to generate the URL for the page.</p>
+<p>The matter and markdown properties as I'm sure you can guess, hold the page's front matter and markdown content.
+These can then also be processed by <a href="dynamic-data-discovery">page factories</a> to generate the computed data like the
+title property.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         

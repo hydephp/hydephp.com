@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP Upcoming Documentation - Installation</title>
+<title>HydePHP Upcoming Documentation - The HydeKernel</title>
 
 
 
-<link rel="canonical" href="https://hydephp.com/docs/master/installation.html">
-<meta name="twitter:title" content="HydePHP Upcoming Documentation - Installation">
-<meta property="og:title" content="HydePHP Upcoming Documentation - Installation">
+<link rel="canonical" href="https://hydephp.com/docs/master/the-hydekernel.html">
+<meta name="twitter:title" content="HydePHP Upcoming Documentation - The HydeKernel">
+<meta property="og:title" content="HydePHP Upcoming Documentation - The HydeKernel">
 
 
 <link rel="sitemap" href="https://hydephp.com/docs/master/sitemap.xml" type="application/xml" title="Sitemap">
@@ -210,7 +210,7 @@
         </a>
     </li>                                    </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -242,11 +242,186 @@
             <a href="../master/page-models.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Page models
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../master/the-hydekernel.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
+            <a href="../master/the-hydekernel.html" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
             The HydeKernel
         </a>
-    </li>                                    </ul>
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents">
+<li>
+<a href="#introduction">Introduction</a>
+</li>
+<li>
+<a href="#accessing-the-kernel">Accessing the kernel</a>
+</li>
+<li>
+<a href="#the-kernel-lifecycle">The kernel lifecycle</a>
+</li>
+<li>
+<a href="#api-reference">API Reference</a>
+<ul>
+<li>
+<a href="#version">version()</a>
+</li>
+<li>
+<a href="#construct">__construct()</a>
+</li>
+<li>
+<a href="#features">features()</a>
+</li>
+<li>
+<a href="#hasfeature">hasFeature()</a>
+</li>
+<li>
+<a href="#toarray">toArray()</a>
+</li>
+<li>
+<a href="#files">files()</a>
+</li>
+<li>
+<a href="#pages">pages()</a>
+</li>
+<li>
+<a href="#routes">routes()</a>
+</li>
+<li>
+<a href="#maketitle">makeTitle()</a>
+</li>
+<li>
+<a href="#normalizenewlines">normalizeNewlines()</a>
+</li>
+<li>
+<a href="#stripnewlines">stripNewlines()</a>
+</li>
+<li>
+<a href="#trimslashes">trimSlashes()</a>
+</li>
+<li>
+<a href="#markdown">markdown()</a>
+</li>
+<li>
+<a href="#formatlink">formatLink()</a>
+</li>
+<li>
+<a href="#relativelink">relativeLink()</a>
+</li>
+<li>
+<a href="#medialink">mediaLink()</a>
+</li>
+<li>
+<a href="#asset">asset()</a>
+</li>
+<li>
+<a href="#url">url()</a>
+</li>
+<li>
+<a href="#hassiteurl">hasSiteUrl()</a>
+</li>
+<li>
+<a href="#filesystem">filesystem()</a>
+</li>
+<li>
+<a href="#path">path()</a>
+</li>
+<li>
+<a href="#vendorpath">vendorPath()</a>
+</li>
+<li>
+<a href="#mediapath">mediaPath()</a>
+</li>
+<li>
+<a href="#sitepath">sitePath()</a>
+</li>
+<li>
+<a href="#sitemediapath">siteMediaPath()</a>
+</li>
+<li>
+<a href="#pathtoabsolute">pathToAbsolute()</a>
+</li>
+<li>
+<a href="#pathtorelative">pathToRelative()</a>
+</li>
+<li>
+<a href="#getinstance">getInstance()</a>
+</li>
+<li>
+<a href="#setinstance">setInstance()</a>
+</li>
+<li>
+<a href="#getbasepath">getBasePath()</a>
+</li>
+<li>
+<a href="#setbasepath">setBasePath()</a>
+</li>
+<li>
+<a href="#getsourceroot">getSourceRoot()</a>
+</li>
+<li>
+<a href="#setsourceroot">setSourceRoot()</a>
+</li>
+<li>
+<a href="#getoutputdirectory">getOutputDirectory()</a>
+</li>
+<li>
+<a href="#setoutputdirectory">setOutputDirectory()</a>
+</li>
+<li>
+<a href="#getmediadirectory">getMediaDirectory()</a>
+</li>
+<li>
+<a href="#setmediadirectory">setMediaDirectory()</a>
+</li>
+<li>
+<a href="#getmediaoutputdirectory">getMediaOutputDirectory()</a>
+</li>
+<li>
+<a href="#registerextension">registerExtension()</a>
+</li>
+<li>
+<a href="#getextension">getExtension()</a>
+</li>
+<li>
+<a href="#hasextension">hasExtension()</a>
+</li>
+<li>
+<a href="#getextensions">getExtensions()</a>
+</li>
+<li>
+<a href="#getregisteredextensions">getRegisteredExtensions()</a>
+</li>
+<li>
+<a href="#getregisteredpageclasses">getRegisteredPageClasses()</a>
+</li>
+<li>
+<a href="#shareviewdata">shareViewData()</a>
+</li>
+<li>
+<a href="#currentroutekey">currentRouteKey()</a>
+</li>
+<li>
+<a href="#currentroute">currentRoute()</a>
+</li>
+<li>
+<a href="#currentpage">currentPage()</a>
+</li>
+<li>
+<a href="#isbooted">isBooted()</a>
+</li>
+<li>
+<a href="#boot">boot()</a>
+</li>
+<li>
+<a href="#booting">booting()</a>
+</li>
+<li>
+<a href="#booted">booted()</a>
+</li>
+</ul>
+</li>
+</ul>
+
+            </li>                                    </ul>
             </li>
             </ul>
     </nav>
@@ -262,12 +437,353 @@
     </blockquote>
 
     <header id="document-header" class="flex items-center flex-wrap prose-h1:mb-3">
-        
+        <h1>The HydeKernel</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <meta http-equiv="refresh" content="0;url=quickstart" />
-<p>Redirecting you to <a href="quickstart">quickstart</a></p>
-<!-- Note to self, if we need a lot of these in the future it may make more sense to put them in a CI that loads redirects from a config -->
+        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>In the centre, or should I say <em>core</em>, of HydePHP is the HydeKernel. The kernel encapsulates a HydePHP project and
+provides helpful methods for interacting with it. You can think of it as the heart of HydePHP, if you're a romantic.</p>
+<p>The HydeKernel is so important that you have probably used it already. The main entry point for the HydePHP
+API is the Hyde facade, which calls methods on the kernel.</p>
+<pre><code class="language-php">use Hyde\Hyde;
+use Hyde\Foundation\HydeKernel;
+
+Hyde::version(); // calls $HydeKernel-&gt;version()
+</code></pre>
+<p>The kernel is created very early on in the application lifecycle, in the <code>bootstrap.php</code> file, where it is also bound
+as a singleton into the application service container.</p>
+<h2>Accessing the kernel<a id="accessing-the-kernel" href="#accessing-the-kernel" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>The HydeKernel It is stored as a singleton in this class, and is bound into the
+Laravel Application Service Container, and can be accessed in a few ways.</p>
+<p>Commonly, you'll use the <code>Hyde</code> facade, but you can also use Dependency Injection
+by type-hinting the <code>HydeKernel::class</code>, or use the <code>hyde()</code> function to get the Kernel.</p>
+<p>The Kernel instance is constructed in <code>bootstrap.php</code>, and is available globally as <code>$hyde</code>.</p>
+<p>Here are some examples of how you can call methods on the Kernel. All methods call the same method on the same instance, so it's just a matter of preference.</p>
+<pre><code class="language-php">use Hyde\Hyde;
+use Hyde\Foundation\HydeKernel;
+
+Hyde::version();
+Hyde::kernel()-&gt;version();
+HydeKernel::getInstance()-&gt;version();
+app(HydeKernel::class)-&gt;version();
+hyde()-&gt;version();
+</code></pre>
+<h2>The kernel lifecycle<a id="the-kernel-lifecycle" href="#the-kernel-lifecycle" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Whenever we talk about the kernel being &quot;booted&quot; we are talking about the kernel's role in the autodiscovery process.</p>
+<p>You can read all about it in the <a href="autodiscovery">Autodiscovery Documentation</a>.</p>
+<h2>API Reference<a id="api-reference" href="#api-reference" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>Since the most common way to interact with the kernel is through the Hyde facade, we will use that for the examples.
+But you could just as well chain the methods on the accessed kernel singleton instance if you wanted.</p>
+<section id="hyde-kernel-base-methods">
+<!-- Start generated docs for Hyde\Foundation\HydeKernel -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:09:45 in 2.53ms -->
+<h4><code>version()</code><a id="version" href="#version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::version(): string
+</code></pre>
+<h4><code>__construct()</code><a id="construct" href="#construct" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+$hyde = new HydeKernel(string $basePath): void
+</code></pre>
+<h4><code>features()</code><a id="features" href="#features" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::features(): Hyde\Facades\Features
+</code></pre>
+<h4><code>hasFeature()</code><a id="hasfeature" href="#hasfeature" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::hasFeature(string $feature): bool
+</code></pre>
+<h4><code>toArray()</code><a id="toarray" href="#toarray" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Get the instance as an array.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::toArray(): array&lt;TKey, TValue&gt;
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\HydeKernel -->
+</section>
+<section id="hyde-kernel-foundation-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:14:55 in 0.06ms -->
+<h4><code>files()</code><a id="files" href="#files" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::files(): \Hyde\Foundation\Kernel\FileCollection&lt;string, \Hyde\Support\Filesystem\ProjectFile&gt;
+</code></pre>
+<h4><code>pages()</code><a id="pages" href="#pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::pages(): \Hyde\Foundation\Kernel\PageCollection&lt;string, \Hyde\Pages\Concerns\HydePage&gt;
+</code></pre>
+<h4><code>routes()</code><a id="routes" href="#routes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::routes(): \Hyde\Foundation\Kernel\RouteCollection&lt;string, \Hyde\Support\Models\Route&gt;
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
+</section>
+<section id="hyde-kernel-string-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.07ms -->
+<h4><code>makeTitle()</code><a id="maketitle" href="#maketitle" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::makeTitle(string $value): string
+</code></pre>
+<h4><code>normalizeNewlines()</code><a id="normalizenewlines" href="#normalizenewlines" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::normalizeNewlines(string $string): string
+</code></pre>
+<h4><code>stripNewlines()</code><a id="stripnewlines" href="#stripnewlines" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::stripNewlines(string $string): string
+</code></pre>
+<h4><code>trimSlashes()</code><a id="trimslashes" href="#trimslashes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::trimSlashes(string $string): string
+</code></pre>
+<h4><code>markdown()</code><a id="markdown" href="#markdown" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::markdown(string $text, bool $normalizeIndentation): Illuminate\Support\HtmlString
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
+</section>
+<section id="hyde-kernel-hyperlink-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
+<h4><code>formatLink()</code><a id="formatlink" href="#formatlink" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::formatLink(string $destination): string
+</code></pre>
+<h4><code>relativeLink()</code><a id="relativelink" href="#relativelink" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::relativeLink(string $destination): string
+</code></pre>
+<h4><code>mediaLink()</code><a id="medialink" href="#medialink" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::mediaLink(string $destination, bool $validate): string
+</code></pre>
+<h4><code>asset()</code><a id="asset" href="#asset" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::asset(string $name, bool $preferQualifiedUrl): string
+</code></pre>
+<h4><code>url()</code><a id="url" href="#url" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::url(string $path): string
+</code></pre>
+<h4><code>hasSiteUrl()</code><a id="hassiteurl" href="#hassiteurl" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::hasSiteUrl(): bool
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
+</section>
+<section id="hyde-kernel-filesystem-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.10ms -->
+<h4><code>filesystem()</code><a id="filesystem" href="#filesystem" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::filesystem(): Hyde\Foundation\Kernel\Filesystem
+</code></pre>
+<h4><code>path()</code><a id="path" href="#path" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::path(string $path): string
+</code></pre>
+<h4><code>vendorPath()</code><a id="vendorpath" href="#vendorpath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::vendorPath(string $path, string $package): string
+</code></pre>
+<h4><code>mediaPath()</code><a id="mediapath" href="#mediapath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::mediaPath(string $path): string
+</code></pre>
+<h4><code>sitePath()</code><a id="sitepath" href="#sitepath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::sitePath(string $path): string
+</code></pre>
+<h4><code>siteMediaPath()</code><a id="sitemediapath" href="#sitemediapath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::siteMediaPath(string $path): string
+</code></pre>
+<h4><code>pathToAbsolute()</code><a id="pathtoabsolute" href="#pathtoabsolute" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::pathToAbsolute(array|string $path): array|string
+</code></pre>
+<h4><code>pathToRelative()</code><a id="pathtorelative" href="#pathtorelative" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::pathToRelative(string $path): string
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
+</section>
+<section id="hyde-kernel-kernel-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
+<h4><code>getInstance()</code><a id="getinstance" href="#getinstance" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getInstance(): Hyde\Foundation\HydeKernel
+</code></pre>
+<h4><code>setInstance()</code><a id="setinstance" href="#setinstance" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::setInstance(Hyde\Foundation\HydeKernel $instance): void
+</code></pre>
+<h4><code>getBasePath()</code><a id="getbasepath" href="#getbasepath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getBasePath(): string
+</code></pre>
+<h4><code>setBasePath()</code><a id="setbasepath" href="#setbasepath" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::setBasePath(string $basePath): void
+</code></pre>
+<h4><code>getSourceRoot()</code><a id="getsourceroot" href="#getsourceroot" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getSourceRoot(): string
+</code></pre>
+<h4><code>setSourceRoot()</code><a id="setsourceroot" href="#setsourceroot" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::setSourceRoot(string $sourceRoot): void
+</code></pre>
+<h4><code>getOutputDirectory()</code><a id="getoutputdirectory" href="#getoutputdirectory" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getOutputDirectory(): string
+</code></pre>
+<h4><code>setOutputDirectory()</code><a id="setoutputdirectory" href="#setoutputdirectory" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::setOutputDirectory(string $outputDirectory): void
+</code></pre>
+<h4><code>getMediaDirectory()</code><a id="getmediadirectory" href="#getmediadirectory" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getMediaDirectory(): string
+</code></pre>
+<h4><code>setMediaDirectory()</code><a id="setmediadirectory" href="#setmediadirectory" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::setMediaDirectory(string $mediaDirectory): void
+</code></pre>
+<h4><code>getMediaOutputDirectory()</code><a id="getmediaoutputdirectory" href="#getmediaoutputdirectory" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getMediaOutputDirectory(): string
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
+</section>
+<section id="hyde-kernel-extensions-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
+<h4><code>registerExtension()</code><a id="registerextension" href="#registerextension" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Register a HydePHP extension within the HydeKernel.</p>
+<p>Typically, you would call this method in the register method of a service provider. If your package uses the standard Laravel (Composer) package discovery feature, the extension will automatically be enabled when the package is installed.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::registerExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): void
+</code></pre>
+<h4><code>getExtension()</code><a id="getextension" href="#getextension" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Get the singleton instance of the specified extension.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getExtension(class-string&amp;lt;T&amp;gt; $extension): T
+</code></pre>
+<h4><code>hasExtension()</code><a id="hasextension" href="#hasextension" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Determine if the specified extension is registered.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::hasExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): bool
+</code></pre>
+<h4><code>getExtensions()</code><a id="getextensions" href="#getextensions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getExtensions(): array&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;
+</code></pre>
+<h4><code>getRegisteredExtensions()</code><a id="getregisteredextensions" href="#getregisteredextensions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getRegisteredExtensions(): array&lt;class-string&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;&gt;
+</code></pre>
+<h4><code>getRegisteredPageClasses()</code><a id="getregisteredpageclasses" href="#getregisteredpageclasses" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>No description provided.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::getRegisteredPageClasses(): array&lt;class-string&lt;\Hyde\Pages\Concerns\HydePage&gt;&gt;
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
+</section>
+<section id="hyde-kernel-view-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.06ms -->
+<h4><code>shareViewData()</code><a id="shareviewdata" href="#shareviewdata" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Share data for the page being rendered.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::shareViewData(Hyde\Pages\Concerns\HydePage $page): void
+</code></pre>
+<h4><code>currentRouteKey()</code><a id="currentroutekey" href="#currentroutekey" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Get the route key for the page being rendered.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::currentRouteKey(): string
+</code></pre>
+<h4><code>currentRoute()</code><a id="currentroute" href="#currentroute" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Get the route for the page being rendered.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::currentRoute(): Hyde\Support\Models\Route
+</code></pre>
+<h4><code>currentPage()</code><a id="currentpage" href="#currentpage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Get the page being rendered.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::currentPage(): Hyde\Pages\Concerns\HydePage
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
+</section>
+<section id="hyde-kernel-boot-methods">
+<!-- Start generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
+<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
+<h4><code>isBooted()</code><a id="isbooted" href="#isbooted" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Determine if the Kernel has booted.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::isBooted(): bool
+</code></pre>
+<h4><code>boot()</code><a id="boot" href="#boot" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Boot the Hyde Kernel and run the Auto-Discovery Process.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+Hyde::boot(): void
+</code></pre>
+<h4><code>booting()</code><a id="booting" href="#booting" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Register a new boot listener.</p>
+<p>Your callback will be called before the kernel is booted. You can use this to register your own routes, pages, etc. The kernel instance will be passed to your callback.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
+Hyde::booting(callable(\Hyde\Foundation\HydeKernel): void): void
+</code></pre>
+<h4><code>booted()</code><a id="booted" href="#booted" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>Register a new &quot;booted&quot; listener.</p>
+<p>Your callback will be called after the kernel is booted. You can use this to run any logic after discovery has completed. The kernel instance will be passed to your callback.</p>
+<pre><code class="language-php">// torchlight! {&quot;lineNumbers&quot;: false}
+/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
+Hyde::booted(callable(\Hyde\Foundation\HydeKernel): void): void
+</code></pre>
+<!-- End generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
+</section>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         
