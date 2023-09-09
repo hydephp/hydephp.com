@@ -8,6 +8,10 @@ on:
 
 jobs:
   build:
+    environment: 
+      name: production
+      url: https://hydephp.com
+    concurrency: production
 
     runs-on: ubuntu-latest
 
