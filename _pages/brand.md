@@ -17,9 +17,5 @@ By using any of these assets you agree to these terms. But as long as common sen
 
 ## Logo files
 
-These are the files for the HydePHP Hat Logo. There are two variants, a standard version that is fit to the icon, and a masked version that has padding designed for rounded cropping.
-
-### Standard version
-
-### Masked version
+These are the files for the HydePHP Hat Logo.
 
