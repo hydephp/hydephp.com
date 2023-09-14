@@ -19,3 +19,4 @@ By using any of these assets you agree to these terms. But as long as common sen
 
 These are the files for the HydePHP Hat Logo.
 
+[Blade]: @include('components.logo-grid')
