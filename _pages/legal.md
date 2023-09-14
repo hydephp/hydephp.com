@@ -31,6 +31,9 @@ for more information on how they handle data.
 Hyde has adopted the Contributor Covenant Code of Conduct,
 which you can at [hydephp.com/code-of-conduct](code-of-conduct)
 
+## Contact Information
+
+Please visit [hydephp.com/contact](contact) to learn how to contact us, or just send an email at hello@hydephp.com to say hi!
 
 ## License and Copyright
 
