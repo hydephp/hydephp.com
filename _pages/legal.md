@@ -29,7 +29,7 @@ for more information on how they handle data.
 ## Community Guidelines and Code of Conduct
 
 Hyde has adopted the Contributor Covenant Code of Conduct,
-which you can [read on GitHub](https://github.com/hydephp/hyde/blob/master/.github/CODE_OF_CONDUCT.md).
+which you can at [hydephp.com/code-of-conduct](code-of-conduct)
 
 
 ## License and Copyright
