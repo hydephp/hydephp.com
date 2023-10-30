@@ -318,7 +318,9 @@ While Hyde offers some support for front matter within Blade files, most of the 
 BladeMatter currently does not support multidimensional arrays or multi-line directives as the data is statically parsed.</p>
 <p>To create BladeMatter, you simply use the default Laravel Blade <code>@php</code> directive to declare a variable in the template.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">BladeMatter Demo</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div></code></pre>
-<p>It will then be available through the global <code>$page</code> variable, <code>$page-&gt;matter('title')</code>.</p>
+<p>It will then be available through the global <code>$page</code> variable, <code>$page-&gt;matter('title')</code>.
+Hyde will of course also use the data for contextual autoconfiguration in the same way it would with Markdown and use the value as the page title.</p>
+<p>Another idea is to use <code>@php($navigation = ['hidden' =&gt; true])</code> if you want to hide a page from the navigation. The opportunities are limitless!</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
