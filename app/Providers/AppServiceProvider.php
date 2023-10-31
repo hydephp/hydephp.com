@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        $this->addRedirect(tap(new Redirect('blog', 'posts'), function (Redirect $redirect): void {
+        $this->addRedirect(tap(new Redirect('blog', 'posts', false), function (Redirect $redirect): void {
             $redirect->navigation = new NavigationData('', 0, true);
         }));
     }
