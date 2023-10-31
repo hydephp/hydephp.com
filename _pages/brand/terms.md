@@ -1,4 +1,9 @@
-**HydePHP Brand Assets Usage Guidelines and Terms**
+---
+navigation.hidden: true
+title: Brand Assets Terms
+---
+
+## HydePHP Brand Assets Usage Guidelines and Terms
 
 Thank you for your interest in using HydePHP's brand assets. HydePHP is an open-source and nonprofit software, and we appreciate your support in adhering to the following guidelines and terms to ensure the responsible and respectful use of our brand assets.
 
