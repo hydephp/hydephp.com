@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use Hyde;
+use Hyde\Support\Models\Redirect;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +21,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $this->addRedirect(new Redirect('blog', 'posts'));
+    }
+
+    protected function addRedirect(Redirect $redirect): void
+    {
+        Hyde::pages()->addPage($redirect);
+        Hyde::routes()->addRoute($redirect->getRoute());
     }
 }
