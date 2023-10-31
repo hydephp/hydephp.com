@@ -109,14 +109,16 @@ return [
     |
     */
 
-    // Should the RSS feed be generated?
-    'generate_rss_feed' => true,
+    'rss' => [
+        // Should the RSS feed be generated?
+        'enabled' => true,
 
-    // What filename should the RSS file use?
-    'rss_filename' => 'feed.xml',
+        // What filename should the RSS file use?
+        'filename' => 'feed.xml',
 
-    // The channel description. By default this is "Site Name + RSS Feed".
-    // 'rss_description' => '',
+        // The channel description.
+        'description' => env('SITE_NAME', 'HydePHP').' RSS Feed',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -428,9 +430,27 @@ return [
     */
 
     'server' => [
+        // The default port the preview is served on
         'port' => env('SERVER_PORT', 8080),
+
+        // The default host the preview is served on
         'host' => env('SERVER_HOST', 'localhost'),
-        'dashboard' => env('SERVER_DASHBOARD', true),
+
+        // Should preview pages be saved to the output directory?
+        'save_preview' => true,
+
+        // Configure the realtime compiler dashboard
+        'dashboard' => [
+            // Should the realtime compiler dashboard be enabled?
+            'enabled' => env('SERVER_DASHBOARD', true),
+
+            // Can the dashboard make edits to the project file system?
+            'interactive' => true,
+
+            // Should the dashboard show tips?
+            'tips' => true,
+        ],
+
     ],
 
     /*
