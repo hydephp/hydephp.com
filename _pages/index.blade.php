@@ -108,73 +108,8 @@
             {{--            </svg>--}}
             <!-- END HERO SVG IMAGE -->
 
-            <!-- Display the countdown timer in an element -->
-            <aside id="countdown-container">
-                <p id="countdown"></p>
-                <p id="countdown-body">
-                    HydePHP v1.0 is released! 🎉
-                </p>
-                <p id="countdown-footer" class="mt-3">
-                    <a href="posts/announcing-the-first-release-of-hydephp" class="text-indigo-600">Read the announcement!</a>
-                </p>
-            </aside>
+            @include('components.carousel')
 
-            <style>
-                /* Style the countdown timer */
-                #countdown {
-                    font-size: 36px;
-                    font-weight: bold;
-                }
-
-                #countdown-body {
-                    font-size: 36px;
-                    font-weight: bold;
-                }
-
-                /* Add a background color and some padding around the element */
-                #countdown-container {
-                    background-color: #f1f1f1;
-                    padding: 20px;
-                    border: 1px solid #d4d4d4;
-                }
-
-
-                @media (min-width: 1280px) {
-                    #countdown {
-                        font-size: 40px;
-                    }
-
-                    #countdown-body {
-                        font-size: 34px;
-                    }
-                }
-
-                @media (min-width: 1024px) {
-                    #countdown-parent {
-                        margin-right: 30px;
-                    }
-                }
-
-                @media (max-width: 768px) {
-                    #countdown-parent {
-                        align-items: center;
-                        padding: 0 20px;
-                    }
-                }
-
-                @media (max-width: 640px) {
-                    #countdown {
-                        font-size: 24px;
-                        font-weight: bold;
-                    }
-
-                    #countdown-body {
-                        font-size: 16px;
-                        font-weight: bold;
-                    }
-                }
-
-            </style>
         </div>
     </div>
     <!-- CURVED SVG BORDER -->
