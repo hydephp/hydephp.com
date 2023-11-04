@@ -229,209 +229,33 @@
     </section>
 </main>
 <script>
-    // Title
-    const fmTitle = document.getElementById('fmTitle');
-    const resultTitle = document.getElementById('resultTitle');
-    const fileLabel = document.querySelectorAll('.file-label-result');
+    function registerMirror(sourceId, targetId, handler = function (source, target) {
+        target.innerText = source.innerText;
+    }) {
+        const source = document.getElementById(sourceId);
+        const target = document.getElementById(targetId);
 
-    fmTitle.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultTitle.innerText = fmTitle.innerText;
-        // If title is empty, then we add a placeholder
-        if (resultTitle.innerText === '') {
-            resultTitle.innerText = 'Write a title!';
-        }
-
-        fileLabel.forEach(function(label) {
-            // Update the file label to be kebab version of the title
-            let fileName = fmTitle.innerText.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
-            // Remove any dashes from the start or end of the string
-            fileName = fileName.replace(/^-+|-+$/g, '');
-            label.innerText = fileName;
-            // If title is empty, then we add a placeholder
-            if (label.innerText === '') {
-                label.innerText = 'hello-world';
+        source.addEventListener('input', function(event) {
+            // if insertParagraph is true, then the user pressed enter
+            if (event.inputType === 'insertParagraph') {
+                // We don't want to insert a paragraph, so we remove it
+                document.execCommand('undo');
             }
+
+            // Run the handler
+            handler(source, target);
         });
-    });
-
-    // Description
-    const fmDescription = document.getElementById('fmDescription');
-
-    fmDescription.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-
-        // Description is not rendered on this page
-    });
-
-    // Category
-    const fmCategory = document.getElementById('fmCategory');
-    const resultCategory = document.getElementById('resultCategory');
-
-    fmCategory.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultCategory.innerText = fmCategory.innerText;
-        // If category is empty, then we add a placeholder
-        if (resultCategory.innerText === '') {
-            resultCategory.innerText = 'demo';
-        }
-    });
-
-    // Author
-    const fmAuthor = document.getElementById('fmAuthor');
-    const resultAuthor = document.getElementById('resultAuthor');
-    const resultAuthorParent = document.getElementById('resultAuthorParent');
-    const resultAuthorAlt = document.getElementById('resultAuthorAlt');
-
-    fmAuthor.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-
-        let displayValue = fmAuthor.innerText;
-
-        // if text is mr_hyde then we make the parent visible, and the alt span invisible
-        if (fmAuthor.innerText === 'mr_hyde') {
-            resultAuthorParent.style.display = 'inline';
-            resultAuthorAlt.style.display = 'none';
-            displayValue = 'Mr. Hyde';
-        } else {
-            resultAuthorParent.style.display = 'none';
-            resultAuthorAlt.style.display = 'inline';
-        }
-
-        resultAuthor.innerText = displayValue;
-        resultAuthorParent.href = displayValue;
-        resultAuthorAlt.innerText = displayValue;
-        // If author is empty, then we add a placeholder
-        if (fmAuthor.innerText === '') {
-            resultAuthorAlt.innerText = 'Guest';
-        }
-    });
-
-    // Date
-    const fmDate = document.getElementById('fmDate');
-    const resultDate = document.getElementById('resultDate');
-
-    fmDate.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-
-        // If date is empty, then we add a placeholder
-        if (resultDate.innerText === '') {
-            resultDate.innerText = 'Mar 14th, 2023';
-        }
-
-        // Format according to M jS, Y (with ordinal suffix
-        let date = new Date(fmDate.innerText);
-        let options = { year: 'numeric', month: 'short', day: 'numeric' };
-        resultDate.innerText = date.toLocaleDateString('en-US', options);
-    });
-
-    // Subheading
-    const mdSubheading = document.getElementById('mdSubheading');
-    const resultSubheading = document.getElementById('resultSubheading');
-
-    mdSubheading.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultSubheading.innerText = mdSubheading.innerText;
-        // If subheading is empty, then we add a placeholder
-        if (resultSubheading.innerText === '') {
-            resultSubheading.innerText = 'Write something awesome.';
-        }
-    });
-
-    // L1
-    const mdL1 = document.getElementById('mdL1');
-    const resultL1 = document.getElementById('resultL1');
-
-    mdL1.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultL1.innerText = mdL1.innerText;
-        // If L1 is empty, then we add a placeholder
-        if (resultL1.innerText === '') {
-            resultL1.innerText = 'Lorem markdownum Austri occupat redire sum sponte arcus,';
-        }
-    });
-
-    // Link
-    const mdLink = document.getElementById('mdLink');
-    const resultLink = document.getElementById('resultLink');
-
-    mdLink.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultLink.innerText = mdLink.innerText;
-        // If link is empty, then we add a placeholder
-        if (resultLink.innerText === '') {
-            resultLink.innerText = 'ferae';
-        }
-    });
-
-    // L2
-    const mdL2 = document.getElementById('mdL2');
-    const resultL2 = document.getElementById('resultL2');
-
-    mdL2.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultL2.innerText = mdL2.innerText;
-        // If L2 is empty, then we add a placeholder
-        if (resultL2.innerText === '') {
-            resultL2.innerText = 'longo,';
-        }
-    });
-
-    // L3
-    const mdL3 = document.getElementById('mdL3');
-    const resultL3 = document.getElementById('resultL3');
-
-    mdL3.addEventListener('input', function(event) {
-        // if insertParagraph is true, then the user pressed enter
-        if (event.inputType === 'insertParagraph') {
-            // We don't want to insert a paragraph, so we remove it
-            document.execCommand('undo');
-        }
-        resultL3.innerText = mdL3.innerText;
-        // If L3 is empty, then we add a placeholder
-        if (resultL3.innerText === '') {
-            resultL3.innerText = 'timuit magnanimus aera, violentam. Tractu ter.';
-        }
-    });
+    }
 
     // On hover of a field, highlight the corresponding result
     function registerHover(source, target) {
+        if (typeof target === 'string') {
+            target = document.getElementById(target);
+        }
+        if (typeof source === 'string') {
+            source = document.getElementById(source);
+        }
+
         source.addEventListener('mouseover', function() {
             target.classList.add('highlight');
         });
@@ -441,11 +265,98 @@
         });
     }
 
-    registerHover(fmTitle, resultTitle);
-    registerHover(fmCategory, resultCategory);
-    registerHover(fmAuthor, resultAuthor);
-    registerHover(fmDate, resultDate);
-    registerHover(mdSubheading, resultSubheading);
+    registerMirror('fmTitle', 'resultTitle', function(source, target) {
+        target.innerText = source.innerText;
+        if (target.innerText === '') {
+            target.innerText = 'Write a title!';
+        }
+
+        document.querySelectorAll('.file-label-result').forEach(function(label) {
+            // Update the file label to be kebab version of the title
+            let fileName = source.innerText.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
+            // Remove any dashes from the start or end of the string
+            fileName = fileName.replace(/^-+|-+$/g, '');
+            label.innerText = fileName;
+            if (label.innerText === '') {
+                label.innerText = 'hello-world';
+            }
+        });
+    });
+
+    registerMirror('fmDescription', 'void', function () {
+        // Description is not rendered on this page (but we may want to add a popup showing the index page excerpt on hover?)
+    });
+
+    registerMirror('fmCategory', 'resultCategory', function(source, target) {
+        target.innerText = source.innerText;
+        if (target.innerText === '') {
+            target.innerText = 'demo';
+        }
+    });
+
+    registerMirror('fmAuthor', 'resultAuthor', function (source, target) {
+        const resultAuthorParent = document.getElementById('resultAuthorParent');
+        const resultAuthorAlt = document.getElementById('resultAuthorAlt');
+
+        let displayValue = source.innerText;
+
+        // if text is mr_hyde then we make the parent visible, and the alt span invisible
+        if (source.innerText === 'mr_hyde') {
+            resultAuthorParent.style.display = 'inline';
+            resultAuthorAlt.style.display = 'none';
+            displayValue = 'Mr. Hyde';
+        } else {
+            resultAuthorParent.style.display = 'none';
+            resultAuthorAlt.style.display = 'inline';
+        }
+
+        target.innerText = displayValue;
+        resultAuthorParent.href = displayValue;
+        resultAuthorAlt.innerText = displayValue;
+        if (source.innerText === '') {
+            resultAuthorAlt.innerText = 'Guest';
+        }
+    });
+
+    registerMirror('fmDate', 'resultDate', function(source, target) {
+        if (target.innerText === '') {
+            target.innerText = 'Mar 14th, 2023';
+        }
+
+        let date = new Date(source.innerText);
+        let options = { year: 'numeric', month: 'short', day: 'numeric' };
+        target.innerText = date.toLocaleDateString('en-US', options);
+    });
+
+    registerMirror('mdSubheading', 'resultSubheading', function(source, target) {
+        target.innerText = source.innerText;
+        if (target.innerText === '') {
+            target.innerText = 'Write something awesome.';
+        }
+    });
+
+    registerMirror('mdL1', 'resultL1', function(source, target) {
+        target.innerText = source.innerText;
+        if (target.innerText === '') {
+            target.innerText = 'Lorem markdownum Austri occupat redire sum sponte arcus,';
+        }
+    });
+
+    registerMirror('mdLink', 'resultLink', function(source, target) {
+        target.innerText = source.innerText;
+        if (target.innerText === '') {
+            target.innerText = 'ferae';
+        }
+    });
+
+    registerMirror('mdL2', 'resultL2');
+    registerMirror('mdL3', 'resultL3');
+
+    registerHover('fmTitle', 'resultTitle');
+    registerHover('fmCategory', 'resultCategory');
+    registerHover('fmAuthor', 'resultAuthor');
+    registerHover('fmDate', 'resultDate');
+    registerHover('mdSubheading', 'resultSubheading');
 </script>
 </body>
 </html>
