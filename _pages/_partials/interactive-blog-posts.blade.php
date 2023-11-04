@@ -9,6 +9,7 @@
         #argon-df2fd49 {
             height: fit-content;
             background: white;
+
         }
         #argon-df2fd49 .argon-header {
             padding: 6px 4px;
@@ -22,6 +23,8 @@
         #argon-21119f2 {
             z-index: 1;
             font-size: 50%;
+            width: 480px;
+            overflow: hidden;
         }
         #argon-21119f2 header {
             padding: 4px 4px;
@@ -95,7 +98,7 @@
             <h1 style="font-size: 10px;">_posts/<span class="interactive file-label-result">hello-world</span>.md</h1>
         </header>
         <article>
-            <pre><code data-theme="material-theme-palenight" data-lang="markdown" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmTitle" contenteditable="">Hello World!</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDescription" contenteditable="" style="max-width: 42ch; display: inline-block; overflow-x: clip; text-overflow: ellipsis;">Short excerpt for previews and meta tags</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmCategory" contenteditable="">demo</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmAuthor" contenteditable="">mr_hyde</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDate" contenteditable="">2023-03-14 09:16</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;"><span class="interactive" id="mdSubheading" contenteditable="">Write something awesome.</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem markdownum Austri occupat redire sum sponte arcus,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">ferae</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://www.example.com/hello-world</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> longo,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">timuit magnanimus aera, violentam. Tractu ter.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">1.</span><span style="color: #A6ACCD;"> Pelopeia et terras iussa cavernas</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">2.</span><span style="color: #A6ACCD;"> Petit ignoscite ac nuda miserum Tereus</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">3.</span><span style="color: #A6ACCD;"> Tuli facinus Panaque virgo sentire copia</span></div></code></pre>
+            <pre><code data-theme="material-theme-palenight" data-lang="markdown" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmTitle" contenteditable="">Hello World!</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDescription" contenteditable="" style="max-width: 42ch; display: inline-block; overflow-x: clip; text-overflow: ellipsis;">Short excerpt for previews and meta tags</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmCategory" contenteditable="">demo</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmAuthor" contenteditable="">mr_hyde</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDate" contenteditable="">2023-03-14 09:16</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;"><span class="interactive" id="mdSubheading" contenteditable="">Write something awesome.</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;"><span class="interactive" id="mdL1" contenteditable="">Lorem markdownum Austri occupat redire sum sponte arcus,</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;"><span class="interactive" id="mdLink" contenteditable="">ferae</span></span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://www.example.com/hello-world</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> <span class="interactive" id="mdL2" contenteditable="">longo,</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;"><span class="interactive" id="mdL3" contenteditable="">timuit magnanimus aera, violentam. Tractu ter.</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">1.</span><span style="color: #A6ACCD;"> Pelopeia et terras iussa cavernas</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">2.</span><span style="color: #A6ACCD;"> Petit ignoscite ac nuda miserum Tereus</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">3.</span><span style="color: #A6ACCD;"> Tuli facinus Panaque virgo sentire copia</span></div></code></pre>
         </article>
     </section>
 
@@ -188,8 +191,8 @@
                                 </div>
                             </header>
                             <div aria-label="Article body" itemprop="articleBody">
-                                <h2>Write something awesome.</h2>
-                                <p>Lorem markdownum Austri occupat redire sum sponte arcus, <a href="#https://www.example.com/hello-world">ferae</a> longo, timuit magnanimus aera, violentam. Tractu ter.</p>
+                                <h2><span class="interactive" id="resultSubheading">Write something awesome.</span></h2>
+                                <p><span class="interactive" id="resultL1">Lorem markdownum Austri occupat redire sum sponte arcus,</span> <a href="#https://www.example.com/hello-world"><span class="interactive" id="resultLink">ferae</span></a> <span class="interactive" id="resultL2">longo,</span> <span class="interactive" id="resultL3">timuit magnanimus aera, violentam. Tractu ter.</span></p>
                                 <ol>
                                     <li>Pelopeia et terras iussa cavernas</li>
                                     <li>Petit ignoscite ac nuda miserum Tereus</li>
@@ -340,6 +343,91 @@
         let date = new Date(fmDate.innerText);
         let options = { year: 'numeric', month: 'short', day: 'numeric' };
         resultDate.innerText = date.toLocaleDateString('en-US', options);
+    });
+
+    // Subheading
+    const mdSubheading = document.getElementById('mdSubheading');
+    const resultSubheading = document.getElementById('resultSubheading');
+
+    mdSubheading.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultSubheading.innerText = mdSubheading.innerText;
+        // If subheading is empty, then we add a placeholder
+        if (resultSubheading.innerText === '') {
+            resultSubheading.innerText = 'Write something awesome.';
+        }
+    });
+
+    // L1
+    const mdL1 = document.getElementById('mdL1');
+    const resultL1 = document.getElementById('resultL1');
+
+    mdL1.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultL1.innerText = mdL1.innerText;
+        // If L1 is empty, then we add a placeholder
+        if (resultL1.innerText === '') {
+            resultL1.innerText = 'Lorem markdownum Austri occupat redire sum sponte arcus,';
+        }
+    });
+
+    // Link
+    const mdLink = document.getElementById('mdLink');
+    const resultLink = document.getElementById('resultLink');
+
+    mdLink.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultLink.innerText = mdLink.innerText;
+        // If link is empty, then we add a placeholder
+        if (resultLink.innerText === '') {
+            resultLink.innerText = 'ferae';
+        }
+    });
+
+    // L2
+    const mdL2 = document.getElementById('mdL2');
+    const resultL2 = document.getElementById('resultL2');
+
+    mdL2.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultL2.innerText = mdL2.innerText;
+        // If L2 is empty, then we add a placeholder
+        if (resultL2.innerText === '') {
+            resultL2.innerText = 'longo,';
+        }
+    });
+
+    // L3
+    const mdL3 = document.getElementById('mdL3');
+    const resultL3 = document.getElementById('resultL3');
+
+    mdL3.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultL3.innerText = mdL3.innerText;
+        // If L3 is empty, then we add a placeholder
+        if (resultL3.innerText === '') {
+            resultL3.innerText = 'timuit magnanimus aera, violentam. Tractu ter.';
+        }
     });
 
     // On hover of a field, highlight the corresponding result
