@@ -82,17 +82,17 @@
     <section class="argon-card text-left shadow-2xl" id="argon-21119f2">
         <header class="argon-card-header">
             <menu> <button class="red"></button> <button class="yellow"></button> <button class="green"></button> </menu>
-            <h1 style="font-size: 10px;">_posts/hello-world.md</h1>
+            <h1 style="font-size: 10px;">_posts/<span class="interactive file-label-result">hello-world</span>.md</h1>
         </header>
         <article>
-            <pre><code data-theme="material-theme-palenight" data-lang="markdown" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Hello World!</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Short post excerpt for previews and meta tags</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">demo</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-03-29 09:16</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem markdownum Austri occupat redire sum sponte arcus,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">ferae</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://www.example.com/hello-world</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> longo,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">timuit magnanimus aera, violentam. Tractu ter.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">1.</span><span style="color: #A6ACCD;"> Pelopeia et terras iussa cavernas</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">2.</span><span style="color: #A6ACCD;"> Petit ignoscite ac nuda miserum Tereus</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">3.</span><span style="color: #A6ACCD;"> Tuli facinus Panaque virgo sentire copia</span></div></code></pre>
+            <pre><code data-theme="material-theme-palenight" data-lang="markdown" class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;"><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmTitle" contenteditable="">Hello World!</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDescription" contenteditable="" style="max-width: 42ch; display: inline-block; overflow-x: clip; text-overflow: ellipsis;">Short excerpt for previews and meta tags</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmCategory" contenteditable="">demo</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmAuthor" contenteditable="">mr_hyde</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;"><span class="interactive" id="fmDate" contenteditable="">2023-03-14 09:16</span></span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem markdownum Austri occupat redire sum sponte arcus,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">ferae</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://www.example.com/hello-world</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> longo,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">timuit magnanimus aera, violentam. Tractu ter.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">1.</span><span style="color: #A6ACCD;"> Pelopeia et terras iussa cavernas</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">16</span><span style="color: #89DDFF;">2.</span><span style="color: #A6ACCD;"> Petit ignoscite ac nuda miserum Tereus</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">17</span><span style="color: #89DDFF;">3.</span><span style="color: #A6ACCD;"> Tuli facinus Panaque virgo sentire copia</span></div></code></pre>
         </article>
     </section>
 
     <section class="argon-card shadow-2xl" id="argon-df2fd49" style="margin-left: -2rem">
         <header class="argon-card-header">
             <menu> <button class="red"></button> <button class="yellow"></button> <button class="green"></button> </menu>
-            <h1 style="font-size: 10px;">_site/posts/hello-world.html</h1>
+            <h1 style="font-size: 10px;">_site/posts/<span class="interactive file-label-result">hello-world</span>.html</h1>
         </header>
         <figure id="result" style="margin: 0; background: white;">
             <div>
@@ -165,15 +165,16 @@
                     <section id="content" class="mx-auto max-w-7xl py-8 px-8" style="background: white;">
                         <article aria-label="Article" id="hello-world" itemscope itemtype="https://schema.org/Article" class="post-article mx-auto prose dark:prose-invert">
                             <header aria-label="Header section" role="doc-pageheader">
-                                <h1 itemprop="headline" class="mb-4">Hello World!</h1>
+                                <h1 itemprop="headline" class="mb-4"><span class="interactive" id="resultTitle">Hello World!</span></h1>
                                 <div id="byline" aria-label="About the post" role="doc-introduction">
-                                    Posted <time itemprop="dateCreated datePublished" datetime="2022-03-29T09:16:00+00:00" title="Tuesday Mar 29th, 2022, at 9:16am">Mar 29th, 2022</time> by author
+                                    Posted <time itemprop="dateCreated datePublished" datetime="2023-03-14T09:16:00+00:00" title="Tuesday Mar 14th, 2023, at 9:16am"><span class="interactive" id="resultDate">Mar 14th, 2023</span></time> by author
                                     <address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
-                                        <a href="#https://hydephp.com" rel="author" itemprop="url" aria-label="The author's website">
-                                            <span itemprop="name" aria-label="The author's name" title="@mr_hyde">Mr. Hyde</span>
+                                        <a href="#https://hydephp.com" rel="author" itemprop="url" aria-label="The author's website" class="interactive" id="resultAuthorParent">
+                                            <span itemprop="name" aria-label="The author's name" title="@mr_hyde" class="interactive" id="resultAuthor">Mr. Hyde</span>
                                         </a>
+                                        <span class="interactive" id="resultAuthorAlt"></span>
                                     </address>
-                                    in the category "demo"
+                                    in the category "<span class="interactive" id="resultCategory">demo</span>"
                                 </div>
                             </header>
                             <div aria-label="Article body" itemprop="articleBody">
@@ -214,5 +215,122 @@
         </figure>
     </section>
 </main>
+<script>
+    // Title
+    const fmTitle = document.getElementById('fmTitle');
+    const resultTitle = document.getElementById('resultTitle');
+    const fileLabel = document.querySelectorAll('.file-label-result');
+
+    fmTitle.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultTitle.innerText = fmTitle.innerText;
+        // If title is empty, then we add a placeholder
+        if (resultTitle.innerText === '') {
+            resultTitle.innerText = 'Write a title!';
+        }
+
+        fileLabel.forEach(function(label) {
+            // Update the file label to be kebab version of the title
+            let fileName = fmTitle.innerText.toLowerCase().replace(/[^a-z0-9-_]/g, '-');
+            // Remove any dashes from the start or end of the string
+            fileName = fileName.replace(/^-+|-+$/g, '');
+            label.innerText = fileName;
+            // If title is empty, then we add a placeholder
+            if (label.innerText === '') {
+                label.innerText = 'hello-world';
+            }
+        });
+    });
+
+    // Description
+    const fmDescription = document.getElementById('fmDescription');
+
+    fmDescription.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+
+        // Description is not rendered on this page
+    });
+
+    // Category
+    const fmCategory = document.getElementById('fmCategory');
+    const resultCategory = document.getElementById('resultCategory');
+
+    fmCategory.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+        resultCategory.innerText = fmCategory.innerText;
+        // If category is empty, then we add a placeholder
+        if (resultCategory.innerText === '') {
+            resultCategory.innerText = 'demo';
+        }
+    });
+
+    // Author
+    const fmAuthor = document.getElementById('fmAuthor');
+    const resultAuthor = document.getElementById('resultAuthor');
+    const resultAuthorParent = document.getElementById('resultAuthorParent');
+    const resultAuthorAlt = document.getElementById('resultAuthorAlt');
+
+    fmAuthor.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+
+        let displayValue = fmAuthor.innerText;
+
+        // if text is mr_hyde then we make the parent visible, and the alt span invisible
+        if (fmAuthor.innerText === 'mr_hyde') {
+            resultAuthorParent.style.display = 'inline';
+            resultAuthorAlt.style.display = 'none';
+            displayValue = 'Mr. Hyde';
+        } else {
+            resultAuthorParent.style.display = 'none';
+            resultAuthorAlt.style.display = 'inline';
+        }
+
+        resultAuthor.innerText = displayValue;
+        resultAuthorParent.href = displayValue;
+        resultAuthorAlt.innerText = displayValue;
+        // If author is empty, then we add a placeholder
+        if (fmAuthor.innerText === '') {
+            resultAuthorAlt.innerText = 'Guest';
+        }
+    });
+
+    // Date
+    const fmDate = document.getElementById('fmDate');
+    const resultDate = document.getElementById('resultDate');
+
+    fmDate.addEventListener('input', function(event) {
+        // if insertParagraph is true, then the user pressed enter
+        if (event.inputType === 'insertParagraph') {
+            // We don't want to insert a paragraph, so we remove it
+            document.execCommand('undo');
+        }
+
+        // If date is empty, then we add a placeholder
+        if (resultDate.innerText === '') {
+            resultDate.innerText = 'Mar 14th, 2023';
+        }
+
+        // Format according to M jS, Y (with ordinal suffix
+        let date = new Date(fmDate.innerText);
+        let options = { year: 'numeric', month: 'short', day: 'numeric' };
+        resultDate.innerText = date.toLocaleDateString('en-US', options);
+    });
+</script>
 </body>
 </html>
