@@ -109,14 +109,16 @@ return [
     |
     */
 
-    // Should the RSS feed be generated?
-    'generate_rss_feed' => true,
+    'rss' => [
+        // Should the RSS feed be generated?
+        'enabled' => true,
 
-    // What filename should the RSS file use?
-    'rss_filename' => 'feed.xml',
+        // What filename should the RSS file use?
+        'filename' => 'feed.xml',
 
-    // The channel description. By default this is "Site Name + RSS Feed".
-    // 'rss_description' => '',
+        // The channel description.
+        'description' => env('SITE_NAME', 'HydePHP').' RSS Feed',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -215,20 +217,20 @@ return [
     */
 
     'meta' => [
-        Meta::name('author', 'Caen De Silva'),
-        Meta::name('description', 'HydePHP - Elegant and Powerful Static App Builder'),
+        Meta::name('author', 'HydePHP'),
+        Meta::name('description', 'HydePHP - Elegant and Powerful Static Site Generator'),
         Meta::name('keywords', 'HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP'),
         Meta::name('generator', 'HydePHP '.Hyde\Hyde::version()),
         Meta::name('twitter:card', 'summary'),
-        Meta::name('twitter:site', '@hyde_php'),
+        Meta::name('twitter:site', '@HydeFramework'),
         Meta::name('twitter:creator', '@CodeWithCaen'),
-        Meta::name('twitter:title', 'HydePHP - Elegant and Powerful Static App Builder'),
+        Meta::name('twitter:title', 'HydePHP - Elegant and Powerful Static Site Generator'),
         Meta::name('twitter:description', 'Make static websites, blogs, and documentation pages with the tools you already know and love.'),
         Meta::name('twitter:image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
         Meta::property('site_name', env('SITE_NAME', 'HydePHP')),
         Meta::property('url', 'https://hydephp.com/'),
         Meta::property('title', 'HydePHP'),
-        Meta::property('description', 'HydePHP - Elegant and Powerful Static App Builder'),
+        Meta::property('description', 'HydePHP - Elegant and Powerful Static Site Generator'),
         Meta::property('image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
         Meta::property('image:alt', 'GitHub OpenGraph Image'),
     ],
@@ -428,9 +430,27 @@ return [
     */
 
     'server' => [
+        // The default port the preview is served on
         'port' => env('SERVER_PORT', 8080),
+
+        // The default host the preview is served on
         'host' => env('SERVER_HOST', 'localhost'),
-        'dashboard' => env('SERVER_DASHBOARD', true),
+
+        // Should preview pages be saved to the output directory?
+        'save_preview' => true,
+
+        // Configure the realtime compiler dashboard
+        'dashboard' => [
+            // Should the realtime compiler dashboard be enabled?
+            'enabled' => env('SERVER_DASHBOARD', true),
+
+            // Can the dashboard make edits to the project file system?
+            'interactive' => true,
+
+            // Should the dashboard show tips?
+            'tips' => true,
+        ],
+
     ],
 
     /*

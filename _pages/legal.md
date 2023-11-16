@@ -29,8 +29,11 @@ for more information on how they handle data.
 ## Community Guidelines and Code of Conduct
 
 Hyde has adopted the Contributor Covenant Code of Conduct,
-which you can [read on GitHub](https://github.com/hydephp/hyde/blob/master/.github/CODE_OF_CONDUCT.md).
+which you can at [hydephp.com/code-of-conduct](code-of-conduct)
 
+## Contact Information
+
+Please visit [hydephp.com/contact](contact) to learn how to contact us, or just send an email at hello@hydephp.com to say hi!
 
 ## License and Copyright
 
@@ -103,3 +106,7 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 - Gradients by https://uigradients.com/{:rel="nofollow noopener"}
 - The external link icon used on this site is licensed under MIT/Expat and is provided by [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:VisualEditor_-_Icon_-_External-link.svg){:rel="nofollow noopener"}
 - Additional icons provided by Google Material Design under the Apache 2.0 license. https://fonts.google.com/icons?selected=Material+Icons
+
+### Sponsorships and affiliates
+
+- Thank you to [UptimeRobot](https://uptimerobot.com/?rid=33f574d058c2f3) for sponsoring the [HydePHP Status Monitor](https://status.hydephp.com/) page!

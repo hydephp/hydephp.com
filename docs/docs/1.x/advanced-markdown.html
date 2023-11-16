@@ -9,25 +9,25 @@
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/docs/1.x/advanced-markdown.html">
+<link rel="canonical" href="https://hydephp.com/docs/1.x/advanced-markdown">
 <meta name="twitter:title" content="HydePHP - Advanced Markdown">
 <meta property="og:title" content="HydePHP - Advanced Markdown">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="author" content="Caen De Silva">
-<meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta name="author" content="HydePHP">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.0.0-RC.8">
+<meta name="generator" content="HydePHP 1.3.2">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
 <meta property="og:url" content="https://hydephp.com/">
-<meta property="og:description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=f37533a5423dfb7f4e032ce9641ba467">
+    <link rel="stylesheet" href="../../media/app.css?v=3a81ccc194af80d716227db81c0eab04">
 
 
 
@@ -236,6 +236,9 @@
 <li>
 <a href="#raw-html-tags">Raw HTML Tags</a>
 </li>
+<li>
+<a href="#tailwind-typography-prose-classes">Tailwind Typography Prose Classes</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -338,7 +341,7 @@
 </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 prose dark:prose-invert max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
         <h1>Advanced Markdown</h1>
@@ -410,6 +413,12 @@ If you want to allow all arbitrary HTML tags, and understand the risks involved,
 the <code>allow_html</code> option to <code>true</code> in your <code>config/markdown.php</code> file.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/markdown.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">allow_html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
 <p>This will add and configure the <code>DisallowedRawHtml</code> CommonMark extension so that no HTML tags are stripped out.</p>
+<h3>Tailwind Typography Prose Classes<a id="tailwind-typography-prose-classes" href="#tailwind-typography-prose-classes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>HydePHP uses the <a href="https://tailwindcss.com/docs/typography-plugin">Tailwind Typography</a> to style rendered Markdown.
+We do this by adding the <code>.prose</code> CSS class to the HTML elements containing the rendered Markdown, using the built-in Blade components.</p>
+<p>You can easily edit these classes, for example if you want to customize the prose colours, in the <code>config/markdown.php</code> file.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight has-add-lines has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/markdown.php</small><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color:#f07178; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">prose_classes</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">=&gt;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">prose dark:prose-invert</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">,</span><span style="color: #f07178;"> </span></div><div class='line line-add line-has-background' style='background-color: #89DDFF20'><span style="color:#C3E88D; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">prose_classes</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">=&gt;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">prose dark:prose-invert prose-img:inline</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">,</span><span style="color: #C3E88D;"> </span></div></code></pre>
+<p>Please note that if you add any new classes, you may need to recompile your CSS file.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
@@ -431,17 +440,17 @@ the <code>allow_html</code> option to <code>true</code> in your <code>config/mar
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
         aria-label="Toggle search window">
-	<span x-show="! searchWindowOpen">
-		Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
+    <span x-show="! searchWindowOpen">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
                     viewBox="0 0 24 24" width="24" role="presentation">
-			<path d="M0 0h24v24H0z" fill="none"/>
-			<path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-	</span>
+            <path d="M0 0h24v24H0z" fill="none"/>
+            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+    </span>
     <span x-show="searchWindowOpen">
-		<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-			<path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
-		</svg>
-	</span>
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+        </svg>
+    </span>
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"

@@ -9,25 +9,25 @@
 <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/index.html">
+<link rel="canonical" href="https://hydephp.com">
 <meta name="twitter:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="author" content="Caen De Silva">
-<meta name="description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta name="author" content="HydePHP">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.0.0-RC.8">
+<meta name="generator" content="HydePHP 1.3.2">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:site" content="@hyde_php">
+<meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
 <meta property="og:url" content="https://hydephp.com/">
-<meta property="og:description" content="HydePHP - Elegant and Powerful Static App Builder">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=f37533a5423dfb7f4e032ce9641ba467">
+    <link rel="stylesheet" href="media/app.css?v=3a81ccc194af80d716227db81c0eab04">
 
 
 
@@ -149,10 +149,10 @@
                     HydePHP
                 </h1>
                 <small class="relative mb-4  text-xl font-black leading-none  text-black lg:text-2xl xl:text-3xl md:text-left text-center">
-                    The Static Site Generator You've Been Waiting For.
+                    The Static Site Generator You've Been Waiting For, is here.
                 </small>
                 <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
-                src="media/logo.svg?v=6f4d292b092e62c88c7638cb9dfcc2de" alt="HydePHP Logo">
+                     src="media/logo.svg?v=6f4d292b092e62c88c7638cb9dfcc2de" alt="HydePHP Logo">
 
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
@@ -168,56 +168,56 @@
         </div>
         <div id="countdown-parent" class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3 lg:-mt-4">
             <!-- HERO SVG IMAGE -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            
             <!-- END HERO SVG IMAGE -->
 
             <!-- Display the countdown timer in an element -->
             <aside id="countdown-container">
                 <p id="countdown"></p>
                 <p id="countdown-body">
-                    Until HydePHP 1.0 Launch
+                    HydePHP v1.0 is released! 🎉
                 </p>
                 <p id="countdown-footer" class="mt-3">
-                    <a href="posts/announcing-the-first-release-candidate-of-hydephp" class="text-indigo-600">Try the Release Candidate Now!</a>
+                    <a href="posts/announcing-the-first-release-of-hydephp" class="text-indigo-600">Read the announcement!</a>
                 </p>
             </aside>
 
@@ -229,7 +229,7 @@
                 }
 
                 #countdown-body {
-                    font-size: 20px;
+                    font-size: 36px;
                     font-weight: bold;
                 }
 
@@ -247,7 +247,7 @@
                     }
 
                     #countdown-body {
-                        font-size: 24px;
+                        font-size: 34px;
                     }
                 }
 
@@ -277,30 +277,6 @@
                 }
 
             </style>
-
-            <script>
-                const countDownDate = new Date("2023 03 14 20:00 GMT+1").getTime();
-
-                const handler = function () {
-                    const now = new Date().getTime();
-                    const distance = countDownDate - now;
-                    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-                        + minutes + "m " + seconds + "s ";
-
-                    if (distance < 0) {
-                        clearInterval(x);
-                        document.getElementById("demo").innerHTML = "LAUNCHING SOON";
-                    }
-                }, x = setInterval(handler, 1000);
-
-                // Call the function to display the timer on page load
-                handler();
-            </script>
-
         </div>
     </div>
     <!-- CURVED SVG BORDER -->
@@ -332,11 +308,11 @@
 <!-- Features Section -->
 <div class="relative w-full py-20 pb-20 overflow-hidden bg-white md:pt-40 md:pb-64">
     <!-- CURVED SVG BORDER INVERT -->
-    
+
     <svg class="absolute top-0 w-full text-violet-300 fill-current" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 50C309.151 16.667 542.484 0 700 0c157.516 0 390.849 16.667 700 50V0H0v50z"/>
     </svg>
-    
+
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto xl:px-0">
         <header class="mb-8">
             <div class="flex mb-2">
@@ -429,129 +405,133 @@
     </div>
     <!-- Start Testimonials -->
     <section id="testimonials"
-    class="flex items-center justify-center w-full px-8 pt-10 md:pt-16 lg:pt-24 xl:pt-40  xl:px-0">
-    <div class="max-w-6xl mx-auto">
-        <div class="flex-col items-center ">
-            <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
-                <p class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">
-                </p>
-                <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
-                    Testimonials
-                </h2>
-                <p class="my-6 text-xl font-medium text-gray-500">
-                    We are proud to hear that so many people use Hyde to build their websites.
-                    Here are some of our favourite mentions.
-                </p>
-            </div>
-            <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
-                <div class="w-full xl:w-1/2 xl:pr-8">
-                    <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-                        <div class="flex flex-col sm:pr-8">
-                            <div class="relative sm:pl-12">
-                                <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                <path
-                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                            </svg>
-                            <p class="mt-2 text-base text-gray-600 prose">
-                                Caen (<a href="https://twitter.com/CodeWithCaen?ref_src=twsrc%5Etfw">@CodeWithCaen</a>) has made a website for his PHP-based static-site generator.
-                                <br><br>What I&#39;m mostly impressed with is how clean and straightforward the documentation is. Writing good documentation is an art and Caen did an amazing job at it.
-                                ⭐️⭐️⭐️⭐️
-                            </p>
-                        </div>
-                        <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                            <a href="https://twitter.com/SavvasStephnds" rel="author nofollow">@SavvasStephnds</a>
-                            <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw">Via Twitter</a></span>
-                        </h3>
-                        <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
-                    </div>
-                    <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                    src="https://pbs.twimg.com/profile_images/1567450524840075270/tceoqKT2_200x200.png"
-                    alt="Profile image">
-                </blockquote>
-                <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-                    <div class="flex flex-col sm:pr-10">
-                        <div class="relative sm:pl-12">
-                            <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                            <path
-                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                        </svg>
-                        <p class="mt-2 text-base text-gray-600 prose">Holy f. Your project is definitely one of my favorites of the whole <small>[startup]</small> tournament, I constantly keep an eye on the top 50 for it.
-                        </p>
-                    </div>
-                    <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                        Felipe Lecot <span class="mt-1 text-sm leading-5 text-gray-500 ">- Director 
-                            - <a href="https://do2software.com" class="text-indigo-500" rel="author nofollow" title="External website">Do2 Software</a></span>
-                        </h3>
-                        <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
-                    </div>
-                    <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                    alt="">
-                </blockquote>
-            </div>
-            <div class="w-full xl:w-1/2 xl:pl-8">
-                <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-                    <div class="flex flex-col sm:pr-10">
-                        <div class="relative sm:pl-12">
-                            <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                            <path
-                            d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                        </svg>
-                        <p class="mt-2 text-base text-gray-600 prose">
-                            HydePHP is actually simple to setup. Now, I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises.
-                            <br><br>
-                            Docs: 10/10
-                            Project: 10/10
-                        </p>
-                    </div>
-                    <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                        <a href="https://twitter.com/peteralexbizjak" rel="author nofollow">@peteralexbizjak</a>
-                        <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/peteralexbizjak/status/1535177275649536001">Via Twitter</a></span>
-                    </h3>
-                    <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
-                </div>
-                <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                src="https://pbs.twimg.com/profile_images/1608115407663005696/WflT9L0j_reasonably_small.jpg"
-                alt="Profile image">
-            </blockquote>
-            <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
-                <div class="flex flex-col sm:pr-10">
-                    <div class="relative sm:pl-12">
-                        <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                        <path
-                        d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
-                    </svg>
-                    <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
-                        <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
-                        <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+             class="flex items-center justify-center w-full px-8 pt-10 md:pt-16 lg:pt-24 xl:pt-40  xl:px-0">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex-col items-center ">
+                <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
+                    <p class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">
+                    </p>
+                    <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
+                        Testimonials
+                    </h2>
+                    <p class="my-6 text-xl font-medium text-gray-500">
+                        We are proud to hear that so many people use Hyde to build their websites.
+                        Here are some of our favourite mentions.
                     </p>
                 </div>
-                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
-                    This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
+                <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
+                    <div class="w-full xl:w-1/2 xl:pr-8">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-8">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">
+                                        Caen (<a href="https://twitter.com/CodeWithCaen?ref_src=twsrc%5Etfw">@CodeWithCaen</a>) has made a website for his PHP-based static-site generator.
+                                        <br><br>What I&#39;m mostly impressed with is how clean and straightforward the documentation is. Writing good documentation is an art and Caen did an amazing job at it.
+                                        ⭐️⭐️⭐️⭐️
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    <a href="https://twitter.com/SavvasStephnds" rel="author nofollow">@SavvasStephnds</a>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw">Via Twitter</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://pbs.twimg.com/profile_images/1567450524840075270/tceoqKT2_200x200.png"
+                                 alt="Profile image">
+                        </blockquote>
+                        <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">Holy f. Your project is definitely one of my favorites of the whole <small>[startup]</small> tournament, I constantly keep an eye on the top 50 for it.
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    Felipe Lecot <span class="mt-1 text-sm leading-5 text-gray-500 ">- Director
+                            - <a href="https://do2software.com" class="text-indigo-500" rel="author nofollow" title="External website">Do2 Software</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                 alt="">
+                        </blockquote>
+                    </div>
+                    <div class="w-full xl:w-1/2 xl:pl-8">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">
+                                        HydePHP is actually simple to setup. Now, I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises.
+                                        <br><br>
+                                        Docs: 10/10
+                                        Project: 10/10
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    <a href="https://twitter.com/peteralexbizjak" rel="author nofollow">@peteralexbizjak</a>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/peteralexbizjak/status/1535177275649536001">Via Twitter</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://pbs.twimg.com/profile_images/1608115407663005696/WflT9L0j_reasonably_small.jpg"
+                                 alt="Profile image">
+                        </blockquote>
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
+                                        <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
+                                        <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
                         SomeCompany</span>
-                    </h3>
-                    <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                 alt="">
+                        </blockquote>
+                    </div>
                 </div>
-                <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
-                src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                alt="">
-            </blockquote>
+                <footer class="text-center opacity-75">
+                    <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
+                    <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/testimonials.blade.php">page is open source</a>.</small>
+                </footer>
+            </div>
         </div>
-    </div>
-    <footer class="text-center opacity-75">
-        <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
-        <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/testimonials.blade.php">page is open source</a>.</small>
-    </footer>
-</div>
-</div>
-</section>
-<!-- End Testimonials-->
-<!-- Blob SVG Border -->
-<svg class="absolute bottom-0 w-full text-gray-100 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
+    </section>
+    <!-- End Testimonials-->
+    <!-- Blob SVG Border -->
+    <svg class="absolute bottom-0 w-full text-gray-100 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
 
 </div>
 <!-- End Features Section -->
@@ -561,7 +541,7 @@
 <!-- Begin Breakdown Section -->
 
 <div class="relative w-full pt-24 pb-32 md:pb-56 bg-gray-100">
-    
+
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto">
         <div class="flex flex-col justify-center w-full">
             <h2 class="relative  items-center self-center inline-block w-auto mb-5 text-4xl font-black">
@@ -572,83 +552,83 @@
                 While you don't need to know PHP or Laravel, Hyde is aimed at developers and requires basic command-line knowledge.
                 Here is a breakdown of some key bullet points tailored to various use cases.
             </p>
-            
-            
+
+
             <div class="flex flex-col sm:flex-row items-center lg:items-stretch justify-center h-full sm:flex-wrap ">
-                
+
                 <!-- FEATURE 1 -->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 bg-white border-2 border-black rounded-lg lg:px-5 xl:px-12 lg:rounded-r-none lg:rounded-l-lg">
-                        
+
                         <h4 class="flex text-center items-center my-2 text-2xl font-black">Laravel Artisans</h4>
                         <div class="font-light text-center">Are Hyde <span class="font-bold text-red-500">first-class citizens</span>.</div>
-                        
+
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
-                            
+
                             <li class="mt-2">
                                 HydePHP is based on Laravel Zero
                             </li>
-                            
+
                             <li class="mt-2">
                                 Render <span class="">Blade</span> files to HTML
                             </li>
-                            
+
                             <li class="mt-2">
                                 Artisan-based CLI interface
                             </li>
-                            
+
                             <li class="mt-2">
                                 Automatic <span class="">pseudo-routing</span>
                             </li>
-                            
+
                             <li class="mt-2">
                                 Preconfigured Laravel Mix
                             </li>
-                            
+
                             <li class="mt-2">
                                 File-based <span class="">Collections</span>
                             </li>
-                            
+
                         </ul>
-                        
+
                         <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded  group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-red-300 ">Architecture Concepts</span>
                         </a>
-                        
+
                     </div>
                 </div>
                 <!-- End FEATURE 1 -->
-                
+
                 <!-- FEATURE 2-->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 my-8 bg-white border-2 border-black rounded-lg lg:border-l-0 lg:border-r-0 lg:my-0 lg:rounded-none lg:px-5 xl:px-12">
-                        
+
                         <h4 class="flex text-center items-center my-2 text-2xl font-black sm:whitespace-nowrap">Markdown Aficionados</h4>
                         <div class="font-light text-center">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
-                        
+
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
-                            
+
                             <li class="mt-2">
                                 <span class=""></span> Simple Markdown Pages
                             </li>
-                            
+
                             <li class="mt-2">
                                 <span class="">Easy</span> Documentation sites
                             </li>
-                            
+
                             <li class="mt-2">
                                 <span class="">Smart</span> Blog Posts
                             </li>
-                            
+
                             <li class="mt-2">
                                 Torchlight Syntax Highlighting
                             </li>
-                            
+
                             <li class="mt-2">
                                 YAML Front Matter
                             </li>
-                            
+
                             <li class="mt-2">
                                 Automatic RSS feed
                             </li>
@@ -658,63 +638,63 @@
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-blue-300 ">Markdown Documentation</span>
                         </a>
-                        
+
                     </div>
                 </div>
                 <!-- END FEATURE 2 -->
-                
+
                 <!-- FEATURE 3 -->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 ml-0 bg-white border-2 border-black rounded-lg lg:px-6 xl:px-12 lg:rounded-l-none lg:rounded-r-lg">
-                        
+
                         <h4 class="flex text-center items-center my-2 text-2xl font-black">Developers & More</h4>
                         <div class="font-light text-center">And some <span class="font-bold text-green-500">more features</span>.</div>
-                        
-                        
+
+
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
-                            
+
                             <li class="mt-2">
                                 <span class="">Free</span> and Open Source
                             </li>
-                            
+
                             <li class="mt-2">
                                 <span class="">Automatic</span> Navigation Menus
                             </li>
-                            
+
                             <li class="mt-2">
                                 <span class="">Customizable</span> & Configurable
                             </li>
-                            
+
                             <li class="mt-2">
                                 No databases needed
                             </li>
-                            
+
                             <li class="mt-2">
                                 Version controllable
                             </li>
-                            
+
                             <li class="mt-2">
                                 And Much More
                             </li>
-                            
+
                         </ul>
-                   
+
                         <a href="https://hydephp.com/docs/1.x/quickstart" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded   group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-green-300">Installation Guide</span>
                         </a>
-                        
+
                     </div>
                 </div>
                 <!-- END FEATURE 3 -->
-                
+
             </div>
         </div>
     </div>
-    
+
     <!-- Blob SVG Border -->
     <svg class="absolute bottom-0 w-full text-white fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
-    
+
 </div>
 
 </div>
@@ -731,6 +711,78 @@
 	</header>
 	<div class="max-w-xl mx-auto px-8">
 				<article class="mt-4 mb-8" itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="identifier" content="sunsetting-hydephp-dot-se">
+            <meta itemprop="url" content="https://hydephp.com/posts/sunsetting-hydephp-dot-se">
+    
+    <header>
+        <a href="posts/sunsetting-hydephp-dot-se" class="block w-fit">
+            <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
+                Sunsetting the HydePHP.se domain in favour of HydePHP.com
+            </h2>
+        </a>
+    </header>
+
+    <footer>
+                    <span class="opacity-75">
+            <span itemprop="dateCreated datePublished">
+                May 25th, 2023</span>,
+        </span>
+                            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span class="opacity-75">by</span>
+            <span itemprop="name">
+                Caen
+            </span>
+        </span>
+            </footer>
+
+            <section role="doc-abstract" aria-label="Excerpt">
+            <p class="leading-relaxed my-1">
+                The infrastructure domain &quot;HydePHP.se&quot; is sunset, in favour of the canonical HydePHP.com
+            </p>
+        </section>
+    
+    <footer>
+        <a href="posts/sunsetting-hydephp-dot-se"
+           class="text-indigo-500 hover:underline font-medium">
+            Read post</a>
+    </footer>
+</article>				<article class="mt-4 mb-8" itemscope itemtype="https://schema.org/Article">
+    <meta itemprop="identifier" content="announcing-the-first-release-of-hydephp">
+            <meta itemprop="url" content="https://hydephp.com/posts/announcing-the-first-release-of-hydephp">
+    
+    <header>
+        <a href="posts/announcing-the-first-release-of-hydephp" class="block w-fit">
+            <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
+                Announcing the First Release of HydePHP
+            </h2>
+        </a>
+    </header>
+
+    <footer>
+                    <span class="opacity-75">
+            <span itemprop="dateCreated datePublished">
+                Mar 14th, 2023</span>,
+        </span>
+                            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <span class="opacity-75">by</span>
+            <span itemprop="name">
+                Caen
+            </span>
+        </span>
+            </footer>
+
+            <section role="doc-abstract" aria-label="Excerpt">
+            <p class="leading-relaxed my-1">
+                We&#039;re excited to announce the first official release of HydePHP, a Laravel-based static site generator!
+            </p>
+        </section>
+    
+    <footer>
+        <a href="posts/announcing-the-first-release-of-hydephp"
+           class="text-indigo-500 hover:underline font-medium">
+            Read post</a>
+    </footer>
+</article>				<article class="mt-4 mb-8" itemscope itemtype="https://schema.org/Article">
     <meta itemprop="identifier" content="announcing-the-first-release-candidate-of-hydephp">
             <meta itemprop="url" content="https://hydephp.com/posts/announcing-the-first-release-candidate-of-hydephp">
     
@@ -744,15 +796,15 @@
 
     <footer>
                     <span class="opacity-75">
-			<span itemprop="dateCreated datePublished">
-				Mar 7th, 2023</span>,
-		</span>
+            <span itemprop="dateCreated datePublished">
+                Mar 7th, 2023</span>,
+        </span>
                             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-			<span class="opacity-75">by</span>
-			<span itemprop="name">
-				Caen
-			</span>
-		</span>
+            <span class="opacity-75">by</span>
+            <span itemprop="name">
+                Caen
+            </span>
+        </span>
             </footer>
 
             <section role="doc-abstract" aria-label="Excerpt">
@@ -766,78 +818,6 @@
            class="text-indigo-500 hover:underline font-medium">
             Read post</a>
     </footer>
-</article>				<article class="mt-4 mb-8" itemscope itemtype="https://schema.org/Article">
-    <meta itemprop="identifier" content="release-date-announcement">
-            <meta itemprop="url" content="https://hydephp.com/posts/release-date-announcement">
-    
-    <header>
-        <a href="posts/release-date-announcement" class="block w-fit">
-            <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
-                Preliminary Release Date: March 14, 2023
-            </h2>
-        </a>
-    </header>
-
-    <footer>
-                    <span class="opacity-75">
-			<span itemprop="dateCreated datePublished">
-				Feb 11th, 2023</span>,
-		</span>
-                            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-			<span class="opacity-75">by</span>
-			<span itemprop="name">
-				Caen
-			</span>
-		</span>
-            </footer>
-
-            <section role="doc-abstract" aria-label="Excerpt">
-            <p class="leading-relaxed my-1">
-                The preliminary release date for the first version of HydePHP is set for March 14, 2023.
-            </p>
-        </section>
-    
-    <footer>
-        <a href="posts/release-date-announcement"
-           class="text-indigo-500 hover:underline font-medium">
-            Read post</a>
-    </footer>
-</article>				<article class="mt-4 mb-8" itemscope itemtype="https://schema.org/Article">
-    <meta itemprop="identifier" content="creating-a-photography-portfolio-site-with-hydephp">
-            <meta itemprop="url" content="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp">
-    
-    <header>
-        <a href="posts/creating-a-photography-portfolio-site-with-hydephp" class="block w-fit">
-            <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
-                Creating a static photography portfolio landing site with HydePHP
-            </h2>
-        </a>
-    </header>
-
-    <footer>
-                    <span class="opacity-75">
-			<span itemprop="dateCreated datePublished">
-				Aug 27th, 2022</span>,
-		</span>
-                            <span itemprop="author" itemscope itemtype="https://schema.org/Person">
-			<span class="opacity-75">by</span>
-			<span itemprop="name">
-				Caen
-			</span>
-		</span>
-            </footer>
-
-            <section role="doc-abstract" aria-label="Excerpt">
-            <p class="leading-relaxed my-1">
-                In this blog post, we&#039;ll be creating a simple photography portfolio site using HydePHP and Markdown. No coding is needed!
-            </p>
-        </section>
-    
-    <footer>
-        <a href="posts/creating-a-photography-portfolio-site-with-hydephp"
-           class="text-indigo-500 hover:underline font-medium">
-            Read post</a>
-    </footer>
 </article>			</div>
 	
 	<footer class="lg:mb-12 xl:mb-16 max-w-7xl mx-auto px-8">
@@ -847,7 +827,7 @@
 	</footer>
 	<svg class="absolute bottom-0 w-full text-gray-100  dark:text-slate-900 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
 
-</section>    
+</section>
 </div>
 
 
@@ -924,10 +904,12 @@
 								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
 							</svg>
 						</a>
-						<a title="Discord Server" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+						<a title="Discord Server" class="items-center block  mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
 							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
 						</a>
-						
+						<a title="Contact Information" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="/contact">
+							<svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+						</a>
 						
 					</div>
 				</div>
