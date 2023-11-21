@@ -14,6 +14,8 @@ In this blog post, we'll be recreating this simple photography portfolio site us
 
 You can find the [source code on GitHub](https://github.com/hydephp/portfolio-demo) and the [live demo here](https://hydephp.github.io/portfolio-demo).
 
+>info Tip: This tutorial is also avaliable as a free video lesson [on YouTube](https://www.youtube.com/watch?v=IVa1kXeUCk0)!
+
 [![Screenshot of the site we'll be recreating](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yeo5liueiqkjejyodcw2.png)](https://hydephp.github.io/portfolio-demo)
  
 ## Prerequisites 
