@@ -54,7 +54,7 @@
 
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
-                Create, websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
+                Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
             <a href="{{ DocumentationPage::home() }}" class="relative mt-5 group">
