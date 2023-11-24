@@ -354,7 +354,7 @@
                 </div>
                 <footer class="text-center opacity-75">
                     <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
-                    <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/testimonials.blade.php">page is open source</a>.</small>
+                    <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/index.blade.php">page is open source</a>.</small>
                 </footer>
             </div>
         </div>
