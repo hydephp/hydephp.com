@@ -4,6 +4,7 @@ description: The infrastructure domain "HydePHP.se" is sunset, in favour of the 
 category: announcements
 author: Caen
 date: 2023-05-25 14:59
+hiddenFromHomepage: true
 ---
 
 
