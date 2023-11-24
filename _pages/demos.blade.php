@@ -18,6 +18,23 @@
 	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
 		<div class="py-4 sm:px-6 w-96 max-w-full">
 			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+				<a href="https://hydephp.github.io/documentation-demo"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
+																		src="/media/documentation-demo-composite-light-min.png"></a>
+				<div class="px-6 pt-4 mb-2 text-xl font-bold">
+					<span>Lorem Documentum</span>
+				</div>
+				<div class="px-6 pt-2">
+					<small>By HydePHP.com | 2023-11-05</small>
+					<div class="overflow-hidden h-16 mt-2">An example documentation site built with Markdown and HydePHP</div>
+				</div>
+				<div class="px-6 pb-4 text-center mt-3">
+					<a href="https://github.com/hydephp/documentation-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+					<a href="https://hydephp.github.io/documentation-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+				</div>
+			</div>
+		</div>
+		<div class="py-4 sm:px-6 w-96 max-w-full">
+			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 				<a href="https://hydephp.github.io/portfolio-demo"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
 					src="/media/portfolio-composite-min.png"></a>
 				<div class="px-6 pt-4 mb-2 text-xl font-bold">
