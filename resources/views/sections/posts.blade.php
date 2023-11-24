@@ -8,7 +8,7 @@
 		</p>
 	</header>
 	<div class="max-w-xl mx-auto px-8">
-		@foreach(MarkdownPost::getLatestPosts()->take(3) as $post)
+		@foreach(MarkdownPost::getLatestPosts()->where(fn ($post) => $post->matter('hiddenFromHomepage') !== true)->take(3) as $post)
 		@include('hyde::components.article-excerpt')
 		@endforeach
 	</div>
