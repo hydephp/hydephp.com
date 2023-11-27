@@ -55,7 +55,11 @@ return [
         'installation',
         'getting-started',
     ],
-
+    
+    'sidebar_group_labels' => [
+        'extensions' => 'Extensions & Integrations',
+    ],
+    
     /*
     |--------------------------------------------------------------------------
     | Table of Contents Settings
@@ -132,4 +136,5 @@ return [
     */
 
     'flattened_output_paths' => true,
+    
 ];
