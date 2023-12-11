@@ -140,6 +140,20 @@ The feature is enabled automatically when one or more of your documentation page
 in the front matter. This will then switch to a slightly more compact sidebar layout with pages sorted into categories.
 Any pages without the group front matter will get put in the "Other" group.
 
+### Sidebar footer customization
+
+The sidebar footer contains, by default, a link to your site homepage. You can change this in the `config/docs.php` file.
+
+```php
+// filepath: config/docs.php
+
+'sidebar' => [
+    'footer' => 'My **Markdown** Footer Text',
+],
+```
+
+You can also set the option to `false` to disable it entirely.
+
 #### Using Front Matter
 
 To enable sidebar grouping, you can add the following front matter to your documentation pages:
@@ -199,13 +213,11 @@ By default, a link to the documentation page is added to the navigation menu whe
 ### Sidebar header name
 
 By default, the site title shown in the sidebar header is generated from the configured site name suffixed with "docs".
-You can change this in the Docs configuration file.
+You can change this in the Docs configuration file. Tip: The header will link to the docs/index page, if it exists.
 
 ```php
 'title' => 'API Documentation',
 ```
-
->info Tip: The header will link to the docs/index page, if it exists.
 
 ### Sidebar page order
 
@@ -221,6 +233,22 @@ Link items without an entry here will have fall back to the default priority of 
 ```
 
 See [the chapter in the customization page](customization#navigation-menu--sidebar) for more details. <br>
+
+### Automatic sidebar group labels
+
+When using the automatic sidebar grouping feature (based on subdirectories), the titles of the groups are generated from the directory names.
+If these are not to your liking, for example if you need to use special characters, you can override them in the Docs configuration file.
+The array key is the directory name, and the value is the label.
+
+Please note that this option is not added to the config file by default, as it's not a super common use case. No worries though, just add the following yourself!
+
+```php
+// Filepath: config/docs.php
+
+'sidebar_group_labels' => [
+    'questions-and-answers' => 'Questions & Answers',
+],
+```
 
 ### Table of contents settings
 
@@ -295,6 +323,7 @@ navigation menu items are hidden. The page will still be accessible as normal bu
 ### Live search with the realtime compiler
 
 The Realtime Compiler that powers the `php hyde serve` command will automatically generate a fresh search index each time the browser requests it.
+
 
 ## Automatic "Edit Page" button
 
