@@ -4,6 +4,7 @@ description: "This new update brings Live Edit and a bunch of other DX enhanceme
 category: releases
 author: Caen
 date: '2023-12-11 20:00'
+image: /media/live-edit-cover.png
 ---
 
 ## Overview
@@ -27,7 +28,7 @@ When you're done, click the save button to save the changes to the page's source
 
 The compiler console output has been redesigned to be more useful and pleasant to look at.
 
-![Compiler Console Output](media/new-realtime-compiler-output.png)
+![Compiler Console Output](/media/new-realtime-compiler-output.png)
 
 ## Other Enhancements and Fixes
 
