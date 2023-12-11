@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - Elegant and Powerful Static Site Generator</title>
+<title>HydePHP - Realtime Compiler</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/docs/1.x">
-<meta name="twitter:title" content="HydePHP - Elegant and Powerful Static Site Generator">
-<meta property="og:title" content="HydePHP - Elegant and Powerful Static Site Generator">
+<link rel="canonical" href="https://hydephp.com/docs/1.x/realtime-compiler">
+<meta name="twitter:title" content="HydePHP - Realtime Compiler">
+<meta property="og:title" content="HydePHP - Realtime Compiler">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
@@ -89,7 +89,7 @@
 </div>    </header>
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
-                            <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
+                            <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -263,7 +263,7 @@
         </a>
     </li>                                    </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -279,11 +279,31 @@
             <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
+            <a href="../../docs/1.x/realtime-compiler" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
             Realtime Compiler
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents">
+<li>
+<a href="#usage">Usage</a>
+</li>
+<li>
+<a href="#configuration">Configuration</a>
+</li>
+<li>
+<a href="#live-dashboard">Live dashboard</a>
+</li>
+<li>
+<a href="#live-edit">Live edit</a>
+</li>
+<li>
+<a href="#source-code">Source code</a>
+</li>
+</ul>
+
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
@@ -300,45 +320,57 @@
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Elegant and Powerful Static Site Generator</h1>
+        <h1>Realtime Compiler</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <style>.images-inline img { display: inline; margin: 4px 2px;}</style>
-<p class="images-inline not-prose"><a href="https://packagist.org/packages/hyde/framework"><img src="https://img.shields.io/packagist/v/hyde/framework?include_prereleases" alt="Latest Version on Packagist" /></a>
-<a href="https://packagist.org/packages/hyde/framework"><img src="https://img.shields.io/packagist/dt/hyde/framework" alt="Total Downloads on Packagist" /></a>
-<a href="https://codecov.io/gh/hydephp/develop"><img src="https://codecov.io/gh/hydephp/develop/branch/master/graph/badge.svg?token=G6N2161TOT" alt="Test Coverage" /></a>
-<a href="https://scrutinizer-ci.com/g/hydephp/develop/?branch=master"><img src="https://scrutinizer-ci.com/g/hydephp/develop/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality" /></a>
-<a href="https://shepherd.dev/github/hydephp/develop"><img src="https://shepherd.dev/github/hydephp/develop/coverage.svg" alt="Psalm Type Coverage" /></a>
-<img src="https://img.shields.io/github/license/hydephp/hyde" alt="License MIT" /></p>
-<h2>About HydePHP<a id="about-hydephp" href="#about-hydephp" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>HydePHP is a new Static Site Builder focused on writing content, not markup. With Hyde, it is easy to create static
-websites, blogs, and documentation pages using Markdown and (optionally) Laravel's Blade.</p>
-<p>Operated entirely through the command-line, HydePHP provides developers with a fast and efficient way to create high-quality websites with ease.
-Unlike traditional web development frameworks, sites compiled with HydePHP don't require any server to run,
-making it an ideal choice for building lightweight and fast-loading websites.</p>
-<p>Compared with other static site builders, Hyde is blazingly fast and seriously simple to get started with, yet it has the
-full power of Laravel waiting for you when you need it, as Hyde is powered by Laravel Zero, a stripped-down version of
-the robust and popular Laravel Framework, optimized for console applications.</p>
-<p>Hyde makes creating websites easy and fun by taking care of the boring stuff, like routing, writing boilerplate, and
-endless configuration. Instead, when you create a new Hyde project, everything you need to get started is already there
--- including precompiled TailwindCSS, well-crafted Blade templates, and easy-to-use asset management.</p>
-<p>Hyde was inspired by JekyllRB and is designed for developers who are comfortable writing posts in Markdown, and it requires
-virtually no configuration out of the box as it favours convention over configuration and is preconfigured with sensible defaults.</p>
-<h2>Installation<a id="installation" href="#installation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>HydePHP is a command-line interface (CLI) application that is installed on a per-project basis.</p>
-<p>To use HydePHP, your system must have PHP version 8.1 or later installed, along with Composer, and access to a terminal.</p>
-<p>The recommended method of installation is using Composer.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span></div></code></pre>
-<p>Once installed, you can access the HydeCLI from the project root using the <code>hyde</code> command.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">info</span></div></code></pre>
-<h2>Usage<a id="usage" href="#usage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>Creating static websites with HydePHP is incredibly easy. First you need some content. You can just drop Markdown files
-in any of the source directories, or let Hyde scaffold the files for you using one of the many commands.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My First Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">About Me</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
-<p>Once you have some content, you can run the build command to compile the content into beautiful static HTML.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
-<p>And that's it, your amazing website is ready to be shared with the world!</p>
-<h3>To learn more, head over to the <a href="quickstart">quickstart page</a>.<a id="to-learn-more-head-over-to-the-quickstart-page" href="#to-learn-more-head-over-to-the-quickstart-page" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+        <p>The Hyde Realtime Compiler is included with Hyde installations and is what powers the <code>php hyde serve</code> command,
+allowing you to preview your static site on a local development server without having to rebuild the site.</p>
+<h3>Usage<a id="usage" href="#usage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>To start the server, run the following command from a terminal in your project directory:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
+<p>This will start a local development server at <code>http://localhost:8080</code></p>
+<blockquote class="warning"><p>Please note that the server is designed for local development, and should not be used on a public network.</p></blockquote>
+<h3>Configuration<a id="configuration" href="#configuration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The server can be configured in the <code>config/hyde.php</code> file to change the port, host, and to customize its features.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">port</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_PORT</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">8080</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">host</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_HOST</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">localhost</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">save_preview</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3>Live dashboard<a id="live-dashboard" href="#live-dashboard" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h4>Usage<a id="usage-1" href="#usage-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The realtime compiler comes with a live dashboard that you can access at <code>http://localhost:8080/dashboard</code>.</p>
+<p>From here, you can visually interact with your site content, including creating new pages and posts.</p>
+<p>The live dashboard is not saved to your static site, and is only available through the development server.</p>
+<h4>Configuration<a id="configuration-1" href="#configuration-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The dashboard can be customized, and disabled, in the <code>config/hyde.php</code> file.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">dashboard</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_DASHBOARD</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">interactive</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">tips</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><em>The dashboard was added in Realtime Compiler v3.0.0 (March 2023), with interactive features added in v3.1.0 (October 2023)</em></p>
+<h3>Live edit<a id="live-edit" href="#live-edit" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h4>Usage<a id="usage-2" href="#usage-2" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The live edit feature allows you to quickly edit Markdown-based pages (posts, docs, and pages) directly in the browser.</p>
+<p>To enter the live editor, simply double-click on the article you want to edit, and it will be replaced with a text editor.
+When you're done, click the save button to save the changes to the page's source file.</p>
+<h4>Shortcuts<a id="shortcuts" href="#shortcuts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The live editor supports the following keyboard shortcuts:</p>
+<ul>
+<li>
+<code>Ctrl + E</code> - Enter/Exit editor</li>
+<li>
+<code>Ctrl + S</code> - Save changes</li>
+<li>
+<code>esc</code> - Exit editor if active</li>
+</ul>
+<h4>Configuration<a id="configuration-2" href="#configuration-2" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>The live editor can be disabled in the <code>config/hyde.php</code> file.
+The live editor plugin code will not be saved to your static site.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">live_edit</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_LIVE_EDIT</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true),</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><em>The live editor was added in Hyde Realtime Compiler Server v3.2.0 (December 2023)</em></p>
+<h3>Source code<a id="source-code" href="#source-code" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<ul>
+<li>
+<strong>GitHub</strong>: <a href="https://github.com/hydephp/realtime-compiler">hydephp/realtime-compiler</a>
+</li>
+<li>
+<strong>Packagist</strong>: <a href="https://packagist.org/packages/hyde/realtime-compiler">hydephp/realtime-compiler</a>
+</li>
+</ul>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
@@ -347,7 +379,7 @@ in any of the source directories, or let Hyde scaffold the files for you using o
     </i>
 </p>
 <p class="edit-page-link">
-    <a href="https://github.com/hydephp/develop/blob/master/docs/index.md">
+    <a href="https://github.com/hydephp/develop/blob/master/docs/extensions/realtime-compiler.md">
         Edit Page
     </a>
 </p>

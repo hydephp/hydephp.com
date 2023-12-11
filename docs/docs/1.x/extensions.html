@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - Extensions and Integrations</title>
+<title>HydePHP - Extensions &amp; Integrations</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
 <link rel="canonical" href="https://hydephp.com/docs/1.x/extensions">
-<meta name="twitter:title" content="HydePHP - Extensions and Integrations">
-<meta property="og:title" content="HydePHP - Extensions and Integrations">
+<meta name="twitter:title" content="HydePHP - Extensions &amp; Integrations">
+<meta property="og:title" content="HydePHP - Extensions &amp; Integrations">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
@@ -153,7 +153,7 @@
         </a>
     </li>                                    </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -173,35 +173,7 @@
             <a href="../../docs/1.x/advanced-markdown" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Markdown
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
-            <a href="../../docs/1.x/extensions" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Extensions &amp; Integrations
-        </a>
-
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li>
-<a href="#first-party-extensions">First party extensions</a>
-<ul>
-<li>
-<a href="#realtime-compiler">Realtime Compiler</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#integrations-with-third-party-tools">Integrations with third-party tools</a>
-<ul>
-<li>
-<a href="#torchlight">Torchlight</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#contribute">Contribute</a>
-</li>
-</ul>
-
-            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Customization
         </a>
@@ -291,6 +263,59 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
+            <a href="../../docs/1.x/extensions" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Extensions &amp; Integrations
+        </a>
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents">
+<li>
+<a href="#hydephp---extensible-by-design">HydePHP - Extensible by design</a>
+</li>
+<li>
+<a href="#first-party-extensions--integrations">First party extensions &amp; integrations</a>
+<ul>
+<li>
+<a href="#realtime-compiler">Realtime Compiler</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#integrations-with-third-party-tools">Integrations with third-party tools</a>
+<ul>
+<li>
+<a href="#torchlight">Torchlight</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#contribute">Contribute</a>
+</li>
+</ul>
+
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Realtime Compiler
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Third-Party Integrations
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -299,55 +324,35 @@
 </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Extensions and Integrations</h1>
+        <h1>Extensions &amp; Integrations</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>First party extensions<a id="first-party-extensions" href="#first-party-extensions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>HydePHP - Extensible by design<a id="hydephp---extensible-by-design" href="#hydephp---extensible-by-design" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>HydePHP is designed to be extensible, and comes with a number of built-in extensions and integrations,
+as well as support for third-party extensions and integrations.</p>
+<h2>First party extensions &amp; integrations<a id="first-party-extensions--integrations" href="#first-party-extensions--integrations" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Realtime Compiler<a id="realtime-compiler" href="#realtime-compiler" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>The Hyde Realtime Compiler is now included with Hyde
-installations and is what powers the <code>php hyde serve</code> command.</p>
+<p>The Hyde Realtime Compiler is included with Hyde installations and is what powers the <code>php hyde serve</code> command.</p>
 <ul>
-<li>
-<strong>GitHub</strong>: <a href="https://github.com/hydephp/realtime-compiler">hydephp/realtime-compiler</a>
-</li>
-<li>
-<strong>Packagist</strong>: <a href="https://packagist.org/packages/hyde/realtime-compiler">hydephp/realtime-compiler</a>
-</li>
-<li>
-<strong>YouTube video</strong>: <a href="https://www.youtube.com/watch?v=1ZM4fQMKi64">Introducing the Hyde Realtime Compiler</a>
-</li>
+<li>Learn more about the <a href="realtime-compiler">Realtime Compiler</a> in the documentation.</li>
 </ul>
 <h2>Integrations with third-party tools<a id="integrations-with-third-party-tools" href="#integrations-with-third-party-tools" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Torchlight<a id="torchlight" href="#torchlight" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Torchlight is an amazing API for syntax highlighting, and is used by this site. I cannot recommend it highly enough,
-especially for documentation sites and code-heavy blogs! As such, HydePHP has built-in support for Torchlight,
-which is automatically enabled once you add an API token to your <code>.env</code> file. Nothing else needs to be done!</p>
-<h4>Getting started<a id="getting-started" href="#getting-started" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>To get started you need an API token which you can get at <a href="https://torchlight.dev/">Torchlight.dev</a>.
-It is entirely free for personal and open source projects, as seen on their <a href="https://torchlight.dev/#pricing">pricing page</a>.</p>
-<p>When you have an API token, set it in the <code>.env</code> file in the root directory of your project.
-Once a token is set, Hyde will automatically enable the CommonMark extension.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="env" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">TORCHLIGHT_TOKEN</span><span style="color: #89DDFF;">=</span><span style="color: #C3E88D;">torch_&lt;your-api-token&gt;</span></div></code></pre>
-<h4>Attribution and configuration<a id="attribution-and-configuration" href="#attribution-and-configuration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>Note that for the free plan you need to provide an attribution link. Thankfully Hyde injects a customizable link
-automatically to all pages that use Torchlight. You can of course disable and customize this in the <code>config/torchlight.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">attribution</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Syntax highlighting by &lt;a href=&quot;https://torchlight.dev/&quot; rel=&quot;noopener nofollow&quot;&gt;Torchlight.dev&lt;/a&gt;</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #89DDFF;">],</span></div></code></pre>
-<p>Don't have this file? Run <code>php hyde vendor:publish</code> to publish it.</p>
+<p>Torchlight is an amazing API for syntax highlighting, and is supported natively by HydePHP.</p>
+<ul>
+<li>Learn more about <a href="third-party-integrations#torchlight">Torchlight</a> in the documentation.</li>
+</ul>
 <h2>Contribute<a id="contribute" href="#contribute" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>Have an idea for an extension or integration? Let me know! I'd love to hear from you.</p>
-<p>Get in touch on <a href="https://github.com/hydephp/hyde">GitHub</a> or send me a DM on <a href="https://twitter.com/CodeWithCaen">Twitter</a>.</p>
+<p>Have an idea for an extension or integration? Let me know! I'd love to hear from you. Get in touch on
+<a href="https://github.com/hydephp/hyde">GitHub</a> or send me a DM on <a href="https://twitter.com/CodeWithCaen">Twitter</a>.
+You may also want to look at the <a href="extensions-api">Extension API</a> documentation to learn how to create extensions.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
-<p class="edit-page-link">
-    <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/extensions.md">
+        <p class="edit-page-link">
+    <a href="https://github.com/hydephp/develop/blob/master/docs/extensions/extensions.md">
         Edit Page
     </a>
 </p>

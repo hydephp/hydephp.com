@@ -189,6 +189,9 @@
 <a href="#sidebar-grouping">Sidebar grouping</a>
 </li>
 <li>
+<a href="#sidebar-footer-customization">Sidebar footer customization</a>
+</li>
+<li>
 <a href="#hiding-items">Hiding items</a>
 </li>
 </ul>
@@ -207,6 +210,9 @@
 </li>
 <li>
 <a href="#sidebar-page-order">Sidebar page order</a>
+</li>
+<li>
+<a href="#automatic-sidebar-group-labels">Automatic sidebar group labels</a>
 </li>
 <li>
 <a href="#table-of-contents-settings">Table of contents settings</a>
@@ -275,10 +281,6 @@
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-markdown" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Markdown
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Extensions &amp; Integrations
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
@@ -367,6 +369,32 @@
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
+        </a>
+    </li>                                    </ul>
+            </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Extensions &amp; Integrations
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Realtime Compiler
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Third-Party Integrations
         </a>
     </li>                                    </ul>
             </li>
@@ -493,6 +521,10 @@ The Hyde docs for instance use this.</p>
 <p>The feature is enabled automatically when one or more of your documentation pages have the <code>navigation.group</code> property set
 in the front matter. This will then switch to a slightly more compact sidebar layout with pages sorted into categories.
 Any pages without the group front matter will get put in the &quot;Other&quot; group.</p>
+<h3>Sidebar footer customization<a id="sidebar-footer-customization" href="#sidebar-footer-customization" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>The sidebar footer contains, by default, a link to your site homepage. You can change this in the <code>config/docs.php</code> file.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">My **Markdown** Footer Text</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>You can also set the option to <code>false</code> to disable it entirely.</p>
 <h4>Using Front Matter<a id="using-front-matter" href="#using-front-matter" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <p>To enable sidebar grouping, you can add the following front matter to your documentation pages:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Getting Started</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
@@ -518,14 +550,19 @@ The path is relative to the site output, typically <code>_site</code>.</p>
 <p>By default, a link to the documentation page is added to the navigation menu when an index.md file is found in the <code>_docs</code> directory. Please see <a href="customization#navigation-menu--sidebar">the customization page</a> for more information.</p>
 <h3>Sidebar header name<a id="sidebar-header-name" href="#sidebar-header-name" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>By default, the site title shown in the sidebar header is generated from the configured site name suffixed with &quot;docs&quot;.
-You can change this in the Docs configuration file.</p>
+You can change this in the Docs configuration file. Tip: The header will link to the docs/index page, if it exists.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">API Documentation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
-<blockquote class="info"><p>Tip: The header will link to the docs/index page, if it exists.</p></blockquote>
 <h3>Sidebar page order<a id="sidebar-page-order" href="#sidebar-page-order" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>To quickly arrange the order of items in the sidebar, you can reorder the page identifiers in the list and the links will be sorted in that order.
 Link items without an entry here will have fall back to the default priority of 999, putting them last.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">getting-started</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">]</span></div></code></pre>
 <p>See <a href="customization#navigation-menu--sidebar">the chapter in the customization page</a> for more details. <br></p>
+<h3>Automatic sidebar group labels<a id="automatic-sidebar-group-labels" href="#automatic-sidebar-group-labels" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>When using the automatic sidebar grouping feature (based on subdirectories), the titles of the groups are generated from the directory names.
+If these are not to your liking, for example if you need to use special characters, you can override them in the Docs configuration file.
+The array key is the directory name, and the value is the label.</p>
+<p>Please note that this option is not added to the config file by default, as it's not a super common use case. No worries though, just add the following yourself!</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_group_labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">questions-and-answers</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Questions &amp; Answers</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">],</span></div></code></pre>
 <h3>Table of contents settings<a id="table-of-contents-settings" href="#table-of-contents-settings" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>In the <code>config/docs.php</code> file you can configure the behavior, content, and the look and feel of the sidebar table of contents.
 You can also disable the feature completely.</p>
