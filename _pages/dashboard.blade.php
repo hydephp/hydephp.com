@@ -2,7 +2,7 @@
 @section('content')
 <section class="py-16 px-4 text-center bg-gray-100 dark:bg-slate-900">
     <h2 class="text-2xl md:text-3-xl lg:text-4xl font-black text-slate-700 dark:text-slate-200 px-3 my-3">
-        Statistics
+        HydePHP Statistics
     </h2>
     <p class="text-lg prose dark:prose-invert text-center mx-auto">
         Data compiled {{ Carbon\Carbon::now() }}.
