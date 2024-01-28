@@ -7,7 +7,7 @@ date: '2023-03-14 20:00'
 image: _media/1500x500.png
 ---
 
-# Release Announcement 
+## Release Announcement 
 
 We're thrilled to announce HydePHP v1.0.0, the first general availability release of the Laravel-based static site generator you've been waiting for! HydePHP allows you to build lightning-fast static websites with ease, using the familiar syntax and functionality of the Laravel framework.
 
