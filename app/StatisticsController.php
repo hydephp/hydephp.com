@@ -80,11 +80,17 @@ class StatisticsController
     
     protected function getLinesOfCode()
     {
-        $response = Http::withHeaders([
-            'Accept' => 'application/json',
-            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
-        ])->get('https://tokei.ekzhang.com/b1/github/hydephp/develop');
-
+        try {
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
+            ])->get('https://tokei.ekzhang.com/b1/github/hydephp/develop');
+        } catch (\Throwable $th) {
+            // Return last known count
+            $object = new \stdClass();
+            $object->total = 87513;
+            return $object;
+        }
         
         $object = new \stdClass();
 
