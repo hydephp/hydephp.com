@@ -43,19 +43,26 @@
       "@context": "http://schema.org",
       "@type": "SoftwareApplication",
       "name": "HydePHP",
-      "image": "https://hydephp.com/media/logo.svg?v=6f4d292b092e62c88c7638cb9dfcc2de",
-      "url": "https://hydephp.com/",
+      "image": "https://hydephp.com/media/logo.svg",
+      "url": "https://hydephp.com",
       "author": {
         "@type": "Person",
         "name": "Caen De Silva"
       },
+      "datePublished": "2023-03-14",
       "publisher": {
         "@type": "Organization",
         "name": "HydePHP"
       },
-      "applicationCategory": "Static Site Generator",
-      "downloadUrl": "https://hydephp.com/docs/1.x/quickstart#installing-hydephp-using-composer",
-      "operatingSystem": "Windows, macOS, Linux",
+      "offers": {
+        "@type": "Offer",
+        "price": "0"
+      },
+      "applicationCategory": "DeveloperApplication",
+      "applicationSubCategory": "Static Site Generator",
+      "downloadUrl": "https://hydephp.com/docs/1.x/quickstart",
+      "featureList": "Markdown, Laravel, PHP, Static Site Generator",
+      "operatingSystem": "Windows, Linux, macOS",
       "requirements": "PHP 8.1",
       "screenshot": "https://opengraph.githubassets.com/1/hydephp/hyde",
       "softwareVersion": "v1.x"
