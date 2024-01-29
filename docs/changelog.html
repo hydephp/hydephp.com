@@ -120,6 +120,211 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h2>About the release cycle</h2>
 <p>HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Development is made in the <a href="https://github.com/hydephp/develop">Hyde/Develop Monorepo</a>. Major and Minor release versions are made in the Develop project. These releases are synced to the Hyde and Framework projects, and are what this changelog file tracks. Patch release versions are made in the Framework and Hyde projects independently. See <a href="https://github.com/hydephp/develop#releases">https://github.com/hydephp/develop#releases</a> for more information.</p>
 <!-- CHANGELOG_START -->
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.4.2">1.4.2</a> - 2023-12-22</h2>
+<h3>Added</h3>
+<ul>
+<li>Added info banners when dashboard content sections are empty in <a href="https://github.com/hydephp/develop/pull/1494">https://github.com/hydephp/develop/pull/1494</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Shortened the path printed to console when using the dashboard to create a page in <a href="https://github.com/hydephp/develop/pull/1492">https://github.com/hydephp/develop/pull/1492</a>
+</li>
+<li>Code cleanup and style improvements in <a href="https://github.com/hydephp/develop/pull/1501">https://github.com/hydephp/develop/pull/1501</a>, <a href="https://github.com/hydephp/develop/pull/1502">https://github.com/hydephp/develop/pull/1502</a>, and <a href="https://github.com/hydephp/develop/pull/1503">https://github.com/hydephp/develop/pull/1503</a>.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Improved support for running HydePHP through the Phar archive in <a href="https://github.com/hydephp/develop/pull/1491">https://github.com/hydephp/develop/pull/1491</a>
+</li>
+<li>Fixed wrong section title in the dashboard page in <a href="https://github.com/hydephp/develop/pull/1493">https://github.com/hydephp/develop/pull/1493</a>
+</li>
+</ul>
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.4.0">1.4.0</a> - 2023-12-11</h2>
+<h3>Added</h3>
+<ul>
+<li>Adds a new fancy output for the realtime compiler serve command in <a href="https://github.com/hydephp/develop/pull/1444">https://github.com/hydephp/develop/pull/1444</a>
+</li>
+<li>Added support for dot notation in the Yaml configuration files in <a href="https://github.com/hydephp/develop/pull/1478">https://github.com/hydephp/develop/pull/1478</a>
+</li>
+<li>Added a config option to customize automatic sidebar navigation group names in <a href="https://github.com/hydephp/develop/pull/1481">https://github.com/hydephp/develop/pull/1481</a>
+</li>
+<li>Added a new <code>hyde serve --open</code> option to automatically open the site in the browser in <a href="https://github.com/hydephp/develop/pull/1483">https://github.com/hydephp/develop/pull/1483</a>
+</li>
+<li>Added a new Live Edit feature to the realtime compiler in <a href="https://github.com/hydephp/develop/pull/1458">https://github.com/hydephp/develop/pull/1458</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>The <code>docs.sidebar.footer</code> config option now accepts a Markdown string to replace the default footer in <a href="https://github.com/hydephp/develop/pull/1477">https://github.com/hydephp/develop/pull/1477</a>
+</li>
+<li>Links in the <code>sitemap.xml</code> file are now relative when a site URL is not set, instead of using the default localhost URL in <a href="https://github.com/hydephp/develop/pull/1479">https://github.com/hydephp/develop/pull/1479</a>
+</li>
+<li>Improves the portability of the realtime compiler to better support running through the standalone executable in <a href="https://github.com/hydephp/develop/pull/1488">https://github.com/hydephp/develop/pull/1488</a>
+</li>
+<li>Bumps realtime compiler version to v3.2 in <a href="https://github.com/hydephp/develop/pull/1489">https://github.com/hydephp/develop/pull/1489</a>
+</li>
+<li>Support both route keys and identifiers for specifying sidebar order in <a href="https://github.com/hydephp/develop/pull/1432">https://github.com/hydephp/develop/pull/1432</a>
+</li>
+<li>Updated sitemap generator to use relative links instead of localhost when missing site URL in <a href="https://github.com/hydephp/develop/pull/1479">https://github.com/hydephp/develop/pull/1479</a>
+</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Removed unhelpful boilerplate from the <code>hyde/hyde</code> <code>package.json</code> in <a href="https://github.com/hydephp/develop/pull/1436">https://github.com/hydephp/develop/pull/1436</a>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed dot notation in Yaml configuration not being expanded (<a href="https://github.com/hydephp/develop/issues/1471">https://github.com/hydephp/develop/issues/1471</a>) in <a href="https://github.com/hydephp/develop/pull/1478">https://github.com/hydephp/develop/pull/1478</a>
+</li>
+</ul>
+<h3>Internal</h3>
+<ul>
+<li>Internal: Only inject custom app config location when missing from parent in <a href="https://github.com/hydephp/develop/pull/1485">https://github.com/hydephp/develop/pull/1485</a>
+</li>
+<li>Internal: Remove experimental Phar support from internal configuration loader in <a href="https://github.com/hydephp/develop/pull/1485">https://github.com/hydephp/develop/pull/1485</a>
+</li>
+</ul>
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.3.0">1.3.0</a> - 2023-10-30</h2>
+<h3>Added</h3>
+<ul>
+<li>Added support for setting custom content when calling source file creator actions directly in <a href="https://github.com/hydephp/develop/pull/1393">https://github.com/hydephp/develop/pull/1393</a>
+</li>
+<li>Added support for setting a custom post date when calling post file creator action directly in <a href="https://github.com/hydephp/develop/pull/1393">https://github.com/hydephp/develop/pull/1393</a>
+</li>
+<li>Added optional <code>FileNotFoundException</code> constructor parameter to set a custom exception message <a href="https://github.com/hydephp/develop/pull/1398">https://github.com/hydephp/develop/pull/1398</a>
+</li>
+<li>Added a new helper method to the base <code>Command</code> class to ask for a string input from the user in <a href="https://github.com/hydephp/develop/pull/1416">https://github.com/hydephp/develop/pull/1416</a>
+</li>
+<li>The realtime compiler dashboard is now interactive, and allows you to make edits to your project right from the browser <a href="https://github.com/hydephp/develop/pull/1392">https://github.com/hydephp/develop/pull/1392</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Realtime Compiler: The <code>DashboardController</code> class is now marked as internal, as it is not intended to be used outside of the package <a href="https://github.com/hydephp/develop/pull/1394">https://github.com/hydephp/develop/pull/1394</a>
+</li>
+<li>Updated the realtime compiler server configuration options in <a href="https://github.com/hydephp/develop/pull/1395">https://github.com/hydephp/develop/pull/1395</a> (backwards compatible)</li>
+<li>Updated the realtime compiler to generate the documentation search index each time it's requested in <a href="https://github.com/hydephp/develop/pull/1405">https://github.com/hydephp/develop/pull/1405</a> (fixes <a href="https://github.com/hydephp/develop/issues/1404">https://github.com/hydephp/develop/issues/1404</a>)</li>
+<li>Updated the navigation menu generator to remove duplicates after running the sorting method in <a href="https://github.com/hydephp/develop/pull/1407">https://github.com/hydephp/develop/pull/1407</a> (fixes <a href="https://github.com/hydephp/develop/issues/1406">https://github.com/hydephp/develop/issues/1406</a>)</li>
+<li>Updated the exception message caused by missing source option for featured images to include the path of the file that caused the error in <a href="https://github.com/hydephp/develop/pull/1409">https://github.com/hydephp/develop/pull/1409</a>
+</li>
+<li>Narrows down parsed <code>BladeMatter</code> array types to <code>array&lt;string, scalar&gt;</code> (Experimental feature not covered by BC promise) in <a href="https://github.com/hydephp/develop/pull/1410">https://github.com/hydephp/develop/pull/1410</a>
+</li>
+<li>Internal code refactors and improvements in <a href="https://github.com/hydephp/develop/pull/1410">https://github.com/hydephp/develop/pull/1410</a>, <a href="https://github.com/hydephp/develop/pull/1411">https://github.com/hydephp/develop/pull/1411</a>, and <a href="https://github.com/hydephp/develop/pull/1413">https://github.com/hydephp/develop/pull/1413</a>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Catch RealtimeCompiler dashboard OutOfBoundsException in <a href="https://github.com/hydephp/develop/pull/1384">https://github.com/hydephp/develop/pull/1384</a>
+</li>
+<li>Updated dropdown navigation menus to support setting priority in config in <a href="https://github.com/hydephp/develop/pull/1387">https://github.com/hydephp/develop/pull/1387</a> (fixing <a href="https://github.com/hydephp/hyde/issues/229">https://github.com/hydephp/hyde/issues/229</a>)</li>
+<li>Updated the vendor publish command to support parent Laravel Prompts implementation in <a href="https://github.com/hydephp/develop/pull/1388">https://github.com/hydephp/develop/pull/1388</a>
+</li>
+<li>Fixed wrong version constant in <a href="https://github.com/hydephp/develop/pull/1391">https://github.com/hydephp/develop/pull/1391</a>
+</li>
+<li>Fixed improperly formatted exception message in <a href="https://github.com/hydephp/develop/pull/1399">https://github.com/hydephp/develop/pull/1399</a>
+</li>
+<li>Fixed missing support for missing and out of date search indexes when previewing site <a href="https://github.com/hydephp/develop/issues/1404">https://github.com/hydephp/develop/issues/1404</a> in <a href="https://github.com/hydephp/develop/pull/1405">https://github.com/hydephp/develop/pull/1405</a>
+</li>
+<li>Fixed duplicate navigation items not giving precedence to config defined items <a href="https://github.com/hydephp/develop/issues/1406">https://github.com/hydephp/develop/issues/1406</a> in <a href="https://github.com/hydephp/develop/pull/1407">https://github.com/hydephp/develop/pull/1407</a>
+</li>
+</ul>
+<h2><a href="https://github.com/hydephp/develop/releases/tag/v1.2.0">v1.2.0</a> - 2023-06-22</h2>
+<h3>Added</h3>
+<ul>
+<li>Added Markdown configuration option for the Tailwind prose classes in <a href="https://github.com/hydephp/develop/pull/1357">https://github.com/hydephp/develop/pull/1357</a>
+</li>
+<li>Added <code>prose-img:inline</code> to bundled TailwindCSS classes in <a href="https://github.com/hydephp/develop/pull/1359">https://github.com/hydephp/develop/pull/1359</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Internal: Decoupled the monorepo <code>composer.json</code> settings in <a href="https://github.com/hydephp/develop/pull/1361">https://github.com/hydephp/develop/pull/1361</a>
+</li>
+<li>Changed HydePage return types to static in <a href="https://github.com/hydephp/develop/pull/1371">https://github.com/hydephp/develop/pull/1371</a>
+</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Removed the Tailwind safelist from the hyde/hyde package (as it is not required there) in <a href="https://github.com/hydephp/develop/pull/1362">https://github.com/hydephp/develop/pull/1362</a>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed two improper method type annotations in the <code>FrontMatter</code> class in <a href="https://github.com/hydephp/develop/pull/1369">https://github.com/hydephp/develop/pull/1369</a>
+</li>
+</ul>
+<h2><a href="https://github.com/hydephp/develop/releases/tag/v1.1.0">v1.1.0</a> - 2023-03-22</h2>
+<h3>About</h3>
+<p>This release is the first since the official release of HydePHP 1.0.0. It contains a number of bug fixes and improvements, but no breaking changes as the project has reached general availability and adheres to the semantic versioning backwards compatibility promise.</p>
+<h3>Added</h3>
+<ul>
+<li>Added a RealtimeCompiler config option to disable rendered pages being stored to disk in <a href="https://github.com/hydephp/develop/pull/1334">https://github.com/hydephp/develop/pull/1334</a>
+</li>
+<li>Documentation sidebars now support table of contents when using Setext headings in <a href="https://github.com/hydephp/develop/pull/1343">https://github.com/hydephp/develop/pull/1343</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Updated discovery exception message to include the causing exception message in <a href="https://github.com/hydephp/develop/pull/1305">https://github.com/hydephp/develop/pull/1305</a>
+</li>
+<li>Cleaned up <code>PageDataFactory</code>, <code>NavigationDataFactory</code>, and <code>BlogPostDataFactory</code> internals for better type safety in <a href="https://github.com/hydephp/develop/pull/1312">https://github.com/hydephp/develop/pull/1312</a>
+</li>
+<li>Refactored internals to use the <code>View</code> facade over the <code>view</code> function for better type safety in <a href="https://github.com/hydephp/develop/pull/1310">https://github.com/hydephp/develop/pull/1310</a>
+</li>
+<li>Refactored the <code>GeneratesTableOfContents</code> class internals to be more accurate in <a href="https://github.com/hydephp/develop/pull/1343">https://github.com/hydephp/develop/pull/1343</a>
+</li>
+<li>Updated to HydeFront v3.3.0 in <a href="https://github.com/hydephp/develop/pull/1329">https://github.com/hydephp/develop/pull/1329</a>
+</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>Classes <code>PageDataFactory</code>, <code>NavigationDataFactory</code>, and <code>BlogPostDataFactory</code> no longer use the <code>InteractsWithFrontMatter</code> trait</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1301">#1301 Build-time <code>--pretty-urls</code> flag is not respected by canonical URLs</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1302">#1302</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1316">#1316 Bug: The blog post feed component does not work on nested pages due to not using routes</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1317">#1317</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1318">#1318 Nested index pages not showing in navigation</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1319">#1319</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1320">#1320 The RSS feed generator does not respect the <code>--no-api</code> flag when getting content length for remote images</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1321">#1321</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1322">#1322 Wrong HydeFront version constant</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1323">#1323</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1324">#1324 Navigation dropdowns should not wrap over multiple lines</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1325">#1325</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1326">#1326 PlayCDN integration should work gracefully when there is no Tailwind config file</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1327">#1327</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1330">#1330 Clicking outside an activated dropdown should close it</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1331">#1331</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1337">#1337 Sidebar table of contents are unable to be generated when using Setext headers</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1343">#1343</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1330">#1330 Clicking outside an activated dropdown should close it</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1332">#1332</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1340">#1340 Search index is not resolvable when using root documentation page output combined with subdirectory deployment</a>&quot; in <a href="https://github.com/hydephp/develop/pull/1345">#1345</a>
+</li>
+<li>Fixed &quot;<a href="https://github.com/hydephp/develop/issues/1313">#1313 Bug: Uppercase input is improperly reformatted in the makeTitle Helper</a>&quot; in <a href="https://github.com/hydephp/develop/commit/134776a1e4af395dab5c15d611fc64c9ebce8596"><code>134776a</code></a>
+</li>
+<li>Fixed navigation dropdowns flickering on page load in <a href="https://github.com/hydephp/develop/pull/1332">#1332</a>
+</li>
+<li>Added missing function imports in <a href="https://github.com/hydephp/develop/pull/1309">#1309</a>
+</li>
+</ul>
+<h2><a href="https://github.com/hydephp/develop/releases/tag/v1.0.0">v1.0.0</a> - 2023-03-14</h2>
+<h3>Changed</h3>
+<ul>
+<li>Compiled TailwindCSS and HydeFront for production <a href="https://github.com/hydephp/develop/pull/1295">#1295</a>
+</li>
+<li>Updated to HydeFront v3.2 <a href="https://github.com/hydephp/develop/pull/1297">#1297</a>
+</li>
+</ul>
+<h3>Security</h3>
+<ul>
+<li>Bumped Webpack from 5.73.0 to 5.76.1 <a href="https://github.com/hydephp/develop/pull/1292">#1292</a>
+</li>
+</ul>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/v1.0.0-RC.8">v1.0.0-RC.8</a> - 2023-03-14</h2>
 <h3>Changed</h3>
 <ul>
