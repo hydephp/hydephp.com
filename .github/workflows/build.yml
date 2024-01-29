@@ -60,6 +60,9 @@ jobs:
     - name: Build frontend assets
       run: npm run prod
 
+    - name: Download the latest community files
+      run: php hyde download-community-files
+
     - name: Run the Hyde Builder
       run: php hyde build --pretty-urls --run-prettier --no-interaction
 
