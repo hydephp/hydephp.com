@@ -72,6 +72,9 @@ jobs:
     - name: Create CNAME
       run: echo "hydephp.com" > docs/CNAME
 
+    - name: Copy favicon to site root
+      run: cp docs/media/favicon.ico docs/favicon.ico
+
     - name: Create docs redirect
       run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
 
