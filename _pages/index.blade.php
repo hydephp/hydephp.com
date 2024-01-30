@@ -258,7 +258,7 @@
                 <div class="absolute w-screen max-w-4xl pl-12 -mt-20">
                     <div class="absolute top-0 left-0 w-full h-full mt-2 ml-10 bg-gray-900 rounded-lg"></div>
                     <div class="relative overflow-hidden border-2 border-black rounded-lg">
-                        <img src="media/markdown-pages.png" alt="Screenshot of the HydePHP Homepage" class="object-cover w-full h-full">
+                        <img src="media/markdown-pages.png" alt="Splitscreen view of the Markdown source for a HydePHP website, and it's Markdown preview" class="object-cover w-full h-full">
                     </div>
                 </div>
             </div>
