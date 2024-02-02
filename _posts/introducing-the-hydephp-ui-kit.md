@@ -23,15 +23,9 @@ composer require hyde/ui-kit
 
 ### A first look at the components
 
-Here are some of the components you can use to build your next project! As you can see, all components support both light and dark mode out of the box, just like the rest of HydePHP.
+Here are some of the components you can use to build your next project! Of course, all components support both light and dark mode out of the box, just like the rest of HydePHP.
 
-![Components Screenshot](https://raw.githubusercontent.com/hydephp/ui-kit/art/header-large-min.png)
-
-### Featured components
-
-### Buttons
-
-#### Primary
+### Buttons & Inputs
 
 ```blade
 <x-hyde-ui::button-primary>
@@ -39,21 +33,18 @@ Here are some of the components you can use to build your next project! As you c
 </x-hyde-ui::button-primary>
 ```
 
-#### Secondary
-
 ```blade
 <x-hyde-ui::button-secondary>
 	Secondary Button
 </x-hyde-ui::button-secondary>
 ```
 
-### Input
-
-The base component `<x-hyde-ui::input />` supports additional attributes:
-
 ```blade
 <x-hyde-ui::input type="text" name="name" placeholder="Name" value="John Doe" />
 ```
+
+The base component `<x-hyde-ui::input />` supports additional attributes, as seen in the example above.
+
 
 ### Card
 
@@ -109,11 +100,12 @@ Convert Markdown to HTML using the Hyde Markdown compiler:
 ```blade
 <x-hyde-ui::markdown>
     ## Markdown Heading
+	
     Hello world!
 </x-hyde-ui::markdown>
 ```
 
-Wrap Markdown in the prose element for styling.
+Remember to wrap Markdown in the prose element for styling.
 
 ### Putting It All Together
 
