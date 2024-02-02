@@ -1,6 +1,6 @@
 ---
 title: 'Introducing the HydePHP GitHub Action'
-description: "The Easiest Way to Build and Deploy Your Static Sites!"
+description: "The easiest way to build and deploy your static sites!"
 category: announcements
 author: Caen
 date: '2024-01-28 16:00'
