@@ -10,20 +10,20 @@ ask that you do as well.
 
 ## Website Privacy, Cookies, and Analytics
 
-Your privacy and security matters. This website does not use cookies or tracking technologies.[^1] 
+Your privacy and security matters. This website does not use cookies or tracking technologies.[^1]
 
 The only information stored when using this site is your preference for using the dark theme.
 This is done using LocalStorage and is stored in your browser, allowing the site to keep
 your theme preference selected.
 
 We get basic analytics from GitHub where this site is hosted. The DNS provider also provides
-some statistics. These statistics are completely anonymous and we cannot trace, track, or 
-link any of the data to any individual. Please see the respective providers web sites 
+some statistics. These statistics are completely anonymous and we cannot trace, track, or
+link any of the data to any individual. Please see the respective providers web sites
 for more information on how they handle data.
 
 
 [^1]: While we do not use cookies on our side (since this is a static site without a backend),
-      some external services may use cookies, for example if a YouTube video is embedded.
+some external services may use cookies, for example if a YouTube video is embedded.
 
 
 ## Community Guidelines and Code of Conduct
@@ -84,8 +84,8 @@ This list may not be exhaustive, feel free to
 - The documentation frontend was based on [Lagrafo - Docs for Laravel apps](https://github.com/caendesilva/lagrafo){:rel="nofollow noopener"}
 - The dark mode switch is based on a component from [Flowbite](https://flowbite.com/docs/customize/dark-mode/){:rel="nofollow noopener"}
 - The frontend is built with [TailwindCSS](https://tailwindcss.com/){:rel="nofollow noopener"}
-- The default 404 error page and illustration is by [LaravelCollective](https://github.com/LaravelCollective/errors){:rel="nofollow noopener"} (License MIT)  
-  
+- The default 404 error page and illustration is by [LaravelCollective](https://github.com/LaravelCollective/errors){:rel="nofollow noopener"} (License MIT)
+
 - Hyde was inspired by [JekyllRB](https://jekyllrb.com/){:rel="nofollow noopener"}
 
 ### Branding
@@ -110,3 +110,6 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 ### Sponsorships and affiliates
 
 - Thank you to [UptimeRobot](https://uptimerobot.com/?rid=33f574d058c2f3) for sponsoring the [HydePHP Status Monitor](https://status.hydephp.com/) page!
+
+Want to sponsor the HydePHP project? Send us an email at hello@hydephp.com!<br>
+You can also ping the creator on Twitter at [@CodeWithCaen](https://twitter.com/CodeWithCaen){:rel="noopener"}
