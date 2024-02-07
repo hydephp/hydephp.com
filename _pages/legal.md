@@ -110,6 +110,7 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 ### Sponsorships and affiliates
 
 - Thank you to [UptimeRobot](https://uptimerobot.com/?rid=33f574d058c2f3) for sponsoring the [HydePHP Status Monitor](https://status.hydephp.com/) page!
+- Thank you to [Fathom Analytics](https://usefathom.com/) for sponsoring HydePHP with privacy-focused analytics!
 
 Want to sponsor the HydePHP project? Send us an email at hello@hydephp.com!<br>
 You can also ping the creator on Twitter at [@CodeWithCaen](https://twitter.com/CodeWithCaen){:rel="noopener"}
