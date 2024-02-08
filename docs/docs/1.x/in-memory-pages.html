@@ -341,16 +341,16 @@ but feel free to skip this section if you're not interested in this.</p>
 <p>This class is especially useful for one-off custom pages. But if your usage grows, or if you want to utilize Hyde
 autodiscovery, you may benefit from creating a custom page class instead, as that will give you full control.</p>
 <h3>About discovery<a id="about-discovery" href="#about-discovery" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Since the InMemoryPages are not present in the filesystem, they cannot be found by the auto-discovery process,
-thus it's up to the developer to manually register them. If you are developing for your own project, you can do this in
+<p>Since the InMemoryPages are not present in the filesystem, they cannot be found by the auto-discovery process.
+Instead, it's up to the developer to manually register them. If you are working on your own project, you can do this in
 the <code>boot</code> method of a service provider, such as the <code>AppServiceProvider</code> which is already present in your <code>app/</code> directory.</p>
 <p>If you are developing a package, you may instead want to register the page in your package extension class, within the
 page collection callback. In either case, if you want your page to be able to be fully processed by Hyde, you need to
 make sure you register it before the full application is booted so that routes can be generated.</p>
-<p><em>To see how to register the page, see the examples below, first we must look at how to actually create the page.</em></p>
+<p><em>To see how to register the page, see the examples below. But first we must look at how to actually create the page.</em></p>
 <h2>Creating the page<a id="creating-the-page" href="#creating-the-page" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>To create an InMemoryPage, you need to instantiate it, and pass it the required parameters.</p>
-<p>A page would not be useful without any content to render. The class offers two content options through the constructor.</p>
+<p>To create an InMemoryPage, you need to instantiate it with the required parameters.</p>
+<p>Since a page would not be useful without any content to render, the class offers two content options through the constructor.</p>
 <p>You can either pass a string to the <code>$contents</code> parameter, Hyde will then save that literally as the page's contents.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">contents</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <p>Alternatively, you can pass a Blade view name to the <code>$view</code> parameter, and Hyde will use that view to render the page

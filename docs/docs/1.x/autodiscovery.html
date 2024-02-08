@@ -385,7 +385,7 @@ Well, as you'll see in just a moment, the kernel is responsible for initiating t
 The kernel is also where the discovered data is stored in memory, so it's important to understand how it works.</p>
 <h3>The kernel lifecycle<a id="the-kernel-lifecycle" href="#the-kernel-lifecycle" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Now that we know the role of the HydeKernel, let's take a look at its lifecycle. The kernel is &quot;lazy-booted&quot;, meaning
-that the all the heavy lifting only happens when you actually need it. Once booted, the kernel data will stay in memory
+that all the heavy lifting only happens when you actually need it. Once booted, the kernel data will stay in memory
 until the console application is terminated.</p>
 <p>The kernel data is primarily stored in three collections that get generated during the kernel's boot process.
 Let's take a look at a simplified version of the kernel's boot method to see how this works.</p>

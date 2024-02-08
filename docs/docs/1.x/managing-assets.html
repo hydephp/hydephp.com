@@ -373,12 +373,12 @@
     <section id="document-main-content" itemprop="articleBody">
         <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Managing and compiling assets is a very common task in web development. Unfortunately, it's rarely fun.</p>
-<p>With hyde, <strong>you don't have to do it</strong>, in fact, you can skip this entire page if you are happy with how it is.
+<p>With Hyde, <strong>you don't have to do it</strong>, in fact, you can skip this entire page if you are happy with how it is.
 But as always with Hyde, you can customize everything if you want to.</p>
 <p>Hyde ships with a complete frontend using Blade views, TailwindCSS styles, and Alpine.js interactions.
 Some extra custom styles are made in the HydeFront package, which is pre-installed and bundled in the pre-configured Laravel Mix.</p>
-<p>To get you started quickly, all the styles are already compiled minified into <code>_media/app.css</code>, which will be copied
-to the <code>_site/media/app.css</code> directory when you run <code>php hyde build</code>.</p>
+<p>To get you started quickly, all the styles are already compiled and minified into <code>_media/app.css</code>,
+which will be copied to the <code>_site/media/app.css</code> directory when you run <code>php hyde build</code>.</p>
 <h2>Additional Information and Answers to Common Questions<a id="additional-information-and-answers-to-common-questions" href="#additional-information-and-answers-to-common-questions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Is NodeJS/NPM Required for Using Hyde?<a id="is-nodejsnpm-required-for-using-hyde" href="#is-nodejsnpm-required-for-using-hyde" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>No, it is optional. All the compiled styles that you need are already installed, and NPM is only necessary if you want to compile your own styles.</p>
@@ -391,7 +391,7 @@ If you use Markdown-based pages, you do not need to compile anything as those st
 <p>The frontend assets are separated into three places.</p>
 <ul>
 <li>
-<p>The <code>resources/assets</code> contains <strong>source</strong> files, meaning files that will be compiled into something else.
+<p>The <code>resources/assets</code> folder contain <strong>source</strong> files, meaning files that will be compiled into something else.
 Here you will find the <code>app.css</code> file that bootstraps the TailwindCSS styles. This file is also an excellent place
 to add your custom styles. It is also where we import HydeFront. If you compile this file in the base install,
 it will output the same file that's already included in Hyde.</p>
@@ -407,17 +407,17 @@ all asset files here will get copied as they are into the <code>_site/media</cod
 <h3>What is the difference between <code>_media</code> and <code>_site/media</code>?<a id="what-is-the-difference-between-media-and-sitemedia" href="#what-is-the-difference-between-media-and-sitemedia" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>It may seem weird to have two folders for storing the compiled assets, but it is quite useful.</p>
 <p>The <code>_site</code> directory is intended to be excluded from version control, while the <code>_media</code> folder is included in the
-version control. You are of course free to modify this behavior by editing the <code>webpack.mix.js</code> file to change the output directory.</p>
+version control. You are of course free to modify this behaviour by editing the <code>webpack.mix.js</code> file to change the output directory.</p>
 <h2>How do I compile assets?<a id="how-do-i-compile-assets" href="#how-do-i-compile-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>First, make sure that you have installed all the NodeJS dependencies using <code>npm install</code>.
 Then run <code>npm run dev</code> to compile the assets. If you want to compile the assets for production, run <code>npm run prod</code>.
 You can also run <code>npm run watch</code> to watch for changes in the source files and recompile the assets automatically.</p>
 <h3>How does it work?<a id="how-does-it-work" href="#how-does-it-work" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Hyde uses <a href="https://laravel-mix.com/">Laravel Mix</a> (which is a wrapper for <a href="https://webpack.js.org/">webpack</a>) to compile the assets.</p>
+<p>Hyde uses <a href="https://laravel-mix.com/">Laravel Mix</a> (which is a wrapper for <a href="https://webpack.js.org/">Webpack</a>) to compile the assets.</p>
 <p>When running the <code>npm run dev/prod</code> command, the following happens:</p>
 <ol>
 <li>Laravel Mix will compile the <code>resources/assets/app.css</code> file into <code>_media/app.css</code> using PostCSS with TailwindCSS and AutoPrefixer.</li>
-<li>Mix then copies the <code>_media</code> folder into <code>_site/media</code>, this is so that they are automatically accessible to your site without having to rerun <code>php hyde build</code>, making blend perfectly with the realtime compiler (<code>php hyde serve</code>).</li>
+<li>Mix then copies the <code>_media</code> folder into <code>_site/media</code>, this is so that they are automatically accessible to your site without having to rerun <code>php hyde build</code>.</li>
 </ol>
 <h2>Telling Hyde where to find assets<a id="telling-hyde-where-to-find-assets" href="#telling-hyde-where-to-find-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Customizing the Blade templates<a id="customizing-the-blade-templates" href="#customizing-the-blade-templates" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
@@ -447,7 +447,7 @@ so the Play CDN styles match the ones created by Laravel Mix.</p>
 <p>As mentioned above, assets stored in the _media folder are automatically copied to the _site/media folder,
 making it the recommended place to store images. You can then easily reference them in your Markdown files.</p>
 <h3>Referencing images<a id="referencing-images" href="#referencing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>The recommended way to reference images are with relative paths as this offers the most compatibility,
+<p>The recommended way to reference images is with relative paths as this offers the most compatibility,
 allowing you to browse the site both locally on your filesystem and on the web when serving from a subdirectory.</p>
 <blockquote class="warning"><p>Note: The path is relative to the <b>compiled</b> file in the site output</p></blockquote>
 <p>The path to use depends on the location of the page. Note the subtle difference in the path prefix.</p>
@@ -461,11 +461,11 @@ allowing you to browse the site both locally on your filesystem and on the web w
 <li>You can of course also use full URLs, for example when using a CDN.</li>
 </ul>
 <h4>Making images accessible<a id="making-images-accessible" href="#making-images-accessible" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
-<p>To improve accessibility, you should always add an <code>alt</code> text. Here is a full example for an image in a blog post:</p>
+<p>To improve accessibility, you should always add an <code>alt</code> text. Here is a full example including an image in a blog post:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> # Note the relative path</span></div></code></pre>
 <h3>Setting a featured image for blog posts<a id="setting-a-featured-image-for-blog-posts" href="#setting-a-featured-image-for-blog-posts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Hyde offers great support for creating data-rich and accessible featured images for blog posts.</p>
-<p>You can read more about this in the <a href="blog-posts#image">creating blog posts page</a>.</p>
+<p>You can read more about this on the <a href="blog-posts#image">creating blog posts page</a>.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>

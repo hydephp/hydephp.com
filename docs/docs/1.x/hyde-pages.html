@@ -495,10 +495,10 @@ under the <code>HydePage</code> class documentation which is conveniently locate
 </tbody>
 </table>
 <h2>HydePage<a id="hydepage" href="#hydepage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>The base class for all Hyde pages, all other page classes extend this class.</p>
-<p>Unlike other frameworks, in general you don't instantiate pages yourself in Hyde, instead, the page models acts as
+<p>The base class for all Hyde pages. All other page classes extend this class.</p>
+<p>Unlike other frameworks, you generally don't instantiate pages yourself in Hyde. Instead, the page models act as
 blueprints defining information for Hyde to know how to parse a file, and what data around it should be generated.</p>
-<p>To create a parsed file instance, you'd typically just create a source file, and you can then access the parsed file
+<p>To get a parsed file instance, you'd typically just create a source file, and you can then access the parsed file
 from the HydeKernel's page index.</p>
 <p>In Blade views, you can always access the current page instance being rendered using the <code>$page</code> variable.</p>
 <h3>Quick Reference<a id="quick-reference" href="#quick-reference" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
@@ -937,7 +937,7 @@ The Markdown will be compiled to HTML using the documentation page layout to the
 
 <h2>HtmlPage<a id="htmlpage" href="#htmlpage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Page class for HTML pages.</p>
-<p>Html pages are stored in the <code>_pages</code> directory and using the <code>.html</code> extension.
+<p>HTML pages are stored in the <code>_pages</code> directory and using the <code>.html</code> extension.
 These pages will be copied exactly as they are to the <code>_site/</code> directory.</p>
 <h3>Quick Reference<a id="quick-reference-7" href="#quick-reference-7" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <table>
