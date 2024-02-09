@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -284,7 +288,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -306,14 +310,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -342,7 +350,7 @@ and it will return the Route object. The route key is generally <code>&lt;page-o
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #676E95;">// Source file: _pages/index.md/index.blade.php</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #676E95;">// Compiled file: _site/index.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #676E95;">// Source file: _posts/my-post.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #676E95;">// Compiled file: _site/posts/my-post.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #676E95;">// Source file: _docs/readme.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #676E95;">// Compiled file: _site/docs/readme.html</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs/readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <h3>Using the <code>x-link</code> component<a id="using-the-x-link-component" href="#using-the-x-link-component" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>When designing Blade layouts it can be useful to use the <code>x-link</code> component to automatically resolve relative links.</p>
-<p>You can of course, use it just like a normal anchor tag like so:</p>
+<p>You can of course use it just like a normal anchor tag like so:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>But where it really shines is when you supply a route. This will then resolve the proper relative link, and format it to use pretty URLs if your site is configured to use them.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">:href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Routes::get(&#39;index&#39;)</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>

@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -196,10 +200,21 @@
 <a href="#before-you-start">Before you start</a>
 </li>
 <li>
+<a href="#version-compatibility">Version compatibility</a>
+<ul>
+<li>
+<a href="#side-effects-and-ensuring-a-smooth-update">Side effects and ensuring a smooth update</a>
+</li>
+</ul>
+</li>
+<li>
 <a href="#methods">Methods</a>
 <ul>
 <li>
 <a href="#which-method">Which method?</a>
+</li>
+<li>
+<a href="#updating-just-the-framework">Updating just the Framework</a>
 </li>
 <li>
 <a href="#using-git">Using Git</a>
@@ -293,7 +308,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -315,14 +330,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -335,12 +354,29 @@
 <h2>Before you start<a id="before-you-start" href="#before-you-start" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>When updating an existing installation, first ensure that you have a backup of your project in case anything goes wrong.
 The recommended way to do this is to use Git as that allows you to smoothly roll back any changes.</p>
+<h2>Version compatibility<a id="version-compatibility" href="#version-compatibility" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<p>HydePHP follows <a href="https://semver.org/">semantic versioning</a>, so you can expect that minor and patch releases will be backwards compatible.
+Only major releases may introduce breaking changes, all of which are thoroughly documented in the accompanying release notes.</p>
+<p>New features and bug fixes are added in minor and patch releases, so it is recommended to keep your project up to date.</p>
+<h3>Side effects and ensuring a smooth update<a id="side-effects-and-ensuring-a-smooth-update" href="#side-effects-and-ensuring-a-smooth-update" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>Please note that due to the intricate nature of software, there is a possibility that an update contains side effects,
+hence why version controlling your site is helpful when updating versions as you can roll back changes. It can also
+be helpful to version control the compiled HTML, so you can view a diff of the changes. Be sure to test that your site
+can be built and that it looks as expected after updating before deploying the changes to your live site.</p>
+<p>We of course have extensive tests in place run on each single code commit to ensure all code is functional, however,
+it is still possible that some edge cases slip through. This means that a bug fix may impact an edge case that you depend on.</p>
+<p>Obligatory related XKCD: <a href="https://xkcd.com/1172">https://xkcd.com/1172</a></p>
 <h2>Methods<a id="methods" href="#methods" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Which method?<a id="which-method" href="#which-method" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Depending on how you installed Hyde, there are a few different ways to update it.</p>
 <p>We have a few methods documented here. The <a href="#using-git">Git method</a> is recommended as it is the easiest and safest way to
 update your project. If you are not using Git, you can still update your project using any of the <a href="#manual-update">manual methods</a>.</p>
 <p>Regardless of the method you use, make sure you follow the <a href="#post-update-instructions">post-update instructions</a> at the end.</p>
+<h3>Updating just the Framework<a id="updating-just-the-framework" href="#updating-just-the-framework" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<p>If you just want to update the framework patch version, you can do so by running the following command:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/framework</span></div></code></pre>
+<p>While the same can still be done for minor versions, it's best to also update your project scaffolding and resources to
+ensure that everything is up to date, for which you should use the methods below.</p>
 <h3>Using Git<a id="using-git" href="#using-git" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>First, make sure you have a remote set up for the base project repository.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">remote</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">add</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">upstream</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://github.com/hydephp/hyde.git</span></div></code></pre>
@@ -378,6 +414,7 @@ as existing files may be overwritten. If you are using Git, you can easily take 
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">install</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">dev/prod</span></div></code></pre>
 <p>Finally, you can rebuild your site.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
+<p>Now, you should browse your site files to ensure things are still looking as expected.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>

@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -184,7 +188,7 @@
 <a href="#introduction">Introduction</a>
 <ul>
 <li>
-<a href="#prerequisites-for-customizing-directories">Prerequisites for Customizing directories</a>
+<a href="#prerequisites-for-customizing-directories">Prerequisites for customizing directories</a>
 </li>
 </ul>
 </li>
@@ -317,7 +321,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -339,14 +343,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -358,7 +366,7 @@
         <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>This page covers advanced usage and is intended for developers who know what they are doing. Documentation here will be
 mainly example driven, as it is assumed you have somewhat of an understanding of what you are doing already.</p>
-<h3>Prerequisites for Customizing directories<a id="prerequisites-for-customizing-directories" href="#prerequisites-for-customizing-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Prerequisites for customizing directories<a id="prerequisites-for-customizing-directories" href="#prerequisites-for-customizing-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <blockquote class="info"><p>Before customizing source and output directories it may be helpful to know how these settings are stored internally.</p></blockquote>
 <p><strong>The following is a summary from the <a href="page-models">Page Models</a> documentation:</strong></p>
 <p>Each page type is represented by a page model class. Each of those classes have static properties that store the source and output directories.
@@ -379,8 +387,8 @@ trait to use the same registration logic as the <code>HydeServiceProvider</code>
 </ol>
 <h2>Customizing source directories<a id="customizing-source-directories" href="#customizing-source-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>The directories you place your content in are important. The directory will be used to determine the proper page type and the templates used.
-If you are not happy with defaults, you can change them. Note that these are relative to the <code>source_root</code> setting,
-which is the root of your project by default.</p>
+If you are not happy the with defaults, you can change them. Note that these are relative to the <code>source_root</code> setting,
+which is the root of your project, by default.</p>
 <p>Note that you need to take care of conflicts when changing the source directories. For example, if you store Markdown
 posts in the same directory as documentation pages, Hyde will not know which page type to use.</p>
 <h3>In the config file<a id="in-the-config-file" href="#in-the-config-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
@@ -398,7 +406,7 @@ posts in the same directory as documentation pages, Hyde will not know which pag
 <h3>Route key impact<a id="route-key-impact" href="#route-key-impact" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>For example, changing the output directory of Markdown posts to <code>blog</code> instead of <code>posts</code> will change the route key base from <code>posts</code> to <code>blog</code>.
 This means that a file stored as <code>_posts/hello-world.md</code> will have the route key <code>blog/hello-world</code> instead of <code>posts/hello-world</code>,
-this may break your site's configuration, so you should always verify the impact to your site of such a change.
+this may break your site's configuration and links, so you should always verify your site works properly after such a change.
 You can learn more about this in the <a href="core-concepts#paths-identifiers-and-route-keys">route key documentation</a>.</p>
 <h2>Custom source root<a id="custom-source-root" href="#custom-source-root" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>HydePHP will by default look for the source directories shown above in the root of your project.
@@ -420,7 +428,7 @@ Hyde will copy all files in this directory to <code>_site/media</code> (or whate
 <li>Note that you will likely need to manually update <code>webpack.mix.js</code> so Laravel Mix can compile the assets correctly.</li>
 <li>You will of course also need to copy over any existing files from the old directory to the new one.</li>
 </ol>
-<h4>Setting changes both source and output directories<a id="setting-changes-both-source-and-output-directories" href="#setting-changes-both-source-and-output-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Note that this setting affects both source and output directories<a id="note-that-this-setting-affects-both-source-and-output-directories" href="#note-that-this-setting-affects-both-source-and-output-directories" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <p>Note that this change will affect both the source and output directories. For example, if you set the value to <code>assets</code>,
 all files from <code>assets</code> will be copied to <code>_site/assets</code>. If the setting starts with an underscore, that will be removed
 from the output directory, so files in <code>_assets</code> will be copied to <code>_site/assets</code>.</p>

@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -311,7 +315,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -333,14 +337,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -351,16 +359,16 @@
     <section id="document-main-content" itemprop="articleBody">
         <h2>Introduction to Hyde Pages<a id="introduction-to-hyde-pages" href="#introduction-to-hyde-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Hyde offers two ways to create static pages:
-<strong>Markdown pages</strong> which are perfect for simple pages that focuses heavily on the content,
+<strong>Markdown pages</strong> which are perfect for simple pages that focus heavily on the content,
 and <strong>Blade pages</strong> which are perfect for more complex pages where you want full control over the HTML,
-and where you may want to include other components.</p>
+and where you may want to include other components or want to use dynamic PHP code.</p>
 <p>Let's start with the basics.</p>
 <h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Since Hyde does a lot of things automatically, there are some things you may need
 to keep in mind when creating blog posts so that you don't get unexpected results.</p>
 <h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <ul>
-<li>Hyde Pages are files are stored in the <code>_pages</code> directory</li>
+<li>Hyde Pages are files stored in the <code>_pages</code> directory</li>
 <li>The filename is used as the filename for the compiled HTML</li>
 <li>Filenames should use <code>kebab-case-identifier</code> format, followed by the appropriate extension</li>
 <li>Files prefixed with <code>_underscores</code> are ignored by Hyde</li>
@@ -416,7 +424,8 @@ however you still need to use the <code>blade.php</code> extension so Hyde can r
 </blockquote>
 <h2>When to use which?<a id="when-to-use-which" href="#when-to-use-which" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Markdown pages look great and work well for simple &quot;about&quot; pages and the like, but with Markdown we are still pretty limited.</p>
-<p>If you are comfortable with it, and have the need for it, use Blade to create more complex pages! And mix and match between them! Some page types are better suited for Markdown, and others for Blade.</p>
+<p>If you are comfortable with it and have the need for it, use Blade to create more complex pages! And mix and match between them!
+Some page types are better suited for Markdown, and others for Blade. Don't limit yourself to just one type.</p>
 <h3>Comparison<a id="comparison" href="#comparison" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <table>
 <thead>
@@ -435,7 +444,7 @@ however you still need to use the <code>blade.php</code> extension so Hyde can r
 <td>➕ Use the default app layout or create your own</td>
 </tr>
 <tr>
-<td>➕ Suited for content heavy pages such as &quot;about us&quot;</td>
+<td>➕ Suited for content-heavy pages such as &quot;about us&quot;</td>
 <td>➕ Use Blade templates and components to keep code DRY</td>
 </tr>
 <tr>
@@ -448,7 +457,7 @@ however you still need to use the <code>blade.php</code> extension so Hyde can r
 </tr>
 <tr>
 <td></td>
-<td>➖ Takes longer to create as as you need to write the markup</td>
+<td>➖ Takes longer to create as you need to write the markup</td>
 </tr>
 <tr>
 <td></td>

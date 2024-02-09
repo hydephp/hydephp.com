@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -295,7 +299,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -317,14 +321,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -351,7 +359,7 @@ You might also want to read about the <a href="autodiscovery">autodiscovery life
 <h3>The factory pipeline, in short<a id="the-factory-pipeline-in-short" href="#the-factory-pipeline-in-short" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>After basic information about the page has been gathered, such as the source file information and the front matter,
 the page model is run through a series of factories. These are just classes that work around the limited data
-that is available at this point, and will assign the rich data needed to make your Hyde page awesome.</p>
+that is available at this point and will generate the rich data used to make your Hyde page awesome.</p>
 <p>There are a few factory classes. The one we will be looking at here is the <code>HydePageDataFactory</code> class, which is
 responsible for data applicable to all page models. Complex structures and data only relevant to some page types
 have their own factories, making the code more modular and maintainable.</p>
@@ -375,7 +383,7 @@ If that fails, the last step will generate a title from the file name. This ensu
 here for completeness. It's pretty simple. The factory will always return an array of the computed data, where the keys
 always match the property names on the page object, so we just need to loop over the array and set the properties.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">foreach</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">data</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">toArray</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">key </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;{$</span><span style="color: #A6ACCD;">key</span><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">}</span></div></code></pre>
-<p>And that's pretty much it! Hyde will do this for all the data it can discover, all so that you can focus on your content.</p>
+<p>And that's pretty much it! Hyde will do this for all the data it can discover, freeing you to focus on your content.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>

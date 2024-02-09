@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.3.2">
+<meta name="generator" content="HydePHP 1.4.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=79aa1c7a3c1ba892aa4855b28d5b2866">
+    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
 
 
 
@@ -47,6 +47,10 @@
 
 <meta id="meta-color-scheme" name="color-scheme" content="light">
 <script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
 </head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
@@ -319,7 +323,7 @@
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions</h4>
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -341,14 +345,18 @@
             <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Third-Party Integrations
         </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            HydePHP UI Kit - Documentation
+        </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
             <p>
-    <a href="../../">Back to home page</a>
-</p>        </footer>
+            <a href="../../">Back to home page</a>
+    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
@@ -359,7 +367,7 @@
     <section id="document-main-content" itemprop="articleBody">
         <h2>Introduction to Hyde Posts<a id="introduction-to-hyde-posts" href="#introduction-to-hyde-posts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Making blog posts with Hyde is easy. At the most basic level, all you need is to add a Markdown file to your <code>_posts</code> folder.</p>
-<p>To use the full power of the Hyde post module however, you'll want to add YAML <a href="front-matter">Front Matter</a> to your posts.</p>
+<p>To use the full power of the Hyde post module you'll want to add YAML <a href="front-matter">Front Matter</a> to your posts.</p>
 <p><strong>You can interactively scaffold posts with automatic front matter using the HydeCLI:</strong></p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span></div></code></pre>
 <p>Learn more about scaffolding posts, and other files, in the <a href="console-commands">console commands</a> documentation.</p>
@@ -386,7 +394,7 @@ markup for the post as well as meta tags and post feeds.</p>
 <p>You are encouraged to look at the compiled HTML to learn
 and understand how your front matter is used. You can read more about the Front Matter format in the <a href="front-matter">Front Matter</a> documentation.</p>
 <h3>Blog Post Example<a id="blog-post-example" href="#blog-post-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<p>Before digging in deeper on all the supported options, let's take a look at what a basic post with front matter looks like.</p>
+<p>Before digging deeper into all the supported options, let's take a look at what a basic post with front matter looks like.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_posts/my-new-post.md</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">My New Post</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">A short description used in previews and SEO</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">blog</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Mr. Hyde</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-05-09 18:38</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write your Markdown here</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #A6ACCD;">Autem aliquid alias explicabo consequatur similique,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">animi distinctio earum ducimus minus, magnam.</span></div></code></pre>
 <h2>Supported Front Matter properties<a id="supported-front-matter-properties" href="#supported-front-matter-properties" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Post Front Matter Schema<a id="post-front-matter-schema" href="#post-front-matter-schema" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
@@ -433,8 +441,8 @@ Keep on reading to see further explanations, details, and examples.</p>
 </tr>
 </tbody>
 </table>
-<p>Note that YAML here is pretty forgiving. In most cases you do not need to wrap strings in quotes,
-but it can help in certain edge cases, for example if the text contains special Yaml characters, thus they are included here.</p>
+<p>Note that YAML here is pretty forgiving. In most cases you do not need to wrap strings in quotes.
+However, it can help in certain edge cases, for example if the text contains special Yaml characters, thus they are included here.</p>
 <p>In the examples below, when there are multiple examples, they signify various ways to use the same property.</p>
 <p>When specifying an array you don't need all the sub-properties. The examples generally show all the supported values.</p>
 <h3>Title<a id="title" href="#title" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
@@ -480,7 +488,7 @@ for a detailed blog post with examples and schema information!</p>
 <p>To use images stored in the <code>_media/</code> directory, you can use the following syntax:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <p><em>Note the relative path since the blog post is compiled to <code>posts/example.html</code></em></p>
-<p>To learn more, check out the <a href="managing-assets#managing-images">chapter in managing assets</a></p>
+<p>To learn more, check out the <a href="managing-assets#managing-images">managing assets chapter</a> on the topic.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
