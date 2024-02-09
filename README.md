@@ -5,9 +5,7 @@
 
 ## About this repository
 
-This is the source for the official [HydePHP.com](https://hydephp.com/) website.
-
-The site is, of course, made with [HydePHP](https://github.com/hydephp/hyde).
+This is the source for the official [HydePHP.com](https://hydephp.com/) website. The site is, of course, made with [HydePHP](https://github.com/hydephp/hyde).
 
 The site is automatically compiled by GitHub Actions and deployed to GitHub Pages.
 
