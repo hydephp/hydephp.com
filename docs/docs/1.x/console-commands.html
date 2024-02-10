@@ -367,7 +367,7 @@
     </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
         <h1>Console Commands</h1>
@@ -382,13 +382,13 @@ the HydeCLI is based on Artisan after all!</p>
 If an argument or option value has a space in it, it needs to be wrapped in quotes.</p>
 <p>The HydeCLI exists at the root of your application as the <code>hyde</code> script and provides a number of helpful commands that can
 assist you while you build your site. To view a list of all available Hyde commands, you may use the list command:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">list</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde list</div></code></pre>
 <h3>Got stuck? The CLI can help.<a id="got-stuck-the-cli-can-help" href="#got-stuck-the-cli-can-help" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Every command also includes a &quot;help&quot; screen which displays and describes the command's available arguments and options.
 To view a help screen, precede the name of the command with <code>help</code>:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">help</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde help &lt;command&gt;</div></code></pre>
 <p>You can also always add <code>--help</code> to a command to show detailed usage information.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--help</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde &lt;command&gt; --help</div></code></pre>
 <h2>Available Commands<a id="available-commands" href="#available-commands" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Here is a quick reference of all the available commands. You can also run <code>php hyde list</code> to see this list.</p>
 <table>
@@ -463,7 +463,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Build the static site<a id="build-the-static-site" href="#build-the-static-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="build" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--run-dev</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--run-prod</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--run-prettier</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--pretty-urls</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--no-api</span><span style="color: #89DDFF;">]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde build [--run-dev] [--run-prod] [--run-prettier] [--pretty-urls] [--no-api]</div></code></pre>
 <p>Build the static site</p>
 <h4>Options<a id="options" href="#options" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -498,7 +498,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Run the static site builder for a single file<a id="run-the-static-site-builder-for-a-single-file" href="#run-the-static-site-builder-for-a-single-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="rebuild" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">path</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde rebuild &lt;path&gt;</div></code></pre>
 <p>Run the static site builder for a single file</p>
 <h4>Arguments<a id="arguments" href="#arguments" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -517,7 +517,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Start the realtime compiler server<a id="start-the-realtime-compiler-server" href="#start-the-realtime-compiler-server" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="serve" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--host </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">HOST</span><span style="color: #89DDFF;">]]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--port </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">PORT</span><span style="color: #89DDFF;">]]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde serve [--host [HOST]] [--port [PORT]]</div></code></pre>
 <p>Start the realtime compiler server.</p>
 <h4>Options<a id="options-1" href="#options-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -540,23 +540,23 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Test and validate your project to optimize your site<a id="test-and-validate-your-project-to-optimize-your-site" href="#test-and-validate-your-project-to-optimize-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="validate" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">validate</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde validate</div></code></pre>
 <p>Run a series of tests to validate your setup and help you optimize your site.</p>
 <h2>Generate the RSS feed<a id="generate-the-rss-feed" href="#generate-the-rss-feed" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="build-rss" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build:rss</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde build:rss</div></code></pre>
 <p>Generate the RSS feed</p>
 <h2>Generate the <code>docs/search.json</code> file<a id="generate-the-docssearchjson-file" href="#generate-the-docssearchjson-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="build-search" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build:search</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde build:search</div></code></pre>
 <p>Generate the <code>docs/search.json</code> file</p>
 <h2>Generate the <code>sitemap.xml</code> file<a id="generate-the-sitemapxml-file" href="#generate-the-sitemapxml-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="build-sitemap" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build:sitemap</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde build:sitemap</div></code></pre>
 <p>Generate the <code>sitemap.xml</code> file</p>
 <h2>Scaffold a new Markdown, Blade, or documentation page file<a id="scaffold-a-new-markdown-blade-or-documentation-page-file" href="#scaffold-a-new-markdown-blade-or-documentation-page-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="make-page" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--type </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">TYPE</span><span style="color: #89DDFF;">]]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--blade</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--docs</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--force</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">title</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde make:page [--type [TYPE]] [--blade] [--docs] [--force] [--] [&lt;title&gt;]</div></code></pre>
 <p>Scaffold a new Markdown, Blade, or documentation page file</p>
 <h4>Arguments &amp; Options<a id="arguments--options" href="#arguments--options" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -591,7 +591,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Scaffold a new Markdown blog post file<a id="scaffold-a-new-markdown-blog-post-file" href="#scaffold-a-new-markdown-blog-post-file" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="make-post" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--force</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">title</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde make:post [--force] [--] [&lt;title&gt;]</div></code></pre>
 <p>Scaffold a new Markdown blog post file</p>
 <h4>Arguments &amp; Options<a id="arguments--options-1" href="#arguments--options-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -614,11 +614,11 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Publish the default configuration files<a id="publish-the-default-configuration-files" href="#publish-the-default-configuration-files" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="publish-configs" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:configs</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde publish:configs</div></code></pre>
 <p>Publish the default configuration files</p>
 <h2>Publish one of the default homepages as <code>index.blade.php</code>.<a id="publish-one-of-the-default-homepages-as-indexbladephp" href="#publish-one-of-the-default-homepages-as-indexbladephp" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="publish-homepage" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:homepage</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--force</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">homepage</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde publish:homepage [--force] [--] [&lt;homepage&gt;]</div></code></pre>
 <p>Publish one of the default homepages as <code>index.blade.php</code>.</p>
 <h4>Arguments &amp; Options<a id="arguments--options-2" href="#arguments--options-2" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -641,7 +641,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Publish the hyde components for customization<a id="publish-the-hyde-components-for-customization" href="#publish-the-hyde-components-for-customization" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="publish-views" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[&lt;</span><span style="color: #A6ACCD;">category</span><span style="color: #89DDFF;">&gt;]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde publish:views [&lt;category&gt;]</div></code></pre>
 <p>Publish the hyde components for customization. Note that existing files will be overwritten.</p>
 <h4>Arguments<a id="arguments-1" href="#arguments-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -660,11 +660,11 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
 <h2>Display all registered routes.<a id="display-all-registered-routes" href="#display-all-registered-routes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="route-list" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde route:list</div></code></pre>
 <p>Display all registered routes.</p>
 <h2>Publish any publishable assets from vendor packages<a id="publish-any-publishable-assets-from-vendor-packages" href="#publish-any-publishable-assets-from-vendor-packages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p><a name="vendor-publish" style="display: inline-block; position: absolute; margin-top: -5rem;"></a></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor:publish</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--existing</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--force</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--all</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--provider </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">PROVIDER</span><span style="color: #89DDFF;">]]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--tag </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">TAG</span><span style="color: #89DDFF;">]]</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style=''><div class='line'>// torchlight! {&quot;lineNumbers&quot;: false}</div><div class='line'>php hyde vendor:publish [--existing] [--force] [--all] [--provider [PROVIDER]] [--tag [TAG]]</div></code></pre>
 <p>Publish any publishable assets from vendor packages</p>
 <h4>Options<a id="options-2" href="#options-2" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <table>
@@ -699,12 +699,7 @@ To view a help screen, precede the name of the command with <code>help</code>:</
 </table>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
-<p class="edit-page-link">
+        <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/console-commands.md">
         Edit Page
     </a>
