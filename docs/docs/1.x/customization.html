@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=d901cabe99a1d28283404750bcd05f7d">
 
 
 
@@ -560,7 +560,7 @@ Hyde is designed to automatically configure these menus for you based on the con
 </ul>
 <p>Learn more in the <a href="documentation-pages">Documentation Pages</a> documentation.</p>
 <h2>Additional Advanced Options<a id="additional-advanced-options" href="#additional-advanced-options" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<p>The following configuration options in the <code>confg/hyde.php</code> file are intended for advanced users and
+<p>The following configuration options in the <code>config/hyde.php</code> file are intended for advanced users and
 should only be modified if you fully understand their impact. The code examples show the default values.</p>
 <h3><code>media_extensions</code><a id="mediaextensions" href="#mediaextensions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>This option allows you to specify file extensions considered as media files, which will be copied to the output directory.
@@ -579,7 +579,7 @@ with common directories including the default one, but you are free to change th
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">build_manifest_path</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">app/storage/framework/cache/build-manifest.json</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
 <h3><code>hydefront_version</code> and <code>hydefront_cdn_url</code><a id="hydefrontversion-and-hydefrontcdnurl" href="#hydefrontversion-and-hydefrontcdnurl" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>These options allow you to specify the HydeFront version and CDN URL when loading <code>app.css</code> from the CDN.</p>
-<p>Only change these if you know what you're doing as some versions may incompatible with your Hyde version.</p>
+<p>Only change these if you know what you're doing as some versions may be incompatible with your Hyde version.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Services</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">AssetService</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hydefront_version</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">AssetService</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">HYDEFRONT_VERSION</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hydefront_cdn_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">AssetService</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">HYDEFRONT_CDN_URL</span><span style="color: #89DDFF;">,</span></div></code></pre>
 <h2>Blade Views<a id="blade-views" href="#blade-views" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>Hyde uses the Laravel Blade templating engine. Most parts of the included templates have been extracted into components to be customized easily.
