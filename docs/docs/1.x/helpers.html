@@ -394,6 +394,12 @@ Both Markdown and Blade includes will be rendered to HTML.</p>
 <h4>Directory Structure Example<a id="directory-structure-example" href="#directory-structure-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
 <p>Here is an example of the directory structure for includes:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="tree" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">resources/</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">|-- includes/</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">|   |-- example.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">|   |-- footer.md</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">|   |-- banner.blade.php</span></div></code></pre>
+<h4>Stock Includes<a id="stock-includes" href="#stock-includes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<p>HydePHP also supports some drop-in includes that you can use as an alternative to some config options. These currently are as follows:</p>
+<ul>
+<li>
+<code>footer</code> If a <code>footer.md</code> file exists in the includes directory, Hyde will use that as the footer text, instead of the one set in the <code>hyde.footer</code> config option.</li>
+</ul>
 <h2>Reading time helper<a id="reading-time-helper" href="#reading-time-helper" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>The <code>ReadingTime</code> helper provides a simple way to calculate the reading time of a given string, for example a blog post.</p>
 <h3>Create a new <code>ReadingTime</code> instance<a id="create-a-new-readingtime-instance" href="#create-a-new-readingtime-instance" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
