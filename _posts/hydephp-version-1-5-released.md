@@ -82,12 +82,12 @@ scripts: "<!-- Custom HTML in the body -->"
 You can now also add custom HTML to the `<head>` and `<script>` sections using HTML includes.
 
 ```html
-<!-- filepath resources/includes/head.html -->
+// filepath resources/includes/head.html
 <!-- Custom HTML in the head -->
 ```
 
 ```html
-<!-- filepath resources/includes/scripts.html -->
+// filepath resources/includes/scripts.html
 <!-- Custom HTML in the body -->
 ```
 
