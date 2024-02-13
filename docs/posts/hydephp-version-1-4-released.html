@@ -145,7 +145,7 @@
             <meta itemprop="contentUrl" content="../media/live-edit-cover.png">
     </figure>    <div aria-label="Article body" itemprop="articleBody">
         <h2>Overview</h2>
-<p>HydePHP v1.4 is now available for download!</p>
+<p><strong>HydePHP v1.4 is now available for download!</strong></p>
 <p>This new update brings a Live Edit feature and a bunch of other developer experience enhancements.</p>
 <h2>Live Edit</h2>
 <p>The live edit feature allows you to quickly edit Markdown-based pages (posts, docs, and pages) directly in the browser.</p>
@@ -158,30 +158,24 @@ When you're done, click the save button to save the changes to the page's source
 <p>The compiler console output has been redesigned to be more useful and pleasant to look at.</p>
 <p><img src="/media/new-realtime-compiler-output.png" alt="Compiler Console Output" /></p>
 <h2>Other Enhancements and Fixes</h2>
-<p>Here are just some of the other enhancements and fixes in this release,
+<p>Here are just some of the other improvements in this release,
 for the full list of changes, see the <a href="https://github.com/hydephp/develop/releases/tag/v1.4.0">release notes</a>.</p>
 <ul>
-<li>
-<p>Added a new <code>hyde serve --open</code> option to automatically open the site in the browser in <a href="https://github.com/hydephp/develop/pull/1483">#1483</a></p>
+<li>Added a new <code>hyde serve --open</code> option to automatically open the site in the browser in <a href="https://github.com/hydephp/develop/pull/1483">#1483</a>
 </li>
-<li>
-<p>Added a config option to customize automatic sidebar navigation group names in <a href="https://github.com/hydephp/develop/pull/1481">#1481</a></p>
+<li>Added a config option to customize automatic sidebar navigation group names in <a href="https://github.com/hydephp/develop/pull/1481">#1481</a>
 </li>
-<li>
-<p>Added support for dot notation in the Yaml configuration files in <a href="https://github.com/hydephp/develop/pull/1478">#1478</a></p>
+<li>Added support for dot notation in the Yaml configuration files in <a href="https://github.com/hydephp/develop/pull/1478">#1478</a>
 </li>
-<li>
-<p>The <code>docs.sidebar.footer</code> config option now accepts a Markdown string to replace the default footer in <a href="https://github.com/hydephp/develop/pull/1477">#1477</a></p>
+<li>Added support for both route keys and identifiers for specifying sidebar order in <a href="https://github.com/hydephp/develop/pull/1432">#1432</a>
 </li>
-<li>
-<p>Add support for both route keys and identifiers for specifying sidebar order in <a href="https://github.com/hydephp/develop/pull/1432">#1432</a></p>
+<li>Updated the sitemap generator to use relative links instead of localhost when missing site URL in <a href="https://github.com/hydephp/develop/pull/1479">#1479</a>
 </li>
-<li>
-<p>Updated sitemap generator to use relative links instead of localhost when missing site URL in <a href="https://github.com/hydephp/develop/pull/1479">#1479</a></p>
+<li>The <code>docs.sidebar.footer</code> config option now accepts a Markdown string to replace the default footer in <a href="https://github.com/hydephp/develop/pull/1477">#1477</a>
 </li>
 </ul>
 <h2>Upgrade Guide</h2>
-<p>To upgrade to this version, simply run the following command:</p>
+<p>To upgrade to this version, simply run the following commands:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">require</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/framework:^1.4</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">require</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/realtime-compiler:^3.2</span></div></code></pre>
 <p>You may first want to read the <a href="https://hydephp.com/docs/1.x/updating-hyde">upgrade guide</a> documentation.</p>
 <h2>Conclusion</h2>
