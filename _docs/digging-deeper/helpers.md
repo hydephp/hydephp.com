@@ -48,58 +48,58 @@ Includes are stored in the `resources/includes` directory. You can access them u
 ```php
 use Hyde\Support\Includes;
 
+// Get the raw contents of any arbitrary file in the includes directory
 Includes::get('example.md');
-Includes::get('example.md', 'Default content');
+
+// Get the raw contents of an HTML file in the includes directory
+Includes::html('example.html');
+
+// Get the rendered Blade of a partial file in the includes directory
+Includes::blade('example.blade.php');
+
+// Get the rendered Markdown of a partial file in the includes directory
+Includes::markdown('example.md');
 ```
 
-#### Markdown Includes
-
-Gets the rendered Markdown of a partial file in the includes directory. Supplying the file extension is optional.
+When using the `html`, `markdown`, and `blade` methods, the file extension is optional.
 
 ```php
 use Hyde\Support\Includes;
 
-Includes::markdown('footer');
-Includes::markdown('footer.md');
-
-// With default value if the file does not exist
-Includes::markdown('footer', 'Default content');
+Includes::html('example') === Includes::html('example.html');
+Includes::blade('example')  === Includes::blade('example.blade.php');
+Includes::markdown('example') === Includes::markdown('example.md');
 ```
 
-#### Blade Includes
-
-Gets the rendered Blade of a partial file in the includes directory. Supplying the file extension is optional.
+All methods will return `null` if the file does not exist.
+However, you can supply a default value as the second argument to be used instead.
+Remember that Markdown and Blade defaults will still be rendered to HTML.
 
 ```php
 use Hyde\Support\Includes;
 
-Includes::blade('banner');
-Includes::blade('banner.blade.php');
-
-// With default value if the file does not exist
-Includes::blade('banner', 'Default content');
+// If the file does not exist, the default value will be returned
+Includes::markdown('example.md', 'Default content');
 ```
 
-#### Directory Structure Example
-
-Here is an example of the directory structure for includes:
-
-```tree
-resources/
-|-- includes/
-|   |-- example.md
-|   |-- footer.md
-|   |-- banner.blade.php
-```
-
-#### Stock Includes
+### Stock Includes
 
 HydePHP also supports some drop-in includes that you can use as an alternative to some config options. These currently are as follows:
 
-- `footer` If a `footer.md` file exists in the includes directory, Hyde will use that as the footer text, instead of the one set in the `hyde.footer` config option.
+#### Footer
+
+If a `footer.md` file exists in the includes directory, Hyde will use that as the footer text, instead of the one set in the `hyde.footer` config option.
+
+#### Head
+
+If a `head.html` file exists in the includes directory, Hyde include that within the `<head>` tag of the generated HTML, in addition to the one set in the `hyde.head` config option.
+
+#### Scripts
+
+If a `scripts.html` file exists in the includes directory, Hyde include that at the end of the `<body>` tag of the generated HTML, in addition to the one set in the `hyde.scripts` config option.
 
 
-## Reading time helper
+## Reading-Time Helper
 
 The `ReadingTime` helper provides a simple way to calculate the reading time of a given string, for example a blog post.
 
@@ -188,7 +188,7 @@ $time->formatUsingClosure(function (int $minutes, int $seconds): string {
 ```
 
 
-## Pagination utility
+## Pagination Utility
 
 The `Pagination` class provides utilities to help you create custom pagination components.
 

@@ -76,7 +76,7 @@ navigation:
 ```
 
 
-## Dynamic content generation
+## Dynamic Content Generation
 
 Hyde makes documentation pages easy to create by automatically generating dynamic content such as the sidebar and page title.
 If you are not happy with the results you can customize them in the config or with front matter.
@@ -278,7 +278,7 @@ If you set this to false, Hyde will match the directory structure of the source 
 ```
 
 
-## Search feature
+## Search Feature
 
 ### Introduction
 
@@ -325,7 +325,7 @@ navigation menu items are hidden. The page will still be accessible as normal bu
 The Realtime Compiler that powers the `php hyde serve` command will automatically generate a fresh search index each time the browser requests it.
 
 
-## Automatic "Edit Page" button
+## Automatic "Edit Page" Button
 
 ### Introduction
 
