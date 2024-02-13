@@ -124,6 +124,56 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h2>About the release cycle</h2>
 <p>HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Development is made in the <a href="https://github.com/hydephp/develop">Hyde/Develop Monorepo</a>. Major and Minor release versions are made in the Develop project. These releases are synced to the Hyde and Framework projects, and are what this changelog file tracks. Patch release versions are made in the Framework and Hyde projects independently. See <a href="https://github.com/hydephp/develop#releases">https://github.com/hydephp/develop#releases</a> for more information.</p>
 <!-- CHANGELOG_START -->
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.5.0">1.5.0</a> - 2024-02-13</h2>
+<h3>Improved Patch Release Strategy</h3>
+<p>This release experiments some changes into how releases are handled to clarify the patch versioning of distributed packages compared to the monorepo source versioning.</p>
+<p>In short: We are now experimenting with rolling patch releases, where patches are released as soon as they're ready, leading to faster rollout of bugfixes.
+This means that the patch version discrepancy between the monorepo and the distributed packages will be increased, but hopefully the end results will still be clearer,
+thanks to the second related change: Prefixing the subpackage changes in this changelog with the package name. If there is no prefix, the change applies to the core package or the monorepo.</p>
+<p>All this to say, please keep in mind that when the monorepo gets a new minor version, the prefixed changes may already have been released as patches in their respective packages.</p>
+<h3>Added</h3>
+<ul>
+<li>Added the existing <code>media_extensions</code> option to the <code>hyde</code> configuration file in <a href="https://github.com/hydephp/develop/pull/1531">https://github.com/hydephp/develop/pull/1531</a>
+</li>
+<li>Added configuration options to add custom HTML to the <code>&lt;head&gt;</code> and <code>&lt;script&gt;</code> sections in <a href="https://github.com/hydephp/develop/pull/1542">https://github.com/hydephp/develop/pull/1542</a>
+</li>
+<li>Added support for adding custom HTML to the <code>&lt;head&gt;</code> and <code>&lt;script&gt;</code> sections using HTML includes in <a href="https://github.com/hydephp/develop/pull/1554">https://github.com/hydephp/develop/pull/1554</a>
+</li>
+<li>Added an <code>html</code> helper to the <code>Includes</code> facade in <a href="https://github.com/hydephp/develop/pull/1552">https://github.com/hydephp/develop/pull/1552</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Renamed local template variable <code>$document</code> to <code>$article</code> to better match the usage in <a href="https://github.com/hydephp/develop/pull/1506">https://github.com/hydephp/develop/pull/1506</a>
+</li>
+<li>Updated semantic documentation article component to support existing variables in <a href="https://github.com/hydephp/develop/pull/1506">https://github.com/hydephp/develop/pull/1506</a>
+</li>
+<li>Updated the Markdown to plain text converter to trim whitespace in <a href="https://github.com/hydephp/develop/pull/1561">https://github.com/hydephp/develop/pull/1561</a>
+</li>
+<li>HydeFront: Changed <code>&lt;code&gt;</code> styling to display as inline instead of inline-block in <a href="https://github.com/hydephp/develop/pull/1525">https://github.com/hydephp/develop/pull/1525</a>
+</li>
+<li>Realtime Compiler: Add strict type declarations in <a href="https://github.com/hydephp/develop/pull/1555">https://github.com/hydephp/develop/pull/1555</a>
+</li>
+<li>Bumped Realtime Compiler version to v3.3 in <a href="https://github.com/hydephp/develop/pull/1562">https://github.com/hydephp/develop/pull/1562</a>
+</li>
+<li>Internal: Renamed snake case test methods to camel case in <a href="https://github.com/hydephp/develop/pull/1556">https://github.com/hydephp/develop/pull/1556</a>
+</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>Deprecated the <code>BuildService::transferMediaAssets()</code> method in <a href="https://github.com/hydephp/develop/pull/1533">https://github.com/hydephp/develop/pull/1533</a>, as it will be moved into a build task in v2.0.</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed icons not being considered as images by dashboard viewer in <a href="https://github.com/hydephp/develop/pull/1512">https://github.com/hydephp/develop/pull/1512</a>
+</li>
+<li>HydeFront: Fixed bug where heading permalink buttons were included in text represented output in <a href="https://github.com/hydephp/develop/pull/1519">https://github.com/hydephp/develop/pull/1519</a>
+</li>
+<li>HydeFront: Fix visual overflow bug in inline code blocks within blockquotes <a href="https://github.com/hydephp/hydefront/issues/65">https://github.com/hydephp/hydefront/issues/65</a> in <a href="https://github.com/hydephp/develop/pull/1525">https://github.com/hydephp/develop/pull/1525</a>
+</li>
+<li>Realtime Compiler: Fixes visual dashboard bugs <a href="https://github.com/hydephp/realtime-compiler/issues/23">https://github.com/hydephp/realtime-compiler/issues/23</a> and <a href="https://github.com/hydephp/realtime-compiler/issues/24">https://github.com/hydephp/realtime-compiler/issues/24</a> in <a href="https://github.com/hydephp/develop/pull/1528">https://github.com/hydephp/develop/pull/1528</a>
+</li>
+</ul>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/1.4.2">1.4.2</a> - 2023-12-22</h2>
 <h3>Added</h3>
 <ul>

@@ -244,7 +244,7 @@
 </ul>
 </li>
 <li>
-<a href="#creating-build-tasks">Creating build tasks</a>
+<a href="#creating-build-tasks">Creating Build Tasks</a>
 <ul>
 <li>
 <a href="#minimal-example">Minimal example</a>
@@ -255,7 +255,7 @@
 </ul>
 </li>
 <li>
-<a href="#registering-the-tasks">Registering the tasks</a>
+<a href="#registering-the-tasks">Registering the Tasks</a>
 <ul>
 <li>
 <a href="#autodiscovery-registration">Autodiscovery registration</a>
@@ -383,7 +383,7 @@ Both of these have the exact same helpers and API available, so the only differe
 <h3>Interacting with output<a id="interacting-with-output" href="#interacting-with-output" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>In a way, build tasks are like micro-commands, as they can interact directly with the build commands I/O. Please take a look at the <a href="https://laravel.com/docs/10.x/artisan#command-io">Laravel Console Documentation</a> for the full list of available methods.</p>
 <p>In addition, there are some extra helpers available in the base BuildTask class that allow you to fluently format output to the console, which you will see in the examples below.</p>
-<h2>Creating build tasks<a id="creating-build-tasks" href="#creating-build-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Creating Build Tasks<a id="creating-build-tasks" href="#creating-build-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <h3>Minimal example<a id="minimal-example" href="#minimal-example" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
 <p>Here is a minimal example to give you an idea of what we are working with.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">SimpleBuildTask</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PostBuildTask</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">handle</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">        </span><span style="color: #676E95;">//</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">}</span></div></code></pre>
@@ -407,7 +407,7 @@ which as I'm sure you have guessed, is the method that is executed when the task
   Goodbye World!
 </pre>
 <p>As you can see, there is no execution time tracking here, since we overrode the <code>printFinishMessage()</code> method that normally prints this. You can of course call the <code>withExecutionTime()</code> method to add this back in. See more in the API reference below.</p>
-<h2>Registering the tasks<a id="registering-the-tasks" href="#registering-the-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Registering the Tasks<a id="registering-the-tasks" href="#registering-the-tasks" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>There are a few ways to register these tasks so Hyde can find them.</p>
 <p>They are shown here in order of presumed convenience, but you are free to choose whichever you prefer. The latter options are more suited for extension developers.</p>
 <h3>Autodiscovery registration<a id="autodiscovery-registration" href="#autodiscovery-registration" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>

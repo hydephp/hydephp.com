@@ -177,7 +177,7 @@
 </ul>
 </li>
 <li>
-<a href="#how-do-i-compile-assets">How do I compile assets?</a>
+<a href="#how-do-i-compile-assets">How Do I Compile assets?</a>
 <ul>
 <li>
 <a href="#how-does-it-work">How does it work?</a>
@@ -199,7 +199,7 @@
 </ul>
 </li>
 <li>
-<a href="#managing-images">Managing images</a>
+<a href="#managing-images">Managing Images</a>
 <ul>
 <li>
 <a href="#referencing-images">Referencing images</a>
@@ -416,7 +416,7 @@ all asset files here will get copied as they are into the <code>_site/media</cod
 <p>It may seem weird to have two folders for storing the compiled assets, but it is quite useful.</p>
 <p>The <code>_site</code> directory is intended to be excluded from version control, while the <code>_media</code> folder is included in the
 version control. You are of course free to modify this behaviour by editing the <code>webpack.mix.js</code> file to change the output directory.</p>
-<h2>How do I compile assets?<a id="how-do-i-compile-assets" href="#how-do-i-compile-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>How Do I Compile assets?<a id="how-do-i-compile-assets" href="#how-do-i-compile-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>First, make sure that you have installed all the NodeJS dependencies using <code>npm install</code>.
 Then run <code>npm run dev</code> to compile the assets. If you want to compile the assets for production, run <code>npm run prod</code>.
 You can also run <code>npm run watch</code> to watch for changes in the source files and recompile the assets automatically.</p>
@@ -451,7 +451,7 @@ also add a script tag which loads the TailwindCSS Play CDN.</p>
 <p>What's even better is that Hyde will also inject the contents of the included <code>tailwind.config.js</code> file into the script tag,
 so the Play CDN styles match the ones created by Laravel Mix.</p>
 <p>All in all, this allows you to tinker around with Tailwind without having to compile anything.</p>
-<h2>Managing images<a id="managing-images" href="#managing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Managing Images<a id="managing-images" href="#managing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
 <p>As mentioned above, assets stored in the _media folder are automatically copied to the _site/media folder,
 making it the recommended place to store images. You can then easily reference them in your Markdown files.</p>
 <h3>Referencing images<a id="referencing-images" href="#referencing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
