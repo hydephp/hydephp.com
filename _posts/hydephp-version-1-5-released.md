@@ -31,7 +31,7 @@ We did this by adding the existing `media_extensions` option to the `hyde` confi
 If you want to add more extensions, simply add them to the empty merge array, or just override the entire array.
 
 ```php
-// file: config/hyde.php
+// filepath config/hyde.php
 'media_extensions' => array_merge([
 	// Add custom media file extensions here
 ], \Hyde\Support\Filesystem\MediaFile::EXTENSIONS),
@@ -44,7 +44,7 @@ We added a new `html` helper to the `Includes` facade to make it easier to inclu
 This gets the raw HTML of a partial file in the includes directory. Supplying the file extension is optional.
 
 ```html
-<!-- file: resources/includes/footer.html -->
+<!-- filepath resources/includes/footer.html -->
 <!-- Custom HTML in the footer -->
 ```
 
@@ -64,7 +64,7 @@ Includes::html('footer', 'Default content');
 We also added configuration options to add custom HTML to the `<head>` and `<script>` sections.
 
 ```php
-// file: config/hyde.php
+// filepath config/hyde.php
 'head' => '<!-- Custom HTML in the head -->',
 'scripts' => '<!-- Custom HTML in the body -->',
 ```
@@ -72,7 +72,7 @@ We also added configuration options to add custom HTML to the `<head>` and `<scr
 Or if you are using Yaml configuration:
 
 ```yaml
-# file: config/hyde.yml
+# filepath config/hyde.yml
 head: "<!-- Custom HTML in the head -->"
 scripts: "<!-- Custom HTML in the body -->"
 ```
@@ -82,12 +82,12 @@ scripts: "<!-- Custom HTML in the body -->"
 You can now also add custom HTML to the `<head>` and `<script>` sections using HTML includes.
 
 ```html
-<!-- file: resources/includes/head.html -->
+<!-- filepath resources/includes/head.html -->
 <!-- Custom HTML in the head -->
 ```
 
 ```html
-<!-- file: resources/includes/scripts.html -->
+<!-- filepath resources/includes/scripts.html -->
 <!-- Custom HTML in the body -->
 ```
 
