@@ -1,13 +1,14 @@
 ---
 title: HydePHP OpenCollective Launch
 category: announcements
-date: 2024-02-17
+date: "2024-02-17"
 author: Caen
 description: HydePHP now has its own OpenCollective, providing a platform where users and companies can contribute financially to help fund the development of HydePHP.
 image:
-  path: _media/opencollective.com_hydephp.png
-  alt: HydePHP OpenCollective
-  url: https://opencollective.com/hydephp
+  source: opencollective.com_hydephp.png
+  altText: HydePHP OpenCollective Cover Image
+  title: HydePHP OpenCollective
+  authorUrl: https://opencollective.com/hydephp
 ---
 
 # HydePHP OpenCollective Launch
@@ -32,4 +33,4 @@ If you find HydePHP valuable and want to contribute to its sustainability and gr
 
 Your support is immensely appreciated, and it will contribute to making HydePHP even better in the future. Thank you for being part of the HydePHP community!
 
-Happy coding, Caen
+Happy coding! /Caen
