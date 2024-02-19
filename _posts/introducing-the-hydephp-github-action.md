@@ -4,7 +4,7 @@ description: "The easiest way to build and deploy your static sites!"
 category: announcements
 author: Caen
 date: '2024-01-28 16:00'
-image: 'https://github.com/hydephp/hydephp.com/assets/95144705/34441952-1f51-45e0-a400-39796ef53ae8'
+image: 'media/hydephp-github-action-cover.png'
 ---
 
 ## Introducing the HydePHP GitHub Action: The Easiest Way to Build and Deploy Your Static Sites!
