@@ -33,7 +33,7 @@ jobs:
       run: |
         echo 'SITE_NAME="HydePHP.com PR Preview"' > .env
         echo "SITE_URL=https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}" >> .env
-        echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
+        # echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
         echo "ROBOTS_NOINDEX=true" >> .env
 
     - name: Install composer dependencies
