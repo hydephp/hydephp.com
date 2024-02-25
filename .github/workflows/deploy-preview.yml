@@ -5,7 +5,7 @@ on:
     branches: [ master, upcoming ]
 
 jobs:
-  build:
+  build-and-deploy-preview:
     runs-on: ubuntu-latest
     environment:
       name: pull-request-preview
