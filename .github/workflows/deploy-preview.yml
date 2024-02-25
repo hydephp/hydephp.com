@@ -7,6 +7,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: pull-request-preview
+      url: https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}
+
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v2
@@ -73,9 +77,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: pull-request-preview
-      url: https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}
 
     steps:
       - name: Download the artifact
