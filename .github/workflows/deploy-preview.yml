@@ -5,13 +5,18 @@ on:
     branches: [ master, upcoming ]
 
 jobs:
-  build:
+  build-and-deploy-preview:
     runs-on: ubuntu-latest
+    environment:
+      name: pull-request-preview
+      url: https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}
+
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
+
     - name: Validate composer.json and composer.lock
       run: composer validate
 
@@ -27,9 +32,13 @@ jobs:
     - name: Create dotenv
       run: |
         echo 'SITE_NAME="HydePHP.com PR Preview"' > .env
-        echo "SITE_URL=https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}" >> .env
+        echo "SITE_URL=https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}" >> .env
         echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
         echo "ROBOTS_NOINDEX=true" >> .env
+
+    - name: Update config
+      run: |
+        echo output_directory: _site > hyde.yml
 
     - name: Install composer dependencies
       run: composer install
@@ -62,47 +71,39 @@ jobs:
       run: php hyde build --pretty-urls --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
 
-    - name: Upload site artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: site
-        path: docs
+    - name: Package the static site
+      run: zip -r site.zip _site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: pull-request-preview
-      url: https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}
+    - name: Sign the artifact
+      run: |
+        echo '${{ secrets.CI_PREVIEW_SIGNING_RSA_PRIVATE_KEY }}' > private.pem
+        openssl dgst -sha256 -sign private.pem -out signature.bin site.zip
+        unlink private.pem
 
-    steps:
-      - name: Download the artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: "site"
-          path: docs
-      
-      - name: Upload files to GitHub Pages
-        uses: cpina/github-action-push-to-another-repository@v1.4.2
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: "docs"
-          destination-github-username: "hydephp"
-          destination-repository-name: "previews"
-          target-branch: master
-          target-directory: "docs/hydephp-com/${{ github.event.pull_request.number }}"
-
-      - name: Output the URL
-        run: echo "https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}"
-
+    - name: Upload the artifact
+      run: |
+        repository="website"
+        bearerToken="${{ secrets.CI_SERVER_TOKEN }}"
+        pullRequest="${{ github.event.pull_request.number }}"
+        signature="$(openssl base64 -in signature.bin)"
+        artifact="site.zip"
+        
+        curl -X POST --fail-with-body \
+          -H "Content-Type: multipart/form-data" \
+          -H "Authorization: Bearer $bearerToken" \
+          -F "repository=$repository" \
+          -F "pullRequest=$pullRequest" \
+          -F "artifact=@$artifact" \
+          -F "signature=$signature" \
+          https://ci.hydephp.com/api/deployment-previews
 
   comment-on-pull-request:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+
     # Only run if a comment was not already made
     if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && !contains(github.event.pull_request.body, 'A [live preview]') }}
     steps:
@@ -113,5 +114,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'A [live preview](https://hydephp.github.io/previews/hydephp-com/${{ github.event.pull_request.number }}) is being deployed!<br><br>Please note that it may take a few seconds for GitHub Pages to build and deploy. The preview will be removed at midnight UTC.'
+              body: 'A [live preview](https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}) is being deployed!<br><br>Please note that it may take a few seconds the site to be available. Old previews are removed routinely.'
             })
