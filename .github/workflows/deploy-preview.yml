@@ -36,6 +36,10 @@ jobs:
         echo "TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}" >> .env
         echo "ROBOTS_NOINDEX=true" >> .env
 
+    - name: Update config
+      run: |
+        echo output_directory: _site > hyde.yml
+
     - name: Install composer dependencies
       run: composer install
 
@@ -67,10 +71,7 @@ jobs:
       run: php hyde build --pretty-urls --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > docs/docs/index.html
-
-    - name: Move site from docs to _site
-      run: mv docs _site
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
 
     - name: Package the static site
       run: zip -r site.zip _site
