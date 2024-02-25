@@ -113,5 +113,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: 'A [live preview](https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}) is being deployed!<br><br>Please note that it may take a few seconds for GitHub Pages to build and deploy. The preview will be removed at midnight UTC.'
+              body: 'A [live preview](https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}) is being deployed!<br><br>Please note that it may take a few seconds the site to be available. Old previews are removed routinely.'
             })
