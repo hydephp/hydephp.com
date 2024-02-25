@@ -6,6 +6,8 @@ author: Caen
 date: 2022-06-20 12:09
 ---
 
+>info **2024 Update**: We now have a custom GitHub Action that makes it even easier to build and deploy HydePHP sites. Check out the [HydePHP GitHub Action](https://github.com/hydephp/action) for more information.
+
 ## Introduction
 
 [HydePHP](https://hydephp.com/) is a framework for building static websites. While the most common way to interact with HydePHP is through the command line, you can actually manage an entire site using GitHub.
