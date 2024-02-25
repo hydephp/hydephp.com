@@ -103,6 +103,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       pull-requests: write
+
     # Only run if a comment was not already made
     if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && !contains(github.event.pull_request.body, 'A [live preview]') }}
     steps:
