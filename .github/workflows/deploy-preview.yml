@@ -74,7 +74,7 @@ jobs:
 
     - name: Package the static site
       run: zip -r site.zip _site
-    
+
 
   comment-on-pull-request:
     runs-on: ubuntu-latest
