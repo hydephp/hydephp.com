@@ -75,31 +75,6 @@ jobs:
         name: site
         path: docs
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Download the artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: "site"
-          path: docs
-      
-      - name: Upload files to GitHub Pages
-        uses: cpina/github-action-push-to-another-repository@v1.4.2
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source-directory: "docs"
-          destination-github-username: "hydephp"
-          destination-repository-name: "previews"
-          target-branch: master
-          target-directory: "docs/hydephp-com/${{ github.event.pull_request.number }}"
-
-      - name: Output the URL
-        run: echo "https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}"
-
 
   comment-on-pull-request:
     runs-on: ubuntu-latest
