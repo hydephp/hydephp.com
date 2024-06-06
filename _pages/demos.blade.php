@@ -24,7 +24,7 @@
 						<span>{{ $demo->title }}</span>
 					</div>
 					<div class="px-6 pt-2">
-						<small>By {{ $demo->author }} | {{ \Carbon\Carbon::parse($demo->date)->format('Y-m-d') }}</small>
+						<small>By {{ $demo->author }} | {{ (new \Hyde\Support\Models\DateString($demo->date))->short }}</small>
 						<div class="overflow-hidden h-16 mt-2">{{ $demo->description }}</div>
 					</div>
 					<div class="px-6 pb-4 text-center mt-3">
