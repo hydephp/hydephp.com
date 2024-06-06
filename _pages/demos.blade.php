@@ -39,7 +39,7 @@
 	</div>
 	<footer>
 		<div class="prose dark:prose-invert mx-auto text-center">
-			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/edit/master/_pages/demos.blade.php">Make a pull request</a>!</p>
+			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/demos">Make a pull request</a>!</p>
 		</div>
 	</footer>
 </main>
