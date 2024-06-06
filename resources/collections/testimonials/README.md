@@ -18,3 +18,14 @@ twitter_username: "username" # If the testimonial was shared on Twitter, this is
 
 The testimonial content goes here. It should be a brief quote that is no more than a few sentences long.
 ```
+
+### Editing policy
+
+Testimonials may be edited for formatting, spelling, and brevity, but never content.
+
+### License and permissions
+
+We operate under the assumption that if a testimonial is shared publicly, it is okay for us to share it on the HydePHP website.
+
+If you are the author of a testimonial and would like it removed, you can contact us and we will remove it promptly. 
+You can also submit a [pull request](https://github.com/hydephp/hydephp.com/tree/master/resources/collections/testimonials) to remove it yourself.
