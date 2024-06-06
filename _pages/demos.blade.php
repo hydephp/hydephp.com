@@ -41,6 +41,7 @@
 	<footer>
 		<div class="prose dark:prose-invert mx-auto text-center">
 			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/demos" rel="nofollow">Make a pull request</a>!</p>
+			<p><b>Tip:</b> Also make sure to tag your site with <a href="https://x.com/search?q=%23MadeWithHydePHP" rel="nofollow">#MadeWithHydePHP</a> when sharing your creations on social media!</p>
 		</div>
 	</footer>
 </main>
