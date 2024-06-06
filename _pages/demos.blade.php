@@ -28,7 +28,9 @@
 						<div class="overflow-hidden h-16 mt-2">{{ $demo->description }}</div>
 					</div>
 					<div class="px-6 pb-4 text-center mt-3">
-						<a href="{{ $demo->source }}" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+						@if($demo->source)
+							<a href="{{ $demo->source }}" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+						@endif
 						<a href="{{ $demo->url }}" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 					</div>
 				</div>
