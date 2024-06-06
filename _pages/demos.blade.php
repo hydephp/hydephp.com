@@ -29,9 +29,9 @@
 					</div>
 					<div class="px-6 pb-4 text-center mt-3">
 						@if($demo->source)
-							<a href="{{ $demo->source }}" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+							<a href="{{ $demo->source }}?ref=hydephp.com" rel="nofollow noopener" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
 						@endif
-						<a href="{{ $demo->url }}" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+						<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
 					</div>
 				</div>
 			</div>
@@ -39,7 +39,7 @@
 	</div>
 	<footer>
 		<div class="prose dark:prose-invert mx-auto text-center">
-			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/demos">Make a pull request</a>!</p>
+			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/demos" rel="nofollow">Make a pull request</a>!</p>
 		</div>
 	</footer>
 </main>
