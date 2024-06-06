@@ -14,9 +14,9 @@
 		</div>
 	</header>
 
-	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
+	<div class="flex flex-col flex-wrap items-center justify-center py-10 sm:flex-row">
 		@foreach(\Hyde\Support\DataCollections::yaml('demos') as $demo)
-			<div class="py-4 sm:px-6 w-96 max-w-full">
+			<div class="py-4 sm:px-6 min-w-[280px] w-96 max-w-full">
 				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 					<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
 													  src="{{ Hyde::asset($demo->image) }}"></a>
