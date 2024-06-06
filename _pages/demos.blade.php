@@ -19,7 +19,7 @@
 			<div class="py-4 sm:px-6 w-96 max-w-full">
 				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 					<a href="{{ $demo->url }}"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-													  src="{{ Hyde::asset ($demo->image) }}"></a>
+													  src="{{ Hyde::asset($demo->image) }}"></a>
 					<div class="px-6 pt-4 mb-2 text-xl font-bold">
 						<span>{{ $demo->title }}</span>
 					</div>
