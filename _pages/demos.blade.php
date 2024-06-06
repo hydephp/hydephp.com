@@ -14,17 +14,18 @@
 		</div>
 	</header>
 
-	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
+	<div class="flex flex-col flex-wrap items-center justify-center py-10 sm:flex-row">
 		@foreach(\Hyde\Support\DataCollections::yaml('demos') as $demo)
-			<div class="py-4 sm:px-6 w-96 max-w-full">
+			<div class="py-4 sm:px-6 min-w-[280px] w-96 max-w-full">
 				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-					<a href="{{ $demo->url }}"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-													  src="{{ Hyde::asset ($demo->image) }}"></a>
+					<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener">
+						<img class="h-56 rounded-t-lg m-0 w-full" alt="Website screenshot" src="{{ Hyde::asset($demo->image) }}">
+					</a>
 					<div class="px-6 pt-4 mb-2 text-xl font-bold">
 						<span>{{ $demo->title }}</span>
 					</div>
 					<div class="px-6 pt-2">
-						<small>By {{ $demo->author }} | {{ $demo->date }}</small>
+						<small>By {{ $demo->author }} | {{ \Carbon\Carbon::parse($demo->date)->format('Y-m-d') }}</small>
 						<div class="overflow-hidden h-16 mt-2">{{ $demo->description }}</div>
 					</div>
 					<div class="px-6 pb-4 text-center mt-3">
