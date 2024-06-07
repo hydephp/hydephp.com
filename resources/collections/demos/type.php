@@ -12,14 +12,14 @@ return new class extends \App\Extend\Concerns\DataCollectionType
 
     public static function create(array $data): static
     {
-        return new static(
-            $data['title'],
-            $data['description'],
-            $data['author'],
-            $data['date'],
-            $data['image'],
-            $data['url'],
-            $data['source'] ?? null
-        );
+        return new static([
+            'title' => $data['title'],
+            'description' => $data['description'],
+            'author' => $data['author'],
+            'date' => $data['date'],
+            'image' => $data['image'],
+            'url' => $data['url'],
+            'source' => $data['source'] ?? null
+        ]);
     }
 };
