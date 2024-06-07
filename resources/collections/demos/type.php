@@ -18,6 +18,6 @@ return new class implements \App\Extend\Concerns\DataCollectionType
         $this->date = $data['date'];
         $this->image = $data['image'];
         $this->url = $data['url'];
-        $this->source = isset($data['source']) ? $data['source'] : null;
+        $this->source = $data['source'] ?? null;
     }
 };
