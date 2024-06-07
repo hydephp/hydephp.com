@@ -1,1 +1,5 @@
 <?php
+
+return new class {
+    //
+};
