@@ -9,7 +9,8 @@
 		<div class="prose dark:prose-invert mx-auto text-center">
 			<p class="lead mb-3">Wondering what a HydePHP site looks like?</p>
 			<p class="mt-3">
-				Here are some live demo websites built with Hyde that you can try out!
+				Well, since all sites can be customized endlessly, it's hard to say for sure.
+				But what we can do is show you some examples of the many websites built with Hyde that you can check out!
 			</p>
 		</div>
 	</header>
