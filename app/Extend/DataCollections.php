@@ -37,6 +37,8 @@ class DataCollections extends \Hyde\Support\DataCollections
         if (class_exists($className)) {
             throw new \RuntimeException("Type class already exists: {$className}");
         }
+
+        $type = include self::getTypePath($name);
     }
 
     protected static function getTypePath(string $name): string
