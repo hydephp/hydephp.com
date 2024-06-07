@@ -6,6 +6,16 @@ echo '=== Starting build test ===' . PHP_EOL;
 
 chdir(__DIR__ . '/..');
 
+if (! file_exists('hyde')) {
+    echo 'Hyde executable not found';
+    exit(2);
+}
+
+if (! file_exists('_site')) {
+    echo '_site directory not found';
+    exit(2);
+}
+
 $routes = (function (): array {
     $list = shell_exec('php hyde route:list');
     $routes = explode("\n", trim($list));
