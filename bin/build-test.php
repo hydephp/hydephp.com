@@ -16,6 +16,8 @@ if (! file_exists('_site')) {
     exit(2);
 }
 
+$exitCode = 0;
+
 $routes = (function (): array {
     // Todo: Use the JSON API proposed in https://github.com/hydephp/develop/issues/1715
     $list = shell_exec('php hyde route:list');
@@ -43,6 +45,8 @@ echo '> Found ' . count($routes) . ' routes' . PHP_EOL;
 foreach ($routes as $route) {
     echo '> Testing ' . $route . PHP_EOL;
 }
+
+exit($exitCode);
 
 /** @deprecated */
 function dd($data) {
