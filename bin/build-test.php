@@ -46,6 +46,7 @@ foreach ($routes as $route) {
     echo '> Testing ' . $route . PHP_EOL;
 }
 
+echo '=== Build test completed ===' . PHP_EOL;
 exit($exitCode);
 
 /** @deprecated */
