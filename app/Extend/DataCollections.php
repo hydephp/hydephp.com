@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 use Hyde\Facades\Filesystem;
 
 /**
- * Experimental typed data collections class extension.
+ * @experimental Typed data collections class extension.
  */
 class DataCollections extends \Hyde\Support\DataCollections
 {
