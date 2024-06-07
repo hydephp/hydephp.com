@@ -1,8 +1,6 @@
 <?php
 
-namespace App\DataCollections\Types;
-
-class Demo extends \App\Extend\Concerns\DataCollectionType
+return new class extends \App\Extend\Concerns\DataCollectionType
 {
     public string $title;
     public string $description;
