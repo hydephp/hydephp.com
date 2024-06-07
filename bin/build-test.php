@@ -4,6 +4,8 @@
 
 echo '=== Starting build test ===' . PHP_EOL;
 
+$timeStart = microtime(true);
+
 chdir(__DIR__ . '/..');
 
 if (! file_exists('hyde')) {
@@ -52,6 +54,7 @@ echo '=== Build test completed ===' . PHP_EOL;
 echo 'Tests passed: ' . $testsPassed . PHP_EOL;
 echo 'Tests failed: ' . $testsFailed . PHP_EOL;
 echo 'Exit code: ' . $exitCode . PHP_EOL;
+echo 'Time taken: ' . round((microtime(true) - $timeStart) * 1000) . 'ms' . PHP_EOL;
 
 exit($exitCode);
 
