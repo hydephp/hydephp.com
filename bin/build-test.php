@@ -51,6 +51,7 @@ foreach ($routes as $route) {
 }
 
 echo '=== Build test completed ===' . PHP_EOL;
+echo 'Status: ' . ($exitCode === 0 ? 'Success' : 'Failed') . PHP_EOL;
 echo 'Tests passed: ' . $testsPassed . PHP_EOL;
 echo 'Tests failed: ' . $testsFailed . PHP_EOL;
 echo 'Time taken: ' . round((microtime(true) - $timeStart) * 1000) . 'ms' . PHP_EOL;
