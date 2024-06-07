@@ -33,7 +33,7 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypedYaml(string $name): static
     {
         // Load the anonymous class and turn it into a new runtime class
-        $className = 'App\\DataCollections\\Types\\' . Str::studly($name);
+        $className = self::getTypeClassname($name);
 
         if (class_exists($className)) {
             throw new \RuntimeException("Type class already exists: {$className}");
@@ -51,5 +51,10 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypePath(string $name): string
     {
         return sprintf('%s/%s/type.php', static::$sourceDirectory, $name);
+    }
+
+    protected static function getTypeClassname(string $name): string
+    {
+        return 'App\\DataCollections\\Types\\'.Str::studly($name);
     }
 }
