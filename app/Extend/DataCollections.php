@@ -42,6 +42,8 @@ class DataCollections extends \Hyde\Support\DataCollections
 
         $newClassName = get_class($type);
         class_alias($newClassName, $className);
+
+        return parent::yaml($name)->map(fn ($data) => $className::create($data));
     }
 
     protected static function getTypePath(string $name): string
