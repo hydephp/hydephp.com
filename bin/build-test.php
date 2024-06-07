@@ -9,7 +9,7 @@ function echo_color($message, $color_code)
 
 echo_color('=== Starting build test ===', '1;34'); // Bold Blue
 
-chdir(__DIR__ . '/..');
+chdir(__DIR__.'/..');
 
 if (! file_exists('hyde')) {
     echo_color('Hyde executable not found', '1;31'); // Bold Red
@@ -93,7 +93,8 @@ echo_color('Exit code: '.$exitCode, '1;36'); // Bold Cyan
 exit($exitCode);
 
 /** @deprecated */
-function dd($data) {
+function dd($data)
+{
     echo '<pre>';
     print_r($data);
     echo '</pre>';
