@@ -40,9 +40,11 @@
                                     @endif
                                     <span class="mt-1 text-sm leading-5 text-gray-500">
                                         -
-                                        <a href="{{ $testimonial->matter('twitter_link') }}" class="text-indigo-500" rel="nofollow">
-                                            Via Twitter
-                                        </a>
+                                        @if($testimonial->matter('twitter_link'))
+                                            <a href="{{ $testimonial->matter('twitter_link') }}" class="text-indigo-500" rel="nofollow">
+                                                Via Twitter
+                                            </a>
+                                        @endif
                                     </span>
                                 </h3>
                             </div>
