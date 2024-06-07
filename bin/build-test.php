@@ -17,6 +17,8 @@ if (! file_exists('_site')) {
 }
 
 $exitCode = 0;
+$testsPassed = 0;
+$testsFailed = 0;
 
 $routes = (function (): array {
     // Todo: Use the JSON API proposed in https://github.com/hydephp/develop/issues/1715
@@ -47,6 +49,10 @@ foreach ($routes as $route) {
 }
 
 echo '=== Build test completed ===' . PHP_EOL;
+echo 'Tests passed: ' . $testsPassed . PHP_EOL;
+echo 'Tests failed: ' . $testsFailed . PHP_EOL;
+echo 'Exit code: ' . $exitCode . PHP_EOL;
+
 exit($exitCode);
 
 /** @deprecated */
