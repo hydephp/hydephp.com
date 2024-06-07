@@ -30,7 +30,7 @@ class DataCollections extends \Hyde\Support\DataCollections
      */
     protected static function getTypedYaml(string $name): static
     {
-        $type = require self::getTypePath($name);
+        // Load the anonymous class and turn it into a new runtime class
     }
 
     protected static function getTypePath(string $name): string
