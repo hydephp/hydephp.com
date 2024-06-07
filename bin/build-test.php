@@ -62,6 +62,7 @@ foreach ($routes as $route) {
         echo_color('File not found: '.$route, '1;31'); // Bold Red
         $testsFailed++;
         $exitCode = 1;
+
         continue;
     } else {
         echo_color('  > File found: '.$route, '1;32'); // Bold Green
@@ -73,6 +74,7 @@ foreach ($routes as $route) {
         echo_color('  > File is empty: '.$route, '1;31'); // Bold Red
         $testsFailed++;
         $exitCode = 1;
+
         continue;
     } else {
         echo_color('  > File is not empty: '.$route, '1;32'); // Bold Green
