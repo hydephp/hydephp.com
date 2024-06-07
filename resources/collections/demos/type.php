@@ -8,5 +8,5 @@ return new class extends \App\Extend\Concerns\DataCollectionType
     public string $date;
     public string $image;
     public string $url;
-    public ?string $source;
+    public ?string $source = null;
 };
