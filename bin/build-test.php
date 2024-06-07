@@ -24,3 +24,11 @@ $routes = (function (): array {
         return '_site/' . substr($path, 5);
     }, $routes);
 })();
+
+/** @deprecated */
+function dd($data) {
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+    die();
+}
