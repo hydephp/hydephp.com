@@ -41,13 +41,8 @@ class DataCollections extends \Hyde\Support\DataCollections
 
         $type = include self::getTypePath($name);
 
-        if (is_object($type)) {
-            // Register the anonymous class
-            $newClassName = get_class($type);
-
-            // Register the new class
-            class_alias($newClassName, $className);
-        }
+        $newClassName = get_class($type);
+        class_alias($newClassName, $className);
 
         /** @var \App\Extend\Concerns\DataCollectionType $className */
         return parent::yaml($name)->map(fn (FrontMatter $data) => new $className($data->toArray()));
