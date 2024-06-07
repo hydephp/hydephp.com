@@ -16,6 +16,8 @@ abstract class DataCollectionType
     public function __construct(array $data = [])
     {
         foreach ($data as $key => $value) {
+            // Todo: Validate the key against the class properties
+
             $this->{$key} = $value;
         }
     }
