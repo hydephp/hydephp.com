@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace App\DataCollections\Types;
 
-class Demos extends \App\Extend\Concerns\DataCollectionType
+use App\Extend\Concerns\DataCollectionType;
+
+class Demos extends DataCollectionType
 {
     public string $title;
     public string $description;
