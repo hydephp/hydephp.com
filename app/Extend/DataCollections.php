@@ -35,14 +35,12 @@ class DataCollections extends \Hyde\Support\DataCollections
         // Load the anonymous class and turn it into a new runtime class
         $className = self::getTypeClassname($name);
 
-        if (class_exists($className)) {
-            throw new \RuntimeException("Type class already exists: {$className}");
+        if (! class_exists($className)) {
+            $type = include self::getTypePath($name);
+
+            $newClassName = get_class($type);
+            class_alias($newClassName, $className);
         }
-
-        $type = include self::getTypePath($name);
-
-        $newClassName = get_class($type);
-        class_alias($newClassName, $className);
 
         /** @var \App\Extend\Concerns\DataCollectionType $className */
         return parent::yaml($name)->map(fn (FrontMatter $data) => new $className($data->toArray()));
