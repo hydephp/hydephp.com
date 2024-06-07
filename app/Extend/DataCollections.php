@@ -30,6 +30,6 @@ class DataCollections extends \Hyde\Support\DataCollections
      */
     protected static function getTypedYaml(string $name): static
     {
-        //
+        $type = require sprintf('%s/%s/type.php', static::$sourceDirectory, $name);
     }
 }
