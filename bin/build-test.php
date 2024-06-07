@@ -57,6 +57,17 @@ foreach ($routes as $route) {
     } else {
         echo '  > File found: ' . $route . PHP_EOL;
     }
+
+    $contents = file_get_contents($route);
+
+    if (strlen($contents) === 0) {
+        echo '  > File is empty: ' . $route . PHP_EOL;
+        $testsFailed++;
+        $exitCode = 1;
+        continue;
+    } else {
+        echo '  > File is not empty: ' . $route . PHP_EOL;
+    }
 }
 
 echo '=== Build test completed ===' . PHP_EOL;
