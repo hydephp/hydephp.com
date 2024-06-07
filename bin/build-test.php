@@ -40,6 +40,10 @@ $routes = (function (): array {
 
 echo '> Found ' . count($routes) . ' routes' . PHP_EOL;
 
+foreach ($routes as $route) {
+    echo '> Testing ' . $route . PHP_EOL;
+}
+
 /** @deprecated */
 function dd($data) {
     echo '<pre>';
