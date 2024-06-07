@@ -54,6 +54,8 @@ foreach ($routes as $route) {
         $testsFailed++;
         $exitCode = 1;
         continue;
+    } else {
+        echo '  > File found: ' . $route . PHP_EOL;
     }
 }
 
