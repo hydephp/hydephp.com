@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Extend;
 
+use Illuminate\Support\Str;
 use Hyde\Facades\Filesystem;
 
 /**
@@ -31,6 +32,7 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypedYaml(string $name): static
     {
         // Load the anonymous class and turn it into a new runtime class
+        $className = 'App\\DataCollections\\Types\\' . Str::studly($name);
     }
 
     protected static function getTypePath(string $name): string
