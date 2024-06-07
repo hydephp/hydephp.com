@@ -73,6 +73,7 @@ foreach ($routes as $route) {
     $testsPassed++;
 }
 
+echo PHP_EOL;
 echo '=== Build test completed ===' . PHP_EOL;
 echo 'Status: ' . ($exitCode === 0 ? 'Success' : 'Failed') . PHP_EOL;
 echo 'Tests passed: ' . $testsPassed . PHP_EOL;
