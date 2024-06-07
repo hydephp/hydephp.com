@@ -15,6 +15,9 @@ abstract class DataCollectionType
     {
         foreach ($data as $key => $value) {
             // Todo: Validate the key against the class properties
+            //       - Validate all required properties are set
+            //       - Validate properties are set to the correct type
+            // Todo: Set nullable properties to null if not set
 
             $this->{$key} = $value;
         }
