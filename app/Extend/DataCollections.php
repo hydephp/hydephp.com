@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace App\Extend;
 
-use Illuminate\Support\Str;
 use Hyde\Facades\Filesystem;
 use Hyde\Markdown\Models\FrontMatter;
+use Illuminate\Support\Str;
 
 /**
  * @experimental Typed data collections class extension.
