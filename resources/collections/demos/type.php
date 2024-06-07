@@ -2,13 +2,13 @@
 
 return new class extends \App\Extend\Concerns\DataCollectionType
 {
-    public readonly string $title;
-    public readonly string $description;
-    public readonly string $author;
-    public readonly string $date;
-    public readonly string $image;
-    public readonly string $url;
-    public readonly ?string $source;
+    public string $title;
+    public string $description;
+    public string $author;
+    public string $date;
+    public string $image;
+    public string $url;
+    public ?string $source;
 
     public static function create(array $data): static
     {
