@@ -39,6 +39,8 @@ class DataCollections extends \Hyde\Support\DataCollections
         }
 
         $type = include self::getTypePath($name);
+
+        $newClassName = get_class($type);
     }
 
     protected static function getTypePath(string $name): string
