@@ -9,5 +9,8 @@ namespace App\Extend;
  */
 class DataCollections extends \Hyde\Support\DataCollections
 {
-    //
+    public static function yaml(string $name): static
+    {
+        return parent::yaml($name);
+    }
 }
