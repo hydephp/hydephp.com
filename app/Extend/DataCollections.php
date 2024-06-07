@@ -24,7 +24,7 @@ class DataCollections extends \Hyde\Support\DataCollections
 
     protected static function hasType(string $name): bool
     {
-        return Filesystem::exists(self::getTypePath($name));
+        return Filesystem::exists(self::getTypePath($name)) || class_exists(self::getTypeClassname($name));
     }
 
     /**
