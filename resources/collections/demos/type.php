@@ -2,13 +2,13 @@
 
 return new class implements \App\Extend\Concerns\DataCollectionType
 {
-    private string $title;
-    private string $description;
-    private string $author;
-    private string $date;
-    private string $image;
-    private string $url;
-    private ?string $source;
+    public readonly string $title;
+    public readonly string $description;
+    public readonly string $author;
+    public readonly string $date;
+    public readonly string $image;
+    public readonly string $url;
+    public readonly ?string $source;
 
     public function __construct(array $data)
     {
