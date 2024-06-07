@@ -2,6 +2,8 @@
 
 // A simple script to test the build process was successful (called by a GitHub action)
 
+echo '=== Starting build test ===' . PHP_EOL;
+
 chdir(__DIR__ . '/..');
 
 $routes = (function (): array {
