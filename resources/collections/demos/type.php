@@ -1,6 +1,6 @@
 <?php
 
-return new class
+return new class implements \App\Extend\Concerns\DataCollectionType
 {
     //
 };
