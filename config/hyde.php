@@ -283,7 +283,7 @@ return [
             username: 'caen',
             name: 'Caen',
             website: 'https://twitter.com/CodeWithCaen'
-        )
+        ),
     ],
 
     /*
@@ -349,7 +349,7 @@ return [
             'accessibility',
             'sitemap',
             'docs',
-            'features' // merged with about
+            'features', // merged with about
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
