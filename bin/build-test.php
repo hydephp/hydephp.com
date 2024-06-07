@@ -20,6 +20,8 @@ $exitCode = 0;
 $testsPassed = 0;
 $testsFailed = 0;
 
+echo '> Discovering routes' . PHP_EOL;
+
 $routes = (function (): array {
     // Todo: Use the JSON API proposed in https://github.com/hydephp/develop/issues/1715
     $list = shell_exec('php hyde route:list');
