@@ -33,6 +33,10 @@ class DataCollections extends \Hyde\Support\DataCollections
     {
         // Load the anonymous class and turn it into a new runtime class
         $className = 'App\\DataCollections\\Types\\' . Str::studly($name);
+
+        if (class_exists($className)) {
+            throw new \RuntimeException("Type class already exists: {$className}");
+        }
     }
 
     protected static function getTypePath(string $name): string
