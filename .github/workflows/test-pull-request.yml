@@ -64,6 +64,9 @@ jobs:
         echo "Success: Static site built in $SITE_DIR."
         exit 0
 
+    - name: Reduce size of debug artifact
+      run: rm -rf _site/media
+
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
       if: always()
