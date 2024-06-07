@@ -43,6 +43,7 @@ class DataCollections extends \Hyde\Support\DataCollections
         $newClassName = get_class($type);
         class_alias($newClassName, $className);
 
+        /** @var \App\Extend\Concerns\DataCollectionType $className */
         return parent::yaml($name)->map(fn ($data) => $className::create($data));
     }
 
