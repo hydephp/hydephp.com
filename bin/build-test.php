@@ -2,11 +2,6 @@
 
 // A simple script to test the build process was successful (called by a GitHub action)
 
-function echo_color($message, $color_code)
-{
-    echo "\033[".$color_code.'m'.$message."\033[0m".PHP_EOL;
-}
-
 echo_color('=== Starting build test ===', '1;34'); // Bold Blue
 
 chdir(__DIR__.'/..');
@@ -93,3 +88,8 @@ echo_color('Time taken: '.round((microtime(true) - $timeStart) * 1000, 2).'ms', 
 echo_color('Exit code: '.$exitCode, '1;36'); // Bold Cyan
 
 exit($exitCode);
+
+function echo_color(string $message, string $code): void
+{
+    echo "\033[".$code.'m'.$message."\033[0m".PHP_EOL;
+}
