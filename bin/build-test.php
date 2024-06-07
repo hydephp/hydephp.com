@@ -4,8 +4,6 @@
 
 echo '=== Starting build test ===' . PHP_EOL;
 
-$timeStart = microtime(true);
-
 chdir(__DIR__ . '/..');
 
 if (! file_exists('hyde')) {
@@ -45,6 +43,8 @@ $routes = (function (): array {
 })();
 
 echo '> Found ' . count($routes) . ' routes' . PHP_EOL;
+
+$timeStart = microtime(true);
 
 foreach ($routes as $route) {
     echo '> Testing ' . $route . PHP_EOL;
