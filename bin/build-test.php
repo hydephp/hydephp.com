@@ -68,6 +68,8 @@ foreach ($routes as $route) {
     } else {
         echo '  > File is not empty: ' . $route . PHP_EOL;
     }
+
+    $testsPassed++;
 }
 
 echo '=== Build test completed ===' . PHP_EOL;
