@@ -22,7 +22,7 @@ class DataCollections extends \Hyde\Support\DataCollections
 
     protected static function hasType(string $name): bool
     {
-        return Filesystem::exists(sprintf('%s/%s/type.php', static::$sourceDirectory, $name));
+        return Filesystem::exists(self::getTypePath($name));
     }
 
     /**
@@ -30,6 +30,11 @@ class DataCollections extends \Hyde\Support\DataCollections
      */
     protected static function getTypedYaml(string $name): static
     {
-        $type = require sprintf('%s/%s/type.php', static::$sourceDirectory, $name);
+        $type = require self::getTypePath($name);
+    }
+
+    protected static function getTypePath(string $name): string
+    {
+        return sprintf('%s/%s/type.php', static::$sourceDirectory, $name);
     }
 }
