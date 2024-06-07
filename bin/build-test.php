@@ -20,6 +20,7 @@ $exitCode = 0;
 $testsPassed = 0;
 $testsFailed = 0;
 
+echo PHP_EOL;
 echo '> Discovering routes' . PHP_EOL;
 
 $routes = (function (): array {
