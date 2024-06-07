@@ -91,12 +91,3 @@ echo_color('Time taken: '.round((microtime(true) - $timeStart) * 1000, 2).'ms', 
 echo_color('Exit code: '.$exitCode, '1;36'); // Bold Cyan
 
 exit($exitCode);
-
-/** @deprecated */
-function dd($data)
-{
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-    die();
-}
