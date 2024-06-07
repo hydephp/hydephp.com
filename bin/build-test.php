@@ -17,6 +17,7 @@ if (! file_exists('_site')) {
 }
 
 $routes = (function (): array {
+    // Todo: Use the JSON API proposed in https://github.com/hydephp/develop/issues/1715
     $list = shell_exec('php hyde route:list');
     $routes = explode("\n", trim($list));
 
