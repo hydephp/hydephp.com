@@ -24,4 +24,9 @@ class DataCollections extends \Hyde\Support\DataCollections
     {
         return Filesystem::exists(sprintf('%s/%s/type.php', static::$sourceDirectory, $name));
     }
+
+    protected static function getTypedYaml(string $name): static
+    {
+        //
+    }
 }
