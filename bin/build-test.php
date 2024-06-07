@@ -43,6 +43,7 @@ $routes = (function (): array {
 })();
 
 echo '> Found ' . count($routes) . ' routes' . PHP_EOL;
+echo PHP_EOL;
 
 $timeStart = microtime(true);
 
