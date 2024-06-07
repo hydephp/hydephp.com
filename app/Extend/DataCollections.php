@@ -6,6 +6,7 @@ namespace App\Extend;
 
 use Illuminate\Support\Str;
 use Hyde\Facades\Filesystem;
+use Hyde\Markdown\Models\FrontMatter;
 
 /**
  * @experimental Typed data collections class extension.
@@ -44,7 +45,7 @@ class DataCollections extends \Hyde\Support\DataCollections
         class_alias($newClassName, $className);
 
         /** @var \App\Extend\Concerns\DataCollectionType $className */
-        return parent::yaml($name)->map(fn ($data) => $className::create($data));
+        return parent::yaml($name)->map(fn (FrontMatter $data) => $className::create($data->toArray()));
     }
 
     protected static function getTypePath(string $name): string
