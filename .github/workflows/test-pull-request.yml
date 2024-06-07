@@ -41,12 +41,6 @@ jobs:
     - name: Create docs redirect
       run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
 
-    - name: Upload artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: site
-        path: _site
-
     - name: Assert site is built
       run: |
         # Define the directory to check
@@ -69,3 +63,9 @@ jobs:
         # If checks pass
         echo "Success: Static site built in $SITE_DIR."
         exit 0
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: site
+        path: _site
