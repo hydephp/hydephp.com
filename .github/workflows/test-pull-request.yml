@@ -3,3 +3,53 @@ name: Test Pull Request
 on:
   pull_request:
     branches: [ master, upcoming ]
+
+jobs:
+  can-build-site:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Validate composer.json and composer.lock
+      run: composer validate
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v3
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Update config
+      run: |
+        echo output_directory: _site > hyde.yml
+
+    - name: Install composer dependencies
+      run: composer install
+
+    - name: Output debug information
+      run: |
+        php hyde --version
+        php hyde debug
+
+    - name: Run the Hyde Builder
+      run: php hyde build --pretty-urls --no-interaction
+
+    - name: Create docs redirect
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
+
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: site
+        path: _site
+
+    - name: Assert site is built
+      run: |
+        if [ ! -d "_site" ]; then
+          echo "Site not built"
+          exit 1
+        fi
