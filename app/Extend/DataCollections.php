@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Extend;
 
+use Hyde\Facades\Filesystem;
+
 /**
  * Experimental typed data collections class extension.
  */
@@ -16,5 +18,10 @@ class DataCollections extends \Hyde\Support\DataCollections
         }
 
         return parent::yaml($name);
+    }
+
+    protected static function hasType(string $name): bool
+    {
+        return Filesystem::exists(sprintf('%s/%s/type.php', static::$sourceDirectory, $name));
     }
 }
