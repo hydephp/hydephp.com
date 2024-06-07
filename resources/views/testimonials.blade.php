@@ -1,7 +1,7 @@
 <section id="testimonials"
-         class="flex items-center justify-center w-full px-8 pt-10 md:pt-16 lg:pt-24 xl:pt-40  xl:px-0">
+         class="flex items-center justify-center w-full px-8 pt-10 md:pt-16 lg:pt-24 xl:pt-40 xl:px-0">
     <div class="max-w-6xl mx-auto">
-        <div class="flex-col items-center ">
+        <div class="flex-col items-center">
             <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
                 <p class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">
                 </p>
