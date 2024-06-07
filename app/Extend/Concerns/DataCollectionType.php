@@ -11,5 +11,5 @@ namespace App\Extend\Concerns;
  */
 interface DataCollectionType
 {
-    public function __construct(array $data);
+    public static function create(array $data): static;
 }

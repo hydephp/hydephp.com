@@ -10,7 +10,7 @@ return new class implements \App\Extend\Concerns\DataCollectionType
     public readonly string $url;
     public readonly ?string $source;
 
-    public function __construct(array $data)
+    public static function create(array $data): static
     {
         $this->title = $data['title'];
         $this->description = $data['description'];
