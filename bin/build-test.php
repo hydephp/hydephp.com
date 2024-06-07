@@ -48,6 +48,13 @@ $timeStart = microtime(true);
 
 foreach ($routes as $route) {
     echo '> Testing ' . $route . PHP_EOL;
+
+    if (! file_exists($route)) {
+        echo 'File not found: ' . $route . PHP_EOL;
+        $testsFailed++;
+        $exitCode = 1;
+        continue;
+    }
 }
 
 echo '=== Build test completed ===' . PHP_EOL;
