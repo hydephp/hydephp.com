@@ -42,7 +42,7 @@ jobs:
       run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
 
     - name: Run tests
-      run: php bin/built-tests.php
+      run: php bin/build-tests.php
 
     - name: Reduce size of debug artifact
       run: rm -rf _site/media
