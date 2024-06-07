@@ -7,9 +7,9 @@ namespace App\Extend\Concerns;
  *
  * Types are added by adding a `type.php` file in the collection directory.
  * The type should return a new anonymous class. While they are currently not checked against this type,
- * it's recommended to implement this interface to ensure compatible constructors.
+ * it's recommended to extend this class to ensure compatible constructors and utilize automatic deserialization.
  */
-interface DataCollectionType
+abstract class DataCollectionType
 {
-    public static function create(array $data): static;
+    abstract public static function create(array $data): static;
 }

@@ -1,6 +1,6 @@
 <?php
 
-return new class implements \App\Extend\Concerns\DataCollectionType
+return new class extends \App\Extend\Concerns\DataCollectionType
 {
     public readonly string $title;
     public readonly string $description;
