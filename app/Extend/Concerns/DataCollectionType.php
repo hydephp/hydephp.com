@@ -13,7 +13,8 @@ abstract class DataCollectionType
 {
     abstract public static function create(array $data): static;
 
-    public function __construct(array $data = []) {
+    public function __construct(array $data = [])
+    {
         foreach ($data as $key => $value) {
             $this->{$key} = $value;
         }
