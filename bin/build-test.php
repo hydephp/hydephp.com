@@ -38,6 +38,8 @@ $routes = (function (): array {
     }, $routes);
 })();
 
+echo '> Found ' . count($routes) . ' routes' . PHP_EOL;
+
 /** @deprecated */
 function dd($data) {
     echo '<pre>';
