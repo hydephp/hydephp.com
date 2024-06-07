@@ -69,6 +69,7 @@ foreach ($routes as $route) {
         echo '  > File is not empty: ' . $route . PHP_EOL;
     }
 
+    echo '  > All route tests passed' . PHP_EOL;
     $testsPassed++;
 }
 
