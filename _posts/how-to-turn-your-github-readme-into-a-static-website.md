@@ -51,7 +51,7 @@ jobs:
 
       - name: Create site from Readme
         run: |
-		  # Here we set up the HydePHP source files to use the README.md as the index page
+          # Here we set up the HydePHP source files to use the README.md as the index page
           mkdir _pages
           mv README.md _pages/index.md
           rm -rf !'_pages'
