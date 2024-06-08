@@ -104,6 +104,7 @@ return [
         'DocumentationPage' => \Hyde\Pages\DocumentationPage::class,
         'DataCollections' => \App\Extend\DataCollections::class,
         'Includes' => \Hyde\Support\Includes::class,
+        'Feature' => \Hyde\Enums\Feature::class,
     ],
 
 ];
