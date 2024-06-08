@@ -36,7 +36,8 @@ abstract class DataCollectionType
         $schema = [];
 
         foreach ($properties as $property) {
-            $schema[$property->getName()] = $property->getType()->getName();
+            $type = $property->getType()->getName();
+            $schema[$property->getName()] = $type;
         }
 
         return $schema;
