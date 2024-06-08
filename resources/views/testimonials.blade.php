@@ -45,6 +45,10 @@
                                                 Via Twitter
                                             </a>
                                         @endif
+                                        @if($testimonial->title)
+                                            <span class="mx-1">|</span>
+                                            {{ $testimonial->title }}
+                                        @endif
                                     </span>
                                 </h3>
                             </div>
