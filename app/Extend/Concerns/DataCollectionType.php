@@ -28,6 +28,17 @@ abstract class DataCollectionType
 
     protected static function schema(): array
     {
-        return [];
+        // Get the class properties and their types using reflection
+
+        $reflection = new \ReflectionClass(static::class);
+        $properties = $reflection->getProperties(\ReflectionProperty::IS_PUBLIC);
+
+        $schema = [];
+
+        foreach ($properties as $property) {
+            $schema[$property->getName()] = $property->getType()->getName();
+        }
+
+        return $schema;
     }
 }
