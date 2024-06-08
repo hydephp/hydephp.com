@@ -4,6 +4,7 @@ namespace App\Extend\Concerns;
 
 use ReflectionClass;
 use ReflectionProperty;
+use InvalidArgumentException;
 
 /**
  * Contract for a custom data collection types.
@@ -32,6 +33,12 @@ abstract class DataCollectionType
 
             if (array_key_exists($key, $data)) {
                 $this->{$key} = $data[$key];
+            } else {
+                if (str_starts_with($type, '?')) {
+                    $this->{$key} = null;
+                } else {
+                    throw new InvalidArgumentException(sprintf("Missing required property '%s' for %s.", $key, static::class));
+                }
             }
         }
     }
