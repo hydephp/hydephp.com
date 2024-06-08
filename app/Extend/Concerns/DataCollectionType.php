@@ -37,6 +37,10 @@ abstract class DataCollectionType
 
         foreach ($properties as $property) {
             $type = $property->getType()->getName();
+            // Add `?` prefix for nullable types
+            if ($property->getType()->allowsNull()) {
+                $type = '?'.$type;
+            }
             $schema[$property->getName()] = $type;
         }
 
