@@ -17,7 +17,7 @@ abstract class DataCollectionType
     /**
      * Automatically construct the data collection type from an array of collection data.
      *
-     * @param array<string, mixed> $data
+     * @param array<string, mixed> $data Where mixed type is generally scalar or array.
      */
     public function __construct(array $data = [])
     {
