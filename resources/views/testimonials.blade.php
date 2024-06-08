@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
-                @php /** @var \Hyde\Markdown\Models\MarkdownDocument $testimonial */ @endphp
+                @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
                 @foreach(\App\Extend\DataCollections::markdown('testimonials') as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
                     <div class="w-full xl:w-1/2 xl:pr-8">
@@ -31,17 +31,17 @@
                                     </p>
                                 </div>
                                 <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800">
-                                    @if($testimonial->matter('twitter_username'))
-                                        <a href="https://twitter.com/{{ $testimonial->matter('twitter_username') }}" rel="author nofollow">
-                                            {{ '@' . $testimonial->matter('twitter_username') }}
+                                    @if($testimonial->twitter_username)
+                                        <a href="https://twitter.com/{{ $testimonial->twitter_username }}" rel="author nofollow">
+                                            {{ '@' . $testimonial->twitter_username }}
                                         </a>
                                     @else
-                                        {{ $testimonial->matter('name') }}
+                                        {{ $testimonial->name }}
                                     @endif
                                     <span class="mt-1 text-sm leading-5 text-gray-500">
                                         -
-                                        @if($testimonial->matter('twitter_link'))
-                                            <a href="{{ $testimonial->matter('twitter_link') }}" class="text-indigo-500" rel="nofollow">
+                                        @if($testimonial->twitter_link)
+                                            <a href="{{ $testimonial->twitter_link }}" class="text-indigo-500" rel="nofollow">
                                                 Via Twitter
                                             </a>
                                         @endif
@@ -50,7 +50,7 @@
                             </div>
                             <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                                  onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
-                                 src="{{ $testimonial->matter('profile_image') ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
+                                 src="{{ $testimonial->profile_image ?? 'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png' }}"
                                  alt="Profile image">
                         </blockquote>
                     </div>
