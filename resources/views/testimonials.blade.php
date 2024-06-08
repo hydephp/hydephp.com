@@ -38,20 +38,20 @@
                                         {{ $testimonial->name }}
                                     @endif
                                     <span class="mt-1 text-sm leading-5 text-gray-500">
-                                        -
                                         @if($testimonial->twitter_link)
-                                            <a href="{{ $testimonial->twitter_link }}" class="text-indigo-500" rel="nofollow">
+                                            <span>-</span>
+                                            <a href="{{ $testimonial->twitter_link }}" class="text-gray-500 hover:text-indigo-500" rel="nofollow">
                                                 Via Twitter
                                             </a>
                                         @endif
                                         @if($testimonial->title)
-                                            <span class="mx-1">|</span>
+                                            <span>-</span>
                                             {{ $testimonial->title }}
                                         @endif
                                         @if($testimonial->company)
-                                            <span class="mx-1">|</span>
+                                            <span>-</span>
                                             @if($testimonial->company_url)
-                                                <a href="{{ $testimonial->company_url }}?ref=HydePHP.com" class="text-indigo-500" rel="nofollow">
+                                                <a href="{{ $testimonial->company_url }}?ref=HydePHP.com" class="text-gray-500 hover:text-indigo-500" rel="nofollow">
                                                     {{ $testimonial->company }}
                                                 </a>
                                             @else
