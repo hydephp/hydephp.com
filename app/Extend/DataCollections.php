@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Extend;
 
 use Hyde\Facades\Filesystem;
+use Illuminate\Support\Collection;
 use Hyde\Markdown\Models\FrontMatter;
 use Illuminate\Support\Str;
 use Hyde\Markdown\Models\MarkdownDocument;
@@ -80,5 +81,10 @@ class DataCollections extends \Hyde\Support\DataCollections
         }
 
         return $className;
+    }
+
+    protected static function findFiles(string $name, array|string $extensions): Collection
+    {
+        return parent::findFiles($name, $extensions)->reject(fn (string $file) => basename($file) === 'README.md');
     }
 }
