@@ -32,17 +32,8 @@ class DataCollections extends \Hyde\Support\DataCollections
      */
     protected static function getTypedYaml(string $name): static
     {
-        // Load the anonymous class and turn it into a new runtime class
-        $className = self::getTypeClassname($name);
+        $className = self::getCallableTypeClassName($name);
 
-        if (! class_exists($className)) {
-            $type = include self::getTypePath($name);
-
-            $newClassName = get_class($type);
-            class_alias($newClassName, $className);
-        }
-
-        /** @var \App\Extend\Concerns\DataCollectionType $className */
         return parent::yaml($name)->map(fn (FrontMatter $data) => new $className($data->toArray()));
     }
 
@@ -54,5 +45,23 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypeClassname(string $name): string
     {
         return 'App\\DataCollections\\Types\\'.Str::studly($name);
+    }
+
+    /**
+     * @return class-string<\App\Extend\Concerns\DataCollectionType>
+     */
+    protected static function getCallableTypeClassName(string $name): string
+    {
+        // Load the anonymous class and turn it into a new runtime class
+        $className = self::getTypeClassname($name);
+
+        if (! class_exists($className)) {
+            $type = include self::getTypePath($name);
+
+            $newClassName = get_class($type);
+            class_alias($newClassName, $className);
+        }
+
+        return $className;
     }
 }
