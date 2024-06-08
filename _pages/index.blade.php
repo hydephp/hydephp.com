@@ -226,7 +226,131 @@
         </div>
     </div>
     <!-- Start Testimonials -->
-    @include('testimonials')
+    <section id="testimonials"
+             class="flex items-center justify-center w-full px-8 pt-10 md:pt-16 lg:pt-24 xl:pt-40  xl:px-0">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex-col items-center ">
+                <div class="flex flex-col items-center justify-center w-full h-full max-w-2xl pr-8 mx-auto text-center">
+                    <p class="my-5 text-base font-medium tracking-tight text-indigo-500 uppercase">
+                    </p>
+                    <h2 class="text-4xl font-extrabold leading-10 tracking-tight text-gray-900 sm:text-5xl sm:leading-none md:text-6xl lg:text-5xl xl:text-6xl">
+                        Testimonials
+                    </h2>
+                    <p class="my-6 text-xl font-medium text-gray-500">
+                        We are proud to hear that so many people use Hyde to build their websites.
+                        Here are some of our favourite mentions.
+                    </p>
+                </div>
+                <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
+                    <div class="w-full xl:w-1/2 xl:pr-8">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-8">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">
+                                        Caen (<a href="https://twitter.com/CodeWithCaen?ref_src=twsrc%5Etfw">@CodeWithCaen</a>) has made a website for his PHP-based static-site generator.
+                                        <br><br>What I&#39;m mostly impressed with is how clean and straightforward the documentation is. Writing good documentation is an art and Caen did an amazing job at it.
+                                        ⭐️⭐️⭐️⭐️
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    <a href="https://twitter.com/SavvasStephnds" rel="author nofollow">@SavvasStephnds</a>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw">Via Twitter</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://pbs.twimg.com/profile_images/1567450524840075270/tceoqKT2_200x200.png"
+                                 alt="Profile image">
+                        </blockquote>
+                        <blockquote class="my-4 hidden lg:flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">Holy f. Your project is definitely one of my favorites of the whole <small>[startup]</small> tournament, I constantly keep an eye on the top 50 for it.
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    Felipe Lecot <span class="mt-1 text-sm leading-5 text-gray-500 ">- Director
+                            - <a href="https://do2software.com" class="text-indigo-500" rel="author nofollow" title="External website">Do2 Software</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                 alt="">
+                        </blockquote>
+                    </div>
+                    <div class="w-full xl:w-1/2 xl:pl-8">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">
+                                        HydePHP is actually simple to setup. Now, I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises.
+                                        <br><br>
+                                        Docs: 10/10
+                                        Project: 10/10
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    <a href="https://twitter.com/peteralexbizjak" rel="author nofollow">@peteralexbizjak</a>
+                                    <span class="mt-1 text-sm leading-5 text-gray-500 ">- <a href="https://twitter.com/peteralexbizjak/status/1535177275649536001">Via Twitter</a></span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://pbs.twimg.com/profile_images/1608115407663005696/WflT9L0j_reasonably_small.jpg"
+                                 alt="Profile image">
+                        </blockquote>
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 mt-12 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                            <div class="flex flex-col sm:pr-10">
+                                <div class="relative sm:pl-12">
+                                    <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
+                                         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
+                                        <path
+                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z" />
+                                    </svg>
+                                    <p class="mt-2 text-base text-gray-600 prose">Want to have your mention here? Send a Tweet at
+                                        <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag
+                                        <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!
+                                    </p>
+                                </div>
+                                <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800 ">
+                                    This could be you! <span class="mt-1 text-sm leading-5 text-gray-500 ">- CEO
+                        SomeCompany</span>
+                                </h3>
+                                <p class="mt-1 text-sm leading-5 text-gray-500 "></p>
+                            </div>
+                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                                 onerror="this.onerror=null; this.src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png';"
+                                 src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                                 alt="">
+                        </blockquote>
+                    </div>
+                </div>
+                <footer class="text-center opacity-75">
+                    <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
+                    <small>Want your own testimonial here? Want to remove yours? This <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/index.blade.php">page is open source</a>.</small>
+                </footer>
+            </div>
+        </div>
+    </section>
     <!-- End Testimonials-->
     <!-- Blob SVG Border -->
     <svg class="absolute bottom-0 w-full text-gray-100 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
