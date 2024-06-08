@@ -38,7 +38,7 @@ abstract class DataCollectionType
     /**
      * Get the class properties and their types using reflection.
      *
-     * @return array<string, string> Associative array of property names over their types.
+     * @return array<string, 'class-string'|'array'|'bool'|'callable'|'float'|'int'|'null'|'object'|'string'|'false'|'iterable'|'mixed'|'never'|'true'|'void'|'parent'|'self'|'static'> Associative array of property names over their types.
      */
     protected static function schema(): array
     {
