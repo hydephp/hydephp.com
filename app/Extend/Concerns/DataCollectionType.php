@@ -2,6 +2,9 @@
 
 namespace App\Extend\Concerns;
 
+use ReflectionClass;
+use ReflectionProperty;
+
 /**
  * Contract for a custom data collection types.
  *
@@ -26,21 +29,21 @@ abstract class DataCollectionType
         }
     }
 
+    /** Get the class properties and their types using reflection */
     protected static function schema(): array
     {
-        // Get the class properties and their types using reflection
-
-        $reflection = new \ReflectionClass(static::class);
-        $properties = $reflection->getProperties(\ReflectionProperty::IS_PUBLIC);
+        $reflection = new ReflectionClass(static::class);
+        $properties = $reflection->getProperties(ReflectionProperty::IS_PUBLIC);
 
         $schema = [];
 
         foreach ($properties as $property) {
             $type = $property->getType()->getName();
-            // Add `?` prefix for nullable types
+
             if ($property->getType()->allowsNull()) {
-                $type = '?'.$type;
+                $type = '?'.$type; // Indicate nullable type
             }
+
             $schema[$property->getName()] = $type;
         }
 
