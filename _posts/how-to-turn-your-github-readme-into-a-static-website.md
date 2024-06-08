@@ -97,7 +97,7 @@ In just a few steps, you've learned how to create a static site from your `READM
 
 We hope this tutorial helps you get started with HydePHP. Happy building!
 
----
+### Additional Resources
 
 For more information, visit the [HydePHP GitHub Action documentation](https://hydephp.github.io/action/). 
 
@@ -105,4 +105,6 @@ If you have any questions or run into issues, feel free to reach out to the Hyde
 [GitHub](https://github.com/hydephp/hyde) | [Discord](https://discord.hydephp.com) | [Twitter](https://twitter.com/HydeFramework)
 
 
->info <small>Please note that HydePHP is not affiliated with GitHub or GitHub Pages. GitHub terms and fees may apply.<br>At the time of writing, GitHub Actions and GitHub Pages offer free tiers for public repositories.</small>
+<hr class="my-4 mb-8">
+
+_Please note that HydePHP is not affiliated with GitHub or GitHub Pages. GitHub terms and fees may apply. At the time of writing, GitHub Actions and GitHub Pages offer free tiers for public repositories._
