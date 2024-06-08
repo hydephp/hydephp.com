@@ -34,7 +34,9 @@ abstract class DataCollectionType
         }
     }
 
-    /** Get the class properties and their types using reflection */
+    /**
+     * Get the class properties and their types using reflection.
+     */
     protected static function schema(): array
     {
         $reflection = new ReflectionClass(static::class);
