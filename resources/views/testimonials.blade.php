@@ -52,7 +52,7 @@
                                         @if($testimonial->company)
                                             <span class="mx-1">|</span>
                                             @if($testimonial->company_url)
-                                                <a href="{{ $testimonial->company_url }}" class="text-indigo-500" rel="nofollow">
+                                                <a href="{{ $testimonial->company_url }}?ref=HydePHP.com" class="text-indigo-500" rel="nofollow">
                                                     {{ $testimonial->company }}
                                                 </a>
                                             @else
