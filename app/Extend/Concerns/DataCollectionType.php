@@ -24,14 +24,16 @@ abstract class DataCollectionType
         $schema = static::schema();
 
         // Todo: Loop schema instead of data
-        foreach ($data as $key => $value) {
+        foreach ($schema as $key => $type) {
             // Todo: Validate the key against the class properties
             //       - Validate all required properties are set
             //       - Validate properties are set to the correct type
             // Todo: Set nullable properties to null if not set
             // Todo: Add method hooks to run before/after construction
 
-            $this->{$key} = $value;
+            if (array_key_exists($key, $data)) {
+                $this->{$key} = $data[$key];
+            }
         }
     }
 
