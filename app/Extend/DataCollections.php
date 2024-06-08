@@ -27,9 +27,7 @@ class DataCollections extends \Hyde\Support\DataCollections
         return Filesystem::exists(self::getTypePath($name)) || class_exists(self::getTypeClassname($name));
     }
 
-    /**
-     * @return static<\App\Extend\Concerns\DataCollectionType>
-     */
+    /** @return static<\App\Extend\Concerns\DataCollectionType> */
     protected static function getTypedYaml(string $name): static
     {
         $className = self::getCallableTypeClassName($name);
@@ -47,9 +45,7 @@ class DataCollections extends \Hyde\Support\DataCollections
         return 'App\\DataCollections\\Types\\'.Str::studly($name);
     }
 
-    /**
-     * @return class-string<\App\Extend\Concerns\DataCollectionType>
-     */
+    /** @return class-string<\App\Extend\Concerns\DataCollectionType> */
     protected static function getCallableTypeClassName(string $name): string
     {
         // Load the anonymous class and turn it into a new runtime class
