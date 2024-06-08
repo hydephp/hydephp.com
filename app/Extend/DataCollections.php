@@ -50,11 +50,11 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypedMarkdown(string $name): static
     {
         $className = self::getCallableTypeClassName($name);
-
-        return parent::markdown($name)->map(fn (MarkdownDocument $document) => new $className(array_merge(
-            $document->matter()->toArray(),
-            ['markdown' => $document->markdown()->body()]
-        )));
+        return parent::markdown($name)->reject(fn (MarkdownDocument $document, string $key) => basename($key) === 'README.md') // Patch until https://github.com/hydephp/develop/issues/1716
+            ->map(fn (MarkdownDocument $document) => new $className(array_merge(
+                $document->matter()->toArray(),
+                ['markdown' => $document->markdown()->body()]
+            )));
     }
 
     protected static function getTypePath(string $name): string
@@ -85,6 +85,8 @@ class DataCollections extends \Hyde\Support\DataCollections
 
     protected static function findFiles(string $name, array|string $extensions): Collection
     {
+        // Depends on https://github.com/hydephp/develop/issues/1716
+
         return parent::findFiles($name, $extensions)->reject(fn (string $file) => basename($file) === 'README.md');
     }
 }
