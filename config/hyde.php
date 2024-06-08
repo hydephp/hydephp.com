@@ -22,8 +22,8 @@
 |
 */
 
-use Hyde\Facades\Author;
 use Hyde\Enums\Feature;
+use Hyde\Facades\Author;
 use Hyde\Facades\Meta;
 use Hyde\Framework\Features\Navigation\NavItem;
 
