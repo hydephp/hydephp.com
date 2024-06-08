@@ -13,12 +13,12 @@
                     Here are some of our favourite mentions.
                 </p>
             </div>
-            <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
+            <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full flex-wrap">
                 @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
                 @foreach(\App\Extend\DataCollections::markdown('testimonials') as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
-                    <div class="w-full xl:w-1/2 xl:pr-8">
-                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                    <div class="w-full xl:w-1/2 xl:px-4 h-auto ">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full h-full flex-1 col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
                             <div class="flex flex-col sm:pr-8">
                                 <div class="relative sm:pl-12">
                                     <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
