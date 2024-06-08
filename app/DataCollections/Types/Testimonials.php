@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\DataCollections\Types;
 
+use Hyde\Markdown\Models\Markdown;
 use App\Extend\Concerns\DataCollectionType;
 
 class Testimonials extends DataCollectionType
@@ -14,5 +15,5 @@ class Testimonials extends DataCollectionType
     public ?string $company_url;
     public ?string $twitter_link;
     public ?string $twitter_username;
-    public string $markdown;
+    public Markdown $markdown;
 }

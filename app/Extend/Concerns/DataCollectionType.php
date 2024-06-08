@@ -5,6 +5,7 @@ namespace App\Extend\Concerns;
 use ReflectionClass;
 use ReflectionProperty;
 use InvalidArgumentException;
+use Hyde\Markdown\Models\Markdown;
 
 /**
  * Contract for a custom data collection types.
@@ -32,7 +33,12 @@ abstract class DataCollectionType
             // Todo: Add method hooks to run before/after construction
 
             if (array_key_exists($key, $data)) {
-                $this->{$key} = $data[$key];
+                // If is Markdown create a new instance of the class
+                if ($type === Markdown::class && $key === 'markdown') {
+                    $this->{$key} = new Markdown($data[$key]);
+                } else {
+                    $this->{$key} = $data[$key];
+                }
             } else {
                 if (str_starts_with($type, '?')) {
                     $this->{$key} = null;
