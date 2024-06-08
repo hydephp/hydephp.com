@@ -3,9 +3,9 @@
 namespace App\Providers;
 
 use Hyde;
+use Hyde\Framework\Features\Navigation\NavigationData;
 use Hyde\Support\Models\Redirect;
 use Illuminate\Support\ServiceProvider;
-use Hyde\Framework\Features\Navigation\NavigationData;
 
 class AppServiceProvider extends ServiceProvider
 {

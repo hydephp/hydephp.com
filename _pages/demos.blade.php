@@ -9,13 +9,15 @@
 		<div class="prose dark:prose-invert mx-auto text-center">
 			<p class="lead mb-3">Wondering what a HydePHP site looks like?</p>
 			<p class="mt-3">
-				Here are some live demo websites built with Hyde that you can try out!
+				Well, since all sites can be customized endlessly, it's hard to say for sure.
+				But what we can do is show you some examples of the many websites built with Hyde that you can check out!
 			</p>
 		</div>
 	</header>
 
 	<div class="flex flex-col flex-wrap items-center justify-center py-10 sm:flex-row">
-		@foreach(\Hyde\Support\DataCollections::yaml('demos') as $demo)
+		@foreach(\App\Extend\DataCollections::yaml('demos') as $demo)
+			<?php /** @var \App\DataCollections\Types\Demos $demo */ ?>
 			<div class="py-4 sm:px-6 min-w-[280px] w-96 max-w-full">
 				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 					<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener">
