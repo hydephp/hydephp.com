@@ -14,6 +14,9 @@ use ReflectionProperty;
  */
 abstract class DataCollectionType
 {
+    /**
+     * Automatically construct the data collection type from an array of collection data.
+     */
     public function __construct(array $data = [])
     {
         $schema = static::schema();
