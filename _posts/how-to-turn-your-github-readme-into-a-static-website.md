@@ -6,7 +6,8 @@ author: HydePHP
 date: '2024-06-08 11:32'
 image:
     source: how-to-turn-your-github-readme-into-a-static-website-cropped.png
-    caption: Example of a static website created from a GitHub Readme
+    caption: Static website from GitHub Readme
+    altText: Example of a static website created from a GitHub Readme
 ---
 
 ## Creating a HydePHP site on GitHub Pages based on your Readme
