@@ -49,6 +49,16 @@
                                             <span class="mx-1">|</span>
                                             {{ $testimonial->title }}
                                         @endif
+                                        @if($testimonial->company)
+                                            <span class="mx-1">|</span>
+                                            @if($testimonial->company_url)
+                                                <a href="{{ $testimonial->company_url }}" class="text-indigo-500" rel="nofollow">
+                                                    {{ $testimonial->company }}
+                                                </a>
+                                            @else
+                                                {{ $testimonial->company }}
+                                            @endif
+                                        @endif
                                     </span>
                                 </h3>
                             </div>
