@@ -1,8 +1,5 @@
 ---
 name: "Peter Alex Bizjak"
-title: ""
-company: ""
-company_url: ""
 twitter_link: "https://twitter.com/peteralexbizjak/status/1535177275649536001"
 twitter_username: "peteralexbizjak"
 ---

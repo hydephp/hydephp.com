@@ -1,8 +1,5 @@
 ---
 name: "Savvas Stephnds"
-title: ""
-company: ""
-company_url: ""
 twitter_link: "https://twitter.com/SavvasStephnds/status/1534928318503391233?ref_src=twsrc%5Etfw"
 twitter_username: "SavvasStephnds"
 ---
