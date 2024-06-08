@@ -13,21 +13,20 @@
                     Here are some of our favourite mentions.
                 </p>
             </div>
-            <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full">
+            <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full flex-wrap">
                 @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
                 @foreach(\App\Extend\DataCollections::markdown('testimonials') as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
-                    <div class="w-full xl:w-1/2 xl:pr-8">
-                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
+                    <div class="w-full xl:w-1/2 xl:px-4 h-auto ">
+                        <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full h-full flex-1 col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
                             <div class="flex flex-col sm:pr-8">
                                 <div class="relative sm:pl-12">
                                     <svg class="hidden sm:block absolute left-0 w-10 h-10 text-indigo-500 fill-current"
                                          xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125">
-                                        <path
-                                                d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"/>
+                                        <path d="M30.7 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2C12.7 83.1 5 72.6 5 61.5c0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S30.7 31.6 30.7 42zM82.4 42c0 6.1 12.6 7 12.6 22 0 11-7.9 19.2-18.9 19.2-11.8 0-19.5-10.5-19.5-21.6 0-19.2 18-44.6 29.2-44.6 2.8 0 7.9 2 7.9 5.4S82.4 31.6 82.4 42z"/>
                                     </svg>
                                     <p class="mt-2 text-base text-gray-600 prose">
-                                        {{ $testimonial->markdown }}
+                                        {!! $testimonial->markdown->compile() !!}
                                     </p>
                                 </div>
                                 <h3 class="pl-12 mt-3 text-base font-medium leading-5 text-gray-800">
@@ -39,11 +38,25 @@
                                         {{ $testimonial->name }}
                                     @endif
                                     <span class="mt-1 text-sm leading-5 text-gray-500">
-                                        -
                                         @if($testimonial->twitter_link)
-                                            <a href="{{ $testimonial->twitter_link }}" class="text-indigo-500" rel="nofollow">
+                                            <span>-</span>
+                                            <a href="{{ $testimonial->twitter_link }}" class="text-gray-500 hover:text-indigo-500" rel="nofollow">
                                                 Via Twitter
                                             </a>
+                                        @endif
+                                        @if($testimonial->title)
+                                            <span>-</span>
+                                            {{ $testimonial->title }}
+                                        @endif
+                                        @if($testimonial->company)
+                                            <span>-</span>
+                                            @if($testimonial->company_url)
+                                                <a href="{{ $testimonial->company_url }}?ref=HydePHP.com" class="text-gray-500 hover:text-indigo-500" rel="nofollow">
+                                                    {{ $testimonial->company }}
+                                                </a>
+                                            @else
+                                                {{ $testimonial->company }}
+                                            @endif
                                         @endif
                                     </span>
                                 </h3>
