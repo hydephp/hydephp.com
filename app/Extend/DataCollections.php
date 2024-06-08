@@ -7,6 +7,7 @@ namespace App\Extend;
 use Hyde\Facades\Filesystem;
 use Hyde\Markdown\Models\FrontMatter;
 use Illuminate\Support\Str;
+use Hyde\Markdown\Models\MarkdownDocument;
 
 /**
  * @experimental Typed data collections class extension.
@@ -22,6 +23,15 @@ class DataCollections extends \Hyde\Support\DataCollections
         return parent::yaml($name);
     }
 
+    public static function markdown(string $name): static
+    {
+        if (static::hasType($name)) {
+            return static::getTypedMarkdown($name);
+        }
+
+        return parent::markdown($name);
+    }
+
     protected static function hasType(string $name): bool
     {
         return Filesystem::exists(self::getTypePath($name)) || class_exists(self::getTypeClassname($name));
@@ -33,6 +43,17 @@ class DataCollections extends \Hyde\Support\DataCollections
         $className = self::getCallableTypeClassName($name);
 
         return parent::yaml($name)->map(fn (FrontMatter $data) => new $className($data->toArray()));
+    }
+
+    /** @return static<\App\Extend\Concerns\DataCollectionType> */
+    protected static function getTypedMarkdown(string $name): static
+    {
+        $className = self::getCallableTypeClassName($name);
+
+        return parent::markdown($name)->map(fn (MarkdownDocument $document) => new $className(array_merge(
+            $document->matter()->toArray(),
+            ['markdown' => $document->markdown()->body()]
+        )));
     }
 
     protected static function getTypePath(string $name): string
