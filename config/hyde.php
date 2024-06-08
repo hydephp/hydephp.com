@@ -23,7 +23,7 @@
 */
 
 use Hyde\Facades\Author;
-use Hyde\Facades\Features;
+use Hyde\Enums\Feature;
 use Hyde\Facades\Meta;
 use Hyde\Framework\Features\Navigation\NavItem;
 
@@ -248,18 +248,18 @@ return [
 
     'features' => [
         // Page Modules
-        Features::htmlPages(),
-        Features::markdownPosts(),
-        Features::bladePages(),
-        Features::markdownPages(),
-        Features::documentationPages(),
+        Feature::HtmlPages,
+        Feature::MarkdownPosts,
+        Feature::BladePages,
+        Feature::MarkdownPages,
+        Feature::DocumentationPages,
 
         // Frontend Features
-        Features::darkmode(),
-        Features::documentationSearch(),
+        Feature::Darkmode,
+        Feature::DocumentationSearch,
 
         // Integrations
-        Features::torchlight(),
+        Feature::Torchlight,
     ],
 
     /*
@@ -316,8 +316,8 @@ return [
     'navigation' => [
         // This configuration sets the priorities used to determine the order of the menu.
         // The default values have been added below for reference and easy editing.
-        // The array key should match the page's route key (slug).
-        // Lower values show up first in the menu.
+        // The array key is the page's route key, the value is the priority.
+        // Lower values show up first in the menu. The default is 999.
         'order' => [
             'index' => 0,
             'posts' => 1200,
@@ -325,14 +325,14 @@ return [
         ],
 
         // In case you want to customize the labels for the menu items, you can do so here.
-        // Simply add the route key (slug) as the key, and the label as the value.
+        // Simply add the route key as the array key, and the label as the value.
         'labels' => [
             'index' => 'Home',
             'docs/index' => 'Docs',
             'posts' => 'Blog',
         ],
 
-        // These are the pages that should not show up in the navigation menu.
+        // These are the route keys of pages that should not show up in the navigation menu.
         'exclude' => [
             '404',
             'dashboard',
@@ -426,6 +426,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you can configure settings for the built-in realtime compiler server.
+    | The server also includes a magic dashboard feature that supercharges
+    | your local development! This feature can alo be customised here.
     |
     */
 
@@ -438,6 +440,9 @@ return [
 
         // Should preview pages be saved to the output directory?
         'save_preview' => true,
+
+        // Should the live edit feature be enabled?
+        'live_edit' => env('SERVER_LIVE_EDIT', true),
 
         // Configure the realtime compiler dashboard
         'dashboard' => [
@@ -464,6 +469,10 @@ return [
     |
     */
 
+    // Change the file extensions to be considered as media files and are copied to the output directory.
+    // If you want to add more extensions, add it to the empty merge array, or just override the entire array.
+    'media_extensions' => array_merge([], \Hyde\Support\Filesystem\MediaFile::EXTENSIONS),
+
     // The list of directories that are considered to be safe to empty upon site build.
     // If the site output directory is set to a directory that is not in this list,
     // the build command will prompt for confirmation before emptying it.
@@ -476,7 +485,7 @@ return [
     'build_manifest_path' => 'app/storage/framework/cache/build-manifest.json',
 
     // Here you can specify HydeFront version and URL for when loading app.css from the CDN.
-    // Only change these if you know what you're doing as some versions may incompatible with your Hyde version.
+    // Only change these if you know what you're doing as some versions may be incompatible with your Hyde version.
     'hydefront_version' => \Hyde\Framework\Services\AssetService::HYDEFRONT_VERSION,
     'hydefront_cdn_url' => \Hyde\Framework\Services\AssetService::HYDEFRONT_CDN_URL,
 
