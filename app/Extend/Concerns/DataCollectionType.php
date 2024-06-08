@@ -32,6 +32,17 @@ abstract class DataCollectionType
 
             if (array_key_exists($key, $data)) {
                 $this->{$key} = $data[$key];
+            } else {
+                $this->{$key} = match ($type) {
+                    'array' => [],
+                    'bool' => false,
+                    'float' => 0.0,
+                    'int' => 0,
+                    'null' => null,
+                    'object' => new \stdClass(),
+                    'string' => '',
+                    default => null,
+                };
             }
         }
     }
