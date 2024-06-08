@@ -13,6 +13,8 @@ abstract class DataCollectionType
 {
     public function __construct(array $data = [])
     {
+        $schema = static::schema();
+
         foreach ($data as $key => $value) {
             // Todo: Validate the key against the class properties
             //       - Validate all required properties are set
@@ -22,5 +24,10 @@ abstract class DataCollectionType
 
             $this->{$key} = $value;
         }
+    }
+
+    protected static function schema(): array
+    {
+        return [];
     }
 }
