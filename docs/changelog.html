@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=9fe175e4052782a4e6b74a1b2b06a7bc">
+    <link rel="stylesheet" href="media/app.css?v=7a9cf143a731589dced5bfc3e713bc8d">
 
 
 
@@ -124,6 +124,68 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h2>About the release cycle</h2>
 <p>HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Development is made in the <a href="https://github.com/hydephp/develop">Hyde/Develop Monorepo</a>. Major and Minor release versions are made in the Develop project. These releases are synced to the Hyde and Framework projects, and are what this changelog file tracks. Patch release versions are made in the Framework and Hyde projects independently. See <a href="https://github.com/hydephp/develop#releases">https://github.com/hydephp/develop#releases</a> for more information.</p>
 <!-- CHANGELOG_START -->
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.7.0">1.7.0</a> - 2024-07-05</h2>
+<h3>Added</h3>
+<ul>
+<li>Added support for using HTML comments to create Markdown code block filepath labels in <a href="https://github.com/hydephp/develop/pull/1693">https://github.com/hydephp/develop/pull/1693</a>
+</li>
+<li>Added a config option to disable the theme toggle buttons to automatically use browser settings in <a href="https://github.com/hydephp/develop/pull/1697">https://github.com/hydephp/develop/pull/1697</a>
+</li>
+<li>You can now specify which path to open when using the <code>--open</code> option in the serve command in <a href="https://github.com/hydephp/develop/pull/1694">https://github.com/hydephp/develop/pull/1694</a>
+</li>
+<li>Added a <code>--format=json</code> option to the <code>route:list</code> command in <a href="https://github.com/hydephp/develop/pull/1724">https://github.com/hydephp/develop/pull/1724</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>When a navigation group is set in front matter, it will now be used regardless of the subdirectory configuration in <a href="https://github.com/hydephp/develop/pull/1703">https://github.com/hydephp/develop/pull/1703</a> (fixes <a href="https://github.com/hydephp/develop/issues/1515">https://github.com/hydephp/develop/issues/1515</a>)</li>
+<li>Use late static bindings to support overriding data collections file finding in <a href="https://github.com/hydephp/develop/pull/1717">https://github.com/hydephp/develop/pull/1717</a> (fixes <a href="https://github.com/hydephp/develop/issues/1716">https://github.com/hydephp/develop/issues/1716</a>)</li>
+<li>Method <code>Hyde::hasSiteUrl()</code> now returns false if the site URL is for localhost in <a href="https://github.com/hydephp/develop/pull/1726">https://github.com/hydephp/develop/pull/1726</a>
+</li>
+<li>Method <code>Hyde::url()</code> will now return a relative URL instead of throwing an exception when supplied a path even if the site URL is not set in <a href="https://github.com/hydephp/develop/pull/1726">https://github.com/hydephp/develop/pull/1726</a>
+</li>
+<li>Updated the <code>.env.example</code> file to contain more details on the site URL setting's usages in <a href="https://github.com/hydephp/develop/pull/1746">https://github.com/hydephp/develop/pull/1746</a>
+</li>
+<li>Added a version prefix to the sitemap's generator attribute in <a href="https://github.com/hydephp/develop/pull/1767">https://github.com/hydephp/develop/pull/1767</a>
+</li>
+<li>Setting a site name in the Yaml config file will now influence all configuration values where this is used, unless already set, in <a href="https://github.com/hydephp/develop/pull/1770">https://github.com/hydephp/develop/pull/1770</a> and <a href="https://github.com/hydephp/develop/pull/1773">https://github.com/hydephp/develop/pull/1773</a>
+</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>Deprecated the global <code>unslash()</code> function, replaced with the existing namespaced <code>\Hyde\unslash()</code> function in <a href="https://github.com/hydephp/develop/pull/1753">https://github.com/hydephp/develop/pull/1753</a>
+</li>
+<li>Deprecated the <code>BaseUrlNotSetException</code> class in <a href="https://github.com/hydephp/develop/pull/1759">https://github.com/hydephp/develop/pull/1759</a>
+</li>
+</ul>
+<h3>Removed</h3>
+<ul>
+<li>The Git version is no longer displayed in the debug screen and dashboard in <a href="https://github.com/hydephp/develop/pull/1756">https://github.com/hydephp/develop/pull/1756</a>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed explicitly set front matter navigation group behavior being dependent on subdirectory configuration, fixing <a href="https://github.com/hydephp/develop/issues/1515">https://github.com/hydephp/develop/issues/1515</a> in <a href="https://github.com/hydephp/develop/pull/1703">https://github.com/hydephp/develop/pull/1703</a>
+</li>
+<li>Fixed DataCollections file finding method not being able to be overridden <a href="https://github.com/hydephp/develop/issues/1716">https://github.com/hydephp/develop/issues/1716</a> in <a href="https://github.com/hydephp/develop/pull/1717">https://github.com/hydephp/develop/pull/1717</a>
+</li>
+<li>Fixed PHP warning when trying to parse a Markdown file with just front matter without body <a href="https://github.com/hydephp/develop/issues/1705">https://github.com/hydephp/develop/issues/1705</a> in <a href="https://github.com/hydephp/develop/pull/1728">https://github.com/hydephp/develop/pull/1728</a>
+</li>
+<li>Fixed <a href="https://github.com/hydephp/develop/issues/1748">https://github.com/hydephp/develop/issues/1748</a> by normalizing generator version prefixes in <a href="https://github.com/hydephp/develop/pull/1767">https://github.com/hydephp/develop/pull/1767</a>
+</li>
+<li>Yaml data files no longer need to start with triple dashes to be parsed by DataCollections in <a href="https://github.com/hydephp/develop/pull/1733">https://github.com/hydephp/develop/pull/1733</a>
+</li>
+<li>Updated the Hyde URL helper to not modify already qualified URLs in <a href="https://github.com/hydephp/develop/pull/1757">https://github.com/hydephp/develop/pull/1757</a>
+</li>
+</ul>
+<h3>Extra information</h3>
+<p>This release contains changes to how HydePHP behaves when a site URL is not set by the user.</p>
+<p>These changes are made to reduce the chance of the default <code>localhost</code> value showing up in production environments.</p>
+<p>Most notably, HydePHP now considers that default site URL <code>localhost</code> to mean that a site URL is not set, as the user has not set it.
+This means that things like automatic canonical URLs will not be added, as Hyde won't know how to make them without a site URL.
+The previous behaviour was that Hyde used <code>localhost</code> in canonical URLs, which is never useful in production environments.</p>
+<p>For this reason, we felt it worth it to make this change in a minor release, as it has a such large benefit for sites.</p>
+<p>You can read more about the details and design decisions of this change in the following pull request <a href="https://github.com/hydephp/develop/pull/1726">https://github.com/hydephp/develop/pull/1726</a>.</p>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/1.6.0">1.6.0</a> - 2024-04-17</h2>
 <h3>Added</h3>
 <ul>
