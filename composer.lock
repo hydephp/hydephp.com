@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ff3ae84a25f13402892607df37dfe598",
+    "content-hash": "55569d5ab27a702a525385a88474579d",
     "packages": [
         {
             "name": "brick/math",
@@ -979,16 +979,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v1.6.0",
+            "version": "v1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "86fb1ae089afbb41f917a2aee12a795ced703894"
+                "reference": "5d760b53a184beb995ea57b50fc968311b18b8f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/86fb1ae089afbb41f917a2aee12a795ced703894",
-                "reference": "86fb1ae089afbb41f917a2aee12a795ced703894",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/5d760b53a184beb995ea57b50fc968311b18b8f1",
+                "reference": "5d760b53a184beb995ea57b50fc968311b18b8f1",
                 "shasum": ""
             },
             "require": {
@@ -996,7 +996,7 @@
                 "illuminate/view": "^10.0",
                 "league/commonmark": "^2.2",
                 "php": "^8.1",
-                "spatie/yaml-front-matter": "^2.0.7",
+                "spatie/yaml-front-matter": "^2.0.9",
                 "symfony/yaml": "^6.0",
                 "torchlight/torchlight-commonmark": "^0.5.5"
             },
@@ -1027,7 +1027,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v1.6.0"
+                "source": "https://github.com/hydephp/framework/tree/v1.7.0"
             },
             "funding": [
                 {
@@ -1039,7 +1039,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2024-04-17T12:58:59+00:00"
+            "time": "2024-07-05T12:56:27+00:00"
         },
         {
             "name": "illuminate/bus",
@@ -4085,16 +4085,16 @@
         },
         {
             "name": "spatie/yaml-front-matter",
-            "version": "2.0.8",
+            "version": "2.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/yaml-front-matter.git",
-                "reference": "f2f1f749a405fafc9d6337067c92c062d51a581c"
+                "reference": "cbe67e1cdd0a29a96d74ccab9400fe663e078392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/yaml-front-matter/zipball/f2f1f749a405fafc9d6337067c92c062d51a581c",
-                "reference": "f2f1f749a405fafc9d6337067c92c062d51a581c",
+                "url": "https://api.github.com/repos/spatie/yaml-front-matter/zipball/cbe67e1cdd0a29a96d74ccab9400fe663e078392",
+                "reference": "cbe67e1cdd0a29a96d74ccab9400fe663e078392",
                 "shasum": ""
             },
             "require": {
@@ -4131,7 +4131,7 @@
                 "yaml"
             ],
             "support": {
-                "source": "https://github.com/spatie/yaml-front-matter/tree/2.0.8"
+                "source": "https://github.com/spatie/yaml-front-matter/tree/2.0.9"
             },
             "funding": [
                 {
@@ -4143,7 +4143,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-12-04T10:02:52+00:00"
+            "time": "2024-06-13T10:20:51+00:00"
         },
         {
             "name": "symfony/console",
