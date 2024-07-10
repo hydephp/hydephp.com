@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.0">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -338,9 +338,9 @@
         
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Automatic Routing<a id="automatic-routing" href="#automatic-routing" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Automatic Routing<a id="automatic-routing" href="#automatic-routing" class="heading-permalink" title="Permalink"></a></h2>
 <blockquote class="info"><p>This covers an intermediate topic which is not required for basic usage, but is useful if you want to use the framework to design custom Blade templates.</p></blockquote>
-<h3>High-level overview<a id="high-level-overview" href="#high-level-overview" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>High-level overview<a id="high-level-overview" href="#high-level-overview" class="heading-permalink" title="Permalink"></a></h3>
 <p>If you've ever worked in an MVC framework, you are probably familiar with the concept of routing.
 And you are probably also familiar with how boring and tedious it can be. Thankfully, Hyde takes the pain out of routing
 through the Hyde Autodiscovery process.</p>
@@ -351,12 +351,12 @@ Nevertheless, the routing system provides several helpers that you can optionall
 automatically resolve relative links and other useful features.</p>
 <p>You can see all the routes and their corresponding source files by running the <code>hyde route:list</code> command.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
-<h3>Accessing routes<a id="accessing-routes" href="#accessing-routes" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Accessing routes<a id="accessing-routes" href="#accessing-routes" class="heading-permalink" title="Permalink"></a></h3>
 <p>Each route in your site is represented by a Route object. It's very easy to get a Route object instance from the Router's index.
 There are a few ways to do this, but most commonly you'll use the Routes facade's <code>get()</code> method where you provide a route key,
 and it will return the Route object. The route key is generally <code>&lt;page-output-directory/page-identifier&gt;</code>. Here are some examples:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Source file: _pages/index.md/index.blade.php</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/index.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Source file: _posts/my-post.md</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/posts/my-post.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Source file: _docs/readme.md</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/docs/readme.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs/readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
-<h3>Using the <code>x-link</code> component<a id="using-the-x-link-component" href="#using-the-x-link-component" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Using the <code>x-link</code> component<a id="using-the-x-link-component" href="#using-the-x-link-component" class="heading-permalink" title="Permalink"></a></h3>
 <p>When designing Blade layouts it can be useful to use the <code>x-link</code> component to automatically resolve relative links.</p>
 <p>You can of course use it just like a normal anchor tag like so:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>

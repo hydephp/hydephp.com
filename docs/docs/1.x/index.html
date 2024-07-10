@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.0">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -326,7 +326,7 @@
 <a href="https://scrutinizer-ci.com/g/hydephp/develop/?branch=master"><img src="https://scrutinizer-ci.com/g/hydephp/develop/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality" /></a>
 <a href="https://shepherd.dev/github/hydephp/develop"><img src="https://shepherd.dev/github/hydephp/develop/coverage.svg" alt="Psalm Type Coverage" /></a>
 <img src="https://img.shields.io/github/license/hydephp/hyde" alt="License MIT" /></p>
-<h2>About HydePHP<a id="about-hydephp" href="#about-hydephp" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>About HydePHP<a id="about-hydephp" href="#about-hydephp" class="heading-permalink" title="Permalink"></a></h2>
 <p>HydePHP is a Static Site Generator focused on writing content, not markup. With Hyde, it is easy to create static
 websites, blogs, and documentation pages using Markdown and (optionally) Laravel's Blade.</p>
 <p>Operated entirely through the command-line, HydePHP provides developers with a fast and efficient way to create high-quality websites with ease.
@@ -340,21 +340,21 @@ endless configuration. Instead, when you create a new Hyde project, everything y
 -- including precompiled TailwindCSS, well-crafted Blade templates, and easy-to-use asset management.</p>
 <p>Hyde was inspired by JekyllRB and is designed for developers who are comfortable writing posts in Markdown, and it requires
 virtually no configuration out of the box as it favours convention over configuration and is preconfigured with sensible defaults.</p>
-<h2>Installation<a id="installation" href="#installation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Installation<a id="installation" href="#installation" class="heading-permalink" title="Permalink"></a></h2>
 <p>HydePHP is a command-line interface (CLI) application that is installed on a per-project basis.</p>
 <p>To use HydePHP, your system must have PHP version 8.1 or later installed, along with Composer, and access to a terminal.</p>
 <p>The recommended method of installation is using Composer.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span></div></code></pre>
 <p>Once installed, you can access the HydeCLI from the project root using the <code>hyde</code> command.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">info</span></div></code></pre>
-<h2>Usage<a id="usage" href="#usage" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Usage<a id="usage" href="#usage" class="heading-permalink" title="Permalink"></a></h2>
 <p>Creating static websites with HydePHP is incredibly easy. First you need some content. You can just drop Markdown files
 in any of the source directories, or let Hyde scaffold the files for you using one of the many commands.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My First Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">About Me</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>Once you have some content, you can run the build command to compile the content into beautiful static HTML.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>And that's it, your amazing website is ready to be shared with the world!</p>
-<h3>To learn more, head over to the <a href="quickstart">quickstart page</a>.<a id="to-learn-more-head-over-to-the-quickstart-page" href="#to-learn-more-head-over-to-the-quickstart-page" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>To learn more, head over to the <a href="quickstart">quickstart page</a>.<a id="to-learn-more-head-over-to-the-quickstart-page" href="#to-learn-more-head-over-to-the-quickstart-page" class="heading-permalink" title="Permalink"></a></h3>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>

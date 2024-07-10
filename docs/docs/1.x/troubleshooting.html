@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.0">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -355,7 +355,7 @@
 there might be some &quot;gotchas&quot; you might run into. Here are some I can think of,
 did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
 <blockquote class="info"><p>Tip: You can run <code>php hyde validate</code> to run a series of tests to help you catch common issues.</p></blockquote>
-<h2>General Tips<a id="general-tips" href="#general-tips" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>General Tips<a id="general-tips" href="#general-tips" class="heading-permalink" title="Permalink"></a></h2>
 <p>(In no particular order of importance)</p>
 <ol>
 <li>In general, <strong>Hyde is actually pretty forgiving</strong>. While this article makes it sound like there are a lot of rules to follow,
@@ -364,25 +364,25 @@ honestly don't worry about it. Hyde will attempt to fix mistakes and make your l
 <li>You never need front matter, though it is often useful.
 For example, Hyde makes attempts to guess the title for a page depending on the content. (Headings, filenames, etc).</li>
 </ol>
-<h2>Conventions to Follow<a id="conventions-to-follow" href="#conventions-to-follow" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>File naming<a id="file-naming" href="#file-naming" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Conventions to Follow<a id="conventions-to-follow" href="#conventions-to-follow" class="heading-permalink" title="Permalink"></a></h2>
+<h3>File naming<a id="file-naming" href="#file-naming" class="heading-permalink" title="Permalink"></a></h3>
 <p>For Hyde to be able to discover your files, you should follow the following conventions.</p>
 <p>Markdown files should have the extension <code>.md</code>. Blade files should have the extension <code>.blade.php</code>.</p>
 <p>Unexpected behaviour might occur if you use conflicting file names.
 All the following filenames are resolved into the same destination file:
 <code>foo-bar.md</code>, <code>Foo-Bar.md</code>, <code>foo-bar.blade.php</code>, causing only one of them to be saved.</p>
 <p>Remember, files retain their base filenames when compiled to HTML.</p>
-<h4>Summary<a id="summary" href="#summary" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Summary<a id="summary" href="#summary" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>✔ <strong>Do</strong> use lowercase filenames and extensions</li>
 <li>✔ <strong>Do</strong> use filenames written in kebab-case-format</li>
 <li>✔ <strong>Do</strong> use the proper file extensions</li>
 <li>❌ <strong>Don't</strong> use conflicting source file names</li>
 </ul>
-<h2>Extra Information<a id="extra-information" href="#extra-information" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Definitions<a id="definitions" href="#definitions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Extra Information<a id="extra-information" href="#extra-information" class="heading-permalink" title="Permalink"></a></h2>
+<h3>Definitions<a id="definitions" href="#definitions" class="heading-permalink" title="Permalink"></a></h3>
 <p>We will use the following definitions to describe the behaviour of Hyde.</p>
-<h4>General<a id="general" href="#general" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>General<a id="general" href="#general" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <strong>Hyde</strong>: The application that you are using.</li>
@@ -391,7 +391,7 @@ All the following filenames are resolved into the same destination file:
 <li>
 <strong>Framework</strong>: The package containing the core codebase.</li>
 </ul>
-<h4>Path components<a id="path-components" href="#path-components" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Path components<a id="path-components" href="#path-components" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <strong>Identifier</strong>: The filepath without the extension, relative to the page type source directory.</li>
@@ -409,7 +409,7 @@ All the following filenames are resolved into the same destination file:
 </li>
 </ul>
 <p>You can read more about some of these in the <a href="core-concepts#paths-identifiers-and-route-keys">Core Concepts</a> article.</p>
-<h2>Common Issues, Causes, and Solutions<a id="common-issues-causes-and-solutions" href="#common-issues-causes-and-solutions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Common Issues, Causes, and Solutions<a id="common-issues-causes-and-solutions" href="#common-issues-causes-and-solutions" class="heading-permalink" title="Permalink"></a></h2>
 <table>
 <thead>
 <tr>
@@ -516,8 +516,8 @@ All the following filenames are resolved into the same destination file:
 </tr>
 </tbody>
 </table>
-<h3>Extra troubleshooting information<a id="extra-troubleshooting-information" href="#extra-troubleshooting-information" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<h4>Fixing a broken config<a id="fixing-a-broken-config" href="#fixing-a-broken-config" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h3>Extra troubleshooting information<a id="extra-troubleshooting-information" href="#extra-troubleshooting-information" class="heading-permalink" title="Permalink"></a></h3>
+<h4>Fixing a broken config<a id="fixing-a-broken-config" href="#fixing-a-broken-config" class="heading-permalink" title="Permalink"></a></h4>
 <p>If your configuration is broken, you might not be able to run any commands through the HydeCLI.
 To remedy this you can copy the config files from the vendor directory into the project directory.
 You can do this manually, or with the following rescue command:</p>

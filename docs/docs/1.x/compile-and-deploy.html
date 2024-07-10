@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.0">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -349,7 +349,7 @@
         <h1>Compile and Deploy your site</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Running the Build Command<a id="running-the-build-command" href="#running-the-build-command" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Running the Build Command<a id="running-the-build-command" href="#running-the-build-command" class="heading-permalink" title="Permalink"></a></h2>
 <p>Now that you have some amazing content, you'll want to compile your site into static HTML.</p>
 <p><strong>This is as easy as executing the <code>build</code> command:</strong></p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
@@ -357,9 +357,9 @@
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">filepath</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p><strong>And, you can even start a development server to compile your site on the fly:</strong></p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
-<h3>Further reading<a id="further-reading" href="#further-reading" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Further reading<a id="further-reading" href="#further-reading" class="heading-permalink" title="Permalink"></a></h3>
 <blockquote class="info"><p><b>Key Concept: Autodiscovery</b></p> <p>When building the site, Hyde will use all the routes generated when the auto-discovery process scanned your source directories for files. The command will then compile them into static HTML using the appropriate layout depending on what kind of page it is. Thanks to Hyde, the days of manually defining routes are over!</p></blockquote>
-<h4>Learn more about these commands in the <a href="console-commands">console commands</a> documentation:<a id="learn-more-about-these-commands-in-the-console-commands-documentation" href="#learn-more-about-these-commands-in-the-console-commands-documentation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Learn more about these commands in the <a href="console-commands">console commands</a> documentation:<a id="learn-more-about-these-commands-in-the-console-commands-documentation" href="#learn-more-about-these-commands-in-the-console-commands-documentation" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <a href="console-commands#build-the-static-site">Build command</a>
@@ -372,24 +372,24 @@
 </li>
 </ul>
 <hr />
-<h2>Deploying Your Site<a id="deploying-your-site" href="#deploying-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Deploying Your Site<a id="deploying-your-site" href="#deploying-your-site" class="heading-permalink" title="Permalink"></a></h2>
 <p>One of the things that make static sites so enjoyable to work with is how easy it is to deploy them to the web.
 This list is not exhaustive, but gives you a general idea of the most common ways to deploy your site.
 If you have ideas to add to the documentation, please send a pull request!</p>
-<h3>General deployment<a id="general-deployment" href="#general-deployment" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>General deployment<a id="general-deployment" href="#general-deployment" class="heading-permalink" title="Permalink"></a></h3>
 <p>In essence, all you need to do is copy the contents of the <code>_site</code> directory to a web server, and you're done.</p>
 <p>Once the site is compiled there is nothing to configure or worry about.</p>
-<h3>FTP and File Managers<a id="ftp-and-file-managers" href="#ftp-and-file-managers" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>FTP and File Managers<a id="ftp-and-file-managers" href="#ftp-and-file-managers" class="heading-permalink" title="Permalink"></a></h3>
 <p>If you have a conventional web host, you can use <code>FTP</code>/<code>SFTP</code>/<code>FTPS</code> to upload your compiled site files to the web server.
 Some web hosting services also have web-based file managers.</p>
 <p>To deploy your site using any of these methods, all you need to do is upload the entire contents of your <code>_site</code>
 directory to the web server's public document root, which is usually the <code>public_html</code>, <code>htdocs</code>, or <code>www</code> directory.</p>
-<h3>GitHub Pages - Manually<a id="github-pages---manually" href="#github-pages---manually" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>GitHub Pages - Manually<a id="github-pages---manually" href="#github-pages---manually" class="heading-permalink" title="Permalink"></a></h3>
 <p>GitHub Pages is a free service that allows you to host your static site on the web.</p>
 <p>In general, push the entire contents of your <code>_site</code> directory to the <code>gh-pages</code> branch of your repository,
 or the <code>docs/</code> directory on your main branch, depending on how you set it up.</p>
 <p>Please see the <a href="https://help.github.com/pages/getting-started-with-github-pages/">GitHub Pages documentation</a> for more information.</p>
-<h3>GitHub Pages - CI/CD<a id="github-pages---cicd" href="#github-pages---cicd" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>GitHub Pages - CI/CD<a id="github-pages---cicd" href="#github-pages---cicd" class="heading-permalink" title="Permalink"></a></h3>
 <p>Hyde works amazing with GitHub Pages and GitHub Actions and the entire build and deploy process can be automated.</p>
 <ul>
 <li>

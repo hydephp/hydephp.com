@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.0">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -359,14 +359,14 @@
     </header>
     <section id="document-main-content" itemprop="articleBody">
         <p>This guide will help you update your HydePHP project to the latest version.</p>
-<h2>Before You Start<a id="before-you-start" href="#before-you-start" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Before You Start<a id="before-you-start" href="#before-you-start" class="heading-permalink" title="Permalink"></a></h2>
 <p>When updating an existing installation, first ensure that you have a backup of your project in case anything goes wrong.
 The recommended way to do this is to use Git as that allows you to smoothly roll back any changes.</p>
-<h2>Version Compatibility<a id="version-compatibility" href="#version-compatibility" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Version Compatibility<a id="version-compatibility" href="#version-compatibility" class="heading-permalink" title="Permalink"></a></h2>
 <p>HydePHP follows <a href="https://semver.org/">semantic versioning</a>, so you can expect that minor and patch releases will be backwards compatible.
 Only major releases may introduce breaking changes, all of which are thoroughly documented in the accompanying release notes.</p>
 <p>New features and bug fixes are added in minor and patch releases, so it is recommended to keep your project up to date.</p>
-<h3>Side effects and ensuring a smooth update<a id="side-effects-and-ensuring-a-smooth-update" href="#side-effects-and-ensuring-a-smooth-update" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Side effects and ensuring a smooth update<a id="side-effects-and-ensuring-a-smooth-update" href="#side-effects-and-ensuring-a-smooth-update" class="heading-permalink" title="Permalink"></a></h3>
 <p>Please note that due to the intricate nature of software, there is a possibility that an update contains side effects,
 hence why version controlling your site is helpful when updating versions as you can roll back changes. It can also
 be helpful to version control the compiled HTML, so you can view a diff of the changes. Be sure to test that your site
@@ -374,26 +374,26 @@ can be built and that it looks as expected after updating before deploying the c
 <p>We of course have extensive tests in place run on each single code commit to ensure all code is functional, however,
 it is still possible that some edge cases slip through. This means that a bug fix may impact an edge case that you depend on.</p>
 <p>Obligatory related XKCD: <a href="https://xkcd.com/1172">https://xkcd.com/1172</a></p>
-<h3>Before you start<a id="before-you-start-1" href="#before-you-start-1" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Before you start<a id="before-you-start-1" href="#before-you-start-1" class="heading-permalink" title="Permalink"></a></h3>
 <p>Before you perform an update, please make sure you have a backup of your project.
 Using Git is highly recommended as it allows you to easily roll back changes if something goes wrong.</p>
-<h2>Update to a major version<a id="update-to-a-major-version" href="#update-to-a-major-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Update to a major version<a id="update-to-a-major-version" href="#update-to-a-major-version" class="heading-permalink" title="Permalink"></a></h2>
 <p>When updating to a major version, you should read the release notes and the upgrade guide for that version.
 If you are updating multiple major versions at once, it's recommended to update one major version at a time,
 following the upgrade guide for each version. After following the upgrade guide, you can follow the post-update instructions below.</p>
-<h2>Updating to a minor or patch version<a id="updating-to-a-minor-or-patch-version" href="#updating-to-a-minor-or-patch-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Updating to a minor or patch version<a id="updating-to-a-minor-or-patch-version" href="#updating-to-a-minor-or-patch-version" class="heading-permalink" title="Permalink"></a></h2>
 <p>Updating a minor or patch version is easy using Composer. Just run the following command:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/</span><span style="color: #A6ACCD;">*</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--with-dependencies</span></div></code></pre>
 <p>Note that if you have hardcoded a version constraint in your <code>composer.json</code> file, you may need to update it manually.
 You can always refer to the <code>composer.json</code> file in the HydePHP repository if you need a reference.</p>
-<h2>Alternate update methods<a id="alternate-update-methods" href="#alternate-update-methods" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Updating using Git (advanced)<a id="updating-using-git-advanced" href="#updating-using-git-advanced" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Alternate update methods<a id="alternate-update-methods" href="#alternate-update-methods" class="heading-permalink" title="Permalink"></a></h2>
+<h3>Updating using Git (advanced)<a id="updating-using-git-advanced" href="#updating-using-git-advanced" class="heading-permalink" title="Permalink"></a></h3>
 <p>If you are using Git, you can set the <code>hydephp/hyde</code> repository as a Git remote and merge in the changes that way:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">remote</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">add</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://github.com/hydephp/hyde.git</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">fetch</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">merge</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/master</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># OR: Replace &#39;master&#39; with the version tag you want to update to</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># Take care of any merge conflicts that arise, then install the updated dependencies</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span></div></code></pre>
-<h3>Hard update using release archive<a id="hard-update-using-release-archive" href="#hard-update-using-release-archive" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Hard update using release archive<a id="hard-update-using-release-archive" href="#hard-update-using-release-archive" class="heading-permalink" title="Permalink"></a></h3>
 <p>An alternate way to update your project is to essentially do a hard reset. This is only recommended if you haven't done many modifications to the HydePHP files.</p>
 <p>Essentially: Download the <a href="https://github.com/hydephp/hyde/releases/latest">latest release</a> from GitHub, extract it to a new project directory, then copy over your source files and install the dependencies.</p>
-<h2>Post-update instructions<a id="post-update-instructions" href="#post-update-instructions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Post-update instructions<a id="post-update-instructions" href="#post-update-instructions" class="heading-permalink" title="Permalink"></a></h2>
 <p>After updating Hyde you should update your config and resource files. This is where things can get a tiny bit dangerous
 as existing files may be overwritten. If you are using Git, you can easily take care of any merge conflicts that arise.</p>
 <p>First, ensure that your dependencies are up to date. If you have already done this, you can skip this step.</p>
