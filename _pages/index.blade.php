@@ -57,7 +57,8 @@
       },
       "offers": {
         "@type": "Offer",
-        "price": "0"
+        "price": "0",
+        "priceCurrency": "USD"
       },
       "applicationCategory": "DeveloperApplication",
       "applicationSubCategory": "Static Site Generator",
