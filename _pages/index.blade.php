@@ -68,6 +68,17 @@
       "softwareVersion": "v1.x"
     }
 </script>
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebPage",
+      "mainEntity": {
+        "@type": "SoftwareSourceCode",
+        "url": "https://github.com/hydephp/hyde",
+        "codeRepository": "https://github.com/hydephp/hyde"
+      }
+    }
+</script>
 @endpush
 <!-- BEGIN HERO SECTION -->
 <div class="relative items-center justify-center w-screen min-h-screen">
