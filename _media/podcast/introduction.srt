@@ -8,7 +8,7 @@ Seems like a new one pops up every day.
 
 3
 00:00:04,720 --> 00:00:08,560
-Right. And this time we're doing a deep dive on Hyde PHP.
+Right. And this time we're doing a deep dive on HydePHP.
 
 4
 00:00:08,560 --> 00:00:10,240
@@ -24,11 +24,11 @@ It really is. And they're making some bold claims.
 
 7
 00:00:13,920 --> 00:00:16,640
-Elegancin power. All in one package.
+Elegance and power. All in one package.
 
 8
 00:00:16,640 --> 00:00:20,480
-Yeah, that focused on writing content, not markup line, taught my eye.
+Yeah, that focused on writing content, not markup line, caught my eye.
 
 9
 00:00:20,480 --> 00:00:23,520
@@ -48,7 +48,7 @@ Yeah, but I see their point.
 
 13
 00:00:27,360 --> 00:00:29,760
-They mentioned using markdown, which is great for, well,
+They mentioned using Markdown, which is great for, well,
 
 14
 00:00:29,760 --> 00:00:34,800
@@ -292,7 +292,7 @@ Almost too easy.
 
 74
 00:03:08,160 --> 00:03:11,360
-You basically just drop your markdown files into a specific folder
+You basically just drop your Markdown files into a specific folder
 
 75
 00:03:11,360 --> 00:03:14,000
@@ -308,7 +308,7 @@ you've got a directory full of static HTML ready to deploy wherever you want.
 
 78
 00:03:19,760 --> 00:03:22,160
-Hold on, did you just say drop markdown files and go?
+Hold on, did you just say drop Markdown files and go?
 
 79
 00:03:22,160 --> 00:03:23,200
@@ -344,7 +344,7 @@ Can you really get under the hood and tweak things?
 
 87
 00:03:35,520 --> 00:03:39,040
-Or do you hit a point where you need to break out the full laryvel toolkit?
+Or do you hit a point where you need to break out the full Laravel toolkit?
 
 88
 00:03:39,040 --> 00:03:41,440
@@ -380,7 +380,7 @@ But for simpler sites or getting up and running quickly,
 
 96
 00:03:55,440 --> 00:03:58,160
-hide PHP looks pretty darn slick.
+HydePHP looks pretty darn slick.
 
 97
 00:03:58,160 --> 00:03:59,200
@@ -388,7 +388,7 @@ It really does.
 
 98
 00:03:59,200 --> 00:04:02,080
-So to sum it all up, hide PHP.
+So to sum it all up, HydePHP.
 
 99
 00:04:02,080 --> 00:04:04,400
