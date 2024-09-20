@@ -5,7 +5,7 @@
     <main class="dark:text-gray-100">
         <section class="py-12 px-8 bg-offset md:px-0">
             <div class="mx-auto max-w-7xl">
-                <h1 class="text-center text-3xl font-bold mb-8">The Deep Dive Podcast: HydePHP</h1>
+                <h1 class="text-center text-3xl xl:text-4xl font-bold py-4 mb-8 text-gray-700 dark:text-gray-200">The Deep Dive Podcast: HydePHP</h1>
 
                 <div class="bg-white dark:bg-slate-700 shadow-md rounded-lg p-6 mb-8">
                     <h2 class="text-2xl font-semibold mb-4">Listen to Our AI-Generated Podcast</h2>
