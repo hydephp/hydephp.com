@@ -47,6 +47,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let player;
+            let isManualScroll = false;
+            let scrollTimeout;
 
             function initializePlayer() {
                 player = new Shikwasa.Player({
@@ -84,13 +86,33 @@
 
                     initializePlayer();
 
+                    // Handle time updates, unless manual scroll is happening
                     player.on('timeupdate', () => {
-                        const currentTime = player.currentTime;
-                        const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
+                        if (!isManualScroll) {
+                            const currentTime = player.currentTime;
+                            const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
 
-                        if (currentLine !== -1) {
-                            highlightLine(currentLine);
+                            if (currentLine !== -1) {
+                                highlightLine(currentLine);
+                            }
                         }
+                    });
+
+                    // Event listener for manual scrolling
+                    const transcriptWrapper = document.getElementById('transcript-wrapper');
+                    transcriptWrapper.addEventListener('wheel', () => {
+                        isManualScroll = true;
+                        clearTimeout(scrollTimeout);
+
+                        scrollTimeout = setTimeout(() => {
+                            isManualScroll = false;
+                            const currentTime = player.currentTime;
+                            const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
+
+                            if (currentLine !== -1) {
+                                highlightLine(currentLine);
+                            }
+                        }, 1000); // 1 second delay after scroll stops
                     });
 
                     player.on('loadedmetadata',() => {
@@ -134,11 +156,10 @@
                     }
                 });
 
-                const transcriptWrapper = document.getElementById('transcript-wrapper');
                 const activeLine = document.getElementById(`line-${lineIndex}`);
                 if (activeLine) {
                     const lineHeight = activeLine.offsetHeight;
-                    const wrapperHeight = transcriptWrapper.offsetHeight;
+                    const wrapperHeight = document.getElementById('transcript-wrapper').offsetHeight;
                     const scrollPosition = activeLine.offsetTop - (wrapperHeight / 2) + (lineHeight / 2);
 
                     document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
