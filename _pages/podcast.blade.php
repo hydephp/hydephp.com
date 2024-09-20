@@ -12,8 +12,8 @@
             <div id="player" class="mb-4"></div>
 
             <div id="transcript-container" class="mt-4 p-4 bg-gray-50 rounded h-[11rem] relative overflow-hidden">
-                <h3 class="font-semibold mb-2">Transcript</h3>
-                <div id="transcript-wrapper" class="absolute inset-x-4 top-10 bottom-4 overflow-hidden">
+                <h3 class="font-semibold mb-4">Transcript</h3>
+                <div id="transcript-wrapper" class="absolute inset-x-4 top-12 bottom-4 overflow-hidden">
                     <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out"></div>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                         const p = document.createElement('p');
                         p.textContent = line.text;
                         p.id = `line-${index}`;
-                        p.className = 'py-1 transition-colors duration-300';
+                        p.className = 'py-1 px-2 rounded transition-colors duration-300 text-gray-600';
                         transcriptDiv.appendChild(p);
                     });
 
@@ -106,9 +106,9 @@
                 const lines = document.querySelectorAll('#transcript p');
                 lines.forEach((line, index) => {
                     if (index === lineIndex) {
-                        line.classList.add('bg-yellow-200');
+                        line.classList.add('bg-gray-200', 'text-gray-900');
                     } else {
-                        line.classList.remove('bg-yellow-200');
+                        line.classList.remove('bg-gray-200', 'text-gray-900');
                     }
                 });
 
