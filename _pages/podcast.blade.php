@@ -33,7 +33,36 @@
                     <div id="transcript-container" class="mt-4 p-4 bg-gray-50 dark:bg-slate-800 rounded h-[16rem] relative overflow-hidden">
                         <h3 class="font-semibold mb-4">Transcript</h3>
                         <div id="transcript-wrapper" class="absolute inset-x-4 top-12 bottom-4 overflow-hidden">
-                            <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out"></div>
+                            <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out">
+                                <div id="transcript-ssr">
+                                    <?php
+                                    $raw = file_get_contents(Hyde::mediaPath('podcast/introduction.srt'));
+
+                                    // Split the SRT file into individual blocks based on double newlines
+                                    $blocks = preg_split('/\n\n|\r\n\r\n/', $raw);
+
+                                    $spokenText = [];
+
+                                    // Loop through each block and extract the spoken text
+                                    foreach ($blocks as $block) {
+                                        // Split each block into lines
+                                        $lines = explode("\n", $block);
+
+                                        // Remove the first two lines (index and timestamp) to get just the spoken text
+                                        $lines = array_slice($lines, 2);
+
+                                        // Merge lines of spoken text and add to the result array
+                                        $spokenText[] = implode(' ', $lines);
+                                    }
+
+                                    // Join the extracted text into a single string
+                                    $spokenText = implode(' ', $spokenText);
+
+                                    // Output the spoken text
+                                    echo $spokenText;
+                                    ?>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -121,6 +150,9 @@
                 .then(srt => {
                     const lines = parseSRT(srt);
                     const transcriptDiv = document.getElementById('transcript');
+
+                    // Remove the SSR content (later we could just use this originally)
+                    document.getElementById('transcript-ssr').remove();
 
                     lines.forEach((line, index) => {
                         const p = document.createElement('p');
