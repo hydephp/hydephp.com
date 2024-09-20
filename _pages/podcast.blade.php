@@ -36,6 +36,8 @@
                             <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out">
                                 <div id="transcript-ssr">
                                     <?php
+                                    // Todo: Merge with the js to use this as the initial content
+                                    
                                     $raw = file_get_contents(Hyde::mediaPath('podcast/introduction.srt'));
 
                                     // Split the SRT file into individual blocks based on double newlines
