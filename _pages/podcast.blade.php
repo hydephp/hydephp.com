@@ -1,5 +1,6 @@
 @extends('hyde::layouts.app')
 @php($title = "The Deep Dive Podcast: HydePHP")
+@php($navigation = ['hidden' => true])
 @section('content')
 
     <main class="dark:text-gray-100">
