@@ -1,10 +1,9 @@
 @extends('hyde::layouts.app')
-
+@php($title = "The Deep Dive Podcast: HydePHP")
 @section('content')
-    @php($title = "The Deep Dive: HydePHP")
 
     <main class="mx-auto max-w-7xl py-16 px-8">
-        <h1 class="text-center text-3xl font-bold mb-8">The Deep Dive: HydePHP</h1>
+        <h1 class="text-center text-3xl font-bold mb-8">The Deep Dive Podcast: HydePHP</h1>
 
         <div class="bg-white shadow-md rounded-lg p-6 mb-8">
             <h2 class="text-2xl font-semibold mb-4">Listen to Our AI-Generated Podcast</h2>
