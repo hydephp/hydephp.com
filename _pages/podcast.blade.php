@@ -11,7 +11,7 @@
 
             <div id="player" class="mb-4"></div>
 
-            <div id="transcript-container" class="mt-4 p-4 bg-gray-50 rounded h-[11rem] relative overflow-hidden">
+            <div id="transcript-container" class="mt-4 p-4 bg-gray-50 rounded h-[16rem] relative overflow-hidden">
                 <h3 class="font-semibold mb-4">Transcript</h3>
                 <div id="transcript-wrapper" class="absolute inset-x-4 top-12 bottom-4 overflow-hidden">
                     <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out"></div>
