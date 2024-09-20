@@ -248,7 +248,7 @@
                         title: 'The Deep Dive: HydePHP',
                         artist: 'AI-Generated Podcast',
                         cover: '{{ asset('logo.png') }}',
-                        src: "https://git.desilva.se/temp/a101bb58-f54a-4b06-a2fd-4db7d4bafdee/podcast/introduction.wav",
+                        src: "{{ asset('podcast/introduction.wav') }}",
                     },
                     chapters: [
                         { title: 'Introduction', startTime: 0, endTime: 60 },
@@ -262,7 +262,7 @@
             }
 
             // Load and display transcript
-            fetch("https://git.desilva.se/temp/a101bb58-f54a-4b06-a2fd-4db7d4bafdee/podcast/introduction.srt")
+            fetch("{{ asset('podcast/introduction.srt') }}")
                 .then(response => response.text())
                 .then(srt => {
                     const lines = parseSRT(srt);
