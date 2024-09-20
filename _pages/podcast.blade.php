@@ -78,12 +78,7 @@
                         const p = document.createElement('p');
                         p.textContent = line.text;
                         p.id = `line-${index}`;
-                        p.className = 'py-1 px-2 rounded transition-colors duration-300 text-gray-600 cursor-pointer hover:bg-gray-100';
-                        p.addEventListener('click', () => {
-                            console.log(secondsToTime(line.start))
-                            player.seek(secondsToTime(line.start));
-                            player.play();
-                        });
+                        p.className = 'seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 cursor-pointer hover:bg-gray-100';
                         transcriptDiv.appendChild(p);
                     });
 
@@ -96,6 +91,16 @@
                         if (currentLine !== -1) {
                             highlightLine(currentLine);
                         }
+                    });
+
+                    player.on('loadedmetadata',() => {
+                        document.querySelectorAll('.seeker-line').forEach((p, index) => {
+                            const line = lines[index];
+                            p.addEventListener('click', () => {
+                                player.seek(line.start);
+                                player.play();
+                            });
+                        });
                     });
                 });
 
