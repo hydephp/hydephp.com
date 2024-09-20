@@ -39,7 +39,7 @@
                 audio: {
                     title: 'The Deep Dive: HydePHP',
                     artist: 'AI-Generated Podcast',
-                    cover: 'https://hydephp.com/favicon.ico', // Replace with actual cover image
+                    cover: '{{ asset('logo.png') }}',
                     src: "{{ asset('podcast/introduction.wav') }}",
                 },
                 chapters: [
