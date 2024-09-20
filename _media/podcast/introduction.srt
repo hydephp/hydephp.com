@@ -136,7 +136,7 @@ Exactly. But who are they targeting with that message?
 
 35
 00:01:34,080 --> 00:01:36,560
-Who's the ideal hidePHP user?
+Who's the ideal HydePHP user?
 
 36
 00:01:36,560 --> 00:01:39,360
@@ -264,7 +264,7 @@ Yeah.
 
 67
 00:02:53,520 --> 00:02:58,320
-And installations of Breeze just follow the instructions on the hidePHP website.
+And installations of Breeze just follow the instructions on the HydePHP website.
 
 68
 00:02:58,320 --> 00:02:59,840
@@ -296,11 +296,11 @@ You basically just drop your Markdown files into a specific folder
 
 75
 00:03:11,360 --> 00:03:14,000
-or use hide commands to generate some starter templates.
+or use hyde commands to generate some starter templates.
 
 76
 00:03:14,000 --> 00:03:16,000
-Then you run hide build and bam,
+Then you run hyde build and bam,
 
 77
 00:03:16,000 --> 00:03:19,760
