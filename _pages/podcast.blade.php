@@ -113,7 +113,7 @@
 
             // Handle manual scrolling
             const transcriptWrapper = document.getElementById('transcript-wrapper');
-            transcriptWrapper.addEventListener('wheel', () => {
+            transcriptWrapper.addEventListener('wheel', (event) => {
                 manualScrolling = true;
 
                 event.preventDefault();
