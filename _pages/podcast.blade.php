@@ -52,7 +52,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
 
     <style>
+        .shk[data-theme=light], .shk {
+            --color-primary: #4A5568!important;;
+            --color-theme: #fff;
+            --color-secondary: #767676;
+            --color-text: #333;
+            --color-shadow: #b9b6b680;
+            --color-handle-shadow-mobile: #b9b6b6;
+        }
         .shk[data-theme=dark], .dark .shk {
+            --color-primary: #6366f1!important;
             --color-theme: #172133;
             --color-secondary: #b9b6b6;
             --color-text: #f8f9fa;
@@ -69,7 +78,6 @@
             let translateY = 0;
 
             function initializePlayer() {
-                const isDarkMode = document.documentElement.classList.contains('dark');
                 player = new Shikwasa.Player({
                     container: () => document.getElementById('player'),
                     audio: {
@@ -84,8 +92,8 @@
                         { title: 'Benefits and Use Cases', startTime: 180, endTime: 300 },
                         { title: 'Conclusion', startTime: 300, endTime: 360 },
                     ],
-                    themeColor: isDarkMode ? '#6366f1' : '#4A5568',
-                    theme: isDarkMode ? 'dark' : 'light',
+                    themeColor: '#6366f1',
+                    theme: 'light',
                 });
             }
 
@@ -184,22 +192,6 @@
                     translateY = scrollPosition;
                 }
             }
-
-            // Listen for changes in dark mode (not working yet)
-            const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                        const isDarkMode = document.documentElement.classList.contains('dark');
-                        player.options.themeColor = isDarkMode ? '#6366f1' : '#4A5568';
-                        player.options.theme = isDarkMode ? 'dark' : 'light';
-                    }
-                });
-            });
-
-            observer.observe(document.documentElement, {
-                attributes: true,
-                attributeFilter: ['class']
-            });
         });
     </script>
 @endpush
