@@ -30,7 +30,7 @@
 
 @push('scripts')
     <script src="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
