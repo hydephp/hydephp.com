@@ -47,6 +47,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let player;
+            let manualScrolling = false;
+            let scrollTimeout;
+            let translateY = 0;
 
             function initializePlayer() {
                 player = new Shikwasa.Player({
@@ -85,15 +88,17 @@
                     initializePlayer();
 
                     player.on('timeupdate', () => {
-                        const currentTime = player.currentTime;
-                        const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
+                        if (!manualScrolling) {
+                            const currentTime = player.currentTime;
+                            const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
 
-                        if (currentLine !== -1) {
-                            highlightLine(currentLine);
+                            if (currentLine !== -1) {
+                                highlightLine(currentLine);
+                            }
                         }
                     });
 
-                    player.on('loadedmetadata',() => {
+                    player.on('loadedmetadata', () => {
                         document.querySelectorAll('.seeker-line').forEach((p, index) => {
                             const line = lines[index];
                             p.addEventListener('click', () => {
@@ -103,6 +108,28 @@
                         });
                     });
                 });
+
+            // Handle manual scrolling
+            const transcriptWrapper = document.getElementById('transcript-wrapper');
+            transcriptWrapper.addEventListener('wheel', () => {
+                manualScrolling = true;
+
+                event.preventDefault();
+
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    manualScrolling = false;
+                }, 1000); // Delay to prevent immediate re-highlighting
+
+                let currentScrollPosition = translateY;
+                let scrollDirection = event.deltaY > 0 ? 'down' : 'up';
+                const lineHeight = document.getElementById('line-0').offsetHeight;
+                let scrollPosition = scrollDirection === 'down' ? currentScrollPosition + lineHeight : currentScrollPosition - lineHeight;
+
+                // Set the transform offset to the scroll position
+                document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+                translateY = scrollPosition;
+            });
 
             function parseSRT(srt) {
                 const lines = srt.trim().split('\n\n');
@@ -118,12 +145,6 @@
                 return hours * 3600 + minutes * 60 + seconds;
             }
 
-            function secondsToTime(seconds) {
-                const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
-                const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
-                return `${minutes}:${remainingSeconds}`;
-            }
-
             function highlightLine(lineIndex) {
                 const lines = document.querySelectorAll('#transcript p');
                 lines.forEach((line, index) => {
@@ -134,14 +155,14 @@
                     }
                 });
 
-                const transcriptWrapper = document.getElementById('transcript-wrapper');
                 const activeLine = document.getElementById(`line-${lineIndex}`);
-                if (activeLine) {
+                if (activeLine && !manualScrolling) {
                     const lineHeight = activeLine.offsetHeight;
                     const wrapperHeight = transcriptWrapper.offsetHeight;
                     const scrollPosition = activeLine.offsetTop - (wrapperHeight / 2) + (lineHeight / 2);
 
                     document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+                    translateY = scrollPosition;
                 }
             }
         });
