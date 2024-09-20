@@ -51,6 +51,16 @@
     <script src="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
 
+    <style>
+        .shk[data-theme=dark], .dark .shk {
+            --color-theme: #172133;
+            --color-secondary: #b9b6b6;
+            --color-text: #f8f9fa;
+            --color-handle-shadow-mobile: #141414;
+            --color-shadow: #14141480;
+        }
+    </style>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             let player;
