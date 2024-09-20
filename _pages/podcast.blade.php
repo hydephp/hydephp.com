@@ -46,22 +46,26 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const player = new Shikwasa.Player({
-                container: () => document.getElementById('player'),
-                audio: {
-                    title: 'The Deep Dive: HydePHP',
-                    artist: 'AI-Generated Podcast',
-                    cover: '{{ asset('logo.png') }}',
-                    src: "{{ asset('podcast/introduction.wav') }}",
-                },
-                chapters: [
-                    { title: 'Introduction', startTime: 0, endTime: 60 },
-                    { title: 'Features of HydePHP', startTime: 60, endTime: 180 },
-                    { title: 'Benefits and Use Cases', startTime: 180, endTime: 300 },
-                    { title: 'Conclusion', startTime: 300, endTime: 360 },
-                ],
-                themeColor: '#4A5568',
-            });
+            let player;
+
+            function initializePlayer() {
+                player = new Shikwasa.Player({
+                    container: () => document.getElementById('player'),
+                    audio: {
+                        title: 'The Deep Dive: HydePHP',
+                        artist: 'AI-Generated Podcast',
+                        cover: '{{ asset('logo.png') }}',
+                        src: "{{ asset('podcast/introduction.wav') }}",
+                    },
+                    chapters: [
+                        { title: 'Introduction', startTime: 0, endTime: 60 },
+                        { title: 'Features of HydePHP', startTime: 60, endTime: 180 },
+                        { title: 'Benefits and Use Cases', startTime: 180, endTime: 300 },
+                        { title: 'Conclusion', startTime: 300, endTime: 360 },
+                    ],
+                    themeColor: '#4A5568',
+                });
+            }
 
             // Load and display transcript
             fetch("{{ asset('podcast/introduction.srt') }}")
@@ -74,9 +78,14 @@
                         const p = document.createElement('p');
                         p.textContent = line.text;
                         p.id = `line-${index}`;
-                        p.className = 'py-1 px-2 rounded transition-colors duration-300 text-gray-600';
+                        p.className = 'py-1 px-2 rounded transition-colors duration-300 text-gray-600 cursor-pointer hover:bg-gray-100';
+                        p.addEventListener('click', () => {
+                            player.seek(line.start);
+                        });
                         transcriptDiv.appendChild(p);
                     });
+
+                    initializePlayer();
 
                     player.on('timeupdate', () => {
                         const currentTime = player.currentTime;
