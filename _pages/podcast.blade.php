@@ -80,7 +80,9 @@
                         p.id = `line-${index}`;
                         p.className = 'py-1 px-2 rounded transition-colors duration-300 text-gray-600 cursor-pointer hover:bg-gray-100';
                         p.addEventListener('click', () => {
-                            player.seek(line.start);
+                            console.log(secondsToTime(line.start))
+                            player.seek(secondsToTime(line.start));
+                            player.play();
                         });
                         transcriptDiv.appendChild(p);
                     });
@@ -109,6 +111,12 @@
             function timeToSeconds(time) {
                 const [hours, minutes, seconds] = time.split(':').map(parseFloat);
                 return hours * 3600 + minutes * 60 + seconds;
+            }
+
+            function secondsToTime(seconds) {
+                const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+                const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+                return `${minutes}:${remainingSeconds}`;
             }
 
             function highlightLine(lineIndex) {
