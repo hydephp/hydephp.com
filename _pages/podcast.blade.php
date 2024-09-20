@@ -41,7 +41,7 @@
                                     // Split the SRT file into individual blocks based on double newlines
                                     $blocks = preg_split('/\n\n|\r\n\r\n/', $raw);
 
-                                    $spokenText = [];
+                                    $formattedOutput = [];
 
                                     // Loop through each block and extract the spoken text
                                     foreach ($blocks as $block) {
@@ -51,15 +51,18 @@
                                         // Remove the first two lines (index and timestamp) to get just the spoken text
                                         $lines = array_slice($lines, 2);
 
-                                        // Merge lines of spoken text and add to the result array
-                                        $spokenText[] = implode(' ', $lines);
+                                        // Merge lines of spoken text
+                                        $text = implode(' ', $lines);
+
+                                        // Wrap the spoken text in the specified HTML structure
+                                        $formattedOutput[] = '<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs opacity-75 mr-1">00:00</span>' . htmlspecialchars($text) . '</div>';
                                     }
 
-                                    // Join the extracted text into a single string
-                                    $spokenText = implode(' ', $spokenText);
+                                    // Join the formatted lines with newlines between each
+                                    $formattedOutput = implode("\n", $formattedOutput);
 
-                                    // Output the spoken text
-                                    echo $spokenText;
+                                    // Output the formatted HTML
+                                    echo $formattedOutput;
                                     ?>
                                 </div>
                             </div>
