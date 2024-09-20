@@ -163,7 +163,7 @@
                 clearTimeout(scrollTimeout);
                 scrollTimeout = setTimeout(() => {
                     manualScrolling = false;
-                }, 1000); // Delay to prevent immediate re-highlighting
+                }, 3000); // Delay to prevent immediate re-highlighting
 
                 let currentScrollPosition = translateY;
                 let scrollDirection = event.deltaY > 0 ? 'down' : 'up';
