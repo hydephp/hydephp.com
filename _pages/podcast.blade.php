@@ -57,7 +57,7 @@
                                         $text = implode(' ', $lines);
 
                                         // Wrap the spoken text in the specified HTML structure
-                                        $formattedOutput[] = '<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span>' . htmlspecialchars($text) . '</div>';
+                                        $formattedOutput[] = '<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> ' . htmlspecialchars($text) . '</div>';
                                     }
 
                                     // Join the formatted lines with newlines between each
