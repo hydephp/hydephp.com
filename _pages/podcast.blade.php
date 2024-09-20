@@ -107,7 +107,7 @@
                     lines.forEach((line, index) => {
                         const p = document.createElement('p');
                         const timestamp = secondsToTime(line.start);
-                        p.innerHTML = `<span class="opacity-75">${timestamp}</span> ${line.text}`;
+                        p.innerHTML = `<span class="text-xs opacity-75 mr-1">${timestamp}</span> ${line.text}`;
                         p.id = `line-${index}`;
                         p.className = 'seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600';
                         transcriptDiv.appendChild(p);
