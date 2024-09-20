@@ -34,7 +34,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const player = new shikwasa.Player({
+            const player = new Shikwasa.Player({
                 container: () => document.getElementById('player'),
                 audio: {
                     title: 'The Deep Dive: HydePHP',
