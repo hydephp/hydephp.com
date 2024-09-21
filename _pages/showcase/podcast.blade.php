@@ -22,7 +22,8 @@
                 </ul>
 
                 <p class="mb-2">While this content is AI-generated, it reflects our commitment to exploring innovative ways to share information about HydePHP.</p>
-                <p>We hope you enjoy this blend of technology and creativity!</p>
+                <p>We hope you enjoy this blend of technology and creativity! Want to learn more about how this was created? Head to our
+                    <a href="/posts/ai-podcast-episode">blog post on the topic</a> to learn more!</p>
             </article>
         </div>
     </section>
