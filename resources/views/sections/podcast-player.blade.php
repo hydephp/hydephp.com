@@ -177,214 +177,210 @@
     <p class="text-sm text-gray-600 dark:text-gray-300 italic mt-1"><strong>Human Editor's Note 2:</strong> There's no need to sign on a dotted line, HydePHP is, and will always be, free and open-source software.</p>
 </div>
 
-@push('styles')
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>tailwind.config = { /* tailwind.config.js */
-            darkMode: 'class',
-            content: ['./_pages/*.blade.php', './resources/views/**/*.blade.php', './vendor/hyde/framework/resources/views/**/*.blade.php',],
-            theme: {
-                extend: {
-                    typography: {
-                        DEFAULT: {
-                            css: {
-                                lineHeight: '1.5em',
-                                maxWidth: '96ch',
-                                h2: {marginBottom: '0.75em', marginTop: '1.5em',},
-                                a: {color: '#5956eb', '&:hover': {color: '#4f46e5',}, textDecoration: 'none'},
-                                blockquote: {
-                                    backgroundColor: '#80808020',
-                                    borderLeftColor: '#d1d5db',
-                                    color: 'unset',
-                                    fontWeight: 500,
-                                    fontStyle: 'unset',
-                                    lineHeight: '1.25em',
-                                    paddingLeft: '0.75em',
-                                    paddingTop: '.25em',
-                                    paddingBottom: '.25em',
-                                    marginTop: '1em',
-                                    marginBottom: '1em',
-                                    p: {paddingRight: '.25em', marginTop: '.25em', marginBottom: '.25em',},
-                                    'p::before': {content: 'unset',},
-                                    'p::after': {content: 'unset',},
-                                },
-                                code: {
-                                    font: 'unset',
-                                    backgroundColor: '#80808033',
-                                    paddingLeft: '4px',
-                                    paddingRight: '4px',
-                                    marginLeft: '-2px',
-                                    marginRight: '1px',
-                                    borderRadius: '4px'
-                                },
-                                'code::before': {content: 'unset',},
-                                'code::after': {content: 'unset',},
-                                pre: {code: {fontFamily: "'Fira Code Regular', Consolas, Monospace, 'Courier New'",}}
+<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>tailwind.config = { /* tailwind.config.js */
+        darkMode: 'class',
+        content: ['./_pages/*.blade.php', './resources/views/**/*.blade.php', './vendor/hyde/framework/resources/views/**/*.blade.php',],
+        theme: {
+            extend: {
+                typography: {
+                    DEFAULT: {
+                        css: {
+                            lineHeight: '1.5em',
+                            maxWidth: '96ch',
+                            h2: {marginBottom: '0.75em', marginTop: '1.5em',},
+                            a: {color: '#5956eb', '&:hover': {color: '#4f46e5',}, textDecoration: 'none'},
+                            blockquote: {
+                                backgroundColor: '#80808020',
+                                borderLeftColor: '#d1d5db',
+                                color: 'unset',
+                                fontWeight: 500,
+                                fontStyle: 'unset',
+                                lineHeight: '1.25em',
+                                paddingLeft: '0.75em',
+                                paddingTop: '.25em',
+                                paddingBottom: '.25em',
+                                marginTop: '1em',
+                                marginBottom: '1em',
+                                p: {paddingRight: '.25em', marginTop: '.25em', marginBottom: '.25em',},
+                                'p::before': {content: 'unset',},
+                                'p::after': {content: 'unset',},
                             },
-                        }, invert: {css: {a: {color: '#818cf8', '&:hover': {color: '#6366f1',},},},},
-                    }, colors: {indigo: {500: '#5956eb',}},
-                },
+                            code: {
+                                font: 'unset',
+                                backgroundColor: '#80808033',
+                                paddingLeft: '4px',
+                                paddingRight: '4px',
+                                marginLeft: '-2px',
+                                marginRight: '1px',
+                                borderRadius: '4px'
+                            },
+                            'code::before': {content: 'unset',},
+                            'code::after': {content: 'unset',},
+                            pre: {code: {fontFamily: "'Fira Code Regular', Consolas, Monospace, 'Courier New'",}}
+                        },
+                    }, invert: {css: {a: {color: '#818cf8', '&:hover': {color: '#6366f1',},},},},
+                }, colors: {indigo: {500: '#5956eb',}},
             },
-            safelist: ['prose', 'dark:prose-invert', 'text-left', 'text-center', 'text-right', 'ml-auto', 'mx-auto', 'mr-auto', 'my-0', 'my-4', 'my-8', 'py-0', 'py-4', 'py-8', 'mx-0', 'mx-4', 'mx-8', 'px-0', 'px-4', 'px-8',],
-        }</script>
+        },
+        safelist: ['prose', 'dark:prose-invert', 'text-left', 'text-center', 'text-right', 'ml-auto', 'mx-auto', 'mr-auto', 'my-0', 'my-4', 'my-8', 'py-0', 'py-4', 'py-8', 'mx-0', 'mx-4', 'mx-8', 'px-0', 'px-4', 'px-8',],
+    }</script>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
 
-    <style>
-        .shk[data-theme=light], .shk {
-            --color-primary: #4A5568 !important;;
-            --color-theme: #fff;
-            --color-secondary: #767676;
-            --color-text: #333;
-            --color-shadow: #b9b6b680;
-            --color-handle-shadow-mobile: #b9b6b6;
-        }
+<style>
+    .shk[data-theme=light], .shk {
+        --color-primary: #4A5568 !important;;
+        --color-theme: #fff;
+        --color-secondary: #767676;
+        --color-text: #333;
+        --color-shadow: #b9b6b680;
+        --color-handle-shadow-mobile: #b9b6b6;
+    }
 
-        .shk[data-theme=dark], .dark .shk {
-            --color-primary: #6366f1 !important;
-            --color-theme: #172133;
-            --color-secondary: #b9b6b6;
-            --color-text: #f8f9fa;
-            --color-handle-shadow-mobile: #141414;
-            --color-shadow: #14141480;
-        }
-    </style>
-@endpush
+    .shk[data-theme=dark], .dark .shk {
+        --color-primary: #6366f1 !important;
+        --color-theme: #172133;
+        --color-secondary: #b9b6b6;
+        --color-text: #f8f9fa;
+        --color-handle-shadow-mobile: #141414;
+        --color-shadow: #14141480;
+    }
+</style>
 
-@push('scripts')
-    <script src="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.js"></script>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let player;
-            let manualScrolling = false;
-            let scrollTimeout;
-            let translateY = 0;
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let player;
+        let manualScrolling = false;
+        let scrollTimeout;
+        let translateY = 0;
 
-            function initializePlayer() {
-                player = new Shikwasa.Player({
-                    container: () => document.getElementById('player'),
-                    audio: {
-                        title: 'The Deep Dive: HydePHP',
-                        artist: 'AI-Generated Podcast',
-                        cover: '{{ asset('logo.png') }}',
-                        src: "https://hydephp.com/media/podcast/introduction.wav",
-                    },
-                    chapters: [
-                        {title: 'Introduction', startTime: 0, endTime: 60},
-                        {title: 'Features of HydePHP', startTime: 60, endTime: 180},
-                        {title: 'Benefits and Use Cases', startTime: 180, endTime: 300},
-                        {title: 'Conclusion', startTime: 300, endTime: 360},
-                    ],
-                    themeColor: '#6366f1',
-                    theme: 'light',
-                });
-            }
-
-            // Load and display transcript
-            fetch("https://hydephp.com/media/podcast/introduction.srt")
-                .then(response => response.text())
-                .then(srt => {
-                    const lines = parseSRT(srt);
-                    const transcriptDiv = document.getElementById('transcript');
-
-                    // Remove the SSR content (later we could just use this originally)
-                    document.getElementById('transcript-ssr').remove();
-
-                    lines.forEach((line, index) => {
-                        const p = document.createElement('p');
-                        const timestamp = secondsToTime(line.start);
-                        p.innerHTML = `<span class="text-xs font-mono opacity-75 mr-1">${timestamp}</span> ${line.text}`;
-                        p.id = `line-${index}`;
-                        p.className = 'seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600';
-                        transcriptDiv.appendChild(p);
-                    });
-
-                    initializePlayer();
-
-                    player.on('timeupdate', () => {
-                        if (!manualScrolling) {
-                            const currentTime = player.currentTime;
-                            const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
-
-                            if (currentLine !== -1) {
-                                highlightLine(currentLine);
-                            }
-                        }
-                    });
-
-                    player.on('loadedmetadata', () => {
-                        document.querySelectorAll('.seeker-line').forEach((p, index) => {
-                            const line = lines[index];
-                            p.addEventListener('click', () => {
-                                player.seek(line.start);
-                                player.play();
-                            });
-                        });
-                    });
-                });
-
-            // Handle manual scrolling
-            const transcriptWrapper = document.getElementById('transcript-wrapper');
-            transcriptWrapper.addEventListener('wheel', (event) => {
-                manualScrolling = true;
-
-                event.preventDefault();
-
-                clearTimeout(scrollTimeout);
-                scrollTimeout = setTimeout(() => {
-                    manualScrolling = false;
-                }, 3000); // Delay to prevent immediate re-highlighting
-
-                let currentScrollPosition = translateY;
-                let scrollDirection = event.deltaY > 0 ? 'down' : 'up';
-                const lineHeight = document.getElementById('line-0').offsetHeight;
-                let scrollPosition = scrollDirection === 'down' ? currentScrollPosition + lineHeight : currentScrollPosition - lineHeight;
-
-                // Set the transform offset to the scroll position
-                document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
-                translateY = scrollPosition;
+        function initializePlayer() {
+            player = new Shikwasa.Player({
+                container: () => document.getElementById('player'),
+                audio: {
+                    title: 'The Deep Dive: HydePHP',
+                    artist: 'AI-Generated Podcast',
+                    cover: '{{ asset('logo.png') }}',
+                    src: "https://hydephp.com/media/podcast/introduction.wav",
+                },
+                chapters: [
+                    {title: 'Introduction', startTime: 0, endTime: 60},
+                    {title: 'Features of HydePHP', startTime: 60, endTime: 180},
+                    {title: 'Benefits and Use Cases', startTime: 180, endTime: 300},
+                    {title: 'Conclusion', startTime: 300, endTime: 360},
+                ],
+                themeColor: '#6366f1',
+                theme: 'light',
             });
+        }
 
-            function parseSRT(srt) {
-                const lines = srt.trim().split('\n\n');
-                return lines.map(line => {
-                    const [id, time, ...text] = line.split('\n');
-                    const [start, end] = time.split(' --> ').map(timeToSeconds);
-                    return {id, start, end, text: text.join(' ')};
-                });
-            }
+        // Load and display transcript
+        fetch("https://hydephp.com/media/podcast/introduction.srt")
+            .then(response => response.text())
+            .then(srt => {
+                const lines = parseSRT(srt);
+                const transcriptDiv = document.getElementById('transcript');
 
-            function timeToSeconds(time) {
-                const [hours, minutes, seconds] = time.split(':').map(parseFloat);
-                return hours * 3600 + minutes * 60 + seconds;
-            }
+                // Remove the SSR content (later we could just use this originally)
+                document.getElementById('transcript-ssr').remove();
 
-            function secondsToTime(seconds) {
-                const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
-                const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
-                return `${minutes}:${remainingSeconds}`;
-            }
-
-            function highlightLine(lineIndex) {
-                const lines = document.querySelectorAll('#transcript p');
                 lines.forEach((line, index) => {
-                    if (index === lineIndex) {
-                        line.classList.add('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
-                    } else {
-                        line.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
+                    const p = document.createElement('p');
+                    const timestamp = secondsToTime(line.start);
+                    p.innerHTML = `<span class="text-xs font-mono opacity-75 mr-1">${timestamp}</span> ${line.text}`;
+                    p.id = `line-${index}`;
+                    p.className = 'seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600';
+                    transcriptDiv.appendChild(p);
+                });
+
+                initializePlayer();
+
+                player.on('timeupdate', () => {
+                    if (!manualScrolling) {
+                        const currentTime = player.currentTime;
+                        const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
+
+                        if (currentLine !== -1) {
+                            highlightLine(currentLine);
+                        }
                     }
                 });
 
-                const activeLine = document.getElementById(`line-${lineIndex}`);
-                if (activeLine && !manualScrolling) {
-                    const lineHeight = activeLine.offsetHeight;
-                    const wrapperHeight = transcriptWrapper.offsetHeight;
-                    const scrollPosition = activeLine.offsetTop - (wrapperHeight / 2) + (lineHeight / 2);
+                player.on('loadedmetadata', () => {
+                    document.querySelectorAll('.seeker-line').forEach((p, index) => {
+                        const line = lines[index];
+                        p.addEventListener('click', () => {
+                            player.seek(line.start);
+                            player.play();
+                        });
+                    });
+                });
+            });
 
-                    document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
-                    translateY = scrollPosition;
-                }
-            }
+        // Handle manual scrolling
+        const transcriptWrapper = document.getElementById('transcript-wrapper');
+        transcriptWrapper.addEventListener('wheel', (event) => {
+            manualScrolling = true;
+
+            event.preventDefault();
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                manualScrolling = false;
+            }, 3000); // Delay to prevent immediate re-highlighting
+
+            let currentScrollPosition = translateY;
+            let scrollDirection = event.deltaY > 0 ? 'down' : 'up';
+            const lineHeight = document.getElementById('line-0').offsetHeight;
+            let scrollPosition = scrollDirection === 'down' ? currentScrollPosition + lineHeight : currentScrollPosition - lineHeight;
+
+            // Set the transform offset to the scroll position
+            document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+            translateY = scrollPosition;
         });
-    </script>
-@endpush
+
+        function parseSRT(srt) {
+            const lines = srt.trim().split('\n\n');
+            return lines.map(line => {
+                const [id, time, ...text] = line.split('\n');
+                const [start, end] = time.split(' --> ').map(timeToSeconds);
+                return {id, start, end, text: text.join(' ')};
+            });
+        }
+
+        function timeToSeconds(time) {
+            const [hours, minutes, seconds] = time.split(':').map(parseFloat);
+            return hours * 3600 + minutes * 60 + seconds;
+        }
+
+        function secondsToTime(seconds) {
+            const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${remainingSeconds}`;
+        }
+
+        function highlightLine(lineIndex) {
+            const lines = document.querySelectorAll('#transcript p');
+            lines.forEach((line, index) => {
+                if (index === lineIndex) {
+                    line.classList.add('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
+                } else {
+                    line.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
+                }
+            });
+
+            const activeLine = document.getElementById(`line-${lineIndex}`);
+            if (activeLine && !manualScrolling) {
+                const lineHeight = activeLine.offsetHeight;
+                const wrapperHeight = transcriptWrapper.offsetHeight;
+                const scrollPosition = activeLine.offsetTop - (wrapperHeight / 2) + (lineHeight / 2);
+
+                document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+                translateY = scrollPosition;
+            }
+        }
+    });
+</script>
