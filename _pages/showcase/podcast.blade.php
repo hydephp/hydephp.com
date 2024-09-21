@@ -14,7 +14,7 @@
             <article class="mx-auto max-w-7xl bg-white dark:bg-slate-700 rounded-lg p-6">
                 <h2 class="text-xl font-semibold mb-4">About This AI-Generated Podcast</h2>
                 <div class="prose dark:prose-invert max-w-full">
-                    <p>This podcast episode was created using advanced AI technology from <a href="https://notebooklm.google/" rel="noopener nofollow">NotebookML</a>. Here's what makes it special:</p>
+                    <p>This podcast episode was created using advanced AI technology from <a href="https://notebooklm.google/" rel="noopener nofollow">NotebookML</a> by Google. Here's what makes it special:</p>
 
                     <ul>
                         <li>Content is 100% AI-generated, based on information about HydePHP</li>
