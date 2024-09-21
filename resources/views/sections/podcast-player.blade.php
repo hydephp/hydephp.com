@@ -267,7 +267,7 @@
                         title: 'The Deep Dive: HydePHP',
                         artist: 'AI-Generated Podcast',
                         cover: '{{ asset('logo.png') }}',
-                        src: "{{ asset('podcast/introduction.wav') }}",
+                        src: "https://hydephp.com/media/podcast/introduction.wav",
                     },
                     chapters: [
                         {title: 'Introduction', startTime: 0, endTime: 60},
@@ -281,7 +281,7 @@
             }
 
             // Load and display transcript
-            fetch("{{ asset('podcast/introduction.srt') }}")
+            fetch("https://hydephp.com/media/podcast/introduction.srt")
                 .then(response => response.text())
                 .then(srt => {
                     const lines = parseSRT(srt);
