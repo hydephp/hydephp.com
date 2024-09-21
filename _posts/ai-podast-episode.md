@@ -26,7 +26,7 @@ The result? A unique, informative, and entirely AI-generated podcast that dives 
 
 We're excited to share this AI-generated podcast with you. Take a listen and experience the future of content creation:
 
-<iframe loading="lazy" src="/showcase/podcast-player-embed" class="bg-white dark:bg-slate-700 shadow-md rounded-lg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid #eee;"></iframe>
+<iframe loading="lazy" src="/showcase/podcast-player-embed?embed=true" class="bg-white dark:bg-slate-700 shadow-md rounded-lg" style="width: 100%; height: 100%; min-height: 500px; border: 1px solid #eee;"></iframe>
 
 [//]: # (We're excited to share this AI-generated podcast with you. Head over to our [showcase page]&#40;https://hydephp.com/showcase/podcast&#41; to listen and experience the future of content creation.)
 
