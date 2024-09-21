@@ -5,7 +5,7 @@ category: announcements
 author: caen
 date: '2024-09-21 14:30'
 image:
-    source: posts/showcase_podcast_browser_screenshot.png
+    source: posts/showcase_podcast_browser_screenshot-min.png
     caption: HydePHP AI Podcast Showcase
     altText: Screenshot of the HydePHP AI-generated podcast player
 ---
