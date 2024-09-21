@@ -28,28 +28,7 @@ The result? A unique, informative, and entirely AI-generated podcast that dives 
 
 We're excited to share this AI-generated podcast with you. Take a listen and experience the future of content creation:
 
-<div id="player" class="mb-4"></div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const player = new shikwasa.Player({
-        container: () => document.getElementById('player'),
-        audio: {
-            title: 'The Deep Dive: HydePHP',
-            artist: 'AI-Generated Podcast',
-            cover: 'https://hydephp.com/favicon.ico',
-            src: "{{ asset('podcast/introduction.wav') }}",
-        },
-        chapters: [
-            { title: 'Introduction', startTime: 0, endTime: 60 },
-            { title: 'Features of HydePHP', startTime: 60, endTime: 180 },
-            { title: 'Benefits and Use Cases', startTime: 180, endTime: 300 },
-            { title: 'Conclusion', startTime: 300, endTime: 360 },
-        ],
-        themeColor: '#4A5568',
-    });
-});
-</script>
+[Blade]: @include('sections.podcast-player')
 
 [For the external site version, replace the above section with:]
 
