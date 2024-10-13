@@ -4,6 +4,7 @@ description: "Tired of WordPress drama? Discover HydePHP, a content-first static
 category: 'web development'
 author: 'Caen'
 date: '2024-10-14 08:00'
+image: 'media/hydephp-vs-wordpress-min.png'
 ---
 
 ## The WordPress Drama
