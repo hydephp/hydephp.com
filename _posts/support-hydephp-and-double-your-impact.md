@@ -22,7 +22,7 @@ This is a fantastic chance to double your impact and support the ongoing develop
 
 Your contributions help cover hosting costs, development tools, and enable us to create more resources for the community. Every donation, no matter the size, makes a difference.
 
-### Act Now!
+### Ready to Support HydePHP and Open Source?
 
 Simon's campaign aims to raise $2,000 for 100 open-source projects. Let's make sure HydePHP is one of them! Donate today and help us continue improving the HydePHP experience for everyone.
 
