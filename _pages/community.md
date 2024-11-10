@@ -101,7 +101,7 @@ This means that developers must never introduce breaking changes in minor or pat
 
 <!-- 
 Wondering how these components interact with each other?
-Let's visualize the the flow of generating a static page from a Markdown file.
+Let's visualize the flow of generating a static page from a Markdown file.
 
 When we run `php hyde build`, we do this from the root directory of the project, which is the Hyde package.
 
