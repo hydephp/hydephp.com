@@ -17,6 +17,139 @@ HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Develo
 
 <!-- CHANGELOG_START -->
 
+## [1.7.0](https://github.com/hydephp/develop/releases/tag/1.7.0) - 2024-07-05
+### Added
+- Added support for using HTML comments to create Markdown code block filepath labels in https://github.com/hydephp/develop/pull/1693
+- Added a config option to disable the theme toggle buttons to automatically use browser settings in https://github.com/hydephp/develop/pull/1697
+- You can now specify which path to open when using the `--open` option in the serve command in https://github.com/hydephp/develop/pull/1694
+- Added a `--format=json` option to the `route:list` command in https://github.com/hydephp/develop/pull/1724
+
+### Changed
+- When a navigation group is set in front matter, it will now be used regardless of the subdirectory configuration in https://github.com/hydephp/develop/pull/1703 (fixes https://github.com/hydephp/develop/issues/1515)
+- Use late static bindings to support overriding data collections file finding in https://github.com/hydephp/develop/pull/1717 (fixes https://github.com/hydephp/develop/issues/1716)
+- Method `Hyde::hasSiteUrl()` now returns false if the site URL is for localhost in https://github.com/hydephp/develop/pull/1726
+- Method `Hyde::url()` will now return a relative URL instead of throwing an exception when supplied a path even if the site URL is not set in https://github.com/hydephp/develop/pull/1726
+- Updated the `.env.example` file to contain more details on the site URL setting's usages in https://github.com/hydephp/develop/pull/1746
+- Added a version prefix to the sitemap's generator attribute in https://github.com/hydephp/develop/pull/1767
+- Setting a site name in the Yaml config file will now influence all configuration values where this is used, unless already set, in https://github.com/hydephp/develop/pull/1770 and https://github.com/hydephp/develop/pull/1773
+
+### Deprecated
+- Deprecated the global `unslash()` function, replaced with the existing namespaced `\Hyde\unslash()` function in https://github.com/hydephp/develop/pull/1753
+- Deprecated the `BaseUrlNotSetException` class in https://github.com/hydephp/develop/pull/1759
+
+### Removed
+- The Git version is no longer displayed in the debug screen and dashboard in https://github.com/hydephp/develop/pull/1756
+
+### Fixed
+- Fixed explicitly set front matter navigation group behavior being dependent on subdirectory configuration, fixing https://github.com/hydephp/develop/issues/1515 in https://github.com/hydephp/develop/pull/1703
+- Fixed DataCollections file finding method not being able to be overridden https://github.com/hydephp/develop/issues/1716 in https://github.com/hydephp/develop/pull/1717
+- Fixed PHP warning when trying to parse a Markdown file with just front matter without body https://github.com/hydephp/develop/issues/1705 in https://github.com/hydephp/develop/pull/1728
+- Fixed https://github.com/hydephp/develop/issues/1748 by normalizing generator version prefixes in https://github.com/hydephp/develop/pull/1767
+- Yaml data files no longer need to start with triple dashes to be parsed by DataCollections in https://github.com/hydephp/develop/pull/1733
+- Updated the Hyde URL helper to not modify already qualified URLs in https://github.com/hydephp/develop/pull/1757
+### Extra information
+
+This release contains changes to how HydePHP behaves when a site URL is not set by the user.
+
+These changes are made to reduce the chance of the default `localhost` value showing up in production environments.
+
+Most notably, HydePHP now considers that default site URL `localhost` to mean that a site URL is not set, as the user has not set it.
+This means that things like automatic canonical URLs will not be added, as Hyde won't know how to make them without a site URL.
+The previous behaviour was that Hyde used `localhost` in canonical URLs, which is never useful in production environments.
+
+For this reason, we felt it worth it to make this change in a minor release, as it has a such large benefit for sites.
+
+You can read more about the details and design decisions of this change in the following pull request https://github.com/hydephp/develop/pull/1726.
+
+
+## [1.6.0](https://github.com/hydephp/develop/releases/tag/1.6.0) - 2024-04-17
+### Added
+- Added a `@head` stack to the `head.blade.php` component in https://github.com/hydephp/develop/pull/1567
+- Added a `Hyde::route()` helper to the `Hyde` facade in https://github.com/hydephp/develop/pull/1591
+- Added new global helper functions (`asset()`, `route()`, `url()`) in https://github.com/hydephp/develop/pull/1592
+- Added a new `Feature` enum to improve the `Features` facade in https://github.com/hydephp/develop/pull/1650
+- Added a helper to `->skip()` build tasks in https://github.com/hydephp/develop/pull/1656
+
+### Changed
+- The `features` array in the `config/hyde.php` configuration file is now an array of `Feature` enums in https://github.com/hydephp/develop/pull/1650
+- Sitemap generation will now be skipped if a base URL is not set, as Google now will not index sitemaps without a base URL in https://github.com/hydephp/develop/pull/1660
+- Updated the debug command to print the binary path when running in a standalone Phar in https://github.com/hydephp/develop/pull/1667
+
+### Deprecated
+- Deprecated the static `Features` flag methods used in the configuration files in https://github.com/hydephp/develop/pull/1650 which will be removed in HydePHP v2.0
+### Fixed
+- Fixed a bug where the sitemap and RSS feed generator commands did not work when the `_site/` directory was not present in https://github.com/hydephp/develop/pull/1654
+- Fixed extra newlines being written to console for failing build tasks in https://github.com/hydephp/develop/pull/1661
+- Markdown formatting will now be stripped when generating an automatic blog post description when none is set in https://github.com/hydephp/develop/pull/1662 (fixes https://github.com/hydephp/develop/issues/1634)
+- Realtime Compiler: Fixed responsive dashboard table issue in https://github.com/hydephp/develop/pull/1595
+### Upgrade Path
+
+In order to prepare your project for HydePHP v2.0, you should update your `config/hyde.php` configuration file to use the new `Feature` enum for the `features` array.
+
+You can see the changes to make in your Hyde project by looking at the following pull request https://github.com/hydephp/hyde/pull/250/files
+
+Your new config array should look like this:
+
+```php
+    // Make sure to import the new Feature enum at the top of the file
+    use Hyde\Enums\Feature;
+
+    // Then replace your enabled features with the new Feature enum cases
+    'features' => [
+        // Page Modules
+        Feature::HtmlPages,
+        Feature::MarkdownPosts,
+        Feature::BladePages,
+        Feature::MarkdownPages,
+        Feature::DocumentationPages,
+
+        // Frontend Features
+        Feature::Darkmode,
+        Feature::DocumentationSearch,
+
+        // Integrations
+        Feature::Torchlight,
+    ],
+```
+
+If you need more help, you can see detailed upgrade instructions with screenshots in the pull request https://github.com/hydephp/develop/pull/1650
+
+
+## [1.5.0](https://github.com/hydephp/develop/releases/tag/1.5.0) - 2024-02-13
+
+### Improved Patch Release Strategy
+
+This release experiments some changes into how releases are handled to clarify the patch versioning of distributed packages compared to the monorepo source versioning.
+
+In short: We are now experimenting with rolling patch releases, where patches are released as soon as they're ready, leading to faster rollout of bugfixes.
+This means that the patch version discrepancy between the monorepo and the distributed packages will be increased, but hopefully the end results will still be clearer,
+thanks to the second related change: Prefixing the subpackage changes in this changelog with the package name. If there is no prefix, the change applies to the core package or the monorepo.
+
+All this to say, please keep in mind that when the monorepo gets a new minor version, the prefixed changes may already have been released as patches in their respective packages.
+### Added
+- Added the existing `media_extensions` option to the `hyde` configuration file in https://github.com/hydephp/develop/pull/1531
+- Added configuration options to add custom HTML to the `<head>` and `<script>` sections in https://github.com/hydephp/develop/pull/1542
+- Added support for adding custom HTML to the `<head>` and `<script>` sections using HTML includes in https://github.com/hydephp/develop/pull/1554
+- Added an `html` helper to the `Includes` facade in https://github.com/hydephp/develop/pull/1552
+
+### Changed
+- Renamed local template variable `$document` to `$article` to better match the usage in https://github.com/hydephp/develop/pull/1506
+- Updated semantic documentation article component to support existing variables in https://github.com/hydephp/develop/pull/1506
+- Updated the Markdown to plain text converter to trim whitespace in https://github.com/hydephp/develop/pull/1561
+- HydeFront: Changed `<code>` styling to display as inline instead of inline-block in https://github.com/hydephp/develop/pull/1525
+- Realtime Compiler: Add strict type declarations in https://github.com/hydephp/develop/pull/1555
+- Bumped Realtime Compiler version to v3.3 in https://github.com/hydephp/develop/pull/1562
+- Internal: Renamed snake case test methods to camel case in https://github.com/hydephp/develop/pull/1556
+
+### Deprecated
+- Deprecated the `BuildService::transferMediaAssets()` method in https://github.com/hydephp/develop/pull/1533, as it will be moved into a build task in v2.0.
+### Fixed
+- Fixed icons not being considered as images by dashboard viewer in https://github.com/hydephp/develop/pull/1512
+- HydeFront: Fixed bug where heading permalink buttons were included in text represented output in https://github.com/hydephp/develop/pull/1519
+- HydeFront: Fix visual overflow bug in inline code blocks within blockquotes https://github.com/hydephp/hydefront/issues/65 in https://github.com/hydephp/develop/pull/1525
+- Realtime Compiler: Fixes visual dashboard bugs https://github.com/hydephp/realtime-compiler/issues/23 and https://github.com/hydephp/realtime-compiler/issues/24 in https://github.com/hydephp/develop/pull/1528
+
+
 ## [1.4.2](https://github.com/hydephp/develop/releases/tag/1.4.2) - 2023-12-22
 ### Added
 - Added info banners when dashboard content sections are empty in https://github.com/hydephp/develop/pull/1494
