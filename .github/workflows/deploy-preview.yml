@@ -6,7 +6,7 @@ on:
 
 jobs:
   build-and-deploy-preview:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     environment:
       name: pull-request-preview
       url: https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}
@@ -100,7 +100,7 @@ jobs:
           https://ci.hydephp.com/api/deployment-previews
 
   comment-on-pull-request:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pull-requests: write
 
