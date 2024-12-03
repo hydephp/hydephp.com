@@ -15,5 +15,7 @@ class Testimonials extends DataCollectionType
     public ?string $company_url;
     public ?string $twitter_link;
     public ?string $twitter_username;
+    public ?string $profile_image;
+
     public Markdown $markdown;
 }
