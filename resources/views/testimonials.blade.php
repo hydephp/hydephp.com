@@ -14,10 +14,18 @@
                 </p>
             </div>
             <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full flex-wrap">
+                @php
+                    $testimonials = \App\Extend\DataCollections::markdown('testimonials');
+
+                    // Sort by Markdown length
+                    $testimonials = $testimonials->sortByDesc(function (\App\DataCollections\Types\Testimonials $testimonial) {
+                        return strlen($testimonial->markdown->body());
+                    });
+                @endphp
                 @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
-                @foreach(\App\Extend\DataCollections::markdown('testimonials') as $file => $testimonial)
+                @foreach($testimonials as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
-                    <div class="w-full xl:w-1/2 xl:px-4 h-auto ">
+                    <div class="w-full xl:w-1/2 xl:px-4 h-auto self-baseline">
                         <blockquote class="my-4 flex flex-col-reverse items-center justify-between w-full h-full flex-1 col-span-1 p-6 text-center transition-all duration-200 bg-gray-100 rounded-lg md:flex-row md:text-left hover:bg-gray-50 hover:shadow ease">
                             <div class="flex flex-col sm:pr-8">
                                 <div class="relative sm:pl-12">
@@ -61,15 +69,21 @@
                                     </span>
                                 </h3>
                             </div>
+                            @if($testimonial->profile_image)
                             <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                                  onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/hydephp/cdn-static@master/avatar.png';"
-                                 src="{{ $testimonial->profile_image ?? 'https://cdn.jsdelivr.net/gh/hydephp/cdn-static@master/avatar.png' }}"
+                                 src="{{ $testimonial->profile_image }}"
                                  alt="Profile image">
+                            @endif
                         </blockquote>
                     </div>
                 @endforeach
             </div>
             <footer class="text-center opacity-75">
+                <div class="prose text-center mx-auto mb-2">
+                    <p>Want to have your mention here? Send a Tweet at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!</p>
+                </div>
+
                 <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
                 <small>Want your own testimonial here? Want to remove yours? This
                     <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/index.blade.php">page is open source</a>.</small>
