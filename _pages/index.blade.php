@@ -156,7 +156,7 @@
                 </h2>
             </div>
             <p class="text-lg max-w-2xl">
-                While the full feature set is too long to list on this page, here are some things I think will make you especially fall in love with Hyde!
+                While Hyde is packed with far too many quality features to list on this page, here are some highlights that make Hyde a great choice for your next project.
             </p>
         </header>
         <div class="flex w-full h-full">
