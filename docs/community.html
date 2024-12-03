@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=87cc5b8d465eb9c67cc1c01c670f6418">
+    <link rel="stylesheet" href="media/app.css?v=a26286324d1f0d0a03afc38e5a5ff587">
 
 
 
@@ -161,8 +161,8 @@
 </ul>
 </div>
 </div>
-<h3>Subproject locations</h3>
-<p>Most of the Hyde development is made in the monorepo found on GitHub in the <a href="https://github.com/hydephp/develop">HydePHP/Develop</a> repository. Here are quick links to take you to the subprojects within.</p>
+<h3>Subproject Locations</h3>
+<p>Most of the Hyde development is done in the monorepo found on GitHub in the <a href="https://github.com/hydephp/develop">HydePHP/Develop</a> repository. Here are quick links to take you to the subprojects within.</p>
 <h4>I want to contribute to the...</h4>
 <ul class="flex-list">
 <li>
@@ -230,22 +230,6 @@
 <p><strong>The Framework package holds most of the logic of the Hyde framework.</strong> This is where all the data models, static site generators, HydeCLI commands, Blade views, and more, are stored. Having this in a package makes it much easier to version and update using Composer. <em>Equivalent to Laravel/Framework</em></p>
 <h3>Hyde/HydeFront - The Frontend Assets</h3>
 <p><strong>The HydeFront package contains stylesheets and scripts</strong> to help make HydePHP sites accessible and interactive. It also includes a pre-compiled TailwindCSS file containing all the styles needed for the built-in Blade templates.</p>
-<!-- Became very long, saving for a blog post. It's a separate package for a few reasons. Partly to separate presentation and logic, and also to allow hosting of the styles on a CDN. We take advantage of this as we control the HydeFront version in the Framework package, so we can be sure that Blade templates always use the correct version. This also means that we can issue bug-fixing patches to live sites without needing users to recompile their sites.
-
-This great power also requires great responsibility. Even though HydePHP itself is in the beta stage and is in the 0.x semantic versioning range and has no compatibility guarantees, HydeFront is strictly versioned and is in the 1.x semantic versioning range.
-
-This means that developers must never introduce breaking changes in minor or patch releases. Since the package is in the NPM registry, releases are only ever rolled out manually by the maintainer to ensure that no vulnerable or malicious code is introduced as automatic patch updates could be a security issue. -->
-<!-- 
-Wondering how these components interact with each other?
-Let's visualize the flow of generating a static page from a Markdown file.
-
-When we run `php hyde build`, we do this from the root directory of the project, which is the Hyde package.
-
-On a low level, running `php hyde` starts the HydeCLI which is the entry point for the entire application. From here, all dependencies are loaded and the application is bootstrapped.
-
-The build command source is located in the Framework package. When running the command, the Framework will scan the content source directories in the Hyde project directory. The Framework will then compile the Markdown and build HTML based on Blade templates around the content.
-
-The compiled output is written to the Hyde project's output directory, and is styled using the HydeFront package. -->
 
         </article>
     </main>
@@ -346,7 +330,7 @@ The compiled output is written to the Hyde project's output directory, and is st
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=636e955fc6115e5920038d104907bc0d"></script>
+    <script defer src="media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
