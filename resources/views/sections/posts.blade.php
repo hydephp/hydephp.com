@@ -7,7 +7,7 @@
 			Here are the latest posts from the Hyde Blog! Fully created using Hyde, of course!
 		</p>
 	</header>
-	<div class="max-w-xl mx-auto px-8">
+	<div class="max-w-xl md:max-w-2xl mx-auto px-8">
 		@foreach(MarkdownPost::getLatestPosts()->where(fn ($post) => $post->matter('hiddenFromHomepage') !== true)->take(3) as $post)
 		@include('hyde::components.article-excerpt')
 		@endforeach
