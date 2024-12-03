@@ -4,7 +4,7 @@
 			Latest Posts
 		</h2>
 		<p class="sm:text-center text-lg mx-auto mt-4 mb-8">
-			Here are the latest posts from the Hyde Blog! Fully created using Hyde, of course!
+			Here are the latest posts from the Hyde Blog, fully created using Hyde, of course.
 		</p>
 	</header>
 	<div class="max-w-xl md:max-w-2xl mx-auto px-8">
