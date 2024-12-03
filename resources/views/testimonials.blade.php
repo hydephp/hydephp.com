@@ -70,6 +70,10 @@
                 @endforeach
             </div>
             <footer class="text-center opacity-75">
+                <div class="prose text-center mx-auto mb-2">
+                    <p>Want to have your mention here? Send a Tweet at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>, and/or use the hashtag <a href="https://twitter.com/hashtag/HydePHP">#HydePHP</a>!</p>
+                </div>
+
                 <small>Testimonials may be edited for formatting, spelling, and brevity, but never content.</small>
                 <small>Want your own testimonial here? Want to remove yours? This
                     <a class="text-indigo-700" href="https://github.com/hydephp/hydephp.com/blob/master/_pages/index.blade.php">page is open source</a>.</small>
