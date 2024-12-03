@@ -31,7 +31,7 @@ unset ($pages[array_search('404', $pages)]);
 	
 		<ul>
 			@foreach(DocumentationPage::files() as $page)
-			<li><a href="{{ $page }}">{{ Hyde::makeTitle($page) }}</a></li>
+			<li><a href="{{ DocumentationPage::$outputDirectory.'/'.basename($page) }}">{{ Hyde::makeTitle($page) }}</a></li>
 			@endforeach
 		</ul>
 	</section>
