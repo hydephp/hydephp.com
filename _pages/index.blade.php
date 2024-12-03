@@ -82,7 +82,6 @@
     }
 </script>
 @endpush
-<!-- BEGIN HERO SECTION -->
 <div class="relative items-center justify-center w-screen min-h-screen">
     <div class="pt-36 md:pt-64 container self-center my-auto flex flex-col items-center justify-center h-full max-w-6xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between">
         <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-3/5 lg:-mt-4">
@@ -93,9 +92,7 @@
                 <small class="relative mb-4  text-xl font-black leading-none  text-black lg:text-2xl xl:text-3xl md:text-left text-center">
                     The Static Site Generator You've Been Waiting For, is here.
                 </small>
-                <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)"
-                     src="{{ Asset::mediaLink('logo.svg') }}" alt="HydePHP Logo">
-
+                <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)" src="{{ Asset::mediaLink('logo.svg') }}" alt="HydePHP Logo">
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
                 Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
@@ -109,18 +106,13 @@
             </a>
         </div>
         <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3 lg:-mt-4">
-            <!-- HEADER IMAGE -->
             <img src="{{ Asset::mediaLink('header.png') }}" alt="Two developers collaboratively working on a static site displayed on a large monitor, illustrating the ease of website creation with HydePHP.">
-            <!-- END HEADER IMAGE -->
         </div>
     </div>
-    <!-- CURVED SVG BORDER -->
     <svg class="absolute bottom-0 w-screen text-violet-300 fill-current" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 0c309.151 33.333 542.484 50 700 50 157.516 0 390.849-16.667 700-50v50H0V0z"/>
     </svg>
 </div>
-<!-- HERO SECTION END -->
-<!-- Second Section -->
 <div class="relative w-full px-8 py-20 bg-violet-300 sm:py-32 md:py-40">
     <div class="container flex flex-col items-center justify-center h-full max-w-6xl mx-auto sm:flex-row sm:justify-between">
         <div class="relative flex flex-col items-start justify-center w-full mb-10 sm:w-1/3 lg:w-2/5 sm:mb-0 sm:pr-10">
@@ -140,10 +132,7 @@
         </div>
     </div>
 </div>
-<!-- Features Section -->
 <div class="relative w-full py-20 pb-20 overflow-hidden bg-white md:pt-40 md:pb-64">
-    <!-- CURVED SVG BORDER INVERT -->
-
     <svg class="absolute top-0 w-full text-violet-300 fill-current" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
         <path d="M0 50C309.151 16.667 542.484 0 700 0c157.516 0 390.849 16.667 700 50V0H0v50z"/>
     </svg>
@@ -161,7 +150,6 @@
         </header>
         <div class="flex w-full h-full">
             <div class="w-full lg:w-2/3">
-                <!-- Feature blocks first column -->
                 <div class="flex flex-col w-full mb-10 sm:flex-row">
                     <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                         <div class="relative ml-0 mr-0 sm:mr-10">
@@ -195,7 +183,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Feature blocks second column -->
                 <div class="flex flex-col w-full mb-5 sm:flex-row">
                     <div class="w-full mb-10 sm:mb-0 sm:w-1/2">
                         <div class="relative ml-0 mr-0 sm:mr-10">
@@ -237,18 +224,9 @@
             </div>
         </div>
     </div>
-    <!-- Start Testimonials -->
     @include('testimonials')
-    <!-- End Testimonials-->
-    <!-- Blob SVG Border -->
     <svg class="absolute bottom-0 w-full text-gray-100 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
-
 </div>
-<!-- End Features Section -->
-
-<!-- End Features Section -->
-
-<!-- Begin Breakdown Section -->
 
 <div class="relative w-full pt-24 pb-32 md:pb-56 bg-gray-100">
 
@@ -262,13 +240,9 @@
                 Here is a breakdown of some key bullet points tailored to various use cases.
             </p>
 
-
             <div class="flex flex-col sm:flex-row items-center lg:items-stretch justify-center h-full sm:flex-wrap ">
-
-                <!-- FEATURE 1 -->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 bg-white border-2 border-black rounded-lg lg:px-5 xl:px-12 lg:rounded-r-none lg:rounded-l-lg">
-
                         <h4 class="flex text-center items-center my-2 text-2xl font-black">Laravel Artisans</h4>
                         <div class="font-light text-center">Are Hyde <span class="font-bold text-red-500">first-class citizens</span>.</div>
 
@@ -297,27 +271,21 @@
                             <li class="mt-2">
                                 File-based <span class="">Collections</span>
                             </li>
-
                         </ul>
 
                         <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-red-500 rounded  group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-red-300 ">Architecture Concepts</span>
                         </a>
-
                     </div>
                 </div>
-                <!-- End FEATURE 1 -->
 
-                <!-- FEATURE 2-->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 my-8 bg-white border-2 border-black rounded-lg lg:border-l-0 lg:border-r-0 lg:my-0 lg:rounded-none lg:px-5 xl:px-12">
-
                         <h4 class="flex text-center items-center my-2 text-2xl font-black sm:whitespace-nowrap">Markdown Aficionados</h4>
                         <div class="font-light text-center">Have  <span class="font-bold text-blue-500">their rightful place</span>, at last.</div>
 
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
-
                             <li class="mt-2">
                                 <span class=""></span> Simple Markdown Pages
                             </li>
@@ -347,18 +315,13 @@
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-blue-400 rounded group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold  group-hover:bg-blue-300 ">Markdown Documentation</span>
                         </a>
-
                     </div>
                 </div>
-                <!-- END FEATURE 2 -->
 
-                <!-- FEATURE 3 -->
                 <div class="w-full min-w-[16rem] max-w-sm mx-4 lg:mx-0 lg:w-1/3 h-auto flex flex-auto">
                     <div class="flex flex-col h-full flex-auto items-center px-4 py-12 ml-0 bg-white border-2 border-black rounded-lg lg:px-6 xl:px-12 lg:rounded-l-none lg:rounded-r-lg">
-
                         <h4 class="flex text-center items-center my-2 text-2xl font-black">Developers & More</h4>
                         <div class="font-light text-center">And some <span class="font-bold text-green-500">more features</span>.</div>
-
 
                         <ul class="flex flex-col justify-start px-2 py-10 pt-8 list-disc pricing-list">
 
@@ -385,39 +348,23 @@
                             <li class="mt-2">
                                 And Much More
                             </li>
-
                         </ul>
-
                         <a href="https://hydephp.com/docs/1.x/quickstart" class="relative w-full text-center group mt-auto">
                             <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-green-500 rounded   group-hover:m-0 "></span>
                             <span class="relative inline-block w-full h-full px-5 py-3 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-green-300">Installation Guide</span>
                         </a>
-
                     </div>
                 </div>
-                <!-- END FEATURE 3 -->
-
             </div>
         </div>
     </div>
-
-    <!-- Blob SVG Border -->
     <svg class="absolute bottom-0 w-full text-white fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
-
 </div>
-
 </div>
 
 <div>
     @include('sections.posts')
-
 </div>
-
-
-<!-- Blob SVG Border -->
-
-<!-- END Breakdown SECTION -->
-
 
 <style> html, body { scroll-behavior: smooth; } </style>
 @endsection
