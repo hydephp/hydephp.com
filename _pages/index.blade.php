@@ -207,7 +207,7 @@
                                 </div>
                                 <p class="mt-3 mb-1 text-xs font-medium text-blue-400 uppercase">Based on Laravel Zero</p>
                                 <p class="mb-2 text-gray-600">Laravel Developers will feel right at home with Hyde.
-                                    Scaffold files using the Artisan-based HydeCLI and use Blade templates.
+                                    You're gonna love our Artisan-based CLI and Blade templating</p>
                                 </p>
                             </div>
                         </div>
