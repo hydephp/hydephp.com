@@ -209,7 +209,7 @@ A benefit of using the global function is that it may have better IDE support.
 
 ### `asset`
 
-This is an alias of the `Hyde::asset()` facade method and allows you to get a relative link or URL to an asset in the media directory. 
+This is an alias of the `Hyde::asset()` facade method and allows you to get a relative link or URL to an asset in the media directory.
 
 ```php
 asset('image.png'); // Returns a relative web link to the given image
@@ -433,7 +433,6 @@ just apply these changes to that new view, but for this example I'm going to upd
 
 ```blade
 // filepath _pages/posts.blade.php
-// torchlight! {"lineNumbers": false}
 <h1>Latest Posts</h1>{{-- [tl! remove] --}}
 <h1>{{ $page->matter('title') ?? $title }}</h1> {{-- [tl! add] --}}
 ```
@@ -442,7 +441,6 @@ to that new view, but for this example I'm going to update the `posts` view.
 
 ```blade
 // filepath _pages/posts.blade.php
-// torchlight! {"lineNumbers": false}
 @php
     $paginator = new \Hyde\Support\Paginator( // [tl! remove]
     $paginator = $page->matter('paginator') ?? new \Hyde\Support\Paginator( // [tl! add]

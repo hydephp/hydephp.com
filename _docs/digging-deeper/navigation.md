@@ -35,7 +35,7 @@ See the [Digging Deeper](#digging-deeper-into-the-internals) section of this pag
 
 All navigation menu items have an internal priority value that determines their order in the navigation.
 Lower values mean that the item will be higher up in the menu. The default for pages is `999` which puts them last.
-However, some pages are autoconfigured to have a lower priority, for example, the `index` page defaults to a priority of `0`,
+However, some pages are autoconfigured to have a lower priority, for example, the `index` page defaults to a priority of `0`.
 
 ### What to customize?
 
@@ -119,10 +119,10 @@ navigation:
 
 Next up, let's look at how to customize the navigation menus using the config files.
 
-- To customize the navigation menu, use the setting `navigation.order` in the `hyde.php` config.
+- To customize the navigation menu, use the setting `navigation` in the `hyde.php` config.
 - When customizing the navigation menu, you should use the [route key](core-concepts#route-keys) of the page.
 
-- To customize the sidebar, use the setting `sidebar_order` in the `docs.php` config.
+- To customize the sidebar, use the setting `sidebar` in the `docs.php` config.
 - When customizing the sidebar, can use the route key, or just the [page identifier](core-concepts#page-identifiers) of the page.
 
 ### Changing the priorities

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - The Deep Dive Podcast: HydePHP</title>
+
+ 
+<link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="canonical" href="https://hydephp.com/showcase/podcast">
+<meta name="twitter:title" content="HydePHP - The Deep Dive Podcast: HydePHP">
+<meta property="og:title" content="HydePHP - The Deep Dive Podcast: HydePHP">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<meta name="author" content="HydePHP">
+<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
+<meta name="generator" content="HydePHP 1.7.2">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HydeFramework">
+<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:url" content="https://hydephp.com/">
+<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image:alt" content="GitHub OpenGraph Image">
+
+
+ 
+
+
+<style>[x-cloak] {display: none!important}</style>
+
+
+    <link rel="stylesheet" href="../media/app.css?v=b352181a64205f646607053cda22d4aa">
+
+
+
+
+ <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+<script>tailwind.config = { /* tailwind.config.js */
+        darkMode: 'class',
+        content: ['./_pages/*.blade.php', './resources/views/**/*.blade.php', './vendor/hyde/framework/resources/views/**/*.blade.php',],
+        theme: {
+            extend: {
+                typography: {
+                    DEFAULT: {
+                        css: {
+                            lineHeight: '1.5em',
+                            maxWidth: '96ch',
+                            h2: {marginBottom: '0.75em', marginTop: '1.5em',},
+                            a: {color: '#5956eb', '&:hover': {color: '#4f46e5',}, textDecoration: 'none'},
+                            blockquote: {
+                                backgroundColor: '#80808020',
+                                borderLeftColor: '#d1d5db',
+                                color: 'unset',
+                                fontWeight: 500,
+                                fontStyle: 'unset',
+                                lineHeight: '1.25em',
+                                paddingLeft: '0.75em',
+                                paddingTop: '.25em',
+                                paddingBottom: '.25em',
+                                marginTop: '1em',
+                                marginBottom: '1em',
+                                p: {paddingRight: '.25em', marginTop: '.25em', marginBottom: '.25em',},
+                                'p::before': {content: 'unset',},
+                                'p::after': {content: 'unset',},
+                            },
+                            code: {
+                                font: 'unset',
+                                backgroundColor: '#80808033',
+                                paddingLeft: '4px',
+                                paddingRight: '4px',
+                                marginLeft: '-2px',
+                                marginRight: '1px',
+                                borderRadius: '4px'
+                            },
+                            'code::before': {content: 'unset',},
+                            'code::after': {content: 'unset',},
+                            pre: {code: {fontFamily: "'Fira Code Regular', Consolas, Monospace, 'Courier New'",}}
+                        },
+                    }, invert: {css: {a: {color: '#818cf8', '&:hover': {color: '#6366f1',},},},},
+                }, colors: {indigo: {500: '#5956eb',}},
+            },
+        },
+        safelist: ['prose', 'dark:prose-invert', 'text-left', 'text-center', 'text-right', 'ml-auto', 'mx-auto', 'mr-auto', 'my-0', 'my-4', 'my-8', 'py-0', 'py-4', 'py-8', 'mx-0', 'mx-4', 'mx-8', 'px-0', 'px-4', 'px-8',],
+    }</script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/style.css">
+
+<style>
+    .shk[data-theme=light], .shk {
+        --color-primary: #4A5568 !important;;
+        --color-theme: #fff;
+        --color-secondary: #767676;
+        --color-text: #333;
+        --color-shadow: #b9b6b680;
+        --color-handle-shadow-mobile: #b9b6b6;
+    }
+
+    .shk[data-theme=dark], .dark .shk {
+        --color-primary: #6366f1 !important;
+        --color-theme: #172133;
+        --color-secondary: #b9b6b6;
+        --color-text: #f8f9fa;
+        --color-handle-shadow-mobile: #141414;
+        --color-shadow: #14141480;
+    }
+</style>
+ 
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
+</head>
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
+	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+		<a aria-label="Home page link" href="../" class="font-bold px-4">
+	<img src="../media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+	HydePHP
+</a>
+		<div class="ml-auto">
+			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+        <span class="sr-only">Toggle dark theme</span>
+        <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    </button>
+		</div>
+	</div>
+
+	<div class="block md:hidden">
+		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
+				aria-label="Toggle navigation menu">
+			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
+				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Open Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"/>
+				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+			</svg>
+			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
+				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+				 width="24"><title>Close Menu</title>
+				<path d="M0 0h24v24H0z" fill="none"></path>
+				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+			</svg>
+		</button>
+	</div>
+
+	<div id="main-navigation-links"
+		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
+		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+							<li class="md:mx-2">
+					<a href="../"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+							<li class="md:mx-2">
+					<a href="../about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+							<li class="md:mx-2">
+					<a href="../demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+							<li class="md:mx-2">
+					<a href="../posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+							<li class="md:mx-2">
+					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					</ul>
+		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+		</a>
+	</div>
+</nav>
+ 
+
+    <section>
+        
+    <section class="dark:text-gray-100">
+        <div class="py-12 px-8 bg-offset md:px-0">
+            <main class="mx-auto max-w-7xl">
+                <h1 class="text-center text-3xl xl:text-4xl font-bold py-4 mb-8 text-gray-700 dark:text-gray-200">The Deep Dive Podcast: HydePHP</h1>
+
+                <div class="p-6 bg-white dark:bg-slate-700 shadow-md rounded-lg mb-8">
+    <h2 class="text-2xl font-semibold mb-4">Listen to Our AI-Generated Podcast</h2>
+    <p class="mb-4">Explore the world of HydePHP in this unique, AI-generated podcast episode. Experience a blend of technology and creativity as we dive deep into the features and benefits of this innovative static site generator, as narrated by a dynamic duo in this podcast generated by <a href="https://notebooklm.google/" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400" rel="noopener nofollow">NotebookML</a>, a cutting-edge project by Google.</p>
+
+    <div id="player" class="mb-4">
+        <svg class="shk-icons" xmlns="http://www.w3.org/2000/svg">
+            <symbol id="shk-icon_play" viewbox="0 0 64 64">
+                <path
+                        d="M32 0a32 32 0 1 1 0 64 32 32 0 0 1 0-64zm-9 17.8c-1 0-1.7.6-1.7 1.4v25.6c0 .8.8 1.4 1.7 1.4 0 0 25-12 26.2-13.1 1-1 .3-1.9.1-2.1z" />
+            </symbol>
+
+            <symbol id="shk-icon_pause" viewbox="0 0 64 64">
+                <path fill-rule="nonzero"
+                      d="M32 0a32 32 0 1 0 0 64 32 32 0 0 0 0-64zm-4 40a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V24c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v16zm16 0a2 2 0 0 1-2 2h-4a2 2 0 0 1-2-2V24c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v16z" />
+            </symbol>
+
+            <symbol id="shk-icon_download" viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+            </symbol>
+
+            <symbol id="shk-icon_forward" viewbox="0 0 128 139">
+                <path
+                        d="M64 11v14h-.8A50 50 0 1 0 114 75h14a64 64 0 1 1-64-64zm16.9 35c6.6 0 11.8 2.7 15.6 8.3a38 38 0 0 1 5.3 21.4c0 9-1.8 16-5.3 21.3-3.8 5.6-9 8.4-15.6 8.4-6.7 0-12-2.8-15.6-8.4A38 38 0 0 1 60 75.7c0-9 1.8-16.1 5.3-21.4C69 48.7 74.2 46 80.9 46zm-32.5 1v57.1H39V58.3a32.3 32.3 0 0 1-13 7V56a34 34 0 0 0 15.4-9h7zm32.5 7c-4.6 0-7.8 2.4-9.6 7.5-1.3 3.5-2 8.2-2 14.2 0 5.9.7 10.6 2 14.1 1.8 5 5 7.6 9.6 7.6 4.5 0 7.7-2.5 9.6-7.6 1.3-3.5 1.9-8.2 1.9-14.1 0-6-.6-10.7-2-14.2-1.8-5.1-5-7.6-9.5-7.6zM64 0l48 19-48 19V0z" />
+            </symbol>
+
+            <symbol id="shk-icon_backward" viewbox="0 0 128 139">
+                <path
+                        d="M64 0v11A64 64 0 1 1 0 75h14a50 50 0 1 0 50-50v13L16 19 64 0zm17 45.8c6.6 0 11.8 2.7 15.6 8.3a38 38 0 0 1 5.3 21.3c0 9-1.8 16.1-5.3 21.4a18 18 0 0 1-15.6 8.3c-6.7 0-12-2.8-15.6-8.3a38 38 0 0 1-5.3-21.4c0-9 1.8-16 5.3-21.3 3.7-5.6 8.9-8.3 15.6-8.3zm-32.4 1V104h-9.4V58.2a32.3 32.3 0 0 1-13 7v-9.4a34 34 0 0 0 15.4-9h7zm32.4 7c-4.6 0-7.8 2.5-9.6 7.6-1.3 3.4-2 8.1-2 14.1s.7 10.7 2 14.2c1.8 5 5 7.6 9.6 7.6 4.5 0 7.7-2.6 9.6-7.6 1.3-3.5 2-8.2 2-14.2s-.7-10.7-2-14.1c-2-5.1-5.1-7.6-9.6-7.6z" />
+            </symbol>
+
+            <symbol id="shk-icon_more" viewbox="0 0 64 64">
+                <path
+                        d="M8 24a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm48 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm-24 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm0 0" />
+            </symbol>
+
+            <symbol id="shk-icon_chapter" viewbox="0 0 64 64">
+                <path d="M60.8 55.3H18.1a3.2 3.2 0 1 1 0-6.4h42.8a3.2 3.2 0 0 1 3.1 4.9c-.7 1-1.9 1.6-3.1 1.5zm0-20.2H18.1a3.2 3.2 0 1 1 0-6.4h42.8a3.2 3.2 0 1 1 0 6.4zm0-20H18.1a3.2 3.2 0 1 1 0-6.3h42.8a3.2 3.2 0 0 1 0 6.3zM8.5 12.3a4.2 4.2 0 1 1-8.5 0 4.2 4.2 0 0 1 8.5 0zm0 19.8A4.2 4.2 0 1 1 0 32a4.2 4.2 0 0 1 8.5 0zm0 19.8a4.3 4.3 0 1 1-8.5 0 4.3 4.3 0 0 1 8.5 0zm0 0"/>
+            </symbol>
+
+            <symbol id="shk-icon_unmute" viewBox="0 0 64 66">
+                <path d="M34.3 0c1.5.1 2.6 1.4 2.9 2.8v60.3c-.3 1.4-1.4 2.7-3 2.8-.7.1-1.6-.1-2.6-.7L13.7 50H4.2a4 4 0 0 1-4.1-4V20.6c0-2.2 1.8-4 4-4.1h9.6c.7-.8 17.2-15.1 17.9-15.8 1-.6 1.9-.8 2.6-.7zm6.4 9.3a2 2 0 0 1 2.4-1.6 25.8 25.8 0 0 1 0 50.5l-.4.1a2 2 0 1 1-.4-4.1 21.7 21.7 0 0 0 0-42.5 2 2 0 0 1-1.6-2.4zm4.7 12.8a12.1 12.1 0 0 1 0 21.8 2 2 0 0 1-2.8-1c-.5-1-.1-2.2 1-2.8a8 8 0 0 0 0-14.4 2 2 0 0 1-1-2.7 2 2 0 0 1 2.8-.9zm0 0"/>
+            </symbol>
+
+            <symbol id="shk-icon_mute" viewBox="0 0 64 64">
+                <path d="M33.2 0c-.8 0-1.6.1-2.6.7l-17.4 15H4a4 4 0 0 0-4 4v24.1a4 4 0 0 0 4 4h9.2l17.4 14.5c1 .6 1.8.8 2.6.7 1.4-.1 2.5-1.4 2.8-2.6V2.7C35.7 1.4 34.6 0 33.2 0zm23.2 31.5l6.9-6.8c.7-.6 1-1.5.7-2.4-.2-.8-.9-1.5-1.8-1.7-.8-.2-1.8 0-2.4.7L53 28.1 46 21.3c-.6-.6-1.5-1-2.4-.7-.9.2-1.5.9-1.8 1.7-.2.9.1 1.8.8 2.4l6.9 6.8-7 6.8c-.8 1-.8 2.4.2 3.3.9 1 2.4 1 3.3.1l7-6.8 6.8 6.8c1 .9 2.5.8 3.4 0 1-1 1-2.4 0-3.4l-6.8-6.8zm0 0"/>
+            </symbol>
+        </svg>
+        <div class="shk shikwasa js-focus-visible" data-name="shikwasa" data-theme="light" data-fixed-type="auto" data-play="paused" style="--color-primary: #6366f1;">
+            <div class="shk-player">
+                <div class="shk-bar_wrap">
+                    <div class="shk-bar" aria-label="progress bar">
+                        <div class="shk-bar_loaded" role="progressbar" aria-label="loaded progress" aria-valuenow="0.09" aria-valuemin="0" aria-valuemax="1" style="width: 8.5106%;"></div>
+                        <div class="shk-bar_played" role="progressbar" aria-label="played progress" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1">
+                            <button class="shk-bar-handle" role="slider" aria-label="seek progress" aria-valuenow="0.09" aria-valuemin="0" aria-orientation="horizontal" aria-valuemax="1"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="shk-body">
+                    <div class="shk-cover" style="background-image: url('../media/logo.png');">
+                        <div class="shk-img"></div>
+                    </div>
+                    <div class="shk-main">
+                        <div class="shk-text">
+                            <div class="shk-artist_wrap">
+                                <span class="shk-artist">AI-Generated Podcast</span>
+                            </div>
+                            <div class="shk-title_wrap">
+                                <div class="shk-title_inner" data-title="The Deep Dive: HydePHP">
+                                    <span class="shk-title">The Deep Dive: HydePHP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shk-controls">
+                            <div class="shk-controls_basic">
+                                <button class="shk-btn shk-btn_speed" aria-label="toggle playback rate" title="change playback rate" aria-live="polite">1.0x</button>
+                                <button class="shk-btn shk-btn_backward" aria-label="rewind 10 seconds" title="rewind 10 seconds">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="#shk-icon_backward"></use>
+                                    </svg>
+                                </button>
+                                <button class="shk-btn shk-btn_toggle" aria-label="toggle play and pause">
+                                    <svg class="shk-btn_play" aria-hidden="true">
+                                        <use xlink:href="#shk-icon_play"></use>
+                                    </svg>
+                                    <svg class="shk-btn_pause" aria-hidden="true">
+                                        <use xlink:href="#shk-icon_pause"></use>
+                                    </svg>
+                                </button>
+                                <button class="shk-btn shk-btn_forward" aria-label="forward 10 seconds" title="forward 10 seconds">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="#shk-icon_forward"></use>
+                                    </svg>
+                                </button>
+                                <button class="shk-btn shk-btn_more" aria-label="more controls" title="more controls">
+                                    <svg aria-hidden="true">
+                                        <use xlink:href="#shk-icon_more"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="shk-controls_extra">
+                                <button class="shk-btn shk-btn_volume" aria-label="toggle volume" title="volume">
+                                    <svg class="shk-btn_unmute" aria-hidden="true">
+                                        <use xlink:href="#shk-icon_unmute"></use>
+                                    </svg>
+                                    <svg class="shk-btn_mute" aria-hidden="true">
+                                        <use xlink:href="#shk-icon_mute"></use>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="shk-display">
+                                              <span class="shk-loader" aria-live="polite">
+                                                <span class="shk-visuallyhidden" tabindex="-1">loading</span>
+                                                <svg aria-hidden="true" aria-label="loading" aria-live="polite" viewBox="0 0 66 66">
+                                                  <circle cx="33" cy="33" r="30" fill="transparent" stroke="url(#shk-gradient)" stroke-dasharray="170" stroke-dashoffset="20" stroke-width="6"></circle>
+                                                  <linearGradient id="shk-gradient">
+                                                    <stop offset="50%" stop-color="currentColor"></stop>
+                                                    <stop offset="65%" stop-color="currentColor" stop-opacity=".5"></stop>
+                                                    <stop offset="100%" stop-color="currentColor" stop-opacity="0"></stop>
+                                                  </linearGradient>
+                                                </svg>
+                                              </span>
+                            <span class="shk-time">
+                                                <span class="shk-time_now">00:00</span><span class="shk-time_duration">04:17</span>
+                                              </span>
+                            <div class="shk-live">live</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="transcript-container" class="mt-4 p-4 bg-gray-50 dark:bg-slate-800 rounded h-[16rem] relative overflow-hidden">
+        <h3 class="font-semibold mb-4">Transcript</h3>
+        <div id="transcript-wrapper" class="absolute inset-x-4 top-12 bottom-4 overflow-hidden">
+            <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out">
+                <div id="transcript-ssr">
+                    <div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> All right, static site generators, everybody&#039;s talking about them.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Seems like a new one pops up every day.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Right. And this time we&#039;re doing a deep dive on HydePHP.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> At least that&#039;s what their docs are calling it.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Catchy name.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It really is. And they&#039;re making some bold claims.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Elegance and power. All in one package.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah, that focused on writing content, not markup line, caught my eye.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Right. Because who wants to mess around with HTML tags all day?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Not me.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Speak for yourself. I kind of like them.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah, but I see their point.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> They mentioned using Markdown, which is great for, well,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> you know, just writing. And Laravel, which is a PHP framework, right?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Kind of seems like overkill for a static site.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Well, they&#039;re actually using Laravel Zero.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It&#039;s a stripped down version of Laravel built for speed.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> So they get the structure of a framework without all the bloat.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Ah, so it&#039;s like they optimized it specifically for static sites?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Exactly. They&#039;re playing to the strength of static sites, which is smart.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> And speaking of strengths, they really hype up the whole blazing fast angle.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> But is speed really that big of a deal?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Absolutely. First off, user experience, slow site,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> say goodbye to visitors.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Ouch. Yeah, nobody&#039;s got time for that spinny wheel of doom.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Exactly. But it&#039;s also about the developer experience.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> If building and rebuilding the site is super fast, like they claim,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> it makes the developer&#039;s life way easier.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Quicker iterations, faster feedback loops, you know the drill.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Makes sense. It&#039;s like the faster you can see your changes,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> the faster you can get stuff done.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> They also talk about being simple to get started, but powerful when you need it.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Right. Like that classic balancing act.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Exactly. But who are they targeting with that message?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Who&#039;s the ideal HydePHP user?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Well, they definitely assume some command line comfort.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> You got to be okay, getting your hands a little dirty with code.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> So not exactly aimed at your average WordPress blogger, though?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Probably not.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> But they do emphasize no endless configuration,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> which suggests a streamlined experience.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Might appeal to folks familiar with Jekyll or other minimal setups.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> So previous static site experience&#039;s a plus. Got it.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> And they even include Tailwind CSS by default.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Smart move. Tailwind&#039;s super popular for a reason.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> For those who haven&#039;t used it, what&#039;s the big deal with Tailwind?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It&#039;s a utility-first CSS framework.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Basically pre-built styles, you can apply directly to your HTML,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> make styling super fast.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Ah, so it&#039;s like building blocks for your website&#039;s design.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Exactly. And by including it by default,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> they&#039;re knocking out a setup step right off the bat.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Plus, Tailwind&#039;s known for producing clean,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> professional looking sites.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> So it aligns with that elegance thing they&#039;re going for.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Okay, you&#039;ve convinced me, I&#039;m ready to give it a shot.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> But real talk, how is time when we&#039;re talking to get this thing up and run it?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Not bad at all, actually.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> You need PHP 8.1 or higher, pretty standard stuff.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Check.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> And Composer, it&#039;s a package manager for PHP.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Helps you wrangle all the dependencies.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Right, kind of like, what&#039;s it called?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> NPM for JavaScript?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah, kind of like that.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> And installation&#039;s a breeze just follow the instructions on the HydePHP website.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> No crazy workarounds or anything?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Nope, they keep it nice and straight forward.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Music to my ears.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Okay, so I&#039;ve got it installed.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> I&#039;m ready to roll what&#039;s the workflow actually like?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Almost too easy.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> You basically just drop your Markdown files into a specific folder</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> or use Hyde&#039;s commands to generate some starter templates.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Then you run hyde build and bam,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> you&#039;ve got a directory full of static HTML ready to deploy wherever you want.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Hold on, did you just say drop Markdown files and go?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> That&#039;s it?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Pretty much.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It&#039;s surprisingly streamlined.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> I got to ask what&#039;s the catch.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Well, the big question is customization.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> They talk a big game about ease of use,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> but how far does that go?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Can you really get under the hood and tweak things?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Or do you hit a point where you need to break out the full Laravel toolkit?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah, that&#039;s something to consider.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Yeah.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Like is it truly flexible or more of a</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> works great if you stay within the lines kind of thing?</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Exactly.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> That&#039;s something you&#039;d want to investigate further.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Especially if you&#039;re planning on building something really custom.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> But for simpler sites or getting up and running quickly,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> HydePHP looks pretty darn slick.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It really does.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> So to sum it all up, HydePHP.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> It&#039;s like that shiny new sports car in the showroom.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> Potentially powerful promises a smooth ride,</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> but maybe take it for a test drive before you sign on the dotted line.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> That being said, that test drive might just inspire your next awesome website.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> This has been the Deep Dive.</div>
+<div class="seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600"><span class="text-xs font-mono opacity-75 mr-1">00:00</span> </div>                </div>
+            </div>
+        </div>
+    </div>
+
+    <p class="text-sm text-gray-600 dark:text-gray-300 italic mt-4"><strong>Note:</strong> This podcast episode is entirely generated by AI, showcasing the potential of artificial intelligence in content creation.</p>
+    <p class="text-sm text-gray-600 dark:text-gray-300 italic mt-4"><strong>Human Editor's Note 1:</strong> HydePHP comes preconfigured with everything you need, but it never stands in your way when you need customization or your own logic.</p>
+    <p class="text-sm text-gray-600 dark:text-gray-300 italic mt-1"><strong>Human Editor's Note 2:</strong> There's no need to sign on a dotted line, HydePHP is, and will always be, free and open-source software.</p>
+</div>
+
+  
+              </main>
+
+            <article class="mx-auto max-w-7xl bg-white dark:bg-slate-700 rounded-lg p-6">
+                <h2 class="text-xl font-semibold mb-4">About This AI-Generated Podcast</h2>
+                <div class="prose dark:prose-invert max-w-full">
+                    <p>This podcast episode was created using advanced AI technology from <a href="https://notebooklm.google/" rel="noopener nofollow">NotebookML</a> by Google. Here's what makes it special:</p>
+
+                    <ul>
+                        <li>Content is 100% AI-generated, based on information about HydePHP</li>
+                        <li>Demonstrates the capabilities of AI in producing engaging, informative content</li>
+                        <li>Offers a unique perspective on HydePHP's features and benefits</li>
+                    </ul>
+
+                    <p>While this content is AI-generated, it reflects our commitment to exploring innovative ways to share information about HydePHP.</p>
+                    <p>We hope you enjoy this blend of technology and creativity! Want to learn more about how this was created?
+                        Head to our <a href="/posts/ai-podcast-episode">blog post on the topic</a> to learn more!
+                    </p>
+                </div>
+            </article>
+        </div>
+    </section>
+ 
+    </section>
+
+    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+		<div class="block md:w-1/3 px-2 mx:px-0">
+			<span class="flex items-center w-fit">
+				<a href="../" class="flex items-center mr-4">
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
+					
+					<span class="ml-2 text-lg font-black">HydePHP</span>
+				</a>
+			</span>
+			
+			<p class="font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
+				Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
+			</p>
+		</div>
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
+				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					Documentation</a></li>
+					
+					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Community Portal
+					</a></li>
+					
+					<li><a href="../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Legal Information
+					</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
+					<li><a href="../community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Developer Resources
+					</a></li>
+					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
+					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
+					<li><a href="../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Sitemap
+					</a></li>
+					<li><a href="../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Blog Posts
+					</a></li>
+					
+					<li><a href="../feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						RSS Feed
+					</a></li>
+				</ul>
+				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
+					<div class="flex justify-start pl-4 mt-2">
+						
+						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+							</svg>
+						</a>
+						<a title="Twitter &commat;HydeFramework" class="items-center block  mr-4  dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://twitter.com/HydeFramework">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+							</svg>
+						</a>
+						<a title="Discord Server" class="items-center block  mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
+						</a>
+						<a title="Contact Information" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="/contact">
+							<svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+						</a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+					</div>
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+			<div class="prose mx-auto text-center text-sm dark:prose-invert">
+				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
+
+			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
+		</div>
+	</div>
+</footer> 
+
+    <script defer src="../media/app.js?v=636e955fc6115e5920038d104907bc0d"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+    function toggleTheme() {
+        if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem('color-theme', 'light');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+        } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem('color-theme', 'dark');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+        }
+    }
+</script>
+
+
+ <script src="https://cdn.jsdelivr.net/npm/shikwasa@2.2.0/dist/shikwasa.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let player;
+        let manualScrolling = false;
+        let scrollTimeout;
+        let translateY = 0;
+
+        function initializePlayer() {
+            player = new Shikwasa.Player({
+                container: () => document.getElementById('player'),
+                audio: {
+                    title: 'The Deep Dive: HydePHP',
+                    artist: 'AI-Generated Podcast',
+                    cover: '../media/logo.png',
+                    src: "https://hydephp.com/media/podcast/introduction.wav",
+                },
+                chapters: [
+                    {title: 'Introduction', startTime: 0, endTime: 60},
+                    {title: 'Features of HydePHP', startTime: 60, endTime: 180},
+                    {title: 'Benefits and Use Cases', startTime: 180, endTime: 300},
+                    {title: 'Conclusion', startTime: 300, endTime: 360},
+                ],
+                themeColor: '#6366f1',
+                theme: 'light',
+            });
+        }
+
+        // Load and display transcript
+        fetch("https://hydephp.com/media/podcast/introduction.srt")
+            .then(response => response.text())
+            .then(srt => {
+                const lines = parseSRT(srt);
+                const transcriptDiv = document.getElementById('transcript');
+
+                // Remove the SSR content (later we could just use this originally)
+                document.getElementById('transcript-ssr').remove();
+
+                lines.forEach((line, index) => {
+                    const p = document.createElement('p');
+                    const timestamp = secondsToTime(line.start);
+                    p.innerHTML = `<span class="text-xs font-mono opacity-75 mr-1">${timestamp}</span> ${line.text}`;
+                    p.id = `line-${index}`;
+                    p.className = 'seeker-line py-1 px-2 rounded transition-colors duration-300 text-gray-600 dark:text-gray-400 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-600';
+                    transcriptDiv.appendChild(p);
+                });
+
+                initializePlayer();
+
+                player.on('timeupdate', () => {
+                    if (!manualScrolling) {
+                        const currentTime = player.currentTime;
+                        const currentLine = lines.findIndex(line => currentTime >= line.start && currentTime <= line.end);
+
+                        if (currentLine !== -1) {
+                            highlightLine(currentLine);
+                        }
+                    }
+                });
+
+                player.on('loadedmetadata', () => {
+                    document.querySelectorAll('.seeker-line').forEach((p, index) => {
+                        const line = lines[index];
+                        p.addEventListener('click', () => {
+                            player.seek(line.start);
+                            player.play();
+                        });
+                    });
+                });
+            });
+
+        // Handle manual scrolling
+        const transcriptWrapper = document.getElementById('transcript-wrapper');
+        transcriptWrapper.addEventListener('wheel', (event) => {
+            manualScrolling = true;
+
+            event.preventDefault();
+
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                manualScrolling = false;
+            }, 3000); // Delay to prevent immediate re-highlighting
+
+            let currentScrollPosition = translateY;
+            let scrollDirection = event.deltaY > 0 ? 'down' : 'up';
+            const lineHeight = document.getElementById('line-0').offsetHeight;
+            let scrollPosition = scrollDirection === 'down' ? currentScrollPosition + lineHeight : currentScrollPosition - lineHeight;
+
+            // Set the transform offset to the scroll position
+            document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+            translateY = scrollPosition;
+        });
+
+        function parseSRT(srt) {
+            const lines = srt.trim().split('\n\n');
+            return lines.map(line => {
+                const [id, time, ...text] = line.split('\n');
+                const [start, end] = time.split(' --> ').map(timeToSeconds);
+                return {id, start, end, text: text.join(' ')};
+            });
+        }
+
+        function timeToSeconds(time) {
+            const [hours, minutes, seconds] = time.split(':').map(parseFloat);
+            return hours * 3600 + minutes * 60 + seconds;
+        }
+
+        function secondsToTime(seconds) {
+            const minutes = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const remainingSeconds = Math.floor(seconds % 60).toString().padStart(2, '0');
+            return `${minutes}:${remainingSeconds}`;
+        }
+
+        function highlightLine(lineIndex) {
+            const lines = document.querySelectorAll('#transcript p');
+            lines.forEach((line, index) => {
+                if (index === lineIndex) {
+                    line.classList.add('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
+                } else {
+                    line.classList.remove('bg-gray-200', 'dark:bg-gray-600', 'text-gray-900', 'dark:text-white');
+                }
+            });
+
+            const activeLine = document.getElementById(`line-${lineIndex}`);
+            if (activeLine && !manualScrolling) {
+                const lineHeight = activeLine.offsetHeight;
+                const wrapperHeight = transcriptWrapper.offsetHeight;
+                const scrollPosition = activeLine.offsetTop - (wrapperHeight / 2) + (lineHeight / 2);
+
+                document.getElementById('transcript').style.transform = `translateY(-${scrollPosition}px)`;
+                translateY = scrollPosition;
+            }
+        }
+    });
+</script>
+ 
+ 
+</body>
+</html>

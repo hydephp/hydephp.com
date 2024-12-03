@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\DataCollections\Types;
 
-use Hyde\Markdown\Models\Markdown;
 use App\Extend\Concerns\DataCollectionType;
+use Hyde\Markdown\Models\Markdown;
 
 class Testimonials extends DataCollectionType
 {

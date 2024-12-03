@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace App\Extend;
 
 use Hyde\Facades\Filesystem;
-use Illuminate\Support\Collection;
 use Hyde\Markdown\Models\FrontMatter;
-use Illuminate\Support\Str;
 use Hyde\Markdown\Models\MarkdownDocument;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 /**
  * @experimental Typed data collections class extension.
@@ -50,6 +50,7 @@ class DataCollections extends \Hyde\Support\DataCollections
     protected static function getTypedMarkdown(string $name): static
     {
         $className = self::getCallableTypeClassName($name);
+
         return parent::markdown($name)->reject(fn (MarkdownDocument $document, string $key) => basename($key) === 'README.md') // Patch until https://github.com/hydephp/develop/issues/1716
             ->map(fn (MarkdownDocument $document) => new $className(array_merge(
                 $document->matter()->toArray(),

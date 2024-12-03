@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.2">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=66101c60167d15cae40036f873dfcdd8">
+    <link rel="stylesheet" href="../../media/app.css?v=b352181a64205f646607053cda22d4aa">
 
 
 
@@ -355,7 +355,7 @@
 there might be some &quot;gotchas&quot; you might run into. Here are some I can think of,
 did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
 <blockquote class="info"><p>Tip: You can run <code>php hyde validate</code> to run a series of tests to help you catch common issues.</p></blockquote>
-<h2>General Tips<a id="general-tips" href="#general-tips" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>General Tips<a id="general-tips" href="#general-tips" class="heading-permalink" title="Permalink"></a></h2>
 <p>(In no particular order of importance)</p>
 <ol>
 <li>In general, <strong>Hyde is actually pretty forgiving</strong>. While this article makes it sound like there are a lot of rules to follow,
@@ -364,25 +364,25 @@ honestly don't worry about it. Hyde will attempt to fix mistakes and make your l
 <li>You never need front matter, though it is often useful.
 For example, Hyde makes attempts to guess the title for a page depending on the content. (Headings, filenames, etc).</li>
 </ol>
-<h2>Conventions to Follow<a id="conventions-to-follow" href="#conventions-to-follow" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>File naming<a id="file-naming" href="#file-naming" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Conventions to Follow<a id="conventions-to-follow" href="#conventions-to-follow" class="heading-permalink" title="Permalink"></a></h2>
+<h3>File naming<a id="file-naming" href="#file-naming" class="heading-permalink" title="Permalink"></a></h3>
 <p>For Hyde to be able to discover your files, you should follow the following conventions.</p>
 <p>Markdown files should have the extension <code>.md</code>. Blade files should have the extension <code>.blade.php</code>.</p>
 <p>Unexpected behaviour might occur if you use conflicting file names.
 All the following filenames are resolved into the same destination file:
 <code>foo-bar.md</code>, <code>Foo-Bar.md</code>, <code>foo-bar.blade.php</code>, causing only one of them to be saved.</p>
 <p>Remember, files retain their base filenames when compiled to HTML.</p>
-<h4>Summary<a id="summary" href="#summary" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Summary<a id="summary" href="#summary" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>✔ <strong>Do</strong> use lowercase filenames and extensions</li>
 <li>✔ <strong>Do</strong> use filenames written in kebab-case-format</li>
 <li>✔ <strong>Do</strong> use the proper file extensions</li>
 <li>❌ <strong>Don't</strong> use conflicting source file names</li>
 </ul>
-<h2>Extra Information<a id="extra-information" href="#extra-information" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Definitions<a id="definitions" href="#definitions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Extra Information<a id="extra-information" href="#extra-information" class="heading-permalink" title="Permalink"></a></h2>
+<h3>Definitions<a id="definitions" href="#definitions" class="heading-permalink" title="Permalink"></a></h3>
 <p>We will use the following definitions to describe the behaviour of Hyde.</p>
-<h4>General<a id="general" href="#general" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>General<a id="general" href="#general" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <strong>Hyde</strong>: The application that you are using.</li>
@@ -391,7 +391,7 @@ All the following filenames are resolved into the same destination file:
 <li>
 <strong>Framework</strong>: The package containing the core codebase.</li>
 </ul>
-<h4>Path components<a id="path-components" href="#path-components" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Path components<a id="path-components" href="#path-components" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <strong>Identifier</strong>: The filepath without the extension, relative to the page type source directory.</li>
@@ -409,7 +409,7 @@ All the following filenames are resolved into the same destination file:
 </li>
 </ul>
 <p>You can read more about some of these in the <a href="core-concepts#paths-identifiers-and-route-keys">Core Concepts</a> article.</p>
-<h2>Common Issues, Causes, and Solutions<a id="common-issues-causes-and-solutions" href="#common-issues-causes-and-solutions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Common Issues, Causes, and Solutions<a id="common-issues-causes-and-solutions" href="#common-issues-causes-and-solutions" class="heading-permalink" title="Permalink"></a></h2>
 <table>
 <thead>
 <tr>
@@ -516,12 +516,12 @@ All the following filenames are resolved into the same destination file:
 </tr>
 </tbody>
 </table>
-<h3>Extra troubleshooting information<a id="extra-troubleshooting-information" href="#extra-troubleshooting-information" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
-<h4>Fixing a broken config<a id="fixing-a-broken-config" href="#fixing-a-broken-config" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h3>Extra troubleshooting information<a id="extra-troubleshooting-information" href="#extra-troubleshooting-information" class="heading-permalink" title="Permalink"></a></h3>
+<h4>Fixing a broken config<a id="fixing-a-broken-config" href="#fixing-a-broken-config" class="heading-permalink" title="Permalink"></a></h4>
 <p>If your configuration is broken, you might not be able to run any commands through the HydeCLI.
 To remedy this you can copy the config files from the vendor directory into the project directory.
 You can do this manually, or with the following rescue command:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">copy</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor/hyde/framework/config/hyde.php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">config/hyde.php</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">copy</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor/hyde/framework/config/hyde.php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">config/hyde.php</span></div></code></pre>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
@@ -568,7 +568,7 @@ You can do this manually, or with the following rescue command:</p>
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -593,8 +593,7 @@ You can do this manually, or with the following rescue command:</p>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -605,7 +604,7 @@ You can do this manually, or with the following rescue command:</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=636e955fc6115e5920038d104907bc0d"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

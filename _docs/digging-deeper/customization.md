@@ -120,23 +120,20 @@ Here are the default settings:
 ],
 ```
 
->warning Note that this feature requires that a site `url` is set!
+>warning Note that this feature requires that a `site_url` is set!
 
 ### Authors
 
-Hyde has support for adding authors in front matter, for example to
-automatically add a link to your website or social media profiles.
-However, it's tedious to have to add those to each and every
-post you make, and keeping them updated is even harder.
+Hyde has support for adding authors in front matter, for example to automatically add a link to your website or social media profiles.
+However, it's tedious to have to add those to each and every post you make, and keeping them updated is even harder.
 
-You can predefine authors in the Hyde config.
-When writing posts, just specify the username in the front matter,
-and the rest of the data will be pulled from a matching entry.
+Instead, you can predefine authors in the Hyde config. When writing posts, just specify the username in the front matter,
+and the rest of the data will be pulled from a matching entry found in the configuration file.
 
 #### Example
 
 ```php
-// torchlight! {"lineNumbers": false}
+// filepath: config/hyde.php
 'authors' => [
     Author::create(
         username: 'mr_hyde', // Required username
@@ -357,6 +354,20 @@ use \Hyde\Framework\Services\AssetService;
 'hydefront_cdn_url' => AssetService::HYDEFRONT_CDN_URL,
 ```
 
+### `theme_toggle_buttons`
+
+>info This feature was added in HydePHP v1.7.0
+
+This setting allows you to enable or disable the theme toggle buttons in the navigation menu.
+
+```php
+// filepath config/hyde.php
+'theme_toggle_buttons' => true,
+```
+
+If the `Feature::Darkmode` setting is disabled in the `features` array in the same file, this won't do anything, but if darkmode is enabled,
+setting this setting to `false` will make so that the buttons will not show up in the app layout nor the documentation layout;
+instead the appropriate color scheme will be automatically applied based on the browser system settings.
 
 ## Blade Views
 
