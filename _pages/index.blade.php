@@ -152,7 +152,6 @@
         <header class="mb-8">
             <div class="flex mb-2">
                 <h2 class="relative  items-center self-start inline-block w-auto text-4xl font-black">
-                    <span class="absolute inline-block w-full h-4 mt-3 -ml-2 bg-violet-300"></span>
                     <span class="relative">Feature List</span>
                 </h2>
             </div>
@@ -256,7 +255,6 @@
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto">
         <div class="flex flex-col justify-center w-full">
             <h2 class="relative  items-center self-center inline-block w-auto mb-5 text-4xl font-black">
-                <span class="absolute inline-block w-full h-4 mt-3 -ml-2 bg-violet-300"></span>
                 <span class="relative">Who's it for?</span>
             </h2>
             <p class="self-center mb-12 font-medium text-gray-600 mx-auto max-w-3xl text-center">
