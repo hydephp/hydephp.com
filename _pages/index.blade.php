@@ -254,7 +254,7 @@
 
     <div class="container relative flex flex-col justify-between h-full max-w-6xl px-8 mx-auto">
         <div class="flex flex-col justify-center w-full">
-            <h2 class="relative  items-center self-center inline-block w-auto mb-5 text-4xl font-black">
+            <h2 class="relative  items-center self-center inline-block w-auto mb-5 text-4xl md:text-5xl font-black">
                 <span class="relative">Who's it for?</span>
             </h2>
             <p class="self-center mb-12 font-medium text-gray-600 mx-auto max-w-3xl text-center">
