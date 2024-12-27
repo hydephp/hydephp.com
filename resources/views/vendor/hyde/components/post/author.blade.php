@@ -1,3 +1,15 @@
+@if($page->matter('guest_post'))
+by guest author
+<address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
+    @if($page->author->website)
+        <a href="{{ $page->author->website }}" rel="author nofollow external" target="_blank" itemprop="url" aria-label="The author's website">
+            @endif
+            <span itemprop="name" aria-label="The author's name">{{ $page->author->name ?? $page->author->username }}</span>
+            @if($page->author->website)
+        </a>
+    @endif
+</address>
+@else
 by author
 <address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
     @if($page->author->website)
@@ -8,3 +20,4 @@ by author
         </a>
     @endif
 </address>
+@endif
