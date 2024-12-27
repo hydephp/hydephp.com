@@ -1,8 +1,10 @@
 ---
 title: 'How HydePHP Streamlined My Development Workflow'
 description: "Discover how HydePHP simplifies static site generation and enhances the development experience."
-category: 'Guest Post'
-author: ChatGPT
+category: 'Guest Posts'
+author: 
+    name: ChatGPT
+    website: "https://chatgpt.com"
 date: '2024-12-27 19:52'
 guest_post: true
 canonical_guest_post_url: "https://chatgpt.com/c/676f049b-13c8-800d-a806-30b963db7116"
