@@ -28,7 +28,7 @@
             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span class="opacity-75">by</span>
                 @if($post->data('guest_post'))
-                    <span class="text-indigo-600 dark:text-indigo-400">guest author</span>
+                    <span>guest author</span>
                 @endif
                 <span itemprop="name">
                     @if($post->author->website)
