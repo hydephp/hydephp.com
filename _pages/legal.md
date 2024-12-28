@@ -64,6 +64,57 @@ SOFTWARE.
 
 </details>
 
+## HydePHP.com Content
+
+Please note that all content on HydePHP.com is the protected under copyright unless otherwise stated.
+
+### Guest Posts
+
+The HydePHP website accepts guest posts from the community. Open the dropdown to learn more about the legal aspects of these:
+
+<details>
+
+<summary>Legal Considerations</summary>
+
+**Copyright and Ownership**
+- Contributors retain full copyright and ownership of their submitted content
+- By submitting a guest post, you grant HydePHP.com a non-exclusive, worldwide, royalty-free license to publish and maintain the content
+- You confirm that the content is your original work or that you have the necessary rights to publish it
+- The guest post author is responsible for all aspects of the content they submit
+
+**Editorial Rights**
+We reserve the right to:
+- Accept or decline any submission without providing a reason
+- Schedule posts for publication at our discretion
+- Make minor edits for formatting, clarity, and consistency
+- Remove any content that violates our guidelines or terms
+- Update or modify these terms at any time
+
+**Attribution and Links**
+- We provide attribution to authors with their name and optional website link
+- For republished content, we may include canonical links to the original post
+- We do not compensate authors for guest posts
+- Authors may request removal of their content, though we retain the right to preserve archive copies
+
+**Content Guidelines**
+- All guest posts must comply with our Code of Conduct ([hydephp.com/code-of-conduct](code-of-conduct))
+- Content must be suitable for our technical audience
+- Posts should not contain:
+  - Malicious code or harmful instructions
+  - Plagiarized content
+  - Excessive self-promotion or advertising
+  - Content that violates others' intellectual property rights
+
+**AI Usage and Disclosure**
+- We allow the use of AI tools to assist in the writing process (e.g., proofreading, editing, feedback)
+- Purely AI-generated content is not accepted
+- Authors must disclose any significant AI assistance used in creating their content
+- We reserve the right to reject submissions that don't meet our AI usage guidelines
+
+For questions about guest posts, please contact hello@hydephp.com or visit [hydephp.com/contact](contact).
+</details>
+
+
 ## Attributions, Acknowledgements, and Credits
 
 Hyde would not be possible without the open-source community.
