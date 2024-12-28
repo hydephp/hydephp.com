@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
 
 
 
@@ -190,6 +190,10 @@
             File-based Collections
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Helpers and Utilities
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
@@ -264,7 +268,7 @@
 </ul>
 </li>
 <li>
-<a href="#booting-pipeline">Booting pipeline</a>
+<a href="#booting-pipeline">Booting Pipeline</a>
 </li>
 <li>
 <a href="#the-hydekernel">The HydeKernel</a>
@@ -342,14 +346,14 @@
         <h1>Autodiscovery</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
 <p>HydePHP aims to reduce the amount of configuration you need to do to get a site up and running.
 To that end, Hyde uses a process called autodiscovery to automatically find and register your pages.</p>
 <p>This article will go into detail about how autodiscovery works as well as the lifecycle of the HydeKernel.</p>
-<h3>The short version<a id="the-short-version" href="#the-short-version" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>The short version<a id="the-short-version" href="#the-short-version" class="heading-permalink" title="Permalink"></a></h3>
 <p>Hyde will use the information in the page model classes to scan the source directories for matching files which are
 parsed using instructions from the model's class, resulting in data used to construct objects that get stored in the HydeKernel.</p>
-<h3>Prerequisites<a id="prerequisites" href="#prerequisites" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Prerequisites<a id="prerequisites" href="#prerequisites" class="heading-permalink" title="Permalink"></a></h3>
 <p>Before reading this article, you should be familiar with the following concepts:</p>
 <ul>
 <li>
@@ -359,11 +363,11 @@ parsed using instructions from the model's class, resulting in data used to cons
 <a href="the-hydekernel">The HydeKernel</a>
 </li>
 </ul>
-<h2>Booting pipeline<a id="booting-pipeline" href="#booting-pipeline" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Booting Pipeline<a id="booting-pipeline" href="#booting-pipeline" class="heading-permalink" title="Permalink"></a></h2>
 <p>The autodiscovery is run when the HydeKernel boots. It does so in three distinct steps, which run in sequence as each
 step depends on the previous one. Each discovery step runs in a <code>FoundationCollection</code> which both runs the actual
 discovery process and stores the discovered data in memory.</p>
-<h4>The steps are as follows:<a id="the-steps-are-as-follows" href="#the-steps-are-as-follows" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>The steps are as follows:<a id="the-steps-are-as-follows" href="#the-steps-are-as-follows" class="heading-permalink" title="Permalink"></a></h4>
 <ol>
 <li>
 <strong>Step one:</strong> The file collection discovers all the source files and stores them in memory</li>
@@ -372,13 +376,13 @@ discovery process and stores the discovered data in memory.</p>
 <li>
 <strong>Step three:</strong> The route collection generates route objects for all the pages</li>
 </ol>
-<h4>Interacting with the collections<a id="interacting-with-the-collections" href="#interacting-with-the-collections" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Interacting with the collections<a id="interacting-with-the-collections" href="#interacting-with-the-collections" class="heading-permalink" title="Permalink"></a></h4>
 <p>Usually, you will interact with the collection data through intermediaries.</p>
 <ul>
 <li>For example, if you call <code>MarkdownPost::get('my-post')</code>, Hyde will retrieve that page from the page collection.</li>
 <li>If you call <code>Routes::get('index')</code>, Hyde will retrieve that route from the route collection.</li>
 </ul>
-<h2>The HydeKernel<a id="the-hydekernel" href="#the-hydekernel" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>The HydeKernel<a id="the-hydekernel" href="#the-hydekernel" class="heading-permalink" title="Permalink"></a></h2>
 <p>If you have not yet read the <a href="the-hydekernel">HydeKernel Documentation</a>, here's a quick recap:</p>
 <p>The HydeKernel encapsulates a HydePHP project, providing helpful methods for interacting with it.
 It is also responsible for booting the application, which includes the autodiscovery process.</p>
@@ -387,18 +391,18 @@ as a singleton into the application service container.</p>
 <p>At this point you might be wondering why we're talking about the kernel when this article is about autodiscovery.
 Well, as you'll see in just a moment, the kernel is responsible for initiating the autodiscovery process.
 The kernel is also where the discovered data is stored in memory, so it's important to understand how it works.</p>
-<h3>The kernel lifecycle<a id="the-kernel-lifecycle" href="#the-kernel-lifecycle" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>The kernel lifecycle<a id="the-kernel-lifecycle" href="#the-kernel-lifecycle" class="heading-permalink" title="Permalink"></a></h3>
 <p>Now that we know the role of the HydeKernel, let's take a look at its lifecycle. The kernel is &quot;lazy-booted&quot;, meaning
 that all the heavy lifting only happens when you actually need it. Once booted, the kernel data will stay in memory
 until the console application is terminated.</p>
 <p>The kernel data is primarily stored in three collections that get generated during the kernel's boot process.
 Let's take a look at a simplified version of the kernel's boot method to see how this works.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">files </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">FileCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">routes </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">RouteCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Scroll down to see what this is used for</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">8</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">9</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">files </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">FileCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">routes </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">RouteCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Scroll down to see what this is used for</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Here you'll see that we boot the three collections. This is where all the autodiscovery magic happens!</p>
-<h4>Deep dive into lazy-booting<a id="deep-dive-into-lazy-booting" href="#deep-dive-into-lazy-booting" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Deep dive into lazy-booting<a id="deep-dive-into-lazy-booting" href="#deep-dive-into-lazy-booting" class="heading-permalink" title="Permalink"></a></h4>
 <p>If you're curious about how the kernel is lazy-booted, here's how it works!
 Feel free to skip this section if this doesn't interest you.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 1</span><span style="color: #676E95;">// This will boot the kernel if it hasn&#39;t been booted yet</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 2</span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 3</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 4</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 5</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 7</span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number"> 9</span><span style="color: #676E95;">// This is the method that triggers the boot process</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">10</span><span style="color: #C792EA;">protected</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">11</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">12</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">if</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(!</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">13</span><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">14</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">15</span><span style="color: #89DDFF;">}</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// This will boot the kernel if it hasn&#39;t been booted yet</span></div><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// This is the method that triggers the boot process</span></div><div class='line'><span style="color: #C792EA;">protected</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">if</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(!</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Yeah, it's really unglamorous I know. But it works! Having it like this will ensure that any time you call <code>Hyde::pages()</code>,
 that underlying collection will always have been booted and be ready to use.</p>
     </section>
@@ -447,7 +451,7 @@ that underlying collection will always have been booted and be ready to use.</p>
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -472,8 +476,7 @@ that underlying collection will always have been booted and be ready to use.</p>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -484,7 +487,7 @@ that underlying collection will always have been booted and be ready to use.</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

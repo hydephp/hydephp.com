@@ -1,0 +1,41 @@
+name: Update Community Files
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run at midnight every Sunday
+  workflow_dispatch:      # Allow manual trigger
+
+jobs:
+  update-files:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Cache Composer packages
+      id: composer-cache
+      uses: actions/cache@v4
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Install dependencies
+      run: composer install --prefer-dist --no-progress
+
+    - name: Download community files
+      run: php hyde download-community-files
+
+    - name: Check for changes
+      id: git-check
+      run: |
+        git diff --quiet || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+    - name: Commit changes
+      if: steps.git-check.outputs.has_changes == 'true'
+      uses: EndBug/add-and-commit@v9
+      with:
+        add: '_pages'
+        message: 'Update community files'
+        default_author: github_actions 

@@ -1,0 +1,9 @@
+---
+title: "Lorem Documentum"
+description: "An example documentation site built with Markdown and HydePHP"
+author: "HydePHP.com"
+date: "2023-11-05"
+image: "documentation-demo-composite-light-min.png"
+url: "https://hydephp.github.io/documentation-demo"
+source: "https://github.com/hydephp/documentation-demo"
+---

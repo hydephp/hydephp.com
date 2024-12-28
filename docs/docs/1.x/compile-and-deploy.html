@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
 
 
 
@@ -159,7 +159,7 @@
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
 <li>
-<a href="#running-the-build-command">Running the build command</a>
+<a href="#running-the-build-command">Running the Build Command</a>
 <ul>
 <li>
 <a href="#further-reading">Further reading</a>
@@ -167,7 +167,7 @@
 </ul>
 </li>
 <li>
-<a href="#deploying-your-site">Deploying your site</a>
+<a href="#deploying-your-site">Deploying Your Site</a>
 <ul>
 <li>
 <a href="#general-deployment">General deployment</a>
@@ -218,6 +218,10 @@
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Helpers and Utilities
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
@@ -345,17 +349,17 @@
         <h1>Compile and Deploy your site</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Running the build command<a id="running-the-build-command" href="#running-the-build-command" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Running the Build Command<a id="running-the-build-command" href="#running-the-build-command" class="heading-permalink" title="Permalink"></a></h2>
 <p>Now that you have some amazing content, you'll want to compile your site into static HTML.</p>
 <p><strong>This is as easy as executing the <code>build</code> command:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p><strong>You can also compile a single file:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">filepath</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">filepath</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p><strong>And, you can even start a development server to compile your site on the fly:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
-<h3>Further reading<a id="further-reading" href="#further-reading" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
+<h3>Further reading<a id="further-reading" href="#further-reading" class="heading-permalink" title="Permalink"></a></h3>
 <blockquote class="info"><p><b>Key Concept: Autodiscovery</b></p> <p>When building the site, Hyde will use all the routes generated when the auto-discovery process scanned your source directories for files. The command will then compile them into static HTML using the appropriate layout depending on what kind of page it is. Thanks to Hyde, the days of manually defining routes are over!</p></blockquote>
-<h4>Learn more about these commands in the <a href="console-commands">console commands</a> documentation:<a id="learn-more-about-these-commands-in-the-console-commands-documentation" href="#learn-more-about-these-commands-in-the-console-commands-documentation" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Learn more about these commands in the <a href="console-commands">console commands</a> documentation:<a id="learn-more-about-these-commands-in-the-console-commands-documentation" href="#learn-more-about-these-commands-in-the-console-commands-documentation" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>
 <a href="console-commands#build-the-static-site">Build command</a>
@@ -368,24 +372,24 @@
 </li>
 </ul>
 <hr />
-<h2>Deploying your site<a id="deploying-your-site" href="#deploying-your-site" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Deploying Your Site<a id="deploying-your-site" href="#deploying-your-site" class="heading-permalink" title="Permalink"></a></h2>
 <p>One of the things that make static sites so enjoyable to work with is how easy it is to deploy them to the web.
 This list is not exhaustive, but gives you a general idea of the most common ways to deploy your site.
 If you have ideas to add to the documentation, please send a pull request!</p>
-<h3>General deployment<a id="general-deployment" href="#general-deployment" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>General deployment<a id="general-deployment" href="#general-deployment" class="heading-permalink" title="Permalink"></a></h3>
 <p>In essence, all you need to do is copy the contents of the <code>_site</code> directory to a web server, and you're done.</p>
 <p>Once the site is compiled there is nothing to configure or worry about.</p>
-<h3>FTP and File Managers<a id="ftp-and-file-managers" href="#ftp-and-file-managers" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>FTP and File Managers<a id="ftp-and-file-managers" href="#ftp-and-file-managers" class="heading-permalink" title="Permalink"></a></h3>
 <p>If you have a conventional web host, you can use <code>FTP</code>/<code>SFTP</code>/<code>FTPS</code> to upload your compiled site files to the web server.
 Some web hosting services also have web-based file managers.</p>
 <p>To deploy your site using any of these methods, all you need to do is upload the entire contents of your <code>_site</code>
 directory to the web server's public document root, which is usually the <code>public_html</code>, <code>htdocs</code>, or <code>www</code> directory.</p>
-<h3>GitHub Pages - Manually<a id="github-pages---manually" href="#github-pages---manually" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>GitHub Pages - Manually<a id="github-pages---manually" href="#github-pages---manually" class="heading-permalink" title="Permalink"></a></h3>
 <p>GitHub Pages is a free service that allows you to host your static site on the web.</p>
 <p>In general, push the entire contents of your <code>_site</code> directory to the <code>gh-pages</code> branch of your repository,
 or the <code>docs/</code> directory on your main branch, depending on how you set it up.</p>
 <p>Please see the <a href="https://help.github.com/pages/getting-started-with-github-pages/">GitHub Pages documentation</a> for more information.</p>
-<h3>GitHub Pages - CI/CD<a id="github-pages---cicd" href="#github-pages---cicd" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>GitHub Pages - CI/CD<a id="github-pages---cicd" href="#github-pages---cicd" class="heading-permalink" title="Permalink"></a></h3>
 <p>Hyde works amazing with GitHub Pages and GitHub Actions and the entire build and deploy process can be automated.</p>
 <ul>
 <li>
@@ -443,7 +447,7 @@ deploys the site automatically when the source is updated using <a href="https:/
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -468,8 +472,7 @@ deploys the site automatically when the source is updated using <a href="https:/
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -480,7 +483,7 @@ deploys the site automatically when the source is updated using <a href="https:/
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

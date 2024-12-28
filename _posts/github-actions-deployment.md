@@ -6,6 +6,8 @@ author: Caen
 date: 2022-06-20 12:09
 ---
 
+>info **2024 Update**: We now have a custom GitHub Action that makes it even easier to build and deploy HydePHP sites. Check out the [HydePHP GitHub Action](https://github.com/hydephp/action) for more information.
+
 ## Introduction
 
 [HydePHP](https://hydephp.com/) is a framework for building static websites. While the most common way to interact with HydePHP is through the command line, you can actually manage an entire site using GitHub.
@@ -68,7 +70,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       # (optional) Validate the Composer files to catch any errors early on
       - name: Validate composer.json and composer.lock
@@ -77,7 +79,7 @@ jobs:
       # (optional) Cache the Composer packages to speed up future builds
       - name: Cache Composer packages
         id: composer-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -94,7 +96,7 @@ jobs:
       
       # Our site is now compiled into the _site directory, so we'll upload it to an artifact to use in the next job
       - name: Upload site artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: site
           path: _site
@@ -131,7 +133,7 @@ Add the following code after the build job in the workflow we made before:
     needs: build # Run the build job first, otherwise we won't have anything to deploy
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: 'gh-pages' # Checkout the gh-pages branch
       
@@ -141,7 +143,7 @@ Add the following code after the build job in the workflow we made before:
       
       # Download the compiled site into the current directory
       - name: Download site artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: site
           path: '.'

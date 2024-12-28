@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
 
 
 
@@ -190,6 +190,10 @@
             File-based Collections
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Helpers and Utilities
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
@@ -242,7 +246,7 @@
 </ul>
 </li>
 <li>
-<a href="#creating-the-page">Creating the page</a>
+<a href="#creating-the-page">Creating the Page</a>
 </li>
 <li>
 <a href="#api-reference">API Reference</a>
@@ -337,14 +341,14 @@
         <h1>InMemoryPages</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
 <p>This class is a special page class that is not backed by a file on disk, but rather generated at runtime. While it will
 probably not be useful for the majority of users, it's a great class to know about if you are a package developer,
 but feel free to skip this section if you're not interested in this.</p>
-<h3>When to use<a id="when-to-use" href="#when-to-use" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>When to use<a id="when-to-use" href="#when-to-use" class="heading-permalink" title="Permalink"></a></h3>
 <p>This class is especially useful for one-off custom pages. But if your usage grows, or if you want to utilize Hyde
 autodiscovery, you may benefit from creating a custom page class instead, as that will give you full control.</p>
-<h3>About discovery<a id="about-discovery" href="#about-discovery" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>About discovery<a id="about-discovery" href="#about-discovery" class="heading-permalink" title="Permalink"></a></h3>
 <p>Since the InMemoryPages are not present in the filesystem, they cannot be found by the auto-discovery process.
 Instead, it's up to the developer to manually register them. If you are working on your own project, you can do this in
 the <code>boot</code> method of a service provider, such as the <code>AppServiceProvider</code> which is already present in your <code>app/</code> directory.</p>
@@ -352,16 +356,16 @@ the <code>boot</code> method of a service provider, such as the <code>AppService
 page collection callback. In either case, if you want your page to be able to be fully processed by Hyde, you need to
 make sure you register it before the full application is booted so that routes can be generated.</p>
 <p><em>To see how to register the page, see the examples below. But first we must look at how to actually create the page.</em></p>
-<h2>Creating the page<a id="creating-the-page" href="#creating-the-page" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Creating the Page<a id="creating-the-page" href="#creating-the-page" class="heading-permalink" title="Permalink"></a></h2>
 <p>To create an InMemoryPage, you need to instantiate it with the required parameters.</p>
 <p>Since a page would not be useful without any content to render, the class offers two content options through the constructor.</p>
 <p>You can either pass a string to the <code>$contents</code> parameter, Hyde will then save that literally as the page's contents.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">contents</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">contents</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <p>Alternatively, you can pass a Blade view name to the <code>$view</code> parameter, and Hyde will use that view to render the page
 contents with the supplied front matter during the static site build process.</p>
 <blockquote class="warning"><p>Note that <code>$contents</code> take precedence over <code>$view</code>, so if you pass both, only <code>$contents</code> will be used.</p></blockquote>
 <p>You can also register a macro with the name <code>compile</code> to overload the default compile method.</p>
-<h2>API Reference<a id="api-reference" href="#api-reference" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>API Reference<a id="api-reference" href="#api-reference" class="heading-permalink" title="Permalink"></a></h2>
 <p>To see all the methods available, please see the <a href="hyde-pages#inmemorypage">InMemoryPage API reference</a>.</p>
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
@@ -409,7 +413,7 @@ contents with the supplied front matter during the static site build process.</p
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -434,8 +438,7 @@ contents with the supplied front matter during the static site build process.</p
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -446,7 +449,7 @@ contents with the supplied front matter during the static site build process.</p
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

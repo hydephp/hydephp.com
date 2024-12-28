@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
 
 
 
@@ -177,7 +177,7 @@
 </ul>
 </li>
 <li>
-<a href="#how-do-i-compile-assets">How do I compile assets?</a>
+<a href="#how-do-i-compile-assets">How Do I Compile assets?</a>
 <ul>
 <li>
 <a href="#how-does-it-work">How does it work?</a>
@@ -199,7 +199,7 @@
 </ul>
 </li>
 <li>
-<a href="#managing-images">Managing images</a>
+<a href="#managing-images">Managing Images</a>
 <ul>
 <li>
 <a href="#referencing-images">Referencing images</a>
@@ -248,6 +248,10 @@
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Helpers and Utilities
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
@@ -375,7 +379,7 @@
         <h1>Managing and Compiling Assets</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
 <p>Managing and compiling assets is a very common task in web development. Unfortunately, it's rarely fun.</p>
 <p>With Hyde, <strong>you don't have to do it</strong>, in fact, you can skip this entire page if you are happy with how it is.
 But as always with Hyde, you can customize everything if you want to.</p>
@@ -383,15 +387,15 @@ But as always with Hyde, you can customize everything if you want to.</p>
 Some extra custom styles are made in the HydeFront package, which is pre-installed and bundled in the pre-configured Laravel Mix.</p>
 <p>To get you started quickly, all the styles are already compiled and minified into <code>_media/app.css</code>,
 which will be copied to the <code>_site/media/app.css</code> directory when you run <code>php hyde build</code>.</p>
-<h2>Additional Information and Answers to Common Questions<a id="additional-information-and-answers-to-common-questions" href="#additional-information-and-answers-to-common-questions" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Is NodeJS/NPM Required for Using Hyde?<a id="is-nodejsnpm-required-for-using-hyde" href="#is-nodejsnpm-required-for-using-hyde" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Additional Information and Answers to Common Questions<a id="additional-information-and-answers-to-common-questions" href="#additional-information-and-answers-to-common-questions" class="heading-permalink" title="Permalink"></a></h2>
+<h3>Is NodeJS/NPM Required for Using Hyde?<a id="is-nodejsnpm-required-for-using-hyde" href="#is-nodejsnpm-required-for-using-hyde" class="heading-permalink" title="Permalink"></a></h3>
 <p>No, it is optional. All the compiled styles that you need are already installed, and NPM is only necessary if you want to compile your own styles.</p>
-<h3>When Should Assets be Compiled?<a id="when-should-assets-be-compiled" href="#when-should-assets-be-compiled" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>When Should Assets be Compiled?<a id="when-should-assets-be-compiled" href="#when-should-assets-be-compiled" class="heading-permalink" title="Permalink"></a></h3>
 <p>The <code>_media/app.css</code> file that comes with Hyde contains TailwindCSS for all classes that are used in the default Blade views, as well as the HydeFront custom styles.
 If you want to customize the Tailwind settings or add custom styles, you will need to recompile the styles yourself.</p>
 <p>For example, if you customize the Blade views and add new classes or add new classes in Blade-based pages, you may need to compile the assets yourself to get the new styles.
 If you use Markdown-based pages, you do not need to compile anything as those styles are already included in the compiled CSS file.</p>
-<h2>How are assets stored and managed?<a id="how-are-assets-stored-and-managed" href="#how-are-assets-stored-and-managed" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>How are assets stored and managed?<a id="how-are-assets-stored-and-managed" href="#how-are-assets-stored-and-managed" class="heading-permalink" title="Permalink"></a></h2>
 <p>The frontend assets are separated into three places.</p>
 <ul>
 <li>
@@ -408,23 +412,23 @@ all asset files here will get copied as they are into the <code>_site/media</cod
 <p>The <code>_site/media</code> folder contains the files that are served to the user.</p>
 </li>
 </ul>
-<h3>What is the difference between <code>_media</code> and <code>_site/media</code>?<a id="what-is-the-difference-between-media-and-sitemedia" href="#what-is-the-difference-between-media-and-sitemedia" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>What is the difference between <code>_media</code> and <code>_site/media</code>?<a id="what-is-the-difference-between-media-and-sitemedia" href="#what-is-the-difference-between-media-and-sitemedia" class="heading-permalink" title="Permalink"></a></h3>
 <p>It may seem weird to have two folders for storing the compiled assets, but it is quite useful.</p>
 <p>The <code>_site</code> directory is intended to be excluded from version control, while the <code>_media</code> folder is included in the
 version control. You are of course free to modify this behaviour by editing the <code>webpack.mix.js</code> file to change the output directory.</p>
-<h2>How do I compile assets?<a id="how-do-i-compile-assets" href="#how-do-i-compile-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>How Do I Compile assets?<a id="how-do-i-compile-assets" href="#how-do-i-compile-assets" class="heading-permalink" title="Permalink"></a></h2>
 <p>First, make sure that you have installed all the NodeJS dependencies using <code>npm install</code>.
 Then run <code>npm run dev</code> to compile the assets. If you want to compile the assets for production, run <code>npm run prod</code>.
 You can also run <code>npm run watch</code> to watch for changes in the source files and recompile the assets automatically.</p>
-<h3>How does it work?<a id="how-does-it-work" href="#how-does-it-work" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>How does it work?<a id="how-does-it-work" href="#how-does-it-work" class="heading-permalink" title="Permalink"></a></h3>
 <p>Hyde uses <a href="https://laravel-mix.com/">Laravel Mix</a> (which is a wrapper for <a href="https://webpack.js.org/">Webpack</a>) to compile the assets.</p>
 <p>When running the <code>npm run dev/prod</code> command, the following happens:</p>
 <ol>
 <li>Laravel Mix will compile the <code>resources/assets/app.css</code> file into <code>_media/app.css</code> using PostCSS with TailwindCSS and AutoPrefixer.</li>
 <li>Mix then copies the <code>_media</code> folder into <code>_site/media</code>, this is so that they are automatically accessible to your site without having to rerun <code>php hyde build</code>.</li>
 </ol>
-<h2>Telling Hyde where to find assets<a id="telling-hyde-where-to-find-assets" href="#telling-hyde-where-to-find-assets" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
-<h3>Customizing the Blade templates<a id="customizing-the-blade-templates" href="#customizing-the-blade-templates" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h2>Telling Hyde where to find assets<a id="telling-hyde-where-to-find-assets" href="#telling-hyde-where-to-find-assets" class="heading-permalink" title="Permalink"></a></h2>
+<h3>Customizing the Blade templates<a id="customizing-the-blade-templates" href="#customizing-the-blade-templates" class="heading-permalink" title="Permalink"></a></h3>
 <p>To make it really easy to customize asset loading, the styles and scripts are loaded in dedicated Blade components.</p>
 <ul>
 <li>Styles are loaded in <code>hyde::layouts.styles</code>
@@ -433,13 +437,13 @@ You can also run <code>npm run watch</code> to watch for changes in the source f
 </li>
 </ul>
 <p>To customize them, run the following command:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">layouts</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">layouts</span></div></code></pre>
 <p>Then edit the files found in <code>resources/views/vendor/hyde/layouts</code> directory of your project.</p>
-<h3>You might not even need to do anything!<a id="you-might-not-even-need-to-do-anything" href="#you-might-not-even-need-to-do-anything" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>You might not even need to do anything!<a id="you-might-not-even-need-to-do-anything" href="#you-might-not-even-need-to-do-anything" class="heading-permalink" title="Permalink"></a></h3>
 <p>For the absolute majority of the cases, you don't need to mess with these files. Hyde will automatically load the app.css file when it exists in the <code>_media</code> directory.</p>
-<h4>Loading from CDN<a id="loading-from-cdn" href="#loading-from-cdn" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Loading from CDN<a id="loading-from-cdn" href="#loading-from-cdn" class="heading-permalink" title="Permalink"></a></h4>
 <p>If you want to load the same pre-compiled file included with Hyde but from a CDN, you can set <code>load_app_styles_from_cdn</code> to <code>true</code> in the <code>config/hyde.php</code> file. While you lose the ability to customize it, your styles will be automatically updated when needed, as the installed Framework version will automatically specify the correct version to load.</p>
-<h3>Using the TailwindCSS Play CDN<a id="using-the-tailwindcss-play-cdn" href="#using-the-tailwindcss-play-cdn" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Using the TailwindCSS Play CDN<a id="using-the-tailwindcss-play-cdn" href="#using-the-tailwindcss-play-cdn" class="heading-permalink" title="Permalink"></a></h3>
 <blockquote class="warning"><p>Note that the Play CDN is not meant for production use, so enabling it will add a warning to the web console.</p></blockquote>
 <p>If you want to use the <a href="https://tailwindcss.com/docs/installation/play-cdn">TailwindCSS Play CDN</a>, all you need to do is
 set <code>use_play_cdn</code> to <code>true</code> in the <code>config/hyde.php</code> file. This will in addition to loading the standard <code>app.css</code> file,
@@ -447,10 +451,10 @@ also add a script tag which loads the TailwindCSS Play CDN.</p>
 <p>What's even better is that Hyde will also inject the contents of the included <code>tailwind.config.js</code> file into the script tag,
 so the Play CDN styles match the ones created by Laravel Mix.</p>
 <p>All in all, this allows you to tinker around with Tailwind without having to compile anything.</p>
-<h2>Managing images<a id="managing-images" href="#managing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Managing Images<a id="managing-images" href="#managing-images" class="heading-permalink" title="Permalink"></a></h2>
 <p>As mentioned above, assets stored in the _media folder are automatically copied to the _site/media folder,
 making it the recommended place to store images. You can then easily reference them in your Markdown files.</p>
-<h3>Referencing images<a id="referencing-images" href="#referencing-images" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Referencing images<a id="referencing-images" href="#referencing-images" class="heading-permalink" title="Permalink"></a></h3>
 <p>The recommended way to reference images is with relative paths as this offers the most compatibility,
 allowing you to browse the site both locally on your filesystem and on the web when serving from a subdirectory.</p>
 <blockquote class="warning"><p>Note: The path is relative to the <b>compiled</b> file in the site output</p></blockquote>
@@ -464,10 +468,10 @@ allowing you to browse the site both locally on your filesystem and on the web w
 </li>
 <li>You can of course also use full URLs, for example when using a CDN.</li>
 </ul>
-<h4>Making images accessible<a id="making-images-accessible" href="#making-images-accessible" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Making images accessible<a id="making-images-accessible" href="#making-images-accessible" class="heading-permalink" title="Permalink"></a></h4>
 <p>To improve accessibility, you should always add an <code>alt</code> text. Here is a full example including an image in a blog post:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> # Note the relative path</span></div></code></pre>
-<h3>Setting a featured image for blog posts<a id="setting-a-featured-image-for-blog-posts" href="#setting-a-featured-image-for-blog-posts" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> # Note the relative path</span></div></code></pre>
+<h3>Setting a featured image for blog posts<a id="setting-a-featured-image-for-blog-posts" href="#setting-a-featured-image-for-blog-posts" class="heading-permalink" title="Permalink"></a></h3>
 <p>Hyde offers great support for creating data-rich and accessible featured images for blog posts.</p>
 <p>You can read more about this on the <a href="blog-posts#image">creating blog posts page</a>.</p>
     </section>
@@ -516,7 +520,7 @@ allowing you to browse the site both locally on your filesystem and on the web w
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -541,8 +545,7 @@ allowing you to browse the site both locally on your filesystem and on the web w
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -553,7 +556,7 @@ allowing you to browse the site both locally on your filesystem and on the web w
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

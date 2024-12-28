@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.4.2">
+<meta name="generator" content="HydePHP 1.7.3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=8a9888dbc133a4fb721ab9ec108e8d88">
+    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
 
 
 
@@ -174,7 +174,7 @@
 </ul>
 </li>
 <li>
-<a href="#when-to-use-which">When to use which?</a>
+<a href="#when-to-use-which">When to Use Which?</a>
 <ul>
 <li>
 <a href="#comparison">Comparison</a>
@@ -234,6 +234,10 @@
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Helpers and Utilities
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
@@ -361,16 +365,16 @@
         <h1>Creating Static Pages</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction to Hyde Pages<a id="introduction-to-hyde-pages" href="#introduction-to-hyde-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+        <h2>Introduction to Hyde Pages<a id="introduction-to-hyde-pages" href="#introduction-to-hyde-pages" class="heading-permalink" title="Permalink"></a></h2>
 <p>Hyde offers two ways to create static pages:
 <strong>Markdown pages</strong> which are perfect for simple pages that focus heavily on the content,
 and <strong>Blade pages</strong> which are perfect for more complex pages where you want full control over the HTML,
 and where you may want to include other components or want to use dynamic PHP code.</p>
 <p>Let's start with the basics.</p>
-<h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" title="Permalink"></a></h3>
 <p>Since Hyde does a lot of things automatically, there are some things you may need
 to keep in mind when creating blog posts so that you don't get unexpected results.</p>
-<h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>Hyde Pages are files stored in the <code>_pages</code> directory</li>
 <li>The filename is used as the filename for the compiled HTML</li>
@@ -380,23 +384,23 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 </li>
 <li>Blade pages will override any Markdown pages with the same filename when compiled</li>
 </ul>
-<h2>Creating Markdown Pages<a id="creating-markdown-pages" href="#creating-markdown-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Creating Markdown Pages<a id="creating-markdown-pages" href="#creating-markdown-pages" class="heading-permalink" title="Permalink"></a></h2>
 <p>Markdown pages are the easiest way to create static pages. You can create a Markdown page by adding a file to the
 <code>_pages</code> directory where the filename ends in <code>.md</code>. You can also use <a href="front-matter">Front Matter</a> to add page metadata.</p>
-<h3>Scaffolding Markdown Pages<a id="scaffolding-markdown-pages" href="#scaffolding-markdown-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Scaffolding Markdown Pages<a id="scaffolding-markdown-pages" href="#scaffolding-markdown-pages" class="heading-permalink" title="Permalink"></a></h3>
 <p>Scaffolding a Markdown page is as easy as using the <a href="console-commands">HydeCLI</a>.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This will create the following file saved as <code>_pages/page-title.md</code></p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Page Title</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Page Title</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #A6ACCD;">// Write your content here</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Page Title</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Page Title</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">// Write your content here</span></div></code></pre>
 <p>You can of course also create the file yourself with your text editor.</p>
-<h3>Front Matter is optional<a id="front-matter-is-optional" href="#front-matter-is-optional" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Front Matter is optional<a id="front-matter-is-optional" href="#front-matter-is-optional" class="heading-permalink" title="Permalink"></a></h3>
 <p>The most common front matter used for Markdown pages is the title, which is used as the HTML <code>&lt;title&gt;</code>.</p>
 <p>If you don't supply a front matter title, Hyde will attempt to find a title in the Markdown body by searching
 for the first level one heading (<code># Page Title</code>), and if that fails, it will generate one from the filename.</p>
-<h4>Navigation Front Matter<a id="navigation-front-matter" href="#navigation-front-matter" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h4>
+<h4>Navigation Front Matter<a id="navigation-front-matter" href="#navigation-front-matter" class="heading-permalink" title="Permalink"></a></h4>
 <p>Furthermore, you can customize how the page appears in the navigation menu using the following front matter options.
 You can set just one or all of them, as Hyde will fill in the gaps for the rest.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">int</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">bool</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">int</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">bool</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div></code></pre>
 <ul>
 <li>
 <code>label</code> is the text that will be displayed in the navigation menu</li>
@@ -407,30 +411,30 @@ You can set just one or all of them, as Hyde will fill in the gaps for the rest.
 <li>
 <code>group</code> will put the page in a dropdown menu with the specified group name (<code>category</code>) is also supported)</li>
 </ul>
-<h2>Creating Blade Pages<a id="creating-blade-pages" href="#creating-blade-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Creating Blade Pages<a id="creating-blade-pages" href="#creating-blade-pages" class="heading-permalink" title="Permalink"></a></h2>
 <p>Since Hyde is based on Laravel and uses the powerful Blade templating engine, you can use Blade pages to create more
 complex pages with both standard HTML, PHP code, and the templating opportunities provided by Blade directives.</p>
 <p>If you are not familiar with Blade, you may want to read <a href="https://laravel.com/docs/10.x/blade">the Laravel Blade docs</a> first.</p>
-<h3>Scaffolding Blade Pages<a id="scaffolding-blade-pages" href="#scaffolding-blade-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Scaffolding Blade Pages<a id="scaffolding-blade-pages" href="#scaffolding-blade-pages" class="heading-permalink" title="Permalink"></a></h3>
 <p>We can scaffold Blade pages using the same CLI command as Markdown pages, however, this time we need to specify that
 we want to use the <code>blade</code> page type, by using the <code>--type</code> option.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">blade</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">blade</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This will create a file saved as <code>_pages/page-title.blade.php</code></p>
 <p>You can of course also create the file yourself with your text editor, however,
 the scaffolding command for Blade pages is arguably even more helpful than the
 one for Markdown pages, as this one automatically adds the included app Layout.</p>
 <p>Let's take a look at the scaffolded file. You can also copy and paste this
 if you don't want to use the scaffolding command.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">1</span><span style="color: #89DDFF;">@extends</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::layouts.app</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">2</span><span style="color: #89DDFF;">@section</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">content</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">3</span><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">4</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">5</span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">mx-auto max-w-7xl py-16 px-8</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">6</span><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center text-3xl font-bold</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Page Title</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">7</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">8</span>&nbsp;</div><div class='line'><span style="color:#3A3F58; text-align: right; -webkit-user-select: none; user-select: none;" class="line-number">9</span><span style="color: #89DDFF;">@endsection</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@extends</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::layouts.app</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@section</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">content</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">mx-auto max-w-7xl py-16 px-8</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center text-3xl font-bold</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Page Title</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@endsection</span></div></code></pre>
 <blockquote>
 <p>Tip: You don't have to use Blade in Blade pages. It's also perfectly fine to use plain HTML,
 however you still need to use the <code>blade.php</code> extension so Hyde can recognize it.</p>
 </blockquote>
-<h2>When to use which?<a id="when-to-use-which" href="#when-to-use-which" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>When to Use Which?<a id="when-to-use-which" href="#when-to-use-which" class="heading-permalink" title="Permalink"></a></h2>
 <p>Markdown pages look great and work well for simple &quot;about&quot; pages and the like, but with Markdown we are still pretty limited.</p>
 <p>If you are comfortable with it and have the need for it, use Blade to create more complex pages! And mix and match between them!
 Some page types are better suited for Markdown, and others for Blade. Don't limit yourself to just one type.</p>
-<h3>Comparison<a id="comparison" href="#comparison" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Comparison<a id="comparison" href="#comparison" class="heading-permalink" title="Permalink"></a></h3>
 <table>
 <thead>
 <tr>
@@ -469,10 +473,10 @@ Some page types are better suited for Markdown, and others for Blade. Don't limi
 </tr>
 </tbody>
 </table>
-<h3>Live Demos<a id="live-demos" href="#live-demos" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h3>
+<h3>Live Demos<a id="live-demos" href="#live-demos" class="heading-permalink" title="Permalink"></a></h3>
 <p>The Hyde website (<a href="https://hydephp.com/">hydephp.com</a>) uses both Markdown and Blade pages. The homepage for example, is a Blade page and uses a bunch of custom HTML.</p>
 <p>A great example of a Markdown page can be found at <a href="https://hydephp.github.io/portfolio-demo">hydephp.github.io/portfolio-demo</a>, you can see the <a href="https://github.com/hydephp/portfolio-demo/blob/master/_pages/index.md">page source here on GitHub</a>.</p>
-<h2>Bonus: Creating HTML Pages<a id="bonus-creating-html-pages" href="#bonus-creating-html-pages" class="heading-permalink" aria-hidden="true" title="Permalink">#</a></h2>
+<h2>Bonus: Creating HTML Pages<a id="bonus-creating-html-pages" href="#bonus-creating-html-pages" class="heading-permalink" title="Permalink"></a></h2>
 <p>If you have an already created <code>HTML</code> page, simply drop it into the <code>_pages</code> directory and Hyde will copy it over as it is
 into the <code>_site</code> directory. Like all other Hyde pages, the page will show up in the navigation menu using a title parsed from the filename.
 You won't be able to change any settings with front matter, however.</p>
@@ -522,7 +526,7 @@ You won't be able to change any settings with front matter, however.</p>
 <div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
      class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
     <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800  z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
+           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
         <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
             <strong>Search the documentation site</strong>
             <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
@@ -547,8 +551,7 @@ You won't be able to change any settings with front matter, however.</p>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" title="Click to close search window"
-         class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
 </div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
 <script>
     window.addEventListener('load', function () {
@@ -559,7 +562,7 @@ You won't be able to change any settings with front matter, however.</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=9eae167c2ec5b0bbe5060550372e64ff"></script>
+    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

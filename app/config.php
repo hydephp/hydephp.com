@@ -102,8 +102,9 @@ return [
         'MarkdownPage' => \Hyde\Pages\MarkdownPage::class,
         'MarkdownPost' => \Hyde\Pages\MarkdownPost::class,
         'DocumentationPage' => \Hyde\Pages\DocumentationPage::class,
-        'DataCollections' => \Hyde\Support\DataCollections::class,
+        'DataCollections' => \App\Extend\DataCollections::class,
         'Includes' => \Hyde\Support\Includes::class,
+        'Feature' => \Hyde\Enums\Feature::class,
     ],
 
 ];

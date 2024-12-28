@@ -4,10 +4,10 @@
 			Latest Posts
 		</h2>
 		<p class="sm:text-center text-lg mx-auto mt-4 mb-8">
-			Here are the latest posts from the Hyde Blog! Fully created using Hyde, of course!
+			Here are the latest posts from the Hyde Blog, fully created using Hyde, of course.
 		</p>
 	</header>
-	<div class="max-w-xl mx-auto px-8">
+	<div class="max-w-xl md:max-w-2xl mx-auto px-8">
 		@foreach(MarkdownPost::getLatestPosts()->where(fn ($post) => $post->matter('hiddenFromHomepage') !== true)->take(3) as $post)
 		@include('hyde::components.article-excerpt')
 		@endforeach
@@ -19,5 +19,4 @@
 		</p>
 	</footer>
 	<svg class="absolute bottom-0 w-full text-gray-100  dark:text-slate-900 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg"><path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z" /></svg>
-
 </section>

@@ -1,7 +1,7 @@
 ---
 navigation:
-    label: "Customizing your Site"
-    priority: 25
+  label: "Customizing your Site"
+  priority: 25
 ---
 
 # Customizing Your Site
@@ -202,8 +202,6 @@ While the most robust way to add custom HTML to the head or body of your site is
 you can also add custom HTML directly in the configuration file. This works especially well to quickly add things like analytics widgets or similar in the `hyde.yml` file, though the possibilities are endless.
 
 To add custom HTML to your layouts, you can use the `head` and `scripts` configuration options in the `config/hyde.php` file (or the `hyde.yml` file).
-The HTML will be added to the `<head>` section, or just before the closing `</body>` tag, respectively.
-Note that the HTML is added to all pages. If you need to add HTML to a specific page, you will need to override the layout for that page.
 
 ```php
 // filepath: config/hyde.php
@@ -213,11 +211,15 @@ Note that the HTML is added to all pages. If you need to add HTML to a specific 
 
 ```yaml
 # filepath: hyde.yml
-
 hyde:
   head: "<!-- Custom HTML in the head -->"
   scripts: "<!-- Custom HTML in the body -->"
 ```
+
+The HTML will be added to the `<head>` section, or just before the closing `</body>` tag, respectively.
+
+Note that the HTML is added to all pages. If you need to add HTML to a specific page, you will need to override the layout for that page.
+
 
 You can of course also add multiple lines of HTML:
 

@@ -8,98 +8,42 @@
 		<h1 class="text-center mb-5 text-2xl font-black leading-tight xl:text-4xl">Live Demos</h1>
 		<div class="prose dark:prose-invert mx-auto text-center">
 			<p class="lead mb-3">Wondering what a HydePHP site looks like?</p>
-			<p class="mt-3">
-				Here are some live demo websites built with Hyde that you can try out!
+			<p class="mt-3 max-w-2xl mx-auto">
+				While each HydePHP site is unique and fully customizable to your needs, here are some inspiring examples of what talented developers and designers have built with Hyde.
 			</p>
 		</div>
 	</header>
 
-
-	<div class="flex flex-col items-center justify-center py-10 sm:flex-row">
-		<div class="py-4 sm:px-6 w-96 max-w-full">
-			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-				<a href="https://hydephp.github.io/documentation-demo"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-																		src="/media/documentation-demo-composite-light-min.png"></a>
-				<div class="px-6 pt-4 mb-2 text-xl font-bold">
-					<span>Lorem Documentum</span>
-				</div>
-				<div class="px-6 pt-2">
-					<small>By HydePHP.com | 2023-11-05</small>
-					<div class="overflow-hidden h-16 mt-2">An example documentation site built with Markdown and HydePHP</div>
-				</div>
-				<div class="px-6 pb-4 text-center mt-3">
-					<a href="https://github.com/hydephp/documentation-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a href="https://hydephp.github.io/documentation-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
-				</div>
-			</div>
-		</div>
-		<div class="py-4 sm:px-6 w-96 max-w-full">
-			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-				<a href="https://hydephp.github.io/portfolio-demo"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-					src="/media/portfolio-composite-min.png"></a>
-				<div class="px-6 pt-4 mb-2 text-xl font-bold">
-					<span>Markdown Portfolio Site</span>
-				</div>
-				<div class="px-6 pt-2">
-					<small>By HydePHP.com | 2022-07-15</small>
-					<div class="overflow-hidden h-16 mt-2">A simple one-page photography portfolio made with Markdown.</div>
-				</div>
-				<div class="px-6 pb-4 text-center mt-3">
-					<a href="https://github.com/hydephp/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a href="https://hydephp.github.io/portfolio-demo" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+	<div class="flex flex-col flex-wrap items-center justify-center py-10 sm:flex-row">
+		@foreach(\App\Extend\DataCollections::yaml('demos') as $demo)
+			<?php /** @var \App\DataCollections\Types\Demos $demo */ ?>
+			<div class="py-4 sm:px-6 min-w-[280px] w-96 max-w-full">
+				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+					<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener">
+						<img class="h-56 rounded-t-lg m-0 w-full" alt="Website screenshot" src="{{ Hyde::asset($demo->image) }}">
+					</a>
+					<div class="px-6 pt-4 mb-2 text-xl font-bold">
+						<span>{{ $demo->title }}</span>
+					</div>
+					<div class="px-6 pt-2">
+						<small>By {{ $demo->author }} | {{ \Carbon\Carbon::parse($demo->date)->format('Y-m-d') }}</small>
+						<div class="overflow-hidden h-16 mt-2">{{ $demo->description }}</div>
+					</div>
+					<div class="px-6 pb-4 text-center mt-3">
+						@if($demo->source)
+							<a href="{{ $demo->source }}?ref=hydephp.com" rel="nofollow noopener" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
+						@endif
+						<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="py-4 sm:px-6 w-96 max-w-full">
-			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-				<a href="https://hydephp.com/"><img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-					src="/media/hydephp-com-composite-min.png"></a>
-				<div class="px-6 pt-4 mb-2 text-xl font-bold">
-					<span>HydePHP.com</span>
-				</div>
-				<div class="px-6 pt-2">
-					<small>By HydePHP.com | 2022-06-22</small>
-					<div class="overflow-hidden h-16 mt-2">The very same site you are currently browsing!</div>
-				</div>
-				<div class="px-6 pb-4 text-center mt-3">
-					<a href="https://github.com/hydephp/hydephp.com" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a href="https://hydephp.com/" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
-				</div>
-			</div>
-		</div>
-        
-		{{-- 
-        
-            TEMPLATE FOR ADDING NEW DEMOS
-            1. Copy the entire div below
-            2. Paste it above the closing div tag
-            3. Update the image, title, description, and links
-            
-        <div class="py-4 sm:px-6 w-96 max-w-full">
-			<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-				<img class="h-56 rounded-t-lg m-0 w-full" alt="article image"
-					src="/media/your-image-here.png">
-				<div class="px-6 pt-4 mb-2 text-xl font-bold">
-					<span>Website Name</span>
-				</div>
-				<div class="px-6 pt-2">
-					<small>John Doe | 2022-01-01</small>
-					<div class="overflow-hidden h-16 mt-2">A short description of the site. Maybe a sentence or two.</div>
-				</div>
-				<div class="px-6 pb-4 text-center mt-3">
-					<a href="https://github.com/username/repository" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-gray-400 dark:bg-gray-500 rounded-full">GitHub Source Code</a>
-					<a href="https://example.com" class="inline-block px-3 py-1 my-1 mr-2 text-sm font-semibold text-white bg-indigo-500 dark:bg-indigo-400 rounded-full">Live Demo</a>
-				</div>
-			</div>
-		</div>
-        
-        --}}
+		@endforeach
 	</div>
 	<footer>
 		<div class="prose dark:prose-invert mx-auto text-center">
-			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/edit/master/_pages/demos.blade.php">Make a pull request</a>!</p>
+			<p>Have an idea for a demo? Want to submit yours? <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/demos" rel="nofollow">Make a pull request</a>!</p>
+			<p><b>Tip:</b> Also make sure to tag your site with <a href="https://x.com/search?q=%23MadeWithHydePHP" rel="nofollow">#MadeWithHydePHP</a> when sharing your creations on social media!</p>
 		</div>
 	</footer>
 </main>
-
 @endsection
