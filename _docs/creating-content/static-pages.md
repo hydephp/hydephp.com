@@ -18,7 +18,7 @@ Let's start with the basics.
 ### Best Practices and Hyde Expectations
 
 Since Hyde does a lot of things automatically, there are some things you may need
-to keep in mind when creating blog posts so that you don't get unexpected results.
+to keep in mind when creating pages so that you don't get unexpected results.
 
 #### Filenames
 
@@ -28,7 +28,6 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 - Files prefixed with `_underscores` are ignored by Hyde
 - Your page will be stored in `_site/<identifier>.html`
 - Blade pages will override any Markdown pages with the same filename when compiled
-
 
 ## Creating Markdown Pages
 
@@ -82,7 +81,6 @@ navigation:
 - `hidden` will hide the page from the navigation menu (`visible`) is also supported, but obviously invert the value)
 - `group` will put the page in a dropdown menu with the specified group name (`category`) is also supported)
 
-
 ## Creating Blade Pages
 
 Since Hyde is based on Laravel and uses the powerful Blade templating engine, you can use Blade pages to create more
@@ -123,7 +121,6 @@ if you don't want to use the scaffolding command.
 > Tip: You don't have to use Blade in Blade pages. It's also perfectly fine to use plain HTML,
 > however you still need to use the `blade.php` extension so Hyde can recognize it.
 
-
 ## When to Use Which?
 
 Markdown pages look great and work well for simple "about" pages and the like, but with Markdown we are still pretty limited.
@@ -148,7 +145,6 @@ Some page types are better suited for Markdown, and others for Blade. Don't limi
 The Hyde website ([hydephp.com](https://hydephp.com/)) uses both Markdown and Blade pages. The homepage for example, is a Blade page and uses a bunch of custom HTML.
 
 A great example of a Markdown page can be found at [hydephp.github.io/portfolio-demo](https://hydephp.github.io/portfolio-demo), you can see the [page source here on GitHub](https://github.com/hydephp/portfolio-demo/blob/master/_pages/index.md).
-
 
 ## Bonus: Creating HTML Pages
 

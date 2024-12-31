@@ -1,10 +1,10 @@
 ---
 navigation:
-    label: "Customizing your Site"
-    priority: 25
+  label: "Customizing your Site"
+  priority: 25
 ---
 
-# Customizing your Site
+# Customizing Your Site
 
 ## Introduction
 
@@ -14,7 +14,6 @@ if you need it. This page guides you through the many options available!
 
 All the configuration files are stored in the config directory, and allow you to customize almost all aspects of your site.
 Each option is documented, so feel free to look through the files and get familiar with the options available to you.
-
 
 ## Accessing Configuration Values
 
@@ -58,7 +57,6 @@ In some cases, the same options can be set in the front matter of a page or in a
 When Hyde references files, especially when passing filenames between components, the file path is almost always
 relative to the root of the project. Specifying absolute paths yourself could lead to unforeseen problems.
 
-
 ## Configuration Files Overview
 
 There are a few configuration files available in the `config` directory. All options are documented, so feel free to look through the files and get familiar with the options available to you.
@@ -95,7 +93,6 @@ base HydePHP installation. However, you can publish them to your project by runn
 {.align-top}
 
 If any of these files are missing, you can run `php hyde publish:configs` to copy the default files to your project.
-
 
 ## Configuration Options
 
@@ -197,80 +194,51 @@ If you don't want to have a footer on your site, you can set the `'footer'` conf
 'footer' => 'false',
 ```
 
-[//]: # ()
-[//]: # (### Head and script HTML hooks)
+### Head and script HTML hooks
 
-[//]: # ()
-[//]: # (>info Note: The configuration options `head` and `scripts` were added in HydePHP v1.5. If you are running an older version, you need to use the Blade options, or upgrade your project.)
+>info Note: The configuration options `head` and `scripts` were added in HydePHP v1.5. If you are running an older version, you need to use the Blade options, or upgrade your project.
 
-[//]: # ()
-[//]: # (While the most robust way to add custom HTML to the head or body of your site is to publish the Blade layouts, or pushing to the `meta` or `scripts` stacks,)
+While the most robust way to add custom HTML to the head or body of your site is to publish the Blade layouts, or pushing to the `meta` or `scripts` stacks,
+you can also add custom HTML directly in the configuration file. This works especially well to quickly add things like analytics widgets or similar in the `hyde.yml` file, though the possibilities are endless.
 
-[//]: # (you can also add custom HTML directly in the configuration file. This works especially well to quickly add things like analytics widgets or similar in the `hyde.yml` file, though the possibilities are endless.)
+To add custom HTML to your layouts, you can use the `head` and `scripts` configuration options in the `config/hyde.php` file (or the `hyde.yml` file).
 
-[//]: # ()
-[//]: # (To add custom HTML to your layouts, you can use the `head` and `scripts` configuration options in the `config/hyde.php` file &#40;or the `hyde.yml` file&#41;.)
+```php
+// filepath: config/hyde.php
+'head' => '<!-- Custom HTML in the head -->',
+'scripts' => '<!-- Custom HTML in the body -->',
+```
 
-[//]: # (The HTML will be added to the `<head>` section, or just before the closing `</body>` tag, respectively.)
+```yaml
+# filepath: hyde.yml
+hyde:
+  head: "<!-- Custom HTML in the head -->"
+  scripts: "<!-- Custom HTML in the body -->"
+```
 
-[//]: # (Note that the HTML is added to all pages. If you need to add HTML to a specific page, you will need to override the layout for that page.)
+The HTML will be added to the `<head>` section, or just before the closing `</body>` tag, respectively.
 
-[//]: # ()
-[//]: # (```php)
+Note that the HTML is added to all pages. If you need to add HTML to a specific page, you will need to override the layout for that page.
 
-[//]: # (// filepath: config/hyde.php)
 
-[//]: # ('head' => '<!-- Custom HTML in the head -->',)
+You can of course also add multiple lines of HTML:
 
-[//]: # ('scripts' => '<!-- Custom HTML in the body -->',)
+```php
+// filepath: config/hyde.php
+'head' => <<<HTML
+    <!-- Custom HTML in the head -->
+    <link rel="stylesheet" href="https://example.com/styles.css">
+HTML,
+```
 
-[//]: # (```)
+```yaml
+# filepath: hyde.yml
 
-[//]: # ()
-[//]: # (```yaml)
-
-[//]: # (# filepath: hyde.yml)
-
-[//]: # (hyde:)
-
-[//]: # (  head: "<!-- Custom HTML in the head -->")
-
-[//]: # (  scripts: "<!-- Custom HTML in the body -->")
-
-[//]: # (```)
-
-[//]: # ()
-[//]: # (You can of course also add multiple lines of HTML:)
-
-[//]: # ()
-[//]: # (```php)
-
-[//]: # (// filepath: config/hyde.php)
-
-[//]: # ('head' => <<<HTML)
-
-[//]: # (    <!-- Custom HTML in the head -->)
-
-[//]: # (    <link rel="stylesheet" href="https://example.com/styles.css">)
-
-[//]: # (HTML,)
-
-[//]: # (```)
-[//]: # ()
-[//]: # (```yaml)
-
-[//]: # (# filepath: hyde.yml)
-
-[//]: # ()
-[//]: # (hyde:)
-
-[//]: # (  head: |)
-
-[//]: # (    <!-- Custom HTML in the head -->)
-
-[//]: # (    <link rel="stylesheet" href="https://example.com/styles.css">)
-
-[//]: # (```)
+hyde:
+  head: |
+    <!-- Custom HTML in the head -->
+    <link rel="stylesheet" href="https://example.com/styles.css">
+```
 
 ### Navigation Menu & Sidebar
 
@@ -292,7 +260,6 @@ Learn more in the [Navigation Menu](navigation) documentation.
 - When customizing the sidebar, can use the route key, or just the [page identifier](core-concepts#page-identifiers) of the page.
 
 Learn more in the [Documentation Pages](documentation-pages) documentation.
-
 
 ## Additional Advanced Options
 
@@ -382,13 +349,11 @@ php hyde publish:views
 
 The files will then be available in the `resources/views/vendor/hyde` directory.
 
-
 ## Frontend Styles
 
 Hyde is designed to not only serve as a framework but a whole starter kit and comes with a Tailwind starter template
 for you to get up and running quickly. If you want to customize these, you are free to do so.
 Please see the [Managing Assets](managing-assets) page to learn more.
-
 
 ## Markdown Configuration
 
@@ -452,7 +417,6 @@ arbitrary PHP code specified in Markdown to be executed. It's easy to enable how
 
 See the [Blade in Markdown](advanced-markdown#blade-support) documentation for more information on how to use this feature.
 
-
 ## YAML Configuration
 
 The settings in the `config/hyde.php` file can also be set by using a `hyde.yml` file in the root of your project directory.
@@ -465,6 +429,7 @@ Here is an example showing some of the `config/hyde.php` file settings, and how 
 
 ```yaml
 # filepath hyde.yml
+
 name: HydePHP
 url: "http://localhost"
 pretty_urls: false
@@ -487,6 +452,7 @@ This feature is automatically enabled when you have a `hyde:` entry **first** in
 
 ```yaml
 # filepath hyde.yml
+
 hyde:
   name: HydePHP
 

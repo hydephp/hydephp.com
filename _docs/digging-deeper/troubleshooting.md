@@ -5,12 +5,9 @@ navigation:
 
 # Troubleshooting
 
-Since Hyde has a lot of "magic" features which depend on some base assumptions,
-there might be some "gotchas" you might run into. Here are some I can think of,
-did you find a new one? Send a PR to [update the docs](https://github.com/hydephp/docs)!
+Since Hyde has a lot of "magic" features which depend on some base assumptions, there might be some "gotchas" you might run into. Here are some common issues you might encounter. Did you find a new one? Send a PR to [update the docs](https://github.com/hydephp/docs)!
 
 >info Tip: You can run `php hyde validate` to run a series of tests to help you catch common issues.
-
 
 ## General Tips
 
@@ -21,7 +18,6 @@ did you find a new one? Send a PR to [update the docs](https://github.com/hydeph
 2. You don't need to set an H1 heading in blog posts. The H1 is set by Hyde based on the front matter title.
 3. You never need front matter, though it is often useful.
    For example, Hyde makes attempts to guess the title for a page depending on the content. (Headings, filenames, etc).
-
 
 ## Conventions to Follow
 
@@ -44,7 +40,6 @@ Remember, files retain their base filenames when compiled to HTML.
 - ✔ **Do** use the proper file extensions
 - ❌ **Don't** use conflicting source file names
 
-
 ## Extra Information
 
 ### Definitions
@@ -66,7 +61,6 @@ We will use the following definitions to describe the behaviour of Hyde.
 - **Filepath**: The full file path including extension. Example: `_posts/hello-world.md`
 
 You can read more about some of these in the [Core Concepts](core-concepts#paths-identifiers-and-route-keys) article.
-
 
 ## Common Issues, Causes, and Solutions
 

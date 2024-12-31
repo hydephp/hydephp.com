@@ -10,7 +10,6 @@ navigation:
 
 Since HydePHP makes heavy use of Markdown, there are some extra features and helpers created just for Hyde to make using Markdown even easier and more powerful!
 
-
 ## Using Blade in Markdown
 
 A special feature in Hyde, is that you can use [Laravel Blade](https://laravel.com/docs/10.x/blade) in Markdown files!
@@ -48,7 +47,6 @@ However, if your Markdown is trusted, and you know it's safe, you can enable it 
 ### Limitations
 
 All shortcodes must be the first word on a new line, and only single-line shortcodes are supported.
-
 
 ## Coloured Blockquotes
 
@@ -108,7 +106,6 @@ The coloured blockquotes also support inline Markdown, just like normal blockquo
 
 Note that these currently do not support multi-line blockquotes.
 
-
 ## Code Block Filepaths
 
 When browsing these documentation pages you may have noticed a label in the top right corner of code blocks specifying the file path.
@@ -164,7 +161,6 @@ anything within the path label will be rendered as HTML. This means you can add 
 ### Limitations
 
 The filepaths are hidden on mobile devices using CSS to prevent them from overlapping with the code block.
-
 
 ## Configuration
 

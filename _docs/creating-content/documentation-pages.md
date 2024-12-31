@@ -24,7 +24,7 @@ saving you time and effort. For more information about this feature, see the [ex
 ### Best Practices and Hyde Expectations
 
 Since Hyde does a lot of things automatically, there are some things you may need
-to keep in mind when creating blog posts so that you don't get unexpected results.
+to keep in mind when creating documentation pages so that you don't get unexpected results.
 
 #### Filenames
 
@@ -40,7 +40,6 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 Like most of HydePHP, the Hyde Documentation module is highly customizable. Much of the frontend is composed using Blade templates and components, which you can customize to your heart's content.
 Since there are so many components, it's hard to list them all here in the documentation, so I encourage you to check out the [source code](https://github.com/hydephp/framework/tree/master/resources/views/components/docs) to see how it's all put together and find the customizations you are looking for.
 
-
 ## Creating Documentation Pages
 
 You can create a Documentation page by adding a file to the `_docs` directory where the filename ends in `.md`.
@@ -55,6 +54,7 @@ This will create the following file saved as `_docs/page-title.md`
 
 ```markdown
 # Page Title
+
 ```
 
 ### Front Matter is optional
@@ -75,7 +75,6 @@ navigation:
 ---
 ```
 
-
 ## Dynamic Content Generation
 
 Hyde makes documentation pages easy to create by automatically generating dynamic content such as the sidebar and page title.
@@ -93,7 +92,6 @@ and where the data is from as well as where it can be overridden.
 | `navigation.priority` (integer) | The priority of the page used for ordering the sidebar | Defaults to 999                     | Front matter, config |
 | `navigation.hidden` (boolean)   | Hides the page from the sidebar                        | _none_                              | Front matter, config |
 | `navigation.group` (string)     | The group the page belongs to in the sidebar           | Subdirectory, if nested             | Front matter         |
-
 
 ## Sidebar
 
@@ -169,7 +167,7 @@ For example, putting a Markdown file in `_docs/getting-started/`, is equivalent 
 
 >info Tip: When using subdirectory-based dropdowns, you can set their priority using the directory name as the array key.
 
-### Hiding items
+### Hiding Items
 
 You can hide items from the sidebar by adding the `hidden` property to the front matter:
 
@@ -181,7 +179,6 @@ navigation:
 This can be useful to create redirects or other items that should not be shown in the sidebar.
 
 >info The index page is by default not shown as a sidebar item, but instead is linked in the sidebar header. <br>
-
 
 ## Customization
 
@@ -276,7 +273,6 @@ If you set this to false, Hyde will match the directory structure of the source 
 'flattened_output_paths' => true,
 ```
 
-
 ## Search Feature
 
 ### Introduction
@@ -322,7 +318,6 @@ navigation menu items are hidden. The page will still be accessible as normal bu
 ### Live search with the realtime compiler
 
 The Realtime Compiler that powers the `php hyde serve` command will automatically generate a fresh search index each time the browser requests it.
-
 
 ## Automatic "Edit Page" Button
 
