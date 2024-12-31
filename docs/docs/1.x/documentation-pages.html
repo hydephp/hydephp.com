@@ -193,7 +193,7 @@
 <a href="#sidebar-footer-customization">Sidebar footer customization</a>
 </li>
 <li>
-<a href="#hiding-items">Hiding items</a>
+<a href="#hiding-items">Hiding Items</a>
 </li>
 </ul>
 </li>
@@ -437,7 +437,7 @@ labels, and even groups, of the sidebar items to suit your needs.</p>
 saving you time and effort. For more information about this feature, see the <a href="extensions#torchlight">extensions page</a>.</p>
 <h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" title="Permalink"></a></h3>
 <p>Since Hyde does a lot of things automatically, there are some things you may need
-to keep in mind when creating blog posts so that you don't get unexpected results.</p>
+to keep in mind when creating documentation pages so that you don't get unexpected results.</p>
 <h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>Hyde Documentation pages are files stored in the <code>_docs</code> directory</li>
@@ -544,7 +544,7 @@ Any pages without the group front matter will get put in the &quot;Other&quot; g
 <p>For example, putting a Markdown file in <code>_docs/getting-started/</code>, is equivalent to adding the same front matter seen above.</p>
 <blockquote class="info"><p>Note that when the <a href="#using-flattened-output-paths">flattened output paths</a> setting is enabled (which it is by default), the file will still be compiled to the <code>_site/docs/</code> directory like it would be if you didn't use the subdirectories. Note that this means that you can't have two documentation pages with the same filename as they overwrite each other.</p></blockquote>
 <blockquote class="info"><p>Tip: When using subdirectory-based dropdowns, you can set their priority using the directory name as the array key.</p></blockquote>
-<h3>Hiding items<a id="hiding-items" href="#hiding-items" class="heading-permalink" title="Permalink"></a></h3>
+<h3>Hiding Items<a id="hiding-items" href="#hiding-items" class="heading-permalink" title="Permalink"></a></h3>
 <p>You can hide items from the sidebar by adding the <code>hidden</code> property to the front matter:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div></code></pre>
 <p>This can be useful to create redirects or other items that should not be shown in the sidebar.</p>
