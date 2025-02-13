@@ -3,6 +3,7 @@ date: "2025-02-13 18:50"
 author: Caen
 description: "Caen, the creator of HydePHP was recently featured in a podcast from Laravel News. Check it out here!"
 title: "HydePHP Featured on Laravel News Creator Spotlight Podcast"
+category: news
 ---
 
 Hi everyone! I'm Caen, creator of HydePHP. I'm excited to share that I recently had the pleasure of being interviewed by Eric L. Barnes for the Laravel News Creator Spotlight series. During our conversation, we dove deep into HydePHP, discussing everything from its core features and benefits to the challenges and rewards of maintaining an open-source project.
