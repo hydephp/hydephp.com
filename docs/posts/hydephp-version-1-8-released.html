@@ -3,22 +3,27 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - Dashboard</title>
+<title>HydePHP - HydePHP Version 1.8.0 Released</title>
 
  
-<link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/dashboard">
-<meta name="twitter:title" content="HydePHP - Dashboard">
-<meta property="og:title" content="HydePHP - Dashboard">
+<link rel="canonical" href="https://hydephp.com/posts/hydephp-version-1-8-released">
+<meta name="description" content="Enhancing internationalization support and improving file handling in preparation for the v2 release.">
+<meta name="twitter:title" content="HydePHP - HydePHP Version 1.8.0 Released">
+<meta name="author" content="Caen">
+<meta name="keywords" content="releases">
+<meta name="url" content="https://hydephp.com/posts/hydephp-version-1-8-released">
+<meta property="og:description" content="Enhancing internationalization support and improving file handling in preparation for the v2 release.">
+<meta property="og:title" content="HydePHP - HydePHP Version 1.8.0 Released">
+<meta property="og:url" content="https://hydephp.com/posts/hydephp-version-1-8-released">
+<meta property="og:article:published_time" content="2025-05-17T12:00:00+00:00">
+<meta property="og:type" content="article">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="author" content="HydePHP">
-<meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
-<meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
 <meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
@@ -26,8 +31,6 @@
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:url" content="https://hydephp.com/">
-<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
@@ -38,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=a4e86d441fe9c1816ea99bd1a7b85acd">
+    <link rel="stylesheet" href="../media/app.css?v=a4e86d441fe9c1816ea99bd1a7b85acd">
 
 
 
@@ -57,8 +60,8 @@
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="./" class="font-bold px-4">
-	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+		<a aria-label="Home page link" href="../" class="font-bold px-4">
+	<img src="../media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
 		<div class="ml-auto">
@@ -93,17 +96,17 @@
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
 		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="./"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+					<a href="../"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="../about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="../demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="../posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
 					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
-		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>
@@ -112,244 +115,92 @@
  
 
     <section>
-        <section class="py-16 px-4 text-center bg-gray-100 dark:bg-slate-900">
-    <h2 class="text-2xl md:text-3-xl lg:text-4xl font-black text-slate-700 dark:text-slate-200 px-3 my-3">
-        HydePHP Statistics
-    </h2>
-    <p class="text-lg prose dark:prose-invert text-center mx-auto">
-        Data compiled 2025-05-17 15:26:23.
-        See more at <a href="https://packagist.org/packages/hyde/framework/stats">Packagist</a>
-        and the <a href="https://git.desilva.se/GitHubAnalyticsExplorer/">Open GitHub Data Analytics Explorer</a>
-    </p>
-    <div>
-        <!-- If anyone sees this source code, I'm sorry. Just something I bodged together. -->
-
-<div class="flex flex-wrap justify-center max-w-7xl mx-auto my-4 lg:my-8 items-stretch">
-	<div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md h-auto">
-		<div class="bg-white text-slate-900 p-4 pb-8 rounded-lg shadow-xl h-full relative">
-			<h3 class="font-bold text-2xl text-center mb-3 pb-3">Total Downloads</h3>
-			<strong id="counter-framework-downloads-total" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-600">
-				22,587
-			</strong>
-			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Total downloads for the Hyde/Framework package, counted by packagist.org 2025-05-17 15:26:24">&#9432;</span>
-		</div>
-	</div>
-	<div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md h-auto">
-		<div class="bg-white text-slate-900 p-4 pb-8 rounded-lg shadow-xl h-full relative">
-			<h3 class="font-bold text-2xl text-center mb-3 pb-3">Weekly GitHub Views</h3>
-			<strong id="weekly-views-total" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-600">
-				151
-			</strong>
-			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Average weekly data for hydephp/framework, hydephp/hyde, and hydephp/hydefront, based on the last week.">&#9432;</span>
-		</div>
-	</div>
-	<div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md h-auto">
-		<div class="bg-white text-slate-900 p-4 pb-8 rounded-lg shadow-xl h-full relative">
-			<h3 class="font-bold text-2xl text-center mb-3 pb-3">Lines of Code</h3>
-			<strong id="counter-lines-total" class="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-purple-500 to-red-600">
-				11,359
-			</strong>
-			<span class="opacity-75 hover:opacity-100 transition-opacity absolute top-4 right-4 cursor-help text-lg" title="Total lines of code in the Hyde monorepo, counted 2025-05-17 15:26:24">&#9432;</span>
-		</div>
-	</div>
-</div>
-
-<script>
-	// unless user has prefers reduced motion
-	if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-		var CounterFDTHasRun = false;
-		// Create a counter animation
-		function runCounterFDT() {
-			var counter = document.getElementById('counter-framework-downloads-total');
-			var count = counter.textContent;
-			var i = 0;
-			var interval = setInterval(function() {
-				if (i < count - 1000) {
-					i = i + 99;
-				} else if (i < count - 100) {
-					i = i + 9;
-				} else if (i < count - 50) {
-					i = i + 5;
-				} else {
-					i++;
-				}
-				counter.textContent = (new Intl.NumberFormat().format(i));
-				if (i >= count) {
-					clearInterval(interval);
-				}
-			}, 10);
-		}
-
-		// Run the counter animation when the element comes into view
-		var observer = new IntersectionObserver(function(entries) {
-			// isIntersecting is true when element and viewport are overlapping
-			// isIntersecting is false when element and viewport don't overlap
-			if(entries[0].isIntersecting === true)
-				if (CounterFDTHasRun === false) {
-					runCounterFDT();
-					CounterFDTHasRun = true;
-				}
-		}, { threshold: [0] });
-
-		observer.observe(document.querySelector("#counter-framework-downloads-total"));
-	}
-// unless user has prefers reduced motion
-if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-		var CounterWGVHasRun = false;
-		// Create a counter animation
-		function runCounterWGV() {
-			var counter = document.getElementById('weekly-views-total');
-			var count = counter.textContent;
-			var i = 0;
-			var interval = setInterval(function() {
-				if (i < count - 1000) {
-					i = i + 99;
-				} else if (i < count - 100) {
-					i = i + 9;
-				} else if (i < count - 50) {
-					i = i + 5;
-				} else {
-					i++;
-				}
-				counter.textContent = (new Intl.NumberFormat().format(i));
-				if (i >= count) {
-					clearInterval(interval);
-				}
-			}, 10);
-		}
-
-		// Run the counter animation when the element comes into view
-		var observer = new IntersectionObserver(function(entries) {
-			// isIntersecting is true when element and viewport are overlapping
-			// isIntersecting is false when element and viewport don't overlap
-			if(entries[0].isIntersecting === true)
-				if (CounterWGVHasRun === false) {
-					runCounterWGV();
-					CounterWGVHasRun = true;
-				}
-		}, { threshold: [0] });
-
-		observer.observe(document.querySelector("#weekly-views-total"));
-	}
-
-	// unless user has prefers reduced motion
-	if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-		var CounterLOCHasRun = false;
-		// Create a counter animation
-		function runCounterLOC() {
-			var counter = document.getElementById('counter-lines-total');
-			var count = counter.textContent;
-			var i = 0;
-			var interval = setInterval(function() {
-				if (i < count - 10000) {
-					i = i + 999;
-				} else if (i < count - 1000) {
-					i = i + 99;
-				} else if (i < count - 100) {
-					i = i + 9;
-				} else if (i < count - 50) {
-					i = i + 5;
-				} else {
-					i++;
-				}
-				counter.textContent = '~'+ (new Intl.NumberFormat().format(i));
-				if (i >= count) {
-					clearInterval(interval);
-				}
-			}, 10);
-		}
-
-		// Run the counter animation when the element comes into view
-		var observer = new IntersectionObserver(function(entries) {
-			// isIntersecting is true when element and viewport are overlapping
-			// isIntersecting is false when element and viewport don't overlap
-			if(entries[0].isIntersecting === true)
-				if (CounterLOCHasRun === false) {
-					runCounterLOC();
-					CounterLOCHasRun = true;
-				}
-		}, { threshold: [0] });
-
-		observer.observe(document.querySelector("#counter-lines-total"));
-	}
-
-	
-</script>    </div>
-</section>
-<section class="py-16 px-4 text-center">
-    <h2 class="text-2xl md:text-3-xl lg:text-4xl font-black text-slate-700 dark:text-slate-200 px-3 my-3">
-        Main Repositories
-    </h2>
-    <div class="flex flex-wrap justify-center max-w-7xl mx-auto my-4 lg:my-8">
-        <div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md">
-            <article class="bg-white text-slate-900 p-4 rounded-lg shadow-xl">
-                <header>
-                    <h3 class="font-bold text-2xl text-left border-b mb-3 pb-3">The Hyde Project Repo</h3>
-                    <a href="https://github.com/hydephp/hyde">
-                        <img src="https://opengraph.githubassets.com/1/hydephp/hyde"
-                            alt="Open Graph Image Repository Preview">
-                    </a>
-                </header>
-                <div class="py-4 prose">
-                    <p class="lead">
-                        The main repo for creating new projects and contains Hyde/Framework as a dependency.
-                    </p>
-                    <a href="https://packagist.org/packages/hyde/framework"><img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/hyde/framework?include_prereleases" alt="Latest Version on Packagist"></a> 
-                    <a href="https://packagist.org/packages/hyde/framework"><img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/dt/hyde/framework" alt="Total Downloads on Packagist"></a> 
-                    <a href="https://github.com/hydephp/hyde/blob/master/LICENSE.md"> <img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/github/license/hydephp/hyde" alt="License MIT"> </a>
-                    <a href="https://cdn.desilva.se/microservices/coverbadges/badges/9b8f6a9a7a48a2df54e6751790bad8bd910015301e379f334d6ec74c4c3806d1.svg"><img style="display: inline; margin: 4px 2px;" src="https://cdn.desilva.se/microservices/coverbadges/badges/9b8f6a9a7a48a2df54e6751790bad8bd910015301e379f334d6ec74c4c3806d1.svg" alt="Test Coverage" title="Average coverage between categories"></a>
-                    <a href="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml"><img style="display: inline; margin: 4px 2px;" src="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml/badge.svg" alt="Test Suite"></a>
-                </div>
-            </article>
-        </div>
         
-        <div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md">
-            <article class="bg-white text-slate-900 p-4 rounded-lg shadow-xl">
-                <header>
-                    <h3 class="font-bold text-2xl text-left border-b mb-3 pb-3">The Development Monorepo</h3>
-                    <a href="https://github.com/hydephp/develop">
-                        <img src="https://opengraph.githubassets.com/1/hydephp/develop"
-                            alt="Open Graph Image Repository Preview">
+    <main id="content" class="mx-auto max-w-7xl py-16 px-8">
+        <article aria-label="Article" id="hydephp-version-1-8-released" itemscope itemtype="https://schema.org/Article"
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    <meta itemprop="identifier" content="hydephp-version-1-8-released">
+            <meta itemprop="url" content="https://hydephp.com/posts/hydephp-version-1-8-released">
+    
+    <header aria-label="Header section" role="doc-pageheader">
+        <h1 itemprop="headline" class="mb-4">HydePHP Version 1.8.0 Released</h1>
+        <div id="byline" aria-label="About the post" role="doc-introduction">
+            Posted <time itemprop="dateCreated datePublished" datetime="2025-05-17T12:00:00+00:00" title="Saturday May 17th, 2025, at 12:00pm">May 17th, 2025</time>            by author
+<address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
+            <a href="https://twitter.com/CodeWithCaen" rel="author" itemprop="url" aria-label="The author's website">
+                        <span itemprop="name" aria-label="The author's name" title=@caen>Caen</span>
                     </a>
-                </header>
-                <div class="py-4 prose">
-                    <p class="lead">
-                        Where all the magic happens. Oh, and the occasional development.
-                    </p>
-
-                    <a href="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml"><img  style="display: inline; margin: 4px 2px;" src="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml/badge.svg" alt="Test &amp; Build" /></a>
-                        <a href="https://github.com/hydephp/framework/actions/workflows/run-tests.yml"><img  style="display: inline; margin: 4px 2px;" src="https://github.com/hydephp/framework/actions/workflows/run-tests.yml/badge.svg" alt="Framework Tests (Matrix)" /></a>
-                        <a href="https://github.com/hydephp/hyde/actions/workflows/run-tests.yml"><img  style="display: inline; margin: 4px 2px;" src="https://github.com/hydephp/hyde/actions/workflows/run-tests.yml/badge.svg" alt="Hyde Tests" /></a>
-                        <a href="https://codecov.io/gh/hydephp/develop"><img  style="display: inline; margin: 4px 2px;" src="https://codecov.io/gh/hydephp/develop/branch/master/graph/badge.svg?token=G6N2161TOT" alt="codecov" /></a>
-                </div>
-            </article>
-        </div>
-        
-        <div class="my-4 px-4 w-full md:w-1/2 xl:w-1/3 max-w-md">
-            <article class="bg-white text-slate-900 p-4 rounded-lg shadow-xl">
-                <header>
-                    <h3 class="font-bold text-2xl text-left border-b mb-3 pb-3">The Hyde Core Package</h3>
-                    <a href="https://github.com/hydephp/framework">
-                        <img src="https://opengraph.githubassets.com/1/hydephp/framework"
-                            alt="Open Graph Image Repository Preview">
-                    </a>
-                </header>
-                <div class="py-4 prose">
-                    <p class="lead">
-                        The core logic used for the Hyde Framework. Should be used together with Hyde/Hyde.
-                    </p>
-                    <a href="https://packagist.org/packages/hyde/framework"><img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/v/hyde/framework?include_prereleases" alt="Latest Version on Packagist"></a> 
-                    <a href="https://packagist.org/packages/hyde/framework"><img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/packagist/dt/hyde/framework" alt="Total Downloads on Packagist"></a> 
-                    <a href="https://github.com/hydephp/hyde/blob/master/LICENSE.md"> <img style="display: inline; margin: 4px 2px;" src="https://img.shields.io/github/license/hydephp/hyde" alt="License MIT"> </a>
-                    <a href="https://hydephp.com/developer-tools/coverage-report/"><img style="display: inline; margin: 4px 2px;" src="https://cdn.desilva.se/microservices/coverbadges/badges/9b8f6a9a7a48a2df54e6751790bad8bd910015301e379f334d6ec74c4c3806d1.svg" alt="Test Coverage" title="Average coverage between categories"></a>
-                    <a href="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml"><img style="display: inline; margin: 4px 2px;" src="https://github.com/hydephp/develop/actions/workflows/continuous-integration.yml/badge.svg" alt="Test Suite"></a>
-
-                </div>
-            </article>
-        </div>
+    </address>
+            in the category "releases"        </div>
+           </header>
+        <div aria-label="Article body" itemprop="articleBody">
+        <h2>Overview</h2>
+<p><strong>HydePHP v1.8.0 is now available for download!</strong></p>
+<p>The HydePHP team is excited to announce version 1.8.0, which introduces several significant improvements to internationalization support, file handling, and metadata management. As we approach the v2 release next month, this update sets the stage for a smooth transition by incorporating important refinements and deprecating legacy methods in favor of more consistent alternatives.</p>
+<h2>Key Improvements</h2>
+<h3>Enhanced Internationalization Support</h3>
+<p>One of the standout features in v1.8.0 is the improved internationalization support:</p>
+<ul>
+<li>A new slug generation helper automatically transliterates logographic characters to ASCII, making your site more accessible globally</li>
+<li>This ensures proper URL handling for content written in non-Latin scripts, fixing issues with logographic slug generation</li>
+</ul>
+<h3>Improved File Management</h3>
+<p>File handling receives significant enhancements in this release:</p>
+<ul>
+<li>A new <code>Filesystem::findFiles()</code> method provides a more robust alternative to PHP's native <code>glob()</code> function</li>
+<li>Internal usage of glob functions has been replaced with this improved file finder</li>
+<li>Fixed the &quot;BuildService finding non-existent files to copy in Debian&quot; issue</li>
+<li>Solved the &quot;Undefined constant <code>Hyde\Foundation\Kernel\GLOB_BRACE</code>&quot; error affecting some systems</li>
+</ul>
+<h3>Expanded Metadata Support</h3>
+<p>Content management is now more flexible:</p>
+<ul>
+<li>All page types now support the <code>description</code> front matter field for page metadata</li>
+<li>Metadata handling has been standardized across different page types for a more consistent experience</li>
+<li>Fixed URL metadata for blog posts not using customized post output directories</li>
+</ul>
+<h3>Better Media Support</h3>
+<p>Media handling has been improved in v1.8.0:</p>
+<ul>
+<li>Added <code>webp</code> to the list of default media extensions</li>
+<li>The new <code>Hyperlinks::isRemote()</code> helper method provides a reliable way to check if a URL is remote</li>
+<li>Remote URL checks have been normalized so that protocol-relative URLs (<code>//</code>) are consistently handled</li>
+</ul>
+<h2>Developer Experience Improvements</h2>
+<p>This release also includes several quality-of-life improvements for developers:</p>
+<ul>
+<li>The <code>cache:clear</code> command is now registered for easier cache management</li>
+<li>The <code>PostAuthor</code> class's <code>name</code> property now falls back to the <code>username</code> property if not set</li>
+<li>Improved accessibility of the heading permalinks feature</li>
+<li>Fixed heading permalinks button text showing in Google Search previews</li>
+<li>The Realtime Compiler dashboard layout has been improved for better usability</li>
+</ul>
+<h2>Preparing for v2</h2>
+<p>As we approach the v2 release next month, we've made several changes to ease the transition:</p>
+<ul>
+<li>The <code>Hyde</code> facade now uses a <code>@mixin</code> annotation instead of single method annotations</li>
+<li>The <code>PostAuthor::getName()</code> method is deprecated (use <code>$author-&gt;name</code> instead)</li>
+<li>The <code>FeaturedImage::isRemote()</code> method is deprecated in favor of the new <code>Hyperlinks::isRemote()</code> method</li>
+<li>The <code>Hyde::mediaLink()</code> method is deprecated in favor of the <code>Hyde::asset()</code> method</li>
+</ul>
+<h2>Upgrade Guide</h2>
+<p>We strongly recommend upgrading your existing projects to v1.8.0 to ensure a smoother transition to the upcoming v2 release. To upgrade, simply run:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">require</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/framework:^1.8</span></div></code></pre>
+<p>Check the <a href="https://hydephp.com/docs/1.x/updating-hyde">upgrade guide</a> documentation for more details on the update process.</p>
+<h2>Conclusion</h2>
+<p>HydePHP v1.8.0 strengthens the foundation of the framework by improving internationalization support, file handling, and metadata management. These enhancements not only make your current projects more robust but also prepare you for the exciting new features coming in version 2 next month.</p>
+<p>We encourage all users to upgrade to this latest version to take advantage of these improvements and ensure a seamless transition to v2 when it arrives.</p>
+<p>As always, we welcome your feedback and contributions to make HydePHP even better. Please report any issues you find on <a href="https://github.com/hydephp/hyde">GitHub</a>, and share your thoughts on Twitter/X using the hashtag <a href="https://twitter.com/search?q=%23HydePHP">#HydePHP</a> or by tagging us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
     </div>
-</section>
+    <span class="sr-only">End of article</span>
+</article>    </main>
+
  
     </section>
 
@@ -357,7 +208,7 @@ if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="./" class="flex items-center mr-4">
+				<a href="../" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -371,20 +222,20 @@ if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
-					<li><a href="community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Developer Resources
 					</a></li>
 					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
@@ -392,14 +243,14 @@ if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					
-					<li><a href="feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						RSS Feed
 					</a></li>
 				</ul>
@@ -446,7 +297,7 @@ if (! window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
