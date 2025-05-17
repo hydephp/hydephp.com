@@ -1,5 +1,5 @@
 ---
-title: 'HydePHP Version 1.8.0 Released'
+title: 'HydePHP v1.8 Released'
 description: "Enhancing internationalization support and improving file handling in preparation for the v2 release."
 category: releases
 author: Caen
@@ -8,9 +8,9 @@ date: '2025-05-17 12:00'
 
 ## Overview
 
-**HydePHP v1.8.0 is now available for download!**
+**HydePHP v1.8 is now available for download!**
 
-The HydePHP team is excited to announce version 1.8.0, which introduces several significant improvements to internationalization support, file handling, and metadata management. As we approach the v2 release next month, this update sets the stage for a smooth transition by incorporating important refinements and deprecating legacy methods in favor of more consistent alternatives.
+The HydePHP team is excited to announce version v1.8, which introduces several significant improvements to internationalization support, file handling, and metadata management. As we approach the v2 release next month, this update sets the stage for a smooth transition by incorporating important refinements and deprecating legacy methods in favor of more consistent alternatives.
 
 ## Key Improvements
 
