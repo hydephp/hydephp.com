@@ -32,8 +32,6 @@ directive to render a more complex Blade template. You can pass data to includes
  [Blade]: @include("hello", ["name" => "World"])
 ```
 
->warning Note that the includes are evaluated independently, so you cannot use features like `@push` or `@stack` in them.
-
 ### Enabling Blade-supported Markdown
 
 The feature is disabled by default since it allows arbitrary PHP to run, which could be a security risk, depending on your setup.

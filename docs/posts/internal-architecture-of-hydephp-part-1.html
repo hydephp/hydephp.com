@@ -10,11 +10,12 @@
 
 
 <link rel="canonical" href="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
-<meta name="twitter:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
 <meta name="description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
+<meta name="twitter:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
 <meta name="author" content="Caen">
 <meta name="keywords" content="deepdives">
 <meta name="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
+<meta property="og:description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
 <meta property="og:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
 <meta property="og:url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
 <meta property="og:article:published_time" content="2022-05-11T20:35:00+00:00">
@@ -24,14 +25,13 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../media/app.css?v=a4e86d441fe9c1816ea99bd1a7b85acd">
 
 
 
@@ -184,10 +184,8 @@
 <h3>Actions</h3>
 <p>Actions in Hyde are self-contained pieces of logic that are used to perform a specific singular task. They are often used to offload heavy lifting in Services. Actions are often named in a way that explains what they do. Here are some examples:</p>
 <ul>
-<li>
-<strong>ConvertsArrayToFrontMatter</strong>, which converts an array to a front matter string.</li>
-<li>
-<strong>GeneratesTableOfContents</strong>, which generates a table of contents from a markdown string.</li>
+<li><strong>ConvertsArrayToFrontMatter</strong>, which converts an array to a front matter string.</li>
+<li><strong>GeneratesTableOfContents</strong>, which generates a table of contents from a markdown string.</li>
 <li>You get the idea...</li>
 </ul>
 <h3>Services</h3>
@@ -195,12 +193,9 @@
 <p>They are often used similarly to Laravel facades, grouping related logic related to a concept into a single interface.</p>
 <p>Some examples of Hyde Services:</p>
 <ul>
-<li>
-<strong>AssetService</strong>, takes care of injecting the correct assets into the front-end.</li>
-<li>
-<strong>CollectionService</strong>, which contains helpers for working with lists and arrays.</li>
-<li>
-<strong>BuildService</strong>, which contains helpers used by static site generating components.</li>
+<li><strong>AssetService</strong>, takes care of injecting the correct assets into the front-end.</li>
+<li><strong>CollectionService</strong>, which contains helpers for working with lists and arrays.</li>
+<li><strong>BuildService</strong>, which contains helpers used by static site generating components.</li>
 </ul>
 <h4>Deep Dive into Services</h4>
 <p>To learn more about how Services are used, take a look at the <strong>Deep Dive into Services</strong> post (launching tomorrow).</p>
@@ -223,15 +218,9 @@
 <p>When running the static site builder, Hyde compiles each source directory at a time. The source directory a file is stored in determines what type of page it is, and subsequently which Page Model to use.</p>
 <p>There are currently three supported Markdown page types:</p>
 <ul>
-<li>
-<strong>Markdown Posts</strong>
-</li>
-<li>
-<strong>Markdown Pages</strong>
-</li>
-<li>
-<strong>Documentation Pages</strong>
-</li>
+<li><strong>Markdown Posts</strong></li>
+<li><strong>Markdown Pages</strong></li>
+<li><strong>Documentation Pages</strong></li>
 </ul>
 <p>All of these extend the <code>MarkdownDocument</code> base Model which provides common data for all Markdown pages, such as front matter, Markdown content, etc.</p>
 <h3>How page models are used to generate static pages</h3>

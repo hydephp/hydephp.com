@@ -12,7 +12,7 @@ jobs:
       url: https://ci.hydephp.com/previews/website/${{ github.event.pull_request.number }}
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - uses: actions/setup-node@v2
       with:
         node-version: '14'
@@ -22,7 +22,7 @@ jobs:
 
     - name: Cache Composer packages
       id: composer-cache
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       with:
         path: vendor
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
@@ -44,7 +44,7 @@ jobs:
       run: composer install
 
     - name: Cache node modules
-      uses: actions/cache@v3
+      uses: actions/cache@v4
       env:
         cache-name: cache-node-modules
       with:
