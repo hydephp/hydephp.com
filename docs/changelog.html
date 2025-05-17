@@ -124,6 +124,91 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <h2>About the release cycle</h2>
 <p>HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Development is made in the <a href="https://github.com/hydephp/develop">Hyde/Develop Monorepo</a>. Major and Minor release versions are made in the Develop project. These releases are synced to the Hyde and Framework projects, and are what this changelog file tracks. Patch release versions are made in the Framework and Hyde projects independently. See <a href="https://github.com/hydephp/develop#releases">https://github.com/hydephp/develop#releases</a> for more information.</p>
 <!-- CHANGELOG_START -->
+<h2><a href="https://github.com/hydephp/develop/releases/tag/1.8.0">1.8.0</a> - 2025-05-17</h2>
+<h3>Added</h3>
+<ul>
+<li>Updated the <code>HydeKernel</code> array representation to include the Hyde version in <a href="https://github.com/hydephp/develop/pull/1786">https://github.com/hydephp/develop/pull/1786</a>
+</li>
+<li>Registered the <code>cache:clear</code> command to make it easier to clear the cache in <a href="https://github.com/hydephp/develop/pull/1881">https://github.com/hydephp/develop/pull/1881</a>
+</li>
+<li>Added a new <code>Hyperlinks::isRemote()</code> helper method to check if a URL is remote in <a href="https://github.com/hydephp/develop/pull/1882">https://github.com/hydephp/develop/pull/1882</a>
+</li>
+<li>All page types now support the <code>description</code> front matter field (used in page metadata) in <a href="https://github.com/hydephp/develop/pull/1884">https://github.com/hydephp/develop/pull/1884</a>
+</li>
+<li>Added a new <code>Filesystem::findFiles()</code> method to find files in a directory in <a href="https://github.com/hydephp/develop/pull/2064">https://github.com/hydephp/develop/pull/2064</a>
+</li>
+<li>Added <code>webp</code> to the list of default media extensions in <a href="https://github.com/hydephp/framework/pull/663">https://github.com/hydephp/framework/pull/663</a>
+</li>
+<li>Added a new slug generation helper to improve internationalization support in <a href="https://github.com/hydephp/develop/pull/2070">https://github.com/hydephp/develop/pull/2070</a>
+</li>
+</ul>
+<h3>Changed</h3>
+<ul>
+<li>Changed the <code>Hyde</code> facade to use a <code>@mixin</code> annotation instead of single method annotations in <a href="https://github.com/hydephp/develop/pull/1919">https://github.com/hydephp/develop/pull/1919</a>
+</li>
+<li>Updated the <code>Serializable</code> trait to provide a default automatic <code>toArray</code> method in <a href="https://github.com/hydephp/develop/pull/1791">https://github.com/hydephp/develop/pull/1791</a>
+</li>
+<li>Updated the <code>PostAuthor</code> class's <code>name</code> property to fall back to the <code>username</code> property if the <code>name</code> property is not set in <a href="https://github.com/hydephp/develop/pull/1794">https://github.com/hydephp/develop/pull/1794</a>
+</li>
+<li>Removed the nullable type hint from the <code>PostAuthor</code> class's <code>name</code> property as it is now always set in <a href="https://github.com/hydephp/develop/pull/1794">https://github.com/hydephp/develop/pull/1794</a>
+</li>
+<li>Improved the accessibility of the heading permalinks feature in <a href="https://github.com/hydephp/develop/pull/1803">https://github.com/hydephp/develop/pull/1803</a>
+</li>
+<li>The <code>torchlight:install</code> command is now hidden from the command list as it's already installed in <a href="https://github.com/hydephp/develop/pull/1879">https://github.com/hydephp/develop/pull/1879</a>
+</li>
+<li>Updated the home page fallback link in the 404 template to lead to the site root in <a href="https://github.com/hydephp/develop/pull/1880">https://github.com/hydephp/develop/pull/1880</a> (fixes <a href="https://github.com/hydephp/develop/issues/1781">https://github.com/hydephp/develop/issues/1781</a>)</li>
+<li>Normalized remote URL checks so that protocol relative URLs <code>//</code> are consistently considered to be remote in all places in <a href="https://github.com/hydephp/develop/pull/1882">https://github.com/hydephp/develop/pull/1882</a> (fixes <a href="https://github.com/hydephp/develop/issues/1788">https://github.com/hydephp/develop/issues/1788</a>)</li>
+<li>Page slugs are now generated using our automatically internationalizing slug generator to transliterate input to ASCII in <a href="https://github.com/hydephp/develop/pull/2070">https://github.com/hydephp/develop/pull/2070</a>
+</li>
+<li>Replaced internal usages of glob functions with our improved file finder in <a href="https://github.com/hydephp/develop/pull/2064">https://github.com/hydephp/develop/pull/2064</a>
+</li>
+<li>Updated to HydeFront v3.4 in <a href="https://github.com/hydephp/develop/pull/1803">https://github.com/hydephp/develop/pull/1803</a>
+</li>
+<li>Realtime Compiler: Virtual routes are now managed through the service container in <a href="https://github.com/hydephp/develop/pull/1858">https://github.com/hydephp/develop/pull/1858</a>
+</li>
+<li>Realtime Compiler: Improved the dashboard layout in <a href="https://github.com/hydephp/develop/pull/1866">https://github.com/hydephp/develop/pull/1866</a>
+</li>
+<li>Realtime Compiler: Shorten the realtime compiler server start message from &quot;Press Ctrl+C to stop&quot; to &quot;Use Ctrl+C to stop&quot; to better fit 80 column terminals in <a href="https://github.com/hydephp/develop/pull/2017">https://github.com/hydephp/develop/pull/2017</a>
+</li>
+</ul>
+<h3>Deprecated</h3>
+<ul>
+<li>The <code>PostAuthor::getName()</code> method is now deprecated and will be removed in v2. (use <code>$author-&gt;name</code> instead) in <a href="https://github.com/hydephp/develop/pull/1794">https://github.com/hydephp/develop/pull/1794</a>
+</li>
+<li>Deprecated the <code>FeaturedImage::isRemote()</code> method in favor of the new <code>Hyperlinks::isRemote()</code> method in <a href="https://github.com/hydephp/develop/pull/1882">https://github.com/hydephp/develop/pull/1882</a>
+</li>
+<li>Deprecated the <code>Hyde::mediaLink()</code> method in favor of the <code>Hyde::asset()</code> method in <a href="https://github.com/hydephp/develop/pull/1993">https://github.com/hydephp/develop/pull/1993</a>
+</li>
+</ul>
+<h3>Fixed</h3>
+<ul>
+<li>Fixed Tailwind content paths for nested Blade pages in <a href="https://github.com/hydephp/develop/pull/2042">https://github.com/hydephp/develop/pull/2042</a>
+</li>
+<li>Added missing collection key types in Hyde facade method annotations in <a href="https://github.com/hydephp/develop/pull/1784">https://github.com/hydephp/develop/pull/1784</a>
+</li>
+<li>Fixed heading permalinks button text showing in Google Search previews <a href="https://github.com/hydephp/develop/issues/1801">https://github.com/hydephp/develop/issues/1801</a> in <a href="https://github.com/hydephp/develop/pull/1803">https://github.com/hydephp/develop/pull/1803</a>
+</li>
+<li>Fixed routing issues with nested 404 pages where an index page does not exist <a href="https://github.com/hydephp/develop/issues/1781">https://github.com/hydephp/develop/issues/1781</a> in <a href="https://github.com/hydephp/develop/pull/1880">https://github.com/hydephp/develop/pull/1880</a>
+</li>
+<li>Fixed URL metadata for blog posts not using customized post output directories in <a href="https://github.com/hydephp/develop/pull/1889">https://github.com/hydephp/develop/pull/1889</a>
+</li>
+<li>Fixed lacking support for logographic slug generation <a href="https://github.com/hydephp/hyde/issues/269">https://github.com/hydephp/hyde/issues/269</a> in <a href="https://github.com/hydephp/develop/pull/2070">https://github.com/hydephp/develop/pull/2070</a>
+</li>
+<li>Improved printed documentation views in <a href="https://github.com/hydephp/develop/pull/2005">https://github.com/hydephp/develop/pull/2005</a>
+</li>
+<li>Fixed &quot;BuildService finding non-existent files to copy in Debian&quot; <a href="https://github.com/hydephp/framework/issues/662">https://github.com/hydephp/framework/issues/662</a> in <a href="https://github.com/hydephp/develop/pull/2064">https://github.com/hydephp/develop/pull/2064</a>
+</li>
+<li>Fixed &quot;Undefined constant <code>Hyde\Foundation\Kernel\GLOB_BRACE</code>&quot; <a href="https://github.com/hydephp/hyde/issues/270">https://github.com/hydephp/hyde/issues/270</a> in <a href="https://github.com/hydephp/develop/pull/2064">https://github.com/hydephp/develop/pull/2064</a>
+</li>
+<li>Realtime Compiler: Updated the exception handler to match HTTP exception codes when sending error responses in <a href="https://github.com/hydephp/develop/pull/1853">https://github.com/hydephp/develop/pull/1853</a>
+</li>
+<li>Realtime Compiler: Improved routing for nested index pages in <a href="https://github.com/hydephp/develop/pull/1852">https://github.com/hydephp/develop/pull/1852</a>
+</li>
+<li>Realtime Compiler: Improved the dashboard <a href="https://github.com/hydephp/develop/pull/1866">https://github.com/hydephp/develop/pull/1866</a> fixing <a href="https://github.com/hydephp/realtime-compiler/issues/22">https://github.com/hydephp/realtime-compiler/issues/22</a> and <a href="https://github.com/hydephp/realtime-compiler/issues/29">https://github.com/hydephp/realtime-compiler/issues/29</a>
+</li>
+<li>Realtime Compiler: Fixed support for serving media assets in subdirectories <a href="https://github.com/hydephp/realtime-compiler/issues/26">https://github.com/hydephp/realtime-compiler/issues/26</a> in <a href="https://github.com/hydephp/develop/pull/1872">https://github.com/hydephp/develop/pull/1872</a>
+</li>
+</ul>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/1.7.0">1.7.0</a> - 2024-07-05</h2>
 <h3>Added</h3>
 <ul>
