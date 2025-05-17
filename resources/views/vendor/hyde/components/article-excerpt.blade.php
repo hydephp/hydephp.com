@@ -32,7 +32,11 @@
                 @endif
                 <span itemprop="name">
                     @if($post->author->website)
-                        <a href="{{ $post->author->website }}" class="hover:underline" rel="{{ $post->data('guest_post') ? 'author nofollow external' : 'author' }}" target="{{ $post->data('guest_post') ? '_blank' : '_self' }}">
+                        @if($post->data('guest_post'))
+                            <a href="{{ $post->author->website }}?ref=hydephp.com" class="hover:underline" rel="author nofollow external noopener" target="_blank">
+                        @else
+                            <a href="{{ $post->author->website }}" class="hover:underline" rel="author" target="_self">
+                        @endif
                     @endif
                     {{ $post->author->name ?? $post->author->username }}
                     @if($post->author->website)
