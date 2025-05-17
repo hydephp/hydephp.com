@@ -22,7 +22,11 @@
     </header>
     @includeWhen(isset($page->image), 'hyde::components.post.image')
     <div aria-label="Article body" itemprop="articleBody">
-        {{ $content }}
+        @if($page->matter('guest_post'))
+            {!! preg_replace('/<a\s+(?![^>]*rel=)[^>]*(href=[\'"]https?:[^"\']*)(?![^>]*rel=)[^>]*>/i', '<a $1 rel="nofollow external noopener" target="_blank">', $content) !!}
+        @else
+            {{ $content }}
+        @endif
     </div>
     <span class="sr-only">End of article</span>
 </article>
