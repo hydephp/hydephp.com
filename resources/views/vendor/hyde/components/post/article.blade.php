@@ -31,10 +31,10 @@
                     </svg>
                 </div>
                 <div class="ml-3">
-                    <h3 class="text-sm font-medium text-indigo-800 dark:text-indigo-300">Community Contribution</h3>
-                    <div class="mt-1 text-sm text-gray-700 dark:text-gray-300">
-                        <p>This article was written by a member of the HydePHP community and published after editorial review. We're excited to share diverse perspectives and expertise!</p>
-                        <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for their content.</p>
+                    <h3 class="text-sm font-medium text-indigo-800 dark:text-indigo-300 mt-0">Community Contribution</h3>
+                    <div class="my-0 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="mt-0 mb-1">This article was written by a member of the HydePHP community. We're excited to share diverse perspectives and expertise!</p>
+                        <p class="my-0 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for and ownership of their content. Read more about our <a href="{{ route('legal') }}#guest-posts" class="text-indigo-600 dark:text-indigo-400 hover:underline">guest posts here</a>.</p>
                     </div>
                 </div>
             </div>
