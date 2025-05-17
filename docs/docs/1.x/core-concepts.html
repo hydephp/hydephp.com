@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@CodeWithCaen">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=a4e86d441fe9c1816ea99bd1a7b85acd">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -120,104 +120,42 @@
 
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
-<li>
-<a href="#introduction-to-the-hyde-framework">Introduction to the Hyde Framework</a>
-</li>
-<li>
-<a href="#the-hydecli">The HydeCLI</a>
-</li>
-<li>
-<a href="#directory-structure">Directory Structure</a>
-</li>
-<li>
-<a href="#page-models">Page Models</a>
-</li>
-<li>
-<a href="#file-autodiscovery">File Autodiscovery</a>
-</li>
-<li>
-<a href="#paths-identifiers-and-route-keys">Paths, Identifiers, and Route Keys</a>
-</li>
-<li>
-<a href="#convention-over-configuration">Convention Over Configuration</a>
-</li>
-<li>
-<a href="#front-matter">Front Matter</a>
+<li><a href="#introduction-to-the-hyde-framework">Introduction to the Hyde Framework</a></li>
+<li><a href="#the-hydecli">The HydeCLI</a></li>
+<li><a href="#directory-structure">Directory Structure</a></li>
+<li><a href="#page-models">Page Models</a></li>
+<li><a href="#file-autodiscovery">File Autodiscovery</a></li>
+<li><a href="#paths-identifiers-and-route-keys">Paths, Identifiers, and Route Keys</a></li>
+<li><a href="#convention-over-configuration">Convention Over Configuration</a></li>
+<li><a href="#front-matter">Front Matter</a>
 <ul>
-<li>
-<a href="#front-matter-in-markdown">Front Matter in Markdown</a>
-</li>
-<li>
-<a href="#front-matter-in-blade">Front Matter in Blade</a>
-</li>
+<li><a href="#front-matter-in-markdown">Front Matter in Markdown</a></li>
+<li><a href="#front-matter-in-blade">Front Matter in Blade</a></li>
 </ul>
 </li>
-<li>
-<a href="#automatic-routing">Automatic Routing</a>
-</li>
-<li>
-<a href="#global-page-data">Global Page Data</a>
-</li>
-<li>
-<a href="#terminology">Terminology</a>
+<li><a href="#automatic-routing">Automatic Routing</a></li>
+<li><a href="#global-page-data">Global Page Data</a></li>
+<li><a href="#terminology">Terminology</a>
 <ul>
-<li>
-<a href="#table-of-contents">Table of contents</a>
-</li>
-<li>
-<a href="#hydephp">HydePHP</a>
-</li>
-<li>
-<a href="#laravel">Laravel</a>
-</li>
-<li>
-<a href="#front-matter-1">Front Matter</a>
-</li>
-<li>
-<a href="#markdown">Markdown</a>
-</li>
-<li>
-<a href="#blade">Blade</a>
-</li>
-<li>
-<a href="#yaml">YAML</a>
-</li>
-<li>
-<a href="#php">PHP</a>
-</li>
-<li>
-<a href="#html">HTML</a>
-</li>
-<li>
-<a href="#tailwind-css">Tailwind CSS</a>
-</li>
-<li>
-<a href="#composer">Composer</a>
-</li>
-<li>
-<a href="#static-sites">Static Sites</a>
-</li>
-<li>
-<a href="#version-control">Version Control</a>
-</li>
-<li>
-<a href="#git">Git</a>
-</li>
-<li>
-<a href="#autodiscovery">Autodiscovery</a>
-</li>
-<li>
-<a href="#page-types">Page Types</a>
-</li>
-<li>
-<a href="#page-identifiers">Page Identifiers</a>
-</li>
-<li>
-<a href="#routes">Routes</a>
-</li>
-<li>
-<a href="#route-keys">Route Keys</a>
-</li>
+<li><a href="#table-of-contents">Table of contents</a></li>
+<li><a href="#hydephp">HydePHP</a></li>
+<li><a href="#laravel">Laravel</a></li>
+<li><a href="#front-matter-1">Front Matter</a></li>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#blade">Blade</a></li>
+<li><a href="#yaml">YAML</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#html">HTML</a></li>
+<li><a href="#tailwind-css">Tailwind CSS</a></li>
+<li><a href="#composer">Composer</a></li>
+<li><a href="#static-sites">Static Sites</a></li>
+<li><a href="#version-control">Version Control</a></li>
+<li><a href="#git">Git</a></li>
+<li><a href="#autodiscovery">Autodiscovery</a></li>
+<li><a href="#page-types">Page Types</a></li>
+<li><a href="#page-identifiers">Page Identifiers</a></li>
+<li><a href="#routes">Routes</a></li>
+<li><a href="#route-keys">Route Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -410,6 +348,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -417,7 +441,7 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
@@ -539,12 +563,9 @@ building the site. This means that you don't need to worry about routing and con
 as the file names and directories they are in will directly influence how the page will be compiled.</p>
 <p>As such, it will be helpful for you to know about the following terms:</p>
 <ul>
-<li>
-<strong>Path:</strong> The full path to a file, including the file name, directory, and extension.</li>
-<li>
-<strong>Identifier:</strong> The unique identifier for a page. Unique only within the same page type.</li>
-<li>
-<strong>Route key:</strong> The key used to access the page in the routing system. Unique across all site pages.</li>
+<li><strong>Path:</strong> The full path to a file, including the file name, directory, and extension.</li>
+<li><strong>Identifier:</strong> The unique identifier for a page. Unique only within the same page type.</li>
+<li><strong>Route key:</strong> The key used to access the page in the routing system. Unique across all site pages.</li>
 </ul>
 <p>Both the identifier and route key are derived from the path of the page. The identifier is the path without the file
 extension, and relative to the page type source directory. The route key is the output directory plus the identifier.</p>
@@ -586,12 +607,9 @@ and create routes for all of them, and store them in an index which works as a t
 <p>During the build of each page, Hyde will inject some data available to all Blade views. If you are not planning to write
 any custom Blade templates, you can safely ignore this section. If you are, here are the three global variables you can use:</p>
 <ul>
-<li>
-<code>$page</code>: The <a href="#page-models">Page Object</a> for the current page.</li>
-<li>
-<code>$route</code>: The <a href="#automatic-routing">Route Object</a> for the current page.</li>
-<li>
-<code>$routeKey</code>: The <a href="#paths-identifiers-and-route-keys">Route Key</a> for the current page.</li>
+<li><code>$page</code>: The <a href="#page-models">Page Object</a> for the current page.</li>
+<li><code>$route</code>: The <a href="#automatic-routing">Route Object</a> for the current page.</li>
+<li><code>$routeKey</code>: The <a href="#paths-identifiers-and-route-keys">Route Key</a> for the current page.</li>
 </ul>
 <p>The <code>$page</code> variable is likely to the most important one, as it contains all the data for the current page.
 Depending on the page type, you will have different helpers available. But <code>$page-&gt;matter()</code> is likely to be very helpful.</p>
@@ -604,75 +622,39 @@ This will help you understand the documentation and codebase better, as well as 
 <div style="margin-right: 2rem;">
 <h4>Tools<a id="tools" href="#tools" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<a href="#hydephp">HydePHP</a>
-</li>
-<li>
-<a href="#laravel">Laravel</a>
-</li>
-<li>
-<a href="#composer">Composer</a>
-</li>
-<li>
-<a href="#tailwind-css">Tailwind CSS</a>
-</li>
+<li><a href="#hydephp">HydePHP</a></li>
+<li><a href="#laravel">Laravel</a></li>
+<li><a href="#composer">Composer</a></li>
+<li><a href="#tailwind-css">Tailwind CSS</a></li>
 </ul>
 </div>
 <div style="margin-right: 2rem;">
 <h4>Languages<a id="languages" href="#languages" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<a href="#front-matter">Front Matter</a>
-</li>
-<li>
-<a href="#markdown">Markdown</a>
-</li>
-<li>
-<a href="#blade">Blade</a>
-</li>
-<li>
-<a href="#yaml">YAML</a>
-</li>
-<li>
-<a href="#php">PHP</a>
-</li>
-<li>
-<a href="#html">HTML</a>
-</li>
+<li><a href="#front-matter">Front Matter</a></li>
+<li><a href="#markdown">Markdown</a></li>
+<li><a href="#blade">Blade</a></li>
+<li><a href="#yaml">YAML</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#html">HTML</a></li>
 </ul>
 </div>
 <div style="margin-right: 2rem;">
 <h4>General Concepts<a id="general-concepts" href="#general-concepts" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<a href="#static-sites">Static Sites</a>
-</li>
-<li>
-<a href="#version-control">Version Control</a>
-</li>
-<li>
-<a href="#git">Git</a>
-</li>
+<li><a href="#static-sites">Static Sites</a></li>
+<li><a href="#version-control">Version Control</a></li>
+<li><a href="#git">Git</a></li>
 </ul>
 </div>
 <div style="margin-right: 2rem;">
 <h4>HydePHP Features<a id="hydephp-features" href="#hydephp-features" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<a href="#autodiscovery">Autodiscovery</a>
-</li>
-<li>
-<a href="#page-types">Page Types</a>
-</li>
-<li>
-<a href="#page-identifiers">Page Identifiers</a>
-</li>
-<li>
-<a href="#routes">Routes</a>
-</li>
-<li>
-<a href="#route-keys">Route Keys</a>
-</li>
+<li><a href="#autodiscovery">Autodiscovery</a></li>
+<li><a href="#page-types">Page Types</a></li>
+<li><a href="#page-identifiers">Page Identifiers</a></li>
+<li><a href="#routes">Routes</a></li>
+<li><a href="#route-keys">Route Keys</a></li>
 </ul>
 </div>
 </div>
@@ -773,7 +755,7 @@ identifier binding Page objects to Route objects, and is used to generate the fi
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
