@@ -156,10 +156,10 @@ td:last-child, th:last-child {
     <thead>
       <tr>
         <th>HydePHP Version</th>
-        <th>Realtime Compiler</th>
-        <th>HydeFront</th>
-        <th>HydeSearch</th>
-        <th>Vite Plugin</th>
+        <th><a href="https://github.com/hydephp/realtime-compiler">Realtime Compiler</a></th>
+        <th><a href="https://github.com/hydephp/hydefront">HydeFront</a></th>
+        <th><a href="https://github.com/hydephp/hydesearch">HydeSearch</a></th>
+        <th><a href="https://github.com/hydephp/vite-plugin">Vite Plugin</a></th>
       </tr>
     </thead>
     <tbody>
