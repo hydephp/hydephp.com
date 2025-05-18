@@ -166,14 +166,14 @@ td:last-child, th:last-child {
       <tr>
         <td class="version-bold">2.x</td>
         <td>4.x</td>
-        <td>2.x</td>
+        <td>4.x</td>
         <td>Not used</td>
         <td>1.x</td>
       </tr>
       <tr>
         <td class="version-bold">1.x (LTS)</td>
         <td>3.x (LTS)</td>
-        <td>1.x (LTS)</td>
+        <td>3.x (LTS)</td>
         <td>0.x</td>
         <td>Not used</td>
       </tr>
