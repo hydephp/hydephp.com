@@ -1,3 +1,9 @@
+---
+title: HydePHP Versions
+description: Release dates and timelines for security and bug fixes for all versions of HydePHP.
+navigation.hidden: true
+---
+
 # HydePHP Versions
 
 Release dates and timelines for security and bug fixes for all versions of HydePHP.
