@@ -41,14 +41,6 @@ Before submitting a pull request:
 - Check the codebase to ensure that your feature doesn't already exist.
 - Check the pull requests to ensure that another person hasn't already submitted the feature or fix.
 
-## Which Branch?
-
-All bug fixes should be sent to the latest version that supports bug fixes (currently 1.x). Bug fixes should never be sent to the master branch unless they fix features that exist only in the upcoming release.
-
-Minor features that are fully backward compatible with the current release may be sent to the latest stable branch (currently 1.x).
-
-Major new features or features with breaking changes should always be sent to the master branch, which contains the upcoming release.
-
 ## Requirements
 
 If the project maintainer has any additional requirements, you will find them listed here.
