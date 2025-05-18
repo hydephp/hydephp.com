@@ -102,7 +102,7 @@ td {
         <td><span class="status-badge status-fut">FUT</span></td>
       </tr>
       <tr>
-        <td class="version-bold">1.x</td>
+        <td class="version-bold">1.x (LTS)</td>
         <td>March 14, 2023</td>
         <td>TBD</td>
         <td>TBD</td>
