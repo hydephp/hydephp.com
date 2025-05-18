@@ -50,6 +50,12 @@ td {
     padding: 1rem;
     border-bottom: 1px solid #e5e7eb;
 }
+td:first-child {
+    padding-left: 0.75rem;
+}
+th:first-child {
+    padding-left: 0.75rem;
+}
 .version-bold {
     font-weight: 700;
 }
