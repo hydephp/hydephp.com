@@ -148,3 +148,35 @@ th:first-child {
     </tbody>
   </table>
 </div>
+
+## Hyde Package Matrix
+
+<div class="overflow-x-auto">
+  <table>
+    <thead>
+      <tr>
+        <th>HydePHP Version</th>
+        <th>Realtime Compiler</th>
+        <th>HydeFront</th>
+        <th>HydeSearch</th>
+        <th>Vite Plugin</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="version-bold">2.x</td>
+        <td>4.x</td>
+        <td>2.x</td>
+        <td>Not used</td>
+        <td>1.x</td>
+      </tr>
+      <tr>
+        <td class="version-bold">1.x (LTS)</td>
+        <td>3.x (LTS)</td>
+        <td>1.x (LTS)</td>
+        <td>0.x</td>
+        <td>Not used</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
