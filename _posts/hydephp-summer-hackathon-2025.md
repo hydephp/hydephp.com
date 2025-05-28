@@ -29,34 +29,29 @@ With over 1,571 issues across 547 repositories, ODHack #14 offers something for 
 
 We've prepared an exciting mix of contribution opportunities specifically for ODHack #14:
 
-### Good First Issues
+**Good First Issues**
 Perfect for newcomers or those new to HydePHP! We have several beginner-friendly issues including:
 - Supporting "excerpt" as an alias for "description" in blog post schema
 - Adding namespaced functions for helper methods
 - Fixing UI glitches and improving user experience
 
-### Beta Testing HydePHP v2.0
+**Beta Testing HydePHP v2.0**
 Here's something special – **HydePHP v2.0 is launching next month**, and we need your help testing it! Contributors will get exclusive early access to:
 - Test new features and provide feedback
 - Report bugs and help us polish the release
 - Be among the first to experience the next generation of HydePHP
 
-### Creative Showcase Projects
+**Creative Showcase Projects**
 Let your creativity shine! We're looking for contributors to build impressive demo websites using HydePHP v2.0. The best demos will be:
 - Featured on the official HydePHP website
 - Used to showcase the framework's capabilities
 - A source of valuable feedback for our v2.0 release
 
-## Featured Issues to Get You Started
+**Featured Issues to Get You Started**
 
-We've tagged several issues specifically for ODHack #14 participants:
+We've tagged several issues specifically for ODHack #14 participants. You can find them in the [HydePHP repository](https://github.com/hydephp/hyde/issues?q=is%3Aissue+is%3Aopen+label%3AODHack14) with the `ODHack14` label.
 
-- **Rebuild command output improvements** - Help us fix display issues in our build process
-- **Forward DateString method calls** - Enhance our date handling functionality  
-- **Search input button flicker fix** - Improve the user interface experience
-- **Image front matter support** - Add new functionality for page metadata
-
-And many more!Each issue includes detailed descriptions, acceptance criteria, and guidance to help you get started quickly.
+Each issue includes detailed descriptions, acceptance criteria, and guidance to help you get started quickly.
 
 ## How to Get Involved
 
