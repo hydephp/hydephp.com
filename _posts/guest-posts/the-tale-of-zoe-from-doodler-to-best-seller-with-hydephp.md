@@ -5,6 +5,8 @@ category: "Guest Posts"
 author:
     name: "Luca Visciola"
     website: "https://hydephp.melasistema.com"
+    linkedin: "luca-visciola"
+    github: "melasistema"
 date: "2025-01-11 22:02"
 guest_post: true
 canonical_guest_post_url: "https://hydephp.melasistema.com/posts/the-tale-of-zoe-from-doodler-to-best-seller-with-hyde-php.html"
