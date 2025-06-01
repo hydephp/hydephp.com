@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../media/app.css?v=2da913672e43af51e9092b0141c488f0">
+    <link rel="stylesheet" href="../media/app.css?v=a9e724ef366b89ea2deacaa7ad10d723">
 
 
 
@@ -124,7 +124,28 @@
 </head>
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <div class="bg-violet-600 text-sm text-white z-50">
+    <div class="max-w-7xl mx-auto py-2 px-3 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between flex-wrap">
+            <div class="w-0 flex-1 flex items-center">
+                <span class="flex p-2 rounded-lg bg-violet-800">
+                    <svg class="h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                    </svg>
+                </span>
+                <p class="ml-3 font-medium text-white truncate">
+                    <span class="md:hidden">HydePHP Summer Hackathon is live!</span>
+                    <span class="hidden md:inline">HydePHP is participating in ODHack #14 - Join us for our Summer Hackathon!</span>
+                </p>
+            </div>
+            <div class="order-3 mt-2 flex-shrink-0 w-full sm:order-2 sm:mt-0 sm:w-auto">
+                <a href="../posts/hydephp-summer-hackathon-2025" class="flex items-center justify-center px-3 py-1 border border-transparent rounded-md shadow-sm text-sm font-medium text-violet-600 bg-white hover:bg-violet-50">
+                    Learn more
+                </a>
+            </div>
+        </div>
+    </div>
+</div>     <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="../" class="font-bold px-4">
