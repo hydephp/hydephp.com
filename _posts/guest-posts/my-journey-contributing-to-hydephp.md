@@ -1,4 +1,15 @@
-# My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development
+--
+title: "My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development"
+description: "Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source."
+category: "Guest Posts"
+author:
+    name: "Stephen Ude-okolie"
+    github: "Chubbi-Stephen"
+date: "2025-06-07 04:32"
+guest_post: true
+---
+
+## My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development
 *Guest post by Stephen Ude-okolie (@Chubbi-Stephen)*
 
 When I began contributing to HydePHP v2.0, I thought I was simply stepping in to fix a few failing tests. But that small task quickly became one of the most enriching and educational experiences I’ve had in software development so far.
