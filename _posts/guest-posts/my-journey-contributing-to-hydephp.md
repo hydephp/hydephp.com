@@ -1,4 +1,4 @@
---
+---
 title: "My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development"
 description: "Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source."
 category: "Guest Posts"
