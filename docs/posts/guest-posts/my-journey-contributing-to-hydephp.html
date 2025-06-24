@@ -3,30 +3,27 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - My Journey Contributing To Hydephp</title>
+<title>HydePHP - My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
 <link rel="canonical" href="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
-<meta name="description" content="--
-title: &quot;My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development&quot;
-description: &quot;Stephen Ude...">
-<meta name="twitter:title" content="HydePHP - My Journey Contributing To Hydephp">
+<meta name="description" content="Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source.">
+<meta name="twitter:title" content="HydePHP - My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development">
+<meta name="author" content="Stephen Ude-okolie">
+<meta name="keywords" content="Guest Posts">
 <meta name="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
-<meta property="og:description" content="--
-title: &quot;My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development&quot;
-description: &quot;Stephen Ude...">
-<meta property="og:title" content="HydePHP - My Journey Contributing To Hydephp">
+<meta property="og:description" content="Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source.">
+<meta property="og:title" content="HydePHP - My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development">
 <meta property="og:url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
+<meta property="og:article:published_time" content="2025-06-07T04:32:00+00:00">
 <meta property="og:type" content="article">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="author" content="HydePHP">
-<meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
 <meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
@@ -126,22 +123,33 @@ description: &quot;Stephen Ude...">
             <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
     
     <header aria-label="Header section" role="doc-pageheader">
-        <h1 itemprop="headline" class="mb-4">My Journey Contributing To Hydephp</h1>
+        <h1 itemprop="headline" class="mb-4">My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development</h1>
         <div id="byline" aria-label="About the post" role="doc-introduction">
-                                            </div>
+            Posted <time itemprop="dateCreated datePublished" datetime="2025-06-07T04:32:00+00:00" title="Saturday Jun 7th, 2025, at 4:32am">Jun 7th, 2025</time>            by guest author
+<address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
+                <span itemprop="name" aria-label="The author's name">Stephen Ude-okolie</span>
+            </address>
+            in the category "Guest Posts"        </div>
            </header>
     
+            <div class="my-6 p-4 border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg shadow-sm">
+            <div class="flex items-start">
+                <div class="flex-shrink-0 mt-0.5">
+                    <svg class="h-5 w-5 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-indigo-800 dark:text-indigo-300 mt-0">Community Contribution</h3>
+                    <div class="my-0 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="mt-0 mb-1">This article was written by a member of the HydePHP community. We're excited to share diverse perspectives and expertise!</p>
+                        <p class="my-0 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for and ownership of their content. Read more about our <a href="../../legal#guest-posts" class="text-indigo-600 dark:text-indigo-400 hover:underline">guest posts here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div aria-label="Article body" itemprop="articleBody">
-                    <h2>--
-title: &quot;My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development&quot;
-description: &quot;Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source.&quot;
-category: &quot;Guest Posts&quot;
-author:
-name: &quot;Stephen Ude-okolie&quot;
-github: &quot;Chubbi-Stephen&quot;
-date: &quot;2025-06-07 04:32&quot;
-guest_post: true</h2>
-<h2>My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development</h2>
+                    <h2>My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development</h2>
 <p><em>Guest post by Stephen Ude-okolie (@Chubbi-Stephen)</em></p>
 <p>When I began contributing to HydePHP v2.0, I thought I was simply stepping in to fix a few failing tests. But that small task quickly became one of the most enriching and educational experiences I’ve had in software development so far.</p>
 <p>What started out as a debugging job turned into a deep exploration of modern PHP development practices, testing frameworks, and the fascinating world of open source collaboration.</p>
@@ -200,10 +208,53 @@ guest_post: true</h2>
 <p><strong>For anyone thinking of contributing: start with the tests.</strong> They’re often the best teachers and the fastest path to understanding how a system really works.</p>
 <hr />
 <p><strong>About the Author:</strong><br />
-<em>Stephen Ude-okolie is a full-stack developer passionate about contributing to open source. You can find him on GitHub at <a href="https://github.com/Chubbi-Stephen">@Chubbi-Stephen</a>, working on everything from PHP and Laravel to frontend tooling and web performance.</em></p>
+<em>Stephen Ude-okolie is a full-stack developer passionate about contributing to open source. You can find him on GitHub at <a href="https://github.com/Chubbi-Stephen rel="nofollow external noopener" target="_blank">@Chubbi-Stephen</a>, working on everything from PHP and Laravel to frontend tooling and web performance.</em></p>
 
             </div>
     <span class="sr-only">End of article</span>
+            <footer class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="flex-shrink-0 hidden sm:block">
+                                                    <div class="h-16 w-16 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                                <svg class="h-8 w-8 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </div>
+                                            </div>
+                    
+                    <div class="flex-1">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mt-0">About the Author</h3>
+                        <p class="my-1 text-gray-700 dark:text-gray-300">Thanks to <strong>Stephen Ude-okolie</strong> for contributing this insightful article to the HydePHP community.</p>
+                        
+                        <div class="flex flex-wrap gap-3 mt-2">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-semibold">Author links:</span>
+                                                        
+                                                        
+                                                            <a href="https://github.com/Chubbi-Stephen" class="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300" rel="nofollow external noopener" target="_blank">
+                                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    GitHub
+                                </a>
+                                                        
+                                                    </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5 text-center">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">
+                        <p>Want to contribute a post to HydePHP? We'd love to hear from you!</p>
+                        <a href="https://hydephp.com/posts/guest-posts/" class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium mt-0">
+                            <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                            Submit Your Own Guest Post
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </article>
     </main>
 
