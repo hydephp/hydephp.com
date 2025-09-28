@@ -47,7 +47,7 @@
                                     </div>
 
                                     <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-2 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
-                                        <a href="{{ $item->url }}" target="_blank" rel="noopener noreferrer" class="block">
+                                        <a href="{{ $item->url }}" target="_blank" rel="noopener nofollow" class="block">
                                             {{ $item->title }}
                                         </a>
                                     </h2>
@@ -71,7 +71,7 @@
                                     <div class="flex items-center justify-between">
                                         <a href="{{ $item->url }}"
                                            target="_blank"
-                                           rel="noopener noreferrer"
+                                           rel="noopener nofollow"
                                            class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium text-sm transition-colors">
                                             Read full article
                                             <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
