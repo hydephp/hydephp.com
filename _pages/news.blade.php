@@ -54,7 +54,7 @@
 
                                     <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
                                         @if($item->excerpt)
-                                            {{ strlen($item->excerpt) > 200 ? substr($item->excerpt, 0, 200) . '...' : $item->excerpt }}
+                                            {{ strlen($item->excerpt) > 400 ? substr($item->excerpt, 0, 400) . '...' : $item->excerpt }}
                                         @endif
                                     </p>
 
