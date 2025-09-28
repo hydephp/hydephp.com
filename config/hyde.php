@@ -322,6 +322,7 @@ return [
             'index' => 0,
             'posts' => 1200,
             'docs/index' => 100,
+            'news' => 1100,
         ],
 
         // In case you want to customize the labels for the menu items, you can do so here.
@@ -330,6 +331,7 @@ return [
             'index' => 'Home',
             'docs/index' => 'Docs',
             'posts' => 'Blog',
+            'news' => 'News',
         ],
 
         // These are the route keys of pages that should not show up in the navigation menu.
