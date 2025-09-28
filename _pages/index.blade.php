@@ -232,6 +232,8 @@
 @endpush
 @include('sections.homepage-header')
 
+@include('sections.how-it-works')
+
 @include('sections.quick-start')
 @include('sections.features-enhanced')
 @include('sections.who-its-for')
