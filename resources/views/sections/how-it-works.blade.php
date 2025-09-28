@@ -9,7 +9,7 @@
   <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px] pointer-events-none"></div>
   
   {{-- Wrapper that provides scroll distance on desktop --}}
-  <div id="hiw-wrapper" class="relative lg:min-h-[350svh] xl:min-h-[400svh] min-h-screen">
+  <div id="hiw-wrapper" class="relative lg:min-h-[250svh] min-h-screen">
     
     {{-- Sticky viewport for desktop, normal flow for mobile --}}
     <div class="lg:sticky lg:top-0 lg:h-[100svh] flex items-center py-20 lg:py-0">
@@ -69,21 +69,21 @@
                           mobile:space-y-0">
 
                 {{-- PANEL 1: Install --}}
-                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
+                <article class="hiw-panel w-full lg:w-1/3 lg:flex-shrink-0 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 1 of 3: Install">
                   @include('sections.partials.hiw-terminal')
                 </article>
 
                 {{-- PANEL 2: Create --}}
-                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
+                <article class="hiw-panel w-full lg:w-1/3 lg:flex-shrink-0 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 2 of 3: Create Content">
                   @include('sections.partials.hiw-markdown')
                 </article>
 
                 {{-- PANEL 3: Ship --}}
-                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
+                <article class="hiw-panel w-full lg:w-1/3 lg:flex-shrink-0 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 3 of 3: Ship">
                   @include('sections.partials.hiw-browser')
@@ -252,32 +252,43 @@
         const vh = window.innerHeight;
         const total = wrapper.offsetHeight - vh;
         const scrolled = Math.min(Math.max(-rect.top, 0), total);
-        const progress = total > 0 ? (scrolled / total) : 0;
+        let progress = total > 0 ? (scrolled / total) : 0;
         
-        // Add snap behavior - make middle screen easier to land on
-        let adjustedProgress = progress;
+        // Ensure we never exceed 100% - this prevents the extra blank screen
+        progress = Math.min(progress, 1);
         
-        // Create snap zones with more pronounced middle section
-        if (progress >= 0.25 && progress <= 0.75) {
-          // Stronger snap zone for middle panel - significantly slow down progress
-          const middleRange = 0.5; // 0.25 to 0.75
-          const normalizedMiddle = (progress - 0.25) / middleRange;
-          // Use a more aggressive easing curve to create stronger "stickiness"
-          const easedMiddle = Math.pow(normalizedMiddle, 0.6); 
-          adjustedProgress = 0.25 + (easedMiddle * middleRange * 0.8); // compress the range
-        } else if (progress > 0.75) {
-          // Compensate for the compression in the final section
-          adjustedProgress = 0.45 + ((progress - 0.75) * 2.2);
+        // If we're at or past 100%, force it to exactly 1
+        if (progress >= 0.98) {
+          progress = 1;
         }
         
-        // Smooth transform across three panels (-200% for three slides)
-        const clampedProgress = Math.min(Math.max(adjustedProgress, 0), 1);
-        track.style.transform = `translate3d(${-clampedProgress * 200}%, 0, 0)`;
+        // Simple snap for middle section only
+        if (progress >= 0.3 && progress <= 0.7) {
+          const middleProgress = (progress - 0.3) / 0.4;
+          const eased = middleProgress * middleProgress * (3 - 2 * middleProgress);
+          progress = 0.3 + (eased * 0.4);
+        }
         
-        // Add subtle glow to active panel based on progress
+        // Correct transform mapping for 3 panels in 300% container:
+        // Panel 1: 0% (shows first 100% of viewport)
+        // Panel 2: -33.33% (shows second 100% of viewport) 
+        // Panel 3: -66.67% (shows third 100% of viewport)
+        let translateX = progress * -66.67;
+        
+        track.style.transform = `translate3d(${translateX}%, 0, 0)`;
+        
+        // Calculate active index based on progress thirds
+        let activeIndex;
+        if (progress < 0.33) {
+          activeIndex = 0;
+        } else if (progress < 0.67) {
+          activeIndex = 1;
+        } else {
+          activeIndex = 2;
+        }
+        
+        // Panel highlighting
         const panels = document.querySelectorAll('.hiw-panel');
-        let activeIndex = Math.floor(clampedProgress * 3);
-        if (activeIndex >= 3) activeIndex = 2;
         
         panels.forEach((panel, index) => {
           if (index === activeIndex) {
@@ -291,11 +302,9 @@
         const dots = document.querySelectorAll('.dot-indicator');
         dots.forEach((dot, index) => {
           if (index === activeIndex) {
-            dot.classList.add('bg-white', 'scale-125');
-            dot.classList.remove('bg-white/30', 'scale-100');
+            dot.className = 'w-2 h-2 rounded-full bg-white scale-125 dot-indicator transition-all duration-300';
           } else {
-            dot.classList.remove('bg-white', 'scale-125');
-            dot.classList.add('bg-white/30', 'scale-100');
+            dot.className = 'w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300';
           }
         });
         
