@@ -1,0 +1,8 @@
+title: "Building Modern Static Sites with HydePHP - Dev.to Tutorial"
+description: "Comprehensive tutorial on creating professional static websites using HydePHP"
+url: "https://dev.to/hydephp/building-modern-static-sites-with-hydephp-tutorial"
+date: "2024-10-22"
+source: "Dev.to"
+excerpt: "Learn how to leverage HydePHP's Laravel-based architecture to create blazing-fast static websites. This tutorial covers everything from installation to deployment, showing you how to build documentation sites, blogs, and more."
+image: "_media/devto-tutorial-thumb.png"
+tags: ["tutorial", "static-sites", "laravel"]
