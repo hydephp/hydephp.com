@@ -84,6 +84,9 @@ module.exports = {
                 },
             },
             colors: {
+                'hyde-purple': '#8B5CF6',
+                'hyde-cyan': '#06B6D4',
+                'hyde-dark': '#0F172A',
                 indigo: {
                     500: '#5956eb',
                 }
