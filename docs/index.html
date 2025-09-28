@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com">
+<link rel="canonical" href="https://hydephp.com/index.html">
 <meta name="twitter:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 
@@ -85,9 +85,12 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=0ef7a490b214e8ed6c83dd547a4ffd46">
+    <link rel="stylesheet" href="media/app.css?v=a26286324d1f0d0a03afc38e5a5ff587">
 
 
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <script>tailwind.config = { /* tailwind.config.js */ darkMode: 'class', content: [ './_pages/*.blade.php', './resources/views/**/*.blade.php', './vendor/hyde/framework/resources/views/**/*.blade.php', ], theme: { extend: { typography: { DEFAULT: { css: { lineHeight: '1.5em', maxWidth: '96ch', h2: { marginBottom: '0.75em', marginTop: '1.5em', }, a: { color: '#5956eb', '&:hover': { color: '#4f46e5', }, textDecoration: 'none' }, blockquote: { backgroundColor: '#80808020', borderLeftColor: '#d1d5db', color: 'unset', fontWeight: 500, fontStyle: 'unset', lineHeight: '1.25em', paddingLeft: '0.75em', paddingTop: '.25em', paddingBottom: '.25em', marginTop: '1em', marginBottom: '1em', p: { paddingRight: '.25em', marginTop: '.25em', marginBottom: '.25em', }, 'p::before': { content: 'unset', }, 'p::after': { content: 'unset', }, }, code: { font: 'unset', backgroundColor: '#80808033', paddingLeft: '4px', paddingRight: '4px', marginLeft: '-2px', marginRight: '1px', borderRadius: '4px' }, 'code::before': { content: 'unset', }, 'code::after': { content: 'unset', }, pre: { code: { fontFamily: "'Fira Code Regular', Consolas, Monospace, 'Courier New'", } } }, }, invert: { css: { a: { color: '#818cf8', '&:hover': { color: '#6366f1', }, }, }, }, }, colors: { 'hyde-purple': '#8B5CF6', 'hyde-cyan': '#06B6D4', 'hyde-dark': '#0F172A', indigo: { 500: '#5956eb', } }, }, }, safelist: [ 'prose', 'dark:prose-invert', 'text-left', 'text-center', 'text-right', 'ml-auto', 'mx-auto', 'mr-auto', 'my-0', 'my-4', 'my-8', 'py-0', 'py-4', 'py-8', 'mx-0', 'mx-4', 'mx-8', 'px-0', 'px-4', 'px-8', ],  }</script>
+    <script>console.warn('The HydePHP TailwindCSS Play CDN is enabled. This is for development purposes only and should not be used in production.', 'See https://hydephp.com/docs/1.x/managing-assets');</script>
 
 
 
@@ -101,7 +104,7 @@
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="./" class="font-bold px-4">
+		<a aria-label="Home page link" href="index.html" class="font-bold px-4">
 	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
@@ -137,17 +140,17 @@
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
 		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="./" aria-current="page" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Home</a>				</li>
+					<a href="index.html" aria-current="page" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="about.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="demos.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="posts.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
 					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
-		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+		<a id="docs-nav-button" href="docs/1.x/index.html" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>
@@ -188,37 +191,190 @@
         color: #777;
     }
 </style>
-<div class="relative items-center justify-center w-screen min-h-screen">
-    <div class="pt-36 md:pt-64 container self-center my-auto flex flex-col items-center justify-center h-full max-w-6xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between">
-        <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-3/5 lg:-mt-4">
-            <div class="relative md:text-left text-center">
-                <h1 class="relative mb-4 text-4xl font-black leading-none text-center text-black lg:text-5xl xl:text-6xl md:text-left">
-                    HydePHP
-                </h1>
-                <small class="relative mb-4  text-xl font-black leading-none  text-black lg:text-2xl xl:text-3xl md:text-left text-center">
-                    The Static Site Generator You've Been Waiting For, is here.
-                </small>
-                <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)" src="media/logo.svg?v=6f4d292b092e62c88c7638cb9dfcc2de" alt="HydePHP Logo">
+<header class="bg-gradient-to-br from-gray-950 via-purple-950 to-pink-950">
+    <div class="relative items-center justify-center w-screen min-h-screen overflow-hidden">
+        <!-- Subtle background patterns -->
+        <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-purple-950/20 to-gray-950/50"></div>
+        
+        <!-- Floating elements for depth -->
+        <div class="absolute top-20 left-10 w-2 h-2 bg-hyde-cyan rounded-full animate-pulse opacity-60"></div>
+        <div class="absolute top-40 right-20 w-1 h-1 bg-hyde-purple rounded-full animate-ping opacity-40"></div>
+        <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-white rounded-full animate-pulse opacity-30"></div>
+        
+        <div class="pt-36 md:pt-48 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between relative z-10">
+            
+            <!-- Left Content -->
+            <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-2/5 lg:-mt-4">
+                <div class="relative md:text-left text-center">
+                    <!-- Version badge -->
+                    <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium text-hyde-cyan bg-hyde-cyan/10 border border-hyde-cyan/20 rounded-full backdrop-blur-sm">
+                        <div class="w-1.5 h-1.5 bg-hyde-cyan rounded-full mr-2 animate-pulse"></div>
+                        Version 2.0
+                    </div>
+                    
+                    <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
+                        <span class="bg-gradient-to-r from-white via-pink-200 to-red-400 bg-clip-text text-transparent">
+                            Hyde
+                        </span>
+                        <span class="text-hyde-cyan font-mono">PHP</span>
+                    </h1>
+                    
+                    <div class="relative mb-6 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
+                        Build
+                        <span class="text-hyde-cyan font-mono">static sites</span>
+                        with the elegance of
+                        <span class="text-hyde-purple">Laravel</span>
+                    </div>
+                </div>
+                
+                <p class="my-6 text-base text-center text-gray-400 xl:text-lg md:text-left leading-relaxed max-w-lg">
+                    Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with markdown simplicity. 
+                    <span class="text-hyde-cyan">Your next project starts here.</span>
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
+                    <a href="#" class="group relative">
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <span class="relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors xl:text-lg">
+                            <span class="mr-2">⚡</span>
+                            Get Started
+                        </span>
+                    </a>
+                    
+                    <a href="#" class="relative group">
+                        <span class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-gray-300 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:text-white transition-all xl:text-lg">
+                            <span class="mr-2 font-mono">$</span>
+                            View Docs
+                        </span>
+                    </a>
+                </div>
+                
+                <!-- Quick stats -->
+                <div class="flex items-center gap-8 mt-12 text-sm text-gray-500">
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                        <span>Open Source</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-hyde-purple rounded-full mr-2"></div>
+                        <span>PHP 8+</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-2 h-2 bg-hyde-cyan rounded-full mr-2"></div>
+                        <span>Laravel Powered</span>
+                    </div>
+                </div>
             </div>
-            <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
-                Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
-                Your next website is minutes away from becoming a reality.
-            </p>
-            <a href="docs/1.x/" class="relative mt-5 group">
-                <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
-                <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded group-hover:bg-violet-400 xl:text-xl fold-bold">
-                To the Documentation!
-            </span>
-            </a>
+            
+            <!-- Right Content - Hyde Build Graphic -->
+            <div class="flex flex-col items-center justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-8 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-1/2 lg:w-3/5 lg:-mt-4">
+                <div class="relative transform hover:scale-105 transition-transform duration-500">
+                    <!-- Terminal Window -->
+                    <div class="bg-slate-800/90 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-2xl w-96 mr-8 transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                        <!-- Terminal Header -->
+                        <div class="flex items-center px-4 py-3 bg-slate-700/80 rounded-t-xl border-b border-slate-600/50">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full hover:bg-red-400 transition-colors cursor-pointer"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full hover:bg-yellow-400 transition-colors cursor-pointer"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full hover:bg-green-400 transition-colors cursor-pointer"></div>
+                            </div>
+                            <div class="ml-4 text-xs text-gray-400 font-mono">hyde@terminal</div>
+                        </div>
+                        
+                        <!-- Terminal Content -->
+                        <div class="p-6 font-mono text-sm">
+                            <h1 class="text-hyde-purple text-4xl font-bold mb-4 animate-pulse">hyde</h1>
+                            <div class="text-hyde-cyan text-lg mb-4 typing-animation">
+                                <span class="text-gray-400">$</span> hyde build
+                            </div>
+                            <div class="text-gray-300 space-y-1">
+                                <div class="opacity-0 animate-fade-in-1">Using default config file</div>
+                                <div class="opacity-0 animate-fade-in-2">Building site in production mode</div>
+                                <div class="opacity-0 animate-fade-in-3">
+                                    <span class="text-green-400">✓</span> 109 files compiled in 
+                                    <span class="text-hyde-cyan">756ms</span>
+                                </div>
+                                <div class="opacity-0 animate-fade-in-4 text-green-400">
+                                    🎉 Congratulations! Your static site
+                                </div>
+                                <div class="opacity-0 animate-fade-in-5 text-green-400">has been built!</div>
+                            </div>
+                            <div class="text-hyde-cyan mt-4 opacity-0 animate-fade-in-6 cursor-blink">—</div>
+                        </div>
+                    </div>
+
+                    <!-- Browser Window -->
+                    <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-gray-200/50 shadow-2xl w-80 absolute top-16 -right-4 transform rotate-3 hover:rotate-1 transition-transform duration-300">
+                        <!-- Browser Header -->
+                        <div class="flex items-center justify-between px-4 py-3 bg-gray-50/80 rounded-t-xl border-b border-gray-200/50">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"></div>
+                                <div class="w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"></div>
+                                <div class="w-3 h-3 bg-gray-300 rounded-full hover:bg-gray-400 transition-colors cursor-pointer"></div>
+                            </div>
+                            <div class="flex space-x-6 text-sm font-medium text-gray-600">
+                                <span class="hover:text-hyde-purple cursor-pointer transition-colors">Home</span>
+                                <span class="hover:text-hyde-purple cursor-pointer transition-colors">About</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Browser Content -->
+                        <div class="p-6">
+                            <h1 class="text-2xl font-bold text-gray-900 mb-2">My Hyde Site</h1>
+                            <h2 class="text-xl font-semibold text-gray-800 mb-2">Hello World</h2>
+                            <div class="text-sm text-gray-500 mb-4">Built with HydePHP</div>
+                            
+                            <!-- Content lines -->
+                            <div class="space-y-2 mb-4">
+                                <div class="h-2 bg-gradient-to-r from-gray-300 to-gray-200 rounded w-full"></div>
+                                <div class="h-2 bg-gradient-to-r from-gray-300 to-gray-200 rounded w-3/4"></div>
+                            </div>
+                            
+                            <!-- Two boxes with Hyde colors -->
+                            <div class="flex space-x-2 mb-4">
+                                <div class="w-20 h-16 bg-slate-800 rounded-lg shadow-sm"></div>
+                                <div class="w-20 h-16 bg-gradient-to-br from-hyde-purple to-hyde-cyan rounded-lg shadow-sm"></div>
+                            </div>
+                            
+                            <!-- More content lines -->
+                            <div class="space-y-2">
+                                <div class="h-2 bg-gradient-to-r from-gray-300 to-gray-200 rounded w-2/3"></div>
+                                <div class="h-2 bg-gradient-to-r from-gray-300 to-gray-200 rounded w-1/2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3 lg:-mt-4">
-            <img src="media/header.png?v=b6971e5b8497d81da0f37366f732e1e7" alt="Two developers collaboratively working on a static site displayed on a large monitor, illustrating the ease of website creation with HydePHP.">
-        </div>
+        
+        <!-- Bottom wave with gradient -->
+        <svg class="absolute bottom-0 w-screen text-slate-800 fill-current opacity-50" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0c309.151 33.333 542.484 50 700 50 157.516 0 390.849-16.667 700-50v50H0V0z"/>
+        </svg>
     </div>
-    <svg class="absolute bottom-0 w-screen text-violet-300 fill-current" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 0c309.151 33.333 542.484 50 700 50 157.516 0 390.849-16.667 700-50v50H0V0z"/>
-    </svg>
-</div>
+
+    <style>
+        @keyframes fade-in-1 { 0% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 1; } }
+        @keyframes fade-in-2 { 0% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 1; } }
+        @keyframes fade-in-3 { 0% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 1; } }
+        @keyframes fade-in-4 { 0% { opacity: 0; } 80% { opacity: 0; } 90% { opacity: 1; } }
+        @keyframes fade-in-5 { 0% { opacity: 0; } 90% { opacity: 0; } 100% { opacity: 1; } }
+        @keyframes fade-in-6 { 0% { opacity: 0; } 95% { opacity: 0; } 100% { opacity: 1; } }
+        
+        .animate-fade-in-1 { animation: fade-in-1 3s ease-in-out; animation-fill-mode: forwards; }
+        .animate-fade-in-2 { animation: fade-in-2 3s ease-in-out; animation-fill-mode: forwards; }
+        .animate-fade-in-3 { animation: fade-in-3 3s ease-in-out; animation-fill-mode: forwards; }
+        .animate-fade-in-4 { animation: fade-in-4 3s ease-in-out; animation-fill-mode: forwards; }
+        .animate-fade-in-5 { animation: fade-in-5 3s ease-in-out; animation-fill-mode: forwards; }
+        .animate-fade-in-6 { animation: fade-in-6 3s ease-in-out; animation-fill-mode: forwards; }
+        
+        .bg-grid-white\/\[0\.02\] {
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+        }
+    </style>
+</header>
 <div class="relative w-full px-8 py-20 bg-violet-300 sm:py-32 md:py-40">
     <div class="container flex flex-col items-center justify-center h-full max-w-6xl mx-auto sm:flex-row sm:justify-between">
         <div class="relative flex flex-col items-start justify-center w-full mb-10 sm:w-1/3 lg:w-2/5 sm:mb-0 sm:pr-10">
@@ -631,7 +787,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
     
     <header class="flex items-center justify-between">
-        <a href="posts/guest-posts/my-journey-contributing-to-hydephp" class="block w-fit">
+        <a href="posts/guest-posts/my-journey-contributing-to-hydephp.html" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development
             </h2>
@@ -661,7 +817,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/guest-posts/my-journey-contributing-to-hydephp" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/guest-posts/my-journey-contributing-to-hydephp.html" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -670,7 +826,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/hydephp-summer-hackathon-2025">
     
     <header class="flex items-center justify-between">
-        <a href="posts/hydephp-summer-hackathon-2025" class="block w-fit">
+        <a href="posts/hydephp-summer-hackathon-2025.html" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 HydePHP is Joining ODHack #14 - Come Build with Us!
             </h2>
@@ -696,7 +852,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/hydephp-summer-hackathon-2025" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/hydephp-summer-hackathon-2025.html" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -705,7 +861,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/hydephp-version-1-8-released">
     
     <header class="flex items-center justify-between">
-        <a href="posts/hydephp-version-1-8-released" class="block w-fit">
+        <a href="posts/hydephp-version-1-8-released.html" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 HydePHP v1.8 Released
             </h2>
@@ -733,7 +889,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/hydephp-version-1-8-released" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/hydephp-version-1-8-released.html" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -755,7 +911,7 @@ Project: 10/10</p>
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="./" class="flex items-center mr-4">
+				<a href="index.html" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -769,14 +925,14 @@ Project: 10/10</p>
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="docs/1.x/index.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="community.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="legal.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
@@ -790,10 +946,10 @@ Project: 10/10</p>
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="sitemap.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="posts.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					
@@ -844,7 +1000,7 @@ Project: 10/10</p>
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

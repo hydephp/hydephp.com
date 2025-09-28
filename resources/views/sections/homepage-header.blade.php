@@ -1,8 +1,8 @@
-<header class="bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
+<header class="bg-gradient-to-br from-gray-950 via-purple-950 to-pink-950">
     <div class="relative items-center justify-center w-screen min-h-screen overflow-hidden">
         <!-- Subtle background patterns -->
         <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-slate-900/40"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-purple-950/20 to-gray-950/50"></div>
         
         <!-- Floating elements for depth -->
         <div class="absolute top-20 left-10 w-2 h-2 bg-hyde-cyan rounded-full animate-pulse opacity-60"></div>
@@ -21,7 +21,7 @@
                     </div>
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
-                        <span class="bg-gradient-to-r from-white via-purple-200 to-hyde-purple bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-r from-white via-pink-200 to-red-400 bg-clip-text text-transparent">
                             Hyde
                         </span>
                         <span class="text-hyde-cyan font-mono">PHP</span>
@@ -43,7 +43,7 @@
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 mt-8 w-full sm:w-auto">
                     <a href="#" class="group relative">
-                        <div class="absolute -inset-0.5 bg-gradient-to-r from-hyde-purple to-hyde-cyan rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                        <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors xl:text-lg">
                             <span class="mr-2">⚡</span>
                             Get Started
