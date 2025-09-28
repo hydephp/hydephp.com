@@ -18,7 +18,7 @@
         background: linear-gradient(to left bottom, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     }
     #main-navigation {
-        z-index: 10;
+        z-index: 50;
     }
     .theme-toggle-button {
         display: none!important;
@@ -31,6 +31,10 @@
     }
     .pricing-list li::marker {
         color: #777;
+    }
+    /* Add top padding to account for fixed navigation on homepage */
+    body > section {
+        padding-top: 0; /* Hero should start at the top */
     }
 </style>
 @push('meta')
