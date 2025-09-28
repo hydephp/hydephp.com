@@ -9,7 +9,7 @@
         <div class="absolute top-40 right-20 w-1 h-1 bg-hyde-purple rounded-full animate-ping opacity-40"></div>
         <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-white rounded-full animate-pulse opacity-30"></div>
          --}}
-        <div class="pt-36 md:pt-48 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between relative z-10">
+        <div class="pt-48 md:pt-60 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between relative z-10">
             
             <!-- Left Content -->
             <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-2/5 lg:-mt-4">
@@ -155,11 +155,6 @@
                 </div>
             </div>
         </div>
-        
-        <!-- Bottom wave with gradient -->
-        <svg class="absolute bottom-0 w-screen text-slate-800 fill-current opacity-50" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 0c309.151 33.333 542.484 50 700 50 157.516 0 390.849-16.667 700-50v50H0V0z"/>
-        </svg>
     </div>
 
     <style>
