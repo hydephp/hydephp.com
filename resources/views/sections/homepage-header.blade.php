@@ -42,7 +42,7 @@
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto">
-                    <a href="#" class="group relative">
+                    <a href="/docs/1.x/quickstart" class="group relative">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors xl:text-lg">
                             <span class="mr-2">⚡</span>
@@ -50,7 +50,7 @@
                         </span>
                     </a>
                     
-                    <a href="#" class="relative group">
+                    <a href="{{ DocumentationPage::home() }}" class="relative group">
                         <span class="inline-flex items-center justify-center w-full px-8 py-4 text-base font-medium text-gray-300 bg-white/5 border border-white/10 rounded-lg backdrop-blur-sm group-hover:bg-white/10 group-hover:text-white transition-all xl:text-lg">
                             <span class="mr-2 font-mono">$</span>
                             View Docs
