@@ -1,0 +1,7 @@
+title: "Laravel News Introduces HydePHP as a Laravel-Powered Static Site Generator"
+description: "Paul Redmond from Laravel News writes a dedicated article introducing HydePHP to the Laravel community"
+url: "https://laravel-news.com/hydephp-is-a-laravel-powered-static-site-generator"
+date: "2024-12-02"
+source: "Laravel News"
+excerpt: "Laravel News spotlights HydePHP as an innovative static site generator built on Laravel, enabling developers to create websites, blogs, and documentation pages with tools they already know and love. The article highlights HydePHP's ease of use and powerful features, showing how it brings Laravel's familiar developer experience to static site generation."
+tags: ["laravel", "news", "static-site"]
