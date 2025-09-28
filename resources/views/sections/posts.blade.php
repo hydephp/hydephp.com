@@ -103,7 +103,7 @@
         </div>
 
         <!-- Call to Action -->
-        <div class="text-center">
+        <div class="text-center mb-8">
             <div class="inline-flex flex-col sm:flex-row items-center gap-6 bg-slate-800/60 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8">
                 <div class="text-center sm:text-left">
                     <h3 class="text-xl font-bold text-white mb-2">

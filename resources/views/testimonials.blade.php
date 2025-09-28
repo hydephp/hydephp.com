@@ -1,5 +1,5 @@
 <!-- Testimonials Section -->
-<section id="testimonials" class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+<section id="testimonials" class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-from-br from-gray-50 to-white overflow-hidden">
     <!-- Subtle background pattern -->
     <div class="absolute inset-0 bg-grid-gray-100/30 bg-[size:60px_60px]"></div>
     
