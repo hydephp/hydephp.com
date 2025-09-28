@@ -21,22 +21,20 @@
                     </div>
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
-                        <span class="bg-gradient-to-br from-purple-300 via-pink-300 to-red-400 bg-clip-text text-transparent">
-                            Hyde
-                        </span>
-                        <span class="text-purple-300 font-mono">PHP</span>
+                        <span class="bg-clip-text text-transparent text-hyde-ribbon">Hyde</span>
+                        <span class="bg-clip-text text-transparent text-hyde-navy">PHP</span>
                     </h1>
                     
                     <div class="relative mb-6 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
-                        Build
-                        <span class="text-purple-300 font-mono">static sites</span>
-                        with the elegance of
-                        <span class="text-pink-300">Laravel</span>
+                        The
+                        <span class="text-hyde-coral font-mono">Static Site Generator</span>
+                        you've been waiting for
+                        <span class="text-laravel-red">is here.</span> Again.
                     </div>
                 </div>
                 
                 <p class="my-6 text-base text-center text-gray-400 xl:text-lg md:text-left leading-relaxed max-w-lg">
-                    Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with markdown simplicity. 
+                    Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with the simplicity of Markdown. 
                     <span class="text-purple-300">Your next project starts here.</span>
                 </p>
                 
@@ -163,20 +161,52 @@
     </div>
 
     <style>
+        /* === Hyde brand palette pulled from the logo === */
+        :root{
+            --hyde-magenta:#B1368F;  /* ribbon left */
+            --hyde-coral:  #F15A4A;  /* ribbon right */
+            --hyde-navy-1: #1E2A3C;  /* hat body top */
+            --hyde-navy-2: #172434;  /* hat body base */
+            --laravel-red:#FF2D20;   /* official Laravel */
+        }
+
+        /* Ribbon gradient for "Hyde" */
+        .text-hyde-ribbon{
+            background-image: linear-gradient(90deg,var(--hyde-magenta) 0%,var(--hyde-coral) 100%);
+            -webkit-background-clip:text; background-clip:text;
+            color: transparent;
+            filter: drop-shadow(0 0 18px rgba(241,90,74,.18)) drop-shadow(0 0 10px rgba(177,54,143,.18));
+        }
+
+        /* Lightened navy gradient for "PHP" so it reads on dark bg */
+        .text-hyde-navy{
+            background-image: linear-gradient(90deg,
+                color-mix(in oklab, var(--hyde-navy-1) 70%, #ffffff 30%),
+                color-mix(in oklab, var(--hyde-navy-2) 70%, #ffffff 30%)
+            );
+            -webkit-background-clip:text; background-clip:text;
+            color: transparent;
+            text-shadow: 0 0 1px rgba(255,255,255,.06);
+        }
+
+        /* Optional: soft highlight chips used in tagline */
+        .text-hyde-coral{ color: var(--hyde-coral); }
+        .text-laravel-red{ color: var(--laravel-red); }
+
         @keyframes fade-in-1 { 0% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 1; } }
         @keyframes fade-in-2 { 0% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 1; } }
         @keyframes fade-in-3 { 0% { opacity: 0; } 60% { opacity: 0; } 70% { opacity: 1; } }
         @keyframes fade-in-4 { 0% { opacity: 0; } 80% { opacity: 0; } 90% { opacity: 1; } }
         @keyframes fade-in-5 { 0% { opacity: 0; } 90% { opacity: 0; } 100% { opacity: 1; } }
         @keyframes fade-in-6 { 0% { opacity: 0; } 95% { opacity: 0; } 100% { opacity: 1; } }
-        
+
         .animate-fade-in-1 { animation: fade-in-1 3s ease-in-out; animation-fill-mode: forwards; }
         .animate-fade-in-2 { animation: fade-in-2 3s ease-in-out; animation-fill-mode: forwards; }
         .animate-fade-in-3 { animation: fade-in-3 3s ease-in-out; animation-fill-mode: forwards; }
         .animate-fade-in-4 { animation: fade-in-4 3s ease-in-out; animation-fill-mode: forwards; }
         .animate-fade-in-5 { animation: fade-in-5 3s ease-in-out; animation-fill-mode: forwards; }
         .animate-fade-in-6 { animation: fade-in-6 3s ease-in-out; animation-fill-mode: forwards; }
-        
+
         .bg-grid-white\/\[0\.02\] {
             background-image: radial-gradient(circle, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
         }
