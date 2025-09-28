@@ -5,10 +5,10 @@
         <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-purple-950/20 to-gray-950/50"></div>
         
         <!-- Floating elements for depth -->
-        <div class="absolute top-20 left-10 w-2 h-2 bg-hyde-cyan rounded-full animate-pulse opacity-60"></div>
+        {{-- <div class="absolute top-20 left-10 w-2 h-2 bg-hyde-cyan rounded-full animate-pulse opacity-60"></div>
         <div class="absolute top-40 right-20 w-1 h-1 bg-hyde-purple rounded-full animate-ping opacity-40"></div>
         <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-white rounded-full animate-pulse opacity-30"></div>
-        
+         --}}
         <div class="pt-36 md:pt-48 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between relative z-10">
             
             <!-- Left Content -->
@@ -17,19 +17,21 @@
                     <!-- Version badge -->
                     <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium text-hyde-cyan bg-hyde-cyan/10 border border-hyde-cyan/20 rounded-full backdrop-blur-sm">
                         <div class="w-1.5 h-1.5 bg-hyde-cyan rounded-full mr-2 animate-pulse"></div>
-                        Version 2.0
+                        Version 2.0 Release
                     </div>
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
-                        <span class="bg-clip-text text-transparent text-hyde-ribbon">Hyde</span>
-                        <span class="bg-clip-text text-transparent text-hyde-navy">PHP</span>
+                        <span class="bg-clip-text text-transparent text-hyde-ribbon">HydePHP <small>v2.0</small></span>
                     </h1>
                     
-                    <div class="relative mb-6 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
+                    <div class="relative mb-0 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
                         The
-                        <span class="text-hyde-coral font-mono">Static Site Generator</span>
-                        you've been waiting for
-                        <span class="text-laravel-red">is here.</span> Again.
+                        <span class="font-bold text-white">Static Site Generator</span>
+                        with the power of
+                        <span class="font-bold text-white">Laravel</span>
+                        and the simplicity of
+                        <span class="font-bold text-white">Markdown</span>
+                        that developers love.
                     </div>
                 </div>
                 
@@ -59,15 +61,15 @@
                 <!-- Quick stats -->
                 <div class="flex items-center gap-8 mt-12 text-sm text-gray-500">
                     <div class="flex items-center">
-                        <div class="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
+                        <div class="w-2 h-2 bg-github-green rounded-full mr-2"></div>
                         <span>Open Source</span>
                     </div>
                     <div class="flex items-center">
-                        <div class="w-2 h-2 bg-hyde-purple rounded-full mr-2"></div>
+                        <div class="w-2 h-2 bg-php-blue rounded-full mr-2"></div>
                         <span>PHP 8+</span>
                     </div>
                     <div class="flex items-center">
-                        <div class="w-2 h-2 bg-hyde-cyan rounded-full mr-2"></div>
+                        <div class="w-2 h-2 bg-laravel-red rounded-full mr-2"></div>
                         <span>Laravel Powered</span>
                     </div>
                 </div>
@@ -111,7 +113,7 @@
                     </div>
 
                     <!-- Browser Window -->
-                    <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-gray-200/50 shadow-2xl w-80 absolute top-16 -right-4 transform rotate-3 hover:rotate-1 transition-transform duration-300">
+                    <div class="bg-white/95 backdrop-blur-sm rounded-xl border border-gray-200/50 shadow-2xl w-80 absolute top-16 -right-32 transform rotate-3 hover:rotate-1 transition-transform duration-300">
                         <!-- Browser Header -->
                         <div class="flex items-center justify-between px-4 py-3 bg-gray-50/80 rounded-t-xl border-b border-gray-200/50">
                             <div class="flex space-x-2">
@@ -167,7 +169,10 @@
             --hyde-coral:  #F15A4A;  /* ribbon right */
             --hyde-navy-1: #1E2A3C;  /* hat body top */
             --hyde-navy-2: #172434;  /* hat body base */
-            --laravel-red:#FF2D20;   /* official Laravel */
+            --laravel-red:#F53003;   /* official Laravel */
+            --plasma-purple:#A855F7; /* Markdown */ 
+            --github-green:#5FED83;  /* GitHub */
+            --php-blue:#7A86B8;      /* PHP */
         }
 
         /* Ribbon gradient for "Hyde" */
@@ -192,6 +197,12 @@
         /* Optional: soft highlight chips used in tagline */
         .text-hyde-coral{ color: var(--hyde-coral); }
         .text-laravel-red{ color: var(--laravel-red); }
+        .text-plasma-purple{ color: var(--plasma-purple); }
+    
+        .bg-php-blue{ background-color: var(--php-blue); }
+        .bg-github-green{ background-color: var(--github-green); }
+        .bg-laravel-red{ background-color: var(--laravel-red); }
+
 
         @keyframes fade-in-1 { 0% { opacity: 0; } 20% { opacity: 0; } 30% { opacity: 1; } }
         @keyframes fade-in-2 { 0% { opacity: 0; } 40% { opacity: 0; } 50% { opacity: 1; } }
