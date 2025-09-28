@@ -93,7 +93,7 @@
                         <!-- Terminal Content -->
                         <div class="p-6 font-mono text-sm">
                             <h1 class="text-hyde-purple text-4xl font-bold mb-4">hyde</h1>
-                            <div class="text-hyde-cyan text-lg mb-4 typing-animation">
+                            <div class="text-hyde-cyan text-lg mb-4">
                                 <span class="text-gray-400">$</span> php hyde build
                             </div>
                             <div class="text-gray-300 space-y-1">
@@ -108,7 +108,7 @@
                                 </div>
                                 <div class="opacity-0 animate-fade-in-5 text-green-400">has been built!</div>
                             </div>
-                            <div class="text-hyde-cyan mt-4 opacity-0 animate-fade-in-6 cursor-blink">—</div>
+                            {{-- <div class="text-hyde-cyan mt-4 opacity-0 animate-fade-in-6 cursor-blink">—</div> --}}
                         </div>
                     </div>
 
