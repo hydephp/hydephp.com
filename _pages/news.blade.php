@@ -14,7 +14,9 @@
     </header>
 
     <div class="max-w-4xl mx-auto">
-        @php($newsItems = DataCollections::yaml('news')->sortByDesc('date'))
+        @php($newsItems = DataCollections::yaml('news')->sortByDesc(function ($item) {
+            return strtotime($item->date);
+        }))
 
         @if($newsItems->isEmpty())
             <div class="text-center py-12">
