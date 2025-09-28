@@ -9,7 +9,7 @@
   <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px] pointer-events-none"></div>
   
   {{-- Wrapper that provides scroll distance on desktop --}}
-  <div id="hiw-wrapper" class="relative lg:min-h-[300svh] min-h-screen">
+  <div id="hiw-wrapper" class="relative lg:min-h-[350svh] xl:min-h-[400svh] min-h-screen">
     
     {{-- Sticky viewport for desktop, normal flow for mobile --}}
     <div class="lg:sticky lg:top-0 lg:h-[100svh] flex items-center py-20 lg:py-0">
@@ -40,42 +40,50 @@
           </div>
         </header>
 
-        {{-- Phone window container --}}
-        <div class="mx-auto w-full max-w-[400px] lg:max-w-[420px]">
+        {{-- Widescreen window container --}}
+        <div class="mx-auto w-full max-w-[400px] lg:max-w-[900px] xl:max-w-[1000px]">
           <div class="relative">
             {{-- Glow effect --}}
-            <div class="absolute -inset-4 rounded-[48px] bg-gradient-to-r
+            <div class="absolute -inset-4 rounded-[48px] lg:rounded-[32px] bg-gradient-to-r
                         from-purple-600/30 via-pink-600/30 to-cyan-500/30 blur opacity-40"></div>
             
-            {{-- Phone frame --}}
-            <div class="relative rounded-[42px] border border-white/20 bg-black/40 backdrop-blur-xl
-                        shadow-2xl overflow-hidden phone-frame">
+            {{-- Widescreen frame (phone on mobile, laptop-style on desktop) --}}
+            <div class="relative rounded-[42px] lg:rounded-[24px] border border-white/20 bg-black/40 backdrop-blur-xl
+                        shadow-2xl overflow-hidden phone-frame lg:aspect-[16/10]">
               
-              {{-- Notch --}}
-              <div class="h-4 w-24 mx-auto mt-3 rounded-full bg-black/70 border border-white/10"></div>
+              {{-- Notch (mobile only) / Top bar (desktop) --}}
+              <div class="h-4 w-24 mx-auto mt-3 rounded-full bg-black/70 border border-white/10 lg:hidden"></div>
+              <div class="hidden lg:flex lg:items-center lg:px-6 lg:py-3 lg:bg-slate-800/50 lg:border-b lg:border-slate-700/50">
+                <div class="flex space-x-2 mr-4">
+                  <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                  <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                </div>
+                <div class="text-sm text-slate-400">HydePHP Demo</div>
+              </div>
 
               {{-- Track container (desktop pinned slider or mobile stack) --}}
               <div id="hiw-track"
-                   class="relative mt-3 overflow-hidden
-                          lg:flex lg:w-[300%] lg:h-[70vh] will-change-transform
+                   class="relative mt-3 lg:mt-0 overflow-hidden
+                          lg:flex lg:w-[300%] lg:h-[500px] xl:h-[550px] will-change-transform
                           mobile:space-y-0">
 
                 {{-- PANEL 1: Install --}}
-                <article class="hiw-panel lg:w-1/3 p-6 h-full flex flex-col justify-center
+                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 1 of 3: Install">
                   @include('sections.partials.hiw-terminal')
                 </article>
 
                 {{-- PANEL 2: Create --}}
-                <article class="hiw-panel lg:w-1/3 p-6 h-full flex flex-col justify-center
+                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 2 of 3: Create Content">
                   @include('sections.partials.hiw-markdown')
                 </article>
 
                 {{-- PANEL 3: Ship --}}
-                <article class="hiw-panel lg:w-1/3 p-6 h-full flex flex-col justify-center
+                <article class="hiw-panel lg:w-1/3 p-6 lg:p-8 xl:p-12 h-full flex flex-col justify-center
                                opacity-0 translate-y-4 transition-all duration-700 ease-out"
                          aria-label="Step 3 of 3: Ship">
                   @include('sections.partials.hiw-browser')
@@ -84,8 +92,17 @@
             </div>
           </div>
 
+          {{-- Progress dots (desktop only) --}}
+          <div class="hidden lg:flex justify-center mt-6 mb-4">
+            <div class="flex space-x-2" id="progress-dots">
+              <div class="w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300" data-index="0"></div>
+              <div class="w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300" data-index="1"></div>
+              <div class="w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300" data-index="2"></div>
+            </div>
+          </div>
+
           {{-- CTA row --}}
-          <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div class="mt-6 lg:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="docs/1.x/quickstart" class="group relative">
               <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <span class="relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors">
@@ -138,6 +155,11 @@
     /* Mobile phone frame adjustments */
     #hiw-wrapper {
       min-height: auto !important;
+    }
+    
+    /* Keep mobile as phone-like, desktop as widescreen */
+    .phone-frame {
+      aspect-ratio: auto !important;
     }
   }
 
@@ -232,8 +254,24 @@
         const scrolled = Math.min(Math.max(-rect.top, 0), total);
         const progress = total > 0 ? (scrolled / total) : 0;
         
+        // Add snap behavior - make middle screen easier to land on
+        let adjustedProgress = progress;
+        
+        // Create snap zones with more pronounced middle section
+        if (progress >= 0.25 && progress <= 0.75) {
+          // Stronger snap zone for middle panel - significantly slow down progress
+          const middleRange = 0.5; // 0.25 to 0.75
+          const normalizedMiddle = (progress - 0.25) / middleRange;
+          // Use a more aggressive easing curve to create stronger "stickiness"
+          const easedMiddle = Math.pow(normalizedMiddle, 0.6); 
+          adjustedProgress = 0.25 + (easedMiddle * middleRange * 0.8); // compress the range
+        } else if (progress > 0.75) {
+          // Compensate for the compression in the final section
+          adjustedProgress = 0.45 + ((progress - 0.75) * 2.2);
+        }
+        
         // Smooth transform across three panels (-200% for three slides)
-        const clampedProgress = Math.min(Math.max(progress, 0), 1);
+        const clampedProgress = Math.min(Math.max(adjustedProgress, 0), 1);
         track.style.transform = `translate3d(${-clampedProgress * 200}%, 0, 0)`;
         
         // Add subtle glow to active panel based on progress
@@ -246,6 +284,18 @@
             panel.style.filter = 'brightness(1.1)';
           } else {
             panel.style.filter = 'brightness(0.9)';
+          }
+        });
+        
+        // Update progress dots
+        const dots = document.querySelectorAll('.dot-indicator');
+        dots.forEach((dot, index) => {
+          if (index === activeIndex) {
+            dot.classList.add('bg-white', 'scale-125');
+            dot.classList.remove('bg-white/30', 'scale-100');
+          } else {
+            dot.classList.remove('bg-white', 'scale-125');
+            dot.classList.add('bg-white/30', 'scale-100');
           }
         });
         
