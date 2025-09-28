@@ -25,7 +25,7 @@ class StatisticsController
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
+            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @EmmaDSCodes)',
         ])->get('https://analytics.hydephp.com/api/stats');
 
         return $response->object();
@@ -35,7 +35,7 @@ class StatisticsController
     {
         $response = Http::withHeaders([
             'Accept' => 'application/json',
-            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @CodeWithCaen)',
+            'User-Agent' => 'HydeDocsCI/dev-master (Twitter contact: @EmmaDSCodes)',
         ])->get('https://analytics.hydephp.com/api/stats/lines_of_code');
 
         return $response->json('data.total');

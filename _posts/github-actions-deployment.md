@@ -2,7 +2,7 @@
 title: Automate HydePHP sites using GitHub Actions and GitHub Pages
 description: HydePHP is a framework for building static websites. While the most common way to interact with HydePHP is through the command line, you can actually manage an entire site using GitHub.
 category: Guides
-author: Caen
+author: Emma
 date: 2022-06-20 12:09
 ---
 

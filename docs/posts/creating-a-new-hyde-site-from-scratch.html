@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://hydephp.com/posts/creating-a-new-hyde-site-from-scratch">
 <meta name="description" content="This blog post will guide you through creating a new Hyde site, while also showcasing some neat features!">
 <meta name="twitter:title" content="HydePHP - Creating a new Hyde site from scratch">
-<meta name="author" content="Caen">
+<meta name="author" content="Emma">
 <meta name="keywords" content="tutorials">
 <meta name="url" content="https://hydephp.com/posts/creating-a-new-hyde-site-from-scratch">
 <meta property="og:description" content="This blog post will guide you through creating a new Hyde site, while also showcasing some neat features!">
@@ -27,7 +27,7 @@
 <meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -127,8 +127,8 @@
         <div id="byline" aria-label="About the post" role="doc-introduction">
             Posted <time itemprop="dateCreated datePublished" datetime="2022-03-25T20:49:00+00:00" title="Friday Mar 25th, 2022, at 8:49pm">Mar 25th, 2022</time>            by author
 <address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
-            <a href="https://twitter.com/CodeWithCaen" rel="author" itemprop="url" aria-label="The author's website">
-                        <span itemprop="name" aria-label="The author's name" title=@caen>Caen</span>
+            <a href="https://twitter.com/EmmaDSCodes" rel="author" itemprop="url" aria-label="The author's website">
+                        <span itemprop="name" aria-label="The author's name" title=@emma>Emma</span>
                     </a>
     </address>
             in the category "tutorials"        </div>
@@ -149,7 +149,7 @@ while also showcasing some neat features!</p>
 <p>This guide assumes you have Composer and NPM installed. You also need PHP 8 or higher.
 Previous command-line experience won't hurt either since we will be using the CLI a lot.
 I'm using Windows PowerShell here, but you can follow along with Bash as well.</p>
-<p>This guide will mostly be example-driven. If you have any questions, send me a tweet at @<a href="https://twitter.com/CodeWithCaen">CodeWithCaen</a>.</p>
+<p>This guide will mostly be example-driven. If you have any questions, send me a tweet at @<a href="https://twitter.com/EmmaDSCodes">EmmaDSCodes</a>.</p>
 <h2>Creating a new project</h2>
 <p>Creating a site with Hyde is easy, especially when using Composer!</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">tutorial-demo</span></div></code></pre>
@@ -200,7 +200,7 @@ It will then create a Markdown file containing our input as front matter.</p>
 <p><img src="https://hydephp.com/media/Screenshot%202022-03-25%20222236-min.png" alt="Terminal output screenshot" /></p>
 <p>Let's take a look at the file that was created for us! As you can see it is stored in the _posts directory.
 A slug was automatically created from the title and the date was automatically parsed from the current time.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Hello World!</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">This will show up in the article excerpt and SEO meta tags</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">demo</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Caen</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-03-25 21:20</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Hello World!</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">This will show up in the article excerpt and SEO meta tags</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">demo</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Emma</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-03-25 21:20</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div></code></pre>
 <p>Let's rebuild the site and take a look!</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>As you can see, the excerpt automatically shows up in the feed on the homepage!
@@ -288,7 +288,7 @@ especially the first time, but no sweat because we got ourselves some beautiful 
 <p><img src="https://hydephp.com/media/screely-1648307127051-min.png" alt="Screenshot of the documentation page with syntax highlighting" /></p>
 <h2>Conclusion</h2>
 <p>I think that brings this tutorial to a close.
-Send me a Tweet if you have any questions or suggestions! I'm <a href="https://twitter.com/CodeWithCaen">@CodeWithCaen</a>.</p>
+Send me a Tweet if you have any questions or suggestions! I'm <a href="https://twitter.com/EmmaDSCodes">@EmmaDSCodes</a>.</p>
 <ul>
 <li>The homepage for Hyde is <a href="https://hydephp.com/">hydephp.com</a>.</li>
 <li>The documentation is hosted at <a href="https://hydephp.com/docs/">hydephp.com/docs</a>.</li>

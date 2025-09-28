@@ -2,7 +2,7 @@
 title: 'HydePHP Version v1.7 Released'
 description: "With several quality of life improvements, the developer experience with HydePHP is even better."
 category: releases
-author: Caen
+author: Emma
 date: '2024-07-05 12:00'
 ---
 

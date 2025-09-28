@@ -15,7 +15,7 @@ image: "https://hydephp.melasistema.com/media/posts/the-tale-of-zoe-featured-ima
 
 ### Prologue
 
-**HydePHP** is more than just a static site generator; it’s a magical tool that empowers developers and creators to bring their visions to life. Designed by the talented **Caen De Silva**, HydePHP is a treasure trove for PHP and Laravel enthusiasts, offering an intuitive way to build stunning functional websites and much more. Inspired by its possibilities, I crafted a tutorial that dives deep into using HydePHP, coupled with my custom Composer package, the **HydePHP Layouts Manager**, which try to simplifies the management of layouts and reusable components within HydePHP projects.
+**HydePHP** is more than just a static site generator; it’s a magical tool that empowers developers and creators to bring their visions to life. Designed by the talented **Emma De Silva**, HydePHP is a treasure trove for PHP and Laravel enthusiasts, offering an intuitive way to build stunning functional websites and much more. Inspired by its possibilities, I crafted a tutorial that dives deep into using HydePHP, coupled with my custom Composer package, the **HydePHP Layouts Manager**, which try to simplifies the management of layouts and reusable components within HydePHP projects.
 
 The tutorial, originally published on my blog, takes a creative twist by telling **_The Tale of Zoe: an artist with a dream to turn her doodles into a best-selling brand._** Through her hypothetical story, I demonstrate how anyone can build a captivating website with **HydePHP** featuring a hero section, an engaging FAQ accordion, and an interactive carousel, all designed to promote Zoe’s fictional book—a scenario that resonates with many aspiring artists.
 

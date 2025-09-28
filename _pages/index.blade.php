@@ -48,7 +48,7 @@
           "url": "https://hydephp.com",
           "author": {
             "@type": "Person",
-            "name": "Caen De Silva"
+            "name": "Emma De Silva"
           },
           "datePublished": "2023-03-14",
           "publisher": {

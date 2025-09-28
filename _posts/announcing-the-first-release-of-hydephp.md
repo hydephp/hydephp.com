@@ -2,7 +2,7 @@
 title: 'Announcing the First Release of HydePHP'
 description: "We're excited to announce the first official release of HydePHP, a Laravel-based static site generator!"
 category: announcements
-author: Caen
+author: Emma
 date: '2023-03-14 20:00'
 image: _media/1500x500.png
 ---

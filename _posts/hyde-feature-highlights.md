@@ -2,7 +2,7 @@
 title: Hyde Feature Highlights
 description: Learn about some of the features Hyde has to offer.
 category: blog
-author: Caen
+author: Emma
 date: 2022-04-17 12:59
 ---
 

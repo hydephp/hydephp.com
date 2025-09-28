@@ -30,12 +30,12 @@ If you want to contribute to the website code, you can clone or fork this reposi
 
 ## Security
 
-If you discover any security-related issues, please email caen@desilva.se instead of using the issue tracker.
+If you discover any security-related issues, please email emma@desilva.se instead of using the issue tracker.
 All vulnerabilities will be promptly addressed.
 
 ## Credits
 
--   [Caen De Silva](https://github.com/caendesilva), feel free to buy me a coffee! https://www.buymeacoffee.com/caen
+-   [Emma De Silva](https://github.com/emmadesilva), feel free to buy me a coffee! https://www.buymeacoffee.com/caen
 -   [All Contributors](../../contributors)
 
 ## License

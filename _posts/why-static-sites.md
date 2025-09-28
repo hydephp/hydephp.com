@@ -2,7 +2,7 @@
 title: Why static sites?
 description: A quick run-down of the benefits of static websites
 category: general
-author: Caen
+author: Emma
 date: 2022-03-19 20:02
 ---
 

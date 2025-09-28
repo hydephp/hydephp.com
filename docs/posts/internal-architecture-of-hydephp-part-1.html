@@ -12,7 +12,7 @@
 <link rel="canonical" href="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
 <meta name="description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
 <meta name="twitter:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
-<meta name="author" content="Caen">
+<meta name="author" content="Emma">
 <meta name="keywords" content="deepdives">
 <meta name="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
 <meta property="og:description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
@@ -28,7 +28,7 @@
 <meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -127,8 +127,8 @@
         <div id="byline" aria-label="About the post" role="doc-introduction">
             Posted <time itemprop="dateCreated datePublished" datetime="2022-05-11T20:35:00+00:00" title="Wednesday May 11th, 2022, at 8:35pm">May 11th, 2022</time>            by author
 <address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
-            <a href="https://twitter.com/CodeWithCaen" rel="author" itemprop="url" aria-label="The author's website">
-                        <span itemprop="name" aria-label="The author's name" title=@caen>Caen</span>
+            <a href="https://twitter.com/EmmaDSCodes" rel="author" itemprop="url" aria-label="The author's website">
+                        <span itemprop="name" aria-label="The author's name" title=@emma>Emma</span>
                     </a>
     </address>
             in the category "deepdives"        </div>
@@ -145,7 +145,7 @@
     </figure>
         <div aria-label="Article body" itemprop="articleBody">
                     <h2>Introduction to the internal architecture of HydePHP.</h2>
-<p>Hey! My name is <a href="https://twitter.com/CodeWithCaen">Caen</a>. I am the creator of <a href="https://hydephp.com/">HydePHP</a> - a new static app generator. I thought it could be useful to shed some light on the internal architecture of HydePHP and the design patterns I've used.</p>
+<p>Hey! My name is <a href="https://twitter.com/EmmaDSCodes">Emma</a>. I am the creator of <a href="https://hydephp.com/">HydePHP</a> - a new static app generator. I thought it could be useful to shed some light on the internal architecture of HydePHP and the design patterns I've used.</p>
 <p>While this is not at all required reading for those wanting to try out Hyde, it might be interesting for those curious about the &quot;magic&quot; behind the framework. And of course to those who are interested in contributing to the codebase.</p>
 <p>This article is going to be split into a few posts. This one will give a general broad overview, while I'll go into further detail on some key concepts in new posts over the next few days.</p>
 <p><em>Note that Hyde is still in beta and stuff may change without notice. This post was written after the <a href="https://github.com/hydephp/framework/tree/v0.24.0-beta">0.24.0-beta release</a>, thus links to source code files in examples will be pinned to that version.</em></p>

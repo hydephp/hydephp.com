@@ -2,7 +2,7 @@
 title: 'Introducing the HydePHP UI Kit'
 description: "A collection of minimalistic and un-opinionated TailwindCSS components for your HydePHP projects"
 category: announcements
-author: Caen
+author: Emma
 date: '2024-02-02 20:00'
 image: 'https://raw.githubusercontent.com/hydephp/ui-kit/art/header-large-min.png'
 ---

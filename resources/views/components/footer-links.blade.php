@@ -23,7 +23,7 @@
 		</a>
 	</li>
 	<li class="my-2 mx-1" role="listitem">
-		<a href="https://www.buymeacoffee.com/caen" class="text-gray-500 dark:text-gray-300   dark:hover:text-gray-100   hover:text-gray-900 flex items-center sm:mx-2">
+		<a href="https://www.buymeacoffee.com/emma" class="text-gray-500 dark:text-gray-300   dark:hover:text-gray-100   hover:text-gray-900 flex items-center sm:mx-2">
 			Sponsor
 		</a>
 	</li>

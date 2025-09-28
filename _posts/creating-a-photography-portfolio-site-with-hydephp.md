@@ -3,7 +3,7 @@ title: "Creating a static photography portfolio landing site with HydePHP"
 date: "Aug 27, 2022"
 category: tutorials
 description: "In this blog post, we'll be creating a simple photography portfolio site using HydePHP and Markdown. No coding is needed!"
-author: Caen
+author: Emma
 ---
 
 ## Introduction
@@ -222,7 +222,7 @@ Now that we have a basic site, the world is yours! There are plenty of customiza
 
 If you have any questions, feel free to ask them in the [HydePHP Discord server](https://discord.hydephp.com/) or [open an issue on GitHub](https://github.com/hydephp/hyde).
 
-You can also check out the [HydePHP documentation](https://hydephp.com/docs/) for more information on how to use HydePHP. You can always also reach out to me on Twitter, [@CodeWithCaen](https://twitter.com/CodeWithCaen).
+You can also check out the [HydePHP documentation](https://hydephp.com/docs/) for more information on how to use HydePHP. You can always also reach out to me on Twitter, [@EmmaDSCodes](https://twitter.com/EmmaDSCodes).
 
 [![HydePHP.com](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uqs8yq9luyoqd1tdxl5f.png)](https://hydephp.com)
  

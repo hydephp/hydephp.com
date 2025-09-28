@@ -2,7 +2,7 @@
 title: 'HydePHP Version v1.6 Released'
 description: "This release introduces new features for head section customization, routing helpers, and configuration type safety."
 category: releases
-author: Caen
+author: Emma
 date: '2024-04-17 12:00'
 ---
 

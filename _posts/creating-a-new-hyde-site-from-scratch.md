@@ -2,7 +2,7 @@
 title: Creating a new Hyde site from scratch
 description: This blog post will guide you through creating a new Hyde site, while also showcasing some neat features!
 category: tutorials
-author: Caen
+author: Emma
 date: 2022-03-25 20:49
 updated: 2022-04-22 12:48
 ---
@@ -25,7 +25,7 @@ This guide assumes you have Composer and NPM installed. You also need PHP 8 or h
 Previous command-line experience won't hurt either since we will be using the CLI a lot.
 I'm using Windows PowerShell here, but you can follow along with Bash as well.
 
-This guide will mostly be example-driven. If you have any questions, send me a tweet at @[CodeWithCaen](https://twitter.com/CodeWithCaen).
+This guide will mostly be example-driven. If you have any questions, send me a tweet at @[EmmaDSCodes](https://twitter.com/EmmaDSCodes).
 
 ## Creating a new project
 Creating a site with Hyde is easy, especially when using Composer!
@@ -114,7 +114,7 @@ A slug was automatically created from the title and the date was automatically p
 title: Hello World!
 description: This will show up in the article excerpt and SEO meta tags
 category: demo
-author: Caen
+author: Emma
 date: 2022-03-25 21:20
 ---
 
@@ -286,7 +286,7 @@ especially the first time, but no sweat because we got ourselves some beautiful 
 
 ## Conclusion
 I think that brings this tutorial to a close.
-Send me a Tweet if you have any questions or suggestions! I'm [@CodeWithCaen](https://twitter.com/CodeWithCaen).
+Send me a Tweet if you have any questions or suggestions! I'm [@EmmaDSCodes](https://twitter.com/EmmaDSCodes).
 
 - The homepage for Hyde is [hydephp.com](https://hydephp.com/).
 - The documentation is hosted at [hydephp.com/docs](https://hydephp.com/docs/).

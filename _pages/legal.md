@@ -42,7 +42,7 @@ HydePHP is open-source software licensed under the MIT license, which you can fi
 
 ### MIT License
 
-**Copyright (c) 2022 Caen De Silva**
+**Copyright (c) 2022 Emma De Silva**
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -128,7 +128,7 @@ This list may not be exhaustive, feel free to
 ### General
 
 - The Hyde core is built with [Laravel Zero](https://laravel-zero.com/), which is based on [Laravel](https://laravel.com/){:rel="nofollow noopener"}.
-- The documentation frontend was based on [Lagrafo - Docs for Laravel apps](https://github.com/caendesilva/lagrafo){:rel="nofollow noopener"}.
+- The documentation frontend was based on [Lagrafo - Docs for Laravel apps](https://github.com/emmadesilva/lagrafo){:rel="nofollow noopener"}.
 - The dark mode switch is based on a component from [Flowbite](https://flowbite.com/docs/customize/dark-mode/){:rel="nofollow noopener"}.
 - The frontend is built with [TailwindCSS](https://tailwindcss.com/){:rel="nofollow noopener"}.
 - The default 404 error page and illustration is by [LaravelCollective](https://github.com/LaravelCollective/errors){:rel="nofollow noopener"} (License MIT).
@@ -162,4 +162,4 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
   - You can get a $10 discount by using our [affiliate link](https://usefathom.com/ref/NMDUJJ).
 
 Want to sponsor the HydePHP project? Send us an email at hello@hydephp.com!<br>
-You can also ping the creator on Twitter at [@CodeWithCaen](https://twitter.com/CodeWithCaen){:rel="noopener"}.
+You can also ping the creator on Twitter at [@EmmaDSCodes](https://twitter.com/EmmaDSCodes){:rel="noopener"}.

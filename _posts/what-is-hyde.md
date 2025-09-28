@@ -2,7 +2,7 @@
 title: What is Hyde?
 description: Learn about Hyde and find answers to common questions!
 category: Blog
-author: Caen
+author: Emma
 date: 2022-04-13 15:34
 ---
 

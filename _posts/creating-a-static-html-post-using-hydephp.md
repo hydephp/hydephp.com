@@ -2,7 +2,7 @@
 title: Creating a static HTML post using HydePHP
 description: In this tutorial, we go through the simple process of generating a static blog post
 category: tutorials
-author: Caen
+author: Emma
 date: 2022-03-19 16:19
 ---
 
@@ -42,7 +42,7 @@ Write a short post excerpt/description:
  > In this tutorial we go through the simple process of generating a static blog post
 
 What is your (the authors) name?:
- > Caen
+ > Emma
 
 What is the primary category of the post?:
  > tutorials
@@ -54,7 +54,7 @@ Next, we will be given a preview of what the post will look like. If something d
 Creating a post with the following details:
 Title: Creating a static HTML post using HydePHP
 Description: In this tutorial, we go through the simple process of generating a static blog post
-Author: Caen
+Author: Emma
 Category: tutorials
 Date: 2022-03-19 16:19
 Slug: creating-a-static-html-post-using-hydephp
@@ -75,7 +75,7 @@ This is the contents of the file. The title has also been filled in for us.
 title: Creating a static HTML post using HydePHP
 description: In this tutorial, we go through the simple process of generating a static blog post
 category: tutorials
-author: Caen
+author: Emma
 date: 2022-03-19 16:19
 slug: creating-a-static-html-post-using-hydephp
 ---
