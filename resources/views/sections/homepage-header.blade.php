@@ -17,7 +17,7 @@
                     <!-- Version badge -->
                     <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium text-hyde-cyan bg-hyde-cyan/10 border border-hyde-cyan/20 rounded-full backdrop-blur-sm">
                         <div class="w-1.5 h-1.5 bg-hyde-cyan rounded-full mr-2 animate-pulse"></div>
-                        Version 2.0 Release
+                        Version 2.0 Released
                     </div>
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
@@ -92,18 +92,18 @@
                         
                         <!-- Terminal Content -->
                         <div class="p-6 font-mono text-sm">
-                            <h1 class="text-hyde-purple text-4xl font-bold mb-4 animate-pulse">hyde</h1>
+                            <h1 class="text-hyde-purple text-4xl font-bold mb-4">hyde</h1>
                             <div class="text-hyde-cyan text-lg mb-4 typing-animation">
-                                <span class="text-gray-400">$</span> hyde build
+                                <span class="text-gray-400">$</span> php hyde build
                             </div>
                             <div class="text-gray-300 space-y-1">
-                                <div class="opacity-0 animate-fade-in-1">Using default config file</div>
-                                <div class="opacity-0 animate-fade-in-2">Building site in production mode</div>
-                                <div class="opacity-0 animate-fade-in-3">
+                                <div class="opacity-75 animate-fade-in-1">Preparing build environment</div>
+                                <div class="opacity-75 animate-fade-in-2">Compiling Blade and Markdown</div>
+                                <div class="opacity-75 animate-fade-in-3">
                                     <span class="text-green-400">✓</span> 109 files compiled in 
                                     <span class="text-hyde-cyan">756ms</span>
                                 </div>
-                                <div class="opacity-0 animate-fade-in-4 text-green-400">
+                                <div class="animate-fade-in-4 text-green-400">
                                     🎉 Congratulations! Your static site
                                 </div>
                                 <div class="opacity-0 animate-fade-in-5 text-green-400">has been built!</div>
