@@ -26,9 +26,9 @@
         </div>
 
         <!-- Enhanced Posts Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            @foreach(MarkdownPost::getLatestPosts()->where(fn ($post) => $post->matter('hiddenFromHomepage') !== true)->take(3) as $post)
-                <article class="group relative">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8 mb-16">
+            @foreach(MarkdownPost::getLatestPosts()->where(fn ($post) => $post->matter('hiddenFromHomepage') !== true)->take(4) as $post)
+                <article class="group relative {{ $loop->iteration == 4 ? 'hidden md:block lg:hidden' : '' }}">
                     <!-- Glow effect -->
                     <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-1000"></div>
                     
