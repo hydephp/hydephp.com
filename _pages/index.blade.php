@@ -117,6 +117,60 @@
         from, to { border-color: transparent; }
         50% { border-color: var(--hyde-cyan); }
     }
+
+    /* Line clamp utilities for text truncation */
+    .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .line-clamp-3 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+
+    /* Enhanced prose styling for testimonials */
+    .prose {
+        color: #374151;
+        max-width: none;
+    }
+    
+    .prose p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+    
+    .prose a {
+        color: #9333ea;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    
+    .prose a:hover {
+        color: #7c3aed;
+        text-decoration: underline;
+    }
+
+    .prose strong {
+        font-weight: 600;
+        color: #111827;
+    }
+
+    .prose em {
+        font-style: italic;
+    }
+
+    .prose code {
+        background-color: #f3f4f6;
+        padding: 0.125rem 0.25rem;
+        border-radius: 0.25rem;
+        font-size: 0.875em;
+        font-weight: 500;
+    }
 </style>
 @push('meta')
     <meta name="keywords" content="HydePHP, Static App Builder, Static Sites, Blogs, Documentation, Static Site Generator, Hyde, PHP, PHP Framework">
