@@ -262,11 +262,17 @@
           progress = 1;
         }
         
-        // Simple snap for middle section only
-        if (progress >= 0.3 && progress <= 0.7) {
-          const middleProgress = (progress - 0.3) / 0.4;
-          const eased = middleProgress * middleProgress * (3 - 2 * middleProgress);
-          progress = 0.3 + (eased * 0.4);
+        // Aggressive snap behavior to counteract macOS trackpad momentum
+        if (progress >= 0.2 && progress <= 0.8) {
+          // Create a very sticky zone for the middle panel
+          const snapStart = 0.2;
+          const snapEnd = 0.8;
+          const snapRange = snapEnd - snapStart;
+          const normalizedSnap = (progress - snapStart) / snapRange;
+          
+          // Ultra-aggressive easing to create strong resistance against momentum scrolling
+          const snapEased = Math.pow(normalizedSnap, 0.25); // Fourth root - much more aggressive
+          progress = snapStart + (snapEased * snapRange * 0.6); // Compress the range even more
         }
         
         // Correct transform mapping for 3 panels in 300% container:
