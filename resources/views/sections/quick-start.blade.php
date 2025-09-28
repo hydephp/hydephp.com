@@ -1,10 +1,10 @@
 <!-- Quick Start Section -->
-<section class="relative w-full py-24 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden">
+<section class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden">
     <!-- Background Effects -->
     <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
     <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-slate-900/50"></div>
     
-    <div class="container relative z-10 flex flex-col items-center justify-center h-full max-w-6xl mx-auto px-8 sm:flex-row sm:justify-between">
+    <div class="container relative z-10 flex flex-col items-center justify-center h-full max-w-6xl mx-auto px-4 sm:px-8 sm:flex-row sm:justify-between">
         <div class="relative flex flex-col items-start justify-center w-full mb-16 sm:w-1/2 lg:w-2/5 sm:mb-0 sm:pr-12">
             <!-- Badge -->
             <div class="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-purple-300 bg-purple-500/10 border border-purple-500/20 rounded-full backdrop-blur-sm">

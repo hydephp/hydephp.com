@@ -9,10 +9,10 @@
         <div class="absolute top-40 right-20 w-1 h-1 bg-hyde-purple rounded-full animate-ping opacity-40"></div>
         <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-white rounded-full animate-pulse opacity-30"></div>
          --}}
-        <div class="pt-48 md:pt-60 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl pl-0 mx-auto -mt-24 sm:pl-8 xl:pl-0 md:flex-row md:justify-between relative z-10">
+        <div class="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 lg:pb-24 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl px-4 sm:px-8 xl:px-0 mx-auto md:flex-row md:justify-between relative z-10">
             
             <!-- Left Content -->
-            <div class="flex flex-col items-center w-5/6 md:items-start sm:w-1/2 lg:w-1/2 xl:w-1/2 lg:-mt-4">
+            <div class="flex flex-col items-center w-full md:items-start md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <div class="relative md:text-left text-center">
                     <!-- Version badge -->
                     <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium text-hyde-cyan bg-hyde-cyan/10 border border-hyde-cyan/20 rounded-full backdrop-blur-sm">
@@ -35,13 +35,13 @@
                     </div>
                 </div>
                 
-                <p class="my-6 text-base text-center text-gray-400 xl:text-lg md:text-left leading-relaxed max-w-2xl">
+                <p class="my-6 text-base text-center text-gray-400 xl:text-lg md:text-left leading-relaxed max-w-2xl px-4 md:px-0">
                     Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with the simplicity of Markdown. 
                     <span class="text-purple-300">Your next project starts here.</span>
                 </p>
                 
                 <!-- CTA Buttons -->
-                <div class="flex flex-col sm:flex-row gap-6 mt-8 w-full sm:w-auto">
+                <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 w-full sm:w-auto px-4 md:px-0">
                     <a href="/docs/1.x/quickstart" class="group relative">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors xl:text-lg">
@@ -59,7 +59,7 @@
                 </div>
                 
                 <!-- Quick stats -->
-                <div class="flex items-center gap-8 mt-12 text-sm text-gray-500">
+                <div class="flex items-center justify-center md:justify-start gap-4 sm:gap-8 mt-12 text-sm text-gray-500 px-4 md:px-0">
                     <div class="flex items-center">
                         <div class="w-2 h-2 bg-github-green rounded-full mr-2"></div>
                         <span>Open Source</span>
@@ -76,7 +76,7 @@
             </div>
             
             <!-- Right Content - Hyde Build Graphic -->
-            <div class="flex flex-col items-center justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-8 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-1/2 lg:w-1/2 xl:w-1/2 lg:-mt-4">
+            <div class="flex flex-col items-center justify-center w-full h-auto mt-12 mb-8 md:mt-0 md:mb-0 md:h-full md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <div class="relative transform hover:scale-105 transition-transform duration-500">
                     <!-- Terminal Window -->
                     <div class="bg-slate-800/90 backdrop-blur-sm rounded-xl border border-slate-700/50 shadow-2xl w-96 mr-8 transform -rotate-2 hover:rotate-0 transition-transform duration-300">

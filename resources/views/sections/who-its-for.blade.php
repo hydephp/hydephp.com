@@ -1,10 +1,10 @@
 <!-- Who's It For Section -->
-<section class="relative w-full py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
+<section class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden">
     <!-- Background Effects -->
     <div class="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-purple-900/20 via-transparent to-pink-900/20"></div>
 
-    <div class="container relative z-10 max-w-7xl px-8 mx-auto">
+    <div class="container relative z-10 max-w-7xl px-4 sm:px-8 mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-20">
             <div class="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 rounded-full backdrop-blur-sm">

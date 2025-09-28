@@ -63,9 +63,17 @@
         margin-right: 0.75rem;
     }
     
-    /* Add top padding to account for fixed navigation on homepage */
-    body > section {
+    /* Ensure proper spacing for fixed navigation */
+    body > section:first-of-type {
         padding-top: 0; /* Hero should start at the top */
+    }
+    
+    /* Better responsive spacing */
+    @media (max-width: 640px) {
+        .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
     }
 
     /* Smooth scrolling */
@@ -228,9 +236,6 @@
 @include('sections.who-its-for')
 @include('testimonials')
 
-<!-- Blog Posts Section -->
-<section class="relative bg-white py-24">
-    @include('sections.posts')
-</section>
+@include('sections.posts')
 
 @endsection

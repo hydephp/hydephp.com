@@ -1,9 +1,9 @@
 <!-- Features Section -->
-<section id="features" class="relative w-full py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
+<section id="features" class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white overflow-hidden">
     <!-- Subtle background pattern -->
     <div class="absolute inset-0 bg-grid-gray-100/50 bg-[size:60px_60px]"></div>
     
-    <div class="container relative z-10 max-w-7xl px-8 mx-auto">
+    <div class="container relative z-10 max-w-7xl px-4 sm:px-8 mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-20">
             <div class="inline-flex items-center px-4 py-2 mb-6 text-sm font-medium text-purple-600 bg-purple-50 border border-purple-200 rounded-full">
