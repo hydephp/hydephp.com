@@ -139,26 +139,62 @@
         </article>
       </div>
 
-      <!-- Right Column - Showcase -->
+      <!-- Right Column - Stats Card -->
+      @php($stats = \App\Support\HydeStats::fetch())
       <div class="lg:col-span-1 flex items-center justify-center">
-        <div class="relative group">
-          <div class="absolute -inset-1 rounded-2xl blur-sm opacity-25 transition
-                      bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-400
-                      group-hover:opacity-40"></div>
+        <div class="relative group w-full max-w-md">
+          {{-- gradient bezel --}}
+          <div class="absolute -inset-[1px] rounded-[20px]
+                      bg-gradient-to-r from-purple-500/50 via-pink-500/40 to-cyan-400/40 opacity-70"></div>
 
-          <div class="relative rounded-2xl p-4 border border-white/10 bg-white/5 backdrop-blur-sm
-                      shadow-[0_18px_60px_rgba(0,0,0,.55)] transform group-hover:scale-[1.02]
-                      transition duration-500">
-            <div class="rounded-xl overflow-hidden">
-              <img src="media/markdown-pages.png"
-                   alt="Markdown source and rendered preview in HydePHP"
-                   class="w-full h-auto object-cover">
+          <div class="relative rounded-2xl bg-white/5 backdrop-blur-sm
+                      border border-white/10 shadow-[0_18px_60px_rgba(0,0,0,.55)] p-5 sm:p-6">
+            <div class="pointer-events-none absolute inset-0 rounded-2xl
+                        shadow-[inset_0_1px_0_rgba(255,255,255,.06)]"></div>
+
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-lg font-semibold text-slate-100">Hyde by the Numbers</h3>
+              {{-- <span class="text-[11px] text-slate-400">Updated {{ \Carbon\Carbon::parse($stats['fetched_at'])->diffForHumans() }}</span> --}}
             </div>
 
-            <div class="absolute -top-3 -right-3 rounded-full px-3 py-1.5 text-xs font-semibold
-                        text-white shadow-lg
-                        bg-gradient-to-r from-purple-500 to-pink-500">
-              📝 Live Preview
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+              {{-- Stars --}}
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                <div class="text-[11px] uppercase tracking-wide text-slate-400">GitHub Stars</div>
+                <div class="mt-1 text-2xl font-semibold text-slate-100">
+                  {{ \App\Support\HydeStats::short($stats['stars']) }}
+                </div>
+              </div>
+
+              {{-- Packagist installs --}}
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                <div class="text-[11px] uppercase tracking-wide text-slate-400">Packagist Installs</div>
+                <div class="mt-1 text-2xl font-semibold text-slate-100">
+                  {{ \App\Support\HydeStats::short($stats['packagist_installs']) }}
+                </div>
+              </div>
+
+              {{-- Total views --}}
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                <div class="text-[11px] uppercase tracking-wide text-slate-400">GitHub Views</div>
+                <div class="mt-1 text-2xl font-semibold text-slate-100">
+                  {{ \App\Support\HydeStats::short($stats['github_views']) }}
+                </div>
+              </div>
+
+              {{-- Total clones --}}
+              <div class="rounded-xl border border-white/10 bg-white/5 p-3">
+                <div class="text-[11px] uppercase tracking-wide text-slate-400">GitHub Clones</div>
+                <div class="mt-1 text-2xl font-semibold text-slate-100">
+                  {{ \App\Support\HydeStats::short($stats['github_clones']) }}
+                </div>
+              </div>
+            </div>
+
+            {{-- Footer chips --}}
+            <div class="mt-4 flex flex-wrap gap-2 text-[11px]">
+              <span class="px-2.5 py-1 rounded-full bg-purple-500/10 text-purple-200 border border-purple-300/20">Open Source</span>
+              <span class="px-2.5 py-1 rounded-full bg-cyan-500/10 text-cyan-200 border border-cyan-300/20">Laravel Powered</span>
             </div>
           </div>
         </div>
