@@ -226,6 +226,7 @@
 @include('sections.quick-start')
 @include('sections.features-enhanced')
 @include('sections.who-its-for')
+@include('testimonials')
 
 <!-- Blog Posts Section -->
 <section class="relative bg-white py-24">

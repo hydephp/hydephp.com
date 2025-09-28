@@ -151,10 +151,6 @@
             </div>
         </div>
     </div>
-    <!-- Enhanced Testimonials Section -->
-    <div class="py-24">
-        @include('testimonials')
-    </div>
     
     <!-- Wave transition -->
     <svg class="w-full text-slate-900 fill-current" viewBox="0 0 1400 74" xmlns="http://www.w3.org/2000/svg">
