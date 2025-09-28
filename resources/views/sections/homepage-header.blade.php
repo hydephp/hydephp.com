@@ -9,7 +9,7 @@
         <div class="absolute top-40 right-20 w-1 h-1 bg-hyde-purple rounded-full animate-ping opacity-40"></div>
         <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-white rounded-full animate-pulse opacity-30"></div>
          --}}
-        <div class="pt-32 md:pt-40 lg:pt-48 pb-16 md:pb-20 lg:pb-24 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl px-4 sm:px-8 xl:px-0 mx-auto md:flex-row md:justify-between relative z-10">
+        <div class="pt-32 md:pt-40 lg:pt-40 pb-16 md:pb-20 lg:pb-24 container self-center my-auto flex flex-col items-center justify-center h-full max-w-7xl px-4 sm:px-8 xl:px-0 mx-auto md:flex-row md:justify-between relative z-10">
             
             <!-- Left Content -->
             <div class="flex flex-col items-center w-full md:items-start md:w-1/2 lg:w-1/2 xl:w-1/2">
