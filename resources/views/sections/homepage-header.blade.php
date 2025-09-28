@@ -100,7 +100,7 @@
                                 <div class="opacity-75 animate-fade-in-1">Preparing build environment</div>
                                 <div class="opacity-75 animate-fade-in-2">Compiling Blade and Markdown</div>
                                 <div class="opacity-75 animate-fade-in-3">
-                                    <span class="text-green-400">✓</span> 109 files compiled in 
+                                    <span class="text-green-400">✓</span> 80 files compiled in 
                                     <span class="text-hyde-cyan">756ms</span>
                                 </div>
                                 <div class="animate-fade-in-4 text-green-400">
