@@ -21,23 +21,23 @@
                     </div>
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center">
-                        <span class="bg-gradient-to-r from-white via-pink-200 to-red-400 bg-clip-text text-transparent">
+                        <span class="bg-gradient-to-br from-purple-300 via-pink-300 to-red-400 bg-clip-text text-transparent">
                             Hyde
                         </span>
-                        <span class="text-hyde-cyan font-mono">PHP</span>
+                        <span class="text-purple-300 font-mono">PHP</span>
                     </h1>
                     
                     <div class="relative mb-6 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
                         Build
-                        <span class="text-hyde-cyan font-mono">static sites</span>
+                        <span class="text-purple-300 font-mono">static sites</span>
                         with the elegance of
-                        <span class="text-hyde-purple">Laravel</span>
+                        <span class="text-pink-300">Laravel</span>
                     </div>
                 </div>
                 
                 <p class="my-6 text-base text-center text-gray-400 xl:text-lg md:text-left leading-relaxed max-w-lg">
                     Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with markdown simplicity. 
-                    <span class="text-hyde-cyan">Your next project starts here.</span>
+                    <span class="text-purple-300">Your next project starts here.</span>
                 </p>
                 
                 <!-- CTA Buttons -->
