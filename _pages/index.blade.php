@@ -3,35 +3,36 @@
 @php($title = 'Elegant and Powerful Static Site Generator')
 <style>
     /* === Enhanced Hyde brand palette pulled from the logo === */
-    :root{
-        --hyde-magenta:#B1368F;  /* ribbon left */
-        --hyde-coral:  #F15A4A;  /* ribbon right */
-        --hyde-navy-1: #1E2A3C;  /* hat body top */
-        --hyde-navy-2: #172434;  /* hat body base */
-        --hyde-cyan:   #06B6D4;  /* cyan accent */
-        --hyde-purple: #A855F7;  /* purple accent */
-        --laravel-red:#F53003;   /* official Laravel */
-        --plasma-purple:#A855F7; /* Markdown */ 
-        --github-green:#5FED83;  /* GitHub */
-        --php-blue:#7A86B8;      /* PHP */
+    :root {
+        --hyde-magenta: #B1368F;  /* ribbon left */
+        --hyde-coral: #F15A4A;    /* ribbon right */
+        --hyde-navy-1: #1E2A3C;   /* hat body top */
+        --hyde-navy-2: #172434;   /* hat body base */
+        --hyde-cyan: #06B6D4;     /* cyan accent */
+        --hyde-purple: #A855F7;   /* purple accent */
+        --laravel-red: #F53003;   /* official Laravel */
+        --plasma-purple: #A855F7; /* Markdown */ 
+        --github-green: #5FED83;  /* GitHub */
+        --php-blue: #7A86B8;      /* PHP */
     }
 
     /* Brand gradients */
-    .text-hyde-ribbon{
-        background-image: linear-gradient(90deg,var(--hyde-magenta) 0%,var(--hyde-coral) 100%);
-        -webkit-background-clip:text; background-clip:text;
+    .text-hyde-ribbon {
+        background-image: linear-gradient(90deg, var(--hyde-magenta) 0%, var(--hyde-coral) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
         color: transparent;
-        filter: drop-shadow(0 0 18px rgba(241,90,74,.18)) drop-shadow(0 0 10px rgba(177,54,143,.18));
+        filter: drop-shadow(0 0 18px rgba(241, 90, 74, .18)) drop-shadow(0 0 10px rgba(177, 54, 143, .18));
     }
 
-    .bg-hyde-cyan{ background-color: var(--hyde-cyan); }
-    .bg-hyde-purple{ background-color: var(--hyde-purple); }
-    .text-hyde-cyan{ color: var(--hyde-cyan); }
-    .text-hyde-purple{ color: var(--hyde-purple); }
+    .bg-hyde-cyan { background-color: var(--hyde-cyan); }
+    .bg-hyde-purple { background-color: var(--hyde-purple); }
+    .text-hyde-cyan { color: var(--hyde-cyan); }
+    .text-hyde-purple { color: var(--hyde-purple); }
     
-    .bg-php-blue{ background-color: var(--php-blue); }
-    .bg-github-green{ background-color: var(--github-green); }
-    .bg-laravel-red{ background-color: var(--laravel-red); }
+    .bg-php-blue { background-color: var(--php-blue); }
+    .bg-github-green { background-color: var(--github-green); }
+    .bg-laravel-red { background-color: var(--laravel-red); }
 
     /* Grid pattern */
     .bg-grid-white\/\[0\.02\] {
@@ -54,7 +55,7 @@
         z-index: 50;
     }
     .theme-toggle-button {
-        display: none!important;
+        display: none !important;
     }
     #app {
         min-width: 100vw;
@@ -77,8 +78,8 @@
     }
 
     /* Smooth scrolling */
-    html, body { 
-        scroll-behavior: smooth; 
+    html, body {
+        scroll-behavior: smooth;
     }
 
     /* Enhanced mark styling */

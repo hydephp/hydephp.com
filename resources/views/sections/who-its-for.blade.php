@@ -26,11 +26,11 @@
         </div>
 
         <!-- Cards Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 lg:mb-20">
             <!-- Laravel Artisans -->
-            <div class="group relative">
+            <div class="group relative flex">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative h-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-red-500/30 transition-all duration-300">
+                <div class="relative flex flex-col w-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-red-500/30 transition-all duration-300">
                     <!-- Header -->
                     <div class="text-center mb-8">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -71,7 +71,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="group/btn relative block">
+                    <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-red-500 hover:bg-red-600 rounded-lg transition-colors">
                             <span class="mr-2">🏗️</span>
@@ -82,9 +82,9 @@
             </div>
 
             <!-- Markdown Aficionados -->
-            <div class="group relative">
+            <div class="group relative flex">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative h-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
+                <div class="relative flex flex-col w-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-blue-500/30 transition-all duration-300">
                     <!-- Header -->
                     <div class="text-center mb-8">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -125,7 +125,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/blog-posts" class="group/btn relative block">
+                    <a href="https://hydephp.com/docs/1.x/blog-posts" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors">
                             <span class="mr-2">📚</span>
@@ -136,9 +136,9 @@
             </div>
 
             <!-- Developers & More -->
-            <div class="group relative">
+            <div class="group relative flex">
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
-                <div class="relative h-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
+                <div class="relative flex flex-col w-full bg-slate-800/80 backdrop-blur-sm border border-slate-700/50 rounded-2xl p-8 hover:border-emerald-500/30 transition-all duration-300">
                     <!-- Header -->
                     <div class="text-center mb-8">
                         <div class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300">
@@ -179,7 +179,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/quickstart" class="group/btn relative block">
+                    <a href="https://hydephp.com/docs/1.x/quickstart" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg transition-colors">
                             <span class="mr-2">⚡</span>
