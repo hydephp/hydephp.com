@@ -27,15 +27,22 @@
             
             <!-- Enhanced CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-                <a href="docs/1.x/quickstart" class="group relative">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                    <span class="relative inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-bold text-white bg-gray-900 border border-transparent rounded-lg group-hover:bg-gray-800 transition-colors w-full sm:w-auto">
-                        <span class="mr-2">🚀</span>
-                        Get Started Now
-                    </span>
+                <a href="docs/1.x/quickstart"
+                    class="inline-flex items-center justify-center px-6 py-3 sm:px-7 sm:py-3.5
+                            text-base sm:text-lg font-semibold
+                            text-white bg-gradient-to-r from-purple-600/80 to-pink-600/80
+                            rounded-lg shadow-sm border border-white/10
+                            hover:from-purple-600 hover:to-pink-600
+                            hover:shadow-md transition-all w-full sm:w-auto">
+                    <span class="mr-2 opacity-90">🚀</span>
+                    Get Started Now
                 </a>
-                
-                <a href="#features" class="inline-flex items-center justify-center px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg font-medium text-gray-700 bg-white border border-gray-200 rounded-lg backdrop-blur-sm hover:bg-gray-50 hover:text-gray-900 transition-all w-full sm:w-auto shadow-sm">
+                <!-- secondary unchanged, just a hair softer -->
+                <a href="#features"
+                   class="inline-flex items-center justify-center px-6 py-3 sm:px-7 sm:py-3.5
+                          text-base sm:text-lg font-medium
+                          text-slate-700 bg-white/80 border border-slate-200 rounded-lg backdrop-blur
+                          hover:bg-white hover:text-slate-900 transition-colors w-full sm:w-auto">
                     <span class="mr-2">📋</span>
                     See Features
                 </a>
@@ -45,28 +52,39 @@
         <!-- Enhanced Video Section -->
         <div class="relative flex flex-col justify-center w-full lg:w-3/5 xl:w-1/2 mb-8 lg:mb-0">
             <div class="relative transform hover:scale-[1.02] lg:hover:scale-105 transition-transform duration-500">
-                <!-- Glowing border effect -->
-                <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl blur opacity-20"></div>
-                
-                <!-- Video container with glassmorphism -->
-                <div class="relative bg-white/80 backdrop-blur-sm border border-gray-200 rounded-xl p-1.5 sm:p-2 shadow-2xl">
+                <!-- stronger but still soft glow -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-400
+                            rounded-xl blur-md opacity-30"></div>
+
+                <div class="relative bg-white/85 backdrop-blur-sm border border-white/40 rounded-xl p-1.5 sm:p-2 shadow-2xl">
                     <div class="relative rounded-lg overflow-hidden aspect-video">
-                        <iframe 
-                            src="https://player.vimeo.com/video/727679114?h=839eaecd83&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
-                            frameborder="0" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen 
+                        <!-- overlay call-to-action -->
+                        <button
+                            class="pointer-events-none absolute inset-0 grid place-items-center
+                                   text-white/95 font-semibold text-sm sm:text-base
+                                   transition-opacity duration-300">
+                            <span class="inline-flex items-center gap-2 rounded-full px-3.5 py-2
+                                         bg-black/35 backdrop-blur-md border border-white/20
+                                         shadow-lg animate-pulse">
+                                <svg viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M8 5v14l11-7z"/></svg>
+                                Watch 100s intro
+                            </span>
+                        </button>
+
+                        <iframe
+                            src="https://player.vimeo.com/video/727679114?h=839eaecd83&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                            frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
                             class="absolute inset-0 w-full h-full rounded-lg"
-                            title="HydePHP in 100 seconds">
+                            title="HydePHP in 100 seconds"
+                            onload="this.previousElementSibling.classList.add('opacity-0')">
                         </iframe>
                     </div>
                 </div>
-                
-                <!-- Floating badge -->
-                <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
-                    <span class="mr-1">⏱️</span>
-                    <span class="hidden sm:inline">100 seconds</span>
-                    <span class="sm:hidden">100s</span>
+
+                <!-- keep the small floating badge -->
+                <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gradient-to-r from-purple-500 to-pink-500
+                            text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
+                    ⏱️ <span class="ml-1 hidden sm:inline">100 seconds</span><span class="ml-1 sm:hidden">100s</span>
                 </div>
             </div>
         </div>
