@@ -1,3 +1,4 @@
+<div class="bg-slate-800">
 <!-- Quick Start Section -->
 <section class="relative w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900 overflow-hidden">
     <!-- Background Effects -->
@@ -71,3 +72,4 @@
         </div>
     </div>
 </section>
+</div>
