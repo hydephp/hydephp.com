@@ -12,7 +12,7 @@ Hi everyone! I'm Emma De Silva, creator and maintainer of HydePHP. I'm excited t
 
 I'm thrilled to announce that I'll be speaking at the **Laravel Meetup Stockholm** Wednesday the first of October! If you're in the area or part of the Laravel community in Stockholm, I'd love to see you there.
 
-![stockholm-meetup-2025.png](stockholm-meetup-2025.png)
+![media/stockholm-meetup-2025.png](stockholm-meetup-2025.png)
 
 ## What I'll Be Talking About
 
