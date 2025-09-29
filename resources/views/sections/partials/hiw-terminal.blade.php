@@ -71,10 +71,7 @@
     100% { opacity: 1; transform: translateY(0); }
   }
   
-  /* Only animate when panel is visible */
-  .hiw-panel.is-visible .progress-bar {
-    animation: progress-fill 2s ease-in-out 0.8s forwards;
-  }
+  /* Progress bar controlled by scroll, no auto-animation */
   
   .hiw-panel.is-visible .success-message {
     animation: fade-in-success 0.5s ease-out 2.5s forwards;

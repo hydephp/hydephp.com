@@ -224,14 +224,7 @@
     animation: cursor-blink 1s infinite;
   }
 
-  /* Progress bar animation */
-  @keyframes progress-fill {
-    0% { width: 0%; }
-    100% { width: 100%; }
-  }
-  .progress-bar {
-    animation: progress-fill 2s ease-in-out 0.5s forwards;
-  }
+  /* Progress bar now controlled by scroll - no animation needed */
 </style>
 
 @push('scripts')
@@ -241,9 +234,30 @@
   const track = document.getElementById('hiw-track');
   const mq = window.matchMedia('(min-width: 1024px)');
   let ticking = false, active = true;
+  let progressBarPhase = true; // New state to track if we're in progress bar control phase
+  let progressBarValue = 0; // Track current progress bar progress
+  const PROGRESS_BAR_THRESHOLD = 0.4; // 40% of first panel scroll controls progress bar
 
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
+
+  function updateProgressBar(progress) {
+    const progressBar = document.querySelector('.progress-bar');
+    const percentageText = document.querySelector('.loading-percentage');
+    const successMessage = document.querySelector('.success-message');
+
+    if (progressBar && percentageText) {
+      const percentage = Math.round(progress * 100);
+      progressBar.style.width = `${percentage}%`;
+      percentageText.textContent = `${percentage}%`;
+
+      // Show success message when progress reaches 100%
+      if (progress >= 1 && successMessage) {
+        successMessage.style.opacity = '1';
+        successMessage.style.transform = 'translateY(0)';
+      }
+    }
+  }
+
   function onScroll(){
     if (!active || prefersReduced || !mq.matches) return;
     if (!ticking){
@@ -253,49 +267,96 @@
         const total = wrapper.offsetHeight - vh;
         const scrolled = Math.min(Math.max(-rect.top, 0), total);
         let progress = total > 0 ? (scrolled / total) : 0;
-        
+
         // Ensure we never exceed 100% - this prevents the extra blank screen
         progress = Math.min(progress, 1);
-        
+
         // If we're at or past 100%, force it to exactly 1
         if (progress >= 0.98) {
           progress = 1;
         }
-        
+
+        // NEW: Handle progress bar phase on first panel
+        if (progressBarPhase && progress < PROGRESS_BAR_THRESHOLD) {
+          // We're in the progress bar control phase
+          const progressBarProgress = progress / PROGRESS_BAR_THRESHOLD;
+          progressBarValue = progressBarProgress;
+          updateProgressBar(progressBarProgress);
+
+          // Stay on first panel
+          track.style.transform = `translate3d(0%, 0, 0)`;
+
+          // Update dots to show first panel active
+          const dots = document.querySelectorAll('.dot-indicator');
+          dots.forEach((dot, index) => {
+            if (index === 0) {
+              dot.className = 'w-2 h-2 rounded-full bg-white scale-125 dot-indicator transition-all duration-300';
+            } else {
+              dot.className = 'w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300';
+            }
+          });
+
+          // Panel highlighting - first panel bright
+          const panels = document.querySelectorAll('.hiw-panel');
+          panels.forEach((panel, index) => {
+            if (index === 0) {
+              panel.style.filter = 'brightness(1.1)';
+            } else {
+              panel.style.filter = 'brightness(0.9)';
+            }
+          });
+
+          ticking = false;
+          return;
+        } else if (progressBarPhase && progress >= PROGRESS_BAR_THRESHOLD) {
+          // Exit progress bar phase
+          progressBarPhase = false;
+          updateProgressBar(1); // Complete the progress bar
+        }
+
+        // Adjust progress for slide transitions (after progress bar phase)
+        let slideProgress;
+        if (progress < PROGRESS_BAR_THRESHOLD) {
+          slideProgress = 0;
+        } else {
+          // Map remaining scroll distance to slide progression
+          slideProgress = (progress - PROGRESS_BAR_THRESHOLD) / (1 - PROGRESS_BAR_THRESHOLD);
+        }
+
         // Aggressive snap behavior to counteract macOS trackpad momentum
-        if (progress >= 0.2 && progress <= 0.8) {
+        if (slideProgress >= 0.2 && slideProgress <= 0.8) {
           // Create a very sticky zone for the middle panel
           const snapStart = 0.2;
           const snapEnd = 0.8;
           const snapRange = snapEnd - snapStart;
-          const normalizedSnap = (progress - snapStart) / snapRange;
-          
+          const normalizedSnap = (slideProgress - snapStart) / snapRange;
+
           // Ultra-aggressive easing to create strong resistance against momentum scrolling
           const snapEased = Math.pow(normalizedSnap, 0.25); // Fourth root - much more aggressive
-          progress = snapStart + (snapEased * snapRange * 0.6); // Compress the range even more
+          slideProgress = snapStart + (snapEased * snapRange * 0.6); // Compress the range even more
         }
-        
+
         // Correct transform mapping for 3 panels in 300% container:
         // Panel 1: 0% (shows first 100% of viewport)
-        // Panel 2: -33.33% (shows second 100% of viewport) 
+        // Panel 2: -33.33% (shows second 100% of viewport)
         // Panel 3: -66.67% (shows third 100% of viewport)
-        let translateX = progress * -66.67;
-        
+        let translateX = slideProgress * -66.67;
+
         track.style.transform = `translate3d(${translateX}%, 0, 0)`;
-        
+
         // Calculate active index based on progress thirds
         let activeIndex;
-        if (progress < 0.33) {
+        if (slideProgress < 0.33) {
           activeIndex = 0;
-        } else if (progress < 0.67) {
+        } else if (slideProgress < 0.67) {
           activeIndex = 1;
         } else {
           activeIndex = 2;
         }
-        
+
         // Panel highlighting
         const panels = document.querySelectorAll('.hiw-panel');
-        
+
         panels.forEach((panel, index) => {
           if (index === activeIndex) {
             panel.style.filter = 'brightness(1.1)';
@@ -303,7 +364,7 @@
             panel.style.filter = 'brightness(0.9)';
           }
         });
-        
+
         // Update progress dots
         const dots = document.querySelectorAll('.dot-indicator');
         dots.forEach((dot, index) => {
@@ -313,7 +374,7 @@
             dot.className = 'w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300';
           }
         });
-        
+
         ticking = false;
       });
       ticking = true;
