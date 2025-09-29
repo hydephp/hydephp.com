@@ -6,9 +6,10 @@
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
     @include('hyde::components.skip-to-content-button')
-    @include('hyde::layouts.navigation')
 
     @include('components.banner')
+
+    @include('hyde::layouts.navigation')
 
     <section>
         @yield('content') 
