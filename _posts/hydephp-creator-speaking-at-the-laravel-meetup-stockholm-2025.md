@@ -1,17 +1,18 @@
 ---
-title: "Speaking at Laravel Meetup Stockholm: HydePHP and Laravel-Powered Static Sites"
-description: "Join me this Wednesday at Laravel Meetup Stockholm where I'll be talking about how HydePHP can supercharge your workflows with Laravel-powered static sites."
+title: "HydePHP creator speaking at Laravel Meetup Stockholm 2025"
+description: "On Wednesday, October 1, 2025, Emma De Silva, creator and maintainer of HydePHP, will be speaking at the Laravel Meetup Stockholm about how HydePHP can supercharge workflows with Laravel-powered static sites."
 category: news
 author: Emma
 date: "2025-09-29 10:00"
-image: stockholm-meetup-2025.png
 ---
 
 ## Exciting News!
 
 Hi everyone! I'm Emma De Silva, creator and maintainer of HydePHP. I'm excited to share some news with the community about an upcoming speaking engagement.
 
-I'm thrilled to announce that I'll be speaking at the **Laravel Meetup Stockholm** this Wednesday! If you're in the area or part of the Laravel community in Stockholm, I'd love to see you there.
+I'm thrilled to announce that I'll be speaking at the **Laravel Meetup Stockholm** Wednesday the first of October! If you're in the area or part of the Laravel community in Stockholm, I'd love to see you there.
+
+![/media/stockholm-meetup-2025.png](stockholm-meetup-2025.png)
 
 ## What I'll Be Talking About
 
