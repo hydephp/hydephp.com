@@ -103,6 +103,7 @@ return [
     */
 
     'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
+    'source_file_location_base_v1' => 'https://github.com/hydephp/develop/blob/1.x/docs',
     'edit_source_link_text' => 'Edit Page',
     'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
 
