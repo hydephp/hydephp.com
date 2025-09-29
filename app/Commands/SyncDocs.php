@@ -86,12 +86,6 @@ class SyncDocs extends Command
             $this->mirror($src, $target);
         }
 
-        // Optional: keep _docs out of git
-        $gitignore = $dest . '/.gitignore';
-        if (!file_exists($gitignore)) {
-            file_put_contents($gitignore, "*\n!.gitignore\n");
-        }
-
         $this->info('Docs sync complete.');
         $this->cleanup($tmpDir);
         return self::SUCCESS;
