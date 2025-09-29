@@ -3,8 +3,8 @@
 
 # Site Banner Configuration
 banner:
-  text: "Welcome to the new HydePHP website!"
-  color: "blue"  # Options: blue, green, red, yellow, purple, indigo, gray
+  text: "HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!"
+  color: "purple"  # Options: blue, green, red, yellow, purple, indigo, gray
   button:
-    text: "Learn More"
-    link: "/docs"
+    text: "Read More"
+    link: "/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
