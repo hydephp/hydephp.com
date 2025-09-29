@@ -23,20 +23,22 @@
         if ($index = Routes::get("docs/{$ver}/index")) return $index->getLink();
         return null;
     };
+
+    // Shared button style to keep heights identical
+    $btn = 'inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
+            bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800';
 @endphp
 
 @if($versions && count($versions) > 1)
 <div class="hidden md:flex items-center gap-2 absolute right-4 top-4 z-30">
     {{-- Version dropdown --}}
     <div x-data="{ open:false }" class="relative">
-        <button id="version-switcher" type="button" @click="open = !open"
-                class="px-3 py-1.5 text-sm rounded-md border border-gray-300 dark:border-gray-700
-                       bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800">
+        <button id="version-switcher" type="button" @click="open = !open" class="{{ $btn }}">
             <span class="font-medium">{{ $currentVersion ?: 'unknown' }}</span>
             @if(isset($versions[$currentVersion]))
-                <span class="ml-2 text-xs text-gray-500">{{ $versions[$currentVersion] }}</span>
-            @endif>
-            <svg class="inline w-4 h-4 ml-1 align-middle" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <span class="text-xs text-gray-500">{{ $versions[$currentVersion] }}</span>
+            @endif
+            <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.173l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
             </svg>
         </button>
@@ -57,23 +59,19 @@
         </div>
     </div>
 
-    {{-- New Search button (desktop) --}}
+    {{-- Search button (desktop) --}}
     <button type="button"
             @click="searchWindowOpen = true; $nextTick(() => setTimeout(() => document.getElementById('search-input')?.focus(), 0));"
-            class="px-3 py-1.5 text-sm rounded-md border border-gray-300 dark:border-gray-700
-                   bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800
-                   flex items-center gap-2"
+            class="{{ $btn }}"
             aria-label="Open search window">
         <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
             <path fill-rule="evenodd" d="M12.9 14.32a7 7 0 111.414-1.414l3.387 3.387a1 1 0 01-1.414 1.414l-3.387-3.387zM14 9a5 5 0 11-10 0 5 5 0 0110 0z" clip-rule="evenodd"/>
         </svg>
         <span>Search</span>
-        <kbd class="ml-1 text-[10px] px-1.5 py-0.5 rounded border border-gray-300 dark:border-gray-600">⌘K</kbd>
+        <kbd class="ml-1 text-[10px] px-1.5 py-0.5 rounded border border-gray-300 dark:border-gray-600">/</kbd>
     </button>
 </div>
-<style>
-@media (min-width: 768px) {
-  #searchMenuButton { display: none !important; }
-}
-</style>
 @endif
+<style>
+@media (min-width: 768px){ #searchMenuButton{ display:none !important; } }
+</style>
