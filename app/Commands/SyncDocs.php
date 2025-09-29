@@ -3,6 +3,7 @@
 namespace App\Commands;
 
 use Illuminate\Console\Command;
+use RuntimeException;
 use ZipArchive;
 
 class SyncDocs extends Command
@@ -15,129 +16,227 @@ class SyncDocs extends Command
 
     protected $description = 'Download and sync external docs into the local _docs directory.';
 
+    private const DEFAULT_SUBDIRS = ['1.x', '2.x'];
+    private const HTTP_TIMEOUT = 120;
+    private const USER_AGENT = 'HydeDocsSync';
+
     public function handle(): int
     {
-        if (!class_exists(ZipArchive::class)) {
-            $this->error('PHP ZipArchive extension is required (php-zip).');
+        $this->ensureZipArchiveAvailable();
+
+        $config = $this->getConfiguration();
+        $tempDir = $this->createTempDirectory();
+
+        try {
+            $zipPath = $this->downloadRepository($config['repo'], $config['ref'], $tempDir);
+            $extractedPath = $this->extractArchive($zipPath, $tempDir);
+            
+            $this->syncDocumentation($extractedPath, $config['dest'], $config['subdirs']);
+            
+            $this->info('✓ Docs sync complete.');
+            return self::SUCCESS;
+        } catch (RuntimeException $e) {
+            $this->error($e->getMessage());
             return self::FAILURE;
+        } finally {
+            $this->cleanup($tempDir);
         }
+    }
 
-        $repo = $this->option('repo');
-        $ref  = $this->option('ref');
-        $dest = rtrim(base_path($this->option('dest')), DIRECTORY_SEPARATOR);
+    private function ensureZipArchiveAvailable(): void
+    {
+        if (!class_exists(ZipArchive::class)) {
+            throw new RuntimeException('PHP ZipArchive extension is required (php-zip).');
+        }
+    }
 
+    private function getConfiguration(): array
+    {
         $subdirs = $this->option('only')
             ? array_map('trim', explode(',', $this->option('only')))
-            : ['1.x', '2.x'];
+            : self::DEFAULT_SUBDIRS;
 
-        // Download ZIP from GitHub codeload
+        return [
+            'repo' => $this->option('repo'),
+            'ref' => $this->option('ref'),
+            'dest' => rtrim(base_path($this->option('dest')), DIRECTORY_SEPARATOR),
+            'subdirs' => $subdirs,
+        ];
+    }
+
+    private function createTempDirectory(): string
+    {
+        $tempDir = sys_get_temp_dir() . '/docs-sync-' . uniqid();
+        
+        if (!mkdir($tempDir, 0777, true)) {
+            throw new RuntimeException("Failed to create temporary directory: {$tempDir}");
+        }
+
+        return $tempDir;
+    }
+
+    private function downloadRepository(string $repo, string $ref, string $tempDir): string
+    {
         $zipUrl = "https://codeload.github.com/{$repo}/zip/{$ref}";
-        $tmpDir = sys_get_temp_dir() . '/docs-sync-' . uniqid();
-        $zipPath = $tmpDir . '/repo.zip';
-        @mkdir($tmpDir, 0777, true);
+        $zipPath = $tempDir . '/repo.zip';
 
-        $this->info("Downloading {$repo}@{$ref} …");
-        $ctx = stream_context_create([
-            'http'  => ['timeout' => 120, 'header' => "User-Agent: HydeDocsSync\r\n"],
-            'https' => ['timeout' => 120, 'header' => "User-Agent: HydeDocsSync\r\n"],
+        $this->info("Downloading {$repo}@{$ref}...");
+
+        $context = stream_context_create([
+            'http' => [
+                'timeout' => self::HTTP_TIMEOUT,
+                'header' => 'User-Agent: ' . self::USER_AGENT . "\r\n",
+            ],
+            'https' => [
+                'timeout' => self::HTTP_TIMEOUT,
+                'header' => 'User-Agent: ' . self::USER_AGENT . "\r\n",
+            ],
         ]);
-        $data = @file_get_contents($zipUrl, false, $ctx);
+
+        $data = @file_get_contents($zipUrl, false, $context);
+        
         if ($data === false) {
-            $this->error("Failed to download ZIP from {$zipUrl}");
-            return self::FAILURE;
+            throw new RuntimeException("Failed to download ZIP from {$zipUrl}");
         }
+
         file_put_contents($zipPath, $data);
+        
+        return $zipPath;
+    }
 
-        // Extract ZIP
-        $this->info('Extracting …');
+    private function extractArchive(string $zipPath, string $tempDir): string
+    {
+        $this->info('Extracting archive...');
+
         $zip = new ZipArchive();
+        
         if ($zip->open($zipPath) !== true) {
-            $this->error('Failed to open ZIP archive.');
-            return self::FAILURE;
+            throw new RuntimeException('Failed to open ZIP archive.');
         }
-        $zip->extractTo($tmpDir);
 
-        // Find the single top-level dir inside the zip cleanly
-        $root = $zip->getNameIndex(0);
+        $zip->extractTo($tempDir);
+        $rootFolder = $zip->getNameIndex(0);
         $zip->close();
-        if (!$root || !is_dir($tmpDir . '/' . rtrim($root, '/'))) {
-            $this->error('Could not locate extracted repository folder.');
-            return self::FAILURE;
+
+        if (!$rootFolder) {
+            throw new RuntimeException('ZIP archive appears to be empty.');
         }
-        $top = realpath($tmpDir . '/' . rtrim($root, '/')) ?: ($tmpDir . '/' . rtrim($root, '/'));
 
-        // 1) Clear the ENTIRE destination (_docs) first
-        $this->line("Clearing destination: {$this->rel($dest)}");
-        $this->rrmdir($dest);
-        @mkdir($dest, 0777, true);
+        $extractedPath = $tempDir . '/' . rtrim($rootFolder, '/');
+        
+        if (!is_dir($extractedPath)) {
+            throw new RuntimeException('Could not locate extracted repository folder.');
+        }
 
-        // 2) Mirror selected subdirs
-        foreach ($subdirs as $dir) {
-            $src = $top . DIRECTORY_SEPARATOR . $dir;
-            $target = $dest . DIRECTORY_SEPARATOR . $dir;
+        return realpath($extractedPath) ?: $extractedPath;
+    }
 
-            if (!is_dir($src)) {
-                $this->warn("Skipping '{$dir}' (not found in repo).");
+    private function syncDocumentation(string $sourcePath, string $destPath, array $subdirs): void
+    {
+        $this->clearDestination($destPath);
+        $this->mirrorSubdirectories($sourcePath, $destPath, $subdirs);
+    }
+
+    private function clearDestination(string $destPath): void
+    {
+        $this->line("Clearing destination: {$this->getRelativePath($destPath)}");
+        $this->removeDirectory($destPath);
+        
+        if (!mkdir($destPath, 0777, true)) {
+            throw new RuntimeException("Failed to create destination directory: {$destPath}");
+        }
+    }
+
+    private function mirrorSubdirectories(string $sourcePath, string $destPath, array $subdirs): void
+    {
+        foreach ($subdirs as $subdir) {
+            $source = $sourcePath . DIRECTORY_SEPARATOR . $subdir;
+            $target = $destPath . DIRECTORY_SEPARATOR . $subdir;
+
+            if (!is_dir($source)) {
+                $this->warn("Skipping '{$subdir}' (not found in repository).");
                 continue;
             }
 
-            $this->line("Syncing {$dir} → {$this->rel($target)}");
-            @mkdir($target, 0777, true);
-            $this->mirror($src, $target);
+            $this->line("Syncing {$subdir} → {$this->getRelativePath($target)}");
+            
+            if (!mkdir($target, 0777, true)) {
+                throw new RuntimeException("Failed to create target directory: {$target}");
+            }
+            
+            $this->mirrorDirectory($source, $target);
         }
-
-        $this->info('Docs sync complete.');
-        $this->cleanup($tmpDir);
-        return self::SUCCESS;
     }
 
-    /** Robust directory mirror that preserves files/dirs and extensions */
-    protected function mirror(string $src, string $dst): void
+    private function mirrorDirectory(string $source, string $destination): void
     {
         $iterator = new \RecursiveIteratorIterator(
-            new \RecursiveDirectoryIterator($src, \FilesystemIterator::SKIP_DOTS),
+            new \RecursiveDirectoryIterator($source, \FilesystemIterator::SKIP_DOTS),
             \RecursiveIteratorIterator::SELF_FIRST
         );
 
         foreach ($iterator as $item) {
-            /** @var \SplFileInfo $item */
-            $rel = $iterator->getSubPathName(); // correct relative path
-            $targetPath = $dst . DIRECTORY_SEPARATOR . $rel;
+            $relativePath = $iterator->getSubPathName();
+            $targetPath = $destination . DIRECTORY_SEPARATOR . $relativePath;
 
             if ($item->isDir()) {
-                if (!is_dir($targetPath)) {
-                    @mkdir($targetPath, 0777, true);
+                if (!is_dir($targetPath) && !mkdir($targetPath, 0777, true)) {
+                    throw new RuntimeException("Failed to create directory: {$targetPath}");
                 }
             } else {
-                @mkdir(dirname($targetPath), 0777, true);
-                // Use pathnames to preserve the exact filename (with extension)
-                if (!@copy($item->getPathname(), $targetPath)) {
-                    throw new \RuntimeException("Failed to copy file to {$targetPath}");
+                $targetDir = dirname($targetPath);
+                
+                if (!is_dir($targetDir) && !mkdir($targetDir, 0777, true)) {
+                    throw new RuntimeException("Failed to create parent directory: {$targetDir}");
+                }
+                
+                if (!copy($item->getPathname(), $targetPath)) {
+                    throw new RuntimeException("Failed to copy file to {$targetPath}");
                 }
             }
         }
     }
 
-    protected function rrmdir(?string $dir): void
+    private function removeDirectory(?string $directory): void
     {
-        if (!$dir || !is_dir($dir)) return;
-        $it = new \RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS);
-        $files = new \RecursiveIteratorIterator($it, \RecursiveIteratorIterator::CHILD_FIRST);
-        foreach ($files as $file) {
-            $file->isDir() ? @rmdir($file->getPathname()) : @unlink($file->getPathname());
+        if (!$directory || !is_dir($directory)) {
+            return;
         }
-        @rmdir($dir);
+
+        $iterator = new \RecursiveDirectoryIterator(
+            $directory,
+            \FilesystemIterator::SKIP_DOTS
+        );
+        
+        $files = new \RecursiveIteratorIterator(
+            $iterator,
+            \RecursiveIteratorIterator::CHILD_FIRST
+        );
+
+        foreach ($files as $file) {
+            if ($file->isDir()) {
+                rmdir($file->getPathname());
+            } else {
+                unlink($file->getPathname());
+            }
+        }
+
+        rmdir($directory);
     }
 
-    protected function rel(string $path): string
+    private function getRelativePath(string $path): string
     {
-        $base = base_path();
-        return str_starts_with($path, $base) ? ltrim(substr($path, strlen($base)), DIRECTORY_SEPARATOR) : $path;
-        // (If on older PHP: use strpos === 0)
+        $basePath = base_path();
+        
+        if (str_starts_with($path, $basePath)) {
+            return ltrim(substr($path, strlen($basePath)), DIRECTORY_SEPARATOR);
+        }
+        
+        return $path;
     }
 
-    protected function cleanup(string $dir): void
+    private function cleanup(string $directory): void
     {
-        $this->rrmdir($dir);
+        $this->removeDirectory($directory);
     }
 }
