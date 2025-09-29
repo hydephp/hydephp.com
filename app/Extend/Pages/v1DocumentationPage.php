@@ -39,7 +39,7 @@ class v1DocumentationPage extends BaseDocsPage
      */
     public function getOnlineSourcePath(): string|false
     {
-        $base = Config::getNullableString('docs_v1.source_file_location_base')
+        $base = Config::getNullableString('docs.source_file_location_base_v1')
             ?? Config::getNullableString('docs.source_file_location_base');
 
         if ($base === null) {
