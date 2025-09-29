@@ -163,7 +163,7 @@ return [
         \Hyde\Pages\BladePage::class => '_pages',
         \Hyde\Pages\MarkdownPage::class => '_pages',
         \Hyde\Pages\MarkdownPost::class => '_posts',
-        \Hyde\Pages\DocumentationPage::class => '_docs',
+        \Hyde\Pages\DocumentationPage::class => '_docs/2.x',
     ],
 
     /*
@@ -185,7 +185,7 @@ return [
         \Hyde\Pages\BladePage::class => '',
         \Hyde\Pages\MarkdownPage::class => '',
         \Hyde\Pages\MarkdownPost::class => 'posts',
-        \Hyde\Pages\DocumentationPage::class => 'docs/1.x',
+        \Hyde\Pages\DocumentationPage::class => 'docs/2.x',
     ],
 
     /*
