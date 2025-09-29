@@ -306,6 +306,53 @@
     }
   }
 
+  function updateBrowserAnimations(slideProgress, activeIndex) {
+    const browserElements = [
+      document.querySelector('.build-success'),
+      document.querySelector('.browser-content-1'),
+      document.querySelector('.browser-content-2'),
+      document.querySelector('.browser-content-3'),
+      document.querySelector('.browser-content-4'),
+      document.querySelector('.browser-content-5'),
+      document.querySelector('.browser-content-6')
+    ];
+
+    if (activeIndex === 2) {
+      // Calculate progress within the third slide (0-1)
+      // Third slide spans from 0.75 to 1.0 (25% of total scroll)
+      let thirdSlideProgress;
+      if (slideProgress < 0.75) {
+        thirdSlideProgress = 0;
+      } else {
+        // Map 0.75-1.0 range to 0-1
+        thirdSlideProgress = (slideProgress - 0.75) / 0.25;
+      }
+
+      // Progressive animation thresholds for each element
+      const thresholds = [0.1, 0.25, 0.4, 0.55, 0.7, 0.8, 0.9];
+
+      browserElements.forEach((element, index) => {
+        if (element) {
+          if (thirdSlideProgress >= thresholds[index]) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+          } else {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(10px)';
+          }
+        }
+      });
+    } else if (activeIndex !== 2) {
+      // Reset animations when not on third slide
+      browserElements.forEach(element => {
+        if (element) {
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(10px)';
+        }
+      });
+    }
+  }
+
   function onScroll(){
     if (!active || prefersReduced || !mq.matches) return;
     if (!ticking){
@@ -425,6 +472,9 @@
 
         // Update second slide animations
         updateMarkdownAnimations(slideProgress, activeIndex);
+
+        // Update third slide animations
+        updateBrowserAnimations(slideProgress, activeIndex);
 
         ticking = false;
       });
