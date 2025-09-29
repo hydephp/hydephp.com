@@ -15,7 +15,7 @@ return [
     'versions' => [
         '1.x' => 'old',
         '2.x' => 'current',
-        'master' => 'upcoming',
+        // 'master' => 'upcoming',
     ],
 
     /*
