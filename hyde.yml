@@ -1,0 +1,10 @@
+# HydePHP Configuration Override File
+# Settings here will override settings in config/hyde.php
+
+# Site Banner Configuration
+banner:
+  text: "Welcome to the new HydePHP website!"
+  color: "blue"  # Options: blue, green, red, yellow, purple, indigo, gray
+  button:
+    text: "Learn More"
+    link: "/docs"
