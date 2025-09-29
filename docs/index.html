@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/index.html">
+<link rel="canonical" href="https://hydephp.com">
 <meta name="twitter:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:title" content="HydePHP - Elegant and Powerful Static Site Generator">
 
@@ -85,12 +85,9 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=fbec641625d79635ea18e6d2211f8dea">
+    <link rel="stylesheet" href="media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
-    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <script>tailwind.config = { /* tailwind.config.js */ darkMode: 'class', content: [ './_pages/*.blade.php', './resources/views/**/*.blade.php', './vendor/hyde/framework/resources/views/**/*.blade.php', ], theme: { extend: { typography: { DEFAULT: { css: { lineHeight: '1.5em', maxWidth: '96ch', h2: { marginBottom: '0.75em', marginTop: '1.5em', }, a: { color: '#5956eb', '&:hover': { color: '#4f46e5', }, textDecoration: 'none' }, blockquote: { backgroundColor: '#80808020', borderLeftColor: '#d1d5db', color: 'unset', fontWeight: 500, fontStyle: 'unset', lineHeight: '1.25em', paddingLeft: '0.75em', paddingTop: '.25em', paddingBottom: '.25em', marginTop: '1em', marginBottom: '1em', p: { paddingRight: '.25em', marginTop: '.25em', marginBottom: '.25em', }, 'p::before': { content: 'unset', }, 'p::after': { content: 'unset', }, }, code: { font: 'unset', backgroundColor: '#80808033', paddingLeft: '4px', paddingRight: '4px', marginLeft: '-2px', marginRight: '1px', borderRadius: '4px' }, 'code::before': { content: 'unset', }, 'code::after': { content: 'unset', }, pre: { code: { fontFamily: "'Fira Code Regular', Consolas, Monospace, 'Courier New'", } } }, }, invert: { css: { a: { color: '#818cf8', '&:hover': { color: '#6366f1', }, }, }, }, }, colors: { indigo: { 500: '#5956eb', } }, }, }, safelist: [ 'prose', 'dark:prose-invert', 'text-left', 'text-center', 'text-right', 'ml-auto', 'mx-auto', 'mr-auto', 'my-0', 'my-4', 'my-8', 'py-0', 'py-4', 'py-8', 'mx-0', 'mx-4', 'mx-8', 'px-0', 'px-4', 'px-8', ],  }</script>
-    <script>console.warn('The HydePHP TailwindCSS Play CDN is enabled. This is for development purposes only and should not be used in production.', 'See https://hydephp.com/docs/1.x/managing-assets');</script>
 
 
 
@@ -118,7 +115,7 @@
     <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="index.html" class="font-bold px-4">
+		<a aria-label="Home page link" href="./" class="font-bold px-4">
 	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
@@ -154,17 +151,17 @@
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
 		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="index.html" aria-current="page" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Home</a>				</li>
+					<a href="./" aria-current="page" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts.html"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
 					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
-		<a id="docs-nav-button" href="docs/1.x/index.html" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>
@@ -220,7 +217,7 @@
                 Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
                 Your next website is minutes away from becoming a reality.
             </p>
-            <a href="docs/1.x/index.html" class="relative mt-5 group">
+            <a href="docs/1.x/" class="relative mt-5 group">
                 <span class="absolute top-0 left-0 w-full h-full mt-1 ml-1 bg-black rounded group-hover:m-0"></span>
                 <span class="relative inline-block w-full h-full px-8 py-3 text-base font-bold bg-white border-2 border-black rounded group-hover:bg-violet-400 xl:text-xl fold-bold">
                 To the Documentation!
@@ -647,7 +644,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025">
     
     <header class="flex items-center justify-between">
-        <a href="posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025.html" class="block w-fit">
+        <a href="posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 HydePHP creator speaking at Laravel Meetup Stockholm
             </h2>
@@ -675,7 +672,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025.html" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -684,7 +681,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
     
     <header class="flex items-center justify-between">
-        <a href="posts/guest-posts/my-journey-contributing-to-hydephp.html" class="block w-fit">
+        <a href="posts/guest-posts/my-journey-contributing-to-hydephp" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development
             </h2>
@@ -714,7 +711,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/guest-posts/my-journey-contributing-to-hydephp.html" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/guest-posts/my-journey-contributing-to-hydephp" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -723,7 +720,7 @@ Project: 10/10</p>
             <meta itemprop="url" content="https://hydephp.com/posts/hydephp-summer-hackathon-2025">
     
     <header class="flex items-center justify-between">
-        <a href="posts/hydephp-summer-hackathon-2025.html" class="block w-fit">
+        <a href="posts/hydephp-summer-hackathon-2025" class="block w-fit">
             <h2 class="text-2xl font-bold text-gray-700 hover:text-gray-900 dark:text-gray-200 dark:hover:text-white transition-colors duration-75">
                 HydePHP is Joining ODHack #14 - Come Build with Us!
             </h2>
@@ -749,7 +746,7 @@ Project: 10/10</p>
         </section>
     
     <footer>
-        <a href="posts/hydephp-summer-hackathon-2025.html" class="text-indigo-500 hover:underline font-medium">
+        <a href="posts/hydephp-summer-hackathon-2025" class="text-indigo-500 hover:underline font-medium">
             Read post
         </a>
     </footer>
@@ -771,7 +768,7 @@ Project: 10/10</p>
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="index.html" class="flex items-center mr-4">
+				<a href="./" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -785,14 +782,14 @@ Project: 10/10</p>
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="docs/1.x/index.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="community.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="legal.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
@@ -806,10 +803,10 @@ Project: 10/10</p>
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="sitemap.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="posts.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					
@@ -860,7 +857,7 @@ Project: 10/10</p>
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
