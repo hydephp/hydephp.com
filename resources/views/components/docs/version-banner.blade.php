@@ -63,23 +63,23 @@
             {{-- Message --}}
             @if($viewedLabel === 'old')
                 <p class="text-sm font-medium">
-                    You’re viewing the <strong>{{ $viewedVersion }}</strong> documentation (old).
+                    You’re browsing the <strong>{{ $viewedVersion }}</strong> docs.
                     @if($currentUrl)
-                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Switch to current ({{ $currentLabelKey }}).</a>
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Consider upgrading to {{ $currentLabelKey }}</a>.
                     @endif
                 </p>
             @elseif($viewedLabel === 'upcoming')
                 <p class="text-sm font-medium">
-                    You’re viewing the <strong>{{ $viewedVersion }}</strong> documentation (upcoming / pre-release).
+                    You’re viewing an upcoming version (<strong>{{ $viewedVersion }}</strong>). Content may change before release.
                     @if($currentUrl)
-                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">See current stable ({{ $currentLabelKey }}).</a>
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">See current ({{ $currentLabelKey }})</a>
                     @endif
                 </p>
             @else
                 <p class="text-sm font-medium">
                     You’re viewing <strong>{{ $viewedVersion }}</strong>.
                     @if($currentUrl)
-                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Go to current ({{ $currentLabelKey }}).</a>
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Go to current ({{ $currentLabelKey }})</a>
                     @endif
                 </p>
             @endif
