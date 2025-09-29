@@ -14,7 +14,18 @@
             'indigo' => 'bg-indigo-600 text-white',
             'gray' => 'bg-gray-800 text-white'
         ];
+
+        $buttonHoverClasses = [
+            'blue' => 'hover:text-blue-600',
+            'green' => 'hover:text-green-600',
+            'red' => 'hover:text-red-600',
+            'yellow' => 'hover:text-yellow-600',
+            'purple' => 'hover:text-purple-600',
+            'indigo' => 'hover:text-indigo-600',
+            'gray' => 'hover:text-gray-800'
+        ];
         $bgClass = $colorClasses[$color] ?? $colorClasses['blue'];
+        $buttonHoverClass = $buttonHoverClasses[$color] ?? $buttonHoverClasses['blue'];
 
         $buttonConfig = $bannerConfig['button'] ?? null;
     @endphp
@@ -27,7 +38,7 @@
 
             @if($buttonConfig && isset($buttonConfig['text']) && isset($buttonConfig['link']))
                 <a href="{{ $buttonConfig['link'] }}"
-                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-{{ $color }}-600 transition-colors duration-200 relative z-10">
+                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white {{ $buttonHoverClass }} transition-colors duration-200 relative z-10">
                     {{ $buttonConfig['text'] }}
                 </a>
             @endif
