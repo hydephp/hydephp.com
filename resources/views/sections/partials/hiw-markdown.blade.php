@@ -40,12 +40,25 @@
         <div class="text-slate-600 markdown-line-2">
           This page was built with <strong class="text-purple-600">**HydePHP**</strong>.
         </div>
-        
-        {{-- Skeleton content lines --}}
-        <div class="mt-4 space-y-2 opacity-40">
-          <div class="h-2 bg-slate-300 rounded w-3/4"></div>
-          <div class="h-2 bg-slate-300 rounded w-1/2"></div>
-          <div class="h-2 bg-slate-300 rounded w-5/6"></div>
+        <div class="text-slate-600 markdown-line-3">
+          It takes just <em class="text-green-600">*minutes*</em> to get started.
+        </div>
+        <div class="text-slate-600 markdown-line-4">
+          Write content, not code.
+        </div>
+
+        {{-- Code block that appears --}}
+        <div class="mt-4 markdown-line-5">
+          <div class="bg-slate-100 border border-slate-200 rounded p-3">
+            <div class="text-xs text-slate-500 mb-2">```bash</div>
+            <div class="text-slate-700">php hyde build</div>
+            <div class="text-xs text-slate-500">```</div>
+          </div>
+        </div>
+
+        {{-- Final line --}}
+        <div class="text-slate-600 markdown-line-6">
+          <strong class="text-orange-600">Ready to ship!</strong> 🚀
         </div>
       </div>
     </div>
@@ -68,30 +81,15 @@
 </div>
 
 <style>
-  /* Fade in animation for content when visible */
+  /* Text animations now controlled by scroll */
   .hiw-panel .markdown-line-1,
-  .hiw-panel .markdown-line-2 {
+  .hiw-panel .markdown-line-2,
+  .hiw-panel .markdown-line-3,
+  .hiw-panel .markdown-line-4,
+  .hiw-panel .markdown-line-5,
+  .hiw-panel .markdown-line-6 {
     opacity: 0;
     transform: translateY(10px);
-    transition: all 0.6s ease-out;
-  }
-  
-  .hiw-panel.is-visible .markdown-line-1 {
-    animation: fade-in-up 0.6s ease-out 0.3s forwards;
-  }
-  
-  .hiw-panel.is-visible .markdown-line-2 {
-    animation: fade-in-up 0.6s ease-out 0.8s forwards;
-  }
-  
-  @keyframes fade-in-up {
-    0% { 
-      opacity: 0; 
-      transform: translateY(10px); 
-    }
-    100% { 
-      opacity: 1; 
-      transform: translateY(0); 
-    }
+    transition: all 0.3s ease-out;
   }
 </style>

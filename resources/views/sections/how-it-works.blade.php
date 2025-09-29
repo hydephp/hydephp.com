@@ -258,6 +258,54 @@
     }
   }
 
+  function updateMarkdownAnimations(slideProgress, activeIndex) {
+    const markdownLines = [
+      document.querySelector('.markdown-line-1'),
+      document.querySelector('.markdown-line-2'),
+      document.querySelector('.markdown-line-3'),
+      document.querySelector('.markdown-line-4'),
+      document.querySelector('.markdown-line-5'),
+      document.querySelector('.markdown-line-6')
+    ];
+
+    if (activeIndex === 1) {
+      // Calculate progress within the second slide (0-1)
+      // Second slide now spans from 0.25 to 0.75 (50% of total scroll)
+      let secondSlideProgress;
+      if (slideProgress < 0.25) {
+        secondSlideProgress = 0;
+      } else if (slideProgress < 0.75) {
+        // Map 0.25-0.75 range to 0-1
+        secondSlideProgress = (slideProgress - 0.25) / 0.5;
+      } else {
+        secondSlideProgress = 1;
+      }
+
+      // Progressive animation thresholds for each line
+      const thresholds = [0.1, 0.25, 0.4, 0.55, 0.7, 0.85];
+
+      markdownLines.forEach((line, index) => {
+        if (line) {
+          if (secondSlideProgress >= thresholds[index]) {
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+          } else {
+            line.style.opacity = '0';
+            line.style.transform = 'translateY(10px)';
+          }
+        }
+      });
+    } else if (activeIndex !== 1) {
+      // Reset animations when not on second slide
+      markdownLines.forEach(line => {
+        if (line) {
+          line.style.opacity = '0';
+          line.style.transform = 'translateY(10px)';
+        }
+      });
+    }
+  }
+
   function onScroll(){
     if (!active || prefersReduced || !mq.matches) return;
     if (!ticking){
@@ -344,11 +392,11 @@
 
         track.style.transform = `translate3d(${translateX}%, 0, 0)`;
 
-        // Calculate active index based on progress thirds
+        // Calculate active index with extended second slide duration
         let activeIndex;
-        if (slideProgress < 0.33) {
+        if (slideProgress < 0.25) {
           activeIndex = 0;
-        } else if (slideProgress < 0.67) {
+        } else if (slideProgress < 0.75) {
           activeIndex = 1;
         } else {
           activeIndex = 2;
@@ -374,6 +422,9 @@
             dot.className = 'w-2 h-2 rounded-full bg-white/30 dot-indicator transition-all duration-300';
           }
         });
+
+        // Update second slide animations
+        updateMarkdownAnimations(slideProgress, activeIndex);
 
         ticking = false;
       });
