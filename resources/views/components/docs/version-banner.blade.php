@@ -40,9 +40,8 @@
 @endphp
 
 @if(!$isCurrent && $versions && $currentLabelKey)
-<div x-data="{ show:true }" x-show="show"
-     class="border-l-4 {{ $bannerClass }} mb-8 print:hidden" aria-live="polite">
-    <div class="px-4 py-3">
+<div class="border-l-4 {{ $bannerClass }} mt-3 -mb-2 print:hidden" aria-live="polite">
+    <div class="pl-4 pr-3 py-3">
         <div class="flex items-center gap-3">
             {{-- Contextual icon --}}
             @if($viewedLabel === 'old')
@@ -61,38 +60,28 @@
             @endif
 
             {{-- Message --}}
-            <div class="flex-1">
-                @if($viewedLabel === 'old')
-                    <p class="text-sm">
-                        You're browsing the <strong>{{ $viewedVersion }}</strong> docs.
-                        @if($currentUrl)
-                            <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Consider upgrading to {{ $currentLabelKey }}</a>.
-                        @endif
-                    </p>
-                @elseif($viewedLabel === 'upcoming')
-                    <p class="text-sm">
-                        You're viewing an upcoming version (<strong>{{ $viewedVersion }}</strong>). Content may change before release.
-                        @if($currentUrl)
-                            <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">See current ({{ $currentLabelKey }})</a>
-                        @endif
-                    </p>
-                @else
-                    <p class="text-sm">
-                        You're viewing <strong>{{ $viewedVersion }}</strong>.
-                        @if($currentUrl)
-                            <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Go to current ({{ $currentLabelKey }})</a>
-                        @endif
-                    </p>
-                @endif
-            </div>
-
-            {{-- Dismiss --}}
-            <button @click="show=false" aria-label="Dismiss version notice"
-                    class="flex-shrink-0 p-1 rounded hover:bg-black/5 dark:hover:bg-white/10">
-                <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-            </button>
+            @if($viewedLabel === 'old')
+                <p class="text-sm">
+                    You're browsing the <strong>{{ $viewedVersion }}</strong> docs.
+                    @if($currentUrl)
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Consider upgrading to {{ $currentLabelKey }}</a>.
+                    @endif
+                </p>
+            @elseif($viewedLabel === 'upcoming')
+                <p class="text-sm">
+                    You're viewing an upcoming version (<strong>{{ $viewedVersion }}</strong>). Content may change before release.
+                    @if($currentUrl)
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">See current ({{ $currentLabelKey }})</a>
+                    @endif
+                </p>
+            @else
+                <p class="text-sm">
+                    You're viewing <strong>{{ $viewedVersion }}</strong>.
+                    @if($currentUrl)
+                        <a href="{{ $currentUrl }}" class="underline underline-offset-2 font-semibold">Go to current ({{ $currentLabelKey }})</a>
+                    @endif
+                </p>
+            @endif
         </div>
     </div>
 </div>
