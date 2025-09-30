@@ -158,6 +158,38 @@
     border-color: rgba(236, 72, 153, 0.2);
 }
 
+/* Scrollbar - hidden by default, visible on hover */
+#sidebar-navigation::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sidebar-navigation::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar-navigation::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+/* Show scrollbar on sidebar hover */
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.3);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.7);
+}
+
 /* Footer links */
 #sidebar-footer {
     border-top: 1px solid rgba(236, 72, 153, 0.2);
@@ -182,36 +214,6 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-}
-
-/* Scrollbar */
-#sidebar-navigation::-webkit-scrollbar {
-    width: 6px;
-}
-
-#sidebar-navigation::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.05);
-}
-
-.dark #sidebar-navigation::-webkit-scrollbar-track {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#sidebar-navigation::-webkit-scrollbar-thumb {
-    background: rgba(236, 72, 153, 0.3);
-    border-radius: 3px;
-}
-
-.dark #sidebar-navigation::-webkit-scrollbar-thumb {
-    background: rgba(236, 72, 153, 0.5);
-}
-
-#sidebar-navigation::-webkit-scrollbar-thumb:hover {
-    background: rgba(236, 72, 153, 0.5);
-}
-
-.dark #sidebar-navigation::-webkit-scrollbar-thumb:hover {
-    background: rgba(236, 72, 153, 0.7);
 }
 
 
