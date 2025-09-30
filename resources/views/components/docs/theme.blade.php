@@ -234,6 +234,8 @@
 
 /* Document article */
 #document {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     border-radius: 1rem;
@@ -254,22 +256,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     font-weight: 800;
-}
-
-/* Headings with subtle gradient on hover */
-#document h2,
-#document h3 {
-    transition: all 0.2s ease;
-}
-
-#document h2:hover,
-#document h3:hover {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
 /* Links in content */
