@@ -12,6 +12,7 @@
         {{ $article->renderHeader() }}
         <x-docs.version-switcher-inline />
     </header>
+    <x-docs.version-banner />
     <section id="document-main-content" itemprop="articleBody">
         {{ $article->renderBody() }}
     </section>
