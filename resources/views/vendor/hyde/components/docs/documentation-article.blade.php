@@ -10,6 +10,7 @@
 
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
         {{ $article->renderHeader() }}
+        <x-docs.version-switcher-inline />
     </header>
     <section id="document-main-content" itemprop="articleBody">
         {{ $article->renderBody() }}
