@@ -350,7 +350,7 @@ return [
             'testimonials',
             'accessibility',
             'sitemap',
-            'docs',
+            'docs/2.x/index',
             'features', // merged with about
         ],
 
