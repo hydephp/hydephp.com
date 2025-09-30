@@ -37,7 +37,7 @@ return [
         'collapsible' => true,
 
         // Should the sidebar footer be shown?
-        'footer' => true,
+        'footer' => false,
     ],
 
     /*
