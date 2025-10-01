@@ -63,8 +63,11 @@ jobs:
     - name: Download the latest community files
       run: php hyde download-community-files
 
+    - name: Download the latest documentation files
+      run: php hyde docs:download
+
     - name: Run the Hyde Builder
-      run: php hyde build --pretty-urls --run-prettier --no-interaction
+      run: php hyde build --pretty-urls --no-interaction
 
     - name: Create .nojekyll
       run: touch docs/.nojekyll
