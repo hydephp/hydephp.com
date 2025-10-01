@@ -12,6 +12,12 @@
 
 return [
 
+    'versions' => [
+        '1.x' => 'old',
+        '2.x' => 'current',
+        // 'master' => 'upcoming',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Sidebar Settings
@@ -31,7 +37,7 @@ return [
         'collapsible' => true,
 
         // Should the sidebar footer be shown?
-        'footer' => true,
+        'footer' => false,
 
         'order' => [
             'readme',
@@ -71,6 +77,7 @@ return [
     */
 
     'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
+    'source_file_location_base_v1' => 'https://github.com/hydephp/develop/blob/1.x/docs',
     'edit_source_link_text' => 'Edit Page',
     'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
 

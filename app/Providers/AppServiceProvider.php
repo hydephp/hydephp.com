@@ -6,6 +6,7 @@ use Hyde;
 use Hyde\Framework\Features\Navigation\NavigationData;
 use Hyde\Support\Models\Redirect;
 use Illuminate\Support\ServiceProvider;
+use App\Extend\MultiVersionDocsExtension;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        Hyde::registerExtension(MultiVersionDocsExtension::class);
     }
 
     /**
