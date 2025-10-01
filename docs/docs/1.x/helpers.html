@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,11 +71,19 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -124,8 +133,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -158,8 +167,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -195,40 +204,241 @@
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#file-based-collections">File-based Collections</a></li>
-<li><a href="#file-includes">File Includes</a>
-<ul>
-<li><a href="#using-includes">Using Includes</a></li>
-<li><a href="#stock-includes">Stock Includes</a></li>
-</ul>
-</li>
-<li><a href="#reading-time-helper">Reading-Time Helper</a>
-<ul>
-<li><a href="#create-a-new-readingtime-instance">Create a new ReadingTime instance</a></li>
-<li><a href="#get-the-reading-time-string">Get the reading time string</a></li>
-<li><a href="#get-the-reading-time-data">Get the reading time data</a></li>
-<li><a href="#custom-formatting">Custom formatting</a></li>
-</ul>
-</li>
-<li><a href="#helper-functions">Helper Functions</a>
-<ul>
-<li><a href="#hyde">hyde</a></li>
-<li><a href="#asset">asset</a></li>
-<li><a href="#route">route</a></li>
-<li><a href="#url">url</a></li>
-</ul>
-</li>
-<li><a href="#pagination-utility">Pagination Utility</a>
-<ul>
-<li><a href="#base-usage">Base usage</a></li>
-<li><a href="#constructor-options-breakdown">Constructor options breakdown</a></li>
-<li><a href="#practical-example">Practical example</a></li>
-</ul>
-</li>
-</ul>
-
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#file-based-collections" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        File-based Collections
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#file-includes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        File Includes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#using-includes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using Includes
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#stock-includes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Stock Includes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#footer" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Footer
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#head" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Head
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#scripts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Scripts
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#reading-time-helper" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Reading-Time Helper
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#create-a-new-readingtime-instance" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Create a new `ReadingTime` instance
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#get-the-reading-time-string" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Get the reading time string
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#get-the-reading-time-data" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Get the reading time data
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#custom-formatting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Custom formatting
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#specify-sprintf-format" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Specify sprintf format
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#format-using-a-custom-callback" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Format using a custom callback
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#helper-functions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Helper Functions
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#hyde" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hyde`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#asset" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `asset`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#route" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `route`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#url" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `url`
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pagination-utility" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Pagination Utility
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#base-usage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Base usage
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#constructor-options-breakdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Constructor options breakdown
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#currentpagenumber" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentPageNumber`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#paginationroutebasename" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `paginationRouteBasename`
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#practical-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Practical example
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#creating-our-posts-page" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating our posts page
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setting-up-the-new-blade-components" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Setting up the new Blade components
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-the-pagination-pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating the pagination pages
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#updating-the-listing-page-view" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Updating the listing page view
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#conclusion" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Conclusion
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+            </ul>
             </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
@@ -240,8 +450,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -270,8 +480,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -312,8 +522,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -327,23 +537,11 @@
             <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -429,176 +627,337 @@
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Helpers and Utilities</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>Helpers and Utilities</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>HydePHP comes with a few helper classes and utilities to make your life easier. This page will cover some of the most important ones.
 Note that these helpers targets those who write custom code and Blade templates, and that you are expected to have a basic understanding of programming and PHP.</p>
-<h2>File-based Collections<a id="file-based-collections" href="#file-based-collections" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="file-based-collections" class="group w-fit scroll-mt-2">File-based Collections<a href="#file-based-collections" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Hyde provides <code>DataCollections</code>, a subset of <a href="https://laravel.com/docs/10.x/collections">Laravel Collections</a> giving you a similar developer experience to working with Eloquent Collections. However, instead of accessing a database,
 it's all entirely file-based using static data files such as Markdown, Yaml, and JSON files which get parsed into objects that you can easily work with.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DataCollections</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Gets all Markdown files in resources/collections/$name directory</span></div><div class='line'><span style="color: #FFCB6B;">DataCollections</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Gets all YAML files in resources/collections/$name directory</span></div><div class='line'><span style="color: #FFCB6B;">DataCollections</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">yaml</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Gets all JSON files in resources/collections/$name directory</span></div><div class='line'><span style="color: #FFCB6B;">DataCollections</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">json</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">asArray </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">false);</span></div></code></pre>
+<pre><code class="language-php">use Hyde\Support\DataCollections;
+
+// Gets all Markdown files in resources/collections/$name directory
+DataCollections::markdown(string $name);
+
+// Gets all YAML files in resources/collections/$name directory
+DataCollections::yaml(string $name);
+
+// Gets all JSON files in resources/collections/$name directory
+DataCollections::json(string $name, bool $asArray = false);
+</code></pre>
 <p>See the <a href="collections">File-based Collections</a> documentation for the full details.</p>
-<h2>File Includes<a id="file-includes" href="#file-includes" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="file-includes" class="group w-fit scroll-mt-2">File Includes<a href="#file-includes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The Includes facade provides a simple way to access partials in the includes directory.</p>
 <p>If the file does not exist, the method will return <code>null</code>.
 You can also supply a default value as the second argument.
 Both Markdown and Blade includes will be rendered to HTML.</p>
-<h3>Using Includes<a id="using-includes" href="#using-includes" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="using-includes" class="group w-fit scroll-mt-2">Using Includes<a href="#using-includes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Includes are stored in the <code>resources/includes</code> directory. You can access them using the <code>Includes</code> facade.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Includes</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the raw contents of any arbitrary file in the includes directory</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.md</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the raw contents of an HTML file in the includes directory</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the rendered Blade of a partial file in the includes directory</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">blade</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.blade.php</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the rendered Markdown of a partial file in the includes directory</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.md</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<pre><code class="language-php">use Hyde\Support\Includes;
+
+// Get the raw contents of any arbitrary file in the includes directory
+Includes::get('example.md');
+
+// Get the raw contents of an HTML file in the includes directory
+Includes::html('example.html');
+
+// Get the rendered Blade of a partial file in the includes directory
+Includes::blade('example.blade.php');
+
+// Get the rendered Markdown of a partial file in the includes directory
+Includes::markdown('example.md');
+</code></pre>
 <p>When using the <code>html</code>, <code>markdown</code>, and <code>blade</code> methods, the file extension is optional.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Includes</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">===</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">blade</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">===</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">blade</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.blade.php</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">===</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.md</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<pre><code class="language-php">use Hyde\Support\Includes;
+
+Includes::html('example') === Includes::html('example.html');
+Includes::blade('example')  === Includes::blade('example.blade.php');
+Includes::markdown('example') === Includes::markdown('example.md');
+</code></pre>
 <p>All methods will return <code>null</code> if the file does not exist.
 However, you can supply a default value as the second argument to be used instead.
 Remember that Markdown and Blade defaults will still be rendered to HTML.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Includes</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// If the file does not exist, the default value will be returned</span></div><div class='line'><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">example.md</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Default content</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
-<h3>Stock Includes<a id="stock-includes" href="#stock-includes" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">use Hyde\Support\Includes;
+
+// If the file does not exist, the default value will be returned
+Includes::markdown('example.md', 'Default content');
+</code></pre>
+<h3 id="stock-includes" class="group w-fit scroll-mt-2">Stock Includes<a href="#stock-includes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP also supports some drop-in includes that you can use as an alternative to some config options. These currently are as follows:</p>
-<h4>Footer<a id="footer" href="#footer" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="footer" class="group w-fit scroll-mt-2">Footer<a href="#footer" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>If a <code>footer.md</code> file exists in the includes directory, Hyde will use that as the footer text, instead of the one set in the <code>hyde.footer</code> config option.</p>
-<h4>Head<a id="head" href="#head" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="head" class="group w-fit scroll-mt-2">Head<a href="#head" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>If a <code>head.html</code> file exists in the includes directory, Hyde include that within the <code>&lt;head&gt;</code> tag of the generated HTML, in addition to the one set in the <code>hyde.head</code> config option.</p>
-<h4>Scripts<a id="scripts" href="#scripts" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="scripts" class="group w-fit scroll-mt-2">Scripts<a href="#scripts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>If a <code>scripts.html</code> file exists in the includes directory, Hyde include that at the end of the <code>&lt;body&gt;</code> tag of the generated HTML, in addition to the one set in the <code>hyde.scripts</code> config option.</p>
-<h2>Reading-Time Helper<a id="reading-time-helper" href="#reading-time-helper" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="reading-time-helper" class="group w-fit scroll-mt-2">Reading-Time Helper<a href="#reading-time-helper" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The <code>ReadingTime</code> helper provides a simple way to calculate the reading time of a given string, for example a blog post.</p>
-<h3>Create a new <code>ReadingTime</code> instance<a id="create-a-new-readingtime-instance" href="#create-a-new-readingtime-instance" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="create-a-new-code-readingtime-code-instance" class="group w-fit scroll-mt-2">Create a new <code>ReadingTime</code> instance<a href="#create-a-new-code-readingtime-code-instance" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>There are a few ways to create a new <code>ReadingTime</code> instance. Either create a new instance directly, or use the static <code>fromString</code> or <code>fromFile</code>  helpers.</p>
 <p>In all cases, you will end up with a <code>ReadingTime</code> object that you can use to get the reading time.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">ReadingTime</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via constructor</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method (from file)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromFile</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">path/to/file.txt</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
-<h3>Get the reading time string<a id="get-the-reading-time-string" href="#get-the-reading-time-string" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">use Hyde\Support\ReadingTime;
+
+// Via constructor
+$time = new ReadingTime('Input text string');
+
+// Via static method
+$time = ReadingTime::fromString('Input text string');
+
+// Via static method (from file)
+$time = ReadingTime::fromFile('path/to/file.txt');
+</code></pre>
+<h3 id="get-the-reading-time-string" class="group w-fit scroll-mt-2">Get the reading time string<a href="#get-the-reading-time-string" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>To make things really easy, the <code>ReadingTime</code> instance can be automatically cast to a human-readable string with the default formatting.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// 1min, 0sec</span></div></code></pre>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #A6ACCD;"> // 1min, 0sec</span></div></code></pre>
+<pre><code class="language-php">(string) ReadingTime::fromString('Input text string'); // 1min, 0sec
+</code></pre>
+<pre><code class="language-blade">{{ ReadingTime::fromString('Input text string') }} // 1min, 0sec
+</code></pre>
 <p>You can also call the <code>getFormatted</code> method directly.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)-&gt;</span><span style="color: #82AAFF;">getFormatted</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// 1min, 0sec</span></div></code></pre>
-<h3>Get the reading time data<a id="get-the-reading-time-data" href="#get-the-reading-time-data" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">ReadingTime::fromString('Input text string')-&gt;getFormatted(); // 1min, 0sec
+</code></pre>
+<h3 id="get-the-reading-time-data" class="group w-fit scroll-mt-2">Get the reading time data<a href="#get-the-reading-time-data" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>We also provide a few methods to get the reading time data directly.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Get the reading time in seconds</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getSeconds</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the reading time in minutes (rounded down)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getMinutes</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the remaining seconds after the rounded down minutes</span></div><div class='line'><span style="color: #676E95;">// (Perfect for showing after the `getMinutes()` value)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getSecondsOver</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the word count of the input string</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getWordCount</span><span style="color: #89DDFF;">();</span></div></code></pre>
-<h3>Custom formatting<a id="custom-formatting" href="#custom-formatting" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">// Get the reading time in seconds
+$time-&gt;getSeconds();
+
+// Get the reading time in minutes (rounded down)
+$time-&gt;getMinutes();
+
+// Get the remaining seconds after the rounded down minutes
+// (Perfect for showing after the `getMinutes()` value)
+$time-&gt;getSecondsOver();
+
+// Get the word count of the input string
+$time-&gt;getWordCount();
+</code></pre>
+<h3 id="custom-formatting" class="group w-fit scroll-mt-2">Custom formatting<a href="#custom-formatting" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Additionally, there are several ways to customize the output format.</p>
-<h4>Specify sprintf format<a id="specify-sprintf-format" href="#specify-sprintf-format" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="specify-sprintf-format" class="group w-fit scroll-mt-2">Specify sprintf format<a href="#specify-sprintf-format" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>The <code>getFormatted</code> method accepts a <code>sprintf</code> format string as the first argument.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// The default format</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getFormatted</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">%dmin, %dsec</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Custom format</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getFormatted</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">%d minutes and %d seconds</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<pre><code class="language-php">// The default format
+$time-&gt;getFormatted('%dmin, %dsec');
+
+// Custom format
+$time-&gt;getFormatted('%d minutes and %d seconds');
+</code></pre>
 <p>The first <code>%d</code> will be replaced with the minutes, and the second <code>%d</code> will be replaced with the seconds.</p>
-<h4>Format using a custom callback<a id="format-using-a-custom-callback" href="#format-using-a-custom-callback" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="format-using-a-custom-callback" class="group w-fit scroll-mt-2">Format using a custom callback<a href="#format-using-a-custom-callback" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>You can also use a custom callback to format the reading time string. This is perfect if you want to create custom formatting logic.</p>
 <p>The closure will receive the minutes and seconds as integers and should return a string.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">formatUsingClosure</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">int</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">minutes</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">int</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">seconds</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;$</span><span style="color: #A6ACCD;">minutes</span><span style="color: #C3E88D;"> minutes, </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">seconds</span><span style="color: #C3E88D;"> seconds</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">});</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// 1 minutes, 30 seconds</span></div></code></pre>
-<h2>Helper Functions<a id="helper-functions" href="#helper-functions" class="heading-permalink" title="Permalink"></a></h2>
+<pre><code class="language-php">$time-&gt;formatUsingClosure(function (int $minutes, int $seconds): string {
+    return &quot;$minutes minutes, $seconds seconds&quot;;
+}); // 1 minutes, 30 seconds
+</code></pre>
+<h2 id="helper-functions" class="group w-fit scroll-mt-2">Helper Functions<a href="#helper-functions" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>HydePHP comes with a few helper functions to make your life easier.</p>
 <p>The most common ones are documented here, however you can also see the full list in the source code <a href="https://github.com/hydephp/framework/blob/master/src/helpers.php"><code>helpers.php</code></a> file.</p>
-<h3><code>hyde</code><a id="hyde" href="#hyde" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="code-hyde-code" class="group w-fit scroll-mt-2"><code>hyde</code><a href="#code-hyde-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The <code>hyde</code> function is a global helper function that returns the HydeKernel instance.
 From this, you can access the same methods as you would from the <code>Hyde</code> facade.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">hyde</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Returns the HydeKernel instance</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #82AAFF;">hyde</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;">) </span><span style="color: #89DDFF;">===</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// true</span></div></code></pre>
+<pre><code class="language-php">hyde(); // Returns the HydeKernel instance
+
+hyde()-&gt;routes()) === Hyde::routes(); // true
+</code></pre>
 <p>It's up to you if you want to use the facade or the global function, or a mix of both.
 A benefit of using the global function is that it may have better IDE support.</p>
-<h3><code>asset</code><a id="asset" href="#asset" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="code-asset-code" class="group w-fit scroll-mt-2"><code>asset</code><a href="#code-asset-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>This is an alias of the <code>Hyde::asset()</code> facade method and allows you to get a relative link or URL to an asset in the media directory.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Returns a relative web link to the given image</span></div></code></pre>
+<pre><code class="language-php">asset('image.png'); // Returns a relative web link to the given image
+</code></pre>
 <p>Gets a relative web link to the given image stored in the <code>_site/media</code> folder.
 If the image is remote (starts with http) it will be returned as is.</p>
 <p>If <code>true</code> is passed as the second argument, and a base URL is set,
 the image will be returned with a qualified absolute URL.</p>
 <p><strong>Example usage:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">img</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">src</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;)</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">alt</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My image</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-<h3><code>route</code><a id="route" href="#route" class="heading-permalink" title="Permalink"></a></h3>
-<blockquote class="info"><p>Routing primer: All pages in your Hyde project are automatically tied to an internal route. You can run <code>php hyde route:list</code> to see a list of all routes and their route keys.</p></blockquote>
+<pre><code class="language-blade">&lt;img src=&quot;{{ asset('image.png') }}&quot; alt=&quot;My image&quot;&gt;
+</code></pre>
+<h3 id="code-route-code" class="group w-fit scroll-mt-2"><code>route</code><a href="#code-route-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<blockquote class="border-blue-500">
+    <p>Routing primer: All pages in your Hyde project are automatically tied to an internal route. You can run <code>php hyde route:list</code> to see a list of all routes and their route keys.</p>
+</blockquote>
 <p>This is an alias of the <code>Hyde::route()</code> facade method and allows you to get a route instance by its route key.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Returns the route instance with the given key</span></div></code></pre>
+<pre><code class="language-php">route('index'); // Returns the route instance with the given key
+</code></pre>
 <p>If a route does not exist, <code>null</code> will be returned. Route instances can be cast to strings to resolve a link to the page.</p>
 <p><strong>Example usage:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;)</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;)-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">()</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-<h3><code>url</code><a id="url" href="#url" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-blade">&lt;a href=&quot;{{ route('index') }}&quot;&gt;Home&lt;/a&gt;
+&lt;a href=&quot;{{ route('index')-&gt;getLink() }}&quot;&gt;Home&lt;/a&gt;
+</code></pre>
+<h3 id="code-url-code" class="group w-fit scroll-mt-2"><code>url</code><a href="#code-url-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>This is an alias of the <code>Hyde::url()</code> facade method and formats a relative link to an absolute URL using the configured base URL.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">url</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">page.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Returns an absolute URL to the given page</span></div></code></pre>
+<pre><code class="language-php">url('page.html'); // Returns an absolute URL to the given page
+</code></pre>
 <p>If a base URL is not set, an exception will be thrown.</p>
 <p><strong>Example usage:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">url</span><span style="color: #89DDFF;">(&#39;</span><span style="color: #C3E88D;">page.html</span><span style="color: #89DDFF;">&#39;)</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Link</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-<h2>Pagination Utility<a id="pagination-utility" href="#pagination-utility" class="heading-permalink" title="Permalink"></a></h2>
+<pre><code class="language-blade">&lt;a href=&quot;{{ url('page.html') }}&quot;&gt;Link&lt;/a&gt;
+</code></pre>
+<h2 id="pagination-utility" class="group w-fit scroll-mt-2">Pagination Utility<a href="#pagination-utility" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The <code>Pagination</code> class provides utilities to help you create custom pagination components.</p>
 <p>Hyde comes with a simple pagination view that you can use, but you can also use the utility to create your own custom pagination components.
 You can of course also publish and modify the default pagination view to fit your needs.</p>
 <p>The paginator is designed to paginate Hyde pages and their routes, but can also be used with other data sources.</p>
-<h3>Base usage<a id="base-usage" href="#base-usage" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="base-usage" class="group w-fit scroll-mt-2">Base usage<a href="#base-usage" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>To use the pagination component which is generic by design, you need to create the <code>Pagination</code> instance yourself, with the data you want to paginate.</p>
 <p>To get started, simply create a paginator instance with a collection or array of items (like pages), and render the component.
 You also need to pass the current page being rendered (if you're on pagination page 3, pass that to the constructor).</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Paginator</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Illuminate</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Contracts</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Arrayable</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Paginator</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color: #A6ACCD;">    Arrayable</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[],</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">int</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">pageSize </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">25</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">int</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">currentPageNumber </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginationRouteBasename </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null</span></div><div class='line'><span style="color: #89DDFF;">);</span></div></code></pre>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@include</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::components.pagination-navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div></code></pre>
-<h3>Constructor options breakdown<a id="constructor-options-breakdown" href="#constructor-options-breakdown" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">use Hyde\Support\Paginator;
+use Illuminate\Contracts\Support\Arrayable;
+
+$paginator = new Paginator(
+    Arrayable|array $items = [],
+    int $pageSize = 25,
+    int $currentPageNumber = null,
+    string $paginationRouteBasename = null
+);
+</code></pre>
+<pre><code class="language-blade">@include('hyde::components.pagination-navigation')
+</code></pre>
+<h3 id="constructor-options-breakdown" class="group w-fit scroll-mt-2">Constructor options breakdown<a href="#constructor-options-breakdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The first two are self-explanatory:</p>
 <ul>
 <li><code>items</code> - The items to paginate. This can be a collection or an array.</li>
 <li><code>pageSize</code> - How many items to show on each page.</li>
 </ul>
 <p>The next may need some explanation:</p>
-<h4><code>currentPageNumber</code><a id="currentpagenumber" href="#currentpagenumber" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="code-currentpagenumber-code" class="group w-fit scroll-mt-2"><code>currentPageNumber</code><a href="#code-currentpagenumber-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>This current page index. You will typically get this from the URL.</p>
-<h4><code>paginationRouteBasename</code><a id="paginationroutebasename" href="#paginationroutebasename" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="code-paginationroutebasename-code" class="group w-fit scroll-mt-2"><code>paginationRouteBasename</code><a href="#code-paginationroutebasename-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>This adds an optional prefix for the navigation links. For example, if you're paginating blog posts,
 you might want the links to be <code>/posts/page-1.html</code> instead of <code>/page-1.html</code>. You would then set this to <code>posts</code>.</p>
-<h3>Practical example<a id="practical-example" href="#practical-example" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="practical-example" class="group w-fit scroll-mt-2">Practical example<a href="#practical-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP comes with a started homepage called 'posts'. This includes a component with the following code:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">div</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">id</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">post-feed</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">max-w-3xl mx-auto</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">@include</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::components.blog-post-feed</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">div</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-<h4>Creating our posts page<a id="creating-our-posts-page" href="#creating-our-posts-page" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-blade">&lt;div id=&quot;post-feed&quot; class=&quot;max-w-3xl mx-auto&quot;&gt;
+    @include('hyde::components.blog-post-feed')
+&lt;/div&gt;
+</code></pre>
+<h4 id="creating-our-posts-page" class="group w-fit scroll-mt-2">Creating our posts page<a href="#creating-our-posts-page" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Now, let's paginate this feed! For this example, we will assume that you ran <code>php hyde publish:homepage posts</code>
 and renamed the resulting <code>index.blade.php</code> file to <code>posts.blade.php</code>. We will also assume that you have a few blog posts set up.</p>
 <p>The blog post feed component is a simple component that looks like this:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small><div class='line'><span style="color: #89DDFF;">@foreach</span><span style="color: #A6ACCD;">(</span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getLatestPosts</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">post)</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">@include</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::components.article-excerpt</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@endforeach</span></div></code></pre>
-<h4>Setting up the new Blade components<a id="setting-up-the-new-blade-components" href="#setting-up-the-new-blade-components" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-blade"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small>@foreach(MarkdownPost::getLatestPosts() as $post)
+    @include('hyde::components.article-excerpt')
+@endforeach
+</code></pre>
+<h4 id="setting-up-the-new-blade-components" class="group w-fit scroll-mt-2">Setting up the new Blade components<a href="#setting-up-the-new-blade-components" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>So we are simply going to inline component, but with the paginator we also declare. So, replace the post feed include with the following:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small><div class='line'><span style="color: #89DDFF;">@php</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Paginator</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// The items to paginate</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">items</span><span style="color: #A6ACCD;">: </span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getLatestPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// How many items to show on each page</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">pageSize</span><span style="color: #A6ACCD;">: </span><span style="color: #F78C6C;">5</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// The current page index</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">currentPageNumber</span><span style="color: #A6ACCD;">: </span><span style="color: #F78C6C;">1</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Links will be &#39;posts/page-1.html&#39; instead of &#39;page-1.html&#39;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">paginationRouteBasename</span><span style="color: #A6ACCD;">: </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">@endphp</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@foreach</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItemsForPage</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">post)</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">@include</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::components.article-excerpt</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@endforeach</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@include</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::components.pagination-navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div></code></pre>
+<pre><code class="language-blade"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small>@php
+    $paginator = new \Hyde\Support\Paginator(
+        // The items to paginate
+        items: MarkdownPost::getLatestPosts(),
+        // How many items to show on each page
+        pageSize: 5,
+        // The current page index
+        currentPageNumber: 1,
+        // Links will be 'posts/page-1.html' instead of 'page-1.html'
+        paginationRouteBasename: 'posts'
+    );
+@endphp
+
+@foreach($paginator-&gt;getItemsForPage() as $post)
+    @include('hyde::components.article-excerpt')
+@endforeach
+
+@include('hyde::components.pagination-navigation')
+</code></pre>
 <p>This will set up the paginator loop through only the items for the current page, and render the article excerpts. The last line will render the pagination links.</p>
-<h4>Creating the pagination pages<a id="creating-the-pagination-pages" href="#creating-the-pagination-pages" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="creating-the-pagination-pages" class="group w-fit scroll-mt-2">Creating the pagination pages<a href="#creating-the-pagination-pages" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>However, we still need to create the pagination pages, because the paginator will not automatically create them for you.</p>
 <p>In order to do this dynamically, we add the following to the <code>boot</code> of our <code>AppServiceProvider</code> (or any other provider or extension):</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>app/Providers/AppServiceProvider.php</small><div class='line'><span style="color: #89DDFF;">&lt;?php</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #F78C6C;">namespace</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">App</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Providers</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Paginator</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Pages</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">MarkdownPost</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Pages</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">InMemoryPage</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Illuminate</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">ServiceProvider</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">AppServiceProvider</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ServiceProvider</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// This registers a callback that runs after the kernel has booted</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">kernel</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">booted</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">hyde</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #89DDFF;">            </span><span style="color: #676E95;">// First we create a paginator instance using the same settings as in our view</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Paginator</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getLatestPosts</span><span style="color: #89DDFF;">(),</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">5</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">1</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">            </span><span style="color: #676E95;">// Then we loop through the total number of pages and create a new page for each one</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">foreach</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">range</span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">1</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">totalPages</span><span style="color: #89DDFF;">())</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #89DDFF;">                </span><span style="color: #676E95;">// Now we set the paginator to the current page number</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">setCurrentPage</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">                </span><span style="color: #676E95;">// Now we create the paginated listing page. We set the identifier to match the route basename we set earlier.</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">listingPage </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">posts/page-</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> matter</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// And the paginator instance. We clone it so that we don&#39;t modify the original instance.</span></div><div class='line'><span style="color: #A6ACCD;">                    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">paginator</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">clone</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator</span><span style="color: #89DDFF;">,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// Optionally, specify a custom page title.</span></div><div class='line'><span style="color: #A6ACCD;">                    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Blog Posts - Page </span><span style="color: #89DDFF;">{$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">}&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// Here we add the paginated collection</span></div><div class='line'><span style="color: #A6ACCD;">                    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">paginator</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItemsForPage</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// You can also use a different view if you want to, for example a simpler page just for paginated posts.</span></div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// This uses the same view system as Laravel, so you can use any vendor view, or a view from the `resources/views` directory.</span></div><div class='line'><span style="color: #89DDFF;">                    </span><span style="color: #676E95;">// Hyde also loads views from `_pages/`, so setting `posts` here will load our posts page we created earlier.</span></div><div class='line'><span style="color: #A6ACCD;">                    </span><span style="color: #FFCB6B;">view</span><span style="color: #A6ACCD;">: </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">                </span><span style="color: #676E95;">// This is optional, as the page does not necessarily need to be added to the page collection</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">hyde</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">addPage</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">listingPage</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">                </span><span style="color: #676E95;">// This however is required, so that Hyde knows about the route as we run this after the kernel has booted</span></div><div class='line'><span style="color: #A6ACCD;">                </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">hyde</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">addRoute</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">listingPage</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getRoute</span><span style="color: #89DDFF;">());</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">});</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
-<h4>Updating the listing page view<a id="updating-the-listing-page-view" href="#updating-the-listing-page-view" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>app/Providers/AppServiceProvider.php</small>&lt;?php
+
+namespace App\Providers;
+
+use Hyde\Hyde;
+use Hyde\Support\Paginator;
+use Hyde\Pages\MarkdownPost;
+use Hyde\Pages\InMemoryPage;
+use Hyde\Foundation\HydeKernel;
+use Illuminate\Support\ServiceProvider;
+
+class AppServiceProvider extends ServiceProvider
+{
+    public function boot(): void
+    {
+        // This registers a callback that runs after the kernel has booted
+        Hyde::kernel()-&gt;booted(function (HydeKernel $hyde) {
+            // First we create a paginator instance using the same settings as in our view
+            $paginator = new Paginator(MarkdownPost::getLatestPosts(), 5, 1, 'posts');
+
+            // Then we loop through the total number of pages and create a new page for each one
+            foreach (range(1, $paginator-&gt;totalPages()) as $page) {
+                // Now we set the paginator to the current page number
+                $paginator-&gt;setCurrentPage($page);
+
+                // Now we create the paginated listing page. We set the identifier to match the route basename we set earlier.
+                $listingPage = new InMemoryPage(identifier: &quot;posts/page-$page&quot;, matter: [
+                    // And the paginator instance. We clone it so that we don't modify the original instance.
+                    'paginator' =&gt; clone $paginator,
+
+                    // Optionally, specify a custom page title.
+                    'title' =&gt; &quot;Blog Posts - Page {$page}&quot;,
+                    // Here we add the paginated collection
+                    'posts' =&gt; $paginator-&gt;getItemsForPage(),
+                ],
+                    // You can also use a different view if you want to, for example a simpler page just for paginated posts.
+                    // This uses the same view system as Laravel, so you can use any vendor view, or a view from the `resources/views` directory.
+                    // Hyde also loads views from `_pages/`, so setting `posts` here will load our posts page we created earlier.
+                    view: 'posts'
+                );
+
+                // This is optional, as the page does not necessarily need to be added to the page collection
+                $hyde-&gt;pages()-&gt;addPage($listingPage);
+
+                // This however is required, so that Hyde knows about the route as we run this after the kernel has booted
+                $hyde-&gt;routes()-&gt;addRoute($listingPage-&gt;getRoute());
+            }
+        });
+    }
+}
+</code></pre>
+<h4 id="updating-the-listing-page-view" class="group w-fit scroll-mt-2">Updating the listing page view<a href="#updating-the-listing-page-view" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Now, let's update our <code>posts</code> page to accept the paginator data. If you want to use a different view for the paginated posts,
 just apply these changes to that new view, but for this example I'm going to update the <code>posts</code> view.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight has-add-lines has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color: #f07178;">&lt;</span><span style="color: #f07178;">h1</span><span style="color: #f07178;">&gt;</span><span style="color: #f07178;">Latest Posts</span><span style="color: #f07178;">&lt;/</span><span style="color: #f07178;">h1</span><span style="color: #f07178;">&gt;</span></div><div class='line line-add line-has-background' style='background-color: #89DDFF20'><span style="color: #C3E88D;">&lt;</span><span style="color: #C3E88D;">h1</span><span style="color: #C3E88D;">&gt;</span><span style="color: #C3E88D;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">$</span><span style="color: #C3E88D;">page</span><span style="color: #C3E88D;">-&gt;</span><span style="color: #C3E88D;">matter</span><span style="color: #C3E88D;">(</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">)</span><span style="color: #C3E88D;"> ?? </span><span style="color: #C3E88D;">$</span><span style="color: #C3E88D;">title </span><span style="color: #C3E88D;">}}</span><span style="color: #C3E88D;">&lt;/</span><span style="color: #C3E88D;">h1</span><span style="color: #C3E88D;">&gt;</span><span style="color: #C3E88D;"> </span></div></code></pre>
+<pre><code class="language-blade"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small>&lt;h1&gt;Latest Posts&lt;/h1&gt;{{-- [tl! remove] --}}
+&lt;h1&gt;{{ $page-&gt;matter('title') ?? $title }}&lt;/h1&gt; {{-- [tl! add] --}}
+</code></pre>
 <p>to that new view, but for this example I'm going to update the <code>posts</code> view.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight has-add-lines has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small><div class='line'><span style="color: #89DDFF;">@php</span></div><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color: #f07178;">    </span><span style="color: #f07178;">$</span><span style="color: #f07178;">paginator </span><span style="color: #f07178;">=</span><span style="color: #f07178;"> </span><span style="color: #f07178;">new</span><span style="color: #f07178;"> </span><span style="color: #f07178;">\</span><span style="color: #f07178;">Hyde</span><span style="color: #f07178;">\</span><span style="color: #f07178;">Support</span><span style="color: #f07178;">\</span><span style="color: #f07178;">Paginator</span><span style="color: #f07178;">(</span><span style="color: #f07178;"> </span></div><div class='line line-add line-has-background' style='background-color: #89DDFF20'><span style="color: #C3E88D;">    </span><span style="color: #C3E88D;">$</span><span style="color: #C3E88D;">paginator </span><span style="color: #C3E88D;">=</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">$</span><span style="color: #C3E88D;">page</span><span style="color: #C3E88D;">-&gt;</span><span style="color: #C3E88D;">matter</span><span style="color: #C3E88D;">(</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">paginator</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">)</span><span style="color: #C3E88D;"> ?? </span><span style="color: #C3E88D;">new</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">Hyde</span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">Support</span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">Paginator</span><span style="color: #C3E88D;">(</span><span style="color: #C3E88D;"> </span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">items</span><span style="color: #A6ACCD;">: </span><span style="color: #FFCB6B;">MarkdownPost</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getLatestPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">pageSize</span><span style="color: #A6ACCD;">: </span><span style="color: #F78C6C;">5</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">currentPageNumber</span><span style="color: #A6ACCD;">: </span><span style="color: #F78C6C;">1</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">paginationRouteBasename</span><span style="color: #A6ACCD;">: </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">@</span><span style="color: #A6ACCD;">endphp</span></div></code></pre>
-<h4>Conclusion<a id="conclusion" href="#conclusion" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-blade"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_pages/posts.blade.php</small>@php
+    $paginator = new \Hyde\Support\Paginator( // [tl! remove]
+    $paginator = $page-&gt;matter('paginator') ?? new \Hyde\Support\Paginator( // [tl! add]
+        items: MarkdownPost::getLatestPosts(),
+        pageSize: 5,
+        currentPageNumber: 1,
+        paginationRouteBasename: 'posts'
+    );
+@endphp
+</code></pre>
+<h4 id="conclusion" class="group w-fit scroll-mt-2">Conclusion<a href="#conclusion" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>And that's it! You now have a paginated blog post feed. You can now visit <code>/posts/page-1.html</code> and see the first page of your blog posts.
 You can then click the pagination links to navigate to the next pages.</p>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
-<p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/helpers.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -608,7 +967,7 @@ You can then click the pagination links to navigate to the next pages.</p>
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -618,46 +977,168 @@ You can then click the pagination links to navigate to the next pages.</p>
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/1.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
