@@ -73,6 +73,7 @@ return [
         Hyde\Foundation\Providers\ConfigurationServiceProvider::class,
         Hyde\Framework\HydeServiceProvider::class,
         Hyde\Foundation\Providers\ViewServiceProvider::class,
+        Hyde\Foundation\Providers\NavigationServiceProvider::class,
         Hyde\Console\ConsoleServiceProvider::class,
     ],
 
@@ -91,6 +92,7 @@ return [
         'Hyde' => Hyde\Hyde::class,
         'Site' => \Hyde\Facades\Site::class,
         'Meta' => \Hyde\Facades\Meta::class,
+        'Vite' => \Hyde\Facades\Vite::class,
         'Asset' => \Hyde\Facades\Asset::class,
         'Author' => \Hyde\Facades\Author::class,
         'Features' => \Hyde\Facades\Features::class,
@@ -103,6 +105,7 @@ return [
         'MarkdownPost' => \Hyde\Pages\MarkdownPost::class,
         'DocumentationPage' => \Hyde\Pages\DocumentationPage::class,
         'DataCollection' => \App\Extend\DataCollection::class,
+        'MediaFile' => \Hyde\Support\Filesystem\MediaFile::class,
         'Includes' => \Hyde\Support\Includes::class,
         'Feature' => \Hyde\Enums\Feature::class,
     ],

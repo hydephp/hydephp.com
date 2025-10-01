@@ -6566,16 +6566,16 @@
         },
         {
             "name": "hyde/realtime-compiler",
-            "version": "v4.0.0-RC.1",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/realtime-compiler.git",
-                "reference": "fa4ed19c7893c3d3d8432e687e194ece32f624a2"
+                "reference": "e74209facca3065cda0eec5cb54484fcf0343526"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/fa4ed19c7893c3d3d8432e687e194ece32f624a2",
-                "reference": "fa4ed19c7893c3d3d8432e687e194ece32f624a2",
+                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/e74209facca3065cda0eec5cb54484fcf0343526",
+                "reference": "e74209facca3065cda0eec5cb54484fcf0343526",
                 "shasum": ""
             },
             "require": {
@@ -6613,14 +6613,14 @@
             ],
             "authors": [
                 {
-                    "name": "Caen De Silva",
-                    "email": "caen@desilva.se"
+                    "name": "Emma De Silva",
+                    "email": "emma@desilva.se"
                 }
             ],
             "description": "HydePHP Realtime Compiler Server",
             "support": {
                 "issues": "https://github.com/hydephp/realtime-compiler/issues",
-                "source": "https://github.com/hydephp/realtime-compiler/tree/v4.0.0-RC.1"
+                "source": "https://github.com/hydephp/realtime-compiler/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -6632,7 +6632,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-05-24T20:23:48+00:00"
+            "time": "2025-09-30T10:12:17+00:00"
         }
     ],
     "aliases": [],

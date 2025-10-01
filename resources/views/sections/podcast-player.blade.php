@@ -141,7 +141,7 @@
                     <?php
                     // Todo: Merge with the js to use this as the initial content
 
-                    $raw = file_get_contents(Hyde::mediaPath('podcast/introduction.srt'));
+                    $raw = file_get_contents(MediaFile::sourcePath('podcast/introduction.srt'));
 
                     // Split the SRT file into individual blocks based on double newlines
                     $blocks = preg_split('/\n\n|\r\n\r\n/', $raw);
