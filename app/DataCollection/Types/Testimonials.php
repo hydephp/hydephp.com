@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\DataCollections\Types;
+namespace App\DataCollection\Types;
 
 use App\Extend\Concerns\DataCollectionType;
 use Hyde\Markdown\Models\Markdown;

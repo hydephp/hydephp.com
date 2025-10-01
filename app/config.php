@@ -102,7 +102,7 @@ return [
         'MarkdownPage' => \Hyde\Pages\MarkdownPage::class,
         'MarkdownPost' => \Hyde\Pages\MarkdownPost::class,
         'DocumentationPage' => \Hyde\Pages\DocumentationPage::class,
-        'DataCollections' => \App\Extend\DataCollections::class,
+        'DataCollection' => \App\Extend\DataCollection::class,
         'Includes' => \Hyde\Support\Includes::class,
         'Feature' => \Hyde\Enums\Feature::class,
     ],

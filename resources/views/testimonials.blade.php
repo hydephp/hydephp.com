@@ -15,14 +15,14 @@
             </div>
             <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full flex-wrap">
                 @php
-                    $testimonials = \App\Extend\DataCollections::markdown('testimonials');
+                    $testimonials = \App\Extend\DataCollection::markdown('testimonials');
 
                     // Sort by Markdown length
-                    $testimonials = $testimonials->sortByDesc(function (\App\DataCollections\Types\Testimonials $testimonial) {
+                    $testimonials = $testimonials->sortByDesc(function (\App\DataCollection\Types\Testimonials $testimonial) {
                         return strlen($testimonial->markdown->body());
                     });
                 @endphp
-                @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
+                @php /** @var \App\DataCollection\Types\Testimonials $testimonial */ @endphp
                 @foreach($testimonials as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
                     <div class="w-full xl:w-1/2 xl:px-4 h-auto self-baseline">
