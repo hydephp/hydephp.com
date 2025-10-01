@@ -1059,7 +1059,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Front Matter</h1>
@@ -1120,16 +1120,7 @@ For example, in a blog post you may define a category, author website, or featur
 While Hyde offers some support for front matter within Blade files, most of the time you use front matter, it will be in Markdown.</p>
 <h2>Front Matter Syntax</h2>
 <p>Here's a refresher on Yaml, and a quick reference of the syntax Hyde uses and expects:</p>
-<pre><code class="language-markdown">---
-key: value
-string: &quot;quoted string&quot;
-boolean: true
-integer: 100
-array:
-  key: value
-  key: value
----
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">key</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">value</span></div><div class='line'><span style="color: #F07178;">string</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">quoted string</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">boolean</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div><div class='line'><span style="color: #F07178;">integer</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">100</span></div><div class='line'><span style="color: #F07178;">array</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">key</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">value</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">key</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">value</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div></code></pre>
 <p>Strings don't need to be quoted, but it can help in certain edge cases, thus they are included here.</p>
 <h3>Front Matter in Markdown</h3>
 <p>All Markdown content files support Front Matter. Blog posts for example make heavy use of it.</p>
@@ -1140,30 +1131,29 @@ array:
 <li>Each key-pair value should be on its own line.</li>
 </ul>
 <p><strong>To use Front Matter, add Yaml to the top of your Markdown file:</strong></p>
-<pre><code class="language-markdown">---
-title: &quot;My New Post&quot;
-author:
-  name: &quot;John Doe&quot;
-  website: https://example.com
----
-
-## Markdown Comes Here
-
-Lorem ipsum dolor sit amet, etc.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My New Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://example.com</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Markdown Comes Here</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, etc.</span></div></code></pre>
 <h3>Front Matter in Blade</h3>
 <p>HydePHP has experimental support for creating front-matter in Blade templates, called BladeMatter.</p>
 <p>The actual syntax does not use YAML; but instead PHP. However, the parsed end result is the same. Please note that
 BladeMatter currently does not support multidimensional arrays or multi-line directives as the data is statically parsed.</p>
 <p>To create BladeMatter, you simply use the default Laravel Blade <code>@php</code> directive to declare a variable in the template.</p>
-<pre><code class="language-blade">@php($title = 'BladeMatter Demo')
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">BladeMatter Demo</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div></code></pre>
 <p>It will then be available through the global <code>$page</code> variable, <code>$page-&gt;matter('title')</code>.
 Hyde will of course also use the data for contextual autoconfiguration in the same way it would with Markdown and use the value as the page title.</p>
 <p>Another idea is to use <code>@php($navigation = ['hidden' =&gt; true])</code> if you want to hide a page from the navigation. The opportunities are limitless!</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/getting-started/front-matter.md">
         Edit Page
     </a>

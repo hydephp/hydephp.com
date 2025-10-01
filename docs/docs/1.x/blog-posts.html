@@ -1175,7 +1175,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Creating Blog Posts</h1>
@@ -1231,8 +1231,7 @@ button[aria-label="Open search window"]:hover,
 <p>Making blog posts with Hyde is easy. At the most basic level, all you need is to add a Markdown file to your <code>_posts</code> folder.</p>
 <p>To use the full power of the Hyde post module you'll want to add YAML <a href="front-matter">Front Matter</a> to your posts.</p>
 <p><strong>You can interactively scaffold posts with automatic front matter using the HydeCLI:</strong></p>
-<pre><code class="language-bash">php hyde make:post
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span></div></code></pre>
 <p>Learn more about scaffolding posts, and other files, in the <a href="console-commands">console commands</a> documentation.</p>
 <h2>Short Video Tutorial</h2>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gjpE1U527h8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -1248,8 +1247,7 @@ to keep in mind when creating blog posts so that you don't get unexpected result
 <li>Your post will be stored in <code>_site/posts/&lt;identifier&gt;.html</code></li>
 </ul>
 <p><strong>Example:</strong></p>
-<pre><code class="language-bash">✔ _posts/hello-world.md # Valid and will be compiled to _site/posts/hello-world.html
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">✔</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_posts/hello-world.md</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Valid and will be compiled to _site/posts/hello-world.html</span></div></code></pre>
 <h3>Front Matter</h3>
 <p>Front matter is optional, but highly recommended for blog posts as the front matter is used to construct dynamic HTML
 markup for the post as well as meta tags and post feeds.</p>
@@ -1257,20 +1255,7 @@ markup for the post as well as meta tags and post feeds.</p>
 and understand how your front matter is used. You can read more about the Front Matter format in the <a href="front-matter">Front Matter</a> documentation.</p>
 <h3>Blog Post Example</h3>
 <p>Before digging deeper into all the supported options, let's take a look at what a basic post with front matter looks like.</p>
-<pre><code class="language-markdown"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_posts/my-new-post.md</small>---
-title: My New Post
-description: A short description used in previews and SEO
-category: blog
-author: Mr. Hyde
-date: 2022-05-09 18:38
----
-
-## Write Your Markdown Here
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-Autem aliquid alias explicabo consequatur similique,
-animi distinctio earum ducimus minus, magnam.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block -top-1 right-1"><span class="sr-only">Filepath: </span>_posts/my-new-post.md</small><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">My New Post</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">A short description used in previews and SEO</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">blog</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Mr. Hyde</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-05-09 18:38</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write Your Markdown Here</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</span></div><div class='line'><span style="color: #A6ACCD;">Autem aliquid alias explicabo consequatur similique,</span></div><div class='line'><span style="color: #A6ACCD;">animi distinctio earum ducimus minus, magnam.</span></div></code></pre>
 <h2>Supported Front Matter Properties</h2>
 <h3>Post Front Matter Schema</h3>
 <p>Here is a quick reference of the supported front matter properties.
@@ -1321,36 +1306,24 @@ However, it can help in certain edge cases, for example if the text contains spe
 <p>In the examples below, when there are multiple examples, they signify various ways to use the same property.</p>
 <p>When specifying an array you don't need all the sub-properties. The examples generally show all the supported values.</p>
 <h3>Title</h3>
-<pre><code class="language-yaml">title: &quot;My New Post&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My New Post</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Description</h3>
-<pre><code class="language-yaml">description: &quot;A short description used in previews and SEO&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">A short description used in previews and SEO</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Category</h3>
-<pre><code class="language-yaml">category: blog
-</code></pre>
-<pre><code class="language-yaml">category: &quot;My favorite recipes&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">blog</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My favorite recipes</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Date</h3>
-<pre><code class="language-yaml">date: &quot;2022-01-01&quot;
-</code></pre>
-<pre><code class="language-yaml">date: &quot;2022-01-01 12:00&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">2022-01-01</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">2022-01-01 12:00</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Author</h3>
 <p>Specify a page author, either by a username for an author defined in the <a href="customization#authors"><code>authors</code> config</a>, or by an arbitrary name,
 or by an array of author data.</p>
 <h4>Arbitrary name displayed &quot;as is&quot;</h4>
-<pre><code class="language-yaml">author: &quot;Mr. Hyde&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Mr. Hyde</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h4>Username defined in <code>authors</code> config</h4>
-<pre><code class="language-yaml">author: mr_hyde
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div></code></pre>
 <h4>Array of author data</h4>
-<pre><code class="language-yaml">author:
-    name: &quot;Mr. Hyde&quot;
-    username: mr_hyde
-    website: https://twitter.com/HydeFramework
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Mr. Hyde</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">username</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">mr_hyde</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://twitter.com/HydeFramework</span></div></code></pre>
 <p>When specifying an array you don't need all the sub-properties. The example just shows all the supported values.
 Array values here will override all the values in the <code>authors</code> config entry.</p>
 <h3>Image</h3>
@@ -1359,38 +1332,36 @@ Any array data is constructed into a dynamic fluent caption, and injected into p
 <h4>Local image path</h4>
 <p>When supplying an image source with a local image path, the image is expected to be stored in the <code>_media/</code> directory.
 Like all other media files, it will be copied to <code>_site/media/</code> when the site is built, so Hyde will resolve links accordingly.</p>
-<pre><code class="language-yaml">image: image.jpg
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">image.jpg</span></div></code></pre>
 <h4>Full URL</h4>
 <p>Full URL starting with <code>http(s)://</code>) or <code>//</code> (protocol-relative).
 The image source will be used as-is, and no additional processing is done.</p>
-<pre><code class="language-yaml">image: https://cdn.example.com/image.jpg
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://cdn.example.com/image.jpg</span></div></code></pre>
 <h4>Data-rich image</h4>
 <p>You can also supply an array of data to construct a rich image with a fluent caption.</p>
-<pre><code class="language-yaml">image:
-    source: Local image path or full URL
-    altText: &quot;Alt text for image&quot;
-    titleText: &quot;Tooltip title&quot;
-    copyright: &quot;Copyright (c) 2022&quot;
-    licenseName: &quot;CC-BY-SA-4.0&quot;
-    licenseUrl: https://example.com/license/
-    authorUrl: https://photographer.example.com/
-    authorName: &quot;John Doe&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">source</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Local image path or full URL</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">altText</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Alt text for image</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">titleText</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Tooltip title</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">copyright</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Copyright (c) 2022</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">licenseName</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">CC-BY-SA-4.0</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">licenseUrl</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://example.com/license/</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">authorUrl</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://photographer.example.com/</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">authorName</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <blockquote class="info">
 <p>See <a href="https://hydephp.com/posts/introducing-images">posts/introducing-images</a>
 for a detailed blog post with examples and schema information!</p>
 </blockquote>
 <h2>Using Images in Posts</h2>
 <p>To use images stored in the <code>_media/</code> directory, you can use the following syntax:</p>
-<pre><code class="language-markdown">![Image Alt](../media/image.png &quot;Image Title&quot;)
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <p><em>Note the relative path since the blog post is compiled to <code>posts/example.html</code></em></p>
 <p>To learn more, check out the <a href="managing-assets#managing-images">managing assets chapter</a> on the topic.</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/creating-content/blog-posts.md">
         Edit Page
     </a>

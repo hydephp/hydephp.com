@@ -132,7 +132,7 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="creating-a-photography-portfolio-site-with-hydephp" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="creating-a-photography-portfolio-site-with-hydephp">
             <meta itemprop="url" content="https://hydephp.com/posts/creating-a-photography-portfolio-site-with-hydephp">
     
@@ -163,80 +163,40 @@
 <h2>Installation</h2>
 <p>HydePHP is installed on a per-project basis using Composer, a PHP package manager. If you don't have Composer installed, you can download it from <a href="https://getcomposer.org/download/">getcomposer.org</a>.</p>
 <p>Once you have Composer installed, you can create a new HydePHP project by running the following command in your <a href="https://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">terminal or command prompt</a>:</p>
-<pre><code class="language-bash">composer create-project hyde/hyde --stability dev
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--stability</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">dev</span></div></code></pre>
 <blockquote>
 <p>Since HydePHP is still in development, you'll need to specify the <code>--stability dev</code> flag to install the latest version.</p>
 </blockquote>
 <p>Once you run the command, Composer will download HydePHP and all of its dependencies. This may take a few seconds up to a few minutes depending on your internet connection. Once it's done, you'll see a new directory called <code>hyde</code> show up in the directory you ran the command in.</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9h6czj6ojpe1vc9o98du.gif" alt="Screenshot of the command and output" /></p>
 <p>You can now navigate into the <code>hyde</code> directory using the command line with the <code>cd</code> (change-directory) command:</p>
-<pre><code class="language-bash">cd hyde
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">cd</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span></div></code></pre>
 <p>Now that you're in the <code>hyde</code> directory, you have a fully functional HydePHP project. We interact with the software through the HydeCLI, which is accessed by running <code>php hyde</code> followed by a command name. Make sure to run this command from within the <code>hyde</code> directory which we just navigated into.</p>
 <p>To show the welcome screen with a list of the available commands, run the following command:</p>
-<pre><code class="language-bash">php hyde list
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">list</span></div></code></pre>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ub4hubwlrs3u4qa3tre1.png" alt="The list command" /></p>
 <p>If you are unsure what a command does, you can always add the <code>--help</code> flag to any command to get more information about it. For example:</p>
-<pre><code class="language-bash">php hyde new --help
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--help</span></div></code></pre>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8or6y4lz8r9n0ttiztwq.png" alt="The help flag" /></p>
 <p>You can also always refer to the online <a href="https://hydephp.com/docs/1.x/console-commands">HydePHP CLI documentation</a> for more information.</p>
 <h2>Running the Development Server</h2>
 <p>HydePHP comes with a built-in development server that you can use to preview your site as you work on it. To start the development server, run the following command:</p>
-<pre><code class="language-bash">php hyde serve
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
 <p>This will start a local web server that will compile your site on the fly. You can access the site by visiting <a href="http://localhost:8080">http://localhost:8080</a> in your browser. Once you visit this link, you should see the HydePHP welcome screen.</p>
 <p>The default welcome page is compiled from a Blade file you may recognize from Laravel. The source page is stored in the <code>_pages/</code> directory as <code>index.blade.php</code>. When we compile our site later on, this file will be compiled to <code>index.html</code> in the <code>_site/</code> directory.</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/3o0gw00bxjszrn8r5p2p.png" alt="Default welcome page" /></p>
 <h2>Creating our First Page</h2>
 <p>The welcome page is nice and all, but I promised we'd be creating a photography portfolio site, so let's get to it! Since this is a simple site, we'll be using Markdown to create our pages. Markdown is a simple markup language that is easy to read and write. It's also fully supported by HydePHP, making it perfect for what we want to do. For when you want something more complex or dynamic, Laravel Blade is also supported.</p>
 <p>Since we'll be replacing the default page, let's first remove it. You can delete the file directly using your app of choice, like Finder or Windows Explorer. But since we're already in the terminal, let's use the <code>rm</code> (remove) command to delete the file:</p>
-<pre><code class="language-bash">rm _pages/index.blade.php
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">rm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_pages/index.blade.php</span></div></code></pre>
 <p>Now, to creating our page. Since everything in HydePHP is file-based, we can just create a new file in the <code>_pages/</code> directory and call it <code>index.md</code>. But Hyde offers a neat command to create new pages for us, so let's use that instead:</p>
-<pre><code class="language-bash">php hyde make:page index
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">index</span></div></code></pre>
 <p>This command will create the <code>_pages/index.md</code> file for us. Now, let's open the file in your favourite text editor and take a look!</p>
-<pre><code class="language-markdown">---
-title: index
----
-
-# index
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">index</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">index</span></div></code></pre>
 <p>As you can see, a special section at the top of the file called the &quot;front-matter&quot; is used to define the page's title. The front matter is written in YAML, a simple markup language that used by HydePHP to define metadata.</p>
 <p>The front matter is followed by the page's content, which is written in Markdown. Using front matter is optional, as HydePHP can infer many types of metadata, like page titles, from other sources like headings and filenames. But if you want to override these inferred values, you can do so by defining them in the front matter as is shown here.</p>
 <p>Now that we have our page, let's add some content. I have already written some content for this site, so I'll just copy and paste it into the file. If you're following along yourself, simply copy the following into the file:</p>
-<pre><code class="language-markdown">## Hey there, I'm Jane Doe!
-
-# Freelance photographer
-
-![Jane Doe](media/photographer.jpg)
-
-## About
-
-This is a demo website built with [HydePHP](https://hydephp.com/), a free and open-source static site generator. This entire site is built using just Markdown text that is transformed into a fast and secure website that can be published anywhere.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl aliquet nisi, euismod consectetur nisi nisi euismod nisi.
-
-## Gallery
-
-![Austria](media/austria.jpg)
-![Boat](media/boat.jpg)
-![Croatia](media/croatia.jpg)
-![Fireworks](media/fireworks.jpg)
-![Hallstatt](media/hallstatt.jpg)
-![Lemonade](media/lemonade.jpg)
-{.gallery}
-
-
-## Contact
-
-- Phone: +1 (123) 456-7890
-- Email: jane.doe@example.com
-- Address: 123 Main St, Anytown, CA 12345
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Hey there, I&#39;m Jane Doe!</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Freelance photographer</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Jane Doe</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/photographer.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">About</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">This is a demo website built with </span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">HydePHP</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #F07178;">https://hydephp.com/</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;">, a free and open-source static site generator. This entire site is built using just Markdown text that is transformed into a fast and secure website that can be published anywhere.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget consectetur consectetur, nisi nisl aliquet nisi, euismod consectetur nisi nisi euismod nisi.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Gallery</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Austria</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/austria.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Boat</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/boat.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Croatia</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/croatia.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Fireworks</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/fireworks.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Hallstatt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/hallstatt.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Lemonade</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">media/lemonade.jpg</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #A6ACCD;">{.gallery}</span></div><div class='line'>&nbsp;</div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Contact</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Phone: +1 (123) 456-7890</span></div><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Email: jane.doe@example.com</span></div><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> Address: 123 Main St, Anytown, CA 12345</span></div></code></pre>
 <p>As you can see, I removed the front matter, letting Hyde infer it automatically from the heading. I also added some images to the page, as well as a CSS class that we can use to add some styles to the images later on.</p>
 <p>If you now refresh the page in your browser, you should see the page we just created. But it's of course missing the images, so let's add them!</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/lwwkioorezzhzbqvqwdv.png" alt="Added page has broken images" /></p>
@@ -252,24 +212,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 <p>HydePHP comes with a complete frontend with components to create everything from blog posts to documentation sites. These templates are built with <a href="https://tailwindcss.com">TailwindCSS</a>. To make things easier for you, a pre-compiled and minified version of all the Tailwind classes needed for the built-in templates is included in the base installation. You'll find them in the <code>app.css</code> file in the <code>_media/</code> directory.</p>
 <p>Generally, you shouldn't edit compiled files, but since we're just adding a single class, it's fine. Just make sure to add the class again if you ever update HydePHP.</p>
 <p>With that out of the way, open the file in your favorite text editor and add the following to the bottom of the file:</p>
-<pre><code class="language-css">.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.gallery img {
-    max-width: 65vw;
-    width: 44ch;
-    margin: 3ch 2ch;
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">gallery</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">display</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> flex</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">flex-wrap</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> wrap</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">justify-content</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> space-between</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">gallery</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">img</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">max-width</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">65vw</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">width</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">44ch</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #B2CCD6;">margin</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">3ch</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">2ch</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Now if you refresh the page in your browser, you should see the images are now smaller and fit nicely on the page.</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/a0w4gp5vxiy3h8n06ni2.png" alt="Images are now in a neat grid" /></p>
 <h2>Compiling the Site</h2>
 <p>Now that we have our site, let's compile it. We do this by running the <code>hyde build</code> command:</p>
-<pre><code class="language-bash">php hyde build
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>This will take all of our source content and compile it into a static site that can be published anywhere. The compiled site will be placed in the <code>_site/</code> directory.</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/yt1fkoqkhkv3oeqowul2.png" alt="Screenshot of terminal output" /></p>
 <h2>Publishing the Site</h2>
@@ -281,6 +229,11 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl ege
 <p>If you have any questions, feel free to ask them in the <a href="https://discord.hydephp.com/">HydePHP Discord server</a> or <a href="https://github.com/hydephp/hyde">open an issue on GitHub</a>.</p>
 <p>You can also check out the <a href="https://hydephp.com/docs/">HydePHP documentation</a> for more information on how to use HydePHP. You can always also reach out to me on Twitter, <a href="https://twitter.com/EmmaDSCodes">@EmmaDSCodes</a>.</p>
 <p><a href="https://hydephp.com"><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/uqs8yq9luyoqd1tdxl5f.png" alt="HydePHP.com" /></a></p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>

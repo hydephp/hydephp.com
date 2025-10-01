@@ -1280,7 +1280,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Core HydePHP Concepts</h1>
@@ -1326,10 +1326,7 @@ As you delve deeper into the documentation, you'll discover the details of each 
 using the <strong>HydeCLI</strong>, which is based on the Laravel Artisan Console that you may already be familiar with.</p>
 <p>If you want to learn about the available commands and how to use them, you can visit the <a href="console-commands">Console Commands</a> page,
 or you can run any of the built-in help commands to get a list of available commands and their descriptions.</p>
-<pre><code class="language-bash">php hyde list
-php hyde help &lt;command&gt;
-php hyde &lt;command&gt; [--help]
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">list</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">help</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--help</span><span style="color: #89DDFF;">]</span></div></code></pre>
 <h2 id="directory-structure" class="group w-fit scroll-mt-2">Directory Structure<a href="#directory-structure" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>To take full advantage of the framework, it may first be good to familiarize ourselves with the directory structure.</p>
 <table>
@@ -1460,21 +1457,11 @@ Take a look at the <a href="customization">customization and configuration guide
 <p>To learn more, you can visit the <a href="front-matter">Front Matter</a> page.</p>
 <h3 id="front-matter-in-markdown" class="group w-fit scroll-mt-2">Front Matter in Markdown<a href="#front-matter-in-markdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>All Markdown content files support Front Matter, and blog posts make heavy use of it. Here's what it may look like:</p>
-<pre><code class="language-markdown">---
-title: &quot;My New Post&quot;
-author: &quot;Mr Hyde&quot;
-date: &quot;2023-03-14&quot;
----
-
-## Markdown Comes Here
-
-Lorem ipsum dolor sit amet, etc.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My New Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Mr Hyde</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">2023-03-14</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Markdown Comes Here</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, etc.</span></div></code></pre>
 <h3 id="front-matter-in-blade" class="group w-fit scroll-mt-2">Front Matter in Blade<a href="#front-matter-in-blade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP has basic support for creating front-matter in Blade templates, called <a href="front-matter#front-matter-in-blade">BladeMatter</a>,
 where code in <code>@php</code> directives are statically parsed into page object's front matter data where it can be accessed in your templates.</p>
-<pre><code class="language-blade">@php($title = 'BladeMatter Demo') // Equivalent to `title: 'BladeMatter Demo'` in Yaml
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">BladeMatter Demo</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">) // Equivalent to `title: &#39;BladeMatter Demo&#39;` in Yaml</span></div></code></pre>
 <h2 id="automatic-routing" class="group w-fit scroll-mt-2">Automatic Routing<a href="#automatic-routing" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <blockquote class="border-blue-500">
     <p><strong>In a nutshell:</strong> Hyde will automatically create routes for your source files.</p>
@@ -1484,11 +1471,9 @@ And you are probably also familiar with how boring and tedious it can be. Thankf
 <p>During the Autodiscovery process. Hyde will automatically discover all the content files in the source directories,
 and create routes for all of them, and store them in an index which works as a two-way link between source files and compiled files.</p>
 <p>You can see all the routes and their corresponding source files by running the <code>hyde route:list</code> command.</p>
-<pre><code class="language-bash">php hyde route:list
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
 <p>To access routes in your code, simply use the Routes facade and specify the route key for the desired page.</p>
-<pre><code class="language-php">Routes::get('posts/my-post')
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <p>To learn more about the routing system, please visit the <a href="automatic-routing">routing documentation</a>.</p>
 <h2 id="global-page-data" class="group w-fit scroll-mt-2">Global Page Data<a href="#global-page-data" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>During the build of each page, Hyde will inject some data available to all Blade views. If you are not planning to write
@@ -1609,7 +1594,12 @@ identifier binding Page objects to Route objects, and is used to generate the fi
 <p>Route keys generation can be visualised as follows: <code>&lt;PageClass::OutputDirectory&gt;/&lt;PageIdentifier&gt;</code></p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/core-concepts.md">
         Edit Page
     </a>

@@ -1407,7 +1407,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>The HydeKernel</h1>
@@ -1464,11 +1464,7 @@ button[aria-label="Open search window"]:hover,
 provides helpful methods for interacting with it. You can think of it as the heart of HydePHP, if you're a romantic.</p>
 <p>The HydeKernel is so important that you have probably used it already. The main entry point for the HydePHP
 API is the Hyde facade, which calls methods on the kernel.</p>
-<pre><code class="language-php">use Hyde\Hyde;
-use Hyde\Foundation\HydeKernel;
-
-Hyde::version(); // calls $HydeKernel-&gt;version()
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// calls $HydeKernel-&gt;version()</span></div></code></pre>
 <p>The kernel is created very early on in the application lifecycle, in the <code>bootstrap.php</code> file, where it is also bound
 as a singleton into the application service container.</p>
 <h2>Accessing the Kernel</h2>
@@ -1477,15 +1473,7 @@ as a singleton into the application service container.</p>
 You can also use the <code>hyde()</code> function to get the Kernel, and call methods on it.</p>
 <p>Since the instance is also bound into the Laravel Application Service Container you can also use Dependency Injection by type-hinting the <code>HydeKernel::class</code>.</p>
 <p>Here are some examples of how you can call methods on the Kernel. All methods call the same method on the same instance, so it's just a matter of preference.</p>
-<pre><code class="language-php">use Hyde\Hyde;
-use Hyde\Foundation\HydeKernel;
-
-Hyde::version();
-Hyde::kernel()-&gt;version();
-HydeKernel::getInstance()-&gt;version();
-app(HydeKernel::class)-&gt;version();
-hyde()-&gt;version();
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">kernel</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getInstance</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #82AAFF;">app</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">)-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #82AAFF;">hyde</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div></code></pre>
 <p>The Kernel instance is constructed and bound in the <code>app/bootstrap.php</code> file.</p>
 <h2>The Kernel Lifecycle</h2>
 <p>Whenever we talk about the kernel being &quot;booted&quot; we are talking about the kernel's role in the autodiscovery process.</p>
@@ -1499,24 +1487,19 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2024-07-08 20:47:38 in 2.89ms -->
 <h4><code>version()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::version(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>__construct()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">$hyde = new HydeKernel(string $basePath): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">hyde </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">basePath</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>features()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::features(): Hyde\Facades\Features
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">features</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Facades\Features</span></div></code></pre>
 <h4><code>hasFeature()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::hasFeature(Hyde\Enums\Feature|string $feature): bool
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasFeature</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Enums\Feature</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">feature</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <h4><code>toArray()</code></h4>
 <p>Get the instance as an array.</p>
-<pre><code class="language-php">Hyde::toArray(): array&lt;TKey, TValue&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">toArray</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">TKey</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> TValue</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\HydeKernel -->
 </section>
 <section id="hyde-kernel-foundation-methods">
@@ -1524,16 +1507,13 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2024-07-17 15:27:42 in 0.04ms -->
 <h4><code>files()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::files(): Hyde\Foundation\Kernel\FileCollection
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">files</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\FileCollection</span></div></code></pre>
 <h4><code>pages()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::pages(): Hyde\Foundation\Kernel\PageCollection
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\PageCollection</span></div></code></pre>
 <h4><code>routes()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::routes(): Hyde\Foundation\Kernel\RouteCollection
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\RouteCollection</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
 </section>
 <section id="hyde-kernel-string-methods">
@@ -1541,28 +1521,22 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2024-12-22 09:14:25 in 0.07ms -->
 <h4><code>makeTitle()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::makeTitle(string $value): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeTitle</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>makeSlug()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::makeSlug(string $value): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeSlug</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>normalizeNewlines()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::normalizeNewlines(string $string): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">normalizeNewlines</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>stripNewlines()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::stripNewlines(string $string): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">stripNewlines</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>trimSlashes()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::trimSlashes(string $string): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">trimSlashes</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>markdown()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::markdown(string $text, bool $normalizeIndentation): Illuminate\Support\HtmlString
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">text</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">normalizeIndentation</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> Illuminate\Support\HtmlString</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
 </section>
 <section id="hyde-kernel-hyperlink-methods">
@@ -1570,32 +1544,25 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2024-02-25 19:02:29 in 0.09ms -->
 <h4><code>formatLink()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::formatLink(string $destination): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">formatLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>relativeLink()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::relativeLink(string $destination): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">relativeLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>mediaLink()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::mediaLink(string $destination, bool $validate): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">mediaLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">validate</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>asset()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::asset(string $name, bool $preferQualifiedUrl): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">preferQualifiedUrl</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>url()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::url(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">url</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>route()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::route(string $key): Hyde\Support\Models\Route
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">key</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> Hyde\Support\Models\Route</span></div></code></pre>
 <h4><code>hasSiteUrl()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::hasSiteUrl(): bool
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasSiteUrl</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
 </section>
 <section id="hyde-kernel-filesystem-methods">
@@ -1603,36 +1570,28 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.10ms -->
 <h4><code>filesystem()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::filesystem(): Hyde\Foundation\Kernel\Filesystem
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">filesystem</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\Filesystem</span></div></code></pre>
 <h4><code>path()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::path(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">path</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>vendorPath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::vendorPath(string $path, string $package): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">vendorPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">package</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>mediaPath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::mediaPath(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">mediaPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>sitePath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::sitePath(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">sitePath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>siteMediaPath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::siteMediaPath(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">siteMediaPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>pathToAbsolute()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::pathToAbsolute(array|string $path): array|string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pathToAbsolute</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>pathToRelative()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::pathToRelative(string $path): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pathToRelative</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
 </section>
 <section id="hyde-kernel-kernel-methods">
@@ -1640,48 +1599,37 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
 <h4><code>getInstance()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getInstance(): Hyde\Foundation\HydeKernel
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getInstance</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\HydeKernel</span></div></code></pre>
 <h4><code>setInstance()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::setInstance(Hyde\Foundation\HydeKernel $instance): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setInstance</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Foundation\HydeKernel </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">instance</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getBasePath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getBasePath(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getBasePath</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>setBasePath()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::setBasePath(string $basePath): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setBasePath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">basePath</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getSourceRoot()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getSourceRoot(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getSourceRoot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>setSourceRoot()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::setSourceRoot(string $sourceRoot): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setSourceRoot</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">sourceRoot</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getOutputDirectory()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getOutputDirectory(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getOutputDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>setOutputDirectory()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::setOutputDirectory(string $outputDirectory): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setOutputDirectory</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">outputDirectory</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getMediaDirectory()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getMediaDirectory(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getMediaDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>setMediaDirectory()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::setMediaDirectory(string $mediaDirectory): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setMediaDirectory</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">mediaDirectory</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getMediaOutputDirectory()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getMediaOutputDirectory(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getMediaOutputDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
 </section>
 <section id="hyde-kernel-extensions-methods">
@@ -1690,28 +1638,22 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <h4><code>registerExtension()</code></h4>
 <p>Register a HydePHP extension within the HydeKernel.</p>
 <p>Typically, you would call this method in the register method of a service provider. If your package uses the standard Laravel (Composer) package discovery feature, the extension will automatically be enabled when the package is installed.</p>
-<pre><code class="language-php">Hyde::registerExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">registerExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getExtension()</code></h4>
 <p>Get the singleton instance of the specified extension.</p>
-<pre><code class="language-php">Hyde::getExtension(class-string&amp;lt;T&amp;gt; $extension): T
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">T</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> T</span></div></code></pre>
 <h4><code>hasExtension()</code></h4>
 <p>Determine if the specified extension is registered.</p>
-<pre><code class="language-php">Hyde::hasExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): bool
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <h4><code>getExtensions()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getExtensions(): array&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getExtensions</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4><code>getRegisteredExtensions()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getRegisteredExtensions(): array&lt;class-string&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getRegisteredExtensions</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #89DDFF;">&gt;&gt;</span></div></code></pre>
 <h4><code>getRegisteredPageClasses()</code></h4>
 <p>No description provided.</p>
-<pre><code class="language-php">Hyde::getRegisteredPageClasses(): array&lt;class-string&lt;\Hyde\Pages\Concerns\HydePage&gt;&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getRegisteredPageClasses</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Pages\Concerns\HydePage</span><span style="color: #89DDFF;">&gt;&gt;</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
 </section>
 <section id="hyde-kernel-view-methods">
@@ -1719,20 +1661,16 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.06ms -->
 <h4><code>shareViewData()</code></h4>
 <p>Share data for the page being rendered.</p>
-<pre><code class="language-php">Hyde::shareViewData(Hyde\Pages\Concerns\HydePage $page): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">shareViewData</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Pages\Concerns\HydePage </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>currentRouteKey()</code></h4>
 <p>Get the route key for the page being rendered.</p>
-<pre><code class="language-php">Hyde::currentRouteKey(): string
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentRouteKey</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>currentRoute()</code></h4>
 <p>Get the route for the page being rendered.</p>
-<pre><code class="language-php">Hyde::currentRoute(): Hyde\Support\Models\Route
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentRoute</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Support\Models\Route</span></div></code></pre>
 <h4><code>currentPage()</code></h4>
 <p>Get the page being rendered.</p>
-<pre><code class="language-php">Hyde::currentPage(): Hyde\Pages\Concerns\HydePage
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentPage</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Pages\Concerns\HydePage</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
 </section>
 <section id="hyde-kernel-boot-methods">
@@ -1740,30 +1678,34 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
 <h4><code>isBooted()</code></h4>
 <p>Determine if the Kernel has booted.</p>
-<pre><code class="language-php">Hyde::isBooted(): bool
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">isBooted</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <h4><code>boot()</code></h4>
 <p>Boot the Hyde Kernel and run the Auto-Discovery Process.</p>
-<pre><code class="language-php">Hyde::boot(): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>booting()</code></h4>
 <p>Register a new boot listener.</p>
 <p>Your callback will be called before the kernel is booted. You can use this to register your own routes, pages, etc. The kernel instance will be passed to your callback.</p>
-<pre><code class="language-php">/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
-Hyde::booting(callable(\Hyde\Foundation\HydeKernel): void): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">callable</span><span style="color: #89DDFF;">(\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #676E95;">): </span><span style="color: #F78C6C;">void</span><span style="color: #676E95;"> $</span><span style="color: #F78C6C;">callback</span><span style="color: #676E95;"> */</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">booting</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">callable</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">\Hyde\Foundation\HydeKernel</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>booted()</code></h4>
 <p>Register a new &quot;booted&quot; listener.</p>
 <p>Your callback will be called after the kernel is booted. You can use this to run any logic after discovery has completed. The kernel instance will be passed to your callback.</p>
-<pre><code class="language-php">/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
-Hyde::booted(callable(\Hyde\Foundation\HydeKernel): void): void
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">callable</span><span style="color: #89DDFF;">(\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #676E95;">): </span><span style="color: #F78C6C;">void</span><span style="color: #676E95;"> $</span><span style="color: #F78C6C;">callback</span><span style="color: #676E95;"> */</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">booted</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">callable</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">\Hyde\Foundation\HydeKernel</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 </section>
 <!-- End generated docs for the HydeKernel -->
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/architecture-concepts/the-hydekernel.md">
         Edit Page
     </a>

@@ -1088,7 +1088,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Troubleshooting</h1>
@@ -1277,11 +1277,15 @@ All the following filenames are resolved into the same destination file:
 <p>If your configuration is broken, you might not be able to run any commands through the HydeCLI.
 To remedy this you can copy the config files from the vendor directory into the project directory.
 You can do this manually, or with the following rescue command:</p>
-<pre><code class="language-bash">copy vendor/hyde/framework/config/hyde.php config/hyde.php
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">copy</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor/hyde/framework/config/hyde.php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">config/hyde.php</span></div></code></pre>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/troubleshooting.md">
         Edit Page
     </a>

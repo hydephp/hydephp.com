@@ -1073,7 +1073,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Updating Hyde Projects</h1>
@@ -1134,21 +1134,13 @@ If you are updating multiple major versions at once, it's recommended to update 
 following the upgrade guide for each version. After following the upgrade guide, you can follow the post-update instructions below.</p>
 <h2 id="updating-to-a-minor-or-patch-version" class="group w-fit scroll-mt-2">Updating to a minor or patch version<a href="#updating-to-a-minor-or-patch-version" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Updating a minor or patch version is easy using Composer. Just run the following command:</p>
-<pre><code class="language-bash">composer update &quot;hyde/*&quot; --with-dependencies
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">hyde/*</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--with-dependencies</span></div></code></pre>
 <p>Note that if you have hardcoded a version constraint in your <code>composer.json</code> file, you may need to update it manually.
 You can always refer to the <code>composer.json</code> file in the HydePHP repository if you need a reference.</p>
 <h2 id="alternate-update-methods" class="group w-fit scroll-mt-2">Alternate Update Methods<a href="#alternate-update-methods" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <h3 id="updating-using-git-advanced" class="group w-fit scroll-mt-2">Updating using Git (advanced)<a href="#updating-using-git-advanced" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If you are using Git, you can set the <code>hydephp/hyde</code> repository as a Git remote and merge in the changes that way:</p>
-<pre><code class="language-bash">git remote add hyde https://github.com/hydephp/hyde.git
-git fetch hyde
-git merge hyde/master # OR: Replace 'master' with the version tag you want to update to
-
-# Take care of any merge conflicts that arise, then install the updated dependencies
-
-composer update
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">remote</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">add</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://github.com/hydephp/hyde.git</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">fetch</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">merge</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/master</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># OR: Replace &#39;master&#39; with the version tag you want to update to</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># Take care of any merge conflicts that arise, then install the updated dependencies</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span></div></code></pre>
 <h3 id="hard-update-using-release-archive" class="group w-fit scroll-mt-2">Hard update using release archive<a href="#hard-update-using-release-archive" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>An alternate way to update your project is to essentially do a hard reset. This is only recommended if you haven't done many modifications to the HydePHP files.</p>
 <p>Essentially: Download the <a href="https://github.com/hydephp/hyde/releases/latest">latest release</a> from GitHub, extract it to a new project directory, then copy over your source files and install the dependencies.</p>
@@ -1156,41 +1148,28 @@ composer update
 <p>After updating Hyde you should update your config and resource files. This is where things can get a tiny bit dangerous
 as existing files may be overwritten. If you are using Git, you can easily take care of any merge conflicts that arise.</p>
 <p>First, ensure that your dependencies are up to date. If you have already done this, you can skip this step.</p>
-<pre><code class="language-bash">composer update
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span></div></code></pre>
 <p>Then, update your config files. This is the hardest part, as you may need to manually copy in your own changes.</p>
-<pre><code class="language-bash">php hyde publish:configs
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:configs</span></div></code></pre>
 <p>If you have published any of the included Blade components you will need to re-publish them.</p>
-<pre><code class="language-bash">php hyde publish:views layouts
-php hyde publish:views components
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">layouts</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">components</span></div></code></pre>
 <p>You may also want to download any resources that have been updated. You download these from the Zip file of the latest release on GitHub.</p>
 <p>The latest release can always be found at <a href="https://github.com/hydephp/hyde/releases/latest">https://github.com/hydephp/hyde/releases/latest</a>, where you can download the source code as a <code>zip</code> file under the &quot;Assets&quot; section.</p>
 <p>Here are the paths you may be interested in copying over: (Using Git will help a ton here as it can show you diffs of changed files, and allow you to easily merge own changes)</p>
-<pre><code>├── app
-│   ├── Providers
-│   │   └── AppServiceProvider.php
-│   ├── bootstrap.php
-│   ├── config.php
-│   └── storage/
-├── composer.json
-├── package.json
-├── resources/
-├── tailwind.config.js
-└── vite.config.js
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="text" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">├── app</span></div><div class='line'><span style="color: #A6ACCD;">│   ├── Providers</span></div><div class='line'><span style="color: #A6ACCD;">│   │   └── AppServiceProvider.php</span></div><div class='line'><span style="color: #A6ACCD;">│   ├── bootstrap.php</span></div><div class='line'><span style="color: #A6ACCD;">│   ├── config.php</span></div><div class='line'><span style="color: #A6ACCD;">│   └── storage/</span></div><div class='line'><span style="color: #A6ACCD;">├── composer.json</span></div><div class='line'><span style="color: #A6ACCD;">├── package.json</span></div><div class='line'><span style="color: #A6ACCD;">├── resources/</span></div><div class='line'><span style="color: #A6ACCD;">├── tailwind.config.js</span></div><div class='line'><span style="color: #A6ACCD;">└── vite.config.js</span></div></code></pre>
 <p>Next, recompile your assets, if you are not using the built-in assets.</p>
-<pre><code class="language-bash">npm install
-npm run dev/prod
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">install</span></div><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">dev/prod</span></div></code></pre>
 <p>Finally, you can rebuild your site.</p>
-<pre><code class="language-bash">php hyde build
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>Now, you should browse your site files to ensure things are still looking as expected.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/updating-hyde.md">
         Edit Page
     </a>

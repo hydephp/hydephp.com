@@ -1052,7 +1052,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Dynamic Data Discovery</h1>
@@ -1117,27 +1117,10 @@ this discovery is done in the <code>HydePageDataFactory</code> class.</p>
 <p>The factory gets one input, a <code>CoreDataObject</code> class. Think of this like a DTO (Data Transfer Object) that holds
 immutable data known from the start of the page construction process. It also has all the information needed
 to identify the page and its source file. Here's a simplified version of the class:</p>
-<pre><code class="language-php">class CoreDataObject
-{
-    public readonly FrontMatter $matter;
-    public readonly Markdown|false $markdown;
-
-    public readonly string $pageClass;
-    public readonly string $identifier;
-    public readonly string $sourcePath;
-    public readonly string $outputPath;
-    public readonly string $routeKey;
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">CoreDataObject</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">FrontMatter</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">matter</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Markdown</span><span style="color: #89DDFF;">|</span><span style="color: #F78C6C;">false</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">markdown</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">pageClass</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">sourcePath</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">outputPath</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">readonly</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">routeKey</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <h3 id="processing-the-known-data" class="group w-fit scroll-mt-2">Processing the known data<a href="#processing-the-known-data" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Now that we have the input we pass it to the factory, where a simple algorithm is used to find the best title for the page.</p>
-<pre><code class="language-php">private function findTitleForPage(): string
-{
-    return $this-&gt;matter('title')
-        ?? $this-&gt;findTitleFromMarkdownHeadings()
-        ?? Hyde::makeTitle(basename($this-&gt;identifier));
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">private</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">findTitleForPage</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">matter</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">??</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">findTitleFromMarkdownHeadings</span><span style="color: #89DDFF;">()</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">??</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeTitle</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">basename</span><span style="color: #89DDFF;">($this-&gt;</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">));</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>As you can see, we are using the null coalescing operator (<code>??</code>) to return the first non-null value. We always want the
 user to be able to set any data explicitly, so we first check the front matter in all factory methods.</p>
 <p>If no title is set in the matter the method will return null, and Hyde will try the next step which is to search the headings.
@@ -1146,14 +1129,16 @@ If that fails, the last step will generate a title from the file name. This ensu
 <p>Once the data has been discovered, it is injected into the page object. This is rather unglamorous but is mentioned
 here for completeness. It's pretty simple. The factory will always return an array of the computed data, where the keys
 always match the property names on the page object, so we just need to loop over the array and set the properties.</p>
-<pre><code class="language-php">foreach ($data-&gt;toArray() as $key =&gt; $value) {
-    $this-&gt;{$key} = $value;
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">foreach</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">data</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">toArray</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">key </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;{$</span><span style="color: #A6ACCD;">key</span><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>And that's pretty much it! Hyde will do this for all the data it can discover, freeing you to focus on your content.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/architecture-concepts/dynamic-data-discovery.md">
         Edit Page
     </a>

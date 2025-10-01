@@ -995,7 +995,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>HydePHP UI Kit - Documentation</h1>
@@ -1060,112 +1060,54 @@ file and that you may need to recompile the CSS file using the included Laravel 
 </blockquote>
 <h3>Buttons</h3>
 <h4>Primary</h4>
-<pre><code class="language-blade">&lt;x-hyde-ui::button-primary&gt;
-    Primary Button
-&lt;/x-hyde-ui::button-primary&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Primary Button</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4>Secondary</h4>
-<pre><code class="language-blade">&lt;x-hyde-ui::button-secondary&gt;
-    Secondary Button
-&lt;/x-hyde-ui::button-secondary&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-secondary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Secondary Button</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-secondary</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h3>Input</h3>
 <p>The base component is <code>&lt;x-hyde-ui::input /&gt;</code>, any additional attributes will be passed to the input element as seen below.</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot; value=&quot;John Doe&quot; /&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">type</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">placeholder</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">value</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> /&gt;</span></div></code></pre>
 <h3>Card</h3>
 <p>An incredibly versatile component that can be used for a wide variety of purposes.</p>
 <p>In the most basic form, a card is just a container with a white background and a shadow.
 However, it also supports two slots: <code>title</code> and <code>footer</code>.</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    A card with some content.
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;title&quot;&gt;
-        Card Title
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;footer&quot;&gt;
-       Some footer content.
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    A card with some content.</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        Card Title</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">       Some footer content.</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>Why not combine the components?</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;title&quot;&gt;
-        My Amazing Card
-    &lt;/x-slot&gt;
-
-    A card with some content and a footer with a button.
-
-    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center&quot;&gt;
-        &lt;x-hyde-ui::button-primary&gt;
-            Primary Button
-        &lt;/x-hyde-ui::button-primary&gt;
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        My Amazing Card</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    A card with some content and a footer with a button.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            Primary Button</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h3>Typography Components</h3>
 <h4>Heading</h4>
 <p>This component will create a styled <code>&lt;h1&gt;</code> level heading centred on the page.</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::heading&gt;
-    Lorem ipsum dolor sit amet.
-&lt;/x-hyde-ui::heading&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::heading</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Lorem ipsum dolor sit amet.</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::heading</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4>Prose</h4>
 <p>This simple component will create an <code>&lt;article&gt;</code> element with <a href="https://tailwindcss.com/docs/typography-plugin">TailwindCSS Typography</a> (prose) styles applied.</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::prose&gt;
-    &lt;h2&gt;Prose Heading&lt;/h2&gt;
-    &lt;p&gt;Prose paragraph&lt;/p&gt;
-&lt;/x-hyde-ui::prose&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h2</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Prose Heading</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h2</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">p</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Prose paragraph</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">p</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4>Markdown</h4>
 <p>This component will convert any Markdown within it to HTML using the Hyde Markdown compiler.</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::markdown&gt;
-    ## Markdown Heading
-
-    Hello world!
-&lt;/x-hyde-ui::markdown&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    ## Markdown Heading</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    Hello world!</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <blockquote class="border-blue-500">
     <p>Tip: You may also want to wrap this in the prose element or the Markdown will not be styled.</p>
 </blockquote>
 <h3>What's Next?</h3>
 <p>The UI kit is minimal by design. It's up to you to create something amazing, we just want to give you a head start.
 You can get surprisingly far when you combine the components. Take this newsletter signup card for example!</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;title&quot;&gt;
-        Let your creativity flow!
-    &lt;/x-slot&gt;
-
-    &lt;x-slot name=&quot;main&quot; style=&quot;padding-top: 0; padding-bottom: 0;&quot;&gt;
-        &lt;x-hyde-ui::prose&gt;
-            &lt;x-hyde-ui::markdown&gt;
-                The UI kit is minimal by design. It's up to **you** to create something _amazing_.
-
-                Maybe create a form to collect newsletter subscriptions?
-            &lt;/x-hyde-ui::markdown&gt;
-        &lt;/x-hyde-ui::prose&gt;
-    &lt;/x-slot&gt;
-
-    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center flex&quot;&gt;
-        &lt;x-hyde-ui::input placeholder=&quot;Enter email&quot; /&gt;
-
-        &lt;x-hyde-ui::button-primary&gt;
-            Subscribe
-        &lt;/x-hyde-ui::button-primary&gt;
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        Let your creativity flow!</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">main</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">style</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">padding-top: 0; padding-bottom: 0;</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">                The UI kit is minimal by design. It&#39;s up to **you** to create something _amazing_.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">                Maybe create a form to collect newsletter subscriptions?</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center flex</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">placeholder</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Enter email</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> /&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            Subscribe</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p><img src="https://raw.githubusercontent.com/hydephp/ui-kit/art/newsletter-signup-example-min.png" alt="Newsletter Screenshot" /></p>
 <h2>GitHub Repository</h2>
 <p>You can find the source code for the UI Kit on GitHub at <a href="https://github.com/hydephp/ui-kit">hydephp/ui-kit</a>.</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/extensions/ui-kit.md">
         Edit Page
     </a>
