@@ -2,7 +2,7 @@
 title: "Preliminary Release Date: March 14, 2023"
 description: "The preliminary release date for the first version of HydePHP is set for March 14, 2023."
 category: news
-author: Caen
+author: Emma
 date: "2023-02-11 17:39:29"
 ---
 

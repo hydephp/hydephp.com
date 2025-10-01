@@ -19,10 +19,10 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -196,69 +196,35 @@
 
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
-<li>
-<a href="#introduction">Introduction</a>
-</li>
-<li>
-<a href="#file-based-collections">File-based Collections</a>
-</li>
-<li>
-<a href="#file-includes">File Includes</a>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#file-based-collections">File-based Collections</a></li>
+<li><a href="#file-includes">File Includes</a>
 <ul>
-<li>
-<a href="#using-includes">Using Includes</a>
-</li>
-<li>
-<a href="#stock-includes">Stock Includes</a>
-</li>
+<li><a href="#using-includes">Using Includes</a></li>
+<li><a href="#stock-includes">Stock Includes</a></li>
 </ul>
 </li>
-<li>
-<a href="#reading-time-helper">Reading-Time Helper</a>
+<li><a href="#reading-time-helper">Reading-Time Helper</a>
 <ul>
-<li>
-<a href="#create-a-new-readingtime-instance">Create a new ReadingTime instance</a>
-</li>
-<li>
-<a href="#get-the-reading-time-string">Get the reading time string</a>
-</li>
-<li>
-<a href="#get-the-reading-time-data">Get the reading time data</a>
-</li>
-<li>
-<a href="#custom-formatting">Custom formatting</a>
-</li>
+<li><a href="#create-a-new-readingtime-instance">Create a new ReadingTime instance</a></li>
+<li><a href="#get-the-reading-time-string">Get the reading time string</a></li>
+<li><a href="#get-the-reading-time-data">Get the reading time data</a></li>
+<li><a href="#custom-formatting">Custom formatting</a></li>
 </ul>
 </li>
-<li>
-<a href="#helper-functions">Helper Functions</a>
+<li><a href="#helper-functions">Helper Functions</a>
 <ul>
-<li>
-<a href="#hyde">hyde</a>
-</li>
-<li>
-<a href="#asset">asset</a>
-</li>
-<li>
-<a href="#route">route</a>
-</li>
-<li>
-<a href="#url">url</a>
-</li>
+<li><a href="#hyde">hyde</a></li>
+<li><a href="#asset">asset</a></li>
+<li><a href="#route">route</a></li>
+<li><a href="#url">url</a></li>
 </ul>
 </li>
-<li>
-<a href="#pagination-utility">Pagination Utility</a>
+<li><a href="#pagination-utility">Pagination Utility</a>
 <ul>
-<li>
-<a href="#base-usage">Base usage</a>
-</li>
-<li>
-<a href="#constructor-options-breakdown">Constructor options breakdown</a>
-</li>
-<li>
-<a href="#practical-example">Practical example</a>
-</li>
+<li><a href="#base-usage">Base usage</a></li>
+<li><a href="#constructor-options-breakdown">Constructor options breakdown</a></li>
+<li><a href="#practical-example">Practical example</a></li>
 </ul>
 </li>
 </ul>
@@ -375,6 +341,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -382,7 +434,7 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
@@ -424,7 +476,7 @@ Remember that Markdown and Blade defaults will still be rendered to HTML.</p>
 <h3>Create a new <code>ReadingTime</code> instance<a id="create-a-new-readingtime-instance" href="#create-a-new-readingtime-instance" class="heading-permalink" title="Permalink"></a></h3>
 <p>There are a few ways to create a new <code>ReadingTime</code> instance. Either create a new instance directly, or use the static <code>fromString</code> or <code>fromFile</code>  helpers.</p>
 <p>In all cases, you will end up with a <code>ReadingTime</code> object that you can use to get the reading time.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Via constructor</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method (from file)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromFile</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">path/to/file.txt</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">ReadingTime</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via constructor</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Via static method (from file)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">time </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromFile</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">path/to/file.txt</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <h3>Get the reading time string<a id="get-the-reading-time-string" href="#get-the-reading-time-string" class="heading-permalink" title="Permalink"></a></h3>
 <p>To make things really easy, the <code>ReadingTime</code> instance can be automatically cast to a human-readable string with the default formatting.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ReadingTime</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromString</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Input text string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// 1min, 0sec</span></div></code></pre>
@@ -489,10 +541,8 @@ You also need to pass the current page being rendered (if you're on pagination p
 <h3>Constructor options breakdown<a id="constructor-options-breakdown" href="#constructor-options-breakdown" class="heading-permalink" title="Permalink"></a></h3>
 <p>The first two are self-explanatory:</p>
 <ul>
-<li>
-<code>items</code> - The items to paginate. This can be a collection or an array.</li>
-<li>
-<code>pageSize</code> - How many items to show on each page.</li>
+<li><code>items</code> - The items to paginate. This can be a collection or an array.</li>
+<li><code>pageSize</code> - How many items to show on each page.</li>
 </ul>
 <p>The next may need some explanation:</p>
 <h4><code>currentPageNumber</code><a id="currentpagenumber" href="#currentpagenumber" class="heading-permalink" title="Permalink"></a></h4>
@@ -560,7 +610,7 @@ You can then click the pagination links to navigate to the next pages.</p>
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -607,7 +657,7 @@ You can then click the pagination links to navigate to the next pages.</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

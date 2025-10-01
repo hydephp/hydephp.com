@@ -2,7 +2,7 @@
 title: "Internal Architecture of HydePHP - Part 1: Introduction"
 description: This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.
 category: deepdives
-author: Caen
+author: Emma
 date: 2022-05-11 20:35
 image:
   source: "../media/tech-5090539_1920.jpg"
@@ -16,7 +16,7 @@ image:
 ## Introduction to the internal architecture of HydePHP.
 
 
-Hey! My name is [Caen](https://twitter.com/CodeWithCaen). I am the creator of [HydePHP](https://hydephp.com/) - a new static app generator. I thought it could be useful to shed some light on the internal architecture of HydePHP and the design patterns I've used.
+Hey! My name is [Emma](https://twitter.com/EmmaDSCodes). I am the creator of [HydePHP](https://hydephp.com/) - a new static app generator. I thought it could be useful to shed some light on the internal architecture of HydePHP and the design patterns I've used.
 
 While this is not at all required reading for those wanting to try out Hyde, it might be interesting for those curious about the "magic" behind the framework. And of course to those who are interested in contributing to the codebase.
 

@@ -2,7 +2,7 @@
 title: 'Escape the Drama: Why HydePHP is Your WordPress Alternative'
 description: "Tired of WordPress drama? Discover HydePHP, a content-first static site generator that offers simplicity, speed, and security."
 category: 'web development'
-author: 'Caen'
+author: 'Emma'
 date: '2024-10-14 08:00'
 image: 'media/hydephp-vs-wordpress-min.png'
 ---

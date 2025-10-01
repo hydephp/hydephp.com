@@ -19,10 +19,10 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -271,7 +271,13 @@
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            
+            <ul class="table-of-contents">
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#accessing-the-kernel">Accessing the Kernel</a></li>
+<li><a href="#the-kernel-lifecycle">The Kernel Lifecycle</a></li>
+<li><a href="#api-reference">API Reference</a></li>
+</ul>
+
             </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
@@ -308,6 +314,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -315,7 +407,7 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
@@ -344,9 +436,10 @@ You can also use the <code>hyde()</code> function to get the Kernel, and call me
 <h2>API Reference<a id="api-reference" href="#api-reference" class="heading-permalink" title="Permalink"></a></h2>
 <p>Since the most common way to interact with the kernel is through the Hyde facade, we will use that for the examples.
 But you could just as well chain the methods on the accessed kernel singleton instance if you wanted.</p>
+<!-- Start generated docs for the HydeKernel -->
 <section id="hyde-kernel-base-methods">
 <!-- Start generated docs for Hyde\Foundation\HydeKernel -->
-<!-- Generated by HydePHP DocGen script at 2023-03-11 11:09:45 in 2.53ms -->
+<!-- Generated by HydePHP DocGen script at 2024-07-08 20:47:38 in 2.89ms -->
 <h4><code>version()</code><a id="version" href="#version" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
@@ -358,7 +451,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">features</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Facades\Features</span></div></code></pre>
 <h4><code>hasFeature()</code><a id="hasfeature" href="#hasfeature" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasFeature</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">feature</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasFeature</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Enums\Feature</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">feature</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <h4><code>toArray()</code><a id="toarray" href="#toarray" class="heading-permalink" title="Permalink"></a></h4>
 <p>Get the instance as an array.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">toArray</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">TKey</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> TValue</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
@@ -366,24 +459,27 @@ But you could just as well chain the methods on the accessed kernel singleton in
 </section>
 <section id="hyde-kernel-foundation-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
-<!-- Generated by HydePHP DocGen script at 2023-03-11 11:14:55 in 0.06ms -->
+<!-- Generated by HydePHP DocGen script at 2024-07-17 15:27:42 in 0.04ms -->
 <h4><code>files()</code><a id="files" href="#files" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">files</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> \Hyde\Foundation\Kernel\FileCollection</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> \Hyde\Support\Filesystem\ProjectFile</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">files</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\FileCollection</span></div></code></pre>
 <h4><code>pages()</code><a id="pages" href="#pages" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> \Hyde\Foundation\Kernel\PageCollection</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> \Hyde\Pages\Concerns\HydePage</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\PageCollection</span></div></code></pre>
 <h4><code>routes()</code><a id="routes" href="#routes" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> \Hyde\Foundation\Kernel\RouteCollection</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> \Hyde\Support\Models\Route</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\RouteCollection</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
 </section>
 <section id="hyde-kernel-string-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
-<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.07ms -->
+<!-- Generated by HydePHP DocGen script at 2024-12-22 09:14:25 in 0.07ms -->
 <h4><code>makeTitle()</code><a id="maketitle" href="#maketitle" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeTitle</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
+<h4><code>makeSlug()</code><a id="makeslug" href="#makeslug" class="heading-permalink" title="Permalink"></a></h4>
+<p>No description provided.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeSlug</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>normalizeNewlines()</code><a id="normalizenewlines" href="#normalizenewlines" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">normalizeNewlines</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
@@ -400,7 +496,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
 </section>
 <section id="hyde-kernel-hyperlink-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
-<!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
+<!-- Generated by HydePHP DocGen script at 2024-02-25 19:02:29 in 0.09ms -->
 <h4><code>formatLink()</code><a id="formatlink" href="#formatlink" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">formatLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
@@ -416,6 +512,9 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <h4><code>url()</code><a id="url" href="#url" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">url</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
+<h4><code>route()</code><a id="route" href="#route" class="heading-permalink" title="Permalink"></a></h4>
+<p>No description provided.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">key</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> Hyde\Support\Models\Route</span></div></code></pre>
 <h4><code>hasSiteUrl()</code><a id="hassiteurl" href="#hassiteurl" class="heading-permalink" title="Permalink"></a></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasSiteUrl</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
@@ -548,6 +647,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">callable</span><span style="color: #89DDFF;">(\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #676E95;">): </span><span style="color: #F78C6C;">void</span><span style="color: #676E95;"> $</span><span style="color: #F78C6C;">callback</span><span style="color: #676E95;"> */</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">booted</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">callable</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">\Hyde\Foundation\HydeKernel</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 </section>
+<!-- End generated docs for the HydeKernel -->
     </section>
     <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
         <p>
@@ -583,7 +683,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -630,7 +730,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

@@ -2,7 +2,7 @@
 title: Introducing images!
 description: The v0.10.0 release introduces featured images for blog posts.
 category: blog
-author: Caen
+author: Emma
 date: 2022-04-11 14:57
 ---
 
@@ -107,7 +107,7 @@ Using all of the supported properties described above, we can create an image th
 title: A cute kitten I found on Pixabay
 description: I found this cute kitten, and thought it would make a great example for featured images in posts!
 category: example
-author: Caen
+author: Emma
 date: 2022-04-11 15:51
 image:
   description: "Image of a small kitten with its head tilted, sitting in a basket weaved from nature material."

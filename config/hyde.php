@@ -223,7 +223,7 @@ return [
         Meta::name('generator', 'HydePHP '.Hyde\Hyde::version()),
         Meta::name('twitter:card', 'summary'),
         Meta::name('twitter:site', '@HydeFramework'),
-        Meta::name('twitter:creator', '@CodeWithCaen'),
+        Meta::name('twitter:creator', '@EmmaDSCodes'),
         Meta::name('twitter:title', 'HydePHP - Elegant and Powerful Static Site Generator'),
         Meta::name('twitter:description', 'Make static websites, blogs, and documentation pages with the tools you already know and love.'),
         Meta::name('twitter:image', 'https://opengraph.githubassets.com/1/hydephp/hyde'),
@@ -280,9 +280,9 @@ return [
 
     'authors' => [
         Author::create(
-            username: 'caen',
-            name: 'Caen',
-            website: 'https://twitter.com/CodeWithCaen'
+            username: 'emma',
+            name: 'Emma',
+            website: 'https://twitter.com/EmmaDSCodes'
         ),
     ],
 

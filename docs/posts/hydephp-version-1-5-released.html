@@ -10,11 +10,12 @@
 
 
 <link rel="canonical" href="https://hydephp.com/posts/hydephp-version-1-5-released">
-<meta name="twitter:title" content="HydePHP - HydePHP Version v1.5 Released">
 <meta name="description" content="In this release, several new features and improvements have been introduced.">
-<meta name="author" content="Caen">
+<meta name="twitter:title" content="HydePHP - HydePHP Version v1.5 Released">
+<meta name="author" content="Emma">
 <meta name="keywords" content="releases">
 <meta name="url" content="https://hydephp.com/posts/hydephp-version-1-5-released">
+<meta property="og:description" content="In this release, several new features and improvements have been introduced.">
 <meta property="og:title" content="HydePHP - HydePHP Version v1.5 Released">
 <meta property="og:url" content="https://hydephp.com/posts/hydephp-version-1-5-released">
 <meta property="og:article:published_time" content="2024-02-13T12:00:00+00:00">
@@ -23,14 +24,13 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -57,7 +57,21 @@
 </head>
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+    <div class="bg-purple-600 text-white py-3 px-4 text-center">
+        <div class="flex items-center justify-center space-x-4">
+            <span class="text-sm md:text-base font-medium">
+                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
+            </span>
+
+                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
+                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
+                    Read More
+                </a>
+                    </div>
+    </div>
+
+    <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
 	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="../" class="font-bold px-4">
@@ -112,7 +126,6 @@
 		</a>
 	</div>
 </nav>
- 
 
     <section>
         
@@ -127,14 +140,15 @@
         <div id="byline" aria-label="About the post" role="doc-introduction">
             Posted <time itemprop="dateCreated datePublished" datetime="2024-02-13T12:00:00+00:00" title="Tuesday Feb 13th, 2024, at 12:00pm">Feb 13th, 2024</time>            by author
 <address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
-            <a href="https://twitter.com/CodeWithCaen" rel="author" itemprop="url" aria-label="The author's website">
-                        <span itemprop="name" aria-label="The author's name" title=@caen>Caen</span>
+            <a href="https://twitter.com/EmmaDSCodes" rel="author" itemprop="url" aria-label="The author's website">
+                        <span itemprop="name" aria-label="The author's name" title=@emma>Emma</span>
                     </a>
     </address>
             in the category "releases"        </div>
            </header>
+    
         <div aria-label="Article body" itemprop="articleBody">
-        <h2>Overview</h2>
+                    <h2>Overview</h2>
 <p><strong>HydePHP v1.5 is now available for download!</strong></p>
 <p>In this release, several new features and improvements have been introduced.</p>
 <h2>Improved Patch Release Strategy</h2>
@@ -169,16 +183,11 @@ If you want to add more extensions, simply add them to the empty merge array, or
 <h3>Bug Fixes</h3>
 <p>Here are just some of the bug fixes in this release:</p>
 <ul>
-<li>Updated the Markdown to plain text converter to trim whitespace in <a href="https://github.com/hydephp/develop/pull/1561">#1561</a>
-</li>
-<li>Realtime Compiler: Fixed icons not being considered as images by dashboard viewer in <a href="https://github.com/hydephp/develop/pull/1512">#1512</a>
-</li>
-<li>Realtime Compiler: Fixed visual dashboard bugs in <a href="https://github.com/hydephp/develop/pull/1528">#1528</a>
-</li>
-<li>HydeFront: Fixed bug where heading permalink buttons were included in text represented output in <a href="https://github.com/hydephp/develop/pull/1519">#1519</a>
-</li>
-<li>HydeFront: Fix visual overflow bug in inline code blocks within blockquotes in <a href="https://github.com/hydephp/develop/pull/1525">#1525</a>
-</li>
+<li>Updated the Markdown to plain text converter to trim whitespace in <a href="https://github.com/hydephp/develop/pull/1561">#1561</a></li>
+<li>Realtime Compiler: Fixed icons not being considered as images by dashboard viewer in <a href="https://github.com/hydephp/develop/pull/1512">#1512</a></li>
+<li>Realtime Compiler: Fixed visual dashboard bugs in <a href="https://github.com/hydephp/develop/pull/1528">#1528</a></li>
+<li>HydeFront: Fixed bug where heading permalink buttons were included in text represented output in <a href="https://github.com/hydephp/develop/pull/1519">#1519</a></li>
+<li>HydeFront: Fix visual overflow bug in inline code blocks within blockquotes in <a href="https://github.com/hydephp/develop/pull/1525">#1525</a></li>
 </ul>
 <h2>Upgrade Guide</h2>
 <p>To upgrade to this version, simply run the following commands:</p>
@@ -194,9 +203,10 @@ and tag us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p
     </i>
 </p>
 
-    </div>
+            </div>
     <span class="sr-only">End of article</span>
-</article>    </main>
+    </article>
+    </main>
 
  
     </section>
@@ -294,7 +304,7 @@ and tag us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p
 	</div>
 </footer> 
 
-    <script defer src="../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

@@ -19,10 +19,10 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -200,31 +200,20 @@
 
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
-<li>
-<a href="#general-tips">General Tips</a>
-</li>
-<li>
-<a href="#conventions-to-follow">Conventions to Follow</a>
+<li><a href="#general-tips">General Tips</a></li>
+<li><a href="#conventions-to-follow">Conventions to Follow</a>
 <ul>
-<li>
-<a href="#file-naming">File naming</a>
-</li>
+<li><a href="#file-naming">File naming</a></li>
 </ul>
 </li>
-<li>
-<a href="#extra-information">Extra Information</a>
+<li><a href="#extra-information">Extra Information</a>
 <ul>
-<li>
-<a href="#definitions">Definitions</a>
-</li>
+<li><a href="#definitions">Definitions</a></li>
 </ul>
 </li>
-<li>
-<a href="#common-issues-causes-and-solutions">Common Issues, Causes, and Solutions</a>
+<li><a href="#common-issues-causes-and-solutions">Common Issues, Causes, and Solutions</a>
 <ul>
-<li>
-<a href="#extra-troubleshooting-information">Extra troubleshooting information</a>
-</li>
+<li><a href="#extra-troubleshooting-information">Extra troubleshooting information</a></li>
 </ul>
 </li>
 </ul>
@@ -337,6 +326,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -344,16 +419,14 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
         <h1>Troubleshooting</h1>
     </header>
     <section id="document-main-content" itemprop="articleBody">
-        <p>Since Hyde has a lot of &quot;magic&quot; features which depend on some base assumptions,
-there might be some &quot;gotchas&quot; you might run into. Here are some I can think of,
-did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
+        <p>Since Hyde has a lot of &quot;magic&quot; features which depend on some base assumptions, there might be some &quot;gotchas&quot; you might run into. Here are some common issues you might encounter. Did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
 <blockquote class="info"><p>Tip: You can run <code>php hyde validate</code> to run a series of tests to help you catch common issues.</p></blockquote>
 <h2>General Tips<a id="general-tips" href="#general-tips" class="heading-permalink" title="Permalink"></a></h2>
 <p>(In no particular order of importance)</p>
@@ -384,29 +457,17 @@ All the following filenames are resolved into the same destination file:
 <p>We will use the following definitions to describe the behaviour of Hyde.</p>
 <h4>General<a id="general" href="#general" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<strong>Hyde</strong>: The application that you are using.</li>
-<li>
-<strong>HydeCLI</strong>: The command-line interface for Hyde.</li>
-<li>
-<strong>Framework</strong>: The package containing the core codebase.</li>
+<li><strong>Hyde</strong>: The application that you are using.</li>
+<li><strong>HydeCLI</strong>: The command-line interface for Hyde.</li>
+<li><strong>Framework</strong>: The package containing the core codebase.</li>
 </ul>
 <h4>Path components<a id="path-components" href="#path-components" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
-<li>
-<strong>Identifier</strong>: The filepath without the extension, relative to the page type source directory.</li>
-<li>
-<strong>Route Key</strong>: The page type's output directory plus the identifier. Example: <code>posts/hello-world</code>
-</li>
-<li>
-<strong>Basename</strong>: The filename without the extension. Example: <code>hello-world</code>
-</li>
-<li>
-<strong>Filename</strong>: The full name of a file with the extension. Example: <code>hello-world.md</code>
-</li>
-<li>
-<strong>Filepath</strong>: The full file path including extension. Example: <code>_posts/hello-world.md</code>
-</li>
+<li><strong>Identifier</strong>: The filepath without the extension, relative to the page type source directory.</li>
+<li><strong>Route Key</strong>: The page type's output directory plus the identifier. Example: <code>posts/hello-world</code></li>
+<li><strong>Basename</strong>: The filename without the extension. Example: <code>hello-world</code></li>
+<li><strong>Filename</strong>: The full name of a file with the extension. Example: <code>hello-world.md</code></li>
+<li><strong>Filepath</strong>: The full file path including extension. Example: <code>_posts/hello-world.md</code></li>
 </ul>
 <p>You can read more about some of these in the <a href="core-concepts#paths-identifiers-and-route-keys">Core Concepts</a> article.</p>
 <h2>Common Issues, Causes, and Solutions<a id="common-issues-causes-and-solutions" href="#common-issues-causes-and-solutions" class="heading-permalink" title="Permalink"></a></h2>
@@ -557,7 +618,7 @@ You can do this manually, or with the following rescue command:</p>
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -604,7 +665,7 @@ You can do this manually, or with the following rescue command:</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

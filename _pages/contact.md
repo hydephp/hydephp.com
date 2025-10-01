@@ -6,7 +6,7 @@ navigation.hidden: true
 
 ## General
 
-The easiest way to get in touch with HydePHP is through its maintainer, Caen, on Twitter ([@CodeWithCaen](https://twitter.com/CodeWithCaen)), or via email, caen@desilva.se
+The easiest way to get in touch with HydePHP is through its maintainer, Emma, on Twitter ([@EmmaDSCodes](https://twitter.com/EmmaDSCodes)), or via email, emma@desilva.se
 
 For general inquiries, you can also send an email to hello@hydephp.com, or on Twitter at [@HydeFramework](https://twitter.com/HydeFramework)
 

@@ -19,10 +19,10 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -146,47 +146,29 @@
 
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
-<li>
-<a href="#introduction-to-hyde-pages">Introduction to Hyde Pages</a>
+<li><a href="#introduction-to-hyde-pages">Introduction to Hyde Pages</a>
 <ul>
-<li>
-<a href="#best-practices-and-hyde-expectations">Best Practices and Hyde Expectations</a>
-</li>
+<li><a href="#best-practices-and-hyde-expectations">Best Practices and Hyde Expectations</a></li>
 </ul>
 </li>
-<li>
-<a href="#creating-markdown-pages">Creating Markdown Pages</a>
+<li><a href="#creating-markdown-pages">Creating Markdown Pages</a>
 <ul>
-<li>
-<a href="#scaffolding-markdown-pages">Scaffolding Markdown Pages</a>
-</li>
-<li>
-<a href="#front-matter-is-optional">Front Matter is optional</a>
-</li>
+<li><a href="#scaffolding-markdown-pages">Scaffolding Markdown Pages</a></li>
+<li><a href="#front-matter-is-optional">Front Matter is optional</a></li>
 </ul>
 </li>
-<li>
-<a href="#creating-blade-pages">Creating Blade Pages</a>
+<li><a href="#creating-blade-pages">Creating Blade Pages</a>
 <ul>
-<li>
-<a href="#scaffolding-blade-pages">Scaffolding Blade Pages</a>
-</li>
+<li><a href="#scaffolding-blade-pages">Scaffolding Blade Pages</a></li>
 </ul>
 </li>
-<li>
-<a href="#when-to-use-which">When to Use Which?</a>
+<li><a href="#when-to-use-which">When to Use Which?</a>
 <ul>
-<li>
-<a href="#comparison">Comparison</a>
-</li>
-<li>
-<a href="#live-demos">Live Demos</a>
-</li>
+<li><a href="#comparison">Comparison</a></li>
+<li><a href="#live-demos">Live Demos</a></li>
 </ul>
 </li>
-<li>
-<a href="#bonus-creating-html-pages">Bonus: Creating HTML Pages</a>
-</li>
+<li><a href="#bonus-creating-html-pages">Bonus: Creating HTML Pages</a></li>
 </ul>
 
             </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
@@ -351,6 +333,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -358,7 +426,7 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
@@ -373,15 +441,14 @@ and where you may want to include other components or want to use dynamic PHP co
 <p>Let's start with the basics.</p>
 <h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" title="Permalink"></a></h3>
 <p>Since Hyde does a lot of things automatically, there are some things you may need
-to keep in mind when creating blog posts so that you don't get unexpected results.</p>
+to keep in mind when creating pages so that you don't get unexpected results.</p>
 <h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" title="Permalink"></a></h4>
 <ul>
 <li>Hyde Pages are files stored in the <code>_pages</code> directory</li>
 <li>The filename is used as the filename for the compiled HTML</li>
 <li>Filenames should use <code>kebab-case-identifier</code> format, followed by the appropriate extension</li>
 <li>Files prefixed with <code>_underscores</code> are ignored by Hyde</li>
-<li>Your page will be stored in <code>_site/&lt;identifier&gt;.html</code>
-</li>
+<li>Your page will be stored in <code>_site/&lt;identifier&gt;.html</code></li>
 <li>Blade pages will override any Markdown pages with the same filename when compiled</li>
 </ul>
 <h2>Creating Markdown Pages<a id="creating-markdown-pages" href="#creating-markdown-pages" class="heading-permalink" title="Permalink"></a></h2>
@@ -402,14 +469,10 @@ for the first level one heading (<code># Page Title</code>), and if that fails, 
 You can set just one or all of them, as Hyde will fill in the gaps for the rest.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">int</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">bool</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div></code></pre>
 <ul>
-<li>
-<code>label</code> is the text that will be displayed in the navigation menu</li>
-<li>
-<code>priority</code> is the order in which the page will appear in the navigation menu (<code>order</code> is also supported)</li>
-<li>
-<code>hidden</code> will hide the page from the navigation menu (<code>visible</code>) is also supported, but obviously invert the value)</li>
-<li>
-<code>group</code> will put the page in a dropdown menu with the specified group name (<code>category</code>) is also supported)</li>
+<li><code>label</code> is the text that will be displayed in the navigation menu</li>
+<li><code>priority</code> is the order in which the page will appear in the navigation menu (<code>order</code> is also supported)</li>
+<li><code>hidden</code> will hide the page from the navigation menu (<code>visible</code>) is also supported, but obviously invert the value)</li>
+<li><code>group</code> will put the page in a dropdown menu with the specified group name (<code>category</code>) is also supported)</li>
 </ul>
 <h2>Creating Blade Pages<a id="creating-blade-pages" href="#creating-blade-pages" class="heading-permalink" title="Permalink"></a></h2>
 <p>Since Hyde is based on Laravel and uses the powerful Blade templating engine, you can use Blade pages to create more
@@ -515,7 +578,7 @@ You won't be able to change any settings with front matter, however.</p>
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -562,7 +625,7 @@ You won't be able to change any settings with front matter, however.</p>
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

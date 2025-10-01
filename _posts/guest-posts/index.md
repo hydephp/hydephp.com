@@ -49,6 +49,9 @@ category: "Guest Posts"
 author:
     name: "Your Name"
     website: "https://yourwebsite.com" # Optional
+    linkedin: "your_linkedin_handle" # Optional
+    github: "your_github_handle" # Optional
+    x: "your_x_handle" # Optional
 date: "YYYY-MM-DD HH:MM"
 guest_post: true
 canonical_guest_post_url: "https://example.com/original-post" # Optional, for republished content
@@ -99,7 +102,7 @@ If you use AI tools in your writing process, please disclose this in your pull r
 ## Questions?
 
 We're here to help! Reach out to:
-- HydePHP creator [@CodeWithCaen on X/Twitter](https://x.com/CodeWithCaen)
+- HydePHP creator [@EmmaDSCodes on X/Twitter](https://x.com/EmmaDSCodes)
 - Create an issue in the [GitHub repository](https://github.com/hydephp/hydephp.com/issues)
 
 We can't wait to see your contributions and share your knowledge with the HydePHP community!

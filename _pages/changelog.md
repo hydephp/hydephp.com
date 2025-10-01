@@ -17,6 +17,52 @@ HydePHP consists of two primary components, Hyde/Hyde and Hyde/Framework. Develo
 
 <!-- CHANGELOG_START -->
 
+## [1.8.0](https://github.com/hydephp/develop/releases/tag/1.8.0) - 2025-05-17
+### Added
+- Updated the `HydeKernel` array representation to include the Hyde version in https://github.com/hydephp/develop/pull/1786
+- Registered the `cache:clear` command to make it easier to clear the cache in https://github.com/hydephp/develop/pull/1881
+- Added a new `Hyperlinks::isRemote()` helper method to check if a URL is remote in https://github.com/hydephp/develop/pull/1882
+- All page types now support the `description` front matter field (used in page metadata) in https://github.com/hydephp/develop/pull/1884
+- Added a new `Filesystem::findFiles()` method to find files in a directory in https://github.com/hydephp/develop/pull/2064
+- Added `webp` to the list of default media extensions in https://github.com/hydephp/framework/pull/663
+- Added a new slug generation helper to improve internationalization support in https://github.com/hydephp/develop/pull/2070
+
+### Changed
+- Changed the `Hyde` facade to use a `@mixin` annotation instead of single method annotations in https://github.com/hydephp/develop/pull/1919
+- Updated the `Serializable` trait to provide a default automatic `toArray` method in https://github.com/hydephp/develop/pull/1791
+- Updated the `PostAuthor` class's `name` property to fall back to the `username` property if the `name` property is not set in https://github.com/hydephp/develop/pull/1794
+- Removed the nullable type hint from the `PostAuthor` class's `name` property as it is now always set in https://github.com/hydephp/develop/pull/1794
+- Improved the accessibility of the heading permalinks feature in https://github.com/hydephp/develop/pull/1803
+- The `torchlight:install` command is now hidden from the command list as it's already installed in https://github.com/hydephp/develop/pull/1879
+- Updated the home page fallback link in the 404 template to lead to the site root in https://github.com/hydephp/develop/pull/1880 (fixes https://github.com/hydephp/develop/issues/1781)
+- Normalized remote URL checks so that protocol relative URLs `//` are consistently considered to be remote in all places in https://github.com/hydephp/develop/pull/1882 (fixes https://github.com/hydephp/develop/issues/1788)
+- Page slugs are now generated using our automatically internationalizing slug generator to transliterate input to ASCII in https://github.com/hydephp/develop/pull/2070
+- Replaced internal usages of glob functions with our improved file finder in https://github.com/hydephp/develop/pull/2064
+- Updated to HydeFront v3.4 in https://github.com/hydephp/develop/pull/1803
+- Realtime Compiler: Virtual routes are now managed through the service container in https://github.com/hydephp/develop/pull/1858
+- Realtime Compiler: Improved the dashboard layout in https://github.com/hydephp/develop/pull/1866
+- Realtime Compiler: Shorten the realtime compiler server start message from "Press Ctrl+C to stop" to "Use Ctrl+C to stop" to better fit 80 column terminals in https://github.com/hydephp/develop/pull/2017
+
+### Deprecated
+- The `PostAuthor::getName()` method is now deprecated and will be removed in v2. (use `$author->name` instead) in https://github.com/hydephp/develop/pull/1794
+- Deprecated the `FeaturedImage::isRemote()` method in favor of the new `Hyperlinks::isRemote()` method in https://github.com/hydephp/develop/pull/1882
+- Deprecated the `Hyde::mediaLink()` method in favor of the `Hyde::asset()` method in https://github.com/hydephp/develop/pull/1993
+### Fixed
+- Fixed Tailwind content paths for nested Blade pages in https://github.com/hydephp/develop/pull/2042
+- Added missing collection key types in Hyde facade method annotations in https://github.com/hydephp/develop/pull/1784
+- Fixed heading permalinks button text showing in Google Search previews https://github.com/hydephp/develop/issues/1801 in https://github.com/hydephp/develop/pull/1803
+- Fixed routing issues with nested 404 pages where an index page does not exist https://github.com/hydephp/develop/issues/1781 in https://github.com/hydephp/develop/pull/1880
+- Fixed URL metadata for blog posts not using customized post output directories in https://github.com/hydephp/develop/pull/1889
+- Fixed lacking support for logographic slug generation https://github.com/hydephp/hyde/issues/269 in https://github.com/hydephp/develop/pull/2070 
+- Improved printed documentation views in https://github.com/hydephp/develop/pull/2005
+- Fixed "BuildService finding non-existent files to copy in Debian" https://github.com/hydephp/framework/issues/662 in https://github.com/hydephp/develop/pull/2064
+- Fixed "Undefined constant `Hyde\Foundation\Kernel\GLOB_BRACE`" https://github.com/hydephp/hyde/issues/270 in https://github.com/hydephp/develop/pull/2064
+- Realtime Compiler: Updated the exception handler to match HTTP exception codes when sending error responses in https://github.com/hydephp/develop/pull/1853
+- Realtime Compiler: Improved routing for nested index pages in https://github.com/hydephp/develop/pull/1852
+- Realtime Compiler: Improved the dashboard https://github.com/hydephp/develop/pull/1866 fixing https://github.com/hydephp/realtime-compiler/issues/22 and https://github.com/hydephp/realtime-compiler/issues/29
+- Realtime Compiler: Fixed support for serving media assets in subdirectories https://github.com/hydephp/realtime-compiler/issues/26 in https://github.com/hydephp/develop/pull/1872
+
+
 ## [1.7.0](https://github.com/hydephp/develop/releases/tag/1.7.0) - 2024-07-05
 ### Added
 - Added support for using HTML comments to create Markdown code block filepath labels in https://github.com/hydephp/develop/pull/1693
@@ -314,14 +360,14 @@ This release is the first since the official release of HydePHP 1.0.0. It contai
 ## [v1.0.0-RC.5](https://github.com/hydephp/develop/releases/tag/v1.0.0-RC.5) - 2023-03-13
 
 ### Added
-- Add back lost versioning text from compiled HydeFront file by @caendesilva in https://github.com/hydephp/develop/pull/1263
-- Create documentation for the HydePHP v1.0 release by @caendesilva in https://github.com/hydephp/develop/pull/1242
+- Add back lost versioning text from compiled HydeFront file by @emmadesilva in https://github.com/hydephp/develop/pull/1263
+- Create documentation for the HydePHP v1.0 release by @emmadesilva in https://github.com/hydephp/develop/pull/1242
 
 ### Changed
-- Use new fixes from StyleCI by @caendesilva in https://github.com/hydephp/develop/pull/1264
-- Remove "Beta Software Warning" from Project Readmes by @caendesilva in https://github.com/hydephp/develop/pull/1268
-- Format Markdown documents by @caendesilva in https://github.com/hydephp/develop/pull/1270
-- Update supported versions in package security policies by @caendesilva in https://github.com/hydephp/develop/pull/1269
+- Use new fixes from StyleCI by @emmadesilva in https://github.com/hydephp/develop/pull/1264
+- Remove "Beta Software Warning" from Project Readmes by @emmadesilva in https://github.com/hydephp/develop/pull/1268
+- Format Markdown documents by @emmadesilva in https://github.com/hydephp/develop/pull/1270
+- Update supported versions in package security policies by @emmadesilva in https://github.com/hydephp/develop/pull/1269
 
 ### Fixed
 - Bugfix: Fix missing `justify-between` class on the documentation article header [#1265](https://github.com/hydephp/develop/pull/1265)
@@ -390,14 +436,14 @@ This release candidate version contains a few deprecations, these will be remove
 
 ### Removed
 
-- Remove RouteKey normalization for dot notation support by @caendesilva in https://github.com/hydephp/develop/pull/1241
+- Remove RouteKey normalization for dot notation support by @emmadesilva in https://github.com/hydephp/develop/pull/1241
 
 ### Fixed
 
-- Update MarkdownPost::getLatestPosts helper to sort using the DateTime object timestamp by @caendesilva in https://github.com/hydephp/develop/pull/1235
-- Update PostAuthor::all() to map entries into array keyed by username by @caendesilva in https://github.com/hydephp/develop/pull/1236
-- Normalize internal author array keys to lowercase to make author usernames case-insensitive by @caendesilva in https://github.com/hydephp/develop/pull/1237
-- Update pretty relative index links to rewrite to `./` instead of `/` by @caendesilva in https://github.com/hydephp/develop/pull/1238
+- Update MarkdownPost::getLatestPosts helper to sort using the DateTime object timestamp by @emmadesilva in https://github.com/hydephp/develop/pull/1235
+- Update PostAuthor::all() to map entries into array keyed by username by @emmadesilva in https://github.com/hydephp/develop/pull/1236
+- Normalize internal author array keys to lowercase to make author usernames case-insensitive by @emmadesilva in https://github.com/hydephp/develop/pull/1237
+- Update pretty relative index links to rewrite to `./` instead of `/` by @emmadesilva in https://github.com/hydephp/develop/pull/1238
 - Fixed https://github.com/hydephp/develop/issues/1240
 
 
@@ -414,7 +460,7 @@ Welcome to the first release candidate for HydePHP 1.0! If you are coming from a
 #### Abstract
 
 This beta release contains a plethora of breaking changes compared earlier beta versions.
-So many in fact, it could actually be easier and faster to recreate your project from scratch than to upgrade a particularly complex project. Though it only took me like five minutes to upgrade a simple documentation site, see [this diff](https://github.com/caendesilva/hyde-example-documentation-site/commit/f647f9250ecb20cf7bbf43bb10cd6401fae201cb) to see what I did.
+So many in fact, it could actually be easier and faster to recreate your project from scratch than to upgrade a particularly complex project. Though it only took me like five minutes to upgrade a simple documentation site, see [this diff](https://github.com/emmadesilva/hyde-example-documentation-site/commit/f647f9250ecb20cf7bbf43bb10cd6401fae201cb) to see what I did.
 
 The good news however, is that as HydePHP approaches version 1.0, there will no longer be releases like these with breaking changes.
 
@@ -1623,8 +1669,8 @@ If there are no documentation pages there is no need for an index page, and the 
 
 ### What's Changed
 
-* v0.37.0-beta - Create custom validator test framework by @caendesilva in https://github.com/hydephp/develop/pull/45
-* Skip documentation index validation test if the _docs directory is empty by @caendesilva in https://github.com/hydephp/develop/pull/48
+* v0.37.0-beta - Create custom validator test framework by @emmadesilva in https://github.com/hydephp/develop/pull/45
+* Skip documentation index validation test if the _docs directory is empty by @emmadesilva in https://github.com/hydephp/develop/pull/48
 
 **Full Changelog**: https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.1-beta
 
@@ -1633,7 +1679,7 @@ If there are no documentation pages there is no need for an index page, and the 
 
 ### What's Changed
 
-* v0.37.0-beta - Create custom validator test framework by @caendesilva in https://github.com/hydephp/develop/pull/45
+* v0.37.0-beta - Create custom validator test framework by @emmadesilva in https://github.com/hydephp/develop/pull/45
 
 **Full Changelog**: https://github.com/hydephp/develop/compare/v0.36.0-beta...v0.37.0-beta.1
 
@@ -1642,8 +1688,8 @@ If there are no documentation pages there is no need for an index page, and the 
 
 ### What's Changed
 
-* Improve transformation of the hyde/hyde composer.json in the monorepo split job by @caendesilva in https://github.com/hydephp/develop/pull/33
-* v0.36.x - Add package auto-discovery by @caendesilva in https://github.com/hydephp/develop/pull/35
+* Improve transformation of the hyde/hyde composer.json in the monorepo split job by @emmadesilva in https://github.com/hydephp/develop/pull/33
+* v0.36.x - Add package auto-discovery by @emmadesilva in https://github.com/hydephp/develop/pull/35
 
 **Full Changelog**: https://github.com/hydephp/develop/compare/v0.35.0-beta.1...v0.36.0-beta
 
@@ -1652,21 +1698,21 @@ If there are no documentation pages there is no need for an index page, and the 
 
 ### What's Changed
 
-* Restore master project by @caendesilva in https://github.com/hydephp/develop/pull/1
-* Merge Hyde/Framework into packages/framework by @caendesilva in https://github.com/hydephp/develop/pull/2
-* Refactor test suite, moving tests into Hyde root and updating some of them by @caendesilva in https://github.com/hydephp/develop/pull/3
-* Remove default AppServiceProvider.php, fix #5 by @caendesilva in https://github.com/hydephp/develop/pull/6
-* Fix #7: Remove unrelated configuration files from the framework package by @caendesilva in https://github.com/hydephp/develop/pull/8
-* Refactor bootstrapping process by @caendesilva in https://github.com/hydephp/develop/pull/9
-* Remove layover framework test files by @caendesilva in https://github.com/hydephp/develop/pull/10
-* Import hydefront package by @caendesilva in https://github.com/hydephp/develop/pull/11
-* Import hydephp/realtime-compiler to packages/ by @caendesilva in https://github.com/hydephp/develop/pull/16
-* Handle moving of the bootstrap file to provide backwards compatibility for the migration period by @caendesilva in https://github.com/hydephp/develop/pull/17
-* Import hydephp/docs by @caendesilva in https://github.com/hydephp/develop/pull/18
-* Create readonly mirrors by @caendesilva in https://github.com/hydephp/develop/pull/21
-* Add Rocket dashboard subrepository by @caendesilva in https://github.com/hydephp/develop/pull/25
-* Work in progress single-file dashboard for the HydeRC by @caendesilva in https://github.com/hydephp/develop/pull/26
-* Create dashboard template by @caendesilva in https://github.com/hydephp/develop/pull/27
+* Restore master project by @emmadesilva in https://github.com/hydephp/develop/pull/1
+* Merge Hyde/Framework into packages/framework by @emmadesilva in https://github.com/hydephp/develop/pull/2
+* Refactor test suite, moving tests into Hyde root and updating some of them by @emmadesilva in https://github.com/hydephp/develop/pull/3
+* Remove default AppServiceProvider.php, fix #5 by @emmadesilva in https://github.com/hydephp/develop/pull/6
+* Fix #7: Remove unrelated configuration files from the framework package by @emmadesilva in https://github.com/hydephp/develop/pull/8
+* Refactor bootstrapping process by @emmadesilva in https://github.com/hydephp/develop/pull/9
+* Remove layover framework test files by @emmadesilva in https://github.com/hydephp/develop/pull/10
+* Import hydefront package by @emmadesilva in https://github.com/hydephp/develop/pull/11
+* Import hydephp/realtime-compiler to packages/ by @emmadesilva in https://github.com/hydephp/develop/pull/16
+* Handle moving of the bootstrap file to provide backwards compatibility for the migration period by @emmadesilva in https://github.com/hydephp/develop/pull/17
+* Import hydephp/docs by @emmadesilva in https://github.com/hydephp/develop/pull/18
+* Create readonly mirrors by @emmadesilva in https://github.com/hydephp/develop/pull/21
+* Add Rocket dashboard subrepository by @emmadesilva in https://github.com/hydephp/develop/pull/25
+* Work in progress single-file dashboard for the HydeRC by @emmadesilva in https://github.com/hydephp/develop/pull/26
+* Create dashboard template by @emmadesilva in https://github.com/hydephp/develop/pull/27
 
 **Full Changelog**: https://github.com/hydephp/develop/commits/v0.35.0-beta
 
@@ -1841,7 +1887,7 @@ Generated by [`auto-changelog`](https://github.com/CookPete/auto-changelog).
 - Fix #146 by adding _pages to Tailwind content [`#148`](https://github.com/hydephp/hyde/pull/148)
 - Add back _site to Tailwind content array [`#147`](https://github.com/hydephp/hyde/pull/147)
 - Update frontend and framework files [`#143`](https://github.com/hydephp/hyde/pull/143)
-- Merge pull request #148 from hydephp/caendesilva-patch-1 [`#146`](https://github.com/hydephp/hyde/issues/146)
+- Merge pull request #148 from hydephp/emmadesilva-patch-1 [`#146`](https://github.com/hydephp/hyde/issues/146)
 - Fix #146 by adding _pages to Tailwind content [`#146`](https://github.com/hydephp/hyde/issues/146)
 - Automatic build update [`5f656d0`](https://github.com/hydephp/hyde/commit/5f656d04ea94fc8d9fa63b99d681c561a503d1aa)
 - Remove reliance on deprecated service [`71bb359`](https://github.com/hydephp/hyde/commit/71bb359fa959b17f175adff406dd86b9bfa6dfd5)

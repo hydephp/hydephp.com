@@ -29,7 +29,7 @@
 			For those times you need full control.
 		</strong>
 		<div class="p-8  max-w-5xl mx-auto">
-			<iframe loading="lazy" width="100%" height="100%" style="min-height: 550px; overflow: hidden; border-radius: 1rem;" src="https://cdn.desilva.se/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/argon-blade-example-animated.html?1" frameborder="0"></iframe>
+			<iframe loading="lazy" width="100%" height="100%" style="min-height: 550px; overflow: hidden; border-radius: 1rem;" src="https://cdn-static.hydephp.com/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/argon-blade-example-animated.html?1" frameborder="0"></iframe>
 		</div>
 	</div>
 </div>

@@ -19,10 +19,10 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.7.3">
+<meta name="generator" content="HydePHP 1.8.0">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
-<meta name="twitter:creator" content="@CodeWithCaen">
+<meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
 <meta property="og:site_name" content="HydePHP">
@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=32f9a485db7be05a5af5aa8a46420c23">
+    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
 
 
 
@@ -55,7 +55,7 @@
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
                     <a href="../../docs/1.x/">
                 HydePHP Docs
@@ -230,127 +230,66 @@
 
                     <span class="sr-only">Table of contents</span>
             <ul class="table-of-contents">
-<li>
-<a href="#abstract">Abstract</a>
+<li><a href="#abstract">Abstract</a>
 <ul>
-<li>
-<a href="#about-the-reference">About the reference</a>
-</li>
-<li>
-<a href="#table-of-contents">Table of Contents</a>
-</li>
+<li><a href="#about-the-reference">About the reference</a></li>
+<li><a href="#table-of-contents">Table of Contents</a></li>
 </ul>
 </li>
-<li>
-<a href="#hydepage">HydePage</a>
+<li><a href="#hydepage">HydePage</a>
 <ul>
-<li>
-<a href="#quick-reference">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure">Base Structure</a>
-</li>
-<li>
-<a href="#methods">Methods</a>
-</li>
+<li><a href="#quick-reference">Quick Reference</a></li>
+<li><a href="#base-structure">Base Structure</a></li>
+<li><a href="#methods">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#basemarkdownpage">BaseMarkdownPage</a>
+<li><a href="#basemarkdownpage">BaseMarkdownPage</a>
 <ul>
-<li>
-<a href="#quick-reference-1">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-1">Base Structure</a>
-</li>
-<li>
-<a href="#methods-1">Methods</a>
-</li>
+<li><a href="#quick-reference-1">Quick Reference</a></li>
+<li><a href="#base-structure-1">Base Structure</a></li>
+<li><a href="#methods-1">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#inmemorypage">InMemoryPage</a>
+<li><a href="#inmemorypage">InMemoryPage</a>
 <ul>
-<li>
-<a href="#quick-reference-2">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-2">Base Structure</a>
-</li>
-<li>
-<a href="#methods-2">Methods</a>
-</li>
+<li><a href="#quick-reference-2">Quick Reference</a></li>
+<li><a href="#base-structure-2">Base Structure</a></li>
+<li><a href="#methods-2">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#bladepage">BladePage</a>
+<li><a href="#bladepage">BladePage</a>
 <ul>
-<li>
-<a href="#quick-reference-3">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-3">Base Structure</a>
-</li>
-<li>
-<a href="#methods-3">Methods</a>
-</li>
+<li><a href="#quick-reference-3">Quick Reference</a></li>
+<li><a href="#base-structure-3">Base Structure</a></li>
+<li><a href="#methods-3">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#markdownpage">MarkdownPage</a>
+<li><a href="#markdownpage">MarkdownPage</a>
 <ul>
-<li>
-<a href="#quick-reference-4">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-4">Base Structure</a>
-</li>
-<li>
-<a href="#methods-4">Methods</a>
-</li>
+<li><a href="#quick-reference-4">Quick Reference</a></li>
+<li><a href="#base-structure-4">Base Structure</a></li>
+<li><a href="#methods-4">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#markdownpost">MarkdownPost</a>
+<li><a href="#markdownpost">MarkdownPost</a>
 <ul>
-<li>
-<a href="#quick-reference-5">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-5">Base Structure</a>
-</li>
-<li>
-<a href="#methods-5">Methods</a>
-</li>
+<li><a href="#quick-reference-5">Quick Reference</a></li>
+<li><a href="#base-structure-5">Base Structure</a></li>
+<li><a href="#methods-5">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#documentationpage">DocumentationPage</a>
+<li><a href="#documentationpage">DocumentationPage</a>
 <ul>
-<li>
-<a href="#quick-reference-6">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-6">Base Structure</a>
-</li>
-<li>
-<a href="#methods-6">Methods</a>
-</li>
+<li><a href="#quick-reference-6">Quick Reference</a></li>
+<li><a href="#base-structure-6">Base Structure</a></li>
+<li><a href="#methods-6">Methods</a></li>
 </ul>
 </li>
-<li>
-<a href="#htmlpage">HtmlPage</a>
+<li><a href="#htmlpage">HtmlPage</a>
 <ul>
-<li>
-<a href="#quick-reference-7">Quick Reference</a>
-</li>
-<li>
-<a href="#base-structure-7">Base Structure</a>
-</li>
-<li>
-<a href="#methods-7">Methods</a>
-</li>
+<li><a href="#quick-reference-7">Quick Reference</a></li>
+<li><a href="#base-structure-7">Base Structure</a></li>
+<li><a href="#methods-7">Methods</a></li>
 </ul>
 </li>
 </ul>
@@ -433,6 +372,92 @@
         </a>
     </li>                                    </ul>
             </li>
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
+    </svg>
+    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
+    </svg>
+</button>                                    </header>
+                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Base Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Blade Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Documentation Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Html Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Base Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Boot Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Extensions Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Filesystem Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Foundation Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Hyperlink Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel Kernel Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel String Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Kernel View Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Hyde Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            In Memory Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Interacts with Front Matter Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Page Methods
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Markdown Post Methods
+        </a>
+    </li>                                    </ul>
+            </li>
             </ul>
     </nav>
             <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
@@ -440,7 +465,7 @@
             <a href="../../">Back to home page</a>
     </p>        </footer>
     </aside>
-    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)]">
+    <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
     
     <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
@@ -534,7 +559,7 @@ from the HydeKernel's page index.</p>
 <blockquote class="warning"><p class="p-2" style="padding-right: 1rem"><strong>Heads up!</strong> The following methods are defined in the <code>HydePage</code> class, and are thus available to all page classes. Since the HydePage class is abstract, you cannot instantiate it directly, and many of the static methods are also only callable from the child classes.</p></blockquote>
 <section id="hyde-page-methods">
 <!-- Start generated docs for Hyde\Pages\Concerns\HydePage -->
-<!-- Generated by HydePHP DocGen script at 2024-07-08 20:48:42 in 5.42ms -->
+<!-- Generated by HydePHP DocGen script at 2024-07-23 15:23:26 in 4.01ms -->
 <h4><code>make()</code><a id="make" href="#make" class="heading-permalink" title="Permalink"></a></h4>
 <p>Create a new page instance. Static alias for the constructor.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">HydePage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">make</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> Hyde\Markdown\Models\FrontMatter</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">matter</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span></div></code></pre>
@@ -545,15 +570,13 @@ from the HydeKernel's page index.</p>
 <p>Get a page instance from the Kernel's page index by its identifier.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">HydePage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span></div></code></pre>
 <ul>
-<li>
-<strong>Throws:</strong> \Hyde\Framework\Exceptions\FileNotFoundException If the page does not exist.</li>
+<li><strong>Throws:</strong> \Hyde\Framework\Exceptions\FileNotFoundException If the page does not exist.</li>
 </ul>
 <h4><code>parse()</code><a id="parse" href="#parse" class="heading-permalink" title="Permalink"></a></h4>
 <p>Parse a source file into a new page model instance.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #F78C6C;">string</span><span style="color: #676E95;"> $identifier The identifier of the page to parse. */</span></div><div class='line'><span style="color: #FFCB6B;">HydePage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">parse</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// New page model instance for the parsed source file.</span></div></code></pre>
 <ul>
-<li>
-<strong>Throws:</strong> \Hyde\Framework\Exceptions\FileNotFoundException If the file does not exist.</li>
+<li><strong>Throws:</strong> \Hyde\Framework\Exceptions\FileNotFoundException If the file does not exist.</li>
 </ul>
 <h4><code>files()</code><a id="files" href="#files" class="heading-permalink" title="Permalink"></a></h4>
 <p>Get an array of all the source file identifiers for the model.</p>
@@ -650,7 +673,8 @@ from the HydeKernel's page index.</p>
 <p>Get the group of the page in the navigation menu, if any.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">navigationMenuGroup</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <h4><code>getCanonicalUrl()</code><a id="getcanonicalurl" href="#getcanonicalurl" class="heading-permalink" title="Permalink"></a></h4>
-<p>No description provided.</p>
+<p>Get the canonical URL for the page to use in the <code>&lt;link rel=&amp;quot;canonical&amp;quot;&gt;</code> tag.</p>
+<p>It can be explicitly set in the front matter using the <code>canonicalUrl</code> key, otherwise it will be generated based on the site URL and the output path, unless there is no configured base URL, leading to this returning null.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getCanonicalUrl</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <!-- End generated docs for Hyde\Pages\Concerns\HydePage -->
 </section>
@@ -756,10 +780,8 @@ autodiscovery, you may benefit from creating a custom page class instead, as tha
 <p>Note that $contents take precedence over $view, so if you pass both, only $contents will be used. You can also register a macro with the name 'compile' to overload the default compile method.</p>
 <p>If the identifier for an in-memory page is &quot;foo/bar&quot; the page will be saved to &quot;_site/foo/bar.html&quot;. You can then also use the route helper to get a link to it by using the route key &quot;foo/bar&quot;. Take note that the identifier must be unique to prevent overwriting other pages. all this data will be passed to the view rendering engine.</p>
 <ul>
-<li>
-<strong>Parameter $view:</strong> The view key or Blade file for the view to use to render the page contents.</li>
-<li>
-<strong>Parameter $matter:</strong> The front matter of the page. When using the Blade view rendering option,</li>
+<li><strong>Parameter $view:</strong> The view key or Blade file for the view to use to render the page contents.</li>
+<li><strong>Parameter $matter:</strong> The front matter of the page. When using the Blade view rendering option,</li>
 </ul>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">identifier</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> \Hyde\Markdown\Models\FrontMatter</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">matter</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">contents</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">view</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <h4><code>getContents()</code><a id="getcontents" href="#getcontents" class="heading-permalink" title="Permalink"></a></h4>
@@ -1021,7 +1043,7 @@ These pages will be copied exactly as they are to the <code>_site/</code> direct
 </button>
 <button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700"
+        class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
     <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
         <path d="M0 0h24v24H0z" fill="none"/>
@@ -1068,7 +1090,7 @@ These pages will be copied exactly as they are to the <code>_site/</code> direct
     });
 </script>            </div>
 
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
