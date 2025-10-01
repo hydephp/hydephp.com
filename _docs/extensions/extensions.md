@@ -40,5 +40,5 @@ Torchlight is an amazing API for syntax highlighting, and is supported natively 
 ## Contribute
 
 Have an idea for an extension or integration? Let me know! I'd love to hear from you. Get in touch on
-[GitHub](https://github.com/hydephp/hyde) or send me a DM on [Twitter](https://twitter.com/EmmaDSCodes).
+[GitHub](https://github.com/hydephp/hyde) or send me a DM on [Twitter](https://twitter.com/CodeWithCaen).
 You may also want to look at the [Extension API](extensions-api) documentation to learn how to create extensions.
