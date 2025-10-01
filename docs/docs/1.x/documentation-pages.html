@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,11 +71,19 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -124,8 +133,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -149,59 +158,294 @@
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li><a href="#introduction-to-hyde-documentation-pages">Introduction to Hyde Documentation Pages</a>
-<ul>
-<li><a href="#best-practices-and-hyde-expectations">Best Practices and Hyde Expectations</a></li>
-<li><a href="#advanced-usage-and-customization">Advanced usage and customization</a></li>
-</ul>
-</li>
-<li><a href="#creating-documentation-pages-1">Creating Documentation Pages</a>
-<ul>
-<li><a href="#front-matter-is-optional">Front Matter is optional</a></li>
-</ul>
-</li>
-<li><a href="#dynamic-content-generation">Dynamic Content Generation</a>
-<ul>
-<li><a href="#front-matter-reference">Front Matter reference</a></li>
-</ul>
-</li>
-<li><a href="#sidebar">Sidebar</a>
-<ul>
-<li><a href="#sidebar-ordering">Sidebar ordering</a></li>
-<li><a href="#sidebar-labels">Sidebar labels</a></li>
-<li><a href="#sidebar-grouping">Sidebar grouping</a></li>
-<li><a href="#sidebar-footer-customization">Sidebar footer customization</a></li>
-<li><a href="#hiding-items">Hiding Items</a></li>
-</ul>
-</li>
-<li><a href="#customization">Customization</a>
-<ul>
-<li><a href="#output-directory">Output directory</a></li>
-<li><a href="#automatic-navigation-menu">Automatic navigation menu</a></li>
-<li><a href="#sidebar-header-name">Sidebar header name</a></li>
-<li><a href="#sidebar-page-order">Sidebar page order</a></li>
-<li><a href="#automatic-sidebar-group-labels">Automatic sidebar group labels</a></li>
-<li><a href="#table-of-contents-settings">Table of contents settings</a></li>
-<li><a href="#using-flattened-output-paths">Using flattened output paths</a></li>
-</ul>
-</li>
-<li><a href="#search-feature">Search Feature</a>
-<ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#using-the-search">Using the search</a></li>
-<li><a href="#hiding-pages-from-indexing">Hiding pages from indexing</a></li>
-<li><a href="#live-search-with-the-realtime-compiler">Live search with the realtime compiler</a></li>
-</ul>
-</li>
-<li><a href="#automatic-edit-page-button">Automatic &quot;Edit Page&quot; Button</a>
-<ul>
-<li><a href="#introduction-1">Introduction</a></li>
-<li><a href="#configuration">Configuration</a></li>
-</ul>
-</li>
-</ul>
-
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction-to-hyde-documentation-pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction to Hyde Documentation Pages
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#best-practices-and-hyde-expectations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Best Practices and Hyde Expectations
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#filenames" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Filenames
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#advanced-usage-and-customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Advanced usage and customization
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-documentation-pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating Documentation Pages
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-is-optional" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Front Matter is optional
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#yaml" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        ```yaml
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#priority-5" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        priority: 5
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#dynamic-content-generation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Dynamic Content Generation
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Front Matter reference
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#sidebar-ordering" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar ordering
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-labels" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar labels
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-grouping" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar grouping
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-footer-customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar footer customization
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#using-front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using Front Matter
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-subdirectory-based-grouping" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Automatic subdirectory-based grouping
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hiding-items" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Hiding Items
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Customization
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#output-directory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Output directory
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-navigation-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Automatic navigation menu
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-header-name" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar header name
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-page-order" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar page order
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-sidebar-group-labels" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Automatic sidebar group labels
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#table-of-contents-settings" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Table of contents settings
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-flattened-output-paths" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using flattened output paths
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#search-feature" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Search Feature
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-the-search" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using the search
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hiding-pages-from-indexing" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Hiding pages from indexing
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#live-search-with-the-realtime-compiler" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Live search with the realtime compiler
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-edit-page-button" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Automatic &quot;Edit Page&quot; Button
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Configuration
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#changing-the-button-text" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Changing the button text
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#changing-the-position" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Changing the position
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#adding-a-button-icon" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Adding a button icon
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#changing-the-blade-view" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Changing the Blade view
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+            </ul>
             </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/managing-assets" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Managing and Compiling Assets
@@ -213,8 +457,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -259,8 +503,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -289,8 +533,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -331,8 +575,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -346,23 +590,11 @@
             <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -448,19 +680,15 @@
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Creating Documentation Pages</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction to Hyde Documentation Pages<a id="introduction-to-hyde-documentation-pages" href="#introduction-to-hyde-documentation-pages" class="heading-permalink" title="Permalink"></a></h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>Creating Documentation Pages</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2 id="introduction-to-hyde-documentation-pages" class="group w-fit scroll-mt-2">Introduction to Hyde Documentation Pages<a href="#introduction-to-hyde-documentation-pages" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Welcome to the Hyde Documentation Pages, where creating professional-looking documentation sites has never been easier.
 Using the Hyde Documentation module, all you need to do is place standard Markdown files in the _docs/ directory, and Hyde takes care of the rest.</p>
 <p>Hyde compiles your Markdown content into beautiful static HTML pages using a TailwindCSS frontend, complete with a
@@ -470,10 +698,10 @@ labels, and even groups, of the sidebar items to suit your needs.</p>
 &quot;Docs&quot; link will be added to your site's main navigation menu, pointing to your documentation page.</p>
 <p>If you have a Torchlight API token in your .env file, Hyde will even enable syntax highlighting automatically,
 saving you time and effort. For more information about this feature, see the <a href="extensions#torchlight">extensions page</a>.</p>
-<h3>Best Practices and Hyde Expectations<a id="best-practices-and-hyde-expectations" href="#best-practices-and-hyde-expectations" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="best-practices-and-hyde-expectations" class="group w-fit scroll-mt-2">Best Practices and Hyde Expectations<a href="#best-practices-and-hyde-expectations" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Since Hyde does a lot of things automatically, there are some things you may need
 to keep in mind when creating documentation pages so that you don't get unexpected results.</p>
-<h4>Filenames<a id="filenames" href="#filenames" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="filenames" class="group w-fit scroll-mt-2">Filenames<a href="#filenames" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <ul>
 <li>Hyde Documentation pages are files stored in the <code>_docs</code> directory</li>
 <li>The filename is used as the filename for the compiled HTML</li>
@@ -482,24 +710,34 @@ to keep in mind when creating documentation pages so that you don't get unexpect
 <li>You should always have an <code>index.md</code> file in the <code>_docs/</code> directory</li>
 <li>Your page will be stored in <code>_site/docs/&lt;identifier&gt;.html</code> unless you <a href="#output-directory">change it in the config</a></li>
 </ul>
-<h3>Advanced usage and customization<a id="advanced-usage-and-customization" href="#advanced-usage-and-customization" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="advanced-usage-and-customization" class="group w-fit scroll-mt-2">Advanced usage and customization<a href="#advanced-usage-and-customization" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Like most of HydePHP, the Hyde Documentation module is highly customizable. Much of the frontend is composed using Blade templates and components, which you can customize to your heart's content.
 Since there are so many components, it's hard to list them all here in the documentation, so I encourage you to check out the <a href="https://github.com/hydephp/framework/tree/master/resources/views/components/docs">source code</a> to see how it's all put together and find the customizations you are looking for.</p>
-<h2>Creating Documentation Pages<a id="creating-documentation-pages" href="#creating-documentation-pages" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="creating-documentation-pages-2" class="group w-fit scroll-mt-2">Creating Documentation Pages<a href="#creating-documentation-pages-2" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>You can create a Documentation page by adding a file to the <code>_docs</code> directory where the filename ends in <code>.md</code>.</p>
 <p>You can also scaffold one quickly by using the <a href="console-commands">HydeCLI</a>.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">docs</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
+<pre><code class="language-bash">php hyde make:page &quot;Page Title&quot; --type=&quot;docs&quot;
+</code></pre>
 <p>This will create the following file saved as <code>_docs/page-title.md</code></p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Page Title</span></div></code></pre>
-<h3>Front Matter is optional<a id="front-matter-is-optional" href="#front-matter-is-optional" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-markdown"># Page Title
+
+</code></pre>
+<h3 id="front-matter-is-optional" class="group w-fit scroll-mt-2">Front Matter is optional<a href="#front-matter-is-optional" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You don't need to use <a href="blog-posts#supported-front-matter-properties">front matter</a> to create a documentation page.</p>
 <p>However, Hyde still supports front matter here as it allows you to quickly override the default values.</p>
 <p>Here is a quick reference, however, you should take a look at the <a href="#dynamic-content-generation">dynamic content</a> section to learn more.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Sidebar Label</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">5</span></div><div class='line'><span style="color: #FFCB6B;">---</span></div></code></pre>
-<h2>Dynamic Content Generation<a id="dynamic-content-generation" href="#dynamic-content-generation" class="heading-permalink" title="Permalink"></a></h2>
+<pre><code class="language-yaml">---
+title: &quot;Page Title&quot;
+navigation:
+    label: &quot;Sidebar Label&quot;
+    hidden: true
+    priority: 5
+---
+</code></pre>
+<h2 id="dynamic-content-generation" class="group w-fit scroll-mt-2">Dynamic Content Generation<a href="#dynamic-content-generation" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Hyde makes documentation pages easy to create by automatically generating dynamic content such as the sidebar and page title.
 If you are not happy with the results you can customize them in the config or with front matter.</p>
-<h3>Front Matter reference<a id="front-matter-reference" href="#front-matter-reference" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="front-matter-reference" class="group w-fit scroll-mt-2">Front Matter reference<a href="#front-matter-reference" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Before we look at how to override things, here is an overview of the relevant content Hyde generates,
 and where the data is from as well as where it can be overridden.</p>
 <table>
@@ -544,151 +782,196 @@ and where the data is from as well as where it can be overridden.</p>
 </tr>
 </tbody>
 </table>
-<h2>Sidebar<a id="sidebar" href="#sidebar" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="sidebar" class="group w-fit scroll-mt-2">Sidebar<a href="#sidebar" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The sidebar is automatically generated from the files in the <code>_docs</code> directory. You will probably want to change the order
 of these items. You can do this in two ways, either in the config or with front matter using the navigation array settings.</p>
 <p>Since this feature shares a lot of similarities and implementation details with the navigation menu,
 I recommend you read the <a href="navigation">navigation menu documentation</a> page as well to learn more about the fundamentals and terminology.</p>
-<h3>Sidebar ordering<a id="sidebar-ordering" href="#sidebar-ordering" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="sidebar-ordering" class="group w-fit scroll-mt-2">Sidebar ordering<a href="#sidebar-ordering" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The sidebar is sorted/ordered by the <code>priority</code> property. The higher the priority the further down in the sidebar it will be.
 The default priority is 999. You can override the priority using the following front matter:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">5</span></div></code></pre>
+<pre><code class="language-yaml">navigation:
+    priority: 5
+</code></pre>
 <p>You can also change the order in the Docs configuration file.
 See <a href="customization#navigation-menu--sidebar">the chapter in the customization page</a> for more details. <br>
 <em>I personally think the config route is easier as it gives an instant overview, however the first way is nice as well.</em></p>
-<h3>Sidebar labels<a id="sidebar-labels" href="#sidebar-labels" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="sidebar-labels" class="group w-fit scroll-mt-2">Sidebar labels<a href="#sidebar-labels" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The sidebar items are labelled with the <code>label</code> property. The default label is the filename of the file.
 You can change it with the following front matter:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My Custom Sidebar Label</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
-<h3>Sidebar grouping<a id="sidebar-grouping" href="#sidebar-grouping" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-yaml">navigation:
+    label: &quot;My Custom Sidebar Label&quot;
+</code></pre>
+<h3 id="sidebar-grouping" class="group w-fit scroll-mt-2">Sidebar grouping<a href="#sidebar-grouping" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Sidebar grouping allows you to group items in the sidebar into categories. This is useful for creating a sidebar with a lot of items.
 The Hyde docs for instance use this.</p>
 <p>The feature is enabled automatically when one or more of your documentation pages have the <code>navigation.group</code> property set
 in the front matter, or when subdirectories are used. This will then switch to a slightly more compact sidebar layout with pages sorted into categories.
 Any pages without the group front matter will get put in the &quot;Other&quot; group.</p>
-<h3>Sidebar footer customization<a id="sidebar-footer-customization" href="#sidebar-footer-customization" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="sidebar-footer-customization" class="group w-fit scroll-mt-2">Sidebar footer customization<a href="#sidebar-footer-customization" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The sidebar footer contains, by default, a link to your site homepage. You can change this in the <code>config/docs.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">My **Markdown** Footer Text</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'sidebar' =&gt; [
+    'footer' =&gt; 'My **Markdown** Footer Text',
+],
+</code></pre>
 <p>You can also set the option to <code>false</code> to disable it entirely.</p>
-<h4>Using Front Matter<a id="using-front-matter" href="#using-front-matter" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="using-front-matter" class="group w-fit scroll-mt-2">Using Front Matter<a href="#using-front-matter" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>To enable sidebar grouping, you can add the following front matter to your documentation pages:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Getting Started</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
-<h4>Automatic subdirectory-based grouping<a id="automatic-subdirectory-based-grouping" href="#automatic-subdirectory-based-grouping" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-yaml">navigation:
+    group: &quot;Getting Started&quot;
+</code></pre>
+<h4 id="automatic-subdirectory-based-grouping" class="group w-fit scroll-mt-2">Automatic subdirectory-based grouping<a href="#automatic-subdirectory-based-grouping" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>You can also automatically group your documentation pages by placing source files in sub-directories.</p>
 <p>For example, putting a Markdown file in <code>_docs/getting-started/</code>, is equivalent to adding the same front matter seen above.</p>
-<blockquote class="info"><p>Note that when the <a href="#using-flattened-output-paths">flattened output paths</a> setting is enabled (which it is by default), the file will still be compiled to the <code>_site/docs/</code> directory like it would be if you didn't use the subdirectories. Note that this means that you can't have two documentation pages with the same filename as they overwrite each other.</p></blockquote>
-<blockquote class="info"><p>Tip: When using subdirectory-based dropdowns, you can set their priority using the directory name as the array key.</p></blockquote>
-<h3>Hiding Items<a id="hiding-items" href="#hiding-items" class="heading-permalink" title="Permalink"></a></h3>
+<blockquote class="border-blue-500">
+    <p>Note that when the <a href="#using-flattened-output-paths">flattened output paths</a> setting is enabled (which it is by default), the file will still be compiled to the <code>_site/docs/</code> directory like it would be if you didn't use the subdirectories. Note that this means that you can't have two documentation pages with the same filename as they overwrite each other.</p>
+</blockquote>
+<blockquote class="border-blue-500">
+    <p>Tip: When using subdirectory-based dropdowns, you can set their priority using the directory name as the array key.</p>
+</blockquote>
+<h3 id="hiding-items" class="group w-fit scroll-mt-2">Hiding Items<a href="#hiding-items" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can hide items from the sidebar by adding the <code>hidden</code> property to the front matter:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div></code></pre>
+<pre><code class="language-yaml">navigation:
+    hidden: true
+</code></pre>
 <p>This can be useful to create redirects or other items that should not be shown in the sidebar.</p>
-<blockquote class="info"><p>The index page is by default not shown as a sidebar item, but instead is linked in the sidebar header. <br></p></blockquote>
-<h2>Customization<a id="customization" href="#customization" class="heading-permalink" title="Permalink"></a></h2>
+<blockquote class="border-blue-500">
+    <p>The index page is by default not shown as a sidebar item, but instead is linked in the sidebar header. <br></p>
+</blockquote>
+<h2 id="customization" class="group w-fit scroll-mt-2">Customization<a href="#customization" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Please see the <a href="customization">customization page</a> for in-depth information on how to customize Hyde,
 including the documentation pages. Here is a high level overview for quick reference though.</p>
-<h3>Output directory<a id="output-directory" href="#output-directory" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="output-directory" class="group w-fit scroll-mt-2">Output directory<a href="#output-directory" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If you want to store the compiled documentation pages in a different directory than the default 'docs' directory,
 for example to specify a version like the Hyde docs does, you can specify the output directory in the Hyde configuration file.
 The path is relative to the site output, typically <code>_site</code>.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight has-add-lines has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">output_directories</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color: #f07178;">    </span><span style="color: #f07178;">\</span><span style="color: #f07178;">Hyde</span><span style="color: #f07178;">\</span><span style="color: #f07178;">Pages</span><span style="color: #f07178;">\</span><span style="color: #f07178;">DocumentationPage</span><span style="color: #f07178;">::</span><span style="color: #f07178;">class</span><span style="color: #f07178;"> </span><span style="color: #f07178;">=&gt;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">docs</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">// default </span></div><div class='line line-add line-has-background' style='background-color: #89DDFF20'><span style="color: #C3E88D;">    </span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">Hyde</span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">Pages</span><span style="color: #C3E88D;">\</span><span style="color: #C3E88D;">DocumentationPage</span><span style="color: #C3E88D;">::</span><span style="color: #C3E88D;">class</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">=&gt;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">docs/1.x</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">// What the Hyde docs use </span></div><div class='line'><span style="color: #89DDFF;">]</span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'output_directories' =&gt; [
+    \Hyde\Pages\DocumentationPage::class =&gt; 'docs' // default [tl! --]
+    \Hyde\Pages\DocumentationPage::class =&gt; 'docs/1.x' // What the Hyde docs use [tl! ++]
+]
+</code></pre>
 <p>Note that you need to take care as to not set it to something that may conflict with other parts, such as media or posts directories.</p>
-<h3>Automatic navigation menu<a id="automatic-navigation-menu" href="#automatic-navigation-menu" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="automatic-navigation-menu" class="group w-fit scroll-mt-2">Automatic navigation menu<a href="#automatic-navigation-menu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>By default, a link to the documentation page is added to the navigation menu when an index.md file is found in the <code>_docs</code> directory. Please see <a href="customization#navigation-menu--sidebar">the customization page</a> for more information.</p>
-<h3>Sidebar header name<a id="sidebar-header-name" href="#sidebar-header-name" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="sidebar-header-name" class="group w-fit scroll-mt-2">Sidebar header name<a href="#sidebar-header-name" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>By default, the site title shown in the sidebar header is generated from the configured site name suffixed with &quot;docs&quot;.
 You can change this in the Docs configuration file. Tip: The header will link to the docs/index page, if it exists.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">API Documentation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
-<h3>Sidebar page order<a id="sidebar-page-order" href="#sidebar-page-order" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">'title' =&gt; 'API Documentation',
+</code></pre>
+<h3 id="sidebar-page-order" class="group w-fit scroll-mt-2">Sidebar page order<a href="#sidebar-page-order" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>To quickly arrange the order of items in the sidebar, you can reorder the page identifiers in the list and the links will be sorted in that order.
 Link items without an entry here will fall back to the default priority of 999, putting them last.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">getting-started</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">]</span></div></code></pre>
+<pre><code class="language-php">'sidebar_order' =&gt; [
+    'readme',
+    'installation',
+    'getting-started',
+]
+</code></pre>
 <p>See <a href="customization#navigation-menu--sidebar">the chapter in the customization page</a> for more details. <br></p>
-<h3>Automatic sidebar group labels<a id="automatic-sidebar-group-labels" href="#automatic-sidebar-group-labels" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="automatic-sidebar-group-labels" class="group w-fit scroll-mt-2">Automatic sidebar group labels<a href="#automatic-sidebar-group-labels" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>When using the automatic sidebar grouping feature (based on subdirectories), the titles of the groups are generated from the directory names.
 If these are not to your liking, for example if you need to use special characters, you can override them in the Docs configuration file.
 The array key is the directory name, and the value is the label.</p>
 <p>Please note that this option is not added to the config file by default, as it's not a super common use case. No worries though, just add the following yourself!</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_group_labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">questions-and-answers</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Questions &amp; Answers</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<h3>Table of contents settings<a id="table-of-contents-settings" href="#table-of-contents-settings" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'sidebar_group_labels' =&gt; [
+    'questions-and-answers' =&gt; 'Questions &amp; Answers',
+],
+</code></pre>
+<h3 id="table-of-contents-settings" class="group w-fit scroll-mt-2">Table of contents settings<a href="#table-of-contents-settings" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde automatically generates a table of contents for the page and adds it to the sidebar.</p>
 <p>In the <code>config/docs.php</code> file you can configure the behaviour, content, and the look and feel of the sidebar table of contents.
 You can also disable the feature completely.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">table_of_contents</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">min_heading_level</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">2</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">max_heading_level</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">4</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<h3>Using flattened output paths<a id="using-flattened-output-paths" href="#using-flattened-output-paths" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php">'table_of_contents' =&gt; [
+    'enabled' =&gt; true,
+    'min_heading_level' =&gt; 2,
+    'max_heading_level' =&gt; 4,
+],
+</code></pre>
+<h3 id="using-flattened-output-paths" class="group w-fit scroll-mt-2">Using flattened output paths<a href="#using-flattened-output-paths" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If this setting is set to true, Hyde will output all documentation pages into the same configured documentation output directory.
 This means that you can use the automatic directory-based grouping feature, but still have a &quot;flat&quot; output structure.
 Note that this means that you can't have two documentation pages with the same filename or navigation menu label as they will overwrite each other.</p>
 <p>If you set this to false, Hyde will match the directory structure of the source files (just like all other pages).</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">flattened_output_paths</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
-<h2>Search Feature<a id="search-feature" href="#search-feature" class="heading-permalink" title="Permalink"></a></h2>
-<h3>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'flattened_output_paths' =&gt; true,
+</code></pre>
+<h2 id="search-feature" class="group w-fit scroll-mt-2">Search Feature<a href="#search-feature" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The HydeSearch plugin adds a search feature to documentation pages. It consists of two parts, a search index generator
 that runs during the build command, and a frontend JavaScript plugin that adds the actual search widget.</p>
-<blockquote class="info"><p>Tip: The HydeSearch plugin is what powers the search feature on this site! Why not <a href="search">try it out</a>?</p></blockquote>
+<blockquote class="border-blue-500">
+    <p>Tip: The HydeSearch plugin is what powers the search feature on this site! Why not <a href="search">try it out</a>?</p>
+</blockquote>
 <p>The search feature is enabled by default. You can disable it by removing the <code>documentationSearch</code> from the Hyde <code>Features</code> config array.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color: #f07178;">    </span><span style="color: #f07178;">Features</span><span style="color: #f07178;">::</span><span style="color: #f07178;">documentationSearch</span><span style="color: #f07178;">(),</span><span style="color: #f07178;"> </span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<h3>Using the search<a id="using-the-search" href="#using-the-search" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'features' =&gt; [
+    Features::documentationSearch(), // [tl! --]
+],
+</code></pre>
+<h3 id="using-the-search" class="group w-fit scroll-mt-2">Using the search<a href="#using-the-search" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The search works by generating a JSON search index which the JavaScript plugin loads asynchronously.</p>
 <p>Two ways to access the search are added, one is a full page search screen that will be saved to <code>docs/search.html</code>.</p>
 <p>The second method is a button added to the documentation pages, similar to how Algolia DocSearch works.
 Opening it will open a modal with an integrated search screen. You can also open the dialogue using the keyboard shortcut <code>/</code>.</p>
-<blockquote class="info"><p>The full page can be disabled by setting <code>create_search_page</code> to <code>false</code> in the <code>docs</code> config.</p></blockquote>
-<h3>Hiding pages from indexing<a id="hiding-pages-from-indexing" href="#hiding-pages-from-indexing" class="heading-permalink" title="Permalink"></a></h3>
+<blockquote class="border-blue-500">
+    <p>The full page can be disabled by setting <code>create_search_page</code> to <code>false</code> in the <code>docs</code> config.</p>
+</blockquote>
+<h3 id="hiding-pages-from-indexing" class="group w-fit scroll-mt-2">Hiding pages from indexing<a href="#hiding-pages-from-indexing" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If you have a large page on your documentation site, like a changelog, you may want to hide it from the search index.
 You can do this by adding the page identifier to the <code>exclude_from_search</code> array in the <code>docs</code> config, similar to how
 navigation menu items are hidden. The page will still be accessible as normal but will be added to the search index JSON file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">exclude_from_search</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">changelog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">]</span></div></code></pre>
-<h3>Live search with the realtime compiler<a id="live-search-with-the-realtime-compiler" href="#live-search-with-the-realtime-compiler" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'exclude_from_search' =&gt; [
+  'changelog',
+]
+</code></pre>
+<h3 id="live-search-with-the-realtime-compiler" class="group w-fit scroll-mt-2">Live search with the realtime compiler<a href="#live-search-with-the-realtime-compiler" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The Realtime Compiler that powers the <code>php hyde serve</code> command will automatically generate a fresh search index each time the browser requests it.</p>
-<h2>Automatic &quot;Edit Page&quot; Button<a id="automatic-edit-page-button" href="#automatic-edit-page-button" class="heading-permalink" title="Permalink"></a></h2>
-<h3>Introduction<a id="introduction-1" href="#introduction-1" class="heading-permalink" title="Permalink"></a></h3>
+<h2 id="automatic-edit-page-button" class="group w-fit scroll-mt-2">Automatic &quot;Edit Page&quot; Button<a href="#automatic-edit-page-button" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="introduction-2" class="group w-fit scroll-mt-2">Introduction<a href="#introduction-2" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde can automatically add links to documentation pages that take the user
 to a GitHub page (or similar) to edit the page. This makes it great for open-source projects
 looking to allow others to contribute to the documentation in a quick and easy manner.</p>
 <p>The feature is automatically enabled when you specify a base URL in the Docs configuration file.
 Hyde expects this to be a GitHub path, but it will probably work with other methods as well,
 if not, please send a PR and/or create an issue on the <a href="https://github.com/hydephp/framework">GitHub repository</a>!</p>
-<blockquote class="info"><p>Tip: This documentation site uses this feature, scroll down to the bottom of this page and try it out!</p></blockquote>
-<h3>Configuration<a id="configuration" href="#configuration" class="heading-permalink" title="Permalink"></a></h3>
+<blockquote class="border-blue-500">
+    <p>Tip: This documentation site uses this feature, scroll down to the bottom of this page and try it out!</p>
+</blockquote>
+<h3 id="configuration" class="group w-fit scroll-mt-2">Configuration<a href="#configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>As an example configuration, let's take a practical example of how HydePHP.com uses this feature.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">source_file_location_base</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://github.com/hydephp/docs/blob/master/</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
-<h4>Changing the button text<a id="changing-the-button-text" href="#changing-the-button-text" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'source_file_location_base' =&gt; 'https://github.com/hydephp/docs/blob/master/',
+</code></pre>
+<h4 id="changing-the-button-text" class="group w-fit scroll-mt-2">Changing the button text<a href="#changing-the-button-text" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Changing the label is easy, just change the following config setting:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">edit_source_link_text</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Edit Source on GitHub</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
-<h4>Changing the position<a id="changing-the-position" href="#changing-the-position" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'edit_source_link_text' =&gt; 'Edit Source on GitHub',
+</code></pre>
+<h4 id="changing-the-position" class="group w-fit scroll-mt-2">Changing the position<a href="#changing-the-position" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>By default, the button will be shown in both the documentation page footer.
 You can change this by setting the following config setting to <code>'header'</code>, <code>'footer'</code>, or <code>'both'</code></p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/docs.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">edit_source_link_position</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">header</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div></code></pre>
-<h4>Adding a button icon<a id="adding-a-button-icon" href="#adding-a-button-icon" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/docs.php</small>'edit_source_link_position' =&gt; 'header',
+</code></pre>
+<h4 id="adding-a-button-icon" class="group w-fit scroll-mt-2">Adding a button icon<a href="#adding-a-button-icon" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>This is not included out of the box, but is easy to add with some CSS!
 Just target the <code>.edit-page-link</code> class.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>e.g. app.css</small><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">edit-page-link</span><span style="color: #89DDFF;">::</span><span style="color: #C792EA;">before</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #B2CCD6;">content</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">✏ </span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">}</span></div></code></pre>
-<h4>Changing the Blade view<a id="changing-the-blade-view" href="#changing-the-blade-view" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code class="language-css"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>e.g. app.css</small>.edit-page-link::before {content: &quot;✏ &quot;}
+</code></pre>
+<h4 id="changing-the-blade-view" class="group w-fit scroll-mt-2">Changing the Blade view<a href="#changing-the-blade-view" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>You can also publish the <code>edit-source-button.blade.php</code> view and change it to your liking.</p>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
-<p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/creating-content/documentation-pages.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -698,7 +981,7 @@ Just target the <code>.edit-page-link</code> class.</p>
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -708,46 +991,168 @@ Just target the <code>.edit-page-link</code> class.</p>
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/1.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

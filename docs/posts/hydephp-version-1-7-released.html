@@ -24,7 +24,7 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -41,10 +41,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -73,9 +74,9 @@
 
     <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="../" class="font-bold px-4">
-	<img src="../media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
 		<div class="ml-auto">
@@ -106,19 +107,19 @@
 	</div>
 
 	<div id="main-navigation-links"
-		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="../"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+					<a href="../" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="../about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="../about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="../demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="../demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="../posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="../posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
 		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
@@ -131,7 +132,7 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="hydephp-version-1-7-released" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    class="post-article mx-auto prose dark:prose-invert">
     <meta itemprop="identifier" content="hydephp-version-1-7-released">
             <meta itemprop="url" content="https://hydephp.com/posts/hydephp-version-1-7-released">
     
@@ -179,7 +180,8 @@
 </ul>
 <h2>Upgrade Guide</h2>
 <p>To upgrade to this version, simply run the following command:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">require</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/framework:^1.7</span></div></code></pre>
+<pre><code class="language-bash">composer require hyde/framework:^1.7
+</code></pre>
 <p>You may first want to read the <a href="https://hydephp.com/docs/1.x/updating-hyde">upgrade guide</a> documentation.</p>
 <h2>Conclusion</h2>
 <p>HydePHP v1.7 brings a wealth of improvements that enhance developer experience, site customization, and overall flexibility. Whether you're building a personal blog or a complex documentation site, these new features and enhancements will help you create better static sites with less effort.</p>
@@ -187,11 +189,6 @@
 <p>We hope you enjoy this release, and please report any issues you find at GitHub, <a href="https://github.com/hydephp/hyde">https://github.com/hydephp/hyde</a>,
 and share your thoughts on Twitter/X, just use the hashtag <a href="https://twitter.com/search?q=%23HydePHP">#HydePHP</a>,
 and tag us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p>
-<br><p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -281,7 +278,6 @@ and tag us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
 				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
-
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
 				<button title="Scroll to top">
@@ -294,7 +290,7 @@ and tag us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p
 	</div>
 </footer> 
 
-    <script defer src="../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
