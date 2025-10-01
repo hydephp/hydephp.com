@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=fbec641625d79635ea18e6d2211f8dea">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,11 +71,19 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -124,8 +133,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -158,8 +167,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -197,15 +206,108 @@
             <a href="../../docs/2.x/troubleshooting.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/updating-hyde.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#general-tips" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        General Tips
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#conventions-to-follow" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Conventions to Follow
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#file-naming" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        File naming
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#summary" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Summary
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#extra-information" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Extra Information
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#definitions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Definitions
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#general" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        General
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#path-components" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Path components
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#common-issues-causes-and-solutions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Common Issues, Causes, and Solutions
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#extra-troubleshooting-information" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Extra troubleshooting information
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#fixing-a-broken-config" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Fixing a broken config
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/updating-hyde" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Updating Hyde Projects
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -238,8 +340,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -280,8 +382,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -295,23 +397,11 @@
             <a href="../../docs/2.x/extensions.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/realtime-compiler.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/third-party-integrations.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/ui-kit.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -397,21 +487,19 @@
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../index.html">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Troubleshooting</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <p>Since Hyde has a lot of &quot;magic&quot; features which depend on some base assumptions, there might be some &quot;gotchas&quot; you might run into. Here are some common issues you might encounter. Did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
-<blockquote class="info"><p>Tip: You can run <code>php hyde validate</code> to run a series of tests to help you catch common issues.</p></blockquote>
-<h2>General Tips</h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>Troubleshooting</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <p>Since Hyde has a lot of &quot;magic&quot; features which depend on some base assumptions, there might be some &quot;gotchas&quot; you might run into. Here are some common issues you might encounter. Did you find a new one? Send a PR to <a href="https://github.com/hydephp/docs">update the docs</a>!</p>
+<blockquote class="border-blue-500">
+    <p>Tip: You can run <code>php hyde validate</code> to run a series of tests to help you catch common issues.</p>
+</blockquote>
+<h2 id="general-tips" class="group w-fit scroll-mt-2">General Tips<a href="#general-tips" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>(In no particular order of importance)</p>
 <ol>
 <li>In general, <strong>Hyde is actually pretty forgiving</strong>. While this article makes it sound like there are a lot of rules to follow,
@@ -420,31 +508,31 @@ honestly don't worry about it. Hyde will attempt to fix mistakes and make your l
 <li>You never need front matter, though it is often useful.
 For example, Hyde makes attempts to guess the title for a page depending on the content. (Headings, filenames, etc).</li>
 </ol>
-<h2>Conventions to Follow</h2>
-<h3>File naming</h3>
+<h2 id="conventions-to-follow" class="group w-fit scroll-mt-2">Conventions to Follow<a href="#conventions-to-follow" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="file-naming" class="group w-fit scroll-mt-2">File naming<a href="#file-naming" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>For Hyde to be able to discover your files, you should follow the following conventions.</p>
 <p>Markdown files should have the extension <code>.md</code>. Blade files should have the extension <code>.blade.php</code>.</p>
 <p>Unexpected behaviour might occur if you use conflicting file names.
 All the following filenames are resolved into the same destination file:
 <code>foo-bar.md</code>, <code>Foo-Bar.md</code>, <code>foo-bar.blade.php</code>, causing only one of them to be saved.</p>
 <p>Remember, files retain their base filenames when compiled to HTML.</p>
-<h4>Summary</h4>
+<h4 id="summary" class="group w-fit scroll-mt-2">Summary<a href="#summary" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <ul>
 <li>✔ <strong>Do</strong> use lowercase filenames and extensions</li>
 <li>✔ <strong>Do</strong> use filenames written in kebab-case-format</li>
 <li>✔ <strong>Do</strong> use the proper file extensions</li>
 <li>❌ <strong>Don't</strong> use conflicting source file names</li>
 </ul>
-<h2>Extra Information</h2>
-<h3>Definitions</h3>
+<h2 id="extra-information" class="group w-fit scroll-mt-2">Extra Information<a href="#extra-information" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="definitions" class="group w-fit scroll-mt-2">Definitions<a href="#definitions" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>We will use the following definitions to describe the behaviour of Hyde.</p>
-<h4>General</h4>
+<h4 id="general" class="group w-fit scroll-mt-2">General<a href="#general" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <ul>
 <li><strong>Hyde</strong>: The application that you are using.</li>
 <li><strong>HydeCLI</strong>: The command-line interface for Hyde.</li>
 <li><strong>Framework</strong>: The package containing the core codebase.</li>
 </ul>
-<h4>Path components</h4>
+<h4 id="path-components" class="group w-fit scroll-mt-2">Path components<a href="#path-components" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <ul>
 <li><strong>Identifier</strong>: The filepath without the extension, relative to the page type source directory.</li>
 <li><strong>Route Key</strong>: The page type's output directory plus the identifier. Example: <code>posts/hello-world</code></li>
@@ -453,7 +541,7 @@ All the following filenames are resolved into the same destination file:
 <li><strong>Filepath</strong>: The full file path including extension. Example: <code>_posts/hello-world.md</code></li>
 </ul>
 <p>You can read more about some of these in the <a href="core-concepts#paths-identifiers-and-route-keys">Core Concepts</a> article.</p>
-<h2>Common Issues, Causes, and Solutions</h2>
+<h2 id="common-issues-causes-and-solutions" class="group w-fit scroll-mt-2">Common Issues, Causes, and Solutions<a href="#common-issues-causes-and-solutions" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <table>
 <thead>
 <tr>
@@ -560,32 +648,30 @@ All the following filenames are resolved into the same destination file:
 </tr>
 </tbody>
 </table>
-<h3>Extra troubleshooting information</h3>
-<h4>Fixing a broken config</h4>
+<h3 id="extra-troubleshooting-information" class="group w-fit scroll-mt-2">Extra troubleshooting information<a href="#extra-troubleshooting-information" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="fixing-a-broken-config" class="group w-fit scroll-mt-2">Fixing a broken config<a href="#fixing-a-broken-config" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>If your configuration is broken, you might not be able to run any commands through the HydeCLI.
 To remedy this you can copy the config files from the vendor directory into the project directory.
 You can do this manually, or with the following rescue command:</p>
 <pre><code class="language-bash">copy vendor/hyde/framework/config/hyde.php config/hyde.php
 </code></pre>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/troubleshooting.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -595,7 +681,7 @@ You can do this manually, or with the following rescue command:</p>
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -605,46 +691,168 @@ You can do this manually, or with the following rescue command:</p>
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/2.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

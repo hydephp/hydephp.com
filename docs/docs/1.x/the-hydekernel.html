@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=fbec641625d79635ea18e6d2211f8dea">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,11 +71,19 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -124,8 +133,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -158,8 +167,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -204,8 +213,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -238,8 +247,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -273,15 +282,427 @@
             <a href="../../docs/2.x/the-hydekernel.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The HydeKernel
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/extensions-api.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-the-kernel" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing the Kernel
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#the-kernel-lifecycle" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        The Kernel Lifecycle
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#api-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        API Reference
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#version" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `version()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#construct" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `__construct()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `features()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hasfeature" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasFeature()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#toarray" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `toArray()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `files()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pages()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `routes()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#maketitle" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `makeTitle()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#makeslug" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `makeSlug()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#normalizenewlines" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `normalizeNewlines()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#stripnewlines" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `stripNewlines()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#trimslashes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `trimSlashes()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `markdown()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#formatlink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `formatLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#relativelink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `relativeLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#medialink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `mediaLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#asset" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `asset()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#url" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `url()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#route" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `route()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hassiteurl" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasSiteUrl()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#filesystem" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `filesystem()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#path" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `path()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#vendorpath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `vendorPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#mediapath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `mediaPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sitepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `sitePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sitemediapath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `siteMediaPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pathtoabsolute" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pathToAbsolute()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pathtorelative" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pathToRelative()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getinstance" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getInstance()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setinstance" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setInstance()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getbasepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getBasePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setbasepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setBasePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getsourceroot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getSourceRoot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setsourceroot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setSourceRoot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getmediadirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getMediaDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setmediadirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setMediaDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getmediaoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getMediaOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#registerextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `registerExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hasextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getextensions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getExtensions()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getregisteredextensions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getRegisteredExtensions()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getregisteredpageclasses" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getRegisteredPageClasses()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#shareviewdata" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `shareViewData()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentroutekey" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentRouteKey()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentroute" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentRoute()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentpage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentPage()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#isbooted" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `isBooted()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#boot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `boot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#booting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `booting()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#booted" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `booted()`
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -295,23 +716,11 @@
             <a href="../../docs/2.x/extensions.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/realtime-compiler.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/third-party-integrations.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/ui-kit.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -397,19 +806,15 @@
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../index.html">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>The HydeKernel</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction</h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>The HydeKernel</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>In the centre, or should I say <em>core</em>, of HydePHP is the HydeKernel. The kernel encapsulates a HydePHP project and
 provides helpful methods for interacting with it. You can think of it as the heart of HydePHP, if you're a romantic.</p>
 <p>The HydeKernel is so important that you have probably used it already. The main entry point for the HydePHP
@@ -421,7 +826,7 @@ Hyde::version(); // calls $HydeKernel-&gt;version()
 </code></pre>
 <p>The kernel is created very early on in the application lifecycle, in the <code>bootstrap.php</code> file, where it is also bound
 as a singleton into the application service container.</p>
-<h2>Accessing the Kernel</h2>
+<h2 id="accessing-the-kernel" class="group w-fit scroll-mt-2">Accessing the Kernel<a href="#accessing-the-kernel" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The HydeKernel is stored as a singleton in a static property in its own class and can be accessed in a few ways.</p>
 <p>Commonly, you'll use the <code>Hyde</code> facade which forwards calls to the singleton instance.
 You can also use the <code>hyde()</code> function to get the Kernel, and call methods on it.</p>
@@ -437,33 +842,33 @@ app(HydeKernel::class)-&gt;version();
 hyde()-&gt;version();
 </code></pre>
 <p>The Kernel instance is constructed and bound in the <code>app/bootstrap.php</code> file.</p>
-<h2>The Kernel Lifecycle</h2>
+<h2 id="the-kernel-lifecycle" class="group w-fit scroll-mt-2">The Kernel Lifecycle<a href="#the-kernel-lifecycle" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Whenever we talk about the kernel being &quot;booted&quot; we are talking about the kernel's role in the autodiscovery process.</p>
 <p>You can read all about it in the <a href="autodiscovery">Autodiscovery Documentation</a>.</p>
-<h2>API Reference</h2>
+<h2 id="api-reference" class="group w-fit scroll-mt-2">API Reference<a href="#api-reference" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Since the most common way to interact with the kernel is through the Hyde facade, we will use that for the examples.
 But you could just as well chain the methods on the accessed kernel singleton instance if you wanted.</p>
 <!-- Start generated docs for the HydeKernel -->
 <section id="hyde-kernel-base-methods">
 <!-- Start generated docs for Hyde\Foundation\HydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2024-07-08 20:47:38 in 2.89ms -->
-<h4><code>version()</code></h4>
+<h4 id="code-version-code" class="group w-fit scroll-mt-2"><code>version()</code><a href="#code-version-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::version(): string
 </code></pre>
-<h4><code>__construct()</code></h4>
+<h4 id="code-construct-code" class="group w-fit scroll-mt-2"><code>__construct()</code><a href="#code-construct-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">$hyde = new HydeKernel(string $basePath): void
 </code></pre>
-<h4><code>features()</code></h4>
+<h4 id="code-features-code" class="group w-fit scroll-mt-2"><code>features()</code><a href="#code-features-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::features(): Hyde\Facades\Features
 </code></pre>
-<h4><code>hasFeature()</code></h4>
+<h4 id="code-hasfeature-code" class="group w-fit scroll-mt-2"><code>hasFeature()</code><a href="#code-hasfeature-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::hasFeature(Hyde\Enums\Feature|string $feature): bool
 </code></pre>
-<h4><code>toArray()</code></h4>
+<h4 id="code-toarray-code" class="group w-fit scroll-mt-2"><code>toArray()</code><a href="#code-toarray-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Get the instance as an array.</p>
 <pre><code class="language-php">Hyde::toArray(): array&lt;TKey, TValue&gt;
 </code></pre>
@@ -472,15 +877,15 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-foundation-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
 <!-- Generated by HydePHP DocGen script at 2024-07-17 15:27:42 in 0.04ms -->
-<h4><code>files()</code></h4>
+<h4 id="code-files-code" class="group w-fit scroll-mt-2"><code>files()</code><a href="#code-files-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::files(): Hyde\Foundation\Kernel\FileCollection
 </code></pre>
-<h4><code>pages()</code></h4>
+<h4 id="code-pages-code" class="group w-fit scroll-mt-2"><code>pages()</code><a href="#code-pages-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::pages(): Hyde\Foundation\Kernel\PageCollection
 </code></pre>
-<h4><code>routes()</code></h4>
+<h4 id="code-routes-code" class="group w-fit scroll-mt-2"><code>routes()</code><a href="#code-routes-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::routes(): Hyde\Foundation\Kernel\RouteCollection
 </code></pre>
@@ -489,27 +894,27 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-string-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
 <!-- Generated by HydePHP DocGen script at 2024-12-22 09:14:25 in 0.07ms -->
-<h4><code>makeTitle()</code></h4>
+<h4 id="code-maketitle-code" class="group w-fit scroll-mt-2"><code>makeTitle()</code><a href="#code-maketitle-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::makeTitle(string $value): string
 </code></pre>
-<h4><code>makeSlug()</code></h4>
+<h4 id="code-makeslug-code" class="group w-fit scroll-mt-2"><code>makeSlug()</code><a href="#code-makeslug-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::makeSlug(string $value): string
 </code></pre>
-<h4><code>normalizeNewlines()</code></h4>
+<h4 id="code-normalizenewlines-code" class="group w-fit scroll-mt-2"><code>normalizeNewlines()</code><a href="#code-normalizenewlines-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::normalizeNewlines(string $string): string
 </code></pre>
-<h4><code>stripNewlines()</code></h4>
+<h4 id="code-stripnewlines-code" class="group w-fit scroll-mt-2"><code>stripNewlines()</code><a href="#code-stripnewlines-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::stripNewlines(string $string): string
 </code></pre>
-<h4><code>trimSlashes()</code></h4>
+<h4 id="code-trimslashes-code" class="group w-fit scroll-mt-2"><code>trimSlashes()</code><a href="#code-trimslashes-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::trimSlashes(string $string): string
 </code></pre>
-<h4><code>markdown()</code></h4>
+<h4 id="code-markdown-code" class="group w-fit scroll-mt-2"><code>markdown()</code><a href="#code-markdown-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::markdown(string $text, bool $normalizeIndentation): Illuminate\Support\HtmlString
 </code></pre>
@@ -518,31 +923,31 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-hyperlink-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
 <!-- Generated by HydePHP DocGen script at 2024-02-25 19:02:29 in 0.09ms -->
-<h4><code>formatLink()</code></h4>
+<h4 id="code-formatlink-code" class="group w-fit scroll-mt-2"><code>formatLink()</code><a href="#code-formatlink-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::formatLink(string $destination): string
 </code></pre>
-<h4><code>relativeLink()</code></h4>
+<h4 id="code-relativelink-code" class="group w-fit scroll-mt-2"><code>relativeLink()</code><a href="#code-relativelink-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::relativeLink(string $destination): string
 </code></pre>
-<h4><code>mediaLink()</code></h4>
+<h4 id="code-medialink-code" class="group w-fit scroll-mt-2"><code>mediaLink()</code><a href="#code-medialink-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::mediaLink(string $destination, bool $validate): string
 </code></pre>
-<h4><code>asset()</code></h4>
+<h4 id="code-asset-code" class="group w-fit scroll-mt-2"><code>asset()</code><a href="#code-asset-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::asset(string $name, bool $preferQualifiedUrl): string
 </code></pre>
-<h4><code>url()</code></h4>
+<h4 id="code-url-code" class="group w-fit scroll-mt-2"><code>url()</code><a href="#code-url-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::url(string $path): string
 </code></pre>
-<h4><code>route()</code></h4>
+<h4 id="code-route-code" class="group w-fit scroll-mt-2"><code>route()</code><a href="#code-route-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::route(string $key): Hyde\Support\Models\Route
 </code></pre>
-<h4><code>hasSiteUrl()</code></h4>
+<h4 id="code-hassiteurl-code" class="group w-fit scroll-mt-2"><code>hasSiteUrl()</code><a href="#code-hassiteurl-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::hasSiteUrl(): bool
 </code></pre>
@@ -551,35 +956,35 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-filesystem-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.10ms -->
-<h4><code>filesystem()</code></h4>
+<h4 id="code-filesystem-code" class="group w-fit scroll-mt-2"><code>filesystem()</code><a href="#code-filesystem-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::filesystem(): Hyde\Foundation\Kernel\Filesystem
 </code></pre>
-<h4><code>path()</code></h4>
+<h4 id="code-path-code" class="group w-fit scroll-mt-2"><code>path()</code><a href="#code-path-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::path(string $path): string
 </code></pre>
-<h4><code>vendorPath()</code></h4>
+<h4 id="code-vendorpath-code" class="group w-fit scroll-mt-2"><code>vendorPath()</code><a href="#code-vendorpath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::vendorPath(string $path, string $package): string
 </code></pre>
-<h4><code>mediaPath()</code></h4>
+<h4 id="code-mediapath-code" class="group w-fit scroll-mt-2"><code>mediaPath()</code><a href="#code-mediapath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::mediaPath(string $path): string
 </code></pre>
-<h4><code>sitePath()</code></h4>
+<h4 id="code-sitepath-code" class="group w-fit scroll-mt-2"><code>sitePath()</code><a href="#code-sitepath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::sitePath(string $path): string
 </code></pre>
-<h4><code>siteMediaPath()</code></h4>
+<h4 id="code-sitemediapath-code" class="group w-fit scroll-mt-2"><code>siteMediaPath()</code><a href="#code-sitemediapath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::siteMediaPath(string $path): string
 </code></pre>
-<h4><code>pathToAbsolute()</code></h4>
+<h4 id="code-pathtoabsolute-code" class="group w-fit scroll-mt-2"><code>pathToAbsolute()</code><a href="#code-pathtoabsolute-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::pathToAbsolute(array|string $path): array|string
 </code></pre>
-<h4><code>pathToRelative()</code></h4>
+<h4 id="code-pathtorelative-code" class="group w-fit scroll-mt-2"><code>pathToRelative()</code><a href="#code-pathtorelative-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::pathToRelative(string $path): string
 </code></pre>
@@ -588,47 +993,47 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-kernel-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
-<h4><code>getInstance()</code></h4>
+<h4 id="code-getinstance-code" class="group w-fit scroll-mt-2"><code>getInstance()</code><a href="#code-getinstance-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getInstance(): Hyde\Foundation\HydeKernel
 </code></pre>
-<h4><code>setInstance()</code></h4>
+<h4 id="code-setinstance-code" class="group w-fit scroll-mt-2"><code>setInstance()</code><a href="#code-setinstance-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::setInstance(Hyde\Foundation\HydeKernel $instance): void
 </code></pre>
-<h4><code>getBasePath()</code></h4>
+<h4 id="code-getbasepath-code" class="group w-fit scroll-mt-2"><code>getBasePath()</code><a href="#code-getbasepath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getBasePath(): string
 </code></pre>
-<h4><code>setBasePath()</code></h4>
+<h4 id="code-setbasepath-code" class="group w-fit scroll-mt-2"><code>setBasePath()</code><a href="#code-setbasepath-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::setBasePath(string $basePath): void
 </code></pre>
-<h4><code>getSourceRoot()</code></h4>
+<h4 id="code-getsourceroot-code" class="group w-fit scroll-mt-2"><code>getSourceRoot()</code><a href="#code-getsourceroot-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getSourceRoot(): string
 </code></pre>
-<h4><code>setSourceRoot()</code></h4>
+<h4 id="code-setsourceroot-code" class="group w-fit scroll-mt-2"><code>setSourceRoot()</code><a href="#code-setsourceroot-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::setSourceRoot(string $sourceRoot): void
 </code></pre>
-<h4><code>getOutputDirectory()</code></h4>
+<h4 id="code-getoutputdirectory-code" class="group w-fit scroll-mt-2"><code>getOutputDirectory()</code><a href="#code-getoutputdirectory-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getOutputDirectory(): string
 </code></pre>
-<h4><code>setOutputDirectory()</code></h4>
+<h4 id="code-setoutputdirectory-code" class="group w-fit scroll-mt-2"><code>setOutputDirectory()</code><a href="#code-setoutputdirectory-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::setOutputDirectory(string $outputDirectory): void
 </code></pre>
-<h4><code>getMediaDirectory()</code></h4>
+<h4 id="code-getmediadirectory-code" class="group w-fit scroll-mt-2"><code>getMediaDirectory()</code><a href="#code-getmediadirectory-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getMediaDirectory(): string
 </code></pre>
-<h4><code>setMediaDirectory()</code></h4>
+<h4 id="code-setmediadirectory-code" class="group w-fit scroll-mt-2"><code>setMediaDirectory()</code><a href="#code-setmediadirectory-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::setMediaDirectory(string $mediaDirectory): void
 </code></pre>
-<h4><code>getMediaOutputDirectory()</code></h4>
+<h4 id="code-getmediaoutputdirectory-code" class="group w-fit scroll-mt-2"><code>getMediaOutputDirectory()</code><a href="#code-getmediaoutputdirectory-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getMediaOutputDirectory(): string
 </code></pre>
@@ -637,28 +1042,28 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-extensions-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
-<h4><code>registerExtension()</code></h4>
+<h4 id="code-registerextension-code" class="group w-fit scroll-mt-2"><code>registerExtension()</code><a href="#code-registerextension-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Register a HydePHP extension within the HydeKernel.</p>
 <p>Typically, you would call this method in the register method of a service provider. If your package uses the standard Laravel (Composer) package discovery feature, the extension will automatically be enabled when the package is installed.</p>
 <pre><code class="language-php">Hyde::registerExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): void
 </code></pre>
-<h4><code>getExtension()</code></h4>
+<h4 id="code-getextension-code" class="group w-fit scroll-mt-2"><code>getExtension()</code><a href="#code-getextension-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Get the singleton instance of the specified extension.</p>
 <pre><code class="language-php">Hyde::getExtension(class-string&amp;lt;T&amp;gt; $extension): T
 </code></pre>
-<h4><code>hasExtension()</code></h4>
+<h4 id="code-hasextension-code" class="group w-fit scroll-mt-2"><code>hasExtension()</code><a href="#code-hasextension-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Determine if the specified extension is registered.</p>
 <pre><code class="language-php">Hyde::hasExtension(class-string&amp;lt;\Hyde\Foundation\Concerns\HydeExtension&amp;gt; $extension): bool
 </code></pre>
-<h4><code>getExtensions()</code></h4>
+<h4 id="code-getextensions-code" class="group w-fit scroll-mt-2"><code>getExtensions()</code><a href="#code-getextensions-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getExtensions(): array&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;
 </code></pre>
-<h4><code>getRegisteredExtensions()</code></h4>
+<h4 id="code-getregisteredextensions-code" class="group w-fit scroll-mt-2"><code>getRegisteredExtensions()</code><a href="#code-getregisteredextensions-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getRegisteredExtensions(): array&lt;class-string&lt;\Hyde\Foundation\Concerns\HydeExtension&gt;&gt;
 </code></pre>
-<h4><code>getRegisteredPageClasses()</code></h4>
+<h4 id="code-getregisteredpageclasses-code" class="group w-fit scroll-mt-2"><code>getRegisteredPageClasses()</code><a href="#code-getregisteredpageclasses-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>No description provided.</p>
 <pre><code class="language-php">Hyde::getRegisteredPageClasses(): array&lt;class-string&lt;\Hyde\Pages\Concerns\HydePage&gt;&gt;
 </code></pre>
@@ -667,19 +1072,19 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-view-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.06ms -->
-<h4><code>shareViewData()</code></h4>
+<h4 id="code-shareviewdata-code" class="group w-fit scroll-mt-2"><code>shareViewData()</code><a href="#code-shareviewdata-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Share data for the page being rendered.</p>
 <pre><code class="language-php">Hyde::shareViewData(Hyde\Pages\Concerns\HydePage $page): void
 </code></pre>
-<h4><code>currentRouteKey()</code></h4>
+<h4 id="code-currentroutekey-code" class="group w-fit scroll-mt-2"><code>currentRouteKey()</code><a href="#code-currentroutekey-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Get the route key for the page being rendered.</p>
 <pre><code class="language-php">Hyde::currentRouteKey(): string
 </code></pre>
-<h4><code>currentRoute()</code></h4>
+<h4 id="code-currentroute-code" class="group w-fit scroll-mt-2"><code>currentRoute()</code><a href="#code-currentroute-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Get the route for the page being rendered.</p>
 <pre><code class="language-php">Hyde::currentRoute(): Hyde\Support\Models\Route
 </code></pre>
-<h4><code>currentPage()</code></h4>
+<h4 id="code-currentpage-code" class="group w-fit scroll-mt-2"><code>currentPage()</code><a href="#code-currentpage-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Get the page being rendered.</p>
 <pre><code class="language-php">Hyde::currentPage(): Hyde\Pages\Concerns\HydePage
 </code></pre>
@@ -688,21 +1093,21 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-boot-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
-<h4><code>isBooted()</code></h4>
+<h4 id="code-isbooted-code" class="group w-fit scroll-mt-2"><code>isBooted()</code><a href="#code-isbooted-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Determine if the Kernel has booted.</p>
 <pre><code class="language-php">Hyde::isBooted(): bool
 </code></pre>
-<h4><code>boot()</code></h4>
+<h4 id="code-boot-code" class="group w-fit scroll-mt-2"><code>boot()</code><a href="#code-boot-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Boot the Hyde Kernel and run the Auto-Discovery Process.</p>
 <pre><code class="language-php">Hyde::boot(): void
 </code></pre>
-<h4><code>booting()</code></h4>
+<h4 id="code-booting-code" class="group w-fit scroll-mt-2"><code>booting()</code><a href="#code-booting-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Register a new boot listener.</p>
 <p>Your callback will be called before the kernel is booted. You can use this to register your own routes, pages, etc. The kernel instance will be passed to your callback.</p>
 <pre><code class="language-php">/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
 Hyde::booting(callable(\Hyde\Foundation\HydeKernel): void): void
 </code></pre>
-<h4><code>booted()</code></h4>
+<h4 id="code-booted-code" class="group w-fit scroll-mt-2"><code>booted()</code><a href="#code-booted-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Register a new &quot;booted&quot; listener.</p>
 <p>Your callback will be called after the kernel is booted. You can use this to run any logic after discovery has completed. The kernel instance will be passed to your callback.</p>
 <pre><code class="language-php">/** @param callable(\Hyde\Foundation\HydeKernel): void $callback */
@@ -711,25 +1116,23 @@ Hyde::booted(callable(\Hyde\Foundation\HydeKernel): void): void
 <!-- End generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 </section>
 <!-- End generated docs for the HydeKernel -->
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/architecture-concepts/the-hydekernel.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -739,7 +1142,7 @@ Hyde::booted(callable(\Hyde\Foundation\HydeKernel): void): void
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -749,46 +1152,168 @@ Hyde::booted(callable(\Hyde\Foundation\HydeKernel): void): void
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/2.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

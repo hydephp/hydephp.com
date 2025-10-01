@@ -15,8 +15,8 @@
 	</header>
 
 	<div class="flex flex-col flex-wrap items-center justify-center py-10 sm:flex-row">
-		@foreach(\App\Extend\DataCollections::yaml('demos') as $demo)
-			<?php /** @var \App\DataCollections\Types\Demos $demo */ ?>
+		@foreach(\App\Extend\DataCollection::yaml('demos') as $demo)
+			<?php /** @var \App\DataCollection\Types\Demos $demo */ ?>
 			<div class="py-4 sm:px-6 min-w-[280px] w-96 max-w-full">
 				<div class="flex flex-col overflow-hidden bg-slate-100 dark:bg-slate-900 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
 					<a href="{{ $demo->url }}?ref=hydephp.com" rel="nofollow noopener">

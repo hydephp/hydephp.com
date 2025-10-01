@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,9 +71,9 @@
 
     <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="./" class="font-bold px-4">
-	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
 		<div class="ml-auto">
@@ -103,19 +104,19 @@
 	</div>
 
 	<div id="main-navigation-links"
-		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="./"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+					<a href="./" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
 		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
@@ -127,7 +128,7 @@
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
-        <article class="mx-auto prose dark:prose-invert torchlight-enabled">
+        <article class="mx-auto prose dark:prose-invert">
             <h1>Changelog</h1>
 <p>All notable changes to this project will be documented in this file.</p>
 <p>The format is based on <a href="https://keepachangelog.com/en/1.0.0/">Keep a Changelog</a>,
@@ -261,7 +262,26 @@ The previous behaviour was that Hyde used <code>localhost</code> in canonical UR
 <p>In order to prepare your project for HydePHP v2.0, you should update your <code>config/hyde.php</code> configuration file to use the new <code>Feature</code> enum for the <code>features</code> array.</p>
 <p>You can see the changes to make in your Hyde project by looking at the following pull request <a href="https://github.com/hydephp/hyde/pull/250/files">https://github.com/hydephp/hyde/pull/250/files</a></p>
 <p>Your new config array should look like this:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Make sure to import the new Feature enum at the top of the file</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Enums</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Feature</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Then replace your enabled features with the new Feature enum cases</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Page Modules</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">HtmlPages</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">MarkdownPosts</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">BladePages</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">MarkdownPages</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">DocumentationPages</span><span style="color: #89DDFF;">,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Frontend Features</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">Darkmode</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">DocumentationSearch</span><span style="color: #89DDFF;">,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Integrations</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">Torchlight</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<pre><code class="language-php">    // Make sure to import the new Feature enum at the top of the file
+    use Hyde\Enums\Feature;
+
+    // Then replace your enabled features with the new Feature enum cases
+    'features' =&gt; [
+        // Page Modules
+        Feature::HtmlPages,
+        Feature::MarkdownPosts,
+        Feature::BladePages,
+        Feature::MarkdownPages,
+        Feature::DocumentationPages,
+
+        // Frontend Features
+        Feature::Darkmode,
+        Feature::DocumentationSearch,
+
+        // Integrations
+        Feature::Torchlight,
+    ],
+</code></pre>
 <p>If you need more help, you can see detailed upgrade instructions with screenshots in the pull request <a href="https://github.com/hydephp/develop/pull/1650">https://github.com/hydephp/develop/pull/1650</a></p>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/1.5.0">1.5.0</a> - 2024-02-13</h2>
 <h3>Improved Patch Release Strategy</h3>
@@ -859,7 +879,11 @@ are likely to not affect normal usage, with the exception of the front matter na
 <p>You only need to do this if you have written custom code that uses the old namespace.</p>
 </blockquote>
 <p>To upgrade the moved collection namespaces, simply replace the following namespace imports:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="diff" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #F07178;">use Hyde\Framework\PageCollection;</span></div><div class='line'><span style="color: #89DDFF;">+</span><span style="color: #C3E88D;">use Hyde\Framework\Foundation\PageCollection;</span></div><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #F07178;">use Hyde\Framework\RouteCollection;</span></div><div class='line'><span style="color: #89DDFF;">+</span><span style="color: #C3E88D;">use Hyde\Framework\Foundation\RouteCollection;</span></div></code></pre>
+<pre><code class="language-diff">-use Hyde\Framework\PageCollection;
++use Hyde\Framework\Foundation\PageCollection;
+-use Hyde\Framework\RouteCollection;
++use Hyde\Framework\Foundation\RouteCollection;
+</code></pre>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/v0.60.0-beta">v0.60.0-beta</a> - 2022-08-12</h2>
 <h3>About</h3>
 <p>This release continues refactoring the internal codebase. As part of this, a large part of deprecated code has been removed and the package has been updated accordingly.</p>
@@ -901,7 +925,9 @@ are likely to not affect normal usage, with the exception of the front matter na
 <h4>MarkdownFileParser path change</h4>
 <p>This class now expects the supplied filepath to be relative to the root of the project. This will only affect you if you have written any custom code that uses this class. All internal Hyde code is already updated to use the new path format.</p>
 <p>To upgrade, change any calls you may have like follows:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="diff" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #F07178;">return (new MarkdownFileParser(Hyde::path(&#39;_posts/foo.md&#39;)))-&gt;get();</span></div><div class='line'><span style="color: #89DDFF;">+</span><span style="color: #C3E88D;">return (new MarkdownFileParser(&#39;_posts/foo.md&#39;))-&gt;get();</span></div></code></pre>
+<pre><code class="language-diff">-return (new MarkdownFileParser(Hyde::path('_posts/foo.md')))-&gt;get();
++return (new MarkdownFileParser('_posts/foo.md'))-&gt;get();
+</code></pre>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/v0.59.0-beta">v0.59.0-beta</a> - 2022-08-11</h2>
 <h3>About</h3>
 <p>This release refactors the internal routing system. Unless you have written custom code that directly uses these classes and methods, updating should be fairly smooth. If not, you may want to read through the following overview.</p>
@@ -950,7 +976,15 @@ are likely to not affect normal usage, with the exception of the front matter na
 <h4>Route keys are now used in navigation config</h4>
 <p>Prior to this release, the navigation menu priorities were based on the page slug. This has been changed to the route key. A route key in Hyde is in short the compiled page's path, relative to the site's root. For example, <code>_site/foo/bar.html</code> has the route key <code>foo/bar</code>.</p>
 <p>This change is breaking as the order of navigation items may be changed unless the configuration is updated. However, this is really easy. Just change <code>docs</code> to <code>docs/index</code> in the <code>config/hyde.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="diff" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">&#39;navigation&#39; =&gt; [</span></div><div class='line'><span style="color: #A6ACCD;">    &#39;order&#39; =&gt; [</span></div><div class='line'><span style="color: #A6ACCD;">        &#39;index&#39; =&gt; 0,</span></div><div class='line'><span style="color: #A6ACCD;">        &#39;posts&#39; =&gt; 10,</span></div><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #F07178;">        &#39;docs&#39; =&gt; 100,</span></div><div class='line'><span style="color: #89DDFF;">+</span><span style="color: #C3E88D;">        &#39;docs/index&#39; =&gt; 100,</span></div><div class='line'><span style="color: #A6ACCD;">    ],</span></div><div class='line'><span style="color: #A6ACCD;">],</span></div></code></pre>
+<pre><code class="language-diff">'navigation' =&gt; [
+    'order' =&gt; [
+        'index' =&gt; 0,
+        'posts' =&gt; 10,
+-        'docs' =&gt; 100,
++        'docs/index' =&gt; 100,
+    ],
+],
+</code></pre>
 <p>If you have used the config to hide the documentation page from the navigation menu, you also need to use the route key by changing <code>'exclude' =&gt; ['docs']</code> to <code>'exclude' =&gt; ['docs/index']</code>.
 The same goes if you have used the config to change the navigation titles for the home and documentation pages.</p>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/v0.58.0-beta">v0.58.0-beta</a> - 2022-08-08</h2>
@@ -1023,7 +1057,9 @@ Instead, you can add it with front matter: <code>MarkdownPage::make(matter: ['ti
 <p>This means that instead of the following <code>$post-&gt;matter['title']</code>, you would use <code>$post-&gt;matter('title')</code>, which allows you to add a fallback like so: <code>$post-&gt;matter('title', 'Untitled')</code></p>
 <h4>Author helper has been merged into the model</h4>
 <p>The deprecated <code>Helpers\Author</code> has been fully merged into <code>Models\Author</code>. Simply swap namespaces to upgrade.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="diff" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">-</span><span style="color: #F07178;">use Hyde\Framework\Helpers\Author;</span></div><div class='line'><span style="color: #89DDFF;">+</span><span style="color: #C3E88D;">use Hyde\Framework\Models\Author;</span></div></code></pre>
+<pre><code class="language-diff">-use Hyde\Framework\Helpers\Author;
++use Hyde\Framework\Models\Author;
+</code></pre>
 <h2><a href="https://github.com/hydephp/develop/releases/tag/v0.57.0-beta">v0.57.0-beta</a> - 2022-08-03</h2>
 <h3>About</h3>
 <p>This update refactors the internal page source model parsing. This will likely not affect you directly, however, if you have written custom code that interacts with any class relating to the PageParser contract, you'll want to take a closer look at the changes.</p>
@@ -1252,7 +1288,12 @@ You should also read the standard upgrade guide first for general advice, <a hre
 <p>A large number of Blade views have also changed. You may want to update pretty much all of them. See the diff for a list of files that have changed.</p>
 <h4>Updating Composer</h4>
 <p>When updating an existing project, you may need to add laravel-zero/framework to your Hyde composer.json file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">require</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;">: </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">php</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^8.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">hyde/framework</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^0.50</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">laravel-zero/framework</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^9.1</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;">,</span></div></code></pre>
+<pre><code class="language-json">    &quot;require&quot;: {
+        &quot;php&quot;: &quot;^8.0&quot;,
+        &quot;hyde/framework&quot;: &quot;^0.50&quot;,
+        &quot;laravel-zero/framework&quot;: &quot;^9.1&quot;
+    },
+</code></pre>
 <h4>Using the new site config</h4>
 <p>Site-specific config options have been moved from <code>config/hyde.php</code> to <code>config/site.php</code>. The Hyde config is now used to configure behaviour of the site, while the site config is used to customize the look and feel, the presentation, of the site.</p>
 <p>The following configuration options have been moved. The actual usages remain the same, so you can upgrade by using copying over these options to the new file.</p>
@@ -1267,9 +1308,18 @@ You should also read the standard upgrade guide first for general advice, <a hre
 <p>If you have published and Blade views or written custom code that uses the config options, you may need to update them. You can do this by republishing the Blade views, and/or using search and replace across your code. VSCode has a useful feature to make this a breeze: <code>CMD/CTRL+Shift+F</code>.</p>
 <h4>Using the new footer config</h4>
 <p>The footer configuration options have been merged. Prior to this update, the config option looked as follows:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Markdown text...</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'footer' =&gt; [
+  'enabled' =&gt; true,
+  'markdown' =&gt; 'Markdown text...'
+],
+</code></pre>
 <p>Now, the config option looks as follows:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #676E95;">// To use Markdown text</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Markdown text...</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// To disable it completely</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">false,</span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>// To use Markdown text
+'footer' =&gt; 'Markdown text...',
+
+// To disable it completely
+'footer' =&gt; false,
+</code></pre>
 <p>As you can see, the new config option is a string or the boolean false instead of an array. We use the same option for both the Markdown text and the footer disabled state.</p>
 <h4>Updating Blade Documentation Views</h4>
 <p>This release rewrites almost all of the documentation page components to use TailwindCSS. In most cases you won't need to do anything to update, however, if you have previously published the documentation views, you will need to update them.</p>
@@ -1453,7 +1503,9 @@ However, if you are a package developer, or if you have published Blade views or
 <p>This release refactors and improves the Asset Service, adding auto-configuration features and a new Asset facade.</p>
 <h4>Using the Asset facade in Blade views</h4>
 <p>Instead of the long syntax <code>Hyde::assetManager()</code> you can now use the <code>Asset</code> facade directly. See this example, which both do the exact same thing using the same underlying service:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">Hyde::assetManager()-&gt;hasMediaFile(&#39;app.css&#39;)</span></div><div class='line'><span style="color: #A6ACCD;">Asset::hasMediaFile(&#39;app.css&#39;)</span></div></code></pre>
+<pre><code class="language-blade">Hyde::assetManager()-&gt;hasMediaFile('app.css')
+Asset::hasMediaFile('app.css')
+</code></pre>
 <p>If you don't know what any of this means, good news! You don't have to worry about it. Hyde's got your back.</p>
 <h3>Added</h3>
 <ul>
@@ -3036,11 +3088,6 @@ adding a helper command to manage the new release cycle.</p>
 <li>Initial Commit <a href="https://github.com/hydephp/framework/commit/fa007876e36ca6588147b05d44f927d7e8fbf997"><code>fa00787</code></a></li>
 <li>Successfully move namespace Core to Framework <a href="https://github.com/hydephp/framework/commit/0c9160f33124701e6ed21a1e5b2bd70f46aaa65a"><code>0c9160f</code></a></li>
 </ul>
-<br><p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
 
         </article>
     </main>
@@ -3128,7 +3175,6 @@ adding a helper command to manage the new release cycle.</p>
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
 				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
-
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
 				<button title="Scroll to top">
@@ -3141,7 +3187,7 @@ adding a helper command to manage the new release cycle.</p>
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

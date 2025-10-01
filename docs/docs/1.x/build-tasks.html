@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=fbec641625d79635ea18e6d2211f8dea">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,11 +71,19 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -124,8 +133,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -158,8 +167,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -204,8 +213,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -223,8 +232,141 @@
             <a href="../../docs/2.x/build-tasks.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Custom Build Tasks
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#good-to-know-before-you-start" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Good to know before you start
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#types-of-tasks" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Types of tasks
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#about-these-examples" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        About these examples
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#interacting-with-output" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Interacting with output
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-build-tasks" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating Build Tasks
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#minimal-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Minimal example
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#automatic-output" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Automatic output
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#full-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Full example
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#registering-the-tasks" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Registering the Tasks
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#autodiscovery-registration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Autodiscovery registration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#config-file-registration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Config file registration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#programmatic-registration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Programmatic registration
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#error-handling" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Error Handling
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#helper-methods" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Helper Methods
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#output-helpers" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Output helpers
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#skipping-tasks" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Skipping tasks
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/1.x/hyde-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             HydePage API
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
@@ -238,8 +380,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -280,8 +422,8 @@
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -295,23 +437,11 @@
             <a href="../../docs/2.x/extensions.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/realtime-compiler.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/third-party-integrations.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/ui-kit.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -397,37 +527,33 @@
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../index.html">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
         <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Custom Build Tasks</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction</h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>Custom Build Tasks</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The Build Task API offers a simple way to hook into the build process.
 The build tasks are very powerful and allow for limitless customizability.</p>
 <p>The built-in Hyde features like sitemap generation and RSS feeds are created using tasks like these.
 Maybe you want to create your own, to for example upload the site to FTP or copy the files to a public directory?
 You can also overload the built-in tasks to customize them to your needs.</p>
-<h2>Good to know before you start</h2>
-<h3>Types of tasks</h3>
+<h2 id="good-to-know-before-you-start" class="group w-fit scroll-mt-2">Good to know before you start<a href="#good-to-know-before-you-start" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="types-of-tasks" class="group w-fit scroll-mt-2">Types of tasks<a href="#types-of-tasks" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>There are two types, PreBuildTasks and PostBuildTasks. As the names suggest, PreBuildTasks are executed before the site is built, and PostBuildTasks are executed after the site is built.</p>
 <p>To choose which type of task you want to create, you extend either the <code>PreBuildTask</code> or <code>PostBuildTask</code> class.
 Both of these have the exact same helpers and API available, so the only difference between them is when they are executed. The classes are otherwise identical.</p>
-<h3>About these examples</h3>
+<h3 id="about-these-examples" class="group w-fit scroll-mt-2">About these examples<a href="#about-these-examples" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>For most of these examples we will focus on the PostBuildTasks as they are the most common.</p>
 <p>For all these examples we assume you put the file in the <code>App/Actions</code> directory, but you can put them anywhere.</p>
-<h3>Interacting with output</h3>
+<h3 id="interacting-with-output" class="group w-fit scroll-mt-2">Interacting with output<a href="#interacting-with-output" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>In a way, build tasks are like micro-commands, as they can interact directly with the build commands I/O. Please take a look at the <a href="https://laravel.com/docs/10.x/artisan#command-io">Laravel Console Documentation</a> for the full list of available methods.</p>
 <p>In addition, there are some extra helpers available in the base BuildTask class that allow you to fluently format output to the console, which you will see in the examples below.</p>
-<h2>Creating Build Tasks</h2>
-<h3>Minimal example</h3>
+<h2 id="creating-build-tasks" class="group w-fit scroll-mt-2">Creating Build Tasks<a href="#creating-build-tasks" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="minimal-example" class="group w-fit scroll-mt-2">Minimal example<a href="#minimal-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a minimal example to give you an idea of what we are working with.</p>
 <pre><code class="language-php">class SimpleBuildTask extends PostBuildTask
 {
@@ -440,13 +566,13 @@ Both of these have the exact same helpers and API available, so the only differe
 <p>As you can see, at their core, build tasks are simple classes containing a <code>handle()</code> method,
 which as I'm sure you have guessed, is the method that is executed when the task is run by the build command.</p>
 <p>If you want the task to run before the build, you would extend the <code>PreBuildTask</code> class instead.</p>
-<h4>Automatic output</h4>
+<h4 id="automatic-output" class="group w-fit scroll-mt-2">Automatic output<a href="#automatic-output" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>When running the build command, you will see the following output added after the build is complete.</p>
 <pre>
  <span style="color: gold">Generic build task...</span> <span style="color: gray">Done in 0.26ms</span>
 </pre>
 <p>As you can see, some extra output including execution time tracking is added for us. We can of course customize all of this if we want, as you will learn a bit further down.</p>
-<h3>Full example</h3>
+<h3 id="full-example" class="group w-fit scroll-mt-2">Full example<a href="#full-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a full example, with all the namespaces included, as well as the most common fluent output helpers.</p>
 <pre><code class="language-php">&lt;?php
 
@@ -477,22 +603,24 @@ class ExampleTask extends PostBuildTask
   Goodbye World!
 </pre>
 <p>As you can see, there is no execution time tracking here, since we overrode the <code>printFinishMessage()</code> method that normally prints this. You can of course call the <code>withExecutionTime()</code> method to add this back in. See more in the API reference below.</p>
-<h2>Registering the Tasks</h2>
+<h2 id="registering-the-tasks" class="group w-fit scroll-mt-2">Registering the Tasks<a href="#registering-the-tasks" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>There are a few ways to register these tasks so Hyde can find them.</p>
 <p>They are shown here in order of presumed convenience, but you are free to choose whichever you prefer. The latter options are more suited for extension developers.</p>
-<h3>Autodiscovery registration</h3>
+<h3 id="autodiscovery-registration" class="group w-fit scroll-mt-2">Autodiscovery registration<a href="#autodiscovery-registration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The easiest way to register build tasks is to not do it -- just let Hyde do it for you!</p>
 <p>Any classes that end in <code>BuildTask.php</code> that are stored in <code>app/Actions</code>  will be autoloaded and registered to run automatically.</p>
 <p>For example: <code>app/Actions/ExampleBuildTask.php</code>.</p>
-<h3>Config file registration</h3>
+<h3 id="config-file-registration" class="group w-fit scroll-mt-2">Config file registration<a href="#config-file-registration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If you want, you can also register build tasks of any namespace in the convenient <code>build_tasks</code> array which is in the main configuration file, <code>config/hyde.php</code>.</p>
-<pre><code class="language-php"><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/hyde.php</small>'build_tasks' =&gt; [
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'build_tasks' =&gt; [
     \App\Actions\SimpleTask::class,
     \MyPackage\Tasks\MyBuildTask::class,
 ],
 </code></pre>
-<h3>Programmatic registration</h3>
-<blockquote class="info"><p>This option assumes you are familiar with Laravel's service container and service providers.</p></blockquote>
+<h3 id="programmatic-registration" class="group w-fit scroll-mt-2">Programmatic registration<a href="#programmatic-registration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<blockquote class="border-blue-500">
+    <p>This option assumes you are familiar with Laravel's service container and service providers.</p>
+</blockquote>
 <p>If you are developing an extension, you can either instruct users register your tasks with the config option above,
 or you can register the extensions programmatically, I recommend you do this in the <code>boot</code> method of a service provider.</p>
 <p>The build tasks are registered in an internal array of the <code>BuildService</code> class, which is bound as a singleton in the underlying Laravel service container.
@@ -508,10 +636,10 @@ just as long as it's done early enough in the application lifecycle, so it's reg
     }
 }
 </code></pre>
-<h2>Error Handling</h2>
+<h2 id="error-handling" class="group w-fit scroll-mt-2">Error Handling<a href="#error-handling" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>If an exception is thrown in a build task, the build command will catch it and display the error message to the user.</p>
-<h2>Helper Methods</h2>
-<h3>Output helpers</h3>
+<h2 id="helper-methods" class="group w-fit scroll-mt-2">Helper Methods<a href="#helper-methods" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="output-helpers" class="group w-fit scroll-mt-2">Output helpers<a href="#output-helpers" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>When a build task is called by the site build command, it gets access to the Laravel and Symfony console output helpers through the <code>$output</code> property.</p>
 <pre><code class="language-php">public function handle(): void
 {
@@ -522,8 +650,10 @@ just as long as it's done early enough in the application lifecycle, so it's reg
     $this-&gt;output-&gt;writeln('This is a line of text');
 }
 </code></pre>
-<h3>Skipping tasks</h3>
-<blockquote class="info"><p>This feature was added in HydePHP v1.6.0</p></blockquote>
+<h3 id="skipping-tasks" class="group w-fit scroll-mt-2">Skipping tasks<a href="#skipping-tasks" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<blockquote class="border-blue-500">
+    <p>This feature was added in HydePHP v1.6.0</p>
+</blockquote>
 <p>If you for some reason need to skip the task during its execution, you can call the <code>skip()</code> method.</p>
 <pre><code class="language-php">public function handle(): void
 {
@@ -535,25 +665,23 @@ just as long as it's done early enough in the application lifecycle, so it's reg
 }
 </code></pre>
 <p>This will then halt the execution of the task, and display a notice with the message you provided to the console.</p>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/advanced-features/build-tasks.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -563,7 +691,7 @@ just as long as it's done early enough in the application lifecycle, so it's reg
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -573,46 +701,168 @@ just as long as it's done early enough in the application lifecycle, so it's reg
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/2.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

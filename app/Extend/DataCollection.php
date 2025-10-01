@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 /**
  * @experimental Typed data collections class extension.
  */
-class DataCollections extends \Hyde\Support\DataCollections
+class DataCollection extends \Hyde\Support\DataCollection
 {
     public static function yaml(string $name): static
     {
@@ -65,7 +65,7 @@ class DataCollections extends \Hyde\Support\DataCollections
 
     protected static function getTypeClassname(string $name): string
     {
-        return 'App\\DataCollections\\Types\\'.Str::studly($name);
+        return 'App\\DataCollection\\Types\\'.Str::studly($name);
     }
 
     /** @return class-string<\App\Extend\Concerns\DataCollectionType> */
