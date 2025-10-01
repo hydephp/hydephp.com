@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - The Extensions API</title>
+<title>HydePHP - HydePHP v2.0 Release Notes</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/docs/2.x/extensions-api">
-<meta name="twitter:title" content="HydePHP - The Extensions API">
-<meta property="og:title" content="HydePHP - The Extensions API">
+<link rel="canonical" href="https://hydephp.com/docs/2.x/upgrade-guide">
+<meta name="twitter:title" content="HydePHP - HydePHP v2.0 Release Notes">
+<meta property="og:title" content="HydePHP - HydePHP v2.0 Release Notes">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
@@ -541,13 +541,13 @@ button[aria-label="Open search window"]:hover,
                 <div x-cloak x-show="vopen" @click.outside="vopen=false"
                      class="absolute right-0 mt-2 w-40 rounded-lg border border-gray-200 dark:border-gray-700
                             bg-white dark:bg-gray-800 shadow-lg z-50 py-1">
-                                            <a href="../../docs/1.x/extensions-api"
+                                            <a href="../../docs/1.x/"
                            class="flex items-center justify-between px-3 py-2 text-sm rounded-md
                                    hover:bg-gray-50 dark:hover:bg-gray-700 ">
                             <span>1.x</span>
                             <span class="text-[11px] text-gray-500">old</span>
                         </a>
-                                            <a href="../../docs/2.x/extensions-api"
+                                            <a href="../../docs/2.x/upgrade-guide"
                            class="flex items-center justify-between px-3 py-2 text-sm rounded-md
                                    bg-gray-100 dark:bg-gray-700 font-semibold ">
                             <span>2.x</span>
@@ -596,7 +596,7 @@ button[aria-label="Open search window"]:hover,
 </div>    </header>
     <nav id="sidebar-navigation" class="p-2 pb-6 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
-                            <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
+                            <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -648,11 +648,313 @@ button[aria-label="Open search window"]:hover,
             Front Matter
         </a>
     </li>
-                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/upgrade-guide" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
+            <a href="../../docs/2.x/upgrade-guide" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
             v2 Upgrade Guide
         </a>
-    </li>
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#overview" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Overview
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#major-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Major Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#modern-frontend-tooling-with-vite" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🚀 Modern Frontend Tooling with Vite
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#enhanced-asset-management-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🎨 Enhanced Asset Management System
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#redesigned-navigation-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🧭 Redesigned Navigation API
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#improved-documentation-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        📝 Improved Documentation Features
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#better-developer-experience" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🎯 Better Developer Experience
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#breaking-changes-and-upgrade-guide" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Breaking Changes &amp; Upgrade Guide
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#prerequisites" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Prerequisites
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#high-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        High Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#1-tailwind-css-v4-upgrade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        1. Tailwind CSS v4 Upgrade
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#2-esm-module-migration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        2. ESM Module Migration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#3-navigation-configuration-format" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        3. Navigation Configuration Format
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#4-features-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        4. Features Configuration
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#general-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        General Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#post-author-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Post Author System
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#medium-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Medium Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#asset-api-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Asset API Updates
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#routes-facade-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Routes Facade API
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#datacollection-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        DataCollection API
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#low-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Low Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#includes-facade-return-types" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Includes Facade Return Types
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#documentation-search-generation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Documentation Search Generation
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar Configuration
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#new-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        New Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#enhanced-blog-posts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Enhanced Blog Posts
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#improved-build-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Improved Build System
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#developer-tools" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Developer Tools
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#package-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Package Updates
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#realtime-compiler" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Realtime Compiler
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hydefront" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        HydeFront
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#performance-improvements" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Performance Improvements
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#dependency-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Dependency Updates
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#migration-checklist" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Migration Checklist
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#removed-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Removed Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#deprecated-methods" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Deprecated Methods
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#build-commands" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Build Commands
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#configuration-options" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Configuration Options
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#components-and-files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Components and Files
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#support-and-resources" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Support &amp; Resources
+                    </a>
+                
+                            </li>
+            </ul>
+            </li>
                                     </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
@@ -872,7 +1174,7 @@ button[aria-label="Open search window"]:hover,
     </li>
                                     </ul>
             </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
+                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
                 <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
                     <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
@@ -944,93 +1246,11 @@ button[aria-label="Open search window"]:hover,
             The HydeKernel
         </a>
     </li>
-                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
-            <a href="../../docs/2.x/extensions-api" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
         </a>
-
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents pb-3">
-                    <li class="my-0.5">
-                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#prerequisites" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Prerequisites
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#the-why-and-how-of-the-extensions-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        The why and how of the Extensions API
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#creating-your-extension-class" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Creating Your Extension Class
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#discovery-handlers" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Discovery handlers
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#booting-and-booted-callbacks" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Booting and Booted Callbacks
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#discovery-handler-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Discovery handler example
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#registering-your-extension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Registering Your Extension
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#packaging-your-extension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Packaging your extension
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#telling-the-world-about-your-extension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Telling the world about your extension
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-            </li>
+    </li>
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
@@ -1080,7 +1300,7 @@ button[aria-label="Open search window"]:hover,
 </style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
-            <h1>The Extensions API</h1>
+            <h1>HydePHP v2.0 Release Notes</h1>
             <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
@@ -1096,13 +1316,13 @@ button[aria-label="Open search window"]:hover,
         <div x-cloak x-show="open" @click.outside="open=false"
              class="absolute right-0 mt-2 min-w-[12rem] rounded-lg border border-gray-200 dark:border-gray-700
                     bg-white dark:bg-gray-800 shadow-lg p-1 z-50">
-                                            <a href="../../docs/1.x/extensions-api"
+                                            <a href="../../docs/1.x/"
                    class="flex items-center justify-between px-3 py-2 rounded-md text-sm
                            hover:bg-gray-50 dark:hover:bg-gray-700                           ">
                     <span>1.x</span>
                     <span class="text-xs text-gray-500">old</span>
                 </a>
-                                            <a href="../../docs/2.x/extensions-api"
+                                            <a href="../../docs/2.x/upgrade-guide"
                    class="flex items-center justify-between px-3 py-2 rounded-md text-sm
                            bg-gray-100 dark:bg-gray-700 font-semibold                           ">
                     <span>2.x</span>
@@ -1113,140 +1333,299 @@ button[aria-label="Open search window"]:hover,
 </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
-            <h2 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>The Extensions API is a powerful interface designed for package developers who want to extend the functionality of HydePHP.</p>
-<p>Using the API, you can hook directly into the HydePHP Kernel and extend sites with custom page types and new features.</p>
-<p>This documentation page functions heavily through examples, so it's recommended that the sections are read in order.</p>
-<h3 id="prerequisites" class="group w-fit scroll-mt-2">Prerequisites<a href="#prerequisites" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Before creating your extension, it will certainly be helpful if you first become familiar with
-the basic internal architecture of HydePHP, as well as how the auto-discovery system works,
-so you can understand how your code works with the internals.</p>
+            <h2 id="overview" class="group w-fit scroll-mt-2">Overview<a href="#overview" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>HydePHP v2.0 represents a major evolution of the framework, introducing significant improvements to the asset system, navigation API, and overall developer experience. This release modernizes the frontend tooling by replacing Laravel Mix with Vite, completely rewrites the navigation system for better flexibility, and introduces numerous performance optimizations throughout the framework.</p>
+<h2 id="major-features" class="group w-fit scroll-mt-2">Major Features<a href="#major-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="modern-frontend-tooling-with-vite" class="group w-fit scroll-mt-2">🚀 Modern Frontend Tooling with Vite<a href="#modern-frontend-tooling-with-vite" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>We've replaced Laravel Mix with Vite for a faster, more modern development experience:</p>
 <ul>
-<li><a href="core-concepts">Core concepts overview</a></li>
-<li><a href="architecture-concepts">Architecture concepts</a></li>
-<li><a href="autodiscovery">Autodiscovery</a></li>
+<li><strong>Instant Hot Module Replacement (HMR)</strong> for real-time updates during development</li>
+<li><strong>Direct asset compilation</strong> into the <code>_media</code> folder for cleaner builds</li>
+<li><strong>Updated build command</strong>: Use <code>npm run build</code> instead of <code>npm run prod</code> (or <code>--vite</code> during the sit build)</li>
+<li><strong>Vite facade</strong> for seamless Blade template integration</li>
+<li><strong>Optimized asset serving</strong> through the realtime compiler</li>
+<li><strong>Hyde Vite plugin</strong> for enhanced integration</li>
 </ul>
-<h3 id="the-why-and-how-of-the-extensions-api" class="group w-fit scroll-mt-2">The why and how of the Extensions API<a href="#the-why-and-how-of-the-extensions-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>HydePHP being a static site generator, the Extensions API is centred around <a href="page-models">Page Models</a>,
-which you are hopefully already familiar with, otherwise you should read up on them first.</p>
-<p>What the Extensions API does is to allow you to create custom page types, and tell HydePHP how to discover them.
-This may sound like a small thing, but it's actually incredibly powerful as the page models are the foundation
-of HydePHP's functionality. They tell the system how to discover pages, how to render them,
-and how they interact with the site.</p>
-<p>Any other functionality you want to add to HydePHP, such as new commands or configuration options,
-can be added the same way as you would in Laravel, and are thus not part of our API.
-See the <a href="https://laravel.com/docs/10.x/packages">Laravel package development guide</a> for more.</p>
-<h2 id="creating-your-extension-class" class="group w-fit scroll-mt-2">Creating Your Extension Class<a href="#creating-your-extension-class" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>The entry-point for your extension is your Extensions class. Within this, you can register the custom page classes.
-If needed, you can also register discovery handlers which can run custom logic at various parts of the boot process.</p>
-<p>In this article we will create an extension that registers a new type of page, a <code>JsonPageExtension</code>.</p>
-<p>The first step is to create a class that extends the <code>HydeExtension</code> class:</p>
-<pre><code class="language-php">use Hyde\Foundation\Concerns\HydeExtension;
-
-class JsonPageExtension extends HydeExtension {
-    //
-}
+<h3 id="enhanced-asset-management-system" class="group w-fit scroll-mt-2">🎨 Enhanced Asset Management System<a href="#enhanced-asset-management-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>The new consolidated Asset API provides a more intuitive interface for handling media files:</p>
+<ul>
+<li><strong>MediaFile instances</strong> with fluent methods like <code>getLink()</code>, <code>getLength()</code>, and <code>getMimeType()</code></li>
+<li><strong>HydeFront facade</strong> for CDN links and Tailwind configuration injection</li>
+<li><strong>Intelligent caching</strong> with CRC32 hashing for improved performance</li>
+<li><strong>Automatic validation</strong> to prevent missing assets from going unnoticed</li>
+<li><strong>Lazy-loaded metadata</strong> for optimal resource usage</li>
+</ul>
+<h3 id="redesigned-navigation-api" class="group w-fit scroll-mt-2">🧭 Redesigned Navigation API<a href="#redesigned-navigation-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>The navigation system has been completely rewritten for maximum flexibility:</p>
+<ul>
+<li><strong>YAML configuration support</strong> for defining navigation items</li>
+<li><strong>Extra attributes</strong> for custom styling and behavior</li>
+<li><strong>Improved Routes facade</strong> with Laravel-consistent naming conventions</li>
+<li><strong>Natural priority ordering</strong> using numeric prefixes in filenames</li>
+<li><strong>Enhanced sidebar management</strong> with better organization options</li>
+</ul>
+<h3 id="improved-documentation-features" class="group w-fit scroll-mt-2">📝 Improved Documentation Features<a href="#improved-documentation-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Documentation pages now benefit from several enhancements:</p>
+<ul>
+<li><strong>Alpine.js-powered search</strong> with customizable implementation</li>
+<li><strong>Blade-based table of contents</strong> that's 40x faster than before</li>
+<li><strong>Custom heading renderer</strong> with improved permalink handling</li>
+<li><strong>Colored blockquotes</strong> now using Tailwind CSS classes</li>
+<li><strong>Smart natural language processing</strong> for search headings</li>
+<li><strong>Dynamic source file links</strong> in Markdown documents</li>
+</ul>
+<h3 id="better-developer-experience" class="group w-fit scroll-mt-2">🎯 Better Developer Experience<a href="#better-developer-experience" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Numerous quality-of-life improvements for developers:</p>
+<ul>
+<li><strong>PHP 8.4 support</strong> and Laravel 11 compatibility</li>
+<li><strong>ESM module support</strong> for modern JavaScript development</li>
+<li><strong>Tailwind CSS v4</strong> with automated upgrade tools</li>
+<li><strong>Enhanced data collections</strong> with syntax validation</li>
+<li><strong>Improved error messages</strong> with clearer exception handling</li>
+<li><strong>Interactive publish:views command</strong> on Unix systems</li>
+<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
+</ul>
+<h2 id="breaking-changes-and-upgrade-guide" class="group w-fit scroll-mt-2">Breaking Changes &amp; Upgrade Guide<a href="#breaking-changes-and-upgrade-guide" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="prerequisites" class="group w-fit scroll-mt-2">Prerequisites<a href="#prerequisites" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Before upgrading, ensure your application is running HydePHP v1.6 or later, as this version includes helpers to ease the migration process. It's ideal to use v1.8, if possible.</p>
+<h3 id="high-impact-changes" class="group w-fit scroll-mt-2">High Impact Changes<a href="#high-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="1-tailwind-css-v4-upgrade" class="group w-fit scroll-mt-2">1. Tailwind CSS v4 Upgrade<a href="#1-tailwind-css-v4-upgrade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>We've upgraded from Tailwind CSS v3 to v4. Run the automated upgrade tool to migrate your custom classes:</p>
+<pre><code class="language-bash">npx @tailwindcss/upgrade
 </code></pre>
-<p>In here, we will register our extension class name in the <code>getPageClasses</code> method:</p>
-<pre><code class="language-php">class JsonPageExtension extends HydeExtension {
-    public static function getPageClasses(): array {
-        return [
-            JsonPage::class,
-        ];
-    }
-}
+<p>Review the <a href="https://tailwindcss.com/docs/upgrade-guide">Tailwind v4 Upgrade Guide</a> for detailed breaking changes.</p>
+<h4 id="2-esm-module-migration" class="group w-fit scroll-mt-2">2. ESM Module Migration<a href="#2-esm-module-migration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Frontend tooling now uses ESM modules instead of CommonJS. If you have custom JavaScript, update to ESM syntax:</p>
+<p><strong>Before:</strong></p>
+<pre><code class="language-javascript">const module = require('module-name');
+module.exports = { /* ... */ };
 </code></pre>
-<p>Hyde will then use the information from the <code>JsonPage</code> class to automatically discover the pages when booting the Kernel.
-For example, if you specify the file extension and source directory, that is all Hyde needs to know to discover the pages.</p>
-<p>If our pages need more complex discovery logic, we can create custom handlers. so let's take a quick look at that next.</p>
-<h3 id="discovery-handlers" class="group w-fit scroll-mt-2">Discovery handlers<a href="#discovery-handlers" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>The discovery handlers let you run code at various points of the booting process. This is usually only needed if your
-page models cannot provide the information required for Hyde run the standard auto-discovery, and thus need custom logic.</p>
-<p>Usually in these cases, you would only need to add files to the Kernel <code>FileCollection</code>,
-though the <code>HydeExtension</code> class offers the following three discovery handlers, in case you need them:</p>
-<pre><code class="language-php">/** Runs during file discovery */
-public function discoverFiles(FileCollection $collection): void;
-
-/** Runs during page discovery */
-public function discoverPages(PageCollection $collection): void;
-
-/** Runs during route discovery */
-public function discoverRoutes(RouteCollection $collection): void;
+<p><strong>After:</strong></p>
+<pre><code class="language-javascript">import module from 'module-name';
+export default { /* ... */ };
 </code></pre>
-<p>Any of these can be implemented in your extension class, and they will be called during the discovery. As you can see,
-the instance of the discovery collection is injected into the method for you to interact with.</p>
-<h3 id="booting-and-booted-callbacks" class="group w-fit scroll-mt-2">Booting and Booted Callbacks<a href="#booting-and-booted-callbacks" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>In addition to the discovery handlers, you can also define <code>booting</code> and <code>booted</code> callbacks in your extension class. These methods allow you to run custom logic before and after the kernel boots, respectively. Both methods receive the <code>HydeKernel</code> instance as a parameter, allowing you to interact with the kernel directly.</p>
-<pre><code class="language-php">use Hyde\Foundation\HydeKernel;
-
-class JsonPageExtension extends HydeExtension {
-    public function booting(HydeKernel $kernel): void {
-        // This runs before the kernel boots and before running auto-discovery
-    }
-
-    public function booted(HydeKernel $kernel): void {
-        // This runs after the kernel boots and after running auto-discovery
-    }
-}
+<h4 id="3-navigation-configuration-format" class="group w-fit scroll-mt-2">3. Navigation Configuration Format<a href="#3-navigation-configuration-format" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Update your navigation configuration to use the new array-based format:</p>
+<p><strong>Before:</strong></p>
+<pre><code class="language-php">'navigation' =&gt; [
+    'custom_items' =&gt; [
+        'Custom Item' =&gt; '/custom-page',
+    ],
+],
 </code></pre>
-<p>The <code>booting</code> callback can be used to set up the system with information needed to discover pages, while the <code>booted</code> callback can can be used to perform operations requiring knowledge of discovered data, even modifying them if needed.</p>
-<p>These callbacks provide powerful hooks into the Hyde system, allowing your extensions to integrate deeply and modify Hyde's behavior as needed.</p>
-<h4 id="discovery-handler-example" class="group w-fit scroll-mt-2">Discovery handler example<a href="#discovery-handler-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Let's go crazy and implement a discovery handler to collect <code>JsonPage</code> files from an external API! We will do this
-by implementing the <code>discoverPages</code> method in our extension class, and from there inject pages retrieved from our API.</p>
-<pre><code class="language-php">class JsonPageExtension extends HydeExtension {
-    public function discoverPages(PageCollection $collection): void {
-        $pages = Http::get('https://example.com/my-api')-&gt;collect();
-
-        $pages-&gt;each(function (array $page) use ($collection): void {
-            $collection-&gt;addPage(JsonPage::fromArray($page));
-        });
-    }
-}
+<p><strong>After:</strong></p>
+<pre><code class="language-php">'navigation' =&gt; [
+    'custom_items' =&gt; [
+        ['label' =&gt; 'Custom Item', 'destination' =&gt; '/custom-page'],
+    ],
+],
 </code></pre>
-<p>Since the discovery steps are handled sequentially, the added pages will automatically be discovered as routes without
-us having to implement that handler method. As we inject the page objects directly, we bypass the need for the <code>FileCollection</code>.</p>
-<h2 id="registering-your-extension" class="group w-fit scroll-mt-2">Registering Your Extension<a href="#registering-your-extension" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>Now that we have our extension class, we need to register it with HydePHP.</p>
-<p>It's important that your class is registered before the HydeKernel boots. Therefore, an excellent place for this is the
-<code>register</code> method of your extensions service provider,  where you call the <code>registerExtension</code> method of the <code>HydeKernel</code>
-singleton instance, which you can access via the <code>Hyde\Hyde</code> facade, or via the service container.</p>
-<pre><code class="language-php">use Hyde\Hyde;
-use Hyde\Foundation\HydeKernel;
-use Illuminate\Support\ServiceProvider;
-
-class JsonPageExtensionServiceProvider extends ServiceProvider {
-    public function register(): void {
-        // Via the service container:
-        $this-&gt;app-&gt;make(HydeKernel::class)-&gt;registerExtension(JsonPageExtension::class);
-
-        // Or via the facade:
-        Hyde::registerExtension(JsonPageExtension::class);
-    }
-}
+<h4 id="4-features-configuration" class="group w-fit scroll-mt-2">4. Features Configuration<a href="#4-features-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Replace static method calls with enum values in your <code>config/hyde.php</code>:</p>
+<p><strong>Before:</strong></p>
+<pre><code class="language-php">'features' =&gt; [
+    Features::htmlPages(),
+    Features::markdownPosts(),
+],
 </code></pre>
-<h3 id="packaging-your-extension" class="group w-fit scroll-mt-2">Packaging your extension<a href="#packaging-your-extension" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>To make your extension available to other HydePHP users, you can make it into a <a href="https://getcomposer.org/">Composer</a> package,
-and publish it to <a href="https://packagist.org/">Packagist</a> for others to install.</p>
-<p>If you register your service provider in your package's <code>composer.json</code> file, your extension automatically be enabled when
-the package is installed in a HydePHP project!</p>
-<pre><code class="language-json">{
-  &quot;extra&quot;: {
-    &quot;laravel&quot;: {
-      &quot;providers&quot;: [
-        &quot;My\\Namespace\\JsonPageExtensionServiceProvider&quot;
-      ]
-    }
-  }
-}
+<p><strong>After:</strong></p>
+<pre><code class="language-php">'features' =&gt; [
+    Feature::HtmlPages,
+    Feature::MarkdownPosts,
+],
 </code></pre>
-<h3 id="telling-the-world-about-your-extension" class="group w-fit scroll-mt-2">Telling the world about your extension<a href="#telling-the-world-about-your-extension" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Next up, why not send us a Tweet at <a href="https://twitter.com/HydeFramework">@HydeFramework</a> and tell us about your extension,
-so we can feature it?</p>
+<h3 id="general-impact-changes" class="group w-fit scroll-mt-2">General Impact Changes<a href="#general-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="post-author-system" class="group w-fit scroll-mt-2">Post Author System<a href="#post-author-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>The blog post author feature has been significantly improved:</p>
+<p><strong>Configuration changes:</strong></p>
+<pre><code class="language-php">// Before
+'authors' =&gt; [
+    Author::create('username', 'Display Name', 'https://example.com'),
+],
+
+// After
+'authors' =&gt; [
+    'username' =&gt; Author::create(
+        name: 'Display Name',
+        website: 'https://example.com',
+        bio: 'Author bio',
+        avatar: 'avatar.png',
+        socials: ['twitter' =&gt; '@username']
+    ),
+],
+</code></pre>
+<p>Key changes:</p>
+<ul>
+<li>Authors are now keyed by username</li>
+<li><code>Author::create()</code> returns an array instead of a <code>PostAuthor</code> instance</li>
+<li><code>Author::get()</code> returns <code>null</code> if not found (previously created new instance)</li>
+<li>Usernames are automatically normalized (lowercase, underscores for spaces)</li>
+<li>Authors support biographies, avatars, and social media links</li>
+<li>A new <code>Hyde::authors()</code> method provides access to all site authors</li>
+<li>Authors can be configured via YAML</li>
+</ul>
+<p>The way this system now works is that you first define authors in the config, Hyde the loads this during the booting process, and you can then access them using the get method.</p>
+<h3 id="medium-impact-changes" class="group w-fit scroll-mt-2">Medium Impact Changes<a href="#medium-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="asset-api-updates" class="group w-fit scroll-mt-2">Asset API Updates<a href="#asset-api-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>All asset methods now return <code>MediaFile</code> instances instead of strings. This instance can be cast to a string which will automatically resolve to a relative link at that time. You can also call helper methods on it. When using Blade templates, thanks to the Stringable implementation no change will happen.</p>
+<pre><code class="language-php">// Methods renamed for clarity
+Hyde::asset('image.png');        // Previously: Hyde::mediaLink()
+Asset::get('image.png');         // Previously: Asset::mediaLink()
+Asset::exists('image.png');      // Previously: Asset::hasMediaFile()
+HydeFront::cdnLink('app.css');   // Previously: Asset::cdnLink()
+</code></pre>
+<p>Configuration changes:</p>
+<ul>
+<li>Rename <code>hyde.enable_cache_busting</code> to <code>hyde.cache_busting</code></li>
+<li>Remove references to <code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code></li>
+</ul>
+<h4 id="routes-facade-api" class="group w-fit scroll-mt-2">Routes Facade API<a href="#routes-facade-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Methods renamed to follow Laravel conventions:</p>
+<pre><code class="language-php">// Before
+$route = Routes::get('route-name');        // Returns null if not found
+$route = Routes::getOrFail('route-name');  // Throws exception
+
+// After
+$route = Routes::find('route-name');       // Returns null if not found
+$route = Routes::get('route-name');        // Throws exception
+</code></pre>
+<h4 id="datacollection-api" class="group w-fit scroll-mt-2">DataCollection API<a href="#datacollection-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<ul>
+<li>Class renamed from <code>DataCollections</code> to <code>DataCollection</code></li>
+<li>Syntax validation now throws <code>ParseException</code> for malformed files</li>
+<li>Empty data files are no longer allowed</li>
+<li>Directory creation is no longer automatic</li>
+<li>The <code>route</code> function now throws <code>RouteNotFoundException</code> if route not found</li>
+</ul>
+<h3 id="low-impact-changes" class="group w-fit scroll-mt-2">Low Impact Changes<a href="#low-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="includes-facade-return-types" class="group w-fit scroll-mt-2">Includes Facade Return Types<a href="#includes-facade-return-types" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Methods now return <code>HtmlString</code> objects:</p>
+<pre><code class="language-blade">{{-- Before: Required unescaped output --}}
+{!! Includes::html('partial') !!}
+
+{{-- After: Automatic rendering --}}
+{{ Includes::html('partial') }}
+</code></pre>
+<p>⚠️ <strong>Security Note:</strong> Output is no longer escaped by default. Use <code>{{ e(Includes::html('foo')) }}</code> for user-generated content.</p>
+<h4 id="documentation-search-generation" class="group w-fit scroll-mt-2">Documentation Search Generation<a href="#documentation-search-generation" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>The documentation search page is now generated as an <code>InMemoryPage</code> instead of a post-build task, meaning it appears in the dashboard and route list.</p>
+<h4 id="sidebar-configuration" class="group w-fit scroll-mt-2">Sidebar Configuration<a href="#sidebar-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Documentation sidebar configuration has been reorganized:</p>
+<ul>
+<li><code>docs.sidebar_order</code> → <code>docs.sidebar.order</code></li>
+<li><code>docs.table_of_contents</code> → <code>docs.sidebar.table_of_contents</code></li>
+<li><code>docs.sidebar_group_labels</code> → <code>docs.sidebar.labels</code></li>
+</ul>
+<h2 id="new-features" class="group w-fit scroll-mt-2">New Features<a href="#new-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="enhanced-blog-posts" class="group w-fit scroll-mt-2">Enhanced Blog Posts<a href="#enhanced-blog-posts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Simplified image front matter</strong> with new &quot;caption&quot; field</li>
+<li><strong>Date prefixes in filenames</strong> for automatic publishing dates</li>
+<li><strong>Rich markup data</strong> with BlogPosting Schema.org type</li>
+<li><strong>Author collections</strong> accessible via <code>Hyde::authors()</code></li>
+<li><strong>Custom posts support</strong> in blog feed component</li>
+</ul>
+<h3 id="improved-build-system" class="group w-fit scroll-mt-2">Improved Build System<a href="#improved-build-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Vite integration</strong> with HMR support in realtime compiler</li>
+<li><strong>Smart asset compilation</strong> - app.js only compiles when needed</li>
+<li><strong>Environment variable support</strong> for saving previews</li>
+<li><strong>Grouped progress bars</strong> for InMemoryPage instances</li>
+<li><strong>Media asset transfers</strong> via dedicated build task</li>
+</ul>
+<h3 id="developer-tools" class="group w-fit scroll-mt-2">Developer Tools<a href="#developer-tools" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Interactive publish:views command</strong> on Unix systems</li>
+<li><strong>Custom HydeSearch.js</strong> support for search customization</li>
+<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
+<li><strong>Dynamic source file links</strong> in Markdown documents (for example <code>[Home](/_pages/index.blade.php)</code>)</li>
+<li><strong>Filesystem::ensureParentDirectoryExists()</strong> helper method</li>
+</ul>
+<h2 id="package-updates" class="group w-fit scroll-mt-2">Package Updates<a href="#package-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="realtime-compiler" class="group w-fit scroll-mt-2">Realtime Compiler<a href="#realtime-compiler" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li>Simplified asset file locator for media source directory</li>
+<li>Added Vite HMR support</li>
+<li>Experimental Laravel Herd support</li>
+</ul>
+<h3 id="hydefront" class="group w-fit scroll-mt-2">HydeFront<a href="#hydefront" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li>Complete migration from Sass to Tailwind CSS</li>
+<li>Extracted CSS component partials</li>
+<li>Removed legacy hyde.css file</li>
+</ul>
+<h2 id="performance-improvements" class="group w-fit scroll-mt-2">Performance Improvements<a href="#performance-improvements" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>40x faster table of contents generation</strong> using Blade components</li>
+<li><strong>CRC32 hashing</strong> replaces MD5 for cache busting (much faster)</li>
+<li><strong>Lazy-loaded media metadata</strong> with in-memory caching</li>
+<li><strong>Cached media assets</strong> in HydeKernel for instant access</li>
+</ul>
+<h2 id="dependency-updates" class="group w-fit scroll-mt-2">Dependency Updates<a href="#dependency-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>PHP</strong>: Now requires 8.2–8.4 (dropped 8.1 support)</li>
+<li><strong>Laravel</strong>: Upgraded to version 11</li>
+<li><strong>Tailwind CSS</strong>: Upgraded to version 4</li>
+<li><strong>Symfony/Yaml</strong>: Updated to version 7</li>
+<li><strong>Torchlight</strong>: Switched to forked version for compatibility</li>
+</ul>
+<h2 id="migration-checklist" class="group w-fit scroll-mt-2">Migration Checklist<a href="#migration-checklist" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><input disabled="" type="checkbox"> Upgrade to HydePHP v1.6 (preferably v1.8) before migrating to v2.0</li>
+<li><input disabled="" type="checkbox"> Run <code>npx @tailwindcss/upgrade</code> for Tailwind v4 migration</li>
+<li><input disabled="" type="checkbox"> Update <code>config/hyde.php</code> features to use enum values</li>
+<li><input disabled="" type="checkbox"> Update navigation configuration to array format</li>
+<li><input disabled="" type="checkbox"> Migrate custom JavaScript to ESM modules</li>
+<li><input disabled="" type="checkbox"> Update author configuration format if using blog</li>
+<li><input disabled="" type="checkbox"> Replace <code>npm run prod</code> with <code>npm run build</code> in CI/CD</li>
+<li><input disabled="" type="checkbox"> Review and update any custom navigation implementations</li>
+<li><input disabled="" type="checkbox"> Update Routes facade method calls if used in custom code</li>
+<li><input disabled="" type="checkbox"> Test site menus for correct ordering and appearance</li>
+<li><input disabled="" type="checkbox"> Verify media assets are loading correctly</li>
+<li><input disabled="" type="checkbox"> Check that all DataCollection files have valid syntax</li>
+<li><input disabled="" type="checkbox"> Update sidebar configuration structure in <code>config/docs.php</code></li>
+<li><input disabled="" type="checkbox"> Review Includes facade usage for security implications</li>
+</ul>
+<h2 id="removed-features" class="group w-fit scroll-mt-2">Removed Features<a href="#removed-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="deprecated-methods" class="group w-fit scroll-mt-2">Deprecated Methods<a href="#deprecated-methods" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>PostAuthor::getName()</code> - use <code>$author-&gt;name</code> property</li>
+<li><code>FeaturedImage::isRemote()</code> - use <code>Hyperlinks::isRemote()</code></li>
+<li><code>DocumentationPage::getTableOfContents()</code> - use Blade component</li>
+<li><code>MarkdownService::withPermalinks()</code> and <code>canEnablePermalinks()</code></li>
+</ul>
+<h3 id="build-commands" class="group w-fit scroll-mt-2">Build Commands<a href="#build-commands" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>npm run prod</code> - replaced by <code>npm run build</code></li>
+<li><code>--run-dev</code> and <code>--run-prod</code> flags - replaced by <code>--vite</code></li>
+<li><code>--run-prettier</code> flag and Prettier dependency removed</li>
+</ul>
+<h3 id="configuration-options" class="group w-fit scroll-mt-2">Configuration Options<a href="#configuration-options" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code> - now handled automatically</li>
+<li><code>hyde.enable_cache_busting</code> - renamed to <code>hyde.cache_busting</code></li>
+<li><code>hyde.navigation.subdirectories</code> - renamed to <code>hyde.navigation.subdirectory_display</code></li>
+</ul>
+<h3 id="components-and-files" class="group w-fit scroll-mt-2">Components and Files<a href="#components-and-files" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>hyde.css</code> from HydeFront - all styles now in <code>app.css</code></li>
+<li><code>table-of-contents.css</code>, <code>heading-permalinks.css</code>, <code>blockquotes.css</code> - styles now use Tailwind</li>
+<li><code>.torchlight-enabled</code> CSS class</li>
+<li><code>&lt;x-hyde::docs.search-input /&gt;</code> and <code>&lt;x-hyde::docs.search-scripts /&gt;</code> components - replaced by <code>&lt;x-hyde::docs.hyde-search /&gt;</code></li>
+</ul>
+<h2 id="support-and-resources" class="group w-fit scroll-mt-2">Support &amp; Resources<a href="#support-and-resources" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>Documentation</strong>: <a href="https://hydephp.com/docs/2.x">https://hydephp.com/docs/2.x</a></li>
+<li><strong>Upgrade Guide</strong>: <a href="https://hydephp.com/docs/2.x/upgrade-guide">https://hydephp.com/docs/2.x/upgrade-guide</a></li>
+<li><strong>GitHub Issues</strong>: <a href="https://github.com/hydephp/develop/issues">https://github.com/hydephp/develop/issues</a></li>
+<li><strong>Community Discord</strong>: <a href="https://discord.gg/hydephp">https://discord.gg/hydephp</a></li>
+</ul>
+<hr />
+<p>For the complete changelog with all pull request references, see the <a href="https://github.com/hydephp/hyde/releases/tag/v2.0.0">full changelog</a>.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
             <p class="edit-page-link">
-    <a href="https://github.com/hydephp/develop/blob/master/docs/architecture-concepts/extensions-api.md">
+    <a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/upgrade-guide.md">
         Edit Page
     </a>
 </p>
