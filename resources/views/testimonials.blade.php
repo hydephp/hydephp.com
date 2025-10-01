@@ -70,7 +70,7 @@
                                 </h3>
                             </div>
                             @if($testimonial->profile_image)
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                            <img class="shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                                  onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/hydephp/cdn-static@master/avatar.png';"
                                  src="{{ $testimonial->profile_image }}"
                                  alt="Profile image">
