@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,7 +9,7 @@
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/docs/1.x/advanced-markdown">
+<link rel="canonical" href="https://hydephp.com/docs/1.x/advanced-markdown.html">
 <meta name="twitter:title" content="HydePHP - Advanced Markdown">
 <meta property="og:title" content="HydePHP - Advanced Markdown">
 
@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -57,7 +58,7 @@
 
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
     <strong class="px-2 mr-auto">
-                    <a href="../../docs/1.x/">
+                    <a href="../../docs/2.x/index.html">
                 HydePHP Docs
             </a>
             </strong>
@@ -70,18 +71,26 @@
     </button>
         </li>
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
 </nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
     <header id="sidebar-header" class="h-16">
         <div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
     <strong class="px-2">
-                    <a href="../../docs/1.x/">
+                    <a href="../../docs/2.x/index.html">
                 HydePHP Docs
             </a>
             </strong>
@@ -94,8 +103,8 @@
     <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -106,26 +115,26 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/quickstart" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/quickstart.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Quickstart Guide
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/console-commands" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/console-commands.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Console Commands
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/core-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/core-concepts.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Core Concepts
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/front-matter" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/front-matter.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Front Matter
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -136,30 +145,30 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/blog-posts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/blog-posts.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Creating Blog Posts
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/static-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/static-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown &amp; Blade Pages
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/documentation-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/documentation-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Documentation Pages
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/managing-assets" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/managing-assets.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Managing and Compiling Assets
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/compile-and-deploy" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/compile-and-deploy.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Compile &amp; Deploy
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -170,78 +179,187 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/customization.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Customizing your Site
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/navigation" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/navigation.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Navigation Menus
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
-            <a href="../../docs/1.x/advanced-markdown" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/advanced-markdown.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Markdown
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#using-blade-in-markdown">Using Blade in Markdown</a>
-<ul>
-<li><a href="#standard-syntax">Standard syntax</a></li>
-<li><a href="#blade-includes">Blade includes</a></li>
-<li><a href="#enabling-blade-supported-markdown">Enabling Blade-supported Markdown</a></li>
-<li><a href="#limitations">Limitations</a></li>
-</ul>
-</li>
-<li><a href="#coloured-blockquotes">Coloured Blockquotes</a>
-<ul>
-<li><a href="#customizations">Customizations</a></li>
-<li><a href="#markdown-usage">Markdown usage</a></li>
-<li><a href="#limitations-1">Limitations</a></li>
-</ul>
-</li>
-<li><a href="#code-block-filepaths">Code Block Filepaths</a>
-<ul>
-<li><a href="#usage">Usage</a></li>
-<li><a href="#alternative-syntax">Alternative syntax</a></li>
-<li><a href="#advanced-usage">Advanced usage</a></li>
-<li><a href="#limitations-2">Limitations</a></li>
-</ul>
-</li>
-<li><a href="#configuration">Configuration</a>
-<ul>
-<li><a href="#full-configuration-reference">Full configuration reference</a></li>
-<li><a href="#raw-html-tags">Raw HTML Tags</a></li>
-<li><a href="#tailwind-typography-prose-classes">Tailwind Typography Prose Classes</a></li>
-</ul>
-</li>
-</ul>
-
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-blade-in-markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using Blade in Markdown
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#standard-syntax" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Standard syntax
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#blade-includes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Blade includes
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#enabling-blade-supported-markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Enabling Blade-supported Markdown
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#limitations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Limitations
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#coloured-blockquotes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Coloured Blockquotes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#customizations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Customizations
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown-usage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Markdown usage
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#limitations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Limitations
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#code-block-filepaths" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Code Block Filepaths
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#usage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Usage
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#alternative-syntax" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Alternative syntax
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#advanced-usage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Advanced usage
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#limitations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Limitations
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Configuration
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#full-configuration-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Full configuration reference
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#raw-html-tags" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Raw HTML Tags
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#tailwind-typography-prose-classes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Tailwind Typography Prose Classes
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
             </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Customization
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/collections.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/helpers.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Helpers and Utilities
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/troubleshooting.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/updating-hyde" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/updating-hyde.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Updating Hyde Projects
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -252,26 +370,30 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/advanced-features" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/advanced-features.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/build-tasks" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/build-tasks.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Custom Build Tasks
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             HydePage API
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/in-memory-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/in-memory-pages.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             InMemoryPages
+        </a>
+    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/navigation-api.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            Navigation API
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -282,38 +404,38 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/architecture-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/architecture-concepts.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/autodiscovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/autodiscovery.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Autodiscovery
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/automatic-routing" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/automatic-routing.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Automatic Routing
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/dynamic-data-discovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/dynamic-data-discovery.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Dynamic Data Discovery
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/page-models" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/page-models.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Page models
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/the-hydekernel" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/the-hydekernel.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The HydeKernel
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/extensions-api.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -324,26 +446,14 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/extensions.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
         </a>
     </li>                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Data</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -354,189 +464,229 @@
 </button>                                    </header>
                 <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/base-markdown-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Base Markdown Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/blade-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Blade Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/documentation-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Documentation Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/html-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Html Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-base-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Base Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-boot-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Boot Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-extensions-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Extensions Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-filesystem-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Filesystem Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-foundation-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Foundation Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-hyperlink-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Hyperlink Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-kernel-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel Kernel Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-string-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel String Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-kernel-view-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Kernel View Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/hyde-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Hyde Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/in-memory-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             In Memory Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/interacts-with-front-matter-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Interacts with Front Matter Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/markdown-page-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown Page Methods
         </a>
     </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            <a href="../../docs/2.x/markdown-post-methods.html" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown Post Methods
         </a>
     </li>                                    </ul>
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../">Back to home page</a>
-    </p>        </footer>
     </aside>
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Advanced Markdown</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
+            <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
+            <h1>Advanced Markdown</h1>
+        </header>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2 id="introduction" class="group w-fit scroll-mt-2">Introduction<a href="#introduction" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Since HydePHP makes heavy use of Markdown, there are some extra features and helpers created just for Hyde to make using Markdown even easier and more powerful!</p>
-<h2>Using Blade in Markdown<a id="using-blade-in-markdown" href="#using-blade-in-markdown" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="using-blade-in-markdown" class="group w-fit scroll-mt-2">Using Blade in Markdown<a href="#using-blade-in-markdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>A special feature in Hyde, is that you can use <a href="https://laravel.com/docs/10.x/blade">Laravel Blade</a> in Markdown files!</p>
 <p>To use Blade in your Markdown files, simply use the Blade shortcode directive, followed by your desired Blade string.</p>
-<h3>Standard syntax<a id="standard-syntax" href="#standard-syntax" class="heading-permalink" title="Permalink"></a></h3>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">Blade</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;">: {{ &quot;Hello World!&quot; }} // Will render: &#39;Hello World!&#39;</span></div></code></pre>
-<h3>Blade includes<a id="blade-includes" href="#blade-includes" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="standard-syntax" class="group w-fit scroll-mt-2">Standard syntax<a href="#standard-syntax" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<pre><code class="language-markdown"> [Blade]: {{ &quot;Hello World!&quot; }} // Will render: 'Hello World!'
+</code></pre>
+<h3 id="blade-includes" class="group w-fit scroll-mt-2">Blade includes<a href="#blade-includes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Only single-line shortcode directives are supported. If you need to use multi-line Blade code, use an <code>@include</code>
 directive to render a more complex Blade template. You can pass data to includes by specifying an array to the second argument.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">[</span><span style="color: #F07178;">Blade</span><span style="color: #89DDFF;">]:</span><span style="color: #F07178;"> </span><span style="color: #F07178;">@include</span><span style="color: #89DDFF;">(</span><span style="color: #C3E88D;">&quot;hello-world&quot;</span><span style="color: #89DDFF;">)</span></div><div class='line'><span style="color: #89DDFF;">[</span><span style="color: #F07178;">Blade</span><span style="color: #89DDFF;">]:</span><span style="color: #F07178;"> </span><span style="color: #F07178;">@include</span><span style="color: #89DDFF;">(</span><span style="color: #C3E88D;">&quot;hello&quot;, [&quot;name&quot; =&gt; &quot;World&quot;]</span><span style="color: #89DDFF;">)</span></div></code></pre>
-<h3>Enabling Blade-supported Markdown<a id="enabling-blade-supported-markdown" href="#enabling-blade-supported-markdown" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-markdown"> [Blade]: @include(&quot;hello-world&quot;)
+ [Blade]: @include(&quot;hello&quot;, [&quot;name&quot; =&gt; &quot;World&quot;])
+</code></pre>
+<h3 id="enabling-blade-supported-markdown" class="group w-fit scroll-mt-2">Enabling Blade-supported Markdown<a href="#enabling-blade-supported-markdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The feature is disabled by default since it allows arbitrary PHP to run, which could be a security risk, depending on your setup.
 However, if your Markdown is trusted, and you know it's safe, you can enable it in the <code>config/markdown.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/markdown.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enable_blade</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
-<h3>Limitations<a id="limitations" href="#limitations" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/markdown.php</small>'enable_blade' =&gt; true,
+</code></pre>
+<h3 id="limitations" class="group w-fit scroll-mt-2">Limitations<a href="#limitations" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>All shortcodes must be the first word on a new line, and only single-line shortcodes are supported.</p>
-<h2>Coloured Blockquotes<a id="coloured-blockquotes" href="#coloured-blockquotes" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="coloured-blockquotes" class="group w-fit scroll-mt-2">Coloured Blockquotes<a href="#coloured-blockquotes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The HydePHP Markdown converter also supports some extra directives and features. One of them being four different
 coloured blockquotes. Simply append the desired colour after the initial <code>&gt;</code> character.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">‎&gt; Normal Blockquote</span></div><div class='line'><span style="color: #A6ACCD;">‎&gt;info Info Blockquote</span></div><div class='line'><span style="color: #A6ACCD;">‎&gt;warning Warning Blockquote</span></div><div class='line'><span style="color: #A6ACCD;">‎&gt;danger Danger Blockquote</span></div><div class='line'><span style="color: #A6ACCD;">‎&gt;success Success Blockquote</span></div></code></pre>
+<pre><code class="language-markdown">‎&gt; Normal Blockquote
+‎&gt;info Info Blockquote
+‎&gt;warning Warning Blockquote
+‎&gt;danger Danger Blockquote
+‎&gt;success Success Blockquote
+</code></pre>
 <blockquote>
 <p>Normal Blockquote</p>
 </blockquote>
-<blockquote class="info"><p>Info Blockquote</p></blockquote>
-<blockquote class="warning"><p>Warning Blockquote</p></blockquote>
-<blockquote class="danger"><p>Danger Blockquote</p></blockquote>
-<blockquote class="success"><p>Success Blockquote</p></blockquote>
-<h3>Customizations<a id="customizations" href="#customizations" class="heading-permalink" title="Permalink"></a></h3>
+<blockquote class="border-blue-500">
+    <p>Info Blockquote</p>
+</blockquote>
+<blockquote class="border-amber-500">
+    <p>Warning Blockquote</p>
+</blockquote>
+<blockquote class="border-red-600">
+    <p>Danger Blockquote</p>
+</blockquote>
+<blockquote class="border-green-500">
+    <p>Success Blockquote</p>
+</blockquote>
+<h3 id="customizations" class="group w-fit scroll-mt-2">Customizations<a href="#customizations" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can easily customize these styles too by adding and editing the following in your <code>resources/app.css</code> file, and then recompiling your site styles.
 The code examples here use the Tailwind <code>@apply</code> directives, but you could also use <code>border-color: something;</code> just as well.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>resources/app.css</small><div class='line'><span style="color: #676E95;">/* Markdown Features */</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">prose</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">blockquote</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">info</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    @apply border-blue-500</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">prose</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">blockquote</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">success</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    @apply border-green-500</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">prose</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">blockquote</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">warning</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    @apply border-amber-500</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">prose</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">blockquote</span><span style="color: #89DDFF;">.</span><span style="color: #FFCB6B;">danger</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    @apply border-red-600</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
-<h3>Markdown usage<a id="markdown-usage" href="#markdown-usage" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-css"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>resources/app.css</small>/* Markdown Features */
+
+.prose blockquote.info {
+    @apply border-blue-500;
+}
+
+.prose blockquote.success {
+    @apply border-green-500;
+}
+
+.prose blockquote.warning {
+    @apply border-amber-500;
+}
+
+.prose blockquote.danger {
+    @apply border-red-600;
+}
+</code></pre>
+<h3 id="markdown-usage" class="group w-fit scroll-mt-2">Markdown usage<a href="#markdown-usage" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The coloured blockquotes also support inline Markdown, just like normal blockquotes.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">‎&gt;info Formatting is </span><span style="color: #89DDFF;">**</span><span style="color: #F07178;">supported</span><span style="color: #89DDFF;">**</span><span style="color: #A6ACCD;">!</span></div></code></pre>
-<h3>Limitations<a id="limitations-1" href="#limitations-1" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-markdown">‎&gt;info Formatting is **supported**!
+</code></pre>
+<h3 id="limitations-2" class="group w-fit scroll-mt-2">Limitations<a href="#limitations-2" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Note that these currently do not support multi-line blockquotes.</p>
-<h2>Code Block Filepaths<a id="code-block-filepaths" href="#code-block-filepaths" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="code-block-filepaths" class="group w-fit scroll-mt-2">Code Block Filepaths<a href="#code-block-filepaths" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>When browsing these documentation pages you may have noticed a label in the top right corner of code blocks specifying the file path.
 These are also created by using a custom Hyde feature that turns code comments into automatic code blocks.</p>
-<h3>Usage<a id="usage" href="#usage" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="usage" class="group w-fit scroll-mt-2">Usage<a href="#usage" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Simply add a code comment with the path in the <strong>first line</strong> of a fenced code block like so:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>_docs/advanced-markdown.md</small><div class='line'><span style="color: #C3E88D;">```</span><span style="color: #A6ACCD90;">php</span></div><div class='line'><span style="color: #A6ACCD;">‎</span><span style="color: #676E95;">// Filepath: hello-world.php</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #82AAFF;">echo</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #C3E88D;">```</span></div></code></pre>
+<pre><code class="language-markdown"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>_docs/advanced-markdown.md</small>```php
+‎// Filepath: hello-world.php
+
+echo 'Hello World!';
+```
+</code></pre>
 <p>Which becomes:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>hello-world.php</small><div class='line'><span style="color: #82AAFF;">echo</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div></code></pre>
-<h3>Alternative syntax<a id="alternative-syntax" href="#alternative-syntax" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>hello-world.php</small>echo 'Hello World!';
+</code></pre>
+<h3 id="alternative-syntax" class="group w-fit scroll-mt-2">Alternative syntax<a href="#alternative-syntax" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The syntax is rather forgiving, by design, and supports using both <code>//</code> and <code>#</code> for comments.
 The colon is also optional, and the 'filepath' string is case-insensitive. So the following is also perfectly valid:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C3E88D;">```</span><span style="color: #A6ACCD90;">js</span></div><div class='line'><span style="color: #A6ACCD;">‎</span><span style="color: #676E95;">// filepath hello.js</span></div><div class='line'><span style="color: #A6ACCD;">console</span><span style="color: #89DDFF;">.</span><span style="color: #82AAFF;">log</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #C3E88D;">```</span></div></code></pre>
+<pre><code class="language-markdown">```js
+‎// filepath hello.js
+console.log('Hello World!');
+```
+</code></pre>
 <p>If you have a newline after the filepath, like in the first example, it will be removed so your code stays readable.</p>
-<h3>Advanced usage<a id="advanced-usage" href="#advanced-usage" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="advanced-usage" class="group w-fit scroll-mt-2">Advanced usage<a href="#advanced-usage" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If you have enabled HTML in Markdown by setting the <code>allow_html</code> option to true in your <code>config/markdown.php</code> file,
 anything within the path label will be rendered as HTML. This means you can add links, or even images to the label.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span><a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md" rel="nofollow noopener" target="_blank">View file on Github</a></small><div class='line'><span style="color: #C3E88D;">```</span><span style="color: #A6ACCD90;">markdown</span></div><div class='line'><span style="color: #A6ACCD;">‎// Filepath: </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://github.com</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">View file on Github</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #C3E88D;">```</span></div></code></pre>
-<h3>Limitations<a id="limitations-2" href="#limitations-2" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code class="language-markdown"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span><a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md" rel="nofollow noopener" target="_blank">View file on Github</a></small>```markdown
+‎// Filepath: &lt;a href=&quot;https://github.com&quot;&gt;View file on Github&lt;/a&gt;
+```
+</code></pre>
+<h3 id="limitations-3" class="group w-fit scroll-mt-2">Limitations<a href="#limitations-3" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The filepaths are hidden on mobile devices using CSS to prevent them from overlapping with the code block.</p>
-<h2>Configuration<a id="configuration" href="#configuration" class="heading-permalink" title="Permalink"></a></h2>
-<h3>Full configuration reference<a id="full-configuration-reference" href="#full-configuration-reference" class="heading-permalink" title="Permalink"></a></h3>
+<h2 id="configuration" class="group w-fit scroll-mt-2">Configuration<a href="#configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="full-configuration-reference" class="group w-fit scroll-mt-2">Full configuration reference<a href="#full-configuration-reference" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>All Markdown-related configuration options are in the <code>config/markdown.php</code> file.
 You can find the full reference on the <a href="customization#markdown-configuration">Customization</a> page.</p>
-<h3>Raw HTML Tags<a id="raw-html-tags" href="#raw-html-tags" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="raw-html-tags" class="group w-fit scroll-mt-2">Raw HTML Tags<a href="#raw-html-tags" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>To convert Markdown, HydePHP uses the GitHub Flavored Markdown extension, which strips out potentially unsafe HTML.
 If you want to allow all arbitrary HTML tags, and understand the risks involved, you can enable all HTML tags by setting
 the <code>allow_html</code> option to <code>true</code> in your <code>config/markdown.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/markdown.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">allow_html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/markdown.php</small>'allow_html' =&gt; true,
+</code></pre>
 <p>This will add and configure the <code>DisallowedRawHtml</code> CommonMark extension so that no HTML tags are stripped out.</p>
-<h3>Tailwind Typography Prose Classes<a id="tailwind-typography-prose-classes" href="#tailwind-typography-prose-classes" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="tailwind-typography-prose-classes" class="group w-fit scroll-mt-2">Tailwind Typography Prose Classes<a href="#tailwind-typography-prose-classes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP uses the <a href="https://tailwindcss.com/docs/typography-plugin">Tailwind Typography</a> to style rendered Markdown.
 We do this by adding the <code>.prose</code> CSS class to the HTML elements containing the rendered Markdown, using the built-in Blade components.</p>
 <p>You can easily edit these classes, for example if you want to customize the prose colours, in the <code>config/markdown.php</code> file.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight has-add-lines has-remove-lines has-diff-lines' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="filepath not-prose"><span class="sr-only">Filepath: </span>config/markdown.php</small><div class='line line-remove line-has-background' style='background-color: #ff9cac20'><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">prose_classes</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">=&gt;</span><span style="color: #f07178;"> </span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">prose dark:prose-invert</span><span style="color: #f07178;">&#39;</span><span style="color: #f07178;">,</span><span style="color: #f07178;"> </span></div><div class='line line-add line-has-background' style='background-color: #89DDFF20'><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">prose_classes</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">=&gt;</span><span style="color: #C3E88D;"> </span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">prose dark:prose-invert prose-img:inline</span><span style="color: #C3E88D;">&#39;</span><span style="color: #C3E88D;">,</span><span style="color: #C3E88D;"> </span></div></code></pre>
+<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/markdown.php</small>'prose_classes' =&gt; 'prose dark:prose-invert', // [tl! remove]
+'prose_classes' =&gt; 'prose dark:prose-invert prose-img:inline', // [tl! add]
+</code></pre>
 <p>Please note that if you add any new classes, you may need to recompile your CSS file.</p>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
-<p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -546,7 +696,7 @@ We do this by adding the <code>.prose</code> CSS class to the HTML elements cont
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -556,46 +706,168 @@ We do this by adding the <code>.prose</code> CSS class to the HTML elements cont
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/1.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/1.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

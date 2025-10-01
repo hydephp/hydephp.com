@@ -12,6 +12,12 @@
 
 return [
 
+    'versions' => [
+        '1.x' => 'old',
+        '2.x' => 'current',
+        // 'master' => 'upcoming',
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Sidebar Settings
@@ -31,48 +37,22 @@ return [
         'collapsible' => true,
 
         // Should the sidebar footer be shown?
-        'footer' => true,
-    ],
+        'footer' => false,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Sidebar Page Order
-    |--------------------------------------------------------------------------
-    |
-    | In the generated Documentation pages the navigation links in the sidebar
-    | default to sort alphabetically. You can reorder the page identifiers
-    | in the list below, and the links will get sorted in that order.
-    |
-    | Internally, the items listed will get a position priority of 500 + the order its found in the list.
-    | Link items without an entry here will have fall back to the default priority of 999, putting them last.
-    |
-    | You can also set explicit priorities in front matter.
-    |
-    */
+        'order' => [
+            'readme',
+            'installation',
+            'getting-started',
+        ],
 
-    'sidebar_order' => [
-        'readme',
-        'installation',
-        'getting-started',
-    ],
+        'labels' => [
+            'extensions' => 'Extensions & Integrations',
+        ],
 
-    'sidebar_group_labels' => [
-        'extensions' => 'Extensions & Integrations',
-    ],
+        'table_of_contents' => [
+            'enabled' => true,
+        ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Table of Contents Settings
-    |--------------------------------------------------------------------------
-    |
-    | The Hyde Documentation Module comes with a fancy Sidebar that, by default,
-    | has a Table of Contents included. Here, you can configure its behavior,
-    | content, look and feel. You can also disable the feature completely.
-    |
-    */
-
-    'table_of_contents' => [
-        'enabled' => true,
         'min_heading_level' => 2,
         'max_heading_level' => 3,
     ],
@@ -97,6 +77,7 @@ return [
     */
 
     'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
+    'source_file_location_base_v1' => 'https://github.com/hydephp/develop/blob/1.x/docs',
     'edit_source_link_text' => 'Edit Page',
     'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
 

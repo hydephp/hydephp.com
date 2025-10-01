@@ -92,7 +92,7 @@
                 <small class="relative mb-4  text-xl font-black leading-none  text-black lg:text-2xl xl:text-3xl md:text-left text-center">
                     The Static Site Generator You've Been Waiting For, is here.
                 </small>
-                <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)" src="{{ Asset::mediaLink('logo.svg') }}" alt="HydePHP Logo">
+                <img class="absolute top-0 right-0 hidden w-20 -mt-16 mr-48 transform rotate-45 lg:block xl:mr-48 xl:-mt-14" style="transform: rotate(35deg)" src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo">
             </div>
             <p class="my-3 text-base text-center text-gray-600 xl:text-xl md:text-left ">
                 Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown.
@@ -106,7 +106,7 @@
             </a>
         </div>
         <div class="flex flex-col items-end justify-center w-5/6 h-auto pl-0 pr-0 mt-16 mb-12 sm:pl-20 sm:pr-8 xl:pr-0 md:mt-0 md:h-full sm:w-2/3 lg:-mt-4">
-            <img src="{{ Asset::mediaLink('header.png') }}" alt="Two developers collaboratively working on a static site displayed on a large monitor, illustrating the ease of website creation with HydePHP.">
+            <img src="{{ Asset::get('header.png') }}" alt="Two developers collaboratively working on a static site displayed on a large monitor, illustrating the ease of website creation with HydePHP.">
         </div>
     </div>
     <svg class="absolute bottom-0 w-screen text-violet-300 fill-current" viewBox="0 0 1400 50" xmlns="http://www.w3.org/2000/svg">

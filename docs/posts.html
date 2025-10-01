@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=42bfc63c1a1bdbd3b188017214a25f1d">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+    
 
-
-
+    
+    
 
 
 
@@ -70,9 +71,9 @@
 
     <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="./" class="font-bold px-4">
-	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
 		<div class="ml-auto">
@@ -103,19 +104,19 @@
 	</div>
 
 	<div id="main-navigation-links"
-		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="./"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+					<a href="./" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts" aria-current="page" class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Blog</a>				</li>
+					<a href="posts" aria-current="page" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100 navigation-link-active border-l-4 border-indigo-500 md:border-none font-medium -ml-6 pl-5 md:ml-0 md:pl-0 bg-gray-100 dark:bg-gray-800 md:bg-transparent dark:md:bg-transparent">Blog</a>				</li>
 							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
 		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
@@ -232,7 +233,7 @@
                             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span class="opacity-75">by</span>
                                 <span itemprop="name">
-                                        HydePHP Team
+                                        Hydephp Team
                                     </span>
             </span>
             </footer>
@@ -419,7 +420,7 @@
                             <span itemprop="author" itemscope itemtype="https://schema.org/Person">
                 <span class="opacity-75">by</span>
                                 <span itemprop="name">
-                                        HydePHP Team
+                                        Hydephp Team
                                     </span>
             </span>
             </footer>
@@ -1483,7 +1484,6 @@
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
 				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
-
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
 				<button title="Scroll to top">
@@ -1496,7 +1496,7 @@
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

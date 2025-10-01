@@ -25,7 +25,7 @@
 use Hyde\Enums\Feature;
 use Hyde\Facades\Author;
 use Hyde\Facades\Meta;
-use Hyde\Framework\Features\Navigation\NavItem;
+use Hyde\Facades\Navigation;
 
 return [
 
@@ -163,7 +163,8 @@ return [
         \Hyde\Pages\BladePage::class => '_pages',
         \Hyde\Pages\MarkdownPage::class => '_pages',
         \Hyde\Pages\MarkdownPost::class => '_posts',
-        \Hyde\Pages\DocumentationPage::class => '_docs',
+        \Hyde\Pages\DocumentationPage::class => '_docs/2.x',
+        \App\Extend\Pages\v1DocumentationPage::class => '_docs/1.x',
     ],
 
     /*
@@ -185,7 +186,8 @@ return [
         \Hyde\Pages\BladePage::class => '',
         \Hyde\Pages\MarkdownPage::class => '',
         \Hyde\Pages\MarkdownPost::class => 'posts',
-        \Hyde\Pages\DocumentationPage::class => 'docs/1.x',
+        \Hyde\Pages\DocumentationPage::class => 'docs/2.x',
+        \App\Extend\Pages\v1DocumentationPage::class => 'docs/1.x',
     ],
 
     /*
@@ -279,8 +281,7 @@ return [
     */
 
     'authors' => [
-        Author::create(
-            username: 'emma',
+        'emma' => Author::create(
             name: 'Emma',
             website: 'https://twitter.com/EmmaDSCodes'
         ),
@@ -348,7 +349,7 @@ return [
             'testimonials',
             'accessibility',
             'sitemap',
-            'docs',
+            'docs/2.x/index',
             'features', // merged with about
         ],
 
@@ -356,7 +357,7 @@ return [
         // To get started quickly, you can uncomment the defaults here.
         // See the documentation link above for more information.
         'custom' => [
-            NavItem::forLink('https://github.com/hydephp/hyde', 'GitHub', 1200),
+            Navigation::item('https://github.com/hydephp/hyde', 'GitHub', 1200),
         ],
 
         // How should pages in subdirectories be displayed in the menu?
@@ -380,7 +381,7 @@ return [
     |
     */
 
-    'enable_cache_busting' => true,
+    'cache_busting' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -483,10 +484,5 @@ return [
 
     // Where should the build manifest be saved? (Relative to project root, for example _site/build-manifest.json)
     'build_manifest_path' => 'app/storage/framework/cache/build-manifest.json',
-
-    // Here you can specify HydeFront version and URL for when loading app.css from the CDN.
-    // Only change these if you know what you're doing as some versions may be incompatible with your Hyde version.
-    'hydefront_version' => \Hyde\Framework\Services\AssetService::HYDEFRONT_VERSION,
-    'hydefront_cdn_url' => \Hyde\Framework\Services\AssetService::HYDEFRONT_CDN_URL,
 
 ];

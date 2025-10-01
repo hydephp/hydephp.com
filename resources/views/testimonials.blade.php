@@ -15,14 +15,14 @@
             </div>
             <div class="flex flex-col items-center justify-center max-w-2xl py-8 mx-auto xl:flex-row xl:max-w-full flex-wrap">
                 @php
-                    $testimonials = \App\Extend\DataCollections::markdown('testimonials');
+                    $testimonials = \App\Extend\DataCollection::markdown('testimonials');
 
                     // Sort by Markdown length
-                    $testimonials = $testimonials->sortByDesc(function (\App\DataCollections\Types\Testimonials $testimonial) {
+                    $testimonials = $testimonials->sortByDesc(function (\App\DataCollection\Types\Testimonials $testimonial) {
                         return strlen($testimonial->markdown->body());
                     });
                 @endphp
-                @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
+                @php /** @var \App\DataCollection\Types\Testimonials $testimonial */ @endphp
                 @foreach($testimonials as $file => $testimonial)
                     @continue($file === 'testimonials/README.md')
                     <div class="w-full xl:w-1/2 xl:px-4 h-auto self-baseline">
@@ -70,7 +70,7 @@
                                 </h3>
                             </div>
                             @if($testimonial->profile_image)
-                            <img class="flex-shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
+                            <img class="shrink-0 object-cover w-24 h-24 mb-5 bg-gray-300 rounded-full md:mb-0"
                                  onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/hydephp/cdn-static@master/avatar.png';"
                                  src="{{ $testimonial->profile_image }}"
                                  alt="Profile image">
