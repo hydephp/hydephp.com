@@ -11,13 +11,11 @@
 * See https://hydephp.com/docs/1.x/managing-assets#loading-from-cdn
 */
 
-@import '~hydefront/dist/hyde.css';
+@import 'hydefront/components/torchlight.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-[x-cloak] { display: none !important; }
+@config '../../tailwind.config.js';
 
 blockquote.info {
 	border-color: DodgerBlue;
