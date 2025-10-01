@@ -24,8 +24,17 @@
 
     // Resolve a URL for a version: same page if exists, else docs/{ver}/index
     $urlFor = function (string $ver) use ($buildCandidate) {
-        if ($candidate = Routes::get($buildCandidate($ver))) return $candidate->getLink();
-        if ($index = Routes::get("docs/{$ver}/index")) return $index->getLink();
+        $candidateKey = $buildCandidate($ver);
+
+        if (Routes::exists($candidateKey)) {
+            return Routes::get($candidateKey)->getLink();
+        }
+
+        $indexKey = "docs/{$ver}/index";
+        if (Routes::exists($indexKey)) {
+            return Routes::get($indexKey)->getLink();
+        }
+
         return '#';
     };
 @endphp

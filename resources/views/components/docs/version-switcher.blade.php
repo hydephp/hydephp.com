@@ -18,10 +18,20 @@
         return "docs/{$ver}/{$slug}";
     };
 
+    // Resolve a URL for a version: same page if exists, else docs/{ver}/index
     $urlFor = function (string $ver) use ($buildCandidate) {
-        if ($candidate = Routes::get($buildCandidate($ver))) return $candidate->getLink();
-        if ($index = Routes::get("docs/{$ver}/index")) return $index->getLink();
-        return null;
+        $candidateKey = $buildCandidate($ver);
+
+        if (Routes::exists($candidateKey)) {
+            return Routes::get($candidateKey)->getLink();
+        }
+
+        $indexKey = "docs/{$ver}/index";
+        if (Routes::exists($indexKey)) {
+            return Routes::get($indexKey)->getLink();
+        }
+
+        return '#';
     };
 
     // Shared button style to keep heights identical
@@ -43,5 +53,5 @@
     </button>
 </div>
 <style>
-@media (min-width: 768px){ #searchMenuButton{ display:none !important; } }
+@media (min-width: 768px){ #search-menu-button{ display:none !important; } }
 </style>
