@@ -11,13 +11,17 @@
 @endphp
 
 <nav aria-label="Main navigation" id="main-navigation"
-     class="@if($isHomepage) absolute @if($bannerEnabled) top-12 @else top-0 @endif left-0 right-0 z-50 @else relative @endif">
+     class="@if($isHomepage) absolute @if($bannerEnabled) top-13 @else top-0 @endif left-0 right-0 z-50 @else relative @endif">
     <div class="@if($isHomepage) backdrop-blur-md bg-gradient-to-b from-transparent to-[rgba(8,15,30,.35)] border-b border-white/10 @else bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none @endif">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
                 <div class="flex items-center">
                     @include('hyde::components.navigation.navigation-brand')
+				</div>
 
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
 					<!-- Desktop Navigation Links -->
 					<div class="hidden md:flex items-center gap-8">
 						@foreach ($navigation->getItems() as $item)
@@ -55,7 +59,7 @@
 					</div>
 
 					@if(!$isHomepage)
-					<div class="ml-auto hidden md:block">
+					<div class="hidden md:block">
 						<x-hyde::navigation.theme-toggle-button />
 					</div>
 					@endif
