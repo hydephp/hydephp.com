@@ -4,10 +4,14 @@
 
     // Keep this for redesign styling conditions
     $isHomepage = isset($page) && $page->routeKey === 'index';
+
+    // Check if banner is enabled
+    $bannerConfig = config('hyde.banner');
+    $bannerEnabled = $bannerConfig && isset($bannerConfig['text']) && $bannerConfig['enabled'];
 @endphp
 
 <nav aria-label="Main navigation" id="main-navigation"
-     class="@if($isHomepage) absolute top-0 left-0 right-0 z-50 @else relative @endif">
+     class="@if($isHomepage) absolute @if($bannerEnabled) top-12 @else top-0 @endif left-0 right-0 z-50 @else relative @endif">
     <div class="@if($isHomepage) backdrop-blur-md bg-gradient-to-b from-transparent to-[rgba(8,15,30,.35)] border-b border-white/10 @else bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none @endif">
         <div class="mx-auto max-w-7xl px-6">
             <div class="flex h-16 md:h-18 items-center justify-between">
