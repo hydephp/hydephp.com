@@ -995,7 +995,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Realtime Compiler</h1>
@@ -1051,8 +1051,7 @@ button[aria-label="Open search window"]:hover,
 allowing you to preview your static site on a local development server without having to rebuild the site.</p>
 <h3>Usage</h3>
 <p>To start the server, run the following command from a terminal in your project directory:</p>
-<pre><code class="language-bash">php hyde serve
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
 <p>This will start a local development server at <code>http://localhost:8080</code></p>
 <blockquote class="border-amber-500">
     <p>Please note that the server is designed for local development, and should not be used on a public network.</p>
@@ -1069,20 +1068,7 @@ allowing you to preview your static site on a local development server without h
 </ul>
 <h3>Configuration</h3>
 <p>The server can be configured in the <code>config/hyde.php</code> file to change the port, host, and to customize its features.</p>
-<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'server' =&gt; [
-    // The default port the preview is served on
-    'port' =&gt; env('SERVER_PORT', 8080),
-
-    // The default host the preview is served on
-    'host' =&gt; env('SERVER_HOST', 'localhost'),
-
-    // Should preview pages be saved to the output directory?
-    'save_preview' =&gt; true,
-
-    // Should the live edit feature be enabled?
-    'live_edit' =&gt; env('SERVER_LIVE_EDIT', true),
-],
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block -top-1 right-1"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// The default port the preview is served on</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">port</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_PORT</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">8080</span><span style="color: #89DDFF;">),</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// The default host the preview is served on</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">host</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_HOST</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">localhost</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Should preview pages be saved to the output directory?</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">save_preview</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Should the live edit feature be enabled?</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">live_edit</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_LIVE_EDIT</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
 <h3>Live dashboard</h3>
 <h4>Usage</h4>
 <p>The realtime compiler comes with a live dashboard that you can access at <code>http://localhost:8080/dashboard</code>.</p>
@@ -1090,20 +1076,7 @@ allowing you to preview your static site on a local development server without h
 <p>The live dashboard is not saved to your static site, and is only available through the development server.</p>
 <h4>Configuration</h4>
 <p>The dashboard can be customized, and disabled, in the <code>config/hyde.php</code> file.</p>
-<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'server' =&gt; [
-    // Configure the realtime compiler dashboard
-    'dashboard' =&gt; [
-        // Should the realtime compiler dashboard be enabled?
-        'enabled' =&gt; env('SERVER_DASHBOARD', true),
-
-        // Can the dashboard make edits to the project file system?
-        'interactive' =&gt; true,
-
-        // Should the dashboard show tips?
-        'tips' =&gt; true,
-    ],
-],
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block -top-1 right-1"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Configure the realtime compiler dashboard</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">dashboard</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Should the realtime compiler dashboard be enabled?</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_DASHBOARD</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true),</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Can the dashboard make edits to the project file system?</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">interactive</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Should the dashboard show tips?</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">tips</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
 <p><em>The dashboard was added in Realtime Compiler v3.0.0 (March 2023), with interactive features added in v3.1.0 (October 2023)</em></p>
 <h3>Live edit</h3>
 <h4>Usage</h4>
@@ -1120,18 +1093,25 @@ When you're done, click the save button to save the changes to the page's source
 <h4>Configuration</h4>
 <p>The live editor can be disabled in the <code>config/hyde.php</code> file.
 The live editor plugin code will not be saved to your static site.</p>
-<pre><code class="language-php"><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block top-0 right-0"><span class="sr-only">Filepath: </span>config/hyde.php</small>'server' =&gt; [
-    'live_edit' =&gt; env('SERVER_LIVE_EDIT', true),
-],
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><small class="relative float-right opacity-50 hover:opacity-100 transition-opacity duration-250 not-prose hidden md:block -top-1 right-1"><span class="sr-only">Filepath: </span>config/hyde.php</small><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">server</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">live_edit</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">env</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">SERVER_LIVE_EDIT</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
 <h3>Source code</h3>
 <ul>
 <li><strong>GitHub</strong>: <a href="https://github.com/hydephp/realtime-compiler">hydephp/realtime-compiler</a></li>
 <li><strong>Packagist</strong>: <a href="https://packagist.org/packages/hyde/realtime-compiler">hydephp/realtime-compiler</a></li>
 </ul>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/extensions/realtime-compiler.md">
         Edit Page
     </a>

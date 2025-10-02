@@ -132,7 +132,7 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="introducing-the-hydephp-github-action" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="introducing-the-hydephp-github-action">
             <meta itemprop="url" content="https://hydephp.com/posts/introducing-the-hydephp-github-action">
     
@@ -184,36 +184,10 @@
 <h2>Getting Started</h2>
 <h3>Starter Workflow</h3>
 <p>The most basic usage of the action involves building the site and uploading the result as a workflow artifact. Here's a simple example:</p>
-<pre><code class="language-yaml">name: Build HydePHP Site
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: hydephp/action@master
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build HydePHP Site</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FF9CAC;">on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">push</span><span style="color: #89DDFF;">]</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #F07178;">jobs</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">build</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v3</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hydephp/action@master</span></div></code></pre>
 <h3>Deployment to GitHub Pages</h3>
 <p>To deploy your site directly to GitHub Pages, use the following example:</p>
-<pre><code class="language-yaml">name: Build and Deploy HydePHP Site
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v3
-      - uses: hydephp/action@master
-        with:
-          deploy-to: &quot;pages&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build and Deploy HydePHP Site</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FF9CAC;">on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #C3E88D;">push</span><span style="color: #89DDFF;">]</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #F07178;">jobs</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">build</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">permissions</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">contents</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">read</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">pages</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">write</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">id-token</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">write</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v3</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hydephp/action@master</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">deploy-to</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">pages</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>It's that easy! Just remember to configure your repository to use GitHub Pages using the Actions workflow, as shown in the image below.</p>
 <p><img src="https://github.com/hydephp/action/assets/95144705/73c8b5ac-b26b-4763-b29b-ad118c1ea6a7" alt="1: Visit the settings tab of your repository. 2: Click on the &quot;Pages&quot; tab in the sidebar. 3: Under &quot;Build and deployment&quot;, select &quot;GitHub Actions&quot; from the &quot;Source&quot; dropdown." /></p>
 <h3>Configuration Options</h3>
@@ -230,6 +204,11 @@ jobs:
 <h2>Conclusion</h2>
 <p>The new HydePHP GitHub Action brings simplicity and efficiency to the process of building and deploying your HydePHP projects. Why not try it out today?</p>
 <p>In the words of those that have tried it already: &quot;This thing literally worked right out of the box. Honestly, what!? Since when do things work so easily and so smoothly?&quot; - <a href="https://twitter.com/peteralexbizjak/status/1748818947615412278">Peter Aleksander Bizjak</a></p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>

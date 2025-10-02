@@ -1070,7 +1070,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Autodiscovery</h1>
@@ -1166,41 +1166,27 @@ that all the heavy lifting only happens when you actually need it. Once booted, 
 until the console application is terminated.</p>
 <p>The kernel data is primarily stored in three collections that get generated during the kernel's boot process.
 Let's take a look at a simplified version of the kernel's boot method to see how this works.</p>
-<pre><code class="language-php">public function boot(): void
-{
-    $this-&gt;files = FileCollection::boot($this);
-    $this-&gt;pages = PageCollection::boot($this);
-    $this-&gt;routes = RouteCollection::boot($this);
-
-    // Scroll down to see what this is used for
-    $this-&gt;booted = true;
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">files </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">FileCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">routes </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">RouteCollection</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">($this);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// Scroll down to see what this is used for</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Here you'll see that we boot the three collections. This is where all the autodiscovery magic happens!</p>
 <h4>Deep dive into lazy-booting</h4>
 <p>If you're curious about how the kernel is lazy-booted, here's how it works!
 Feel free to skip this section if this doesn't interest you.</p>
-<pre><code class="language-php">// This will boot the kernel if it hasn't been booted yet
-public function pages(): PageCollection
-{
-    $this-&gt;needsToBeBooted();
-
-    return $this-&gt;pages;
-}
-
-// This is the method that triggers the boot process
-protected function needsToBeBooted(): void
-{
-    if (! $this-&gt;booted) {
-        $this-&gt;boot();
-    }
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// This will boot the kernel if it hasn&#39;t been booted yet</span></div><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">PageCollection</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">pages</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// This is the method that triggers the boot process</span></div><div class='line'><span style="color: #C792EA;">protected</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">needsToBeBooted</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">if</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(!</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">booted</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Yeah, it's really unglamorous I know. But it works! Having it like this will ensure that any time you call <code>Hyde::pages()</code>,
 that underlying collection will always have been booted and be ready to use.</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/architecture-concepts/autodiscovery.md">
         Edit Page
     </a>

@@ -1100,7 +1100,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Compile and Deploy Your Site</h1>
@@ -1155,14 +1155,11 @@ button[aria-label="Open search window"]:hover,
             <h2>Running the Build Command</h2>
 <p>Now that you have some amazing content, you'll want to compile your site into static HTML.</p>
 <p><strong>This is as easy as executing the <code>build</code> command:</strong></p>
-<pre><code class="language-bash">php hyde build
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p><strong>You can also compile a single file:</strong></p>
-<pre><code class="language-bash">php hyde rebuild &lt;filepath&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">filepath</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p><strong>And, you can even start a development server to compile your site on the fly:</strong></p>
-<pre><code class="language-bash">php hyde serve
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
 <h3>Further reading</h3>
 <blockquote class="border-blue-500">
     <p><b>Key Concept: Autodiscovery</b></p> <p>When building the site, Hyde will use all the routes generated when the auto-discovery process scanned your source directories for files. The command will then compile them into static HTML using the appropriate layout depending on what kind of page it is. Thanks to Hyde, the days of manually defining routes are over!</p>
@@ -1214,9 +1211,19 @@ deploys the site automatically when the source is updated using <a href="https:/
 <p>Next, since HydePHP automatically generates sitemaps and RSS feeds, you should take advantage of these by submitting them to search engines. For example, Google Search Console and Bing Webmaster Tools. This will jumpstart the indexing process, and make sure new pages are indexed quickly. You will also be able to see how your site is performing in search results.</p>
 <h4>Social sharing</h4>
 <p>Finally, keep sharing your content, so other people can find your site!</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/creating-content/compile-and-deploy.md">
         Edit Page
     </a>

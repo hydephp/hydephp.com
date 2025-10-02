@@ -1029,7 +1029,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             
@@ -1095,38 +1095,33 @@ directories, and create a route index for all of them. This index works as a two
 Nevertheless, the routing system provides several helpers that you can optionally use in your Blade views to
 automatically resolve relative links and other useful features.</p>
 <p>You can see all the routes and their corresponding source files by running the <code>hyde route:list</code> command.</p>
-<pre><code class="language-bash">php hyde route:list
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
 <h3>Accessing routes</h3>
 <p>Each route in your site is represented by a Route object. It's very easy to get a Route object instance from the Router's index.
 There are a few ways to do this, but most commonly you'll use the Routes facade's <code>get()</code> method where you provide a route key,
 and it will return the Route object. The route key is generally <code>&lt;page-output-directory/page-identifier&gt;</code>. Here are some examples:</p>
-<pre><code class="language-php">// Source file: _pages/index.md/index.blade.php
-// Compiled file: _site/index.html
-Routes::get('index')
-
-// Source file: _posts/my-post.md
-// Compiled file: _site/posts/my-post.html
-Routes::get('posts/my-post')
-
-// Source file: _docs/readme.md
-// Compiled file: _site/docs/readme.html
-Routes::get('docs/readme')
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Source file: _pages/index.md/index.blade.php</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/index.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Source file: _posts/my-post.md</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/posts/my-post.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Source file: _docs/readme.md</span></div><div class='line'><span style="color: #676E95;">// Compiled file: _site/docs/readme.html</span></div><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">docs/readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <h3>Using the <code>x-link</code> component</h3>
 <p>When designing Blade layouts it can be useful to use the <code>x-link</code> component to automatically resolve relative links.</p>
 <p>You can of course use it just like a normal anchor tag like so:</p>
-<pre><code class="language-blade">&lt;x-link href=&quot;index.html&quot;&gt;Home&lt;/x-link&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>But where it really shines is when you supply a route. This will then resolve the proper relative link, and format it to use pretty URLs if your site is configured to use them.</p>
-<pre><code class="language-blade">&lt;x-link :href=&quot;Routes::get('index')&quot;&gt;Home&lt;/x-link&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">:href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Routes::get(&#39;index&#39;)</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>You can of course, also supply extra attributes like classes:</p>
-<pre><code class="language-blade">&lt;x-link :href=&quot;Routes::get('index')&quot; class=&quot;btn btn-primary&quot;&gt;Home&lt;/x-link&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">:href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Routes::get(&#39;index&#39;)</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">btn btn-primary</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Home</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-link</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/architecture-concepts/automatic-routing.md">
         Edit Page
     </a>

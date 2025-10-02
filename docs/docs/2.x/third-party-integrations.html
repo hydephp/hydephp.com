@@ -995,7 +995,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Integrations with Third-Party Services</h1>
@@ -1040,20 +1040,20 @@ which is automatically enabled once you add an API token to your <code>.env</cod
 It is entirely free for personal and open source projects, as seen on their <a href="https://torchlight.dev/#pricing">pricing page</a>.</p>
 <p>When you have an API token, set it in the <code>.env</code> file in the root directory of your project.
 Once a token is set, Hyde will automatically enable the CommonMark extension.</p>
-<pre><code class="language-env">TORCHLIGHT_TOKEN=torch_&lt;your-api-token&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="env" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">TORCHLIGHT_TOKEN</span><span style="color: #89DDFF;">=</span><span style="color: #C3E88D;">torch_&lt;your-api-token&gt;</span></div></code></pre>
 <h3 id="attribution-and-configuration" class="group w-fit scroll-mt-2">Attribution and configuration<a href="#attribution-and-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Note that for the free plan you need to provide an attribution link. Thankfully Hyde injects a customizable link
 automatically to all pages that use Torchlight. You can of course disable and customize this in the <code>config/torchlight.php</code> file.</p>
-<pre><code class="language-php">'attribution' =&gt; [
-    'enabled' =&gt; true,
-    'markdown' =&gt; 'Syntax highlighting by &lt;a href=&quot;https://torchlight.dev/&quot; rel=&quot;noopener nofollow&quot;&gt;Torchlight.dev&lt;/a&gt;',
-],
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">attribution</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">markdown</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Syntax highlighting by &lt;a href=&quot;https://torchlight.dev/&quot; rel=&quot;noopener nofollow&quot;&gt;Torchlight.dev&lt;/a&gt;</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
 <p>Don't have this file? Run <code>php hyde vendor:publish</code> to publish it.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/extensions/third-party-integrations.md">
         Edit Page
     </a>

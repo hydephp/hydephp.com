@@ -1070,7 +1070,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>The Extensions API</h1>
@@ -1150,21 +1150,9 @@ See the <a href="https://laravel.com/docs/10.x/packages">Laravel package develop
 If needed, you can also register discovery handlers which can run custom logic at various parts of the boot process.</p>
 <p>In this article we will create an extension that registers a new type of page, a <code>JsonPageExtension</code>.</p>
 <p>The first step is to create a class that extends the <code>HydeExtension</code> class:</p>
-<pre><code class="language-php">use Hyde\Foundation\Concerns\HydeExtension;
-
-class JsonPageExtension extends HydeExtension {
-    //
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Concerns</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeExtension</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">JsonPageExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HydeExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">//</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>In here, we will register our extension class name in the <code>getPageClasses</code> method:</p>
-<pre><code class="language-php">class JsonPageExtension extends HydeExtension {
-    public static function getPageClasses(): array {
-        return [
-            JsonPage::class,
-        ];
-    }
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">JsonPageExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HydeExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">getPageClasses</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #FFCB6B;">JsonPage</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">];</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Hyde will then use the information from the <code>JsonPage</code> class to automatically discover the pages when booting the Kernel.
 For example, if you specify the file extension and source directory, that is all Hyde needs to know to discover the pages.</p>
 <p>If our pages need more complex discovery logic, we can create custom handlers. so let's take a quick look at that next.</p>
@@ -1173,30 +1161,13 @@ For example, if you specify the file extension and source directory, that is all
 page models cannot provide the information required for Hyde run the standard auto-discovery, and thus need custom logic.</p>
 <p>Usually in these cases, you would only need to add files to the Kernel <code>FileCollection</code>,
 though the <code>HydeExtension</code> class offers the following three discovery handlers, in case you need them:</p>
-<pre><code class="language-php">/** Runs during file discovery */
-public function discoverFiles(FileCollection $collection): void;
-
-/** Runs during page discovery */
-public function discoverPages(PageCollection $collection): void;
-
-/** Runs during route discovery */
-public function discoverRoutes(RouteCollection $collection): void;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** Runs during file discovery */</span></div><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">discoverFiles</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">FileCollection</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">/** Runs during page discovery */</span></div><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">discoverPages</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">PageCollection</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">/** Runs during route discovery */</span></div><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">discoverRoutes</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">RouteCollection</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #89DDFF;">;</span></div></code></pre>
 <p>Any of these can be implemented in your extension class, and they will be called during the discovery. As you can see,
 the instance of the discovery collection is injected into the method for you to interact with.</p>
 <h4>Discovery handler example</h4>
 <p>Let's go crazy and implement a discovery handler to collect <code>JsonPage</code> files from an external API! We will do this
 by implementing the <code>discoverPages</code> method in our extension class, and from there inject pages retrieved from our API.</p>
-<pre><code class="language-php">class JsonPageExtension extends HydeExtension {
-    public function discoverPages(PageCollection $collection): void {
-        $pages = Http::get('https://example.com/my-api')-&gt;collect();
-
-        $pages-&gt;each(function (array $page) use ($collection): void {
-            $collection-&gt;addPage(JsonPage::fromArray($page));
-        });
-    }
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">JsonPageExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HydeExtension</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">discoverPages</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">PageCollection</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">pages </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Http</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com/my-api</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)-&gt;</span><span style="color: #82AAFF;">collect</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">pages</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">each</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">use</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">collection</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">addPage</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">JsonPage</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">fromArray</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">));</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">});</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <p>Since the discovery steps are handled sequentially, the added pages will automatically be discovered as routes without
 us having to implement that handler method. As we inject the page objects directly, we bypass the need for the <code>FileCollection</code>.</p>
 <h2>Registering Your Extension</h2>
@@ -1204,41 +1175,29 @@ us having to implement that handler method. As we inject the page objects direct
 <p>It's important that your class is registered before the HydeKernel boots. Therefore, an excellent place for this is the
 <code>register</code> method of your extensions service provider,  where you call the <code>registerExtension</code> method of the <code>HydeKernel</code>
 singleton instance, which you can access via the <code>Hyde\Hyde</code> facade, or via the service container.</p>
-<pre><code class="language-php">use Hyde\Hyde;
-use Hyde\Foundation\HydeKernel;
-use Illuminate\Support\ServiceProvider;
-
-class JsonPageExtensionServiceProvider extends ServiceProvider {
-    public function register(): void {
-        // Via the service container:
-        $this-&gt;app-&gt;make(HydeKernel::class)-&gt;registerExtension(JsonPageExtension::class);
-
-        // Or via the facade:
-        Hyde::registerExtension(JsonPageExtension::class);
-    }
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Illuminate</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">ServiceProvider</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">JsonPageExtensionServiceProvider</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">extends</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">ServiceProvider</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">register</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Via the service container:</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">app</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">make</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">)-&gt;</span><span style="color: #82AAFF;">registerExtension</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">JsonPageExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// Or via the facade:</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">registerExtension</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">JsonPageExtension</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <h3>Packaging your extension</h3>
 <p>To make your extension available to other HydePHP users, you can make it into a <a href="https://getcomposer.org/">Composer</a> package,
 and publish it to <a href="https://packagist.org/">Packagist</a> for others to install.</p>
 <p>If you register your service provider in your package's <code>composer.json</code> file, your extension automatically be enabled when
 the package is installed in a HydePHP project!</p>
-<pre><code class="language-json">{
-  &quot;extra&quot;: {
-    &quot;laravel&quot;: {
-      &quot;providers&quot;: [
-        &quot;My\\Namespace\\JsonPageExtensionServiceProvider&quot;
-      ]
-    }
-  }
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">extra</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">laravel</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">&quot;</span><span style="color: #F78C6C;">providers</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My</span><span style="color: #A6ACCD;">\\</span><span style="color: #C3E88D;">Namespace</span><span style="color: #A6ACCD;">\\</span><span style="color: #C3E88D;">JsonPageExtensionServiceProvider</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
 <h3>Telling the world about your extension</h3>
 <p>Next up, why not send us a Tweet at <a href="https://twitter.com/HydeFramework">@HydeFramework</a> and tell us about your extension,
 so we can feature it?</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/architecture-concepts/extensions-api.md">
         Edit Page
     </a>

@@ -1036,7 +1036,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>InMemoryPages</h1>
@@ -1107,8 +1107,7 @@ make sure you register it before the full application is booted so that routes c
 <p>To create an InMemoryPage, you need to instantiate it with the required parameters.</p>
 <p>Since a page would not be useful without any content to render, the class offers two content options through the constructor.</p>
 <p>You can either pass a string to the <code>$contents</code> parameter, Hyde will then save that literally as the page's contents.</p>
-<pre><code class="language-php">$page = new InMemoryPage(contents: 'Hello World!');
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">InMemoryPage</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">contents</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Hello World!</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <p>Alternatively, you can pass a Blade view name to the <code>$view</code> parameter, and Hyde will use that view to render the page
 contents with the supplied front matter during the static site build process.</p>
 <blockquote class="border-amber-500">
@@ -1117,9 +1116,19 @@ contents with the supplied front matter during the static site build process.</p
 <p>You can also register a macro with the name <code>compile</code> to overload the default compile method.</p>
 <h2>API Reference</h2>
 <p>To see all the methods available, please see the <a href="hyde-pages#inmemorypage">InMemoryPage API reference</a>.</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/1.x/docs/advanced-features/in-memory-pages.md">
         Edit Page
     </a>

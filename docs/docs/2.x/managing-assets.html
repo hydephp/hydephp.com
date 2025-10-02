@@ -1178,7 +1178,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Managing and Compiling Assets</h1>
@@ -1244,18 +1244,12 @@ button[aria-label="Open search window"]:hover,
 <h3 id="hot-module-replacement-hmr" class="group w-fit scroll-mt-2">Hot Module Replacement (HMR)<a href="#hot-module-replacement-hmr" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Vite's HMR feature allows for instant updates to the browser without requiring a full page reload. This <strong>only works</strong> through the realtime compiler when the Vite development server is also running.</p>
 <p>You can start both of these by running <code>npm run dev</code> and <code>php hyde serve</code> in separate terminals, or using the <code>--vite</code> flag with the serve command:</p>
-<pre><code class="language-bash">php hyde serve --vite
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--vite</span></div></code></pre>
 <h3 id="blade-integration" class="group w-fit scroll-mt-2">Blade Integration<a href="#blade-integration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde effortlessly integrates Vite with Blade views, allowing you to include compiled assets in your templates. The Blade components <code>hyde::layouts.styles</code> and <code>hyde::layouts.scripts</code> are already set up to load the compiled CSS and JavaScript files.</p>
 <p>You can check if the Vite HMR server is running with <code>Vite::running()</code>, and you can include CSS and JavaScript resources with <code>Vite::asset('path')</code>, or <code>Vite::assets([])</code> to supply an array of paths.</p>
 <p><strong>Example: Using Vite if the HMR server is enabled, or loading the compiled CSS file if not:</strong></p>
-<pre><code class="language-blade">@if(Vite::running())
-    {{ Vite::assets(['resources/assets/app.css']) }}
-@else
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;{{ asset('media/app.css') }}&quot;&gt;
-@endif
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@if</span><span style="color: #A6ACCD;">(</span><span style="color: #FFCB6B;">Vite</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">running</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Vite</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">assets</span><span style="color: #89DDFF;">([</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">resources/assets/app.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">])</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span></div><div class='line'><span style="color: #89DDFF;">@else</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">link</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">rel</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">stylesheet</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(&#39;</span><span style="color: #C3E88D;">media/app.css</span><span style="color: #89DDFF;">&#39;)</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">@endif</span></div></code></pre>
 <h3 id="laravel-herd" class="group w-fit scroll-mt-2">Laravel Herd<a href="#laravel-herd" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>If using Laravel Herd for HydePHP, you can still use Vite by running <code>npm run dev</code>. The Herd integration is in public beta, please report any issues to <a href="https://github.com/hydephp/realtime-compiler">https://github.com/hydephp/realtime-compiler</a>.</p>
 <h2 id="additional-information-and-answers-to-common-questions" class="group w-fit scroll-mt-2">Additional Information and Answers to Common Questions<a href="#additional-information-and-answers-to-common-questions" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
@@ -1302,8 +1296,7 @@ Then run <code>npm run dev</code> to compile the assets in development mode. For
 <li>Scripts are loaded in <code>hyde::layouts.scripts</code></li>
 </ul>
 <p>To customize them, run the following command:</p>
-<pre><code class="language-bash">php hyde publish:views layouts
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:views</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">layouts</span></div></code></pre>
 <p>Then edit the files found in <code>resources/views/vendor/hyde/layouts</code> directory of your project.</p>
 <h3 id="you-might-not-even-need-to-do-anything" class="group w-fit scroll-mt-2">You might not even need to do anything!<a href="#you-might-not-even-need-to-do-anything" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>For the absolute majority of the cases, you don't need to mess with these files. Hyde will automatically load the app.css file when it exists in the <code>_media</code> directory.</p>
@@ -1337,14 +1330,18 @@ allowing you to browse the site both locally on your filesystem and on the web w
 </ul>
 <h4 id="making-images-accessible" class="group w-fit scroll-mt-2">Making images accessible<a href="#making-images-accessible" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>To improve accessibility, you should always add an <code>alt</code> text. Here is a full example including an image in a blog post:</p>
-<pre><code class="language-markdown">![Image Alt](../media/image.png &quot;Image Title&quot;) # Note the relative path
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">![</span><span style="color: #C3E88D;">Image Alt</span><span style="color: #89DDFF;">]</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">../media/image.png</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> # Note the relative path</span></div></code></pre>
 <h3 id="setting-a-featured-image-for-blog-posts" class="group w-fit scroll-mt-2">Setting a featured image for blog posts<a href="#setting-a-featured-image-for-blog-posts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde offers great support for creating data-rich and accessible featured images for blog posts.</p>
 <p>You can read more about this on the <a href="blog-posts#data-rich-image-and-captions">creating blog posts page</a>.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/creating-content/managing-assets.md">
         Edit Page
     </a>

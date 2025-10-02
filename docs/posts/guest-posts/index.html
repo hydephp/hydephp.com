@@ -132,7 +132,7 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="guest-posts/index" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="guest-posts/index">
             <meta itemprop="url" content="https://hydephp.com/posts/guest-posts">
     
@@ -178,20 +178,7 @@
 </ol>
 <p>Make sure to proofread your post to ensure proper spelling, grammar, and formatting.</p>
 <p><strong>Here's the required front matter template:</strong></p>
-<pre><code class="language-yaml">title: &quot;Your Engaging Post Title&quot;
-description: &quot;A brief 1-2 sentence description of your post&quot;
-category: &quot;Guest Posts&quot;
-author:
-    name: &quot;Your Name&quot;
-    website: &quot;https://yourwebsite.com&quot; # Optional
-    socials:
-      linkedin: &quot;your_linkedin_handle&quot; # Optional
-      github: &quot;your_github_handle&quot; # Optional
-      x: &quot;your_x_handle&quot; # Optional
-date: &quot;YYYY-MM-DD HH:MM&quot;
-guest_post: true
-canonical_guest_post_url: &quot;https://example.com/original-post&quot; # Optional, for republished content
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Your Engaging Post Title</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">A brief 1-2 sentence description of your post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Guest Posts</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Your Name</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://yourwebsite.com</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">socials</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">linkedin</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">your_linkedin_handle</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">github</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">your_github_handle</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">x</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">your_x_handle</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">YYYY-MM-DD HH:MM</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">guest_post</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span></div><div class='line'><span style="color: #F07178;">canonical_guest_post_url</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://example.com/original-post</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Optional, for republished content</span></div></code></pre>
 <h3>Style Guide</h3>
 <p>Please use Markdown formatting for your post, and use a clear heading structure. You don't need to add a level one heading, as HydePHP adds that based on the front matter title. Start with level two headings, and try to only use level two and three headings.</p>
 <p>When using links, make sure these are not overly promotional, and that they only lead to relevant and useful resources. Paid/sponsored affiliate links are not allowed.</p>
@@ -238,6 +225,11 @@ canonical_guest_post_url: &quot;https://example.com/original-post&quot; # Option
 <p>We can't wait to see your contributions and share your knowledge with the HydePHP community!</p>
 <hr />
 <p>Ready to submit your first guest post? Head over to our <a href="https://github.com/hydephp/hydephp.com/blob/master/_posts/guest-posts">GitHub repository</a> and start writing!</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>

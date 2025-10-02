@@ -1118,7 +1118,7 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Creating Static Pages</h1>
@@ -1177,17 +1177,9 @@ to keep in mind when creating pages so that you don't get unexpected results.</p
 <code>_pages</code> directory where the filename ends in <code>.md</code>. You can also use <a href="front-matter">Front Matter</a> to add page metadata.</p>
 <h3 id="scaffolding-markdown-pages" class="group w-fit scroll-mt-2">Scaffolding Markdown Pages<a href="#scaffolding-markdown-pages" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Scaffolding a Markdown page is as easy as using the <a href="console-commands">HydeCLI</a>.</p>
-<pre><code class="language-bash">php hyde make:page &quot;Page Title&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This will create the following file saved as <code>_pages/page-title.md</code></p>
-<pre><code class="language-markdown">---
-title: Page Title
----
-
-# Page Title
-
-// Write your content here
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Page Title</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">Page Title</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">// Write your content here</span></div></code></pre>
 <p>You can of course also create the file yourself with your text editor.</p>
 <h3 id="front-matter-is-optional" class="group w-fit scroll-mt-2">Front Matter is optional<a href="#front-matter-is-optional" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The most common front matter used for Markdown pages is the title, which is used as the HTML <code>&lt;title&gt;</code>.</p>
@@ -1196,12 +1188,7 @@ for the first level one heading (<code># Page Title</code>), and if that fails, 
 <h4 id="navigation-front-matter" class="group w-fit scroll-mt-2">Navigation Front Matter<a href="#navigation-front-matter" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Furthermore, you can customize how the page appears in the navigation menu using the following front matter options.
 You can set just one or all of them, as Hyde will fill in the gaps for the rest.</p>
-<pre><code class="language-yaml">navigation:
-    label: 'string',
-    priority: 'int',
-    hidden: 'bool',
-    group: 'string',
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">navigation</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">priority</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">int</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">hidden</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">bool</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">group</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">string</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">,</span></div></code></pre>
 <ul>
 <li><code>label</code> is the text that will be displayed in the navigation menu</li>
 <li><code>priority</code> is the order in which the page will appear in the navigation menu (<code>order</code> is also supported)</li>
@@ -1215,24 +1202,14 @@ complex pages with both standard HTML, PHP code, and the templating opportunitie
 <h3 id="scaffolding-blade-pages" class="group w-fit scroll-mt-2">Scaffolding Blade Pages<a href="#scaffolding-blade-pages" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>We can scaffold Blade pages using the same CLI command as Markdown pages, however, this time we need to specify that
 we want to use the <code>blade</code> page type, by using the <code>--type</code> option.</p>
-<pre><code class="language-bash">php hyde make:page &quot;Page Title&quot; --type=&quot;blade&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">blade</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This will create a file saved as <code>_pages/page-title.blade.php</code></p>
 <p>You can of course also create the file yourself with your text editor, however,
 the scaffolding command for Blade pages is arguably even more helpful than the
 one for Markdown pages, as this one automatically adds the included app Layout.</p>
 <p>Let's take a look at the scaffolded file. You can also copy and paste this
 if you don't want to use the scaffolding command.</p>
-<pre><code class="language-blade">@extends('hyde::layouts.app')
-@section('content')
-@php($title = &quot;Page Title&quot;)
-
-&lt;main class=&quot;mx-auto max-w-7xl py-16 px-8&quot;&gt;
-    &lt;h1 class=&quot;text-center text-3xl font-bold&quot;&gt;Page Title&lt;/h1&gt;
-&lt;/main&gt;
-
-@endsection
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@extends</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::layouts.app</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@section</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">content</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Page Title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">mx-auto max-w-7xl py-16 px-8</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center text-3xl font-bold</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Page Title</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@endsection</span></div></code></pre>
 <blockquote>
 <p>Tip: You don't have to use Blade in Blade pages. It's also perfectly fine to use plain HTML,
 however you still need to use the <code>blade.php</code> extension so Hyde can recognize it.</p>
@@ -1289,7 +1266,12 @@ into the <code>_site</code> directory. Like all other Hyde pages, the page will 
 You won't be able to change any settings with front matter, however.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-            <p class="edit-page-link">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/creating-content/static-pages.md">
         Edit Page
     </a>
