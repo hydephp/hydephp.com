@@ -1,18 +1,19 @@
 @php
-	$navigation = \Hyde\Framework\Features\Navigation\NavigationMenu::create();
-	$isHomepage = $page->routeKey === 'index';
+    // Logic from master
+    $navigation = app('navigation.main');
+
+    // Keep this for redesign styling conditions
+    $isHomepage = isset($page) && $page->routeKey === 'index';
 @endphp
 
 <nav aria-label="Main navigation" id="main-navigation"
-	 class="@if($isHomepage) absolute top-0 left-0 right-0 z-50 @else relative @endif">
-	<div class="@if($isHomepage) backdrop-blur-md bg-gradient-to-b from-transparent to-[rgba(8,15,30,.35)] border-b border-white/10 @else bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none @endif">
-		<div class="mx-auto max-w-7xl px-6">
-			<div class="flex h-16 md:h-18 items-center justify-between">
-				<div class="flex items-center">
-					@include('hyde::components.navigation.navigation-brand')
-				</div>
+     class="@if($isHomepage) absolute top-0 left-0 right-0 z-50 @else relative @endif">
+    <div class="@if($isHomepage) backdrop-blur-md bg-gradient-to-b from-transparent to-[rgba(8,15,30,.35)] border-b border-white/10 @else bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none @endif">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <div class="flex items-center">
+                    @include('hyde::components.navigation.navigation-brand')
 
-				<div class="flex items-center md:gap-8">
 					<!-- Desktop Navigation Links -->
 					<div class="hidden md:flex items-center gap-8">
 						@foreach ($navigation->items as $item)
@@ -65,9 +66,9 @@
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
 		<div class="mx-auto max-w-7xl px-6">
 			<ul aria-label="Navigation links" class="py-4 space-y-2">
-				@foreach ($navigation->items as $item)
+				@foreach ($navigation->getItems() as $item)
 					<li>
-						@include('hyde::components.navigation.navigation-link')
+						<x-hyde::navigation.navigation-link :item="$item"/>
 					</li>
 				@endforeach
 			</ul>

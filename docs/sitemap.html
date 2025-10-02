@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="media/app.css?v=0ef7a490b214e8ed6c83dd547a4ffd46">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=61512435">
+    
 
-
-
+    
+    
 
 
 
@@ -54,11 +55,25 @@
 </head>
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav aria-label="Main navigation" id="main-navigation"
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+    <div class="bg-purple-600 text-white py-3 px-4 text-center">
+        <div class="flex items-center justify-center space-x-4">
+            <span class="text-sm md:text-base font-medium">
+                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
+            </span>
+
+                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
+                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
+                    Read More
+                </a>
+                    </div>
+    </div>
+
+    <nav aria-label="Main navigation" id="main-navigation"
 	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex flex-grow items-center flex-shrink-0 text-gray-700 dark:text-gray-200">
+	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
 		<a aria-label="Home page link" href="./" class="font-bold px-4">
-	<img src="media/logo-masked32-min.png?v=b63d8b9216a1d60500ae500d7526f725" alt="HydePHP Logo" class="inline">
+	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
 	HydePHP
 </a>
 		<div class="ml-auto">
@@ -89,32 +104,31 @@
 	</div>
 
 	<div id="main-navigation-links"
-		 class="w-full  md:flex flex-grow md:flex-grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:flex-grow md:flex justify-end">
+		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
 							<li class="md:mx-2">
-					<a href="./"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
+					<a href="./" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
 							<li class="md:mx-2">
-					<a href="about"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
+					<a href="about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
 							<li class="md:mx-2">
-					<a href="demos"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
+					<a href="demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
 							<li class="md:mx-2">
-					<a href="posts"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
+					<a href="posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
 							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde"  class="block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
+					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
 					</ul>
-		<a id="docs-nav-button" href="docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
+		<a id="docs-nav-button" href="docs/2.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
 			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 		</a>
 	</div>
 </nav>
- 
 
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
-        <article class="mx-auto prose dark:prose-invert torchlight-enabled">
+        <article class="mx-auto prose dark:prose-invert">
             <h1>Sitemap</h1>
 <h2>About this page</h2>
 <p>On this page you will find a list of all the pages in this site, sorted alphabetically.</p>
@@ -158,121 +172,31 @@
 		
 		<ul>
 							<li>
-					<strong>Data/Partials/Hyde Pages api</strong>
-					<ul>
-													<li>
-								<a href="docs/1.x/base-markdown-page-methods">
-									Base Markdown Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/blade-page-methods">
-									Blade Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/documentation-page-methods">
-									Documentation Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/html-page-methods">
-									Html Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-base-methods">
-									Hyde Kernel Base Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-boot-methods">
-									Hyde Kernel Boot Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-extensions-methods">
-									Hyde Kernel Extensions Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-filesystem-methods">
-									Hyde Kernel Filesystem Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-foundation-methods">
-									Hyde Kernel Foundation Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-hyperlink-methods">
-									Hyde Kernel Hyperlink Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-kernel-methods">
-									Hyde Kernel Kernel Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-string-methods">
-									Hyde Kernel String Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-kernel-view-methods">
-									Hyde Kernel View Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/hyde-page-methods">
-									Hyde Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/in-memory-page-methods">
-									In Memory Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/interacts-with-front-matter-methods">
-									Interacts with Front Matter Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/markdown-page-methods">
-									Markdown Page Methods
-								</a>
-							</li>
-													<li>
-								<a href="docs/1.x/markdown-post-methods">
-									Markdown Post Methods
-								</a>
-							</li>
-											</ul>
-				</li>
-							<li>
 					<strong>Advanced Features</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/advanced-features">
+								<a href="docs/2.x/advanced-features">
 									Advanced Features
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/build-tasks">
+								<a href="docs/2.x/build-tasks">
 									Build Tasks
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/hyde-pages">
+								<a href="docs/2.x/hyde-pages">
 									Hyde Pages
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/in-memory-pages">
+								<a href="docs/2.x/in-memory-pages">
 									In Memory Pages
+								</a>
+							</li>
+													<li>
+								<a href="docs/2.x/navigation-api">
+									Navigation api
 								</a>
 							</li>
 											</ul>
@@ -281,37 +205,37 @@
 					<strong>Architecture Concepts</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/architecture-concepts">
+								<a href="docs/2.x/architecture-concepts">
 									Architecture Concepts
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/autodiscovery">
+								<a href="docs/2.x/autodiscovery">
 									Autodiscovery
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/automatic-routing">
+								<a href="docs/2.x/automatic-routing">
 									Automatic Routing
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/dynamic-data-discovery">
+								<a href="docs/2.x/dynamic-data-discovery">
 									Dynamic Data Discovery
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/extensions-api">
+								<a href="docs/2.x/extensions-api">
 									Extensions api
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/page-models">
+								<a href="docs/2.x/page-models">
 									Page Models
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/the-hydekernel">
+								<a href="docs/2.x/the-hydekernel">
 									The Hydekernel
 								</a>
 							</li>
@@ -321,27 +245,27 @@
 					<strong>Creating Content</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/blog-posts">
+								<a href="docs/2.x/blog-posts">
 									Blog Posts
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/compile-and-deploy">
+								<a href="docs/2.x/compile-and-deploy">
 									Compile and Deploy
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/documentation-pages">
+								<a href="docs/2.x/documentation-pages">
 									Documentation Pages
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/managing-assets">
+								<a href="docs/2.x/managing-assets">
 									Managing assets
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/static-pages">
+								<a href="docs/2.x/static-pages">
 									Static Pages
 								</a>
 							</li>
@@ -351,42 +275,42 @@
 					<strong>Digging Deeper</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/advanced-customization">
+								<a href="docs/2.x/advanced-customization">
 									Advanced Customization
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/advanced-markdown">
+								<a href="docs/2.x/advanced-markdown">
 									Advanced Markdown
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/collections">
+								<a href="docs/2.x/collections">
 									Collections
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/customization">
+								<a href="docs/2.x/customization">
 									Customization
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/helpers">
+								<a href="docs/2.x/helpers">
 									Helpers
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/navigation">
+								<a href="docs/2.x/navigation">
 									Navigation
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/troubleshooting">
+								<a href="docs/2.x/troubleshooting">
 									Troubleshooting
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/updating-hyde">
+								<a href="docs/2.x/updating-hyde">
 									Updating Hyde
 								</a>
 							</li>
@@ -396,22 +320,22 @@
 					<strong>Extensions</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/extensions">
+								<a href="docs/2.x/extensions">
 									Extensions
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/realtime-compiler">
+								<a href="docs/2.x/realtime-compiler">
 									Realtime Compiler
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/third-party-integrations">
+								<a href="docs/2.x/third-party-integrations">
 									Third Party integrations
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/ui-kit">
+								<a href="docs/2.x/ui-kit">
 									Ui Kit
 								</a>
 							</li>
@@ -421,23 +345,28 @@
 					<strong>Getting Started</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/console-commands">
+								<a href="docs/2.x/console-commands">
 									Console Commands
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/core-concepts">
+								<a href="docs/2.x/core-concepts">
 									Core Concepts
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/front-matter">
+								<a href="docs/2.x/front-matter">
 									Front Matter
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/quickstart">
+								<a href="docs/2.x/quickstart">
 									Quickstart
+								</a>
+							</li>
+													<li>
+								<a href="docs/2.x/upgrade-guide">
+									Upgrade Guide
 								</a>
 							</li>
 											</ul>
@@ -446,22 +375,22 @@
 					<strong>Redirects</strong>
 					<ul>
 													<li>
-								<a href="docs/1.x/configuration">
+								<a href="docs/2.x/configuration">
 									Configuration
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/directory-structure">
+								<a href="docs/2.x/directory-structure">
 									Directory Structure
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/getting-started">
+								<a href="docs/2.x/getting-started">
 									Getting Started
 								</a>
 							</li>
 													<li>
-								<a href="docs/1.x/installation">
+								<a href="docs/2.x/installation">
 									Installation
 								</a>
 							</li>
@@ -496,7 +425,7 @@
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
 					<li><a href="community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
@@ -558,7 +487,6 @@
 		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
 			<div class="prose mx-auto text-center text-sm dark:prose-invert">
 				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
-
 			</div>
 			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
 				<button title="Scroll to top">
@@ -571,7 +499,7 @@
 	</div>
 </footer> 
 
-    <script defer src="media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

@@ -85,7 +85,7 @@
 	</style>
 	
 	<section class="explorer-section hidden sm:block">
-		<iframe loading="lazy" width="100%" height="100%" src="https://cdn.desilva.se/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/explorer.html" frameborder="0"></iframe>
+		<iframe loading="lazy" width="100%" height="100%" src="https://cdn-static.hydephp.com/frontend/df6bc4b6-8665-4125-89e3-aee46ef7905e/explorer.html" frameborder="0"></iframe>
 	</section>
 </section>
 

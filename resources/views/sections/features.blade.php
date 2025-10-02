@@ -38,7 +38,7 @@
 			<img width="100%" height="100%" title="Illustration by Semenin Egor from Ouch! via icons8.com" alt="Illustration of a person in a spacesuit surrounded by tiny planets" src="media/productivity.png" class="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20 ">
 		</div>
 		<!-- Content -->
-		<div class="box-border order-first w-full text-black dark:text-white border-solid md:w-1/2 md:pl-10 md:order-none">
+		<div class="box-border order-first w-full text-black dark:text-white border-solid md:w-1/2 md:pl-10 md:order-0">
 			<h2 class="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
 				Boost Productivity
 			</h2>

@@ -19,7 +19,7 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.0-RC.4">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=0ef7a490b214e8ed6c83dd547a4ffd46">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=61512435">
+    
 
-
-
+    
+    
 
 
 
@@ -51,37 +52,539 @@
 <!-- Sponsored by Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
 <!-- / Fathom -->
-</head>
+    <style>
+/* ========================================
+   HydePHP Docs - Modern Homepage Style
+   Light/Dark Mode Support
+   ======================================== */
+
+/* === SIDEBAR === */
+
+/* Light mode - subtle gradient */
+#sidebar {
+    background: linear-gradient(180deg, 
+        rgb(249, 250, 251) 0%, 
+        rgb(243, 244, 246) 100%);
+}
+
+/* Dark mode - deep purple gradient */
+.dark #sidebar {
+    background: linear-gradient(180deg, 
+        rgb(30, 20, 50) 0%, 
+        rgb(20, 15, 40) 50%,
+        rgb(15, 10, 30) 100%);
+}
+
+/* Sidebar brand with gradient text */
+#sidebar-brand strong a {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 50%,
+        rgb(252, 165, 165) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+/* Accent border on top of sidebar */
+#sidebar-header {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, 
+        rgb(236, 72, 153), 
+        rgb(251, 146, 120),
+        rgb(252, 165, 165)) 1;
+}
+
+/* Section headers */
+.sidebar-group-heading {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+/* Light mode text colors */
+.sidebar-group-heading {
+    color: rgb(55, 65, 81);
+}
+
+/* Dark mode text colors */
+.dark .sidebar-group-heading {
+    color: rgb(203, 213, 225);
+}
+
+/* Hover effect on group headers */
+.sidebar-group-header:hover .sidebar-group-heading {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sidebar-group-header:hover {
+    background: rgba(236, 72, 153, 0.1) !important;
+}
+
+/* Reduced indentation for sidebar items */
+.sidebar-group-items {
+    margin-left: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+
+.sidebar-item {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Navigation links */
+.sidebar-item a {
+    transition: all 0.2s ease;
+    border-radius: 0.375rem;
+    margin-left: 0 !important;
+    padding-left: 0.75rem !important;
+}
+
+/* Light mode link colors */
+.sidebar-item a {
+    color: rgb(75, 85, 99);
+}
+
+/* Dark mode link colors */
+.dark .sidebar-item a {
+    color: rgb(148, 163, 184);
+}
+
+.sidebar-item a:hover {
+    background: rgba(236, 72, 153, 0.1);
+    border-left-color: rgb(236, 72, 153) !important;
+    padding-left: 1rem !important;
+}
+
+/* Light mode hover */
+.sidebar-item a:hover {
+    color: rgb(236, 72, 153);
+}
+
+/* Dark mode hover */
+.dark .sidebar-item a:hover {
+    color: rgb(248, 113, 113);
+}
+
+/* Active link */
+.sidebar-item a[aria-current="page"],
+.sidebar-item a.active {
+    color: rgb(236, 72, 153);
+    background: rgba(236, 72, 153, 0.15);
+    border-left-color: rgb(236, 72, 153) !important;
+    font-weight: 500;
+}
+
+.dark .sidebar-item a[aria-current="page"],
+.dark .sidebar-item a.active {
+    color: rgb(251, 146, 120);
+}
+
+/* Group toggle button */
+.sidebar-group-toggle {
+    transition: all 0.2s ease;
+}
+
+.sidebar-group-toggle {
+    color: rgb(107, 114, 128);
+}
+
+.dark .sidebar-group-toggle {
+    color: rgb(148, 163, 184);
+}
+
+.sidebar-group-header:hover .sidebar-group-toggle {
+    color: rgb(251, 146, 120);
+}
+
+/* Navigation container */
+#sidebar-navigation {
+    border-color: rgba(236, 72, 153, 0.2);
+}
+
+.dark #sidebar-navigation {
+    border-color: rgba(236, 72, 153, 0.2);
+}
+
+/* Scrollbar - hidden by default, visible on hover */
+#sidebar-navigation::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sidebar-navigation::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar-navigation::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+/* Show scrollbar on sidebar hover */
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.3);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.7);
+}
+
+/* Footer links */
+#sidebar-footer {
+    border-top: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+#sidebar-footer a {
+    transition: color 0.2s ease;
+}
+
+#sidebar-footer a {
+    color: rgb(107, 114, 128);
+}
+
+.dark #sidebar-footer a {
+    color: rgb(148, 163, 184);
+}
+
+#sidebar-footer a:hover {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* === MAIN CONTENT === */
+
+/* Main content background */
+#content {
+    background: linear-gradient(180deg,
+        rgb(248, 249, 251) 0%,
+        rgb(255, 255, 255) 100%);
+}
+
+.dark #content {
+    background: linear-gradient(180deg,
+        rgb(17, 24, 39) 0%,
+        rgb(10, 15, 28) 100%);
+}
+
+/* Document article */
+#document {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark #document {
+    background: rgba(30, 41, 55, 0.8);
+}
+
+/* Page title with gradient */
+#document-header h1 {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 50%,
+        rgb(252, 165, 165) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+/* Links in content */
+#document a {
+    color: rgb(236, 72, 153);
+    transition: color 0.2s ease;
+}
+
+#document a:hover {
+    color: rgb(251, 146, 120);
+}
+
+/* Code blocks */
+#document pre {
+    background: rgb(30, 20, 50) !important;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    border-radius: 0.5rem;
+}
+
+#document code {
+    color: rgb(251, 146, 120);
+}
+
+#document pre code {
+    color: rgb(203, 213, 225);
+}
+
+/* Inline code */
+#document :not(pre) > code {
+    background: rgba(236, 72, 153, 0.1);
+    color: rgb(236, 72, 153);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+.dark #document :not(pre) > code {
+    background: rgba(236, 72, 153, 0.2);
+    color: rgb(251, 146, 120);
+}
+
+
+/* === MOBILE NAVIGATION === */
+
+#mobile-navigation {
+    background: linear-gradient(90deg,
+        rgb(249, 250, 251) 0%,
+        rgb(243, 244, 246) 100%);
+}
+
+.dark #mobile-navigation {
+    background: linear-gradient(90deg,
+        rgb(30, 20, 50) 0%,
+        rgb(25, 18, 45) 100%);
+}
+
+#mobile-navigation strong a {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* === VERSION SWITCHER === */
+
+#version-switcher,
+#mobile-navigation button[aria-haspopup="listbox"] {
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+#version-switcher:hover,
+#mobile-navigation button[aria-haspopup="listbox"]:hover {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+
+/* === SEARCH === */
+
+/* Search button */
+button[aria-label="Open search window"],
+#searchMenuButton,
+#searchMenuButtonMobile {
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+button[aria-label="Open search window"]:hover,
+#searchMenuButton:hover,
+#searchMenuButtonMobile:hover {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+/* Search window */
+#searchMenu {
+    background: linear-gradient(180deg,
+        rgb(255, 255, 255) 0%,
+        rgb(249, 250, 251) 100%);
+    border: 2px solid rgba(236, 72, 153, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.1);
+}
+
+.dark #searchMenu {
+    background: linear-gradient(180deg,
+        rgb(30, 41, 55) 0%,
+        rgb(20, 30, 45) 100%);
+}
+
+/* Search input */
+#search-input {
+    border: 2px solid rgba(236, 72, 153, 0.2);
+    transition: all 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: rgb(236, 72, 153);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+
+/* === THEME TOGGLE === */
+
+.theme-toggle-button {
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-button {
+    color: rgb(107, 114, 128);
+}
+
+.dark .theme-toggle-button {
+    color: rgb(203, 213, 225);
+}
+
+.theme-toggle-button:hover {
+    color: rgb(251, 146, 120);
+}
+
+
+/* === BADGES === */
+
+/* Package badges styling */
+.images-inline img {
+    filter: saturate(1.2) brightness(1.1);
+    transition: transform 0.2s ease;
+}
+
+.images-inline img:hover {
+    transform: scale(1.05);
+}
+
+
+/* === MOBILE SIDEBAR TOGGLE === */
+
+#sidebar-toggle span {
+    background: rgb(107, 114, 128) !important;
+}
+
+.dark #sidebar-toggle span {
+    background: rgb(251, 146, 120) !important;
+}
+
+#sidebar-toggle.active span:nth-child(1) {
+    background: rgb(236, 72, 153) !important;
+}
+
+#sidebar-toggle.active span:nth-child(4) {
+    background: rgb(236, 72, 153) !important;
+}
+
+
+/* === FOOTER === */
+
+#document-footer a {
+    color: rgb(236, 72, 153);
+    transition: color 0.2s ease;
+}
+
+#document-footer a:hover {
+    color: rgb(251, 146, 120);
+}
+
+
+/* === ACCESSIBILITY === */
+
+#skip-to-content:focus {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    border-color: rgb(251, 146, 120);
+}
+</style></head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
-    <strong class="px-2 mr-auto">
-                    <a href="../../docs/1.x/">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation"
+     x-data="{ vopen:false }"
+     class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
+
+    <strong class="px-2 mr-auto truncate">
+                    <a href="../../docs/2.x/">
                 HydePHP Docs
             </a>
             </strong>
-    <ul class="flex items-center">
-        <li class="h-8 flex mr-1">
+
+    <ul class="flex items-center gap-2">
+        
+                    <li class="relative">
+                <button type="button"
+                        @click="vopen = !vopen"
+                        aria-haspopup="listbox"
+                        :aria-expanded="vopen.toString()"
+                        class="h-8 px-2 rounded-md border border-gray-300 dark:border-gray-700
+                               bg-white/80 dark:bg-gray-800/80 text-sm flex items-center gap-1">
+                    <span class="font-medium">1.x</span>
+                    <svg class="w-4 h-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.173l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+
+                <div x-cloak x-show="vopen" @click.outside="vopen=false"
+                     class="absolute right-0 mt-2 w-40 rounded-lg border border-gray-200 dark:border-gray-700
+                            bg-white dark:bg-gray-800 shadow-lg z-50 py-1">
+                                            <a href="../../docs/1.x/the-hydekernel"
+                           class="flex items-center justify-between px-3 py-2 text-sm rounded-md
+                                   bg-gray-100 dark:bg-gray-700 font-semibold ">
+                            <span>1.x</span>
+                            <span class="text-[11px] text-gray-500">old</span>
+                        </a>
+                                            <a href="../../docs/2.x/the-hydekernel"
+                           class="flex items-center justify-between px-3 py-2 text-sm rounded-md
+                                   hover:bg-gray-50 dark:hover:bg-gray-700 ">
+                            <span>2.x</span>
+                            <span class="text-[11px] text-gray-500">current</span>
+                        </a>
+                                    </div>
+            </li>
+        
+        <li class="h-8 flex">
             <button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
         </li>
+
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
-</nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
+</nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none border-r border-gray-200/60 dark:border-gray-700/60 transition-all duration-300">
     <header id="sidebar-header" class="h-16">
         <div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
     <strong class="px-2">
-                    <a href="../../docs/1.x/">
+                    <a href="../../docs/2.x/">
                 HydePHP Docs
             </a>
             </strong>
@@ -91,11 +594,11 @@
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
 </div>    </header>
-    <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
+    <nav id="sidebar-navigation" class="p-2 pb-6 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -109,23 +612,27 @@
             <a href="../../docs/1.x/quickstart" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Quickstart Guide
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/console-commands" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Console Commands
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/core-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Core Concepts
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/front-matter" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Front Matter
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -139,27 +646,32 @@
             <a href="../../docs/1.x/blog-posts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Creating Blog Posts
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/static-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown &amp; Blade Pages
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/documentation-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Documentation Pages
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/managing-assets" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Managing and Compiling Assets
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/compile-and-deploy" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Compile &amp; Deploy
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -173,39 +685,47 @@
             <a href="../../docs/1.x/customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Customizing your Site
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/navigation" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Navigation Menus
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-markdown" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Markdown
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/advanced-customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Customization
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Helpers and Utilities
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/updating-hyde" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Updating Hyde Projects
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -219,23 +739,27 @@
             <a href="../../docs/1.x/advanced-features" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/build-tasks" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Custom Build Tasks
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/hyde-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             HydePage API
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/in-memory-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             InMemoryPages
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -249,44 +773,454 @@
             <a href="../../docs/1.x/architecture-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/autodiscovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Autodiscovery
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/automatic-routing" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Automatic Routing
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/dynamic-data-discovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Dynamic Data Discovery
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/page-models" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Page models
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
-            <a href="../../docs/1.x/the-hydekernel" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
+            <a href="../../docs/1.x/the-hydekernel" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
             The HydeKernel
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#accessing-the-kernel">Accessing the Kernel</a></li>
-<li><a href="#the-kernel-lifecycle">The Kernel Lifecycle</a></li>
-<li><a href="#api-reference">API Reference</a></li>
-</ul>
-
-            </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-the-kernel" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing the Kernel
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#the-kernel-lifecycle" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        The Kernel Lifecycle
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#api-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        API Reference
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#version" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `version()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#construct" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `__construct()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `features()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hasfeature" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasFeature()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#toarray" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `toArray()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `files()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pages()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `routes()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#maketitle" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `makeTitle()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#makeslug" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `makeSlug()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#normalizenewlines" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `normalizeNewlines()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#stripnewlines" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `stripNewlines()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#trimslashes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `trimSlashes()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `markdown()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#formatlink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `formatLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#relativelink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `relativeLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#medialink" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `mediaLink()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#asset" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `asset()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#url" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `url()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#route" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `route()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hassiteurl" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasSiteUrl()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#filesystem" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `filesystem()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#path" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `path()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#vendorpath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `vendorPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#mediapath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `mediaPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sitepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `sitePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sitemediapath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `siteMediaPath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pathtoabsolute" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pathToAbsolute()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#pathtorelative" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `pathToRelative()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getinstance" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getInstance()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setinstance" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setInstance()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getbasepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getBasePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setbasepath" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setBasePath()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getsourceroot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getSourceRoot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setsourceroot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setSourceRoot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getmediadirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getMediaDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setmediadirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `setMediaDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getmediaoutputdirectory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getMediaOutputDirectory()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#registerextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `registerExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hasextension" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `hasExtension()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getextensions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getExtensions()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getregisteredextensions" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getRegisteredExtensions()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#getregisteredpageclasses" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `getRegisteredPageClasses()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#shareviewdata" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `shareViewData()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentroutekey" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentRouteKey()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentroute" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentRoute()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#currentpage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `currentPage()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#isbooted" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `isBooted()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#boot" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `boot()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#booting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `booting()`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#booted" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        `booted()`
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+            </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/1.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -300,121 +1234,82 @@
             <a href="../../docs/1.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
-    </li>                                    </ul>
-            </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
-                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
-    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
-    </svg>
-    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
-    </svg>
-</button>                                    </header>
-                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
-                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Base Markdown Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Blade Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Documentation Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Html Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Base Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Boot Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Extensions Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Filesystem Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Foundation Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Hyperlink Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Kernel Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel String Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel View Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            In Memory Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Interacts with Front Matter Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Markdown Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/1.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Markdown Post Methods
-        </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../">Back to home page</a>
-    </p>        </footer>
     </aside>
+
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        <div class="hidden md:flex items-center gap-2 absolute right-4 top-4 z-30">
+    <button type="button"
+            @click="searchWindowOpen = true; $nextTick(() => setTimeout(() => document.getElementById('search-input')?.focus(), 0));"
+            class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
+            bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800"
+            aria-label="Open search window">
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12.9 14.32a7 7 0 111.414-1.414l3.387 3.387a1 1 0 01-1.414 1.414l-3.387-3.387zM14 9a5 5 0 11-10 0 5 5 0 0110 0z" clip-rule="evenodd"/>
+        </svg>
+        <span>Search</span>
+        <kbd class="ml-1 text-[10px] px-1.5 py-0.5 rounded border border-gray-300 dark:border-gray-600">/</kbd>
+    </button>
+</div>
+<style>
+@media (min-width: 768px){ #search-menu-button{ display:none !important; } }
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        
+        <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
+            <h1>The HydeKernel</h1>
+            <div class="hidden md:block">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>The HydeKernel</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <h2>Introduction<a id="introduction" href="#introduction" class="heading-permalink" title="Permalink"></a></h2>
+    <div x-data="{ open:false }" class="relative">
+        <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
+            bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800">
+            <span class="font-medium">1.x</span>
+                            <span class="text-xs text-gray-500">old</span>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.173l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            </svg>
+        </button>
+
+        <div x-cloak x-show="open" @click.outside="open=false"
+             class="absolute right-0 mt-2 min-w-[12rem] rounded-lg border border-gray-200 dark:border-gray-700
+                    bg-white dark:bg-gray-800 shadow-lg p-1 z-50">
+                                            <a href="../../docs/1.x/the-hydekernel"
+                   class="flex items-center justify-between px-3 py-2 rounded-md text-sm
+                           bg-gray-100 dark:bg-gray-700 font-semibold                           ">
+                    <span>1.x</span>
+                    <span class="text-xs text-gray-500">old</span>
+                </a>
+                                            <a href="../../docs/2.x/the-hydekernel"
+                   class="flex items-center justify-between px-3 py-2 rounded-md text-sm
+                           hover:bg-gray-50 dark:hover:bg-gray-700                           ">
+                    <span>2.x</span>
+                    <span class="text-xs text-gray-500">current</span>
+                </a>
+                    </div>
+    </div>
+</div>
+        </header>
+        <div class="border-l-4 bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:text-amber-100 dark:border-amber-800 mt-3 -mb-2 print:hidden" aria-live="polite">
+    <div class="pl-4 pr-3 py-3">
+        <div class="flex items-center gap-3">
+            
+                            <svg class="w-5 h-5 text-amber-700 dark:text-amber-300 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.721-1.36 3.486 0l6.518 11.592c.75 1.336-.213 3.009-1.742 3.009H3.48c-1.529 0-2.492-1.673-1.742-3.009l6.519-11.592zM11 14a1 1 0 11-2 0 1 1 0 012 0zm-1-2a.75.75 0 01-.75-.75V8a.75.75 0 011.5 0v3.25A.75.75 0 0110 12z" clip-rule="evenodd"/>
+                </svg>
+            
+            
+                            <p class="text-sm">
+                    You're browsing the <strong>1.x</strong> docs.
+                                            <a href="../../docs/2.x/the-hydekernel" class="underline underline-offset-2 font-semibold">Consider upgrading to 2.x</a>.
+                                    </p>
+                    </div>
+    </div>
+</div>
+        <section id="document-main-content" itemprop="articleBody">
+            <h2>Introduction</h2>
 <p>In the centre, or should I say <em>core</em>, of HydePHP is the HydeKernel. The kernel encapsulates a HydePHP project and
 provides helpful methods for interacting with it. You can think of it as the heart of HydePHP, if you're a romantic.</p>
 <p>The HydeKernel is so important that you have probably used it already. The main entry point for the HydePHP
@@ -422,7 +1317,7 @@ API is the Hyde facade, which calls methods on the kernel.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// calls $HydeKernel-&gt;version()</span></div></code></pre>
 <p>The kernel is created very early on in the application lifecycle, in the <code>bootstrap.php</code> file, where it is also bound
 as a singleton into the application service container.</p>
-<h2>Accessing the Kernel<a id="accessing-the-kernel" href="#accessing-the-kernel" class="heading-permalink" title="Permalink"></a></h2>
+<h2>Accessing the Kernel</h2>
 <p>The HydeKernel is stored as a singleton in a static property in its own class and can be accessed in a few ways.</p>
 <p>Commonly, you'll use the <code>Hyde</code> facade which forwards calls to the singleton instance.
 You can also use the <code>hyde()</code> function to get the Kernel, and call methods on it.</p>
@@ -430,29 +1325,29 @@ You can also use the <code>hyde()</code> function to get the Kernel, and call me
 <p>Here are some examples of how you can call methods on the Kernel. All methods call the same method on the same instance, so it's just a matter of preference.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">HydeKernel</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">kernel</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getInstance</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #82AAFF;">app</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">)-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #82AAFF;">hyde</span><span style="color: #89DDFF;">()-&gt;</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">();</span></div></code></pre>
 <p>The Kernel instance is constructed and bound in the <code>app/bootstrap.php</code> file.</p>
-<h2>The Kernel Lifecycle<a id="the-kernel-lifecycle" href="#the-kernel-lifecycle" class="heading-permalink" title="Permalink"></a></h2>
+<h2>The Kernel Lifecycle</h2>
 <p>Whenever we talk about the kernel being &quot;booted&quot; we are talking about the kernel's role in the autodiscovery process.</p>
 <p>You can read all about it in the <a href="autodiscovery">Autodiscovery Documentation</a>.</p>
-<h2>API Reference<a id="api-reference" href="#api-reference" class="heading-permalink" title="Permalink"></a></h2>
+<h2>API Reference</h2>
 <p>Since the most common way to interact with the kernel is through the Hyde facade, we will use that for the examples.
 But you could just as well chain the methods on the accessed kernel singleton instance if you wanted.</p>
 <!-- Start generated docs for the HydeKernel -->
 <section id="hyde-kernel-base-methods">
 <!-- Start generated docs for Hyde\Foundation\HydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2024-07-08 20:47:38 in 2.89ms -->
-<h4><code>version()</code><a id="version" href="#version" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>version()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">version</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>__construct()</code><a id="construct" href="#construct" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>__construct()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">hyde </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">basePath</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>features()</code><a id="features" href="#features" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>features()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">features</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Facades\Features</span></div></code></pre>
-<h4><code>hasFeature()</code><a id="hasfeature" href="#hasfeature" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>hasFeature()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasFeature</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Enums\Feature</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">feature</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
-<h4><code>toArray()</code><a id="toarray" href="#toarray" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>toArray()</code></h4>
 <p>Get the instance as an array.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">toArray</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">TKey</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> TValue</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\HydeKernel -->
@@ -460,13 +1355,13 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-foundation-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
 <!-- Generated by HydePHP DocGen script at 2024-07-17 15:27:42 in 0.04ms -->
-<h4><code>files()</code><a id="files" href="#files" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>files()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">files</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\FileCollection</span></div></code></pre>
-<h4><code>pages()</code><a id="pages" href="#pages" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>pages()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pages</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\PageCollection</span></div></code></pre>
-<h4><code>routes()</code><a id="routes" href="#routes" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>routes()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">routes</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\RouteCollection</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\HandlesFoundationCollections -->
@@ -474,22 +1369,22 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-string-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
 <!-- Generated by HydePHP DocGen script at 2024-12-22 09:14:25 in 0.07ms -->
-<h4><code>makeTitle()</code><a id="maketitle" href="#maketitle" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>makeTitle()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeTitle</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>makeSlug()</code><a id="makeslug" href="#makeslug" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>makeSlug()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">makeSlug</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">value</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>normalizeNewlines()</code><a id="normalizenewlines" href="#normalizenewlines" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>normalizeNewlines()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">normalizeNewlines</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>stripNewlines()</code><a id="stripnewlines" href="#stripnewlines" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>stripNewlines()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">stripNewlines</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>trimSlashes()</code><a id="trimslashes" href="#trimslashes" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>trimSlashes()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">trimSlashes</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">string</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>markdown()</code><a id="markdown" href="#markdown" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>markdown()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdown</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">text</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">normalizeIndentation</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> Illuminate\Support\HtmlString</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ImplementsStringHelpers -->
@@ -497,25 +1392,25 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-hyperlink-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
 <!-- Generated by HydePHP DocGen script at 2024-02-25 19:02:29 in 0.09ms -->
-<h4><code>formatLink()</code><a id="formatlink" href="#formatlink" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>formatLink()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">formatLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>relativeLink()</code><a id="relativelink" href="#relativelink" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>relativeLink()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">relativeLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>mediaLink()</code><a id="medialink" href="#medialink" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>mediaLink()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">mediaLink</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">validate</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>asset()</code><a id="asset" href="#asset" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>asset()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">preferQualifiedUrl</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>url()</code><a id="url" href="#url" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>url()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">url</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>route()</code><a id="route" href="#route" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>route()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">route</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">key</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> Hyde\Support\Models\Route</span></div></code></pre>
-<h4><code>hasSiteUrl()</code><a id="hassiteurl" href="#hassiteurl" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>hasSiteUrl()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasSiteUrl</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ForwardsHyperlinks -->
@@ -523,28 +1418,28 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-filesystem-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.10ms -->
-<h4><code>filesystem()</code><a id="filesystem" href="#filesystem" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>filesystem()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">filesystem</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\Kernel\Filesystem</span></div></code></pre>
-<h4><code>path()</code><a id="path" href="#path" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>path()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">path</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>vendorPath()</code><a id="vendorpath" href="#vendorpath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>vendorPath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">vendorPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">package</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>mediaPath()</code><a id="mediapath" href="#mediapath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>mediaPath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">mediaPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>sitePath()</code><a id="sitepath" href="#sitepath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>sitePath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">sitePath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>siteMediaPath()</code><a id="sitemediapath" href="#sitemediapath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>siteMediaPath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">siteMediaPath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>pathToAbsolute()</code><a id="pathtoabsolute" href="#pathtoabsolute" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>pathToAbsolute()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pathToAbsolute</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">|</span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>pathToRelative()</code><a id="pathtorelative" href="#pathtorelative" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>pathToRelative()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">pathToRelative</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">path</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ForwardsFilesystem -->
@@ -552,37 +1447,37 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-kernel-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
-<h4><code>getInstance()</code><a id="getinstance" href="#getinstance" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getInstance()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getInstance</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Foundation\HydeKernel</span></div></code></pre>
-<h4><code>setInstance()</code><a id="setinstance" href="#setinstance" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>setInstance()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setInstance</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Foundation\HydeKernel </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">instance</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getBasePath()</code><a id="getbasepath" href="#getbasepath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getBasePath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getBasePath</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>setBasePath()</code><a id="setbasepath" href="#setbasepath" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>setBasePath()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setBasePath</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">basePath</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getSourceRoot()</code><a id="getsourceroot" href="#getsourceroot" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getSourceRoot()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getSourceRoot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>setSourceRoot()</code><a id="setsourceroot" href="#setsourceroot" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>setSourceRoot()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setSourceRoot</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">sourceRoot</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getOutputDirectory()</code><a id="getoutputdirectory" href="#getoutputdirectory" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getOutputDirectory()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getOutputDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>setOutputDirectory()</code><a id="setoutputdirectory" href="#setoutputdirectory" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>setOutputDirectory()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setOutputDirectory</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">outputDirectory</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getMediaDirectory()</code><a id="getmediadirectory" href="#getmediadirectory" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getMediaDirectory()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getMediaDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>setMediaDirectory()</code><a id="setmediadirectory" href="#setmediadirectory" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>setMediaDirectory()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">setMediaDirectory</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">mediaDirectory</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getMediaOutputDirectory()</code><a id="getmediaoutputdirectory" href="#getmediaoutputdirectory" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getMediaOutputDirectory()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getMediaOutputDirectory</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesHydeKernel -->
@@ -590,23 +1485,23 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-extensions-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.12ms -->
-<h4><code>registerExtension()</code><a id="registerextension" href="#registerextension" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>registerExtension()</code></h4>
 <p>Register a HydePHP extension within the HydeKernel.</p>
 <p>Typically, you would call this method in the register method of a service provider. If your package uses the standard Laravel (Composer) package discovery feature, the extension will automatically be enabled when the package is installed.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">registerExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>getExtension()</code><a id="getextension" href="#getextension" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getExtension()</code></h4>
 <p>Get the singleton instance of the specified extension.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">T</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> T</span></div></code></pre>
-<h4><code>hasExtension()</code><a id="hasextension" href="#hasextension" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>hasExtension()</code></h4>
 <p>Determine if the specified extension is registered.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">hasExtension</span><span style="color: #89DDFF;">(</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string&amp;</span><span style="color: #A6ACCD;">lt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #C792EA;">&amp;</span><span style="color: #A6ACCD;">gt</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">extension</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
-<h4><code>getExtensions()</code><a id="getextensions" href="#getextensions" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getExtensions()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getExtensions</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
-<h4><code>getRegisteredExtensions()</code><a id="getregisteredextensions" href="#getregisteredextensions" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getRegisteredExtensions()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getRegisteredExtensions</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Foundation\Concerns\HydeExtension</span><span style="color: #89DDFF;">&gt;&gt;</span></div></code></pre>
-<h4><code>getRegisteredPageClasses()</code><a id="getregisteredpageclasses" href="#getregisteredpageclasses" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>getRegisteredPageClasses()</code></h4>
 <p>No description provided.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getRegisteredPageClasses</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">array</span><span style="color: #89DDFF;">&lt;</span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">-</span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">\Hyde\Pages\Concerns\HydePage</span><span style="color: #89DDFF;">&gt;&gt;</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesExtensions -->
@@ -614,16 +1509,16 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-view-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.06ms -->
-<h4><code>shareViewData()</code><a id="shareviewdata" href="#shareviewdata" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>shareViewData()</code></h4>
 <p>Share data for the page being rendered.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">shareViewData</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">Hyde\Pages\Concerns\HydePage </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">page</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>currentRouteKey()</code><a id="currentroutekey" href="#currentroutekey" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>currentRouteKey()</code></h4>
 <p>Get the route key for the page being rendered.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentRouteKey</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span></div></code></pre>
-<h4><code>currentRoute()</code><a id="currentroute" href="#currentroute" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>currentRoute()</code></h4>
 <p>Get the route for the page being rendered.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentRoute</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Support\Models\Route</span></div></code></pre>
-<h4><code>currentPage()</code><a id="currentpage" href="#currentpage" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>currentPage()</code></h4>
 <p>Get the page being rendered.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">currentPage</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Hyde\Pages\Concerns\HydePage</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\ManagesViewData -->
@@ -631,47 +1526,51 @@ But you could just as well chain the methods on the accessed kernel singleton in
 <section id="hyde-kernel-boot-methods">
 <!-- Start generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 <!-- Generated by HydePHP DocGen script at 2023-03-11 11:17:34 in 0.09ms -->
-<h4><code>isBooted()</code><a id="isbooted" href="#isbooted" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>isBooted()</code></h4>
 <p>Determine if the Kernel has booted.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">isBooted</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span></div></code></pre>
-<h4><code>boot()</code><a id="boot" href="#boot" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>boot()</code></h4>
 <p>Boot the Hyde Kernel and run the Auto-Discovery Process.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">boot</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>booting()</code><a id="booting" href="#booting" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>booting()</code></h4>
 <p>Register a new boot listener.</p>
 <p>Your callback will be called before the kernel is booted. You can use this to register your own routes, pages, etc. The kernel instance will be passed to your callback.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">callable</span><span style="color: #89DDFF;">(\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #676E95;">): </span><span style="color: #F78C6C;">void</span><span style="color: #676E95;"> $</span><span style="color: #F78C6C;">callback</span><span style="color: #676E95;"> */</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">booting</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">callable</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">\Hyde\Foundation\HydeKernel</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
-<h4><code>booted()</code><a id="booted" href="#booted" class="heading-permalink" title="Permalink"></a></h4>
+<h4><code>booted()</code></h4>
 <p>Register a new &quot;booted&quot; listener.</p>
 <p>Your callback will be called after the kernel is booted. You can use this to run any logic after discovery has completed. The kernel instance will be passed to your callback.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@param</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">callable</span><span style="color: #89DDFF;">(\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">HydeKernel</span><span style="color: #676E95;">): </span><span style="color: #F78C6C;">void</span><span style="color: #676E95;"> $</span><span style="color: #F78C6C;">callback</span><span style="color: #676E95;"> */</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">booted</span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">callable</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">\Hyde\Foundation\HydeKernel</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> void</span></div></code></pre>
 <!-- End generated docs for Hyde\Foundation\Concerns\BootsHydeKernel -->
 </section>
 <!-- End generated docs for the HydeKernel -->
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p>
     <i>
         Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
     </i>
 </p>
 <p class="edit-page-link">
-    <a href="https://github.com/hydephp/develop/blob/master/docs/architecture-concepts/the-hydekernel.md">
+    <a href="https://github.com/hydephp/develop/blob/1.x/docs/architecture-concepts/the-hydekernel.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>
+    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -681,7 +1580,7 @@ But you could just as well chain the methods on the accessed kernel singleton in
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -691,46 +1590,168 @@ But you could just as well chain the methods on the accessed kernel singleton in
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/2.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/1.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=df4829542141b3634f113c4cb9e386aa"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
