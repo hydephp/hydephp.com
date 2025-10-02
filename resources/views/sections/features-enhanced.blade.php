@@ -54,8 +54,7 @@
           </div>
 
           <div class="text-[15px] leading-6 text-slate-300 max-w-[38ch] space-y-2">
-            <p>Create content with Markdown and let Hyde do the heavy lifting.</p>
-            <p>Sprinkle in some Front Matter for extra credit.</p>
+            <p>Create content with Markdown and let Hyde do the heavy lifting. Sprinkle in some Front Matter for extra credit.</p>
           </div>
         </article>
 
