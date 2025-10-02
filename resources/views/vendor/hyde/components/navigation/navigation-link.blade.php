@@ -1,5 +1,5 @@
 @php
-	$isActive = $item->isCurrent();
+	$isActive = $item->isActive();
 	$isHomepage = isset($page) && $page->routeKey === 'index';
 	
 	if ($isHomepage) {
@@ -16,5 +16,5 @@
 		$mobileClasses = $classes;
 	}
 @endphp
-<a href="{{ $item->destination }}" @if($isActive) aria-current="page" @endif class="hidden md:inline-block {{ $classes }}">{{ $item->label }}</a>
-<a href="{{ $item->destination }}" @if($isActive) aria-current="page" @endif class="md:hidden {{ $mobileClasses }}">{{ $item->label }}</a>
+<a href="{{ $item->getLink() }}" @if($isActive) aria-current="page" @endif class="hidden md:inline-block {{ $classes }}">{{ $item->getLabel() }}</a>
+<a href="{{ $item->getLink() }}" @if($isActive) aria-current="page" @endif class="md:hidden {{ $mobileClasses }}">{{ $item->getLabel() }}</a>

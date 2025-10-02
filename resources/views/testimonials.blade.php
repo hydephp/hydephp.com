@@ -27,14 +27,14 @@
         <!-- Testimonials Grid -->
         <div class="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16">
             @php
-                $testimonials = \App\Extend\DataCollections::markdown('testimonials');
+                $testimonials = \App\Extend\DataCollection::markdown('testimonials');
 
                 // Sort by Markdown length
-                $testimonials = $testimonials->sortByDesc(function (\App\DataCollections\Types\Testimonials $testimonial) {
+                $testimonials = $testimonials->sortByDesc(function (\App\DataCollection\Types\Testimonials $testimonial) {
                     return strlen($testimonial->markdown->body());
                 });
             @endphp
-            @php /** @var \App\DataCollections\Types\Testimonials $testimonial */ @endphp
+            @php /** @var \App\DataCollection\Types\Testimonials $testimonial */ @endphp
             @foreach($testimonials as $file => $testimonial)
                 @continue($file === 'testimonials/README.md')
                 <div class="group relative">

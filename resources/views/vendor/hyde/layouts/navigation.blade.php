@@ -16,7 +16,7 @@
 
 					<!-- Desktop Navigation Links -->
 					<div class="hidden md:flex items-center gap-8">
-						@foreach ($navigation->items as $item)
+						@foreach ($navigation->getItems() as $item)
 							@include('hyde::components.navigation.navigation-link')
 						@endforeach
 					</div>
