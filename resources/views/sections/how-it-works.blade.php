@@ -228,7 +228,7 @@
                                 <div class="p-8 bg-gradient-to-br from-white to-slate-50">
                                     <div class="site-content">
                                         <h1 class="text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
-                                        <p class="text-slate-500 mb-6">January 20, 2025</p>
+                                        <p class="text-slate-500 mb-6" id="current-date">January 20, 2025</p>
 
                                         <div class="prose prose-slate max-w-none">
                                             <h2 class="text-xl font-semibold text-slate-800 mb-3">Welcome to Hyde</h2>
@@ -269,6 +269,16 @@
     </section>
 
     <script>
+        // Set today's date
+        (function() {
+            const dateEl = document.getElementById('current-date');
+            if (dateEl) {
+                const today = new Date();
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                dateEl.textContent = today.toLocaleDateString('en-US', options);
+            }
+        })();
+
         // Apple-style scroll-driven animation controller
         (function() {
             const container = document.getElementById('how-it-works-scroll-container');
