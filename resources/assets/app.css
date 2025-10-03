@@ -53,6 +53,10 @@ blockquote.danger {
 	line-height: 1;
 }
 
+.torchlight-enabled .line {
+	line-height: 1.5;
+}
+
 /* Hyde UI Kit */
 
 
