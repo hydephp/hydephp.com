@@ -14,6 +14,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            perspective: 1500px;
+            perspective-origin: center center;
         }
 
         .step-content {
@@ -23,22 +25,40 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            visibility: hidden;
             pointer-events: none;
-            will-change: opacity, visibility;
+            will-change: opacity;
+            transform-style: preserve-3d;
         }
 
         .step-content.active {
-            visibility: visible;
+            opacity: 1;
             pointer-events: auto;
         }
 
-        /* Subtle glow effect */
+        /* Morphing container */
+        #morphing-container {
+            position: relative;
+            will-change: width, height;
+        }
+
+        .content-layer {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            will-change: opacity;
+        }
+
+        .content-layer.visible {
+            opacity: 1;
+        }
+
+        /* Subtle glow effect with morphing */
         .device-glow {
             box-shadow:
                 0 0 20px rgba(168, 85, 247, 0.05),
                 0 0 40px rgba(168, 85, 247, 0.03);
             transition: box-shadow 0.6s ease;
+            will-change: transform, box-shadow;
         }
 
         .device-glow.enhanced {
@@ -87,7 +107,7 @@
             <!-- Sticky viewport (fixed at 100vh) -->
             <div id="how-it-works-viewport">
 
-                <!-- Step 1: Install -->
+                <!-- Step headers (badges and titles) -->
                 <div class="step-content" data-step="0">
                     <div class="container max-w-6xl mx-auto px-6">
                         <div class="text-center mb-12">
@@ -98,10 +118,42 @@
                                 Start with a single command
                             </h2>
                         </div>
+                    </div>
+                </div>
 
-                        <!-- Terminal animation -->
-                        <div class="max-w-3xl mx-auto">
-                            <div class="bg-black/80 rounded-xl border border-white/10 overflow-hidden device-glow animate-element">
+                <div class="step-content" data-step="1">
+                    <div class="container max-w-6xl mx-auto px-6">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-4 animate-element">
+                                Step 2: Create Content
+                            </div>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
+                                Write in Markdown
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-content" data-step="2">
+                    <div class="container max-w-6xl mx-auto px-6">
+                        <div class="text-center mb-12">
+                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 mb-4 animate-element">
+                                Step 3: Ship
+                            </div>
+                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
+                                Deploy anywhere
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single morphing container with all device layers -->
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="top: 120px;">
+                    <div id="morphing-container" class="relative pointer-events-auto">
+
+                        <!-- Layer 1: Terminal -->
+                        <div class="content-layer absolute inset-0" data-layer="0">
+                            <div class="bg-black/80 rounded-xl border border-white/10 overflow-hidden device-glow w-full h-full">
                                 <!-- Terminal header -->
                                 <div class="bg-slate-800/50 px-4 py-2 flex items-center gap-2 border-b border-white/10">
                                     <div class="flex gap-1.5">
@@ -136,24 +188,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Step 2: Create Content -->
-                <div class="step-content" data-step="1">
-                    <div class="container max-w-6xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-4 animate-element">
-                                Step 2: Create Content
-                            </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                Write in Markdown
-                            </h2>
-                        </div>
-
-                        <!-- Code editor animation -->
-                        <div class="max-w-4xl mx-auto">
-                            <div class="bg-slate-800/80 rounded-xl border border-white/10 overflow-hidden device-glow animate-element">
+                        <!-- Layer 2: Code Editor -->
+                        <div class="content-layer absolute inset-0" data-layer="1">
+                            <div class="bg-slate-800/80 rounded-xl border border-white/10 overflow-hidden device-glow w-full h-full">
                                 <!-- Editor header -->
                                 <div class="bg-slate-700/50 px-4 py-2 flex items-center justify-between border-b border-white/10">
                                     <div class="flex items-center gap-3">
@@ -204,24 +242,10 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Step 3: Ship -->
-                <div class="step-content" data-step="2">
-                    <div class="container max-w-6xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 mb-4 animate-element">
-                                Step 3: Ship
-                            </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                Deploy anywhere
-                            </h2>
-                        </div>
-
-                        <!-- Browser preview -->
-                        <div class="max-w-5xl mx-auto">
-                            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow transform perspective-1000 animate-element">
+                        <!-- Layer 3: Browser -->
+                        <div class="content-layer absolute inset-0" data-layer="2">
+                            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow w-full h-full">
                                 <!-- Browser header -->
                                 <div class="bg-slate-100 px-4 py-3 flex items-center justify-between border-b border-slate-200">
                                     <div class="flex items-center gap-3">
@@ -339,68 +363,115 @@
                     }
                 });
 
-                // Animate each step based on scroll
+                // Handle step badge/title transitions
                 steps.forEach((stepEl, stepIndex) => {
-                    // Only show the current step
                     if (stepIndex === currentStep) {
                         stepEl.classList.add('active');
                         stepEl.style.opacity = 1;
-                        animateStepElements(stepEl, stepIndex, stepProgress);
                     } else {
                         stepEl.classList.remove('active');
                         stepEl.style.opacity = 0;
-                        // Reset all elements in inactive steps
-                        const allElements = stepEl.querySelectorAll('.animate-element, .code-line, .metric-card');
-                        allElements.forEach(el => {
-                            el.style.opacity = 0;
-                            el.style.transform = 'translateY(20px) scale(0.95)';
-                        });
                     }
+                });
+
+                // Morph container and crossfade layers
+                morphContainerAndLayers(scrollProgress, currentStep, stepProgress);
+
+                // Animate elements within current step
+                animateStepElements(currentStep, stepProgress);
+            }
+
+            function morphContainerAndLayers(scrollProgress, currentStep, stepProgress) {
+                const morphingContainer = document.getElementById('morphing-container');
+                const layers = document.querySelectorAll('.content-layer');
+
+                if (!morphingContainer) return;
+
+                // Define container dimensions for each step
+                const dimensions = [
+                    { width: 768, height: 400 },  // Terminal (max-w-3xl equivalent)
+                    { width: 896, height: 480 },  // Editor (max-w-4xl equivalent)
+                    { width: 1024, height: 520 }  // Browser (max-w-5xl equivalent)
+                ];
+
+                // Calculate current and next step dimensions
+                const currentDim = dimensions[currentStep];
+                const nextDim = dimensions[Math.min(currentStep + 1, TOTAL_STEPS - 1)];
+
+                // Interpolate dimensions based on step progress during transitions
+                let targetWidth = currentDim.width;
+                let targetHeight = currentDim.height;
+
+                // Smooth transition in the last 30% of each step
+                if (stepProgress > 0.7 && currentStep < TOTAL_STEPS - 1) {
+                    const transitionProgress = (stepProgress - 0.7) / 0.3;
+                    targetWidth = currentDim.width + (nextDim.width - currentDim.width) * transitionProgress;
+                    targetHeight = currentDim.height + (nextDim.height - currentDim.height) * transitionProgress;
+                }
+
+                // Apply morphing to container
+                morphingContainer.style.width = `${targetWidth}px`;
+                morphingContainer.style.height = `${targetHeight}px`;
+
+                // Crossfade layers
+                layers.forEach((layer, layerIndex) => {
+                    let layerOpacity = 0;
+
+                    if (layerIndex === currentStep) {
+                        // Current layer: fade out during transition
+                        if (stepProgress > 0.7 && currentStep < TOTAL_STEPS - 1) {
+                            layerOpacity = 1 - ((stepProgress - 0.7) / 0.3);
+                        } else {
+                            layerOpacity = 1;
+                        }
+                    } else if (layerIndex === currentStep + 1 && stepProgress > 0.7) {
+                        // Next layer: fade in during transition
+                        layerOpacity = (stepProgress - 0.7) / 0.3;
+                    }
+
+                    layer.style.opacity = layerOpacity;
+                    layer.classList.toggle('visible', layerOpacity > 0);
                 });
             }
 
-            function animateStepElements(stepEl, stepIndex, progress) {
-                const elements = stepEl.querySelectorAll('.animate-element');
+            function animateStepElements(stepIndex, progress) {
+                // Animate badge and title for current step
+                const stepHeader = document.querySelector(`.step-content[data-step="${stepIndex}"]`);
+                if (stepHeader) {
+                    const headerElements = stepHeader.querySelectorAll('.animate-element');
+                    if (headerElements[0]) applyScrollEffect(headerElements[0], progress, 0, 0.15); // Badge
+                    if (headerElements[1]) applyScrollEffect(headerElements[1], progress, 0.05, 0.2); // Title
+                }
+
+                // Get elements from the current layer
+                const layer = document.querySelector(`.content-layer[data-layer="${stepIndex}"]`);
+                if (!layer) return;
+
+                const elements = layer.querySelectorAll('.animate-element');
 
                 // Step 1: Terminal
                 if (stepIndex === 0) {
-                    // Badge appears first
-                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.15);
-                    // Title appears
-                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.1, 0.25);
-                    // Terminal container
-                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.2, 0.35);
-                    // Command line
-                    if (elements[3]) applyScrollEffect(elements[3], progress, 0.3, 0.45);
-                    // Output line 1
-                    if (elements[4]) applyScrollEffect(elements[4], progress, 0.4, 0.55);
-                    // Progress bar
-                    if (elements[5]) {
-                        applyScrollEffect(elements[5], progress, 0.5, 0.65);
+                    // Output lines
+                    if (elements[0]) applyScrollEffect(elements[0], progress, 0.2, 0.4);
+                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.3, 0.5);
+                    if (elements[2]) {
+                        applyScrollEffect(elements[2], progress, 0.4, 0.6);
                         // Update progress bar fill based on scroll
-                        const progressFill = stepEl.querySelector('.progress-fill');
-                        const progressPercent = stepEl.querySelector('.progress-percent');
-                        const barProgress = Math.round(mapRange(progress, 0.5, 0.85, 0, 100));
+                        const progressFill = layer.querySelector('.progress-fill');
+                        const progressPercent = layer.querySelector('.progress-percent');
+                        const barProgress = Math.round(mapRange(progress, 0.4, 0.8, 0, 100));
                         if (progressFill) progressFill.style.width = `${barProgress}%`;
                         if (progressPercent) progressPercent.textContent = `${barProgress}%`;
                     }
-                    // Complete message
-                    if (elements[6]) applyScrollEffect(elements[6], progress, 0.7, 0.85);
+                    if (elements[3]) applyScrollEffect(elements[3], progress, 0.6, 0.8);
                 }
 
                 // Step 2: Code editor
                 if (stepIndex === 1) {
-                    // Badge
-                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.1);
-                    // Title
-                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.05, 0.15);
-                    // Editor container
-                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.1, 0.2);
-
                     // Code lines appear progressively
-                    const codeLines = stepEl.querySelectorAll('.code-line');
+                    const codeLines = layer.querySelectorAll('.code-line');
                     codeLines.forEach((line, i) => {
-                        const lineStart = 0.2 + (i * 0.06);
+                        const lineStart = 0.15 + (i * 0.06);
                         const lineEnd = lineStart + 0.1;
                         applyScrollEffect(line, progress, lineStart, lineEnd);
                     });
@@ -408,28 +479,13 @@
 
                 // Step 3: Browser
                 if (stepIndex === 2) {
-                    // Badge
-                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.1);
-                    // Title
-                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.05, 0.15);
-                    // Browser container
-                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.15, 0.3);
-
                     // Metric cards
-                    const metricCards = stepEl.querySelectorAll('.metric-card');
+                    const metricCards = layer.querySelectorAll('.metric-card');
                     metricCards.forEach((card, i) => {
-                        const cardStart = 0.5 + (i * 0.15);
+                        const cardStart = 0.4 + (i * 0.15);
                         const cardEnd = cardStart + 0.15;
                         applyScrollEffect(card, progress, cardStart, cardEnd);
                     });
-
-                    // Enhanced glow on browser
-                    const deviceGlow = stepEl.querySelector('.device-glow');
-                    if (deviceGlow && progress > 0.3) {
-                        deviceGlow.classList.add('enhanced');
-                    } else if (deviceGlow) {
-                        deviceGlow.classList.remove('enhanced');
-                    }
                 }
             }
 
