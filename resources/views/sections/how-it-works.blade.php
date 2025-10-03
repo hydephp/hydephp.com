@@ -22,16 +22,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            transform: scale(0.95);
-            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-            will-change: opacity, transform;
+            will-change: opacity;
+            pointer-events: none;
         }
 
         .step-content.active {
-            opacity: 1;
-            transform: scale(1);
+            pointer-events: auto;
         }
 
         /* Subtle glow effect */
@@ -58,17 +54,9 @@
             background: white;
         }
 
-        /* Smooth element animations */
+        /* Smooth element animations - controlled by scroll */
         .animate-element {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .animate-element.visible {
-            opacity: 1;
-            transform: translateY(0);
+            will-change: opacity, transform;
         }
 
         /* Cursor blink */
@@ -135,7 +123,7 @@
                                         <div class="output-line animate-element">
                                             <div class="flex items-center gap-2">
                                                 <div class="progress-bar w-64 h-2 bg-slate-700 rounded-full overflow-hidden">
-                                                    <div class="progress-fill h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full transition-all duration-1000" style="width: 0%"></div>
+                                                    <div class="progress-fill h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" style="width: 0%"></div>
                                                 </div>
                                                 <span class="progress-percent text-green-400 text-xs">0%</span>
                                             </div>
@@ -303,8 +291,23 @@
             const progressDots = document.querySelectorAll('.progress-dot');
             const TOTAL_STEPS = 3;
 
-            let currentStep = -1;
-            let step1Animated = false;
+            // Helper function to map a value from one range to another
+            function mapRange(value, inMin, inMax, outMin, outMax) {
+                return Math.max(outMin, Math.min(outMax,
+                    (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin
+                ));
+            }
+
+            // Helper to apply scroll-based opacity and transform
+            function applyScrollEffect(element, progress, startProgress, endProgress) {
+                const elementProgress = mapRange(progress, startProgress, endProgress, 0, 1);
+                const opacity = elementProgress;
+                const translateY = (1 - elementProgress) * 20; // 20px movement
+                const scale = 0.95 + (elementProgress * 0.05); // 0.95 to 1
+
+                element.style.opacity = opacity;
+                element.style.transform = `translateY(${translateY}px) scale(${scale})`;
+            }
 
             function updateAnimation() {
                 if (!container || !viewport) return;
@@ -312,79 +315,125 @@
                 const rect = container.getBoundingClientRect();
                 const viewportHeight = window.innerHeight;
 
-                // Calculate scroll progress (0 to 1)
+                // Calculate overall scroll progress (0 to 1)
                 const scrollProgress = Math.max(0, Math.min(1,
                     -rect.top / (rect.height - viewportHeight)
                 ));
 
-                // Determine which step to show (0, 1, or 2)
+                // Determine which step is primary (0, 1, or 2)
                 const rawStep = scrollProgress * TOTAL_STEPS;
-                const step = Math.min(TOTAL_STEPS - 1, Math.floor(rawStep));
+                const currentStep = Math.min(TOTAL_STEPS - 1, Math.floor(rawStep));
 
-                // Update active step
-                if (step !== currentStep) {
-                    currentStep = step;
+                // Calculate progress within current step (0 to 1)
+                const stepProgress = rawStep - currentStep;
 
-                    steps.forEach((stepEl, i) => {
-                        if (i === step) {
-                            stepEl.classList.add('active');
-                            // Trigger step-specific animations
-                            animateStep(stepEl, i);
-                        } else {
-                            stepEl.classList.remove('active');
-                        }
-                    });
-
-                    // Update progress dots
-                    progressDots.forEach((dot, i) => {
-                        if (i === step) {
-                            dot.classList.add('active');
-                        } else {
-                            dot.classList.remove('active');
-                        }
-                    });
-                }
-            }
-
-            function animateStep(stepEl, stepIndex) {
-                // Animate elements within the step
-                const animateElements = stepEl.querySelectorAll('.animate-element');
-                animateElements.forEach((el, i) => {
-                    setTimeout(() => {
-                        el.classList.add('visible');
-                    }, i * 80);
+                // Update progress dots
+                progressDots.forEach((dot, i) => {
+                    if (i === currentStep) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
                 });
 
-                // Step-specific animations
-                if (stepIndex === 0 && !step1Animated) {
-                    step1Animated = true;
-                    setTimeout(() => {
-                        animateTerminal(stepEl);
-                    }, 400);
-                }
+                // Animate each step based on scroll
+                steps.forEach((stepEl, stepIndex) => {
+                    // Calculate this step's scroll range
+                    const stepStart = stepIndex / TOTAL_STEPS;
+                    const stepEnd = (stepIndex + 1) / TOTAL_STEPS;
 
-                // Enhanced glow effect
-                const deviceGlow = stepEl.querySelector('.device-glow');
-                if (deviceGlow) {
-                    setTimeout(() => {
-                        deviceGlow.classList.add('enhanced');
-                    }, 200);
-                }
+                    // Calculate how visible this step should be
+                    const stepVisibility = mapRange(scrollProgress,
+                        stepStart - 0.05, stepStart + 0.05, 0, 1) *
+                        mapRange(scrollProgress, stepEnd - 0.05, stepEnd + 0.05, 1, 0);
+
+                    // Apply base visibility to step
+                    if (stepVisibility > 0) {
+                        stepEl.classList.add('active');
+                        stepEl.style.opacity = stepVisibility;
+                    } else {
+                        stepEl.classList.remove('active');
+                        stepEl.style.opacity = 0;
+                    }
+
+                    // Only animate elements if this step is visible
+                    if (stepIndex === currentStep && stepVisibility > 0.5) {
+                        animateStepElements(stepEl, stepIndex, stepProgress);
+                    }
+                });
             }
 
-            function animateTerminal(stepEl) {
-                // Animate progress bar
-                const progressFill = stepEl.querySelector('.progress-fill');
-                const progressPercent = stepEl.querySelector('.progress-percent');
+            function animateStepElements(stepEl, stepIndex, progress) {
+                const elements = stepEl.querySelectorAll('.animate-element');
 
-                if (progressFill && progressPercent) {
-                    let progress = 0;
-                    const interval = setInterval(() => {
-                        progress += 5;
-                        progressFill.style.width = `${progress}%`;
-                        progressPercent.textContent = `${progress}%`;
-                        if (progress >= 100) clearInterval(interval);
-                    }, 40);
+                // Step 1: Terminal
+                if (stepIndex === 0) {
+                    // Badge appears first
+                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.15);
+                    // Title appears
+                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.1, 0.25);
+                    // Terminal container
+                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.2, 0.35);
+                    // Command line
+                    if (elements[3]) applyScrollEffect(elements[3], progress, 0.3, 0.45);
+                    // Output line 1
+                    if (elements[4]) applyScrollEffect(elements[4], progress, 0.4, 0.55);
+                    // Progress bar
+                    if (elements[5]) {
+                        applyScrollEffect(elements[5], progress, 0.5, 0.65);
+                        // Update progress bar fill based on scroll
+                        const progressFill = stepEl.querySelector('.progress-fill');
+                        const progressPercent = stepEl.querySelector('.progress-percent');
+                        const barProgress = Math.round(mapRange(progress, 0.5, 0.85, 0, 100));
+                        if (progressFill) progressFill.style.width = `${barProgress}%`;
+                        if (progressPercent) progressPercent.textContent = `${barProgress}%`;
+                    }
+                    // Complete message
+                    if (elements[6]) applyScrollEffect(elements[6], progress, 0.7, 0.85);
+                }
+
+                // Step 2: Code editor
+                if (stepIndex === 1) {
+                    // Badge
+                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.1);
+                    // Title
+                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.05, 0.15);
+                    // Editor container
+                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.1, 0.2);
+
+                    // Code lines appear progressively
+                    const codeLines = stepEl.querySelectorAll('.code-line');
+                    codeLines.forEach((line, i) => {
+                        const lineStart = 0.2 + (i * 0.06);
+                        const lineEnd = lineStart + 0.1;
+                        applyScrollEffect(line, progress, lineStart, lineEnd);
+                    });
+                }
+
+                // Step 3: Browser
+                if (stepIndex === 2) {
+                    // Badge
+                    if (elements[0]) applyScrollEffect(elements[0], progress, 0, 0.1);
+                    // Title
+                    if (elements[1]) applyScrollEffect(elements[1], progress, 0.05, 0.15);
+                    // Browser container
+                    if (elements[2]) applyScrollEffect(elements[2], progress, 0.15, 0.3);
+
+                    // Metric cards
+                    const metricCards = stepEl.querySelectorAll('.metric-card');
+                    metricCards.forEach((card, i) => {
+                        const cardStart = 0.5 + (i * 0.15);
+                        const cardEnd = cardStart + 0.15;
+                        applyScrollEffect(card, progress, cardStart, cardEnd);
+                    });
+
+                    // Enhanced glow on browser
+                    const deviceGlow = stepEl.querySelector('.device-glow');
+                    if (deviceGlow && progress > 0.3) {
+                        deviceGlow.classList.add('enhanced');
+                    } else if (deviceGlow) {
+                        deviceGlow.classList.remove('enhanced');
+                    }
                 }
             }
 
