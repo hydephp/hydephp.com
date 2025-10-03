@@ -105,53 +105,10 @@
         <!-- Scroll container (tall area to enable scroll) -->
         <div id="how-it-works-scroll-container">
             <!-- Sticky viewport (fixed at 100vh) -->
-            <div id="how-it-works-viewport">
-
-                <!-- Step headers (badges and titles) - positioned above container -->
-                <div class="absolute top-8 left-0 right-0 pointer-events-none">
-                    <div class="step-content" data-step="0">
-                        <div class="container max-w-6xl mx-auto px-6">
-                            <div class="text-center">
-                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-4 animate-element">
-                                    Step 1: Install
-                                </div>
-                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                    Start with a single command
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step-content" data-step="1">
-                        <div class="container max-w-6xl mx-auto px-6">
-                            <div class="text-center">
-                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-4 animate-element">
-                                    Step 2: Create Content
-                                </div>
-                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                    Write in Markdown
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="step-content" data-step="2">
-                        <div class="container max-w-6xl mx-auto px-6">
-                            <div class="text-center">
-                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 mb-4 animate-element">
-                                    Step 3: Ship
-                                </div>
-                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                    Deploy anywhere
-                                </h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="how-it-works-viewport" class="flex items-center justify-center">
 
                 <!-- Single morphing container with all device layers -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="top: 180px;">
-                    <div id="morphing-container" class="relative pointer-events-auto">
+                <div id="morphing-container" class="relative">
 
                         <!-- Layer 1: Terminal -->
                         <div class="content-layer absolute inset-0" data-layer="0">
@@ -316,7 +273,6 @@
         (function() {
             const container = document.getElementById('how-it-works-scroll-container');
             const viewport = document.getElementById('how-it-works-viewport');
-            const steps = document.querySelectorAll('.step-content');
             const progressDots = document.querySelectorAll('.progress-dot');
             const TOTAL_STEPS = 3;
 
@@ -362,17 +318,6 @@
                         dot.classList.add('active');
                     } else {
                         dot.classList.remove('active');
-                    }
-                });
-
-                // Handle step badge/title transitions
-                steps.forEach((stepEl, stepIndex) => {
-                    if (stepIndex === currentStep) {
-                        stepEl.classList.add('active');
-                        stepEl.style.opacity = 1;
-                    } else {
-                        stepEl.classList.remove('active');
-                        stepEl.style.opacity = 0;
                     }
                 });
 
@@ -437,14 +382,6 @@
             }
 
             function animateStepElements(stepIndex, progress) {
-                // Animate badge and title for current step
-                const stepHeader = document.querySelector(`.step-content[data-step="${stepIndex}"]`);
-                if (stepHeader) {
-                    const headerElements = stepHeader.querySelectorAll('.animate-element');
-                    if (headerElements[0]) applyScrollEffect(headerElements[0], progress, 0, 0.15); // Badge
-                    if (headerElements[1]) applyScrollEffect(headerElements[1], progress, 0.05, 0.2); // Title
-                }
-
                 // Get elements from the current layer
                 const layer = document.querySelector(`.content-layer[data-layer="${stepIndex}"]`);
                 if (!layer) return;
