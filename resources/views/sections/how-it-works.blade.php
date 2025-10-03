@@ -107,48 +107,50 @@
             <!-- Sticky viewport (fixed at 100vh) -->
             <div id="how-it-works-viewport">
 
-                <!-- Step headers (badges and titles) -->
-                <div class="step-content" data-step="0">
-                    <div class="container max-w-6xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-4 animate-element">
-                                Step 1: Install
+                <!-- Step headers (badges and titles) - positioned above container -->
+                <div class="absolute top-8 left-0 right-0 pointer-events-none">
+                    <div class="step-content" data-step="0">
+                        <div class="container max-w-6xl mx-auto px-6">
+                            <div class="text-center">
+                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 mb-4 animate-element">
+                                    Step 1: Install
+                                </div>
+                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
+                                    Start with a single command
+                                </h2>
                             </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                Start with a single command
-                            </h2>
                         </div>
                     </div>
-                </div>
 
-                <div class="step-content" data-step="1">
-                    <div class="container max-w-6xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-4 animate-element">
-                                Step 2: Create Content
+                    <div class="step-content" data-step="1">
+                        <div class="container max-w-6xl mx-auto px-6">
+                            <div class="text-center">
+                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-blue-500/20 text-blue-300 border border-blue-500/30 mb-4 animate-element">
+                                    Step 2: Create Content
+                                </div>
+                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
+                                    Write in Markdown
+                                </h2>
                             </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                Write in Markdown
-                            </h2>
                         </div>
                     </div>
-                </div>
 
-                <div class="step-content" data-step="2">
-                    <div class="container max-w-6xl mx-auto px-6">
-                        <div class="text-center mb-12">
-                            <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 mb-4 animate-element">
-                                Step 3: Ship
+                    <div class="step-content" data-step="2">
+                        <div class="container max-w-6xl mx-auto px-6">
+                            <div class="text-center">
+                                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-green-500/20 text-green-300 border border-green-500/30 mb-4 animate-element">
+                                    Step 3: Ship
+                                </div>
+                                <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
+                                    Deploy anywhere
+                                </h2>
                             </div>
-                            <h2 class="text-4xl lg:text-5xl font-bold text-white mb-4 animate-element">
-                                Deploy anywhere
-                            </h2>
                         </div>
                     </div>
                 </div>
 
                 <!-- Single morphing container with all device layers -->
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="top: 120px;">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="top: 180px;">
                     <div id="morphing-container" class="relative pointer-events-auto">
 
                         <!-- Layer 1: Terminal -->
