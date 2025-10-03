@@ -22,11 +22,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            will-change: opacity;
+            opacity: 0;
+            visibility: hidden;
             pointer-events: none;
+            will-change: opacity, visibility;
         }
 
         .step-content.active {
+            visibility: visible;
             pointer-events: auto;
         }
 
@@ -338,27 +341,20 @@
 
                 // Animate each step based on scroll
                 steps.forEach((stepEl, stepIndex) => {
-                    // Calculate this step's scroll range
-                    const stepStart = stepIndex / TOTAL_STEPS;
-                    const stepEnd = (stepIndex + 1) / TOTAL_STEPS;
-
-                    // Calculate how visible this step should be
-                    const stepVisibility = mapRange(scrollProgress,
-                        stepStart - 0.05, stepStart + 0.05, 0, 1) *
-                        mapRange(scrollProgress, stepEnd - 0.05, stepEnd + 0.05, 1, 0);
-
-                    // Apply base visibility to step
-                    if (stepVisibility > 0) {
+                    // Only show the current step
+                    if (stepIndex === currentStep) {
                         stepEl.classList.add('active');
-                        stepEl.style.opacity = stepVisibility;
+                        stepEl.style.opacity = 1;
+                        animateStepElements(stepEl, stepIndex, stepProgress);
                     } else {
                         stepEl.classList.remove('active');
                         stepEl.style.opacity = 0;
-                    }
-
-                    // Only animate elements if this step is visible
-                    if (stepIndex === currentStep && stepVisibility > 0.5) {
-                        animateStepElements(stepEl, stepIndex, stepProgress);
+                        // Reset all elements in inactive steps
+                        const allElements = stepEl.querySelectorAll('.animate-element, .code-line, .metric-card');
+                        allElements.forEach(el => {
+                            el.style.opacity = 0;
+                            el.style.transform = 'translateY(20px) scale(0.95)';
+                        });
                     }
                 });
             }
