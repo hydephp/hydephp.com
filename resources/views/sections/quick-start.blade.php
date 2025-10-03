@@ -84,7 +84,7 @@
                 <!-- keep the small floating badge -->
                 <div class="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 bg-gradient-to-r from-purple-500 to-pink-500
                             text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
-                    ⏱️ <span class="ml-1 hidden sm:inline">100 seconds</span><span class="ml-1 sm:hidden">100s</span>
+                    <span class="ml-1 hidden sm:inline">Great place to start</span><span class="ml-1 sm:hidden">100s</span>
                 </div>
             </div>
         </div>
