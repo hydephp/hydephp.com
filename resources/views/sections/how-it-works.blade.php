@@ -88,17 +88,6 @@
     </style>
 </head>
 <body class="bg-slate-900">
-    <!-- Header section (before animation) -->
-    <section class="min-h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-slate-800">
-        <div class="text-center">
-            <h1 class="text-6xl font-bold text-white mb-4">Welcome to HydePHP</h1>
-            <p class="text-xl text-slate-300 mb-8">Scroll down to see the magic happen</p>
-            <svg class="w-8 h-8 text-white animate-bounce mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-        </div>
-    </section>
-
     <!-- Main animation section -->
     <section id="how-it-works" class="relative bg-slate-900">
         <!-- Fixed progress indicators -->
@@ -252,7 +241,7 @@
                                     <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                 </div>
                                 <div class="bg-white rounded px-3 py-1 text-sm text-slate-600 border border-slate-300 ml-2">
-                                    myhydesite.com
+                                    ship.hydephp.com
                                 </div>
                             </div>
                             <div class="flex gap-4 text-sm text-slate-500">
@@ -280,7 +269,7 @@
                                     </ul>
                                 </div>
                                 
-                                <!-- Performance metrics -->
+                                <!-- Performance metrics https://pagespeed.web.dev/analysis/https-welcome-hydephp-com-hello-world-html/7obqlrvx8j?form_factor=desktop -->
                                 <div class="mt-8 grid grid-cols-3 gap-4">
                                     <div class="metric-card opacity-0 bg-green-50 border border-green-200 rounded-lg p-4 text-center">
                                         <div class="text-2xl font-bold text-green-600">100</div>
@@ -291,8 +280,8 @@
                                         <div class="text-sm text-blue-800">Load Time</div>
                                     </div>
                                     <div class="metric-card opacity-0 bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
-                                        <div class="text-2xl font-bold text-purple-600">0kb</div>
-                                        <div class="text-sm text-purple-800">JS Runtime</div>
+                                        <div class="text-2xl font-bold text-purple-600">0%</div>
+                                        <div class="text-sm text-purple-800">JS Required</div>
                                     </div>
                                 </div>
                             </div>
@@ -300,14 +289,14 @@
                     </div>
                     
                     <!-- Deploy buttons -->
-                    <div class="deploy-buttons opacity-0 mt-8 flex justify-center gap-4">
+                    {{-- <div class="deploy-buttons opacity-0 mt-8 flex justify-center gap-4">
                         <button class="px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition">
                             Deploy to Netlify
                         </button>
                         <button class="px-6 py-3 bg-slate-800 text-white rounded-lg font-semibold hover:bg-slate-700 transition">
                             Deploy to Vercel
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
