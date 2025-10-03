@@ -71,7 +71,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/architecture-concepts" class="group/btn relative block mt-auto">
+                    <a href="https://hydephp.com/docs/2.x/architecture-concepts" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-red-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-red-500 hover:bg-red-600 rounded-lg transition-colors">
                             <span class="mr-2">🏗️</span>
@@ -125,7 +125,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/blog-posts" class="group/btn relative block mt-auto">
+                    <a href="https://hydephp.com/docs/2.x/blog-posts" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-colors">
                             <span class="mr-2">📚</span>
@@ -179,7 +179,7 @@
                     </ul>
 
                     <!-- CTA Button -->
-                    <a href="https://hydephp.com/docs/1.x/quickstart" class="group/btn relative block mt-auto">
+                    <a href="https://hydephp.com/docs/2.x/quickstart" class="group/btn relative block mt-auto">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-emerald-600 to-emerald-400 rounded-lg blur opacity-0 group-hover/btn:opacity-100 transition duration-300"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-6 py-3 text-sm font-bold text-white bg-emerald-500 hover:bg-emerald-600 rounded-lg transition-colors">
                             <span class="mr-2">⚡</span>
