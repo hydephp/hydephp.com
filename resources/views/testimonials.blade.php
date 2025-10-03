@@ -133,7 +133,7 @@
                 </p>
                 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="https://twitter.com/intent/tweet?text=Just%20built%20my%20website%20with%20%23HydePHP%20and%20I%20love%20it!%20%40HydeFramework" 
+                    <a href="https://twitter.com/intent/tweet?text=Just%20built%20my%20website%20with%20%23HydePHP%20and%20I%20love%20it!%20%40HydeFramework" rel="nofollow" 
                        target="_blank"
                        rel="nofollow"
                        class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 rounded-lg transition-all duration-200 hover:scale-105">
@@ -141,7 +141,7 @@
                         Tweet About Hyde
                     </a>
                     
-                    <a href="https://github.com/hydephp/hydephp.com/blob/master/_pages/index.blade.php" 
+                    <a href="https://github.com/hydephp/hydephp.com/tree/master/resources/collections/testimonials" rel="nofollow" 
                        class="inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-purple-700 bg-white border border-purple-200 hover:bg-purple-50 rounded-lg transition-all duration-200">
                         <span class="mr-2">⚡</span>
                         Edit This Page
