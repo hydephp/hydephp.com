@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - HydePHP v2.0 Release Notes</title>
+<title>HydePHP - HydePHP v2.0 Upgrade Guide</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
 <link rel="canonical" href="https://hydephp.com/docs/2.x/upgrade-guide">
-<meta name="twitter:title" content="HydePHP - HydePHP v2.0 Release Notes">
-<meta property="og:title" content="HydePHP - HydePHP v2.0 Release Notes">
+<meta name="twitter:title" content="HydePHP - HydePHP v2.0 Upgrade Guide">
+<meta property="og:title" content="HydePHP - HydePHP v2.0 Upgrade Guide">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
@@ -628,6 +628,11 @@ button[aria-label="Open search window"]:hover,
             Front Matter
         </a>
     </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/release-notes" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            v2 Release Notes
+        </a>
+    </li>
                                             <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
             <a href="../../docs/2.x/upgrade-guide" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
             v2 Upgrade Guide
@@ -643,53 +648,9 @@ button[aria-label="Open search window"]:hover,
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#major-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#before-you-begin" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Major Features
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#modern-frontend-tooling-with-vite" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        🚀 Modern Frontend Tooling with Vite
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#enhanced-asset-management-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        🎨 Enhanced Asset Management System
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#redesigned-navigation-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        🧭 Redesigned Navigation API
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#improved-documentation-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        📝 Improved Documentation Features
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#better-developer-experience" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        🎯 Better Developer Experience
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#breaking-changes-and-upgrade-guide" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Breaking Changes &amp; Upgrade Guide
+                        Before You Begin
                     </a>
                 
                                     <ul class="pl-2">
@@ -701,65 +662,178 @@ button[aria-label="Open search window"]:hover,
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#high-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#backup-your-project" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        High Impact Changes
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#1-tailwind-css-v4-upgrade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        1. Tailwind CSS v4 Upgrade
+                        Backup Your Project
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#2-esm-module-migration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#estimated-time" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        2. ESM Module Migration
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#3-navigation-configuration-format" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        3. Navigation Configuration Format
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#4-features-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        4. Features Configuration
+                        Estimated Time
                     </a>
                 
                             </li>
             </ul>
                             </li>
                     <li class="my-0.5">
-                                    <a href="#general-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#step-1-update-dependencies" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        General Impact Changes
+                        Step 1: Update Dependencies
                     </a>
                 
                                     <ul class="pl-2">
                     <li class="my-0.5">
-                                    <a href="#post-author-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#update-composer-dependencies" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Post Author System
+                        Update Composer Dependencies
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-node-dependencies" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update Node Dependencies
                     </a>
                 
                             </li>
             </ul>
                             </li>
                     <li class="my-0.5">
-                                    <a href="#medium-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#step-2-migrate-from-laravel-mix-to-vite" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Medium Impact Changes
+                        Step 2: Migrate from Laravel Mix to Vite
                     </a>
                 
                                     <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#delete-the-old-mix-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Delete the Old Mix Configuration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#create-the-new-vite-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Create the New Vite Configuration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-your-css-imports" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update Your CSS imports
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-3-upgrade-tailwind-css-to-v4" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 3: Upgrade Tailwind CSS to v4
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-4-verify-vite-works" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 4: Verify Vite Works
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-5-update-configuration-files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 5: Update Configuration Files
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#update-confighydephp" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update `config/hyde.php`
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#replace-features-with-enum-values" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Replace Features With Enum Values
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-navigation-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update Navigation Configuration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-subdirectory-display-setting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update Subdirectory Display Setting
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-author-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update Author Configuration
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#rename-cache-busting-setting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Rename Cache Busting Setting
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#remove-deprecated-hydefront-settings" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Remove Deprecated HydeFront Settings
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-configdocsphp" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update `config/docs.php`
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#update-appconfigphp" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Update `app/config.php`
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-6-update-code-references" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 6: Update Code References
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#routes-facade-api-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Routes Facade API Changes
+                    </a>
+                
+                            </li>
                     <li class="my-0.5">
                                     <a href="#asset-api-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
@@ -768,29 +842,6 @@ button[aria-label="Open search window"]:hover,
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#routes-facade-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Routes Facade API
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#datacollection-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        DataCollection API
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#low-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Low Impact Changes
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
                                     <a href="#includes-facade-return-types" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
                         Includes Facade Return Types
@@ -798,87 +849,39 @@ button[aria-label="Open search window"]:hover,
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#documentation-search-generation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#datacollections-renamed" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Documentation Search Generation
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Configuration
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#new-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        New Features
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#enhanced-blog-posts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Enhanced Blog Posts
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#improved-build-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Improved Build System
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#developer-tools" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Developer Tools
+                        DataCollections Renamed
                     </a>
                 
                             </li>
             </ul>
                             </li>
                     <li class="my-0.5">
-                                    <a href="#package-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#step-7-update-build-commands" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Package Updates
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#realtime-compiler" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Realtime Compiler
+                        Step 7: Update Build Commands
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#hydefront" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#step-8-clear-caches" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HydeFront
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#performance-improvements" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Performance Improvements
+                        Step 8: Clear Caches
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#dependency-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#step-9-rebuild-your-site" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Dependency Updates
+                        Step 9: Rebuild Your Site
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-10-test-your-site" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 10: Test Your Site
                     </a>
                 
                             </li>
@@ -890,46 +893,46 @@ button[aria-label="Open search window"]:hover,
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#removed-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#troubleshooting" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Removed Features
+                        Troubleshooting
                     </a>
                 
                                     <ul class="pl-2">
                     <li class="my-0.5">
-                                    <a href="#deprecated-methods" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#assets-not-compiling" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Deprecated Methods
+                        Assets Not Compiling
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#build-commands" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#missing-routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Build Commands
+                        Missing Routes
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#configuration-options" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#validation-errors" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Configuration Options
+                        Validation Errors
                     </a>
                 
                             </li>
                     <li class="my-0.5">
-                                    <a href="#components-and-files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#errors-during-build" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Components and Files
+                        Errors During build
                     </a>
                 
                             </li>
             </ul>
                             </li>
                     <li class="my-0.5">
-                                    <a href="#support-and-resources" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                                    <a href="#getting-help" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
                         <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Support &amp; Resources
+                        Getting Help
                     </a>
                 
                             </li>
@@ -1160,7 +1163,7 @@ button[aria-label="Open search window"]:hover,
 </style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
-            <h1>HydePHP v2.0 Release Notes</h1>
+            <h1>HydePHP v2.0 Upgrade Guide</h1>
             <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
@@ -1195,238 +1198,212 @@ button[aria-label="Open search window"]:hover,
                 <section id="document-main-content" itemprop="articleBody">
             <h2 id="overview" class="group w-fit scroll-mt-2">Overview<a href="#overview" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>HydePHP v2.0 represents a major evolution of the framework, introducing significant improvements to the asset system, navigation API, and overall developer experience. This release modernizes the frontend tooling by replacing Laravel Mix with Vite, completely rewrites the navigation system for better flexibility, and introduces numerous performance optimizations throughout the framework.</p>
-<h2 id="major-features" class="group w-fit scroll-mt-2">Major Features<a href="#major-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<h3 id="modern-frontend-tooling-with-vite" class="group w-fit scroll-mt-2">🚀 Modern Frontend Tooling with Vite<a href="#modern-frontend-tooling-with-vite" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>We've replaced Laravel Mix with Vite for a faster, more modern development experience:</p>
-<ul>
-<li><strong>Instant Hot Module Replacement (HMR)</strong> for real-time updates during development</li>
-<li><strong>Direct asset compilation</strong> into the <code>_media</code> folder for cleaner builds</li>
-<li><strong>Updated build command</strong>: Use <code>npm run build</code> instead of <code>npm run prod</code> (or <code>--vite</code> during the sit build)</li>
-<li><strong>Vite facade</strong> for seamless Blade template integration</li>
-<li><strong>Optimized asset serving</strong> through the realtime compiler</li>
-<li><strong>Hyde Vite plugin</strong> for enhanced integration</li>
-</ul>
-<h3 id="enhanced-asset-management-system" class="group w-fit scroll-mt-2">🎨 Enhanced Asset Management System<a href="#enhanced-asset-management-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>The new consolidated Asset API provides a more intuitive interface for handling media files:</p>
-<ul>
-<li><strong>MediaFile instances</strong> with fluent methods like <code>getLink()</code>, <code>getLength()</code>, and <code>getMimeType()</code></li>
-<li><strong>HydeFront facade</strong> for CDN links and Tailwind configuration injection</li>
-<li><strong>Intelligent caching</strong> with CRC32 hashing for improved performance</li>
-<li><strong>Automatic validation</strong> to prevent missing assets from going unnoticed</li>
-<li><strong>Lazy-loaded metadata</strong> for optimal resource usage</li>
-</ul>
-<h3 id="redesigned-navigation-api" class="group w-fit scroll-mt-2">🧭 Redesigned Navigation API<a href="#redesigned-navigation-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>The navigation system has been completely rewritten for maximum flexibility:</p>
-<ul>
-<li><strong>YAML configuration support</strong> for defining navigation items</li>
-<li><strong>Extra attributes</strong> for custom styling and behavior</li>
-<li><strong>Improved Routes facade</strong> with Laravel-consistent naming conventions</li>
-<li><strong>Natural priority ordering</strong> using numeric prefixes in filenames</li>
-<li><strong>Enhanced sidebar management</strong> with better organization options</li>
-</ul>
-<h3 id="improved-documentation-features" class="group w-fit scroll-mt-2">📝 Improved Documentation Features<a href="#improved-documentation-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Documentation pages now benefit from several enhancements:</p>
-<ul>
-<li><strong>Alpine.js-powered search</strong> with customizable implementation</li>
-<li><strong>Blade-based table of contents</strong> that's 40x faster than before</li>
-<li><strong>Custom heading renderer</strong> with improved permalink handling</li>
-<li><strong>Colored blockquotes</strong> now using Tailwind CSS classes</li>
-<li><strong>Smart natural language processing</strong> for search headings</li>
-<li><strong>Dynamic source file links</strong> in Markdown documents</li>
-</ul>
-<h3 id="better-developer-experience" class="group w-fit scroll-mt-2">🎯 Better Developer Experience<a href="#better-developer-experience" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Numerous quality-of-life improvements for developers:</p>
-<ul>
-<li><strong>PHP 8.4 support</strong> and Laravel 11 compatibility</li>
-<li><strong>ESM module support</strong> for modern JavaScript development</li>
-<li><strong>Tailwind CSS v4</strong> with automated upgrade tools</li>
-<li><strong>Enhanced data collections</strong> with syntax validation</li>
-<li><strong>Improved error messages</strong> with clearer exception handling</li>
-<li><strong>Interactive publish:views command</strong> on Unix systems</li>
-<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
-</ul>
-<h2 id="breaking-changes-and-upgrade-guide" class="group w-fit scroll-mt-2">Breaking Changes &amp; Upgrade Guide<a href="#breaking-changes-and-upgrade-guide" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>This document will guide you through the upgrade process. If you want to learn more about the new features, take a look at the <a href="https://hydephp.com/docs/2.x/release-notes">Release Notes</a>.</p>
+<h2 id="before-you-begin" class="group w-fit scroll-mt-2">Before You Begin<a href="#before-you-begin" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <h3 id="prerequisites" class="group w-fit scroll-mt-2">Prerequisites<a href="#prerequisites" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Before upgrading, ensure your application is running HydePHP v1.6 or later, as this version includes helpers to ease the migration process. It's ideal to use v1.8, if possible.</p>
-<h3 id="high-impact-changes" class="group w-fit scroll-mt-2">High Impact Changes<a href="#high-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<h4 id="1-tailwind-css-v4-upgrade" class="group w-fit scroll-mt-2">1. Tailwind CSS v4 Upgrade<a href="#1-tailwind-css-v4-upgrade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>We've upgraded from Tailwind CSS v3 to v4. Run the automated upgrade tool to migrate your custom classes:</p>
+<p>Before upgrading to HydePHP v2.0, ensure your application is running <strong>HydePHP v1.6 or later</strong> (ideally v1.8). These versions include transition helpers that will make the migration process smoother.</p>
+<h3 id="backup-your-project" class="group w-fit scroll-mt-2">Backup Your Project<a href="#backup-your-project" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Before starting the upgrade process, it's <strong>strongly recommended</strong> to:</p>
+<ul>
+<li><strong>Commit all changes to Git</strong> - This allows you to easily revert if needed</li>
+<li><strong>Create a backup</strong> of your entire project directory</li>
+<li><strong>Have a previous site build</strong> so you can compare output</li>
+</ul>
+<p>If you're not already using Git for version control, now is an excellent time to initialize a repository:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">init</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">add</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">.</span></div><div class='line'><span style="color: #FFCB6B;">git</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">commit</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">-m</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Pre-upgrade backup before HydePHP v2.0</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
+<h3 id="estimated-time" class="group w-fit scroll-mt-2">Estimated Time<a href="#estimated-time" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>The upgrade process typically takes <strong>30-60 minutes</strong> for most projects. Complex sites with extensive customizations may take up to 90 minutes. The majority of this time involves:</p>
+<ul>
+<li>Updating and installing dependencies (~15 minutes)</li>
+<li>Migrating configuration files (~20 minutes)</li>
+<li>Testing and verifying the site (~15-30 minutes)</li>
+</ul>
+<h2 id="step-1-update-dependencies" class="group w-fit scroll-mt-2">Step 1: Update Dependencies<a href="#step-1-update-dependencies" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="update-composer-dependencies" class="group w-fit scroll-mt-2">Update Composer Dependencies<a href="#update-composer-dependencies" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Open your <code>composer.json</code> file and update the following dependencies:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">require</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">php</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^8.2</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">hyde/framework</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^2.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">laravel-zero/framework</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^11.0</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">},</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">require-dev</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">hyde/realtime-compiler</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^4.0</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<p>Then run:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">update</span></div></code></pre>
+<p>The dump-autoload script will likely fail, but this is expected and will be resolved in subsequent steps.</p>
+<h3 id="update-node-dependencies" class="group w-fit scroll-mt-2">Update Node Dependencies<a href="#update-node-dependencies" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Open your <code>package.json</code> file and replace the entire <code>devDependencies</code> section:</p>
+<p><strong>Before (v1.x with Laravel Mix):</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">devDependencies</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">@tailwindcss/typography</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^0.5.2</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">autoprefixer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^10.4.5</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">hydefront</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^3.4.1</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">laravel-mix</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^6.0.49</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">postcss</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^8.4.31</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">tailwindcss</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^3.0.24</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<p><strong>After (v2.x with Vite):</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">type</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">module</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">devDependencies</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">@tailwindcss/typography</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^0.5.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">@tailwindcss/vite</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^4.1.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">autoprefixer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^10.4.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">hyde-vite-plugin</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^1.1.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">hydefront</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^4.0.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">postcss</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^8.5.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">tailwindcss</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^4.1.0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">vite</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">^7.1.0</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<p>Update the NPM scripts in your <code>package.json</code>:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="json" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C792EA;">scripts</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">dev</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">vite</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&quot;</span><span style="color: #FFCB6B;">build</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">vite build</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<p>Then run:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">install</span></div></code></pre>
+<h2 id="step-2-migrate-from-laravel-mix-to-vite" class="group w-fit scroll-mt-2">Step 2: Migrate from Laravel Mix to Vite<a href="#step-2-migrate-from-laravel-mix-to-vite" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="delete-the-old-mix-configuration" class="group w-fit scroll-mt-2">Delete the Old Mix Configuration<a href="#delete-the-old-mix-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Remove the <code>webpack.mix.js</code> file from your project root.</p>
+<h3 id="create-the-new-vite-configuration" class="group w-fit scroll-mt-2">Create the New Vite Configuration<a href="#create-the-new-vite-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Create a new <code>vite.config.js</code> file in your project root:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="javascript" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">import</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #F07178;"> </span><span style="color: #A6ACCD;">defineConfig</span><span style="color: #F07178;"> </span><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">from</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">vite</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">import</span><span style="color: #A6ACCD;"> tailwindcss </span><span style="color: #89DDFF;">from</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">@tailwindcss/vite</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">import</span><span style="color: #A6ACCD;"> hyde </span><span style="color: #89DDFF;">from</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde-vite-plugin</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">export</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">default</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">defineConfig</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">plugins</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> [</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #82AAFF;">hyde</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #F07178;">input</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> [</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">resources/assets/app.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">resources/assets/app.js</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">]</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #F07178;">watch</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> [</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_posts</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_docs</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">]</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #F07178;">refresh</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #FF9CAC;">true</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;">)</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #82AAFF;">tailwindcss</span><span style="color: #A6ACCD;">()</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    ]</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">}</span><span style="color: #A6ACCD;">)</span><span style="color: #89DDFF;">;</span></div></code></pre>
+<h3 id="update-your-css-imports" class="group w-fit scroll-mt-2">Update Your CSS imports<a href="#update-your-css-imports" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Update <code>resources/assets/app.css</code>:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@import</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">~hydefront/dist/hyde.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@tailwind</span><span style="color: #A6ACCD;"> base</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">@tailwind</span><span style="color: #A6ACCD;"> components</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">@tailwind</span><span style="color: #A6ACCD;"> utilities</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">[</span><span style="color: #C792EA;">x-cloak</span><span style="color: #89DDFF;">]</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #A6ACCD;"> </span><span style="color: #B2CCD6;">display</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> none </span><span style="color: #F78C6C;">!important</span><span style="color: #89DDFF;">;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">}</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="css" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@import</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hydefront/components/torchlight.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> layer</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">base</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@import</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">tailwindcss</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@config</span><span style="color: #A6ACCD;"> &#39;../../tailwind.config.js&#39;</span><span style="color: #89DDFF;">;</span></div></code></pre>
+<h2 id="step-3-upgrade-tailwind-css-to-v4" class="group w-fit scroll-mt-2">Step 3: Upgrade Tailwind CSS to v4<a href="#step-3-upgrade-tailwind-css-to-v4" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>Run the automated Tailwind upgrade tool:</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npx</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">@tailwindcss/upgrade</span></div></code></pre>
-<p>Review the <a href="https://tailwindcss.com/docs/upgrade-guide">Tailwind v4 Upgrade Guide</a> for detailed breaking changes.</p>
-<h4 id="2-esm-module-migration" class="group w-fit scroll-mt-2">2. ESM Module Migration<a href="#2-esm-module-migration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Frontend tooling now uses ESM modules instead of CommonJS. If you have custom JavaScript, update to ESM syntax:</p>
-<p><strong>Before:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="javascript" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">const</span><span style="color: #A6ACCD;"> module </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">require</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">module-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">module.exports</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">/* ... */</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">};</span></div></code></pre>
-<p><strong>After:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="javascript" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">import</span><span style="color: #A6ACCD;"> module </span><span style="color: #89DDFF;">from</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">module-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">export</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">default</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">/* ... */</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">};</span></div></code></pre>
-<h4 id="3-navigation-configuration-format" class="group w-fit scroll-mt-2">3. Navigation Configuration Format<a href="#3-navigation-configuration-format" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Update your navigation configuration to use the new array-based format:</p>
-<p><strong>Before:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom_items</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<p><strong>After:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom_items</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">label</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">destination</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<h4 id="4-features-configuration" class="group w-fit scroll-mt-2">4. Features Configuration<a href="#4-features-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Replace static method calls with enum values in your <code>config/hyde.php</code>:</p>
+<p>Review the <a href="https://tailwindcss.com/docs/upgrade-guide">Tailwind v4 Upgrade Guide</a> for detailed information about breaking changes in custom configurations.</p>
+<h2 id="step-4-verify-vite-works" class="group w-fit scroll-mt-2">Step 4: Verify Vite Works<a href="#step-4-verify-vite-works" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>Now you can run Vite build:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
+<h2 id="step-5-update-configuration-files" class="group w-fit scroll-mt-2">Step 5: Update Configuration Files<a href="#step-5-update-configuration-files" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="update-code-confighydephp-code" class="group w-fit scroll-mt-2">Update <code>config/hyde.php</code><a href="#update-code-confighydephp-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="replace-features-with-enum-values" class="group w-fit scroll-mt-2">Replace Features With Enum Values<a href="#replace-features-with-enum-values" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p><strong>Before:</strong></p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">htmlPages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdownPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
 <p><strong>After:</strong></p>
 <pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">HtmlPages</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">MarkdownPosts</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<h3 id="general-impact-changes" class="group w-fit scroll-mt-2">General Impact Changes<a href="#general-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<h4 id="post-author-system" class="group w-fit scroll-mt-2">Post Author System<a href="#post-author-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>The blog post author feature has been significantly improved:</p>
-<p><strong>Configuration changes:</strong></p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Before</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// After</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">bio</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Author bio</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">avatar</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">avatar.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">socials</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">twitter</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">@username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
-<p>Key changes:</p>
-<ul>
-<li>Authors are now keyed by username</li>
-<li><code>Author::create()</code> returns an array instead of a <code>PostAuthor</code> instance</li>
-<li><code>Author::get()</code> returns <code>null</code> if not found (previously created new instance)</li>
-<li>Usernames are automatically normalized (lowercase, underscores for spaces)</li>
-<li>Authors support biographies, avatars, and social media links</li>
-<li>A new <code>Hyde::authors()</code> method provides access to all site authors</li>
-<li>Authors can be configured via YAML</li>
-</ul>
-<p>The way this system now works is that you first define authors in the config, Hyde the loads this during the booting process, and you can then access them using the get method.</p>
-<h3 id="medium-impact-changes" class="group w-fit scroll-mt-2">Medium Impact Changes<a href="#medium-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<h4 id="asset-api-updates" class="group w-fit scroll-mt-2">Asset API Updates<a href="#asset-api-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>All asset methods now return <code>MediaFile</code> instances instead of strings. This instance can be cast to a string which will automatically resolve to a relative link at that time. You can also call helper methods on it. When using Blade templates, thanks to the Stringable implementation no change will happen.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Methods renamed for clarity</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Previously: Hyde::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">         </span><span style="color: #676E95;">// Previously: Asset::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">exists</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">      </span><span style="color: #676E95;">// Previously: Asset::hasMediaFile()</span></div><div class='line'><span style="color: #FFCB6B;">HydeFront</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">cdnLink</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">app.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">   </span><span style="color: #676E95;">// Previously: Asset::cdnLink()</span></div></code></pre>
-<p>Configuration changes:</p>
-<ul>
-<li>Rename <code>hyde.enable_cache_busting</code> to <code>hyde.cache_busting</code></li>
-<li>Remove references to <code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code></li>
-</ul>
-<h4 id="routes-facade-api" class="group w-fit scroll-mt-2">Routes Facade API<a href="#routes-facade-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Methods renamed to follow Laravel conventions:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Before</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getOrFail</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">  </span><span style="color: #676E95;">// Throws exception</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// After</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">find</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">       </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Throws exception</span></div></code></pre>
-<h4 id="datacollection-api" class="group w-fit scroll-mt-2">DataCollection API<a href="#datacollection-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<ul>
-<li>Class renamed from <code>DataCollections</code> to <code>DataCollection</code></li>
-<li>Syntax validation now throws <code>ParseException</code> for malformed files</li>
-<li>Empty data files are no longer allowed</li>
-<li>Directory creation is no longer automatic</li>
-<li>The <code>route</code> function now throws <code>RouteNotFoundException</code> if route not found</li>
-</ul>
-<h3 id="low-impact-changes" class="group w-fit scroll-mt-2">Low Impact Changes<a href="#low-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<h4 id="includes-facade-return-types" class="group w-fit scroll-mt-2">Includes Facade Return Types<a href="#includes-facade-return-types" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Methods now return <code>HtmlString</code> objects:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">{{-- Before: Required unescaped output --}}</span></div><div class='line'><span style="color: #82AAFF;">{!!</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">!!}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">{{-- After: Automatic rendering --}}</span></div><div class='line'><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span></div></code></pre>
-<p>⚠️ <strong>Security Note:</strong> Output is no longer escaped by default. Use <code>{{ e(Includes::html('foo')) }}</code> for user-generated content.</p>
-<h4 id="documentation-search-generation" class="group w-fit scroll-mt-2">Documentation Search Generation<a href="#documentation-search-generation" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>The documentation search page is now generated as an <code>InMemoryPage</code> instead of a post-build task, meaning it appears in the dashboard and route list.</p>
-<h4 id="sidebar-configuration" class="group w-fit scroll-mt-2">Sidebar Configuration<a href="#sidebar-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
-<p>Documentation sidebar configuration has been reorganized:</p>
-<ul>
-<li><code>docs.sidebar_order</code> → <code>docs.sidebar.order</code></li>
-<li><code>docs.table_of_contents</code> → <code>docs.sidebar.table_of_contents</code></li>
-<li><code>docs.sidebar_group_labels</code> → <code>docs.sidebar.labels</code></li>
-</ul>
-<h2 id="new-features" class="group w-fit scroll-mt-2">New Features<a href="#new-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<h3 id="enhanced-blog-posts" class="group w-fit scroll-mt-2">Enhanced Blog Posts<a href="#enhanced-blog-posts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li><strong>Simplified image front matter</strong> with new &quot;caption&quot; field</li>
-<li><strong>Date prefixes in filenames</strong> for automatic publishing dates</li>
-<li><strong>Rich markup data</strong> with BlogPosting Schema.org type</li>
-<li><strong>Author collections</strong> accessible via <code>Hyde::authors()</code></li>
-<li><strong>Custom posts support</strong> in blog feed component</li>
-</ul>
-<h3 id="improved-build-system" class="group w-fit scroll-mt-2">Improved Build System<a href="#improved-build-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li><strong>Vite integration</strong> with HMR support in realtime compiler</li>
-<li><strong>Smart asset compilation</strong> - app.js only compiles when needed</li>
-<li><strong>Environment variable support</strong> for saving previews</li>
-<li><strong>Grouped progress bars</strong> for InMemoryPage instances</li>
-<li><strong>Media asset transfers</strong> via dedicated build task</li>
-</ul>
-<h3 id="developer-tools" class="group w-fit scroll-mt-2">Developer Tools<a href="#developer-tools" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li><strong>Interactive publish:views command</strong> on Unix systems</li>
-<li><strong>Custom HydeSearch.js</strong> support for search customization</li>
-<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
-<li><strong>Dynamic source file links</strong> in Markdown documents (for example <code>[Home](/_pages/index.blade.php)</code>)</li>
-<li><strong>Filesystem::ensureParentDirectoryExists()</strong> helper method</li>
-</ul>
-<h2 id="package-updates" class="group w-fit scroll-mt-2">Package Updates<a href="#package-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<h3 id="realtime-compiler" class="group w-fit scroll-mt-2">Realtime Compiler<a href="#realtime-compiler" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li>Simplified asset file locator for media source directory</li>
-<li>Added Vite HMR support</li>
-<li>Experimental Laravel Herd support</li>
-</ul>
-<h3 id="hydefront" class="group w-fit scroll-mt-2">HydeFront<a href="#hydefront" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li>Complete migration from Sass to Tailwind CSS</li>
-<li>Extracted CSS component partials</li>
-<li>Removed legacy hyde.css file</li>
-</ul>
-<h2 id="performance-improvements" class="group w-fit scroll-mt-2">Performance Improvements<a href="#performance-improvements" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<ul>
-<li><strong>40x faster table of contents generation</strong> using Blade components</li>
-<li><strong>CRC32 hashing</strong> replaces MD5 for cache busting (much faster)</li>
-<li><strong>Lazy-loaded media metadata</strong> with in-memory caching</li>
-<li><strong>Cached media assets</strong> in HydeKernel for instant access</li>
-</ul>
-<h2 id="dependency-updates" class="group w-fit scroll-mt-2">Dependency Updates<a href="#dependency-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<ul>
-<li><strong>PHP</strong>: Now requires 8.2–8.4 (dropped 8.1 support)</li>
-<li><strong>Laravel</strong>: Upgraded to version 11</li>
-<li><strong>Tailwind CSS</strong>: Upgraded to version 4</li>
-<li><strong>Symfony/Yaml</strong>: Updated to version 7</li>
-<li><strong>Torchlight</strong>: Switched to forked version for compatibility</li>
-</ul>
+<h4 id="update-navigation-configuration" class="group w-fit scroll-mt-2">Update Navigation Configuration<a href="#update-navigation-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom_items</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">label</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">destination</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>Or use the Navigation facade:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Facades</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">Navigation</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">item</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://github.com/hydephp/hyde</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">GitHub</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">200</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h4 id="update-subdirectory-display-setting" class="group w-fit scroll-mt-2">Update Subdirectory Display Setting<a href="#update-subdirectory-display-setting" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">subdirectories</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hidden</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">subdirectory_display</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hidden</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3 id="update-author-configuration" class="group w-fit scroll-mt-2">Update Author Configuration<a href="#update-author-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you're using blog post authors, update the configuration format:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">bio</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Author bio</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">avatar</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">avatar.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">socials</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">twitter</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">@username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h4 id="rename-cache-busting-setting" class="group w-fit scroll-mt-2">Rename Cache Busting Setting<a href="#rename-cache-busting-setting" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enable_cache_busting</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">cache_busting</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div></code></pre>
+<h4 id="remove-deprecated-hydefront-settings" class="group w-fit scroll-mt-2">Remove Deprecated HydeFront Settings<a href="#remove-deprecated-hydefront-settings" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Remove these configuration options (they're now handled automatically):</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hydefront_version</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">...,</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hydefront_cdn_url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">...,</span></div></code></pre>
+<h3 id="update-code-configdocsphp-code" class="group w-fit scroll-mt-2">Update <code>config/docs.php</code><a href="#update-code-configdocsphp-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Reorganize the sidebar configuration:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">table_of_contents</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar_group_labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// ...</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">sidebar</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">order</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">readme</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">installation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">labels</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #89DDFF;">        </span><span style="color: #676E95;">// ...</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">table_of_contents</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">enabled</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">true,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">min_heading_level</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">2</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">max_heading_level</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">4</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3 id="update-code-appconfigphp-code" class="group w-fit scroll-mt-2">Update <code>app/config.php</code><a href="#update-code-appconfigphp-code" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Add the new navigation service provider under the <code>'providers'</code> array:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Foundation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Providers</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">NavigationServiceProvider</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div></code></pre>
+<p>And add the following classes to the <code>'aliases'</code> array:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Vite</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Facades</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Vite</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">MediaFile</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Filesystem</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">MediaFile</span><span style="color: #89DDFF;">::</span><span style="color: #F78C6C;">class</span><span style="color: #89DDFF;">,</span></div></code></pre>
+<h2 id="step-6-update-code-references" class="group w-fit scroll-mt-2">Step 6: Update Code References<a href="#step-6-update-code-references" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="routes-facade-api-changes" class="group w-fit scroll-mt-2">Routes Facade API Changes<a href="#routes-facade-api-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getOrFail</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">  </span><span style="color: #676E95;">// Throws exception</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">find</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">       </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Throws exception</span></div></code></pre>
+<h3 id="asset-api-updates" class="group w-fit scroll-mt-2">Asset API Updates<a href="#asset-api-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you're using asset methods in custom code, note that they now return <code>MediaFile</code> instances:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Methods renamed for clarity</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">          </span><span style="color: #676E95;">// Previously: Hyde::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">           </span><span style="color: #676E95;">// Previously: Asset::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">exists</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Previously: Asset::hasMediaFile()</span></div><div class='line'><span style="color: #FFCB6B;">HydeFront</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">cdnLink</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">app.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">     </span><span style="color: #676E95;">// Previously: Asset::cdnLink()</span></div><div class='line'><span style="color: #FFCB6B;">MediaFile</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">sourcePath</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Previously: Hyde::mediaPath()</span></div></code></pre>
+<p>The <code>MediaFile</code> instances are Stringable and will automatically resolve to relative links, so in most cases (especially in Blade templates), no code changes are needed.</p>
+<h3 id="includes-facade-return-types" class="group w-fit scroll-mt-2">Includes Facade Return Types<a href="#includes-facade-return-types" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Methods now return <code>HtmlString</code> objects instead of raw strings:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">{!!</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">!!}</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span></div></code></pre>
+<p><strong>Security Note:</strong> Output is no longer escaped by default. If you're including user-generated content, use <code>{{ e(Includes::html('foo')) }}</code> for escaping.</p>
+<h3 id="datacollections-renamed" class="group w-fit scroll-mt-2">DataCollections Renamed<a href="#datacollections-renamed" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DataCollections</span><span style="color: #89DDFF;">;</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Support</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DataCollection</span><span style="color: #89DDFF;">;</span></div></code></pre>
+<h2 id="step-7-update-build-commands" class="group w-fit scroll-mt-2">Step 7: Update Build Commands<a href="#step-7-update-build-commands" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>Update any CI/CD pipelines or build scripts:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">prod</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--run-prod</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--vite</span></div></code></pre>
+<p>The <code>--run-dev</code>, <code>--run-prod</code>, and <code>--run-prettier</code> flags have been removed. Use <code>--vite</code> instead.</p>
+<h2 id="step-8-clear-caches" class="group w-fit scroll-mt-2">Step 8: Clear Caches<a href="#step-8-clear-caches" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>Next, to ensure we have a clean slate, run the following commands:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">dump-autoload</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">cache:clear</span></div><div class='line'><span style="color: #FFCB6B;">rm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">app/storage/framework/views/</span><span style="color: #A6ACCD;">*</span><span style="color: #C3E88D;">.php</span></div></code></pre>
+<p>You may also want to republish any views you have published.</p>
+<h2 id="step-9-rebuild-your-site" class="group w-fit scroll-mt-2">Step 9: Rebuild Your Site<a href="#step-9-rebuild-your-site" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>After completing all the configuration updates:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npm</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">run</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># Build your site</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># Or use the realtime compiler for development</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
+<h2 id="step-10-test-your-site" class="group w-fit scroll-mt-2">Step 10: Test Your Site<a href="#step-10-test-your-site" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ol>
+<li>Test all navigation menus for correct ordering and appearance</li>
+<li>Verify media assets are loading correctly</li>
+<li>Check that all pages render properly</li>
+<li>Test the search functionality (if using documentation)</li>
+<li>Verify author information displays correctly on blog posts</li>
+<li>Test dark mode if you're using theme toggle buttons</li>
+</ol>
 <h2 id="migration-checklist" class="group w-fit scroll-mt-2">Migration Checklist<a href="#migration-checklist" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>Use this checklist to track your upgrade progress:</p>
 <ul>
-<li><input disabled="" type="checkbox"> Upgrade to HydePHP v1.6 (preferably v1.8) before migrating to v2.0</li>
-<li><input disabled="" type="checkbox"> Run <code>npx @tailwindcss/upgrade</code> for Tailwind v4 migration</li>
-<li><input disabled="" type="checkbox"> Update <code>config/hyde.php</code> features to use enum values</li>
-<li><input disabled="" type="checkbox"> Update navigation configuration to array format</li>
-<li><input disabled="" type="checkbox"> Migrate custom JavaScript to ESM modules</li>
-<li><input disabled="" type="checkbox"> Update author configuration format if using blog</li>
-<li><input disabled="" type="checkbox"> Replace <code>npm run prod</code> with <code>npm run build</code> in CI/CD</li>
-<li><input disabled="" type="checkbox"> Review and update any custom navigation implementations</li>
-<li><input disabled="" type="checkbox"> Update Routes facade method calls if used in custom code</li>
-<li><input disabled="" type="checkbox"> Test site menus for correct ordering and appearance</li>
-<li><input disabled="" type="checkbox"> Verify media assets are loading correctly</li>
-<li><input disabled="" type="checkbox"> Check that all DataCollection files have valid syntax</li>
-<li><input disabled="" type="checkbox"> Update sidebar configuration structure in <code>config/docs.php</code></li>
-<li><input disabled="" type="checkbox"> Review Includes facade usage for security implications</li>
+<li><input disabled="" type="checkbox"> Confirmed running HydePHP v1.6+ (preferably v1.8)</li>
+<li><input disabled="" type="checkbox"> Updated <code>composer.json</code> dependencies</li>
+<li><input disabled="" type="checkbox"> Ran <code>composer update</code></li>
+<li><input disabled="" type="checkbox"> Updated <code>package.json</code> dependencies and scripts</li>
+<li><input disabled="" type="checkbox"> Added <code>&quot;type&quot;: &quot;module&quot;</code> to <code>package.json</code></li>
+<li><input disabled="" type="checkbox"> Ran <code>npm install</code></li>
+<li><input disabled="" type="checkbox"> Deleted <code>webpack.mix.js</code></li>
+<li><input disabled="" type="checkbox"> Created <code>vite.config.js</code></li>
+<li><input disabled="" type="checkbox"> Updated <code>resources/assets/app.css</code> imports</li>
+<li><input disabled="" type="checkbox"> Ran <code>npx @tailwindcss/upgrade</code> for Tailwind v4</li>
+<li><input disabled="" type="checkbox"> Updated <code>config/hyde.php</code> features to use enum values</li>
+<li><input disabled="" type="checkbox"> Updated navigation configuration to array format</li>
+<li><input disabled="" type="checkbox"> Renamed <code>enable_cache_busting</code> to <code>cache_busting</code></li>
+<li><input disabled="" type="checkbox"> Removed deprecated HydeFront settings</li>
+<li><input disabled="" type="checkbox"> Updated author configuration format (if using blog)</li>
+<li><input disabled="" type="checkbox"> Reorganized sidebar configuration in <code>config/docs.php</code></li>
+<li><input disabled="" type="checkbox"> Updated Routes facade method calls (if used in custom code)</li>
+<li><input disabled="" type="checkbox"> Updated Includes facade usage (if used in custom views)</li>
+<li><input disabled="" type="checkbox"> Renamed DataCollections to DataCollection (if used)</li>
+<li><input disabled="" type="checkbox"> Ran <code>npm run build</code></li>
+<li><input disabled="" type="checkbox"> Ran <code>php hyde build</code></li>
+<li><input disabled="" type="checkbox"> Tested site menus for correct ordering and appearance</li>
+<li><input disabled="" type="checkbox"> Verified media assets load correctly</li>
+<li><input disabled="" type="checkbox"> Checked all pages render properly</li>
+<li><input disabled="" type="checkbox"> Tested documentation search (if applicable)</li>
+<li><input disabled="" type="checkbox"> Verified blog author information (if applicable)</li>
 </ul>
-<h2 id="removed-features" class="group w-fit scroll-mt-2">Removed Features<a href="#removed-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<h3 id="deprecated-methods" class="group w-fit scroll-mt-2">Deprecated Methods<a href="#deprecated-methods" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h2 id="troubleshooting" class="group w-fit scroll-mt-2">Troubleshooting<a href="#troubleshooting" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="assets-not-compiling" class="group w-fit scroll-mt-2">Assets Not Compiling<a href="#assets-not-compiling" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you encounter issues with asset compilation:</p>
+<ol>
+<li>Delete <code>node_modules</code> and <code>package-lock.json</code></li>
+<li>Run <code>npm install</code> again</li>
+<li>Clear the <code>_media</code> directory</li>
+<li>Run <code>npm run build</code></li>
+</ol>
+<h3 id="missing-routes" class="group w-fit scroll-mt-2">Missing Routes<a href="#missing-routes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you get <code>RouteNotFoundException</code> errors:</p>
 <ul>
-<li><code>PostAuthor::getName()</code> - use <code>$author-&gt;name</code> property</li>
-<li><code>FeaturedImage::isRemote()</code> - use <code>Hyperlinks::isRemote()</code></li>
-<li><code>DocumentationPage::getTableOfContents()</code> - use Blade component</li>
-<li><code>MarkdownService::withPermalinks()</code> and <code>canEnablePermalinks()</code></li>
+<li>Check that you've updated <code>Routes::get()</code> to <code>Routes::find()</code> for cases where the route might not exist</li>
+<li>Verify your page source files are in the correct directories</li>
 </ul>
-<h3 id="build-commands" class="group w-fit scroll-mt-2">Build Commands<a href="#build-commands" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h3 id="validation-errors" class="group w-fit scroll-mt-2">Validation Errors<a href="#validation-errors" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you get syntax validation errors from DataCollection:</p>
 <ul>
-<li><code>npm run prod</code> - replaced by <code>npm run build</code></li>
-<li><code>--run-dev</code> and <code>--run-prod</code> flags - replaced by <code>--vite</code></li>
-<li><code>--run-prettier</code> flag and Prettier dependency removed</li>
+<li>Ensure all your YAML/JSON data files have valid syntax</li>
+<li>Empty data files are no longer allowed in v2.0</li>
 </ul>
-<h3 id="configuration-options" class="group w-fit scroll-mt-2">Configuration Options<a href="#configuration-options" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li><code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code> - now handled automatically</li>
-<li><code>hyde.enable_cache_busting</code> - renamed to <code>hyde.cache_busting</code></li>
-<li><code>hyde.navigation.subdirectories</code> - renamed to <code>hyde.navigation.subdirectory_display</code></li>
-</ul>
-<h3 id="components-and-files" class="group w-fit scroll-mt-2">Components and Files<a href="#components-and-files" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<ul>
-<li><code>hyde.css</code> from HydeFront - all styles now in <code>app.css</code></li>
-<li><code>table-of-contents.css</code>, <code>heading-permalinks.css</code>, <code>blockquotes.css</code> - styles now use Tailwind</li>
-<li><code>.torchlight-enabled</code> CSS class</li>
-<li><code>&lt;x-hyde::docs.search-input /&gt;</code> and <code>&lt;x-hyde::docs.search-scripts /&gt;</code> components - replaced by <code>&lt;x-hyde::docs.hyde-search /&gt;</code></li>
-</ul>
-<h2 id="support-and-resources" class="group w-fit scroll-mt-2">Support &amp; Resources<a href="#support-and-resources" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="errors-during-build" class="group w-fit scroll-mt-2">Errors During build<a href="#errors-during-build" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>If you have published Blade views, those may need to be republished if they use old syntax. If you use custom code you may need to look closer at the full release diff.</p>
+<h2 id="getting-help" class="group w-fit scroll-mt-2">Getting Help<a href="#getting-help" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>If you encounter issues during the upgrade:</p>
 <ul>
 <li><strong>Documentation</strong>: <a href="https://hydephp.com/docs/2.x">https://hydephp.com/docs/2.x</a></li>
-<li><strong>Upgrade Guide</strong>: <a href="https://hydephp.com/docs/2.x/upgrade-guide">https://hydephp.com/docs/2.x/upgrade-guide</a></li>
-<li><strong>GitHub Issues</strong>: <a href="https://github.com/hydephp/develop/issues">https://github.com/hydephp/develop/issues</a></li>
-<li><strong>Community Discord</strong>: <a href="https://discord.gg/hydephp">https://discord.gg/hydephp</a></li>
+<li><strong>GitHub Issues</strong>: <a href="https://github.com/hydephp/hyde/issues">https://github.com/hydephp/hyde/issues</a></li>
+<li><strong>Community Discord</strong>: <a href="https://discord.hydephp.com">https://discord.hydephp.com</a></li>
 </ul>
-<hr />
-<p>For the complete changelog with all pull request references, see the <a href="https://github.com/hydephp/hyde/releases/tag/v2.0.0">full changelog</a>.</p>
+<p>For the complete changelog with all pull request references, see the <a href="https://github.com/hydephp/hyde/releases/tag/v2.0.0">full release notes</a>.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
             <p>

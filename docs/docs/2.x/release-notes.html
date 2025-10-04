@@ -3,15 +3,15 @@
 <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>HydePHP - Core HydePHP Concepts</title>
+<title>HydePHP - HydePHP v2.0 Release Notes</title>
 
  
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/docs/2.x/core-concepts">
-<meta name="twitter:title" content="HydePHP - Core HydePHP Concepts">
-<meta property="og:title" content="HydePHP - Core HydePHP Concepts">
+<link rel="canonical" href="https://hydephp.com/docs/2.x/release-notes">
+<meta name="twitter:title" content="HydePHP - HydePHP v2.0 Release Notes">
+<meta property="og:title" content="HydePHP - HydePHP v2.0 Release Notes">
 
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
@@ -541,13 +541,13 @@ button[aria-label="Open search window"]:hover,
                 <div x-cloak x-show="vopen" @click.outside="vopen=false"
                      class="absolute right-0 mt-2 w-40 rounded-lg border border-gray-200 dark:border-gray-700
                             bg-white dark:bg-gray-800 shadow-lg z-50 py-1">
-                                            <a href="../../docs/1.x/core-concepts"
+                                            <a href="../../docs/1.x/"
                            class="flex items-center justify-between px-3 py-2 text-sm rounded-md
                                    hover:bg-gray-50 dark:hover:bg-gray-700 ">
                             <span>1.x</span>
                             <span class="text-[11px] text-gray-500">old</span>
                         </a>
-                                            <a href="../../docs/2.x/core-concepts"
+                                            <a href="../../docs/2.x/release-notes"
                            class="flex items-center justify-between px-3 py-2 text-sm rounded-md
                                    bg-gray-100 dark:bg-gray-700 font-semibold ">
                             <span>2.x</span>
@@ -618,306 +618,316 @@ button[aria-label="Open search window"]:hover,
             Console Commands
         </a>
     </li>
-                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
-            <a href="../../docs/2.x/core-concepts" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/core-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Core Concepts
         </a>
-
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents pb-3">
-                    <li class="my-0.5">
-                                    <a href="#introduction-to-the-hyde-framework" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction to the Hyde Framework
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#the-hydecli" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        The HydeCLI
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#directory-structure" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Directory Structure
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-models" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Models
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#file-autodiscovery" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        File Autodiscovery
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#paths-identifiers-and-route-keys" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Paths, Identifiers, and Route Keys
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#convention-over-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Convention Over Configuration
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-in-markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter in Markdown
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        ```markdown
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#date-2023-03-14" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        date: &quot;2023-03-14&quot;
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown-comes-here" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Markdown Comes Here
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-in-blade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter in Blade
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#automatic-routing" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Automatic Routing
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#global-page-data" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Global Page Data
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#terminology" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Terminology
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#table-of-contents" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Table of contents
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#tools" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Tools
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#languages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Languages
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#general-concepts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        General Concepts
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hydephp-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HydePHP Features
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hydephp" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HydePHP
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#laravel" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Laravel
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Markdown
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#blade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Blade
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#yaml" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        YAML
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#php" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        PHP
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#html" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HTML
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#tailwind-css" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Tailwind CSS
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#composer" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Composer
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#static-sites" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Static Sites
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#version-control" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Version Control
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#git" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Git
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#autodiscovery" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Autodiscovery
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-types" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Types
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-identifiers" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Identifiers
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Routes
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#route-keys" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Route Keys
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-            </li>
+    </li>
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/front-matter" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Front Matter
         </a>
     </li>
-                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/release-notes" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
+            <a href="../../docs/2.x/release-notes" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
             v2 Release Notes
         </a>
-    </li>
+
+                    <span class="sr-only">Table of contents</span>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#overview" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Overview
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#major-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Major Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#modern-frontend-tooling-with-vite" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🚀 Modern Frontend Tooling with Vite
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#enhanced-asset-management-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🎨 Enhanced Asset Management System
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#redesigned-navigation-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🧭 Redesigned Navigation API
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#improved-documentation-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        📝 Improved Documentation Features
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#better-developer-experience" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        🎯 Better Developer Experience
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#upgrading-to-v20" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Upgrading to v2.0
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#breaking-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Breaking Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#high-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        High Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#1-tailwind-css-v4-upgrade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        1. Tailwind CSS v4 Upgrade
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#2-esm-module-migration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        2. ESM Module Migration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#3-navigation-configuration-format" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        3. Navigation Configuration Format
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#4-features-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        4. Features Configuration
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#general-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        General Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#post-author-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Post Author System
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#medium-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Medium Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#asset-api-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Asset API Updates
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#routes-facade-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Routes Facade API
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#datacollection-api" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        DataCollection API
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#low-impact-changes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Low Impact Changes
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#includes-facade-return-types" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Includes Facade Return Types
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#documentation-search-generation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Documentation Search Generation
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Sidebar Configuration
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#new-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        New Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#enhanced-blog-posts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Enhanced Blog Posts
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#improved-build-system" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Improved Build System
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#developer-tools" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Developer Tools
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#package-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Package Updates
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#realtime-compiler" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Realtime Compiler
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hydefront" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        HydeFront
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#performance-improvements" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Performance Improvements
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#dependency-updates" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Dependency Updates
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#removed-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Removed Features
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#deprecated-method-removals" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Deprecated Method Removals
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#build-commands" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Build Commands
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#configuration-options" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Configuration Options
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#components-and-files" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Components and Files
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#support-and-resources" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Support &amp; Resources
+                    </a>
+                
+                            </li>
+            </ul>
+            </li>
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/upgrade-guide" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             v2 Upgrade Guide
@@ -1148,7 +1158,7 @@ button[aria-label="Open search window"]:hover,
 </style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
-            <h1>Core HydePHP Concepts</h1>
+            <h1>HydePHP v2.0 Release Notes</h1>
             <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
@@ -1164,13 +1174,13 @@ button[aria-label="Open search window"]:hover,
         <div x-cloak x-show="open" @click.outside="open=false"
              class="absolute right-0 mt-2 min-w-[12rem] rounded-lg border border-gray-200 dark:border-gray-700
                     bg-white dark:bg-gray-800 shadow-lg p-1 z-50">
-                                            <a href="../../docs/1.x/core-concepts"
+                                            <a href="../../docs/1.x/"
                    class="flex items-center justify-between px-3 py-2 rounded-md text-sm
                            hover:bg-gray-50 dark:hover:bg-gray-700                           ">
                     <span>1.x</span>
                     <span class="text-xs text-gray-500">old</span>
                 </a>
-                                            <a href="../../docs/2.x/core-concepts"
+                                            <a href="../../docs/2.x/release-notes"
                    class="flex items-center justify-between px-3 py-2 rounded-md text-sm
                            bg-gray-100 dark:bg-gray-700 font-semibold                           ">
                     <span>2.x</span>
@@ -1181,282 +1191,226 @@ button[aria-label="Open search window"]:hover,
 </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
-            <h2 id="introduction-to-the-hyde-framework" class="group w-fit scroll-mt-2">Introduction to the Hyde Framework<a href="#introduction-to-the-hyde-framework" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>What makes HydePHP special are its &quot;magic&quot; features like autodiscovery and intelligent data generation.
-All designed so that you can focus on your content, while the framework does the heavy lifting.</p>
-<p>This page provides a high-level overview of the framework's capabilities, so you can quickly grasp its benefits.
-As you delve deeper into the documentation, you'll discover the details of each feature and learn how to leverage them effectively.</p>
-<h2 id="the-hydecli" class="group w-fit scroll-mt-2">The HydeCLI<a href="#the-hydecli" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>When you are not writing Markdown and Blade, most of your interactions with Hyde will be through the command line
-using the <strong>HydeCLI</strong>, which is based on the Laravel Artisan Console that you may already be familiar with.</p>
-<p>If you want to learn about the available commands and how to use them, you can visit the <a href="console-commands">Console Commands</a> page,
-or you can run any of the built-in help commands to get a list of available commands and their descriptions.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">list</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">help</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&lt;</span><span style="color: #FFCB6B;">command</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;">--help</span><span style="color: #89DDFF;">]</span></div></code></pre>
-<h2 id="directory-structure" class="group w-fit scroll-mt-2">Directory Structure<a href="#directory-structure" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>To take full advantage of the framework, it may first be good to familiarize ourselves with the directory structure.</p>
-<table>
-<thead>
-<tr>
-<th>Directory</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>_docs</code></td>
-<td>For documentation pages</td>
-</tr>
-<tr>
-<td><code>_posts</code></td>
-<td>For blog posts</td>
-</tr>
-<tr>
-<td><code>_pages</code></td>
-<td>For static Markdown and Blade pages</td>
-</tr>
-<tr>
-<td><code>_media</code></td>
-<td>Store static assets to be copied to the build directory</td>
-</tr>
-<tr>
-<td><code>_site</code></td>
-<td>The build directory where your compiled site will be stored</td>
-</tr>
-<tr>
-<td><code>config</code></td>
-<td>Configuration files for Hyde and integrations</td>
-</tr>
-<tr>
-<td><code>resources/assets</code></td>
-<td>Location for CSS/JS Vite source files (optional)</td>
-</tr>
-<tr>
-<td><code>resources/views</code></td>
-<td>Location for Blade components (optional)</td>
-</tr>
-<tr>
-<td><code>app</code></td>
-<td>Location for custom PHP classes (optional)</td>
-</tr>
-</tbody>
-</table>
-<h2 id="page-models" class="group w-fit scroll-mt-2">Page Models<a href="#page-models" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>The Hyde page models are an integral part of how HydePHP creates your static site. Each page in your site is represented
-by a page model. These are simply PHP classes that in addition to holding both the source content and computed data
-for your pages, also house instructions to Hyde on how to parse, process, and render the pages to static HTML.</p>
-<p>The page classes are very important and fill two roles:</p>
-<ol>
-<li>They act as blueprints containing <em>static</em> instructions for how to parse, process, and, render pages.</li>
-<li>Each class <em>instance</em> also holds the page source contents, as well as the computed data.</li>
-</ol>
-<p>To learn more, you can visit the <a href="page-models">Page Models</a> page.</p>
-<h2 id="file-autodiscovery" class="group w-fit scroll-mt-2">File Autodiscovery<a href="#file-autodiscovery" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>Content files, meaning source Markdown and Blade files, are automatically discovered by Hyde and compiled to HTML when
-building the site. This means that you don't need to worry about routing and controllers!</p>
-<p>The directory a source file is in will determine the Blade template that is used to render it.</p>
-<p>All source and output directories are configurable, but the defaults are as follows:</p>
-<table>
-<thead>
-<tr>
-<th>Page/File Type</th>
-<th>Source Directory</th>
-<th>Output Directory</th>
-<th>File Extensions</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Static Pages</td>
-<td><code>_pages/</code></td>
-<td><code>_site/</code></td>
-<td><code>.md</code>, <code>.blade.php</code></td>
-</tr>
-<tr>
-<td>Blog Posts</td>
-<td><code>_posts/</code></td>
-<td><code>_site/posts/</code></td>
-<td><code>.md</code></td>
-</tr>
-<tr>
-<td>Documentation</td>
-<td><code>_docs/</code></td>
-<td><code>_site/docs/</code></td>
-<td><code>.md</code></td>
-</tr>
-<tr>
-<td>Media Assets</td>
-<td><code>_media/</code></td>
-<td><code>_site/media/</code></td>
-<td>Common asset types</td>
-</tr>
-</tbody>
-</table>
-<h2 id="paths-identifiers-and-route-keys" class="group w-fit scroll-mt-2">Paths, Identifiers, and Route Keys<a href="#paths-identifiers-and-route-keys" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>Since HydePHP automatically discovers and compiles content files, it is important to understand how HydePHP handles paths,
-as the file names and directories they are in will directly influence how the page will be compiled.</p>
-<p>As such, it will be helpful for you to know about the following terms:</p>
+            <h2 id="overview" class="group w-fit scroll-mt-2">Overview<a href="#overview" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p>HydePHP v2.0 represents a major evolution of the framework, introducing significant improvements to the asset system, navigation API, and overall developer experience. This release modernizes the frontend tooling by replacing Laravel Mix with Vite, completely rewrites the navigation system for better flexibility, and introduces numerous performance optimizations throughout the framework.</p>
+<p>This document will give you an overview of the changes. When you're ready to upgrade your site, take a look at the <a href="https://hydephp.com/docs/2.x/upgrade-guide">Upgrade Guide</a>.</p>
+<h2 id="major-features" class="group w-fit scroll-mt-2">Major Features<a href="#major-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="modern-frontend-tooling-with-vite" class="group w-fit scroll-mt-2">🚀 Modern Frontend Tooling with Vite<a href="#modern-frontend-tooling-with-vite" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>We've replaced Laravel Mix with Vite for a faster, more modern development experience:</p>
 <ul>
-<li><strong>Path:</strong> The full path to a file, including the file name, directory, and extension.</li>
-<li><strong>Identifier:</strong> The unique identifier for a page. Unique only within the same page type.</li>
-<li><strong>Route key:</strong> The key used to access the page in the routing system. Unique across all site pages.</li>
+<li><strong>Instant Hot Module Replacement (HMR)</strong> for real-time updates during development</li>
+<li><strong>Direct asset compilation</strong> into the <code>_media</code> folder for cleaner builds</li>
+<li><strong>Updated build command</strong>: Use <code>npm run build</code> instead of <code>npm run prod</code> (or <code>--vite</code> during the site build)</li>
+<li><strong>Vite facade</strong> for seamless Blade template integration</li>
+<li><strong>Optimized asset serving</strong> through the realtime compiler</li>
+<li><strong>Hyde Vite plugin</strong> for enhanced integration</li>
 </ul>
-<p>Both the identifier and route key are derived from the path of the page. The identifier is the path without the file
-extension, and relative to the page type source directory. The route key is the output directory plus the identifier.</p>
-<p>The identifier generation can be visualized as follows, where the identifier is underlined:</p>
-<pre><code class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;">  <span style="opacity: 0.75">_pages/</span><u>about/contact</u><span style="opacity: 0.75">.md</span></code></pre>
-<p>For a Markdown page, like the example above, the route key would be the same as the identifier, since Markdown pages are
-output to the site root. If it was a Markdown post however, the route key would be: <code>posts/about/contact</code>.</p>
-<p>This can be visualized as follows, assuming a blog post is stored as <code>_posts/hello-world.md</code>:</p>
-<pre><code class="torchlight" style="background-color: #292D3E; --theme-selection-background: #00000080;">  <span style="opacity: 0.75">_site/</span><u>posts/hello-world</u><span style="opacity: 0.75">.html</span></code></pre>
-<p>As you can see, the route key is simply put the relative page URL, without the .html extension.</p>
-<h2 id="convention-over-configuration" class="group w-fit scroll-mt-2">Convention Over Configuration<a href="#convention-over-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>Hyde favours the &quot;Convention over Configuration&quot; paradigm and thus comes preconfigured with sensible defaults.
-However, Hyde also strives to be modular and endlessly customizable and hackable if you need it.
-Take a look at the <a href="customization">customization and configuration guide</a> to see the endless options available!</p>
-<h2 id="front-matter" class="group w-fit scroll-mt-2">Front Matter<a href="#front-matter" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<blockquote class="border-blue-500">
-    <p><strong>In a nutshell:</strong> Front Matter is a block of YAML containing metadata, stored at the top of a Markdown file.</p>
-</blockquote>
-<p>Front matter is heavily used in HydePHP to store metadata about pages. Hyde uses the front matter data to generate rich and dynamic content. For example, a blog post category, author website, or featured image.</p>
-<p>Using front matter is optional, as Hyde will dynamically generate data based on the content itself. (Though any matter you provide will take precedence over the automatically generated data.)</p>
-<p>To learn more, you can visit the <a href="front-matter">Front Matter</a> page.</p>
-<h3 id="front-matter-in-markdown" class="group w-fit scroll-mt-2">Front Matter in Markdown<a href="#front-matter-in-markdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>All Markdown content files support Front Matter, and blog posts make heavy use of it. Here's what it may look like:</p>
-<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My New Post</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Mr Hyde</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">2023-03-14</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Markdown Comes Here</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">Lorem ipsum dolor sit amet, etc.</span></div></code></pre>
-<h3 id="front-matter-in-blade" class="group w-fit scroll-mt-2">Front Matter in Blade<a href="#front-matter-in-blade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>HydePHP has basic support for creating front-matter in Blade templates, called <a href="front-matter#front-matter-in-blade">BladeMatter</a>,
-where code in <code>@php</code> directives are statically parsed into page object's front matter data where it can be accessed in your templates.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">BladeMatter Demo</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">) // Equivalent to `title: &#39;BladeMatter Demo&#39;` in Yaml</span></div></code></pre>
-<h2 id="automatic-routing" class="group w-fit scroll-mt-2">Automatic Routing<a href="#automatic-routing" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<blockquote class="border-blue-500">
-    <p><strong>In a nutshell:</strong> Hyde will automatically create routes for your source files.</p>
-</blockquote>
-<p>If you've ever worked in an MVC framework, you are probably familiar with the concept of routing.
-And you are probably also familiar with how boring and tedious it can be. Thankfully, Hyde takes the pain out of routing by doing it for you!</p>
-<p>During the Autodiscovery process. Hyde will automatically discover all the content files in the source directories,
-and create routes for all of them, and store them in an index which works as a two-way link between source files and compiled files.</p>
-<p>You can see all the routes and their corresponding source files by running the <code>hyde route:list</code> command.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">route:list</span></div></code></pre>
-<p>To access routes in your code, simply use the Routes facade and specify the route key for the desired page.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts/my-post</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
-<p>To learn more about the routing system, please visit the <a href="automatic-routing">routing documentation</a>.</p>
-<h2 id="global-page-data" class="group w-fit scroll-mt-2">Global Page Data<a href="#global-page-data" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>During the build of each page, Hyde will inject some data available to all Blade views. If you are not planning to write
-any custom Blade templates, you can safely ignore this section. If you are, here are the three global variables you can use:</p>
+<h3 id="enhanced-asset-management-system" class="group w-fit scroll-mt-2">🎨 Enhanced Asset Management System<a href="#enhanced-asset-management-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>The new consolidated Asset API provides a more intuitive interface for handling media files:</p>
 <ul>
-<li><code>$page</code>: The <a href="#page-models">Page Object</a> for the current page.</li>
-<li><code>$route</code>: The <a href="#automatic-routing">Route Object</a> for the current page.</li>
-<li><code>$routeKey</code>: The <a href="#paths-identifiers-and-route-keys">Route Key</a> for the current page.</li>
+<li><strong>MediaFile instances</strong> with fluent methods like <code>getLink()</code>, <code>getLength()</code>, and <code>getMimeType()</code></li>
+<li><strong>HydeFront facade</strong> for CDN links and Tailwind configuration injection</li>
+<li><strong>Intelligent caching</strong> with CRC32 hashing for improved performance</li>
+<li><strong>Automatic validation</strong> to prevent missing assets from going unnoticed</li>
+<li><strong>Lazy-loaded metadata</strong> for optimal resource usage</li>
 </ul>
-<p>The <code>$page</code> variable is likely to be the most important one, as it contains all the data for the current page.
-Depending on the page type, you will have different helpers available. But <code>$page-&gt;matter()</code> is likely to be very helpful.</p>
-<p>You can see all the helpers in the <a href="hyde-pages">Page API</a> reference page.</p>
-<h2 id="terminology" class="group w-fit scroll-mt-2">Terminology<a href="#terminology" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
-<p>In this quick reference, we'll briefly go over some terminology and concepts used in HydePHP.
-This will help you understand the documentation and codebase better, as well as helping you know what to search for when you need help.</p>
-<h3 id="table-of-contents" class="group w-fit scroll-mt-2">Table of contents<a href="#table-of-contents" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<div class="lg:flex">
-<div style="margin-right: 2rem;">
-<h4 id="tools" class="group w-fit scroll-mt-2">Tools<a href="#tools" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<h3 id="redesigned-navigation-api" class="group w-fit scroll-mt-2">🧭 Redesigned Navigation API<a href="#redesigned-navigation-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>The navigation system has been completely rewritten for maximum flexibility:</p>
 <ul>
-<li><a href="#hydephp">HydePHP</a></li>
-<li><a href="#laravel">Laravel</a></li>
-<li><a href="#composer">Composer</a></li>
-<li><a href="#tailwind-css">Tailwind CSS</a></li>
+<li><strong>YAML configuration support</strong> for defining navigation items</li>
+<li><strong>Extra attributes</strong> for custom styling and behavior</li>
+<li><strong>Improved Routes facade</strong> with Laravel-consistent naming conventions</li>
+<li><strong>Natural priority ordering</strong> using numeric prefixes in filenames</li>
+<li><strong>Enhanced sidebar management</strong> with better organization options</li>
 </ul>
-</div>
-<div style="margin-right: 2rem;">
-<h4 id="languages" class="group w-fit scroll-mt-2">Languages<a href="#languages" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<h3 id="improved-documentation-features" class="group w-fit scroll-mt-2">📝 Improved Documentation Features<a href="#improved-documentation-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Documentation pages now benefit from several enhancements:</p>
 <ul>
-<li><a href="#front-matter">Front Matter</a></li>
-<li><a href="#markdown">Markdown</a></li>
-<li><a href="#blade">Blade</a></li>
-<li><a href="#yaml">YAML</a></li>
-<li><a href="#php">PHP</a></li>
-<li><a href="#html">HTML</a></li>
+<li><strong>Alpine.js-powered search</strong> with customizable implementation</li>
+<li><strong>Blade-based table of contents</strong> that's 40x faster than before</li>
+<li><strong>Custom heading renderer</strong> with improved permalink handling</li>
+<li><strong>Colored blockquotes</strong> now using Tailwind CSS classes</li>
+<li><strong>Smart natural language processing</strong> for search headings</li>
+<li><strong>Dynamic source file links</strong> in Markdown documents</li>
 </ul>
-</div>
-<div style="margin-right: 2rem;">
-<h4 id="general-concepts" class="group w-fit scroll-mt-2">General Concepts<a href="#general-concepts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<h3 id="better-developer-experience" class="group w-fit scroll-mt-2">🎯 Better Developer Experience<a href="#better-developer-experience" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<p>Numerous quality-of-life improvements for developers:</p>
 <ul>
-<li><a href="#static-sites">Static Sites</a></li>
-<li><a href="#version-control">Version Control</a></li>
-<li><a href="#git">Git</a></li>
+<li><strong>PHP 8.4 support</strong> and Laravel 11 compatibility</li>
+<li><strong>ESM module support</strong> for modern JavaScript development</li>
+<li><strong>Tailwind CSS v4</strong> with automated upgrade tools</li>
+<li><strong>Enhanced data collections</strong> with syntax validation</li>
+<li><strong>Improved error messages</strong> with clearer exception handling</li>
+<li><strong>Interactive publish:views command</strong> on Unix systems</li>
+<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
 </ul>
-</div>
-<div style="margin-right: 2rem;">
-<h4 id="hydephp-features" class="group w-fit scroll-mt-2">HydePHP Features<a href="#hydephp-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<h2 id="upgrading-to-v20" class="group w-fit scroll-mt-2">Upgrading to v2.0<a href="#upgrading-to-v20" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<p><strong>📖 For complete step-by-step upgrade instructions, see the <a href="https://hydephp.com/docs/2.x/upgrade-guide">Upgrade Guide</a>.</strong></p>
+<p><strong>Important:</strong> PHP 8.2+ is now required. Laravel Mix has been replaced with Vite, and Tailwind CSS has been upgraded to v4.</p>
+<hr />
+<h2 id="breaking-changes" class="group w-fit scroll-mt-2">Breaking Changes<a href="#breaking-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="high-impact-changes" class="group w-fit scroll-mt-2">High Impact Changes<a href="#high-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="1-tailwind-css-v4-upgrade" class="group w-fit scroll-mt-2">1. Tailwind CSS v4 Upgrade<a href="#1-tailwind-css-v4-upgrade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>We've upgraded from Tailwind CSS v3 to v4. Run the automated upgrade tool to migrate your custom classes:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">npx</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">@tailwindcss/upgrade</span></div></code></pre>
+<p>Review the <a href="https://tailwindcss.com/docs/upgrade-guide">Tailwind v4 Upgrade Guide</a> for detailed breaking changes.</p>
+<h4 id="2-esm-module-migration" class="group w-fit scroll-mt-2">2. ESM Module Migration<a href="#2-esm-module-migration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Frontend tooling now uses ESM modules instead of CommonJS. If you have custom JavaScript, update to ESM syntax:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="javascript" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">const</span><span style="color: #A6ACCD;"> module </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">require</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">module-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">module.exports</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">/* ... */</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">};</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="javascript" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">import</span><span style="color: #A6ACCD;"> module </span><span style="color: #89DDFF;">from</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">module-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">export</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">default</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">/* ... */</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">};</span></div></code></pre>
+<h4 id="3-navigation-configuration-format" class="group w-fit scroll-mt-2">3. Navigation Configuration Format<a href="#3-navigation-configuration-format" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Update your navigation configuration to use the new array-based format:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom_items</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">custom_items</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">label</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Item</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">destination</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">/custom-page</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">],</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h4 id="4-features-configuration" class="group w-fit scroll-mt-2">4. Features Configuration<a href="#4-features-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Replace static method calls with enum values in your <code>config/hyde.php</code>:</p>
+<p><strong>Before:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">htmlPages</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">markdownPosts</span><span style="color: #89DDFF;">(),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p><strong>After:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">features</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">HtmlPages</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Feature</span><span style="color: #89DDFF;">::</span><span style="color: #A6ACCD;">MarkdownPosts</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<h3 id="general-impact-changes" class="group w-fit scroll-mt-2">General Impact Changes<a href="#general-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="post-author-system" class="group w-fit scroll-mt-2">Post Author System<a href="#post-author-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>The blog post author feature has been significantly improved:</p>
+<p><strong>Configuration changes:</strong></p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Before</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// After</span></div><div class='line'><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">authors</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Author</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Display Name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">website</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">bio</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Author bio</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">avatar</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">avatar.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #FFCB6B;">socials</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">twitter</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">@username</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">]</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">],</span></div></code></pre>
+<p>Key changes:</p>
 <ul>
-<li><a href="#autodiscovery">Autodiscovery</a></li>
-<li><a href="#page-types">Page Types</a></li>
-<li><a href="#page-identifiers">Page Identifiers</a></li>
-<li><a href="#routes">Routes</a></li>
-<li><a href="#route-keys">Route Keys</a></li>
+<li>Authors are now keyed by username</li>
+<li><code>Author::create()</code> returns an array instead of a <code>PostAuthor</code> instance</li>
+<li><code>Author::get()</code> returns <code>null</code> if not found (previously created new instance)</li>
+<li>Usernames are automatically normalized (lowercase, underscores for spaces)</li>
+<li>Authors support biographies, avatars, and social media links</li>
+<li>A new <code>Hyde::authors()</code> method provides access to all site authors</li>
+<li>Authors can be configured via YAML</li>
 </ul>
-</div>
-</div>
-<h3 id="hydephp" class="group w-fit scroll-mt-2">HydePHP<a href="#hydephp" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>HydePHP is a static site generator written in PHP, designed to make it easy for developers to build fast and secure websites.
-It uses a simple directory structure and templating system to generate static websites from content files,
-and can be easily extended using PHP libraries and packages.</p>
-<h3 id="laravel" class="group w-fit scroll-mt-2">Laravel<a href="#laravel" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Laravel is the PHP framework that HydePHP is built on top of. We use a specialized version called Laravel Zero,
-which is optimized for command-line applications.</p>
-<h3 id="front-matter-2" class="group w-fit scroll-mt-2">Front Matter<a href="#front-matter-2" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Front Matter is a block of YAML, stored at the top of a Markdown file, enclosed by a set of triple-dashed lines.
-It is commonly used to store metadata about the content, such as the title, author, date, etc.</p>
-<h3 id="markdown" class="group w-fit scroll-mt-2">Markdown<a href="#markdown" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Markdown is a lightweight markup language that uses plain text formatting syntax, designed to make it easy to create
-structured content for the web. HydePHP uses Markdown as the base for most of its content files.</p>
-<h3 id="blade" class="group w-fit scroll-mt-2">Blade<a href="#blade" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Blade is the templating engine from Laravel, which allows developers to write clean and reusable code for the
-presentation layer of web applications. HydePHP uses Blade both for the built-in views and components,
-as well as to provide powerful templating capabilities through Blade-based pages.</p>
-<h3 id="yaml" class="group w-fit scroll-mt-2">YAML<a href="#yaml" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>YAML is a human-readable data serialization format used for configuration files and often used as the syntax for
-Front Matter in HydePHP content files. YAML is designed to be easily read by humans and parsed by machines,
-making it a popular choice for many applications and frameworks.</p>
-<h3 id="php" class="group w-fit scroll-mt-2">PHP<a href="#php" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>PHP is a popular server-side scripting language used for web development that can be embedded in HTML.
-HydePHP is built on top of PHP and utilizes its powerful capabilities for generating static websites.</p>
-<h3 id="html" class="group w-fit scroll-mt-2">HTML<a href="#html" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>HTML (Hypertext Markup Language) is the standard markup language used to create web pages and web applications.
-HydePHP uses HTML to render the static websites generated from its content files and templates.</p>
-<h3 id="tailwind-css" class="group w-fit scroll-mt-2">Tailwind CSS<a href="#tailwind-css" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Tailwind CSS is a utility-first CSS framework used for rapidly building custom user interfaces.
-HydePHP supports Tailwind CSS out of the box through the built-in Blade templates,
-making it easy for developers to create beautiful and responsive websites without writing custom CSS.</p>
-<h3 id="composer" class="group w-fit scroll-mt-2">Composer<a href="#composer" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Composer is a dependency manager for PHP that simplifies the process of installing and managing packages required by
-PHP applications. HydePHP uses Composer to manage its own dependencies and make it easy for users to install and use the software.</p>
-<h3 id="static-sites" class="group w-fit scroll-mt-2">Static Sites<a href="#static-sites" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>A static website is a collection of HTML web pages that are delivered to the user's web browser exactly as they are stored
-on the web server. HydePHP generates static websites, making them fast, secure, and easy to deploy.</p>
-<h3 id="version-control" class="group w-fit scroll-mt-2">Version Control<a href="#version-control" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>HydePHP can be easily integrated with Git to manage website source files and track changes over time,
-as one of the many benefits with static sites is that they are designed to be version controlled.</p>
-<h3 id="git" class="group w-fit scroll-mt-2">Git<a href="#git" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Git is a free and open-source distributed version control system that is widely used for software development.
-Git repositories can be hosted on GitHub, GitLab, BitBucket, or any other Git hosting service.</p>
-<h3 id="autodiscovery" class="group w-fit scroll-mt-2">Autodiscovery<a href="#autodiscovery" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>Content files, including Markdown and Blade files, are automatically discovered and compiled to HTML during site builds.
-During autodiscovery, Hyde also generates dynamic data to enrich your content based on the page type.</p>
-<p>In short the autodiscovery is split into three steps:
-<code>File discovery -&gt; Page parsing -&gt; Route generation</code></p>
-<h3 id="page-types" class="group w-fit scroll-mt-2">Page Types<a href="#page-types" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>All pages in HydePHP are internally represented by a page object that extends the HydePage class. Each page type has its
-own page class which acts as a blueprint defining information for the framework to parse a file and generate relevant data.</p>
-<h3 id="page-identifiers" class="group w-fit scroll-mt-2">Page Identifiers<a href="#page-identifiers" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>The page identifier is the name of the file without the file extension, relative to the page type's source directory.
-The identifier is used to generate the route key, which is used to generate the file name for the compiled HTML file.</p>
-<h3 id="routes" class="group w-fit scroll-mt-2">Routes<a href="#routes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>All pages are internally bound to a Route object, through the route key. During the build process, each route is
-compiled to HTML using the page object's data, and saved to the output directory with a file name created from the route key.
-Since routes are generated automatically during autodiscovery, there is no need to create them manually.</p>
-<h3 id="route-keys" class="group w-fit scroll-mt-2">Route Keys<a href="#route-keys" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
-<p>The route key is the URL path relative to the site webroot, without the file extension. The route key is the common
-identifier binding Page objects to Route objects, and is used to generate the file name for the compiled HTML file.</p>
-<p>Route keys generation can be visualised as follows: <code>&lt;PageClass::OutputDirectory&gt;/&lt;PageIdentifier&gt;</code></p>
+<p>The way this system now works is that you first define authors in the config, Hyde then loads this during the booting process, and you can then access them using the get method.</p>
+<h3 id="medium-impact-changes" class="group w-fit scroll-mt-2">Medium Impact Changes<a href="#medium-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="asset-api-updates" class="group w-fit scroll-mt-2">Asset API Updates<a href="#asset-api-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>All asset methods now return <code>MediaFile</code> instances instead of strings. This instance can be cast to a string which will automatically resolve to a relative link at that time. You can also call helper methods on it. When using Blade templates, thanks to the Stringable implementation no change will happen.</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Methods renamed for clarity</span></div><div class='line'><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">asset</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Previously: Hyde::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">         </span><span style="color: #676E95;">// Previously: Asset::mediaLink()</span></div><div class='line'><span style="color: #FFCB6B;">Asset</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">exists</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">image.png</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">      </span><span style="color: #676E95;">// Previously: Asset::hasMediaFile()</span></div><div class='line'><span style="color: #FFCB6B;">HydeFront</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">cdnLink</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">app.css</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">   </span><span style="color: #676E95;">// Previously: Asset::cdnLink()</span></div></code></pre>
+<p>Configuration changes:</p>
+<ul>
+<li>Rename <code>hyde.enable_cache_busting</code> to <code>hyde.cache_busting</code></li>
+<li>Remove references to <code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code></li>
+</ul>
+<h4 id="routes-facade-api" class="group w-fit scroll-mt-2">Routes Facade API<a href="#routes-facade-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Methods renamed to follow Laravel conventions:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Before</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">getOrFail</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">  </span><span style="color: #676E95;">// Throws exception</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// After</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">find</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">       </span><span style="color: #676E95;">// Returns null if not found</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">route </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">route-name</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;">        </span><span style="color: #676E95;">// Throws exception</span></div></code></pre>
+<h4 id="datacollection-api" class="group w-fit scroll-mt-2">DataCollection API<a href="#datacollection-api" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<ul>
+<li>Class renamed from <code>DataCollections</code> to <code>DataCollection</code></li>
+<li>Syntax validation now throws <code>ParseException</code> for malformed files</li>
+<li>Empty data files are no longer allowed</li>
+<li>Directory creation is no longer automatic</li>
+<li>The <code>route</code> function now throws <code>RouteNotFoundException</code> if route not found</li>
+</ul>
+<h3 id="low-impact-changes" class="group w-fit scroll-mt-2">Low Impact Changes<a href="#low-impact-changes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<h4 id="includes-facade-return-types" class="group w-fit scroll-mt-2">Includes Facade Return Types<a href="#includes-facade-return-types" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Methods now return <code>HtmlString</code> objects:</p>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">{{-- Before: Required unescaped output --}}</span></div><div class='line'><span style="color: #82AAFF;">{!!</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">!!}</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">{{-- After: Automatic rendering --}}</span></div><div class='line'><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Includes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">html</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">partial</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span></div></code></pre>
+<p>⚠️ <strong>Security Note:</strong> Output is no longer escaped by default. Use <code>{{ e(Includes::html('foo')) }}</code> for user-generated content.</p>
+<h4 id="documentation-search-generation" class="group w-fit scroll-mt-2">Documentation Search Generation<a href="#documentation-search-generation" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>The documentation search page is now generated as an <code>InMemoryPage</code> instead of a post-build task, meaning it appears in the dashboard and route list.</p>
+<h4 id="sidebar-configuration" class="group w-fit scroll-mt-2">Sidebar Configuration<a href="#sidebar-configuration" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
+<p>Documentation sidebar configuration has been reorganized:</p>
+<ul>
+<li><code>docs.sidebar_order</code> → <code>docs.sidebar.order</code></li>
+<li><code>docs.table_of_contents</code> → <code>docs.sidebar.table_of_contents</code></li>
+<li><code>docs.sidebar_group_labels</code> → <code>docs.sidebar.labels</code></li>
+</ul>
+<h2 id="new-features" class="group w-fit scroll-mt-2">New Features<a href="#new-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="enhanced-blog-posts" class="group w-fit scroll-mt-2">Enhanced Blog Posts<a href="#enhanced-blog-posts" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Simplified image front matter</strong> with new &quot;caption&quot; field</li>
+<li><strong>Date prefixes in filenames</strong> for automatic publishing dates</li>
+<li><strong>Rich markup data</strong> with BlogPosting Schema.org type</li>
+<li><strong>Author collections</strong> accessible via <code>Hyde::authors()</code></li>
+<li><strong>Custom posts support</strong> in blog feed component</li>
+</ul>
+<h3 id="improved-build-system" class="group w-fit scroll-mt-2">Improved Build System<a href="#improved-build-system" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Vite integration</strong> with HMR support in realtime compiler</li>
+<li><strong>Smart asset compilation</strong> - app.js only compiles when needed</li>
+<li><strong>Environment variable support</strong> for saving previews</li>
+<li><strong>Grouped progress bars</strong> for InMemoryPage instances</li>
+<li><strong>Media asset transfers</strong> via dedicated build task</li>
+</ul>
+<h3 id="developer-tools" class="group w-fit scroll-mt-2">Developer Tools<a href="#developer-tools" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><strong>Interactive publish:views command</strong> on Unix systems</li>
+<li><strong>Custom HydeSearch.js</strong> support for search customization</li>
+<li><strong>Extension callbacks</strong> with <code>booting()</code> and <code>booted()</code> methods</li>
+<li><strong>Dynamic source file links</strong> in Markdown documents (for example <code>[Home](/_pages/index.blade.php)</code>)</li>
+<li><strong>Filesystem::ensureParentDirectoryExists()</strong> helper method</li>
+</ul>
+<h2 id="package-updates" class="group w-fit scroll-mt-2">Package Updates<a href="#package-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="realtime-compiler" class="group w-fit scroll-mt-2">Realtime Compiler<a href="#realtime-compiler" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li>Simplified asset file locator for media source directory</li>
+<li>Added Vite HMR support</li>
+<li>Experimental Laravel Herd support</li>
+</ul>
+<h3 id="hydefront" class="group w-fit scroll-mt-2">HydeFront<a href="#hydefront" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li>Complete migration from Sass to Tailwind CSS</li>
+<li>Extracted CSS component partials</li>
+<li>Removed legacy hyde.css file</li>
+</ul>
+<h2 id="performance-improvements" class="group w-fit scroll-mt-2">Performance Improvements<a href="#performance-improvements" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>40x faster table of contents generation</strong> using Blade components</li>
+<li><strong>CRC32 hashing</strong> replaces MD5 for cache busting (much faster)</li>
+<li><strong>Lazy-loaded media metadata</strong> with in-memory caching</li>
+<li><strong>Cached media assets</strong> in HydeKernel for instant access</li>
+</ul>
+<h2 id="dependency-updates" class="group w-fit scroll-mt-2">Dependency Updates<a href="#dependency-updates" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>PHP</strong>: Now requires 8.2–8.4 (dropped 8.1 support)</li>
+<li><strong>Laravel</strong>: Upgraded to version 11</li>
+<li><strong>Tailwind CSS</strong>: Upgraded to version 4</li>
+<li><strong>Symfony/Yaml</strong>: Updated to version 7</li>
+<li><strong>Torchlight</strong>: Switched to forked version for compatibility</li>
+</ul>
+<h2 id="removed-features" class="group w-fit scroll-mt-2">Removed Features<a href="#removed-features" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="deprecated-method-removals" class="group w-fit scroll-mt-2">Deprecated Method Removals<a href="#deprecated-method-removals" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>PostAuthor::getName()</code> - use <code>$author-&gt;name</code> property</li>
+<li><code>FeaturedImage::isRemote()</code> - use <code>Hyperlinks::isRemote()</code></li>
+<li><code>DocumentationPage::getTableOfContents()</code> - use Blade component</li>
+<li><code>MarkdownService::withPermalinks()</code> and <code>canEnablePermalinks()</code></li>
+</ul>
+<h3 id="build-commands" class="group w-fit scroll-mt-2">Build Commands<a href="#build-commands" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>npm run prod</code> - replaced by <code>npm run build</code></li>
+<li><code>--run-dev</code> and <code>--run-prod</code> flags - replaced by <code>--vite</code></li>
+<li><code>--run-prettier</code> flag and Prettier dependency removed</li>
+</ul>
+<h3 id="configuration-options" class="group w-fit scroll-mt-2">Configuration Options<a href="#configuration-options" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>hyde.hydefront_version</code> and <code>hyde.hydefront_cdn_url</code> - now handled automatically</li>
+<li><code>hyde.enable_cache_busting</code> - renamed to <code>hyde.cache_busting</code></li>
+<li><code>hyde.navigation.subdirectories</code> - renamed to <code>hyde.navigation.subdirectory_display</code></li>
+</ul>
+<h3 id="components-and-files" class="group w-fit scroll-mt-2">Components and Files<a href="#components-and-files" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
+<ul>
+<li><code>hyde.css</code> from HydeFront - all styles now in <code>app.css</code></li>
+<li><code>table-of-contents.css</code>, <code>heading-permalinks.css</code>, <code>blockquotes.css</code> - styles now use Tailwind</li>
+<li><code>.torchlight-enabled</code> CSS class</li>
+<li><code>&lt;x-hyde::docs.search-input /&gt;</code> and <code>&lt;x-hyde::docs.search-scripts /&gt;</code> components - replaced by <code>&lt;x-hyde::docs.hyde-search /&gt;</code></li>
+</ul>
+<h2 id="support-and-resources" class="group w-fit scroll-mt-2">Support &amp; Resources<a href="#support-and-resources" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<ul>
+<li><strong>Documentation</strong>: <a href="https://hydephp.com/docs/2.x">https://hydephp.com/docs/2.x</a></li>
+<li><strong>Upgrade Guide</strong>: <a href="https://hydephp.com/docs/2.x/upgrade-guide">https://hydephp.com/docs/2.x/upgrade-guide</a></li>
+<li><strong>GitHub Issues</strong>: <a href="https://github.com/hydephp/hyde/issues">https://github.com/hydephp/hyde/issues</a></li>
+<li><strong>Community Discord</strong>: <a href="https://discord.hydephp.com">https://discord.hydephp.com</a></li>
+</ul>
+<hr />
+<p>For the complete changelog with all pull request references, see the <a href="https://github.com/hydephp/hyde/releases/tag/v2.0.0">full changelog</a>.</p>
         </section>
         <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
             <p>
@@ -1465,7 +1419,7 @@ identifier binding Page objects to Route objects, and is used to generate the fi
     </i>
 </p>
 <p class="edit-page-link">
-    <a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/core-concepts.md">
+    <a href="https://github.com/hydephp/develop/blob/master/docs/getting-started/release-notes.md">
         Edit Page
     </a>
 </p>
