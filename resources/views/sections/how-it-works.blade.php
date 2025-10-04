@@ -196,18 +196,20 @@
                         <div class="content-layer absolute inset-0" data-layer="2">
                             <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow w-full h-full">
                                 <!-- Browser header -->
-                                <div class="bg-slate-100 px-4 py-3 flex items-center justify-between border-b border-slate-200">
+                                <div class="bg-slate-100 px-4 py-3 grid grid-cols-3 items-center border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <div class="flex gap-1.5">
                                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
                                             <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                         </div>
-                                        <div class="bg-white rounded px-3 py-1 text-sm text-slate-600 border border-slate-300 ml-2">
+                                    </div>
+                                    <div class="flex justify-center">
+                                        <div class="bg-white rounded px-4 py-1.5 text-sm text-slate-600 border border-slate-300 shadow-inner w-full max-w-xl text-center">
                                             ship.hydephp.com
                                         </div>
                                     </div>
-                                    <div class="flex gap-4 text-sm text-slate-500">
+                                    <div class="flex justify-end gap-4 text-sm text-slate-500">
                                         <span>Home</span>
                                         <span>Blog</span>
                                         <span>About</span>
