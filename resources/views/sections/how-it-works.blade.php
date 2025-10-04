@@ -422,6 +422,8 @@
 
             // Throttled scroll handler using requestAnimationFrame
             let ticking = false;
+            let scrollTimeout;
+
             function handleScroll() {
                 if (!ticking) {
                     requestAnimationFrame(() => {
@@ -429,6 +431,45 @@
                         ticking = false;
                     });
                     ticking = true;
+                }
+
+                // Detect when scrolling stops and snap to nearest slide
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(() => {
+                    snapToNearestSlide();
+                }, 150);
+            }
+
+            function snapToNearestSlide() {
+                if (!container || !viewport) return;
+
+                const rect = container.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                const scrollProgress = Math.max(0, Math.min(1,
+                    -rect.top / (rect.height - viewportHeight)
+                ));
+
+                const rawStep = scrollProgress * TOTAL_STEPS;
+                const currentStep = Math.floor(rawStep);
+                const stepProgress = rawStep - currentStep;
+
+                // If we're in the middle of a transition (between 0.7 and 1.0)
+                if (stepProgress > 0.7 && stepProgress < 1.0 && currentStep < TOTAL_STEPS - 1) {
+                    // Determine which slide is closer
+                    const snapForward = stepProgress > 0.85;
+
+                    // Calculate target scroll position
+                    const targetStep = snapForward ? currentStep + 1 : currentStep;
+                    const targetProgress = targetStep / TOTAL_STEPS;
+                    const targetScrollTop = targetProgress * (rect.height - viewportHeight);
+                    const currentScrollTop = -rect.top;
+                    const scrollDelta = targetScrollTop - currentScrollTop;
+
+                    // Smooth scroll to target
+                    window.scrollBy({
+                        top: scrollDelta,
+                        behavior: 'smooth'
+                    });
                 }
             }
 
