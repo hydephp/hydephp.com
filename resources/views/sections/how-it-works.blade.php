@@ -67,16 +67,6 @@
                 0 0 60px rgba(168, 85, 247, 0.08);
         }
 
-        /* Progress indicators */
-        .progress-dot {
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .progress-dot.active {
-            transform: scale(1.5);
-            background: white;
-        }
-
         /* Smooth element animations - controlled by scroll */
         .animate-element {
             will-change: opacity, transform;
@@ -95,20 +85,20 @@
 
     <!-- Main scroll-driven animation section -->
     <section id="how-it-works" class="relative bg-slate-900">
-        <!-- Fixed progress indicators -->
-        <div class="fixed right-8 top-1/2 -translate-y-1/2 z-50 hidden lg:flex flex-col gap-3">
-            <div class="progress-dot w-2 h-2 bg-white/30 rounded-full" data-step="0"></div>
-            <div class="progress-dot w-2 h-2 bg-white/30 rounded-full" data-step="1"></div>
-            <div class="progress-dot w-2 h-2 bg-white/30 rounded-full" data-step="2"></div>
-        </div>
-
         <!-- Scroll container (tall area to enable scroll) -->
         <div id="how-it-works-scroll-container">
             <!-- Sticky viewport (fixed at 100vh) -->
             <div id="how-it-works-viewport" class="flex items-center justify-center">
 
-                <!-- Single morphing container with all device layers -->
-                <div id="morphing-container" class="relative">
+                <div class="w-full">
+                    <!-- Static heading -->
+                    <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-16">
+                        From terminal to production in minutes
+                    </h2>
+
+                    <!-- Single morphing container with all device layers -->
+                    <div class="flex items-center justify-center">
+                        <div id="morphing-container" class="relative">
 
                         <!-- Layer 1: Terminal -->
                         <div class="content-layer absolute inset-0" data-layer="0">
@@ -283,7 +273,6 @@
         (function() {
             const container = document.getElementById('how-it-works-scroll-container');
             const viewport = document.getElementById('how-it-works-viewport');
-            const progressDots = document.querySelectorAll('.progress-dot');
             const TOTAL_STEPS = 3;
 
             // Helper function to map a value from one range to another
@@ -321,15 +310,6 @@
 
                 // Calculate progress within current step (0 to 1)
                 const stepProgress = rawStep - currentStep;
-
-                // Update progress dots
-                progressDots.forEach((dot, i) => {
-                    if (i === currentStep) {
-                        dot.classList.add('active');
-                    } else {
-                        dot.classList.remove('active');
-                    }
-                });
 
                 // Morph container and crossfade layers
                 morphContainerAndLayers(scrollProgress, currentStep, stepProgress);
