@@ -811,79 +811,37 @@
                 return div.innerHTML;
             }
 
-            // Adaptive debounce based on device performance
-            let debounceDelay = 300; // Default 300ms
-            let performanceScore = 0;
-            let performanceTests = 0;
-
-            // Measure performance to adjust debounce
-            function measurePerformance(renderTime) {
-                performanceTests++;
-                performanceScore += renderTime;
-
-                // After 3 tests, calculate average and adjust debounce
-                if (performanceTests === 3) {
-                    const avgRenderTime = performanceScore / performanceTests;
-
-                    if (avgRenderTime < 5) {
-                        // Blazing fast: no debounce
-                        debounceDelay = 0;
-                    } else if (avgRenderTime < 15) {
-                        // Fast: minimal debounce
-                        debounceDelay = 50;
-                    } else if (avgRenderTime < 30) {
-                        // Medium: light debounce
-                        debounceDelay = 150;
-                    }
-                    // Else keep default 300ms for slower devices
-                }
-            }
-
-            // Debounced update function for performance
-            let updateTimeout;
+            // Instant update function (no debounce)
             function updatePreview() {
-                clearTimeout(updateTimeout);
-                updateTimeout = setTimeout(() => {
-                    requestAnimationFrame(() => {
-                        const startTime = performance.now();
-                        const markdown = editor.value;
+                requestAnimationFrame(() => {
+                    const markdown = editor.value;
 
-                        // Update syntax highlighting
-                        backdrop.innerHTML = highlightSyntax(markdown);
+                    // Update syntax highlighting
+                    backdrop.innerHTML = highlightSyntax(markdown);
 
-                        const { frontMatter, content } = parseFrontMatter(markdown);
-                        const html = parseMarkdown(content);
+                    const { frontMatter, content } = parseFrontMatter(markdown);
+                    const html = parseMarkdown(content);
 
-                        // Update content with smooth transition
-                        contentArea.style.opacity = '0.7';
+                    // Update content instantly
+                    contentArea.innerHTML = html;
 
-                        setTimeout(() => {
-                            contentArea.innerHTML = html;
-                            contentArea.style.opacity = '1';
+                    // Update title from front matter
+                    if (frontMatter.title && titleElement) {
+                        titleElement.textContent = frontMatter.title;
+                    }
 
-                            // Update title from front matter
-                            if (frontMatter.title && titleElement) {
-                                titleElement.textContent = frontMatter.title;
-                            }
-
-                            // Update date from front matter
-                            if (frontMatter.date && dateElement) {
-                                try {
-                                    const date = new Date(frontMatter.date);
-                                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-                                    dateElement.textContent = date.toLocaleDateString('en-US', options);
-                                } catch (e) {
-                                    // If date parsing fails, use the raw value
-                                    dateElement.textContent = frontMatter.date;
-                                }
-                            }
-
-                            // Measure render performance
-                            const endTime = performance.now();
-                            measurePerformance(endTime - startTime);
-                        }, 100);
-                    });
-                }, debounceDelay);
+                    // Update date from front matter
+                    if (frontMatter.date && dateElement) {
+                        try {
+                            const date = new Date(frontMatter.date);
+                            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                            dateElement.textContent = date.toLocaleDateString('en-US', options);
+                        } catch (e) {
+                            // If date parsing fails, use the raw value
+                            dateElement.textContent = frontMatter.date;
+                        }
+                    }
+                });
             }
 
             // Initialize editor with default content including today's date
