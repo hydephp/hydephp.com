@@ -273,7 +273,7 @@
                                             <span class="text-cyan-400">title:</span> <span class="text-green-400">"Hello World"</span>
                                         </div>
                                         <div class="code-line animate-element">
-                                            <span class="text-cyan-400">date:</span> <span class="text-green-400">"2025-01-20"</span>
+                                            <span class="text-cyan-400">date:</span> <span class="text-green-400" id="editor-date-value">"2025-01-20"</span>
                                         </div>
                                         <div class="code-line animate-element">
                                             <span class="text-purple-400">---</span>
@@ -284,7 +284,7 @@
                                         <div class="code-line animate-element">
                                             <span class="text-slate-300">This is my first post built with **HydePHP**.</span>
                                         </div>
-                                        <div class="code-line animate-element mt-2">
+                                        <div class="code-line animate-element mt-4">
                                             <span class="text-blue-400">##</span> <span class="text-white">Features</span>
                                         </div>
                                         <div class="code-line animate-element">
@@ -397,11 +397,21 @@
     <script>
         // Set today's date
         (function() {
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            const todayISO = `${year}-${month}-${day}`;
+
             const dateEl = document.getElementById('current-date');
             if (dateEl) {
-                const today = new Date();
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
                 dateEl.textContent = today.toLocaleDateString('en-US', options);
+            }
+
+            const editorDateEl = document.getElementById('editor-date-value');
+            if (editorDateEl) {
+                editorDateEl.textContent = `"${todayISO}"`;
             }
         })();
 
