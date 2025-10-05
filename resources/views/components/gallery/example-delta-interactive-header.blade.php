@@ -99,26 +99,11 @@
 			mask.style.maxHeight = endPos + "%";
 		}
 			
-		let lastKnownScrollPosition = 0;
-		let ticking = false;
-
-		function reactToScroll(scrollPos) {
-			value = (scrollPos - 20) * ((Math.exp(0.3) - 1) * (scrollPos * 0.01));
+		document.addEventListener('scroll', function(e) {
+			const scrollPos = window.scrollY;
+			const value = Math.min(scrollPos * 0.2, 100);
 			slider.value = value;
 			slider.dispatchEvent(new Event('input'));
-		}
-
-		document.addEventListener('scroll', function(e) {
-		lastKnownScrollPosition = window.scrollY;
-
-		if (!ticking) {
-			window.requestAnimationFrame(function() {
-			reactToScroll(lastKnownScrollPosition);
-			ticking = false;
-			});
-
-			ticking = true;
-		}
 		});
 
 		// Show the slider on load
