@@ -218,35 +218,38 @@
 
                                 <!-- Website content -->
                                 <div class="p-8 bg-gradient-to-br from-white to-slate-50">
-                                    <div class="site-content">
-                                        <h1 class="text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
-                                        <p class="text-slate-500 mb-6" id="current-date">January 20, 2025</p>
+                                    <div class="site-content flex gap-6">
+                                        <!-- Main content area -->
+                                        <div class="flex-1">
+                                            <h1 class="text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
+                                            <p class="text-slate-500 mb-6" id="current-date">January 20, 2025</p>
 
-                                        <div class="prose prose-slate max-w-none">
-                                            <h2 class="text-xl font-semibold text-slate-800 mb-3">Welcome to Hyde</h2>
-                                            <p class="text-slate-600 mb-4">This is my first post built with <strong>HydePHP</strong>.</p>
+                                            <div class="prose prose-slate max-w-none">
+                                                <h2 class="text-xl font-semibold text-slate-800 mb-3">Welcome to Hyde</h2>
+                                                <p class="text-slate-600 mb-4">This is my first post built with <strong>HydePHP</strong>.</p>
 
-                                            <h3 class="text-lg font-semibold text-slate-800 mb-2">Features</h3>
-                                            <ul class="list-disc list-inside text-slate-600 space-y-1">
-                                                <li>Lightning fast</li>
-                                                <li>Markdown powered</li>
-                                                <li>Laravel elegance</li>
-                                            </ul>
+                                                <h3 class="text-lg font-semibold text-slate-800 mb-2">Features</h3>
+                                                <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                                    <li>Lightning fast</li>
+                                                    <li>Markdown powered</li>
+                                                    <li>Laravel elegance</li>
+                                                </ul>
+                                            </div>
                                         </div>
 
-                                        <!-- Performance metrics -->
-                                        <div class="mt-8 grid grid-cols-3 gap-4">
+                                        <!-- Performance metrics sidebar -->
+                                        <div class="flex flex-col gap-4 w-32">
                                             <div class="metric-card bg-green-50 border border-green-200 rounded-lg p-4 text-center animate-element">
                                                 <div class="text-2xl font-bold text-green-600">100</div>
-                                                <div class="text-sm text-green-800">Lighthouse Score</div>
+                                                <div class="text-xs text-green-800 leading-tight">Lighthouse Score</div>
                                             </div>
                                             <div class="metric-card bg-blue-50 border border-blue-200 rounded-lg p-4 text-center animate-element">
                                                 <div class="text-2xl font-bold text-blue-600">0.3s</div>
-                                                <div class="text-sm text-blue-800">Load Time</div>
+                                                <div class="text-xs text-blue-800 leading-tight">Load Time</div>
                                             </div>
                                             <div class="metric-card bg-purple-50 border border-purple-200 rounded-lg p-4 text-center animate-element">
                                                 <div class="text-2xl font-bold text-purple-600">0%</div>
-                                                <div class="text-sm text-purple-800">JS Required</div>
+                                                <div class="text-xs text-purple-800 leading-tight">JS Required</div>
                                             </div>
                                         </div>
                                     </div>
