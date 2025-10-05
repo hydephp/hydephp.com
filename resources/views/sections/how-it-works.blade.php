@@ -354,19 +354,7 @@
                                                         autocorrect="off"
                                                         autocapitalize="off"
                                                         maxlength="1000"
-                                                    >---
-title: "Hello World"
-date: "2025-01-20"
----
-
-# Welcome to Hyde
-
-This is my first post built with **HydePHP**.
-
-## Features
-- Lightning fast
-- Markdown powered
-- Laravel elegance</textarea>
+                                                    ></textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -731,12 +719,41 @@ This is my first post built with **HydePHP**.
                 return div.innerHTML;
             }
 
+            // Adaptive debounce based on device performance
+            let debounceDelay = 300; // Default 300ms
+            let performanceScore = 0;
+            let performanceTests = 0;
+
+            // Measure performance to adjust debounce
+            function measurePerformance(renderTime) {
+                performanceTests++;
+                performanceScore += renderTime;
+
+                // After 3 tests, calculate average and adjust debounce
+                if (performanceTests === 3) {
+                    const avgRenderTime = performanceScore / performanceTests;
+
+                    if (avgRenderTime < 5) {
+                        // Blazing fast: no debounce
+                        debounceDelay = 0;
+                    } else if (avgRenderTime < 15) {
+                        // Fast: minimal debounce
+                        debounceDelay = 50;
+                    } else if (avgRenderTime < 30) {
+                        // Medium: light debounce
+                        debounceDelay = 150;
+                    }
+                    // Else keep default 300ms for slower devices
+                }
+            }
+
             // Debounced update function for performance
             let updateTimeout;
             function updatePreview() {
                 clearTimeout(updateTimeout);
                 updateTimeout = setTimeout(() => {
                     requestAnimationFrame(() => {
+                        const startTime = performance.now();
                         const markdown = editor.value;
                         const { frontMatter, content } = parseFrontMatter(markdown);
                         const html = parseMarkdown(content);
@@ -764,9 +781,38 @@ This is my first post built with **HydePHP**.
                                     dateElement.textContent = frontMatter.date;
                                 }
                             }
+
+                            // Measure render performance
+                            const endTime = performance.now();
+                            measurePerformance(endTime - startTime);
                         }, 100);
                     });
-                }, 300); // 300ms debounce
+                }, debounceDelay);
+            }
+
+            // Initialize editor with default content including today's date
+            function initializeEditor() {
+                const today = new Date();
+                const year = today.getFullYear();
+                const month = String(today.getMonth() + 1).padStart(2, '0');
+                const day = String(today.getDate()).padStart(2, '0');
+                const todayISO = `${year}-${month}-${day}`;
+
+                const defaultContent = `---
+title: "Hello World"
+date: "${todayISO}"
+---
+
+# Welcome to Hyde
+
+This is my first post built with **HydePHP**.
+
+## Features
+- Lightning fast
+- Markdown powered
+- Laravel elegance`;
+
+                editor.value = defaultContent;
             }
 
             // Lazy initialization: only activate when scrolled into view
@@ -782,8 +828,9 @@ This is my first post built with **HydePHP**.
 
             observer.observe(editor);
 
-            // Initial render (after a brief delay to not block page load)
+            // Initialize content and render (after a brief delay to not block page load)
             setTimeout(() => {
+                initializeEditor();
                 updatePreview();
             }, 100);
         })();
