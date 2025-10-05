@@ -354,7 +354,12 @@
                                                         autocorrect="off"
                                                         autocapitalize="off"
                                                         maxlength="1000"
-                                                    ># Welcome to Hyde
+                                                    >---
+title: "Hello World"
+date: "2025-01-20"
+---
+
+# Welcome to Hyde
 
 This is my first post built with **HydePHP**.
 
@@ -610,8 +615,39 @@ This is my first post built with **HydePHP**.
         (function() {
             const editor = document.getElementById('live-markdown-editor');
             const contentArea = document.querySelector('.content-layer[data-layer="2"] .prose');
+            const titleElement = document.querySelector('.content-layer[data-layer="2"] h1');
+            const dateElement = document.getElementById('current-date');
 
             if (!editor || !contentArea) return;
+
+            // Parse front matter and extract metadata
+            function parseFrontMatter(text) {
+                const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n/;
+                const match = text.match(frontMatterRegex);
+
+                if (!match) {
+                    return { frontMatter: {}, content: text };
+                }
+
+                const frontMatterText = match[1];
+                const content = text.substring(match[0].length);
+                const frontMatter = {};
+
+                // Parse YAML-like front matter
+                const lines = frontMatterText.split('\n');
+                lines.forEach(line => {
+                    const colonIndex = line.indexOf(':');
+                    if (colonIndex > -1) {
+                        const key = line.substring(0, colonIndex).trim();
+                        let value = line.substring(colonIndex + 1).trim();
+                        // Remove quotes
+                        value = value.replace(/^["']|["']$/g, '');
+                        frontMatter[key] = value;
+                    }
+                });
+
+                return { frontMatter, content };
+            }
 
             // Minimal markdown parser (security-focused, no dependencies)
             function parseMarkdown(text) {
@@ -702,7 +738,8 @@ This is my first post built with **HydePHP**.
                 updateTimeout = setTimeout(() => {
                     requestAnimationFrame(() => {
                         const markdown = editor.value;
-                        const html = parseMarkdown(markdown);
+                        const { frontMatter, content } = parseFrontMatter(markdown);
+                        const html = parseMarkdown(content);
 
                         // Update content with smooth transition
                         contentArea.style.opacity = '0.7';
@@ -710,6 +747,23 @@ This is my first post built with **HydePHP**.
                         setTimeout(() => {
                             contentArea.innerHTML = html;
                             contentArea.style.opacity = '1';
+
+                            // Update title from front matter
+                            if (frontMatter.title && titleElement) {
+                                titleElement.textContent = frontMatter.title;
+                            }
+
+                            // Update date from front matter
+                            if (frontMatter.date && dateElement) {
+                                try {
+                                    const date = new Date(frontMatter.date);
+                                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                                    dateElement.textContent = date.toLocaleDateString('en-US', options);
+                                } catch (e) {
+                                    // If date parsing fails, use the raw value
+                                    dateElement.textContent = frontMatter.date;
+                                }
+                            }
                         }, 100);
                     });
                 }, 300); // 300ms debounce
