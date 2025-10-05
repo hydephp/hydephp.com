@@ -88,7 +88,7 @@
                 Markdown, Blade, both? It's up to you.
               </div>
 
-              <div class="text-[14px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
                 <p>Create content with Markdown and let Hyde do the heavy lifting. Sprinkle in some Front Matter for extra credit.</p>
               </div>
             </article>
@@ -97,15 +97,13 @@
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1f35] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Front Matter Example</div>
-              <pre class="text-[11px] leading-relaxed text-slate-200 font-mono overflow-auto"><code>---
+              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>---
 title: My Blog Post
 category: tutorials
 author: Jane Doe
-date: 2025-10-02
 ---
 
 # Write in Markdown
-
 Hyde transforms it to HTML!</code></pre>
             </article>
           </div>
@@ -133,7 +131,7 @@ Hyde transforms it to HTML!</code></pre>
                 Batteries (and more) Included
               </div>
 
-              <div class="text-[14px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
                 Hyde ships with a full-featured Tailwind frontend and customizable Blade templates.
               </div>
             </article>
@@ -142,12 +140,10 @@ Hyde transforms it to HTML!</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2235] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Tailwind CSS Example</div>
-              <pre class="text-[11px] leading-relaxed text-slate-200 font-mono overflow-auto"><code>&lt;div class="bg-gradient-to-r
+              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>&lt;div class="bg-gradient-to-r
      from-purple-500
      to-pink-500
-     rounded-lg
-     shadow-xl
-     p-6"&gt;
+     rounded-lg p-6"&gt;
   Beautiful by default
 &lt;/div&gt;</code></pre>
             </article>
@@ -176,7 +172,7 @@ Hyde transforms it to HTML!</code></pre>
                 Artisan CLI • Blade • Ecosystem
               </div>
 
-              <div class="text-[14px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
                 Laravel developers feel at home with an Artisan-based CLI and Blade templating.
               </div>
             </article>
@@ -185,8 +181,7 @@ Hyde transforms it to HTML!</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#2a1818] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Artisan Commands</div>
-              <pre class="text-[11px] leading-relaxed text-slate-200 font-mono overflow-auto"><code>php hyde make:post "My Post"
-php hyde make:page "About"
+              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>php hyde make:post "My Post"
 php hyde build
 php hyde serve</code></pre>
             </article>
@@ -216,7 +211,7 @@ php hyde serve</code></pre>
                 Convention over configuration
               </div>
 
-              <div class="text-[14px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
                 Hyde is pre-configured for most use cases—override anything when you need to.
               </div>
             </article>
@@ -225,11 +220,10 @@ php hyde serve</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2a1f] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Config Example</div>
-              <pre class="text-[11px] leading-relaxed text-slate-200 font-mono overflow-auto"><code>// config/hyde.php
+              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>// config/hyde.php
 return [
   'name' => 'My Site',
   'url' => 'example.com',
-  'theme' => 'custom',
   'generate_sitemap' => true,
 ];</code></pre>
             </article>
