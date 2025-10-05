@@ -343,7 +343,7 @@
                                         </div>
 
                                         <!-- Live Code Editor Sidebar -->
-                                        <div class="hidden md:flex flex-col w-80">
+                                        <div class="hidden md:flex flex-col w-96 lg:w-[28rem]">
                                             <div class="bg-slate-800/80 rounded-xl border border-white/10 overflow-hidden device-glow h-full flex flex-col">
                                                 <!-- Editor header -->
                                                 <div class="bg-slate-700/50 px-4 py-2 flex items-center justify-between border-b border-white/10">
