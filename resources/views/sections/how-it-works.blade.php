@@ -299,7 +299,7 @@
 
                         <!-- Layer 3: Browser -->
                         <div class="content-layer absolute inset-0" data-layer="2">
-                            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow w-full h-full">
+                            <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow w-full">
                                 <!-- Browser header -->
                                 <div class="bg-slate-100 px-4 py-3 grid grid-cols-3 items-center border-b border-slate-200">
                                     <div class="flex items-center gap-3">
@@ -322,8 +322,8 @@
                                 </div>
 
                                 <!-- Website content -->
-                                <div class="p-4 md:p-8 bg-gradient-to-br from-white to-slate-50">
-                                    <div class="site-content flex gap-6">
+                                <div class="px-4 md:px-8 pt-4 md:pt-8 bg-gradient-to-br from-white to-slate-50">
+                                    <div class="site-content flex gap-6 pb-4 md:pb-8">
                                         <!-- Main content area -->
                                         <div class="flex-1">
                                             <h1 class="text-xl md:text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
