@@ -97,14 +97,14 @@
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1f35] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Front Matter Example</div>
-              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>---
-title: My Blog Post
-category: tutorials
-author: Jane Doe
----
+              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">---</span>
+<span class="text-cyan-400">title</span><span class="text-slate-400">:</span> <span class="text-emerald-300">My Blog Post</span>
+<span class="text-cyan-400">category</span><span class="text-slate-400">:</span> <span class="text-emerald-300">tutorials</span>
+<span class="text-cyan-400">author</span><span class="text-slate-400">:</span> <span class="text-emerald-300">Jane Doe</span>
+<span class="text-slate-400">---</span>
 
-# Write in Markdown
-Hyde transforms it to HTML!</code></pre>
+<span class="text-purple-400"># Write in Markdown</span>
+<span class="text-slate-300">Hyde transforms it to HTML!</span></code></pre>
             </article>
           </div>
         </div>
@@ -140,12 +140,12 @@ Hyde transforms it to HTML!</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2235] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Tailwind CSS Example</div>
-              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>&lt;div class="bg-gradient-to-r
+              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">&lt;</span><span class="text-pink-400">div</span> <span class="text-cyan-400">class</span><span class="text-slate-400">=</span><span class="text-emerald-300">"bg-gradient-to-r
      from-purple-500
      to-pink-500
-     rounded-lg p-6"&gt;
-  Beautiful by default
-&lt;/div&gt;</code></pre>
+     rounded-lg p-6"</span><span class="text-slate-400">&gt;</span>
+  <span class="text-slate-300">Beautiful by default</span>
+<span class="text-slate-400">&lt;/</span><span class="text-pink-400">div</span><span class="text-slate-400">&gt;</span></code></pre>
             </article>
           </div>
         </div>
@@ -181,9 +181,9 @@ Hyde transforms it to HTML!</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#2a1818] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Artisan Commands</div>
-              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>php hyde make:post "My Post"
-php hyde build
-php hyde serve</code></pre>
+              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">make:post</span> <span class="text-emerald-300">"My Post"</span>
+<span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">build</span>
+<span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">serve</span></code></pre>
             </article>
           </div>
         </div>
@@ -220,12 +220,12 @@ php hyde serve</code></pre>
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2a1f] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
               <div class="text-xs text-slate-400 mb-2 font-mono">Config Example</div>
-              <pre class="text-xs leading-relaxed text-slate-200 font-mono overflow-auto"><code>// config/hyde.php
-return [
-  'name' => 'My Site',
-  'url' => 'example.com',
-  'generate_sitemap' => true,
-];</code></pre>
+              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">// config/hyde.php</span>
+<span class="text-purple-400">return</span> <span class="text-slate-300">[</span>
+  <span class="text-emerald-300">'name'</span> <span class="text-slate-400">=&gt;</span> <span class="text-emerald-300">'My Site'</span><span class="text-slate-300">,</span>
+  <span class="text-emerald-300">'url'</span> <span class="text-slate-400">=&gt;</span> <span class="text-emerald-300">'example.com'</span><span class="text-slate-300">,</span>
+  <span class="text-emerald-300">'generate_sitemap'</span> <span class="text-slate-400">=&gt;</span> <span class="text-cyan-400">true</span><span class="text-slate-300">,</span>
+<span class="text-slate-300">];</span></code></pre>
             </article>
           </div>
         </div>
