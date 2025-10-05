@@ -857,11 +857,11 @@ title: "Hello World"
 date: "${todayISO}"
 ---
 
-# Welcome to Hyde
+## Welcome to Hyde
 
 This is my first post built with **HydePHP**.
 
-## Features
+### Features
 - Lightning fast
 - Markdown powered
 - Laravel elegance`;
