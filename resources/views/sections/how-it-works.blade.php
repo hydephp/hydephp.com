@@ -140,6 +140,10 @@
             .progress-bar {
                 max-width: 100% !important;
             }
+
+            .progress-fill {
+                transition: width 1.5s ease-out;
+            }
         }
 
         /* Live Editor Styles */
@@ -301,7 +305,7 @@
                         <div class="content-layer absolute inset-0" data-layer="2">
                             <div class="bg-white rounded-xl border border-slate-200 overflow-hidden device-glow w-full">
                                 <!-- Browser header -->
-                                <div class="bg-slate-100 px-4 py-3 grid grid-cols-3 items-center border-b border-slate-200">
+                                <div class="bg-slate-100 px-4 py-3 flex md:grid md:grid-cols-3 items-center border-b border-slate-200">
                                     <div class="flex items-center gap-3">
                                         <div class="flex gap-1.5">
                                             <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -309,8 +313,8 @@
                                             <div class="w-3 h-3 rounded-full bg-green-500"></div>
                                         </div>
                                     </div>
-                                    <div class="flex justify-center">
-                                        <div class="bg-white rounded px-2 md:px-4 py-1.5 text-xs md:text-sm text-slate-600 border border-slate-300 shadow-inner w-full max-w-xl text-center">
+                                    <div class="flex justify-center flex-1 md:flex-initial ml-3 md:ml-0">
+                                        <div class="bg-white rounded px-2 md:px-4 py-1.5 text-xs md:text-sm text-slate-600 border border-slate-300 shadow-inner w-full md:max-w-xl text-center">
                                             ship.hydephp.com
                                         </div>
                                     </div>
@@ -415,6 +419,27 @@
                     layer.style.opacity = '1';
                     layer.style.position = 'relative';
                 });
+
+                // Setup viewport animation for progress bar
+                const progressBar = document.querySelector('.progress-bar');
+                if (progressBar) {
+                    const progressFill = progressBar.querySelector('.progress-fill');
+                    const progressPercent = progressBar.closest('.output-line').querySelector('.progress-percent');
+
+                    const progressObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // Animate progress bar to 100%
+                                if (progressFill) progressFill.style.width = '100%';
+                                if (progressPercent) progressPercent.textContent = '100%';
+                                progressObserver.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.5 });
+
+                    progressObserver.observe(progressBar);
+                }
+
                 return;
             }
 
