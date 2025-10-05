@@ -3,7 +3,7 @@
 
 # Site Banner Configuration
 banner:
-  enabled: true
+  enabled: false
   text: "HydePHP v2.0 is now available for download!"
   color: "purple"  # Options: blue, green, red, yellow, purple, indigo, gray
   button:
