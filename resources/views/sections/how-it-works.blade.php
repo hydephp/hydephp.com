@@ -141,6 +141,37 @@
                 max-width: 100% !important;
             }
         }
+
+        /* Live Editor Styles */
+        #live-markdown-editor {
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            line-height: 1.6;
+            tab-size: 2;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+        }
+
+        #live-markdown-editor::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        #live-markdown-editor::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        #live-markdown-editor::-webkit-scrollbar-thumb {
+            background-color: rgba(148, 163, 184, 0.3);
+            border-radius: 4px;
+        }
+
+        #live-markdown-editor::-webkit-scrollbar-thumb:hover {
+            background-color: rgba(148, 163, 184, 0.5);
+        }
+
+        /* Smooth content transitions */
+        .content-layer[data-layer="2"] .prose {
+            transition: opacity 0.15s ease-in-out;
+        }
     </style>
 
     <!-- Main scroll-driven animation section -->
@@ -297,36 +328,42 @@
                                             </div>
                                         </div>
 
-                                        <!-- Performance metrics sidebar -->
-                                        <div class="hidden md:flex flex-col gap-4 w-32">
-                                            <div class="metric-card bg-green-50 border border-green-200 rounded-lg p-4 text-center animate-element">
-                                                <div class="text-2xl font-bold text-green-600">100</div>
-                                                <div class="text-xs text-green-800 leading-tight">Lighthouse Score</div>
-                                            </div>
-                                            <div class="metric-card bg-blue-50 border border-blue-200 rounded-lg p-4 text-center animate-element">
-                                                <div class="text-2xl font-bold text-blue-600">0.3s</div>
-                                                <div class="text-xs text-blue-800 leading-tight">Load Time</div>
-                                            </div>
-                                            <div class="metric-card bg-purple-50 border border-purple-200 rounded-lg p-4 text-center animate-element">
-                                                <div class="text-2xl font-bold text-purple-600">0%</div>
-                                                <div class="text-xs text-purple-800 leading-tight">JS Required</div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        <!-- Live Code Editor Sidebar -->
+                                        <div class="hidden md:flex flex-col w-80">
+                                            <div class="bg-slate-800/80 rounded-xl border border-white/10 overflow-hidden device-glow h-full flex flex-col">
+                                                <!-- Editor header -->
+                                                <div class="bg-slate-700/50 px-4 py-2 flex items-center justify-between border-b border-white/10">
+                                                    <div class="flex items-center gap-3">
+                                                        <div class="flex gap-1.5">
+                                                            <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                                            <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                                            <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                                                        </div>
+                                                        <span class="text-xs text-slate-400">Live Editor</span>
+                                                    </div>
+                                                    <span class="text-xs text-slate-500">Try editing →</span>
+                                                </div>
 
-                                    <!-- Mobile metrics -->
-                                    <div class="md:hidden metric-cards-mobile mt-4">
-                                        <div class="metric-card bg-green-50 border border-green-200 rounded-lg p-3 text-center animate-element">
-                                            <div class="text-xl font-bold text-green-600">100</div>
-                                            <div class="text-xs text-green-800 leading-tight">Lighthouse</div>
-                                        </div>
-                                        <div class="metric-card bg-blue-50 border border-blue-200 rounded-lg p-3 text-center animate-element">
-                                            <div class="text-xl font-bold text-blue-600">0.3s</div>
-                                            <div class="text-xs text-blue-800 leading-tight">Load Time</div>
-                                        </div>
-                                        <div class="metric-card bg-purple-50 border border-purple-200 rounded-lg p-3 text-center animate-element">
-                                            <div class="text-xl font-bold text-purple-600">0%</div>
-                                            <div class="text-xs text-purple-800 leading-tight">JS Required</div>
+                                                <!-- Editor content (editable) -->
+                                                <div class="flex-1 overflow-hidden">
+                                                    <textarea
+                                                        id="live-markdown-editor"
+                                                        class="w-full h-full p-4 font-mono text-xs bg-transparent text-slate-300 resize-none focus:outline-none"
+                                                        spellcheck="false"
+                                                        autocomplete="off"
+                                                        autocorrect="off"
+                                                        autocapitalize="off"
+                                                        maxlength="1000"
+                                                    ># Welcome to Hyde
+
+This is my first post built with **HydePHP**.
+
+## Features
+- Lightning fast
+- Markdown powered
+- Laravel elegance</textarea>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -567,6 +604,134 @@
 
             // Initial call
             updateAnimation();
+        })();
+
+        // Live Markdown Editor (Progressive Enhancement)
+        (function() {
+            const editor = document.getElementById('live-markdown-editor');
+            const contentArea = document.querySelector('.content-layer[data-layer="2"] .prose');
+
+            if (!editor || !contentArea) return;
+
+            // Minimal markdown parser (security-focused, no dependencies)
+            function parseMarkdown(text) {
+                // Sanitize input: strip HTML tags
+                text = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                // Limit processing to reasonable length
+                if (text.length > 1000) {
+                    text = text.substring(0, 1000);
+                }
+
+                const lines = text.split('\n');
+                let html = '';
+                let inList = false;
+
+                for (let i = 0; i < lines.length; i++) {
+                    let line = lines[i];
+
+                    // Empty lines
+                    if (line.trim() === '') {
+                        if (inList) {
+                            html += '</ul>';
+                            inList = false;
+                        }
+                        continue;
+                    }
+
+                    // Headings
+                    if (line.match(/^### /)) {
+                        if (inList) { html += '</ul>'; inList = false; }
+                        html += '<h3 class="text-base md:text-lg font-semibold text-slate-800 mb-2">' +
+                                escapeHtml(line.substring(4)) + '</h3>';
+                    } else if (line.match(/^## /)) {
+                        if (inList) { html += '</ul>'; inList = false; }
+                        html += '<h2 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">' +
+                                escapeHtml(line.substring(3)) + '</h2>';
+                    } else if (line.match(/^# /)) {
+                        if (inList) { html += '</ul>'; inList = false; }
+                        html += '<h1 class="text-xl md:text-3xl font-bold text-slate-900 mb-2">' +
+                                escapeHtml(line.substring(2)) + '</h1>';
+                    }
+                    // List items
+                    else if (line.match(/^- /)) {
+                        if (!inList) {
+                            html += '<ul class="list-disc list-inside text-sm md:text-base text-slate-600 space-y-1">';
+                            inList = true;
+                        }
+                        html += '<li>' + parseInline(line.substring(2)) + '</li>';
+                    }
+                    // Regular paragraph
+                    else {
+                        if (inList) { html += '</ul>'; inList = false; }
+                        html += '<p class="text-sm md:text-base text-slate-600 mb-3 md:mb-4">' +
+                                parseInline(line) + '</p>';
+                    }
+                }
+
+                if (inList) {
+                    html += '</ul>';
+                }
+
+                return html;
+            }
+
+            // Parse inline markdown (bold, italic)
+            function parseInline(text) {
+                // Bold **text**
+                text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+                // Italic *text*
+                text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+                return escapeHtml(text).replace(/&lt;strong&gt;/g, '<strong>')
+                                       .replace(/&lt;\/strong&gt;/g, '</strong>')
+                                       .replace(/&lt;em&gt;/g, '<em>')
+                                       .replace(/&lt;\/em&gt;/g, '</em>');
+            }
+
+            // HTML escape utility
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
+            // Debounced update function for performance
+            let updateTimeout;
+            function updatePreview() {
+                clearTimeout(updateTimeout);
+                updateTimeout = setTimeout(() => {
+                    requestAnimationFrame(() => {
+                        const markdown = editor.value;
+                        const html = parseMarkdown(markdown);
+
+                        // Update content with smooth transition
+                        contentArea.style.opacity = '0.7';
+
+                        setTimeout(() => {
+                            contentArea.innerHTML = html;
+                            contentArea.style.opacity = '1';
+                        }, 100);
+                    });
+                }, 300); // 300ms debounce
+            }
+
+            // Lazy initialization: only activate when scrolled into view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Activate editor
+                        editor.addEventListener('input', updatePreview);
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            observer.observe(editor);
+
+            // Initial render (after a brief delay to not block page load)
+            setTimeout(() => {
+                updatePreview();
+            }, 100);
         })();
     </script>
 </section>
