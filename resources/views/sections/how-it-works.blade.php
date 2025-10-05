@@ -143,10 +143,14 @@
         }
 
         /* Live Editor Styles */
-        #live-markdown-editor {
+        #live-markdown-editor,
+        #syntax-highlight-backdrop {
             font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
             line-height: 1.6;
             tab-size: 2;
+        }
+
+        #live-markdown-editor {
             scrollbar-width: thin;
             scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
         }
@@ -167,6 +171,16 @@
         #live-markdown-editor::-webkit-scrollbar-thumb:hover {
             background-color: rgba(148, 163, 184, 0.5);
         }
+
+        /* Syntax highlighting colors */
+        .hl-frontmatter { color: #c084fc; } /* purple-400 */
+        .hl-key { color: #22d3ee; } /* cyan-400 */
+        .hl-value { color: #4ade80; } /* green-400 */
+        .hl-heading { color: #60a5fa; } /* blue-400 */
+        .hl-heading-text { color: #f8fafc; } /* white */
+        .hl-bold { color: #f8fafc; font-weight: 600; } /* white bold */
+        .hl-list { color: #94a3b8; } /* slate-400 */
+        .hl-text { color: #cbd5e1; } /* slate-300 */
 
         /* Smooth content transitions */
         .content-layer[data-layer="2"] .prose {
@@ -345,10 +359,17 @@
                                                 </div>
 
                                                 <!-- Editor content (editable) -->
-                                                <div class="flex-1 overflow-hidden">
+                                                <div class="flex-1 overflow-hidden relative">
+                                                    <!-- Syntax highlighted backdrop -->
+                                                    <div
+                                                        id="syntax-highlight-backdrop"
+                                                        class="absolute inset-0 p-4 font-mono text-xs pointer-events-none overflow-hidden whitespace-pre-wrap break-words"
+                                                        aria-hidden="true"
+                                                    ></div>
+                                                    <!-- Transparent textarea overlay -->
                                                     <textarea
                                                         id="live-markdown-editor"
-                                                        class="w-full h-full p-4 font-mono text-xs bg-transparent text-slate-300 resize-none focus:outline-none"
+                                                        class="absolute inset-0 w-full h-full p-4 font-mono text-xs bg-transparent text-transparent caret-slate-300 resize-none focus:outline-none"
                                                         spellcheck="false"
                                                         autocomplete="off"
                                                         autocorrect="off"
@@ -602,11 +623,82 @@
         // Live Markdown Editor (Progressive Enhancement)
         (function() {
             const editor = document.getElementById('live-markdown-editor');
+            const backdrop = document.getElementById('syntax-highlight-backdrop');
             const contentArea = document.querySelector('.content-layer[data-layer="2"] .prose');
             const titleElement = document.querySelector('.content-layer[data-layer="2"] h1');
             const dateElement = document.getElementById('current-date');
 
-            if (!editor || !contentArea) return;
+            if (!editor || !contentArea || !backdrop) return;
+
+            // Sync scroll position between textarea and backdrop
+            editor.addEventListener('scroll', function() {
+                backdrop.scrollTop = editor.scrollTop;
+                backdrop.scrollLeft = editor.scrollLeft;
+            });
+
+            // Apply syntax highlighting to text
+            function highlightSyntax(text) {
+                // Escape HTML
+                text = text.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+                const lines = text.split('\n');
+                let highlighted = '';
+                let inFrontMatter = false;
+
+                for (let i = 0; i < lines.length; i++) {
+                    let line = lines[i];
+
+                    // Front matter delimiters
+                    if (line === '---') {
+                        highlighted += '<span class="hl-frontmatter">---</span>';
+                        inFrontMatter = !inFrontMatter;
+                    }
+                    // Front matter content
+                    else if (inFrontMatter) {
+                        const colonIndex = line.indexOf(':');
+                        if (colonIndex > -1) {
+                            const key = line.substring(0, colonIndex);
+                            const value = line.substring(colonIndex);
+                            highlighted += '<span class="hl-key">' + key + '</span><span class="hl-value">' + value + '</span>';
+                        } else {
+                            highlighted += '<span class="hl-text">' + line + '</span>';
+                        }
+                    }
+                    // Headings
+                    else if (line.match(/^### /)) {
+                        highlighted += '<span class="hl-heading">### </span><span class="hl-heading-text">' + line.substring(4) + '</span>';
+                    }
+                    else if (line.match(/^## /)) {
+                        highlighted += '<span class="hl-heading">## </span><span class="hl-heading-text">' + line.substring(3) + '</span>';
+                    }
+                    else if (line.match(/^# /)) {
+                        highlighted += '<span class="hl-heading"># </span><span class="hl-heading-text">' + line.substring(2) + '</span>';
+                    }
+                    // List items
+                    else if (line.match(/^- /)) {
+                        const content = line.substring(2);
+                        // Handle bold in list items
+                        const highlightedContent = content.replace(/\*\*([^*]+)\*\*/g, '<span class="hl-bold">**$1**</span>');
+                        highlighted += '<span class="hl-list">- </span><span class="hl-text">' + highlightedContent + '</span>';
+                    }
+                    // Regular text with bold
+                    else if (line.trim() !== '') {
+                        const highlightedLine = line.replace(/\*\*([^*]+)\*\*/g, '<span class="hl-bold">**$1**</span>');
+                        highlighted += '<span class="hl-text">' + highlightedLine + '</span>';
+                    }
+                    // Empty line
+                    else {
+                        highlighted += line;
+                    }
+
+                    // Add newline except for last line
+                    if (i < lines.length - 1) {
+                        highlighted += '\n';
+                    }
+                }
+
+                return highlighted;
+            }
 
             // Parse front matter and extract metadata
             function parseFrontMatter(text) {
@@ -755,6 +847,10 @@
                     requestAnimationFrame(() => {
                         const startTime = performance.now();
                         const markdown = editor.value;
+
+                        // Update syntax highlighting
+                        backdrop.innerHTML = highlightSyntax(markdown);
+
                         const { frontMatter, content } = parseFrontMatter(markdown);
                         const html = parseMarkdown(content);
 
