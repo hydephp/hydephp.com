@@ -6,6 +6,12 @@
             position: relative;
         }
 
+        @media (max-width: 768px) {
+            #how-it-works-scroll-container {
+                height: auto; /* Disable scroll animation on mobile */
+            }
+        }
+
         #how-it-works-viewport {
             position: sticky;
             top: 0;
@@ -16,6 +22,15 @@
             justify-content: center;
             perspective: 1500px;
             perspective-origin: center center;
+        }
+
+        @media (max-width: 768px) {
+            #how-it-works-viewport {
+                position: relative;
+                height: auto;
+                min-height: auto;
+                padding: 2rem 1rem;
+            }
         }
 
         .step-content {
@@ -41,11 +56,29 @@
             will-change: width, height;
         }
 
+        @media (max-width: 768px) {
+            #morphing-container {
+                width: 100% !important;
+                max-width: calc(100vw - 2rem);
+                height: auto !important;
+                margin: 0 auto;
+            }
+        }
+
         .content-layer {
             position: absolute;
             inset: 0;
             opacity: 0;
             will-change: opacity;
+        }
+
+        @media (max-width: 768px) {
+            .content-layer {
+                position: relative;
+                opacity: 1 !important;
+                margin-bottom: 2rem;
+                height: auto !important;
+            }
         }
 
         .content-layer.visible {
@@ -81,6 +114,33 @@
         .terminal-cursor {
             animation: blink 1s infinite;
         }
+
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            .animate-element {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+
+            .site-content {
+                flex-direction: column !important;
+            }
+
+            .metric-card {
+                display: inline-block;
+            }
+
+            .metric-cards-mobile {
+                display: flex;
+                gap: 0.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .progress-bar {
+                max-width: 100% !important;
+            }
+        }
     </style>
 
     <!-- Main scroll-driven animation section -->
@@ -92,7 +152,7 @@
 
                 <div class="w-full">
                     <!-- Static heading -->
-                    <h2 class="text-3xl lg:text-4xl font-bold text-white text-center mb-16">
+                    <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold text-white text-center mb-8 md:mb-16 px-4">
                         From terminal to production in minutes
                     </h2>
 
@@ -114,10 +174,10 @@
                                 </div>
 
                                 <!-- Terminal content -->
-                                <div class="p-6 font-mono text-sm">
+                                <div class="p-4 md:p-6 font-mono text-xs md:text-sm">
                                     <div class="command-line">
                                         <span class="text-green-400">$</span>
-                                        <span class="text-white ml-2">composer create-project hyde/hyde</span>
+                                        <span class="text-white ml-2 break-all">composer create-project hyde/hyde</span>
                                         <span class="terminal-cursor text-green-400">_</span>
                                     </div>
 
@@ -126,7 +186,7 @@
                                         <div class="output-line text-slate-400 animate-element">Installing dependencies...</div>
                                         <div class="output-line animate-element">
                                             <div class="flex items-center gap-2">
-                                                <div class="progress-bar w-64 h-2 bg-slate-700 rounded-full overflow-hidden">
+                                                <div class="progress-bar w-full max-w-64 h-2 bg-slate-700 rounded-full overflow-hidden">
                                                     <div class="progress-fill h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" style="width: 0%"></div>
                                                 </div>
                                                 <span class="progress-percent text-green-400 text-xs">0%</span>
@@ -155,7 +215,7 @@
                                 </div>
 
                                 <!-- Editor content with syntax highlighting -->
-                                <div class="p-6 font-mono text-sm">
+                                <div class="p-4 md:p-6 font-mono text-xs md:text-sm">
                                     <div class="code-lines space-y-2">
                                         <div class="code-line animate-element">
                                             <span class="text-purple-400">---</span>
@@ -205,11 +265,11 @@
                                         </div>
                                     </div>
                                     <div class="flex justify-center">
-                                        <div class="bg-white rounded px-4 py-1.5 text-sm text-slate-600 border border-slate-300 shadow-inner w-full max-w-xl text-center">
+                                        <div class="bg-white rounded px-2 md:px-4 py-1.5 text-xs md:text-sm text-slate-600 border border-slate-300 shadow-inner w-full max-w-xl text-center">
                                             ship.hydephp.com
                                         </div>
                                     </div>
-                                    <div class="flex justify-end gap-4 text-sm text-slate-500">
+                                    <div class="hidden md:flex justify-end gap-4 text-sm text-slate-500">
                                         <span>Home</span>
                                         <span>Blog</span>
                                         <span>About</span>
@@ -217,19 +277,19 @@
                                 </div>
 
                                 <!-- Website content -->
-                                <div class="p-8 bg-gradient-to-br from-white to-slate-50">
+                                <div class="p-4 md:p-8 bg-gradient-to-br from-white to-slate-50">
                                     <div class="site-content flex gap-6">
                                         <!-- Main content area -->
                                         <div class="flex-1">
-                                            <h1 class="text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
-                                            <p class="text-slate-500 mb-6" id="current-date">January 20, 2025</p>
+                                            <h1 class="text-xl md:text-3xl font-bold text-slate-900 mb-2">Hello World</h1>
+                                            <p class="text-sm md:text-base text-slate-500 mb-4 md:mb-6" id="current-date">January 20, 2025</p>
 
                                             <div class="prose prose-slate max-w-none">
-                                                <h2 class="text-xl font-semibold text-slate-800 mb-3">Welcome to Hyde</h2>
-                                                <p class="text-slate-600 mb-4">This is my first post built with <strong>HydePHP</strong>.</p>
+                                                <h2 class="text-lg md:text-xl font-semibold text-slate-800 mb-2 md:mb-3">Welcome to Hyde</h2>
+                                                <p class="text-sm md:text-base text-slate-600 mb-3 md:mb-4">This is my first post built with <strong>HydePHP</strong>.</p>
 
-                                                <h3 class="text-lg font-semibold text-slate-800 mb-2">Features</h3>
-                                                <ul class="list-disc list-inside text-slate-600 space-y-1">
+                                                <h3 class="text-base md:text-lg font-semibold text-slate-800 mb-2">Features</h3>
+                                                <ul class="list-disc list-inside text-sm md:text-base text-slate-600 space-y-1">
                                                     <li>Lightning fast</li>
                                                     <li>Markdown powered</li>
                                                     <li>Laravel elegance</li>
@@ -238,7 +298,7 @@
                                         </div>
 
                                         <!-- Performance metrics sidebar -->
-                                        <div class="flex flex-col gap-4 w-32">
+                                        <div class="hidden md:flex flex-col gap-4 w-32">
                                             <div class="metric-card bg-green-50 border border-green-200 rounded-lg p-4 text-center animate-element">
                                                 <div class="text-2xl font-bold text-green-600">100</div>
                                                 <div class="text-xs text-green-800 leading-tight">Lighthouse Score</div>
@@ -251,6 +311,22 @@
                                                 <div class="text-2xl font-bold text-purple-600">0%</div>
                                                 <div class="text-xs text-purple-800 leading-tight">JS Required</div>
                                             </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Mobile metrics -->
+                                    <div class="md:hidden metric-cards-mobile mt-4">
+                                        <div class="metric-card bg-green-50 border border-green-200 rounded-lg p-3 text-center animate-element">
+                                            <div class="text-xl font-bold text-green-600">100</div>
+                                            <div class="text-xs text-green-800 leading-tight">Lighthouse</div>
+                                        </div>
+                                        <div class="metric-card bg-blue-50 border border-blue-200 rounded-lg p-3 text-center animate-element">
+                                            <div class="text-xl font-bold text-blue-600">0.3s</div>
+                                            <div class="text-xs text-blue-800 leading-tight">Load Time</div>
+                                        </div>
+                                        <div class="metric-card bg-purple-50 border border-purple-200 rounded-lg p-3 text-center animate-element">
+                                            <div class="text-xl font-bold text-purple-600">0%</div>
+                                            <div class="text-xs text-purple-800 leading-tight">JS Required</div>
                                         </div>
                                     </div>
                                 </div>
@@ -279,6 +355,17 @@
             const container = document.getElementById('how-it-works-scroll-container');
             const viewport = document.getElementById('how-it-works-viewport');
             const TOTAL_STEPS = 3;
+
+            // Disable scroll animation on mobile
+            const isMobile = window.innerWidth <= 768;
+            if (isMobile) {
+                // Show all layers stacked on mobile
+                document.querySelectorAll('.content-layer').forEach(layer => {
+                    layer.style.opacity = '1';
+                    layer.style.position = 'relative';
+                });
+                return;
+            }
 
             // Helper function to map a value from one range to another
             function mapRange(value, inMin, inMax, outMin, outMax) {
