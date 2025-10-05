@@ -16,16 +16,6 @@
     transform: rotateY(180deg);
   }
 
-  .flip-card.flipped .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-
-  @media (max-width: 1023px) {
-    .flip-card:hover .flip-card-inner {
-      transform: none;
-    }
-  }
-
   .flip-card-front,
   .flip-card-back {
     position: absolute;
@@ -314,18 +304,3 @@
     <path d="M0 24C87.243 11.422 173.12 5.133 257.633 5.133 468.305 5.133 578.027 74 700 74c136.015 0 290.882-96.208 481.234-68.867C1268.807 17.71 1341.73 24 1400 24v50H0V24z"/>
   </svg>
 </section>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const flipCards = document.querySelectorAll('.flip-card');
-
-    flipCards.forEach(card => {
-      card.addEventListener('click', function(e) {
-        // Only toggle on mobile/tablet (below 1024px)
-        if (window.innerWidth < 1024) {
-          this.classList.toggle('flipped');
-        }
-      });
-    });
-  });
-</script>
