@@ -27,6 +27,12 @@
     inset: 0;
   }
 
+  .flip-card-bottom .flip-card-inner,
+  .flip-card-bottom .flip-card-front,
+  .flip-card-bottom .flip-card-back {
+    min-height: 180px;
+  }
+
   .flip-card-back {
     transform: rotateY(180deg);
   }
@@ -88,7 +94,7 @@
                 Markdown, Blade, both? It's up to you.
               </div>
 
-              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-base leading-relaxed text-slate-300 max-w-[38ch]">
                 <p>Create content with Markdown and let Hyde do the heavy lifting. Sprinkle in some Front Matter for extra credit.</p>
               </div>
             </article>
@@ -96,13 +102,14 @@
             <!-- Back -->
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a1f35] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
-              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">---</span>
+              <pre class="text-sm leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">---</span>
 <span class="text-cyan-400">title</span><span class="text-slate-400">:</span> <span class="text-emerald-300">My Blog Post</span>
 <span class="text-cyan-400">category</span><span class="text-slate-400">:</span> <span class="text-emerald-300">tutorials</span>
 <span class="text-cyan-400">author</span><span class="text-slate-400">:</span> <span class="text-emerald-300">Jane Doe</span>
 <span class="text-slate-400">---</span>
 
 <span class="text-purple-400"># Write in Markdown</span>
+
 <span class="text-slate-300">Hyde transforms it to HTML!</span></code></pre>
             </article>
           </div>
@@ -130,7 +137,7 @@
                 Batteries (and more) Included
               </div>
 
-              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-base leading-relaxed text-slate-300 max-w-[38ch]">
                 Hyde ships with a full-featured Tailwind frontend and customizable Blade templates.
               </div>
             </article>
@@ -138,18 +145,17 @@
             <!-- Back -->
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2235] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
-              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">&lt;</span><span class="text-pink-400">div</span> <span class="text-cyan-400">class</span><span class="text-slate-400">=</span><span class="text-emerald-300">"bg-gradient-to-r
-     from-purple-500
-     to-pink-500
-     rounded-lg p-6"</span><span class="text-slate-400">&gt;</span>
+              <pre class="text-sm leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">&lt;</span><span class="text-pink-400">x-card</span> <span class="text-cyan-400">class</span><span class="text-slate-400">=</span><span class="text-emerald-300">"bg-gradient-to-r
+        from-purple-500
+        to-pink-500"</span><span class="text-slate-400">&gt;</span>
   <span class="text-slate-300">Beautiful by default</span>
-<span class="text-slate-400">&lt;/</span><span class="text-pink-400">div</span><span class="text-slate-400">&gt;</span></code></pre>
+<span class="text-slate-400">&lt;/</span><span class="text-pink-400">x-card</span><span class="text-slate-400">&gt;</span></code></pre>
             </article>
           </div>
         </div>
 
         <!-- Card 3: The Power of Laravel -->
-        <div class="flip-card">
+        <div class="flip-card flip-card-bottom">
           <div class="flip-card-inner">
             <!-- Front -->
             <article class="flip-card-front rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm
@@ -170,7 +176,7 @@
                 Artisan CLI • Blade • Ecosystem
               </div>
 
-              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-base leading-relaxed text-slate-300 max-w-[38ch]">
                 Laravel developers feel at home with an Artisan-based CLI and Blade templating.
               </div>
             </article>
@@ -178,7 +184,7 @@
             <!-- Back -->
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#2a1818] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
-              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">make:post</span> <span class="text-emerald-300">"My Post"</span>
+              <pre class="text-sm leading-relaxed font-mono overflow-auto"><code><span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">make:post</span> <span class="text-emerald-300">"My Post"</span>
 <span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">build</span>
 <span class="text-purple-400">php</span> <span class="text-cyan-400">hyde</span> <span class="text-slate-300">serve</span></code></pre>
             </article>
@@ -186,7 +192,7 @@
         </div>
 
         <!-- Card 4: Customizable to the Core -->
-        <div class="flip-card">
+        <div class="flip-card flip-card-bottom">
           <div class="flip-card-inner">
             <!-- Front -->
             <article class="flip-card-front rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm
@@ -208,7 +214,7 @@
                 Convention over configuration
               </div>
 
-              <div class="text-[15px] leading-relaxed text-slate-300 max-w-[38ch]">
+              <div class="text-base leading-relaxed text-slate-300 max-w-[38ch]">
                 Hyde is pre-configured for most use cases—override anything when you need to.
               </div>
             </article>
@@ -216,7 +222,7 @@
             <!-- Back -->
             <article class="flip-card-back rounded-2xl border border-white/10 bg-gradient-to-br from-[#1a2a1f] to-[#0f1219] backdrop-blur-sm
                             shadow-[0_10px_30px_rgba(0,0,0,.35)] p-5 flex flex-col justify-center">
-              <pre class="text-xs leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">// config/hyde.php</span>
+              <pre class="text-sm leading-relaxed font-mono overflow-auto"><code><span class="text-slate-400">// config/hyde.php</span>
 <span class="text-purple-400">return</span> <span class="text-slate-300">[</span>
   <span class="text-emerald-300">'name'</span> <span class="text-slate-400">=&gt;</span> <span class="text-emerald-300">'My Site'</span><span class="text-slate-300">,</span>
   <span class="text-emerald-300">'url'</span> <span class="text-slate-400">=&gt;</span> <span class="text-emerald-300">'example.com'</span><span class="text-slate-300">,</span>
