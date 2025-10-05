@@ -30,7 +30,7 @@
 					</div>
 
 					<!-- Documentation Button -->
-					<a id="docs-nav-button" href="{{ DocumentationPage::home() }}" class="@if($isHomepage) relative rounded-full px-4 py-2 font-semibold text-white bg-[#0B1220] shadow-[0_0_20px_rgba(139,92,246,0.3)] before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-purple-500 before:to-pink-500 before:p-[1px] before:[mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[mask-composite:xor] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent @else inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group @endif">
+					<a id="docs-nav-button" href="{{ DocumentationPage::home() }}" class="hidden min-[376px]:block @if($isHomepage) relative rounded-full px-4 py-2 font-semibold text-white bg-[#0B1220] shadow-[0_0_20px_rgba(139,92,246,0.3)] before:absolute before:inset-0 before:-z-10 before:rounded-full before:bg-gradient-to-r before:from-purple-500 before:to-pink-500 before:p-[1px] before:[mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[mask-composite:xor] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent @else inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group @endif">
 						@if($isHomepage)
 							Documentation
 						@else
@@ -79,6 +79,9 @@
 						<x-hyde::navigation.navigation-link :item="$item"/>
 					</li>
 				@endforeach
+				<li class="max-[375px]:block hidden">
+					<a href="{{ DocumentationPage::home() }}" class="my-2 md:my-0 py-1 @if($isHomepage) text-[#E7E9FF]/80 hover:text-[#E7E9FF] @else text-gray-700 hover:text-gray-900 dark:text-gray-100 @endif">Documentation</a>
+				</li>
 			</ul>
 		</div>
 	</div>
