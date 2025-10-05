@@ -27,10 +27,12 @@
     inset: 0;
   }
 
-  .flip-card-bottom .flip-card-inner,
-  .flip-card-bottom .flip-card-front,
-  .flip-card-bottom .flip-card-back {
-    min-height: 180px;
+  @media (min-width: 768px) {
+    .flip-card-bottom .flip-card-inner,
+    .flip-card-bottom .flip-card-front,
+    .flip-card-bottom .flip-card-back {
+      min-height: 180px;
+    }
   }
 
   .flip-card-back {
