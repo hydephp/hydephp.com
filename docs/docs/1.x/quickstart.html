@@ -982,42 +982,42 @@ button[aria-label="Open search window"]:hover,
     </div>
 </div>
         <section id="document-main-content" itemprop="articleBody">
-            <h2>Installing HydePHP Using Composer</h2>
+            <h2 id="installing-hydephp-using-composer" class="group w-fit scroll-mt-2">Installing HydePHP Using Composer<a href="#installing-hydephp-using-composer" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The recommended method of installing Hyde is using Composer, which installs the required dependencies on a per-project basis.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span></div></code></pre>
-<h3>Requirements</h3>
+<h3 id="requirements" class="group w-fit scroll-mt-2">Requirements<a href="#requirements" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde is based on <a href="https://laravel.com/docs/10.x/releases">Laravel 10</a>
 which requires a minimum PHP version of 8.1.
 You should also have <a href="https://getcomposer.org/">Composer</a> installed.</p>
 <p>To use some features like <a href="managing-assets">compiling your own assets</a>
 you also need NodeJS and NPM.</p>
-<h2>Using the Hyde CLI</h2>
+<h2 id="using-the-hyde-cli" class="group w-fit scroll-mt-2">Using the Hyde CLI<a href="#using-the-hyde-cli" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The main way to interact with Hyde is through the <a href="console-commands">HydeCLI</a>, a Laravel Artisan-based command-line interface. Learn more about the HydeCLI in the <a href="console-commands">console commands</a> documentation.</p>
-<h2>Starting a Development Server</h2>
+<h2 id="starting-a-development-server" class="group w-fit scroll-mt-2">Starting a Development Server<a href="#starting-a-development-server" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>To make previewing your site a breeze you can use the realtime compiler, which builds your pages on the fly.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">serve</span></div></code></pre>
 <p>Simply run the serve command, and you will be able to preview your site at <a href="http://localhost:8080">http://localhost:8080</a>.</p>
-<h2>Creating Content</h2>
-<h3>Directory structure</h3>
+<h2 id="creating-content" class="group w-fit scroll-mt-2">Creating Content<a href="#creating-content" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="directory-structure" class="group w-fit scroll-mt-2">Directory structure<a href="#directory-structure" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Creating content with Hyde is easy! Simply place source files in one of the source directories,
 and Hyde will automatically discover, parse, and compile them to static HTML.
 The directory and file extension of a source file will determine how HydePHP parses and compiles it.
 Please see the <a href="core-concepts#directory-structure">directory structure</a> section for more information.</p>
-<h3>Scaffolding files</h3>
+<h3 id="scaffolding-files" class="group w-fit scroll-mt-2">Scaffolding files<a href="#scaffolding-files" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can scaffold blog post files using the <code>php hyde make:post</code> command which automatically creates the front matter, based on your input selections.
 You can also scaffold pages with the <code>php hyde make:page</code> command.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span></div><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span></div></code></pre>
-<h3>Compiling to static HTML</h3>
+<h3 id="compiling-to-static-html" class="group w-fit scroll-mt-2">Compiling to static HTML<a href="#compiling-to-static-html" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Now that you have some amazing content, you'll want to compile your site into static HTML. Thankfully, this is as easy as executing the <code>build</code> command, after which your compiled site is stored in the <code>_site</code> directory.</p>
 <pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>When building the site, Hyde will scan your source directories for files and compile them into static HTML using the appropriate layout depending
 on what kind of page it is. You don't have to worry about routing as Hyde takes care of everything, including creating navigation menus!</p>
-<h3>Managing assets</h3>
+<h3 id="managing-assets" class="group w-fit scroll-mt-2">Managing assets<a href="#managing-assets" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Hyde comes bundled with a precompiled and minified <code>app.css</code> file, containing all the Tailwind you need for the default views meaning that you don't even need to use NPM. However, Hyde is already configured to use Laravel Mix to compile your assets if you feel like there's a need to build the assets yourself. See more on the <a href="managing-assets">Managing Assets</a> page.</p>
-<h3>Deploying your site</h3>
+<h3 id="deploying-your-site" class="group w-fit scroll-mt-2">Deploying your site<a href="#deploying-your-site" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You are now ready to show your site to the world! Simply copy the <code>_site</code> directory to your web server's document root, and you're ready to go.</p>
 <p>You can even use GitHub Pages to host your site for free. That's what the Hyde website does, using an Actions CI workflow that automatically builds and deploys this site.</p>
-<h2>Further Reading</h2>
+<h2 id="further-reading" class="group w-fit scroll-mt-2">Further Reading<a href="#further-reading" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Here's some ideas of what to read next:</p>
 <ul>
 <li><a href="core-concepts">Architecture Concepts &amp; Directory Structure</a></li>
