@@ -42,7 +42,7 @@
                 
                 <!-- CTA Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 mt-8 w-full sm:w-auto px-4 md:px-0">
-                    <a href="/docs/1.x/quickstart" class="group relative">
+                    <a href="/docs/2.x/quickstart" class="group relative">
                         <div class="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
                         <span class="relative inline-flex items-center justify-center w-full px-8 py-4 text-base font-bold text-white bg-slate-900 border border-transparent rounded-lg group-hover:bg-slate-800 transition-colors xl:text-lg">
                             <span class="mr-2">⚡</span>

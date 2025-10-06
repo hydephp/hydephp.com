@@ -27,7 +27,7 @@
             
             <!-- Enhanced CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 w-full sm:w-auto">
-                <a href="docs/1.x/quickstart"
+                <a href="docs/2.x/quickstart"
                     class="inline-flex items-center justify-center px-6 py-3 sm:px-7 sm:py-3.5
                             text-base sm:text-lg font-semibold
                             text-white bg-gradient-to-r from-purple-600/80 to-pink-600/80

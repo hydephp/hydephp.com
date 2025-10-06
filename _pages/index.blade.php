@@ -210,12 +210,12 @@
           },
           "applicationCategory": "DeveloperApplication",
           "applicationSubCategory": "Static Site Generator",
-          "downloadUrl": "https://hydephp.com/docs/1.x/quickstart",
+          "downloadUrl": "https://hydephp.com/docs/2.x/quickstart",
           "featureList": "Markdown, Laravel, PHP, Static Site Generator",
           "operatingSystem": "Windows, Linux, macOS",
           "requirements": "PHP 8.1",
           "screenshot": "https://opengraph.githubassets.com/1/hydephp/hyde",
-          "softwareVersion": "v1.x"
+          "softwareVersion": "v2.x"
         }
     </script>
     <script type="application/ld+json">
