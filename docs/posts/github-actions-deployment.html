@@ -24,14 +24,14 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 2.0.0-RC.4">
+<meta name="generator" content="HydePHP 2.0.1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
     
 
     
@@ -59,80 +59,105 @@
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
-    <div class="bg-purple-600 text-white py-3 px-4 text-center">
-        <div class="flex items-center justify-center space-x-4">
-            <span class="text-sm md:text-base font-medium">
-                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
-            </span>
-
-                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
-                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
-                    Read More
-                </a>
-                    </div>
-    </div>
-
+    
     <nav aria-label="Main navigation" id="main-navigation"
-	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="../" class="font-bold px-4">
-	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
-	HydePHP
-</a>
-		<div class="ml-auto">
-			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+     class=" relative ">
+    <div class=" bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none ">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
+                <div class="flex items-center">
+                    <a aria-label="Home page link" href="../" 
+   class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+    <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
+         alt="HydePHP Logo" 
+         class=" inline ">
+    <span class=" font-bold ">
+        HydePHP
+    </span>
+</a>				</div>
+
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
+					<!-- Desktop Navigation Links -->
+					<div class="hidden md:flex items-center gap-8">
+													<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+											</div>
+
+					<!-- Documentation Button -->
+					<a id="docs-nav-button" href="../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+											</a>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="block md:hidden">
+						<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1  hover:text-gray-700 dark:text-gray-200 "
+								aria-label="Toggle navigation menu">
+							<svg x-show="! navigationOpen" title="Open Navigation Menu" class=" dark:fill-gray-200 " style="display: block;"
+								 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Open Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"/>
+								<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+							</svg>
+							<svg x-show="navigationOpen" title="Close Navigation Menu" class=" dark:fill-gray-200 " style="display: none;"
+								 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Close Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+						</button>
+					</div>
+
+										<div class="hidden md:block">
+						<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
+					</div>
+									</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="block md:hidden">
-		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-				aria-label="Toggle navigation menu">
-			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
-				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Open Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"/>
-				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-			</svg>
-			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
-				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Close Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"></path>
-				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-			</svg>
-		</button>
-	</div>
-
+	<!-- Mobile Navigation Links -->
 	<div id="main-navigation-links"
-		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="md:hidden  bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 "
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
-							<li class="md:mx-2">
-					<a href="../" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
-							<li class="md:mx-2">
-					<a href="../about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
-							<li class="md:mx-2">
-					<a href="../demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
-							<li class="md:mx-2">
-					<a href="../posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
-							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
-					</ul>
-		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
-			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
-			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
-		</a>
+		<div class="mx-auto max-w-7xl px-6">
+			<ul aria-label="Navigation links" class="py-4 space-y-2">
+									<li>
+						<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
+									<li>
+						<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+					</li>
+									<li>
+						<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+					</li>
+									<li>
+						<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+					</li>
+									<li>
+						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+					</li>
+								<li class="max-[375px]:block hidden">
+					<a href="../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>
-
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="github-actions-deployment" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="github-actions-deployment">
             <meta itemprop="url" content="https://hydephp.com/posts/github-actions-deployment">
     
@@ -176,61 +201,7 @@
 <p>There are many ways and methods to use GitHub Actions, I personally like decoupling jobs. So for our workflow, we will use two jobs, one to build the site, and one to deploy it.</p>
 <p>We will use <a href="https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts">workflow artifacts</a> to pass the built data between the jobs. Don't take this as gospel though, you can use any method you like.</p>
 <p>From your GitHub repository page, head on over to the Actions tab, and hit the &quot;New workflow&quot; button. On this page, you want to select the &quot;set up a workflow yourself&quot; button. This will create a new workflow file in your repository. Here we'll add the first job, to build the site.</p>
-<pre><code class="language-yaml"># This is a basic workflow to help you get started with using HydePHP with GitHub Actions
-
-name: Build &amp; Deploy
-
-# Controls when the workflow will run
-on:
-  # We only want to run this workflow when changes are pushed to the master/main branch
-  push:
-    branches: [ &quot;master&quot; ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # First we need to build the site
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it
-      - uses: actions/checkout@v4
-
-      # (optional) Validate the Composer files to catch any errors early on
-      - name: Validate composer.json and composer.lock
-        run: composer validate --strict
-
-      # (optional) Cache the Composer packages to speed up future builds
-      - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v4
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
-
-      # Install the Composer packages
-      - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
-
-      # Now we can build the site! We do this using the HydeCLI
-      - name: Build the site
-        run: php hyde build --no-interaction
-      
-      # Our site is now compiled into the _site directory, so we'll upload it to an artifact to use in the next job
-      - name: Upload site artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: site
-          path: _site
-          
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;"># This is a basic workflow to help you get started with using HydePHP with GitHub Actions</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build &amp; Deploy</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># Controls when the workflow will run</span></div><div class='line'><span style="color: #FF9CAC;">on</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># We only want to run this workflow when changes are pushed to the master/main branch</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">push</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">branches</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">master</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">]</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># Allows you to run this workflow manually from the Actions tab</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">workflow_dispatch</span><span style="color: #89DDFF;">:</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;"># A workflow run is made up of one or more jobs that can run sequentially or in parallel</span></div><div class='line'><span style="color: #F07178;">jobs</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #89DDFF;">  </span><span style="color: #676E95;"># First we need to build the site</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">build</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># The type of runner that the job will run on</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Steps represent a sequence of tasks that will be executed as part of the job</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Checks-out your repository under $GITHUB_WORKSPACE, so the job can access it</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v4</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># (optional) Validate the Composer files to catch any errors early on</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Validate composer.json and composer.lock</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer validate --strict</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># (optional) Cache the Composer packages to speed up future builds</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Cache Composer packages</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">id</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer-cache</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/cache@v4</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">vendor</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">key</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">${{ runner.os }}-php-${{ hashFiles(&#39;**/composer.lock&#39;) }}</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">restore-keys</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">|</span></div><div class='line'><span style="color: #C3E88D;">            ${{ runner.os }}-php-</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Install the Composer packages</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Install dependencies</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">composer install --prefer-dist --no-progress</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Now we can build the site! We do this using the HydeCLI</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Build the site</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">php hyde build --no-interaction</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">      </span><span style="color: #676E95;"># Our site is now compiled into the _site directory, so we&#39;ll upload it to an artifact to use in the next job</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Upload site artifact</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/upload-artifact@v4</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">site</span></div><div class='line'><span style="color: #A6ACCD;">          </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_site</span></div></code></pre>
 <p>Paste the code above into the web editor and commit the changes.</p>
 <p>Head on over to the Actions tab, here you'll see a new workflow called &quot;Build &amp; Deploy&quot; which should already be running, otherwise it will start shortly. When it's finished, which for me took just half a minute, click on the run link. This will take you to a page where you will see that an artifact called &quot;site&quot; has been created.</p>
 <p>If you want, you can click on the artifact to download the zip file to your computer. Open it up, and you'll see that your site is now built and ready to be deployed!</p>
@@ -247,38 +218,7 @@ jobs:
 <h3>Updating the workflow</h3>
 <p>Now that our repository is ready, we need to update our workflow to upload the site to the new GitHub Pages branch.</p>
 <p>Add the following code after the build job in the workflow we made before:</p>
-<pre><code class="language-yaml">  # Now we can deploy the site to GitHub Pages!
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build # Run the build job first, otherwise we won't have anything to deploy
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: 'gh-pages' # Checkout the gh-pages branch
-      
-      # (optional) Remove any old files from the gh-pages branch
-      - name: Empty site directory
-        run: rm -rf *
-      
-      # Download the compiled site into the current directory
-      - name: Download site artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: '.'
-
-      # Create a .nojekyll file to prevent GitHub from attempting to compile a Jekyll site
-      - name: Create .nojekyll file
-        run: touch .nojekyll
-
-      # Commit the changes to the gh-pages branch
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v9 
-        with:
-          add: '.'
-          message: 'Upload compiled site ${{ github.sha }}' 
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;"># Now we can deploy the site to GitHub Pages!</span></div><div class='line'><span style="color: #F07178;">deploy</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">runs-on</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">ubuntu-latest</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">needs</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Run the build job first, otherwise we won&#39;t have anything to deploy</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">steps</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/checkout@v4</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">ref</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">gh-pages</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Checkout the gh-pages branch</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># (optional) Remove any old files from the gh-pages branch</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Empty site directory</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rm -rf *</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Download the compiled site into the current directory</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Download site artifact</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">actions/download-artifact@v4</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">site</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">.</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Create a .nojekyll file to prevent GitHub from attempting to compile a Jekyll site</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Create .nojekyll file</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">run</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">touch .nojekyll</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;"># Commit the changes to the gh-pages branch</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-</span><span style="color: #A6ACCD;"> </span><span style="color: #F07178;">name</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Commit changes</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">uses</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">EndBug/add-and-commit@v9</span></div><div class='line'><span style="color: #A6ACCD;">      </span><span style="color: #F07178;">with</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">add</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">.</span><span style="color: #89DDFF;">&#39;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F07178;">message</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Upload compiled site ${{ github.sha }}</span><span style="color: #89DDFF;">&#39;</span></div></code></pre>
 <p>Now when you commit the changes, the site will be built and uploaded to GitHub Pages.</p>
 <p>Congratulations! You've now set up a new site with HydePHP and GitHub Actions. From here on, the opportunities are limitless. Why not try out creating a few new pages? You can also customize your site in the config files.</p>
 <p>You can keep managing your site in the cloud using GitHub, or you can clone the repository to take advantage of the powerful realtime compiling and content scaffolding offered by the HydeCLI.</p>
@@ -292,6 +232,11 @@ jobs:
 <p>Want to enable code syntax highlighting? Hyde has first-party support for <a href="https://torchlight.dev/">Torchlight.dev</a>, an API service for amazing syntax highlighting. Note that Torchlight requires a (free) API token. You should never store credentials in your GitHub repository. Instead, store the API key in your <a href="https://docs.github.com/en/actions/security-guides/encrypted-secrets">GitHub Action Secrets</a> and add it to your .env file during the CI build process.</p>
 </li>
 </ul>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -301,7 +246,7 @@ jobs:
  
     </section>
 
-    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+    <footer class="px-4 pt-12 pb-6 dark:text-white dark:bg-slate-900 bg-gray-100" style="margin-top: -1px;">
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
@@ -319,7 +264,7 @@ jobs:
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
 					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">

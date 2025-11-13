@@ -25,12 +25,12 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 2.0.0-RC.4">
+<meta name="generator" content="HydePHP 2.0.1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:site_name" content="HydePHP">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
     
 
     
@@ -59,80 +59,105 @@
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
-    <div class="bg-purple-600 text-white py-3 px-4 text-center">
-        <div class="flex items-center justify-center space-x-4">
-            <span class="text-sm md:text-base font-medium">
-                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
-            </span>
-
-                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
-                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
-                    Read More
-                </a>
-                    </div>
-    </div>
-
+    
     <nav aria-label="Main navigation" id="main-navigation"
-	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="../" class="font-bold px-4">
-	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
-	HydePHP
-</a>
-		<div class="ml-auto">
-			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+     class=" relative ">
+    <div class=" bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none ">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
+                <div class="flex items-center">
+                    <a aria-label="Home page link" href="../" 
+   class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+    <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
+         alt="HydePHP Logo" 
+         class=" inline ">
+    <span class=" font-bold ">
+        HydePHP
+    </span>
+</a>				</div>
+
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
+					<!-- Desktop Navigation Links -->
+					<div class="hidden md:flex items-center gap-8">
+													<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+											</div>
+
+					<!-- Documentation Button -->
+					<a id="docs-nav-button" href="../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+											</a>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="block md:hidden">
+						<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1  hover:text-gray-700 dark:text-gray-200 "
+								aria-label="Toggle navigation menu">
+							<svg x-show="! navigationOpen" title="Open Navigation Menu" class=" dark:fill-gray-200 " style="display: block;"
+								 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Open Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"/>
+								<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+							</svg>
+							<svg x-show="navigationOpen" title="Close Navigation Menu" class=" dark:fill-gray-200 " style="display: none;"
+								 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Close Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+						</button>
+					</div>
+
+										<div class="hidden md:block">
+						<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
+					</div>
+									</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="block md:hidden">
-		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-				aria-label="Toggle navigation menu">
-			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
-				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Open Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"/>
-				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-			</svg>
-			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
-				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Close Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"></path>
-				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-			</svg>
-		</button>
-	</div>
-
+	<!-- Mobile Navigation Links -->
 	<div id="main-navigation-links"
-		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="md:hidden  bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 "
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
-							<li class="md:mx-2">
-					<a href="../" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
-							<li class="md:mx-2">
-					<a href="../about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
-							<li class="md:mx-2">
-					<a href="../demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
-							<li class="md:mx-2">
-					<a href="../posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
-							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
-					</ul>
-		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
-			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
-			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
-		</a>
+		<div class="mx-auto max-w-7xl px-6">
+			<ul aria-label="Navigation links" class="py-4 space-y-2">
+									<li>
+						<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
+									<li>
+						<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+					</li>
+									<li>
+						<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+					</li>
+									<li>
+						<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+					</li>
+									<li>
+						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+					</li>
+								<li class="max-[375px]:block hidden">
+					<a href="../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>
-
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="introducing-the-hydephp-ui-kit" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="introducing-the-hydephp-ui-kit">
             <meta itemprop="url" content="https://hydephp.com/posts/introducing-the-hydephp-ui-kit">
     
@@ -163,89 +188,32 @@
 <h3>Getting Started</h3>
 <p>Before diving into the UI kit, ensure you're familiar with <a href="https://laravel.com/docs/blade">Laravel Blade</a>. You can also visit the <a href="https://hydephp.github.io/ui-kit/">full UI kit documentation</a>.</p>
 <p>Next, simply install the package using Composer:</p>
-<pre><code class="language-bash">composer require hyde/ui-kit
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">require</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/ui-kit</span></div></code></pre>
 <h3>A first look at the components</h3>
 <p>Here are some of the components you can use to build your next project! Of course, all components support both light and dark mode out of the box, just like the rest of HydePHP.</p>
 <h3>Buttons &amp; Inputs</h3>
-<pre><code class="language-blade">&lt;x-hyde-ui::button-primary&gt;
-	Primary Button
-&lt;/x-hyde-ui::button-primary&gt;
-</code></pre>
-<pre><code class="language-blade">&lt;x-hyde-ui::button-secondary&gt;
-	Secondary Button
-&lt;/x-hyde-ui::button-secondary&gt;
-</code></pre>
-<pre><code class="language-blade">&lt;x-hyde-ui::input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot; value=&quot;John Doe&quot; /&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Primary Button</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-secondary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Secondary Button</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-secondary</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">type</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">placeholder</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">value</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> /&gt;</span></div></code></pre>
 <p>The base component <code>&lt;x-hyde-ui::input /&gt;</code> supports additional attributes, as seen in the example above.</p>
 <h3>Card</h3>
 <p>An incredibly versatile component with title and footer slots:</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-	A card with some content.
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    A card with some content.</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>Combine components for more complex structures:</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;title&quot;&gt;
-        My Amazing Card
-    &lt;/x-slot&gt;
-    A card with content and a footer with a button.
-    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center&quot;&gt;
-        &lt;x-hyde-ui::button-primary&gt;
-            Primary Button
-        &lt;/x-hyde-ui::button-primary&gt;
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        My Amazing Card</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    A card with content and a footer with a button.</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            Primary Button</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h3>Typography Components</h3>
 <h4>Heading</h4>
-<pre><code class="language-blade">&lt;x-hyde-ui::heading&gt;
-    Lorem ipsum dolor sit amet.
-&lt;/x-hyde-ui::heading&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::heading</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    Lorem ipsum dolor sit amet.</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::heading</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4>Prose</h4>
 <p>Create an <code>&lt;article&gt;</code> element with <a href="https://tailwindcss.com/docs/typography-plugin">TailwindCSS Typography</a> styles:</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::prose&gt;
-    &lt;h2&gt;Prose Heading&lt;/h2&gt;
-    &lt;p&gt;Prose paragraph&lt;/p&gt;
-&lt;/x-hyde-ui::prose&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h2</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Prose Heading</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h2</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">p</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Prose paragraph</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">p</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h4>Markdown</h4>
 <p>Convert Markdown to HTML using the Hyde Markdown compiler:</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::markdown&gt;
-    ## Markdown Heading
-	
-    Hello world!
-&lt;/x-hyde-ui::markdown&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    ## Markdown Heading</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    Hello world!</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>Remember to wrap Markdown in the prose element for styling.</p>
 <h3>Putting It All Together</h3>
 <p>The HydePHP UI kit is intentionally minimal. It encourages you to mix and match components to build creative interfaces. Here's an idea to get you started: a customizable newsletter signup card:</p>
-<pre><code class="language-blade">&lt;x-hyde-ui::card&gt;
-    &lt;x-slot name=&quot;title&quot;&gt;
-        Let your creativity flow!
-    &lt;/x-slot&gt;
-
-    &lt;x-slot name=&quot;main&quot; style=&quot;padding-top: 0; padding-bottom: 0;&quot;&gt;
-        &lt;x-hyde-ui::prose&gt;
-            &lt;x-hyde-ui::markdown&gt;
-                The UI kit is minimal by design. It's up to **you** to create something _amazing_.
-
-                Maybe create a form to collect newsletter subscriptions?
-            &lt;/x-hyde-ui::markdown&gt;
-        &lt;/x-hyde-ui::prose&gt;
-    &lt;/x-slot&gt;
-
-    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center flex&quot;&gt;
-        &lt;x-hyde-ui::input placeholder=&quot;Enter email&quot; /&gt;
-
-        &lt;x-hyde-ui::button-primary&gt;
-            Subscribe
-        &lt;/x-hyde-ui::button-primary&gt;
-    &lt;/x-slot&gt;
-&lt;/x-hyde-ui::card&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        Let your creativity flow!</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">main</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">style</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">padding-top: 0; padding-bottom: 0;</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">                The UI kit is minimal by design. It&#39;s up to **you** to create something _amazing_.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">                Maybe create a form to collect newsletter subscriptions?</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::markdown</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::prose</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">name</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">footer</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center flex</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::input</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">placeholder</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Enter email</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> /&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">            Subscribe</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::button-primary</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-slot</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">x-hyde-ui::card</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p><img src="https://raw.githubusercontent.com/hydephp/ui-kit/art/newsletter-signup-example-min.png" alt="Newsletter Screenshot" /></p>
 <h3>Explore the Documentation</h3>
 <p>For comprehensive information, including detailed usage examples and configuration options, check out the <a href="https://hydephp.github.io/ui-kit/">live documentation</a>.</p>
@@ -254,6 +222,11 @@
 <h3>Connect with Us</h3>
 <p>We're eager to see what you’ll create using the HydePHP UI Kit! Connect with us and other developers on <a href="https://discord.hydephp.com/">Discord</a> to share your projects, get help, or just chat. You can also Tweet us at <a href="https://twitter.com/HydeFramework">@HydeFramework</a>.</p>
 <p>Have fun with the HydePHP UI Kit, and happy coding!</p>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -263,7 +236,7 @@
  
     </section>
 
-    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+    <footer class="px-4 pt-12 pb-6 dark:text-white dark:bg-slate-900 bg-gray-100" style="margin-top: -1px;">
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
@@ -281,7 +254,7 @@
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
 					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">

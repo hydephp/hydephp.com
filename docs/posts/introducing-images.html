@@ -24,14 +24,14 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 2.0.0-RC.4">
+<meta name="generator" content="HydePHP 2.0.1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
     
 
     
@@ -59,80 +59,105 @@
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
-    <div class="bg-purple-600 text-white py-3 px-4 text-center">
-        <div class="flex items-center justify-center space-x-4">
-            <span class="text-sm md:text-base font-medium">
-                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
-            </span>
-
-                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
-                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
-                    Read More
-                </a>
-                    </div>
-    </div>
-
+    
     <nav aria-label="Main navigation" id="main-navigation"
-	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="../" class="font-bold px-4">
-	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
-	HydePHP
-</a>
-		<div class="ml-auto">
-			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+     class=" relative ">
+    <div class=" bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none ">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
+                <div class="flex items-center">
+                    <a aria-label="Home page link" href="../" 
+   class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+    <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
+         alt="HydePHP Logo" 
+         class=" inline ">
+    <span class=" font-bold ">
+        HydePHP
+    </span>
+</a>				</div>
+
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
+					<!-- Desktop Navigation Links -->
+					<div class="hidden md:flex items-center gap-8">
+													<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+											</div>
+
+					<!-- Documentation Button -->
+					<a id="docs-nav-button" href="../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+											</a>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="block md:hidden">
+						<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1  hover:text-gray-700 dark:text-gray-200 "
+								aria-label="Toggle navigation menu">
+							<svg x-show="! navigationOpen" title="Open Navigation Menu" class=" dark:fill-gray-200 " style="display: block;"
+								 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Open Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"/>
+								<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+							</svg>
+							<svg x-show="navigationOpen" title="Close Navigation Menu" class=" dark:fill-gray-200 " style="display: none;"
+								 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Close Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+						</button>
+					</div>
+
+										<div class="hidden md:block">
+						<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
+					</div>
+									</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="block md:hidden">
-		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-				aria-label="Toggle navigation menu">
-			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
-				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Open Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"/>
-				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-			</svg>
-			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
-				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Close Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"></path>
-				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-			</svg>
-		</button>
-	</div>
-
+	<!-- Mobile Navigation Links -->
 	<div id="main-navigation-links"
-		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="md:hidden  bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 "
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
-							<li class="md:mx-2">
-					<a href="../" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
-							<li class="md:mx-2">
-					<a href="../about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
-							<li class="md:mx-2">
-					<a href="../demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
-							<li class="md:mx-2">
-					<a href="../posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
-							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
-					</ul>
-		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
-			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
-			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
-		</a>
+		<div class="mx-auto max-w-7xl px-6">
+			<ul aria-label="Navigation links" class="py-4 space-y-2">
+									<li>
+						<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
+									<li>
+						<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+					</li>
+									<li>
+						<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+					</li>
+									<li>
+						<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+					</li>
+									<li>
+						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+					</li>
+								<li class="max-[375px]:block hidden">
+					<a href="../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>
-
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="introducing-images" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="introducing-images">
             <meta itemprop="url" content="https://hydephp.com/posts/introducing-images">
     
@@ -156,112 +181,55 @@
 <p>Add images to your posts by setting the <code>image</code> in the front matter. If you pass a string it will be used to find an image in the <code>_media</code> directory if the file is local. If you supply a full URL starting with <code>https://</code> it will be used as-is.</p>
 <h2>Adding basic images</h2>
 <h3>Add a Local image</h3>
-<pre><code class="language-markdown">---
-image: image.jpg # Will load the following `_site/_media/image.jpg` 
----
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">image.jpg</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Will load the following `_site/_media/image.jpg`</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div></code></pre>
 <h3>Add a Remote image</h3>
-<pre><code class="language-markdown">---
-image: https://cdn.example.com/image.jpg # Will load the URL directly
----
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://cdn.example.com/image.jpg</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;"># Will load the URL directly</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div></code></pre>
 <h2>Using the full power of the Image object to create rich and accessible images</h2>
 <p>If you want to be fancy you can supply extra data to the image. To do this you instead pass an array as the image parameter.</p>
-<pre><code class="language-markdown">---
-image:
-  source: image.jpg
-  description: Alt text
-  title: Tooltip
----
-
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">source</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">image.jpg</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Alt text</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Tooltip</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div></code></pre>
 <h2>Supported properties:</h2>
 <p>Here are the properties supported by the Image object, paired with examples and descriptions.</p>
 <h3>Local image path</h3>
-<pre><code class="language-yaml">path: _media/image.jpg
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">path</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_media/image.jpg</span></div></code></pre>
 <h3>Remote image URL</h3>
 <p>Will override the path property if both are set.</p>
-<pre><code class="language-yaml">url: https://example.com/media/image.jpg
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">url</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://example.com/media/image.jpg</span></div></code></pre>
 <h3>Alt description</h3>
 <p>Used for alt text for screen readers. You should always set this to provide accessibility.</p>
-<pre><code class="language-yaml">description: &quot;This is an image of a cat sitting in a basket.&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">This is an image of a cat sitting in a basket.</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Image title</h3>
 <p>Shows a tooltip on hover.</p>
-<pre><code class="language-yaml">title: &quot;My Cat Archer&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">My Cat Archer</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Copyright text</h3>
-<pre><code class="language-yaml">copyright: &quot;Copyright (c) 2020 John Doe&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">copyright</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Copyright (c) 2020 John Doe</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>License name.</h3>
-<pre><code class="language-yaml">license: &quot;CC BY-NC-SA 4.0&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">license</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">CC BY-NC-SA 4.0</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>License URL.</h3>
-<pre><code class="language-yaml">licenseUrl: &quot;https://creativecommons.org/licenses/by-nc-sa/4.0/&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">licenseUrl</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://creativecommons.org/licenses/by-nc-sa/4.0/</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Image author</h3>
 <p>The author of the image, for example, the photographer, illustrator, stock photo website, etc.</p>
-<pre><code class="language-yaml">author: &quot;John Doe&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h3>Image source</h3>
 <p>Used together with the <code>author</code> property to give credit to the source of the image.</p>
-<pre><code class="language-yaml">credit: &quot;htps://unsplash.com/photos/example&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="yaml" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F07178;">credit</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">htps://unsplash.com/photos/example</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <h2>Practical example</h2>
 <p>Using all of the supported properties described above, we can create an image that is accessible and data-rich.</p>
 <h3>The source markdown</h3>
-<pre><code class="language-markdown">---
-title: A cute kitten I found on Pixabay
-description: I found this cute kitten, and thought it would make a great example for featured images in posts!
-category: example
-author: Emma
-date: 2022-04-11 15:51
-image:
-  description: &quot;Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.&quot;
-  title: &quot;Kitten Gray Kitty [sic]&quot;
-  url: https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg
-  copyright: Copyright (c) 2022
-  license: Pixabay License
-  licenseUrl: https://pixabay.com/service/license/
-  credit: https://pixabay.com/photos/kitten-gray-kitty-kitty-756956/
-  author: Godsgirl_madi
----
-
-## Write something awesome.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">A cute kitten I found on Pixabay</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">I found this cute kitten, and thought it would make a great example for featured images in posts!</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">example</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Emma</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-04-11 15:51</span></div><div class='line'><span style="color: #F07178;">image</span><span style="color: #89DDFF;">:</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Kitten Gray Kitty [sic]</span><span style="color: #89DDFF;">&quot;</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">url</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">copyright</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Copyright (c) 2022</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">license</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Pixabay License</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">licenseUrl</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://pixabay.com/service/license/</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">credit</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">https://pixabay.com/photos/kitten-gray-kitty-kitty-756956/</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Godsgirl_madi</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div></code></pre>
 <h3>Parsed HTML output</h3>
-<pre><code class="language-html">&lt;figure role=&quot;doc-cover&quot; itemprop=&quot;image&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/ImageObject&quot;&gt; 
-    &lt;img src=&quot;https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg&quot; alt=&quot;Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.&quot; title=&quot;Kitten Gray Kitty [sic]&quot; itemprop=&quot;image&quot; class=&quot;mb-0&quot;&gt; 
-    &lt;figcaption itemprop=&quot;caption&quot;&gt; 
-        Image by &lt;span itemprop=&quot;creator&quot; itemscope=&quot;&quot; itemtype=&quot;https://schema.org/Person&quot;&gt;&lt;a href=&quot;https://pixabay.com/photos/kitten-gray-kitty-kitty-756956/&quot; rel=&quot;author noopener&quot; itemprop=&quot;url&quot;&gt;&lt;span itemprop=&quot;name&quot;&gt;Godsgirl_madi&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;. &lt;span itemprop=&quot;copyrightNotice&quot;&gt;Copyright (c) 2022&lt;/span&gt;. License by &lt;a href=&quot;https://pixabay.com/service/license/&quot; rel=&quot;license nofollow noopener&quot; itemprop=&quot;license&quot;&gt;Pixabay License&lt;/a&gt; 
-    &lt;/figcaption&gt; 
-  &lt;meta itemprop=&quot;text&quot; content=&quot;Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.&quot;&gt; 
-  &lt;meta itemprop=&quot;name&quot; content=&quot;Kitten Gray Kitty [sic]&quot;&gt; 
-&lt;/figure&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="html" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">figure</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">role</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">doc-cover</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">image</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemscope</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemtype</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://schema.org/ImageObject</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">img</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">src</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/kitten-756956_640-min.jpg</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">alt</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">title</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Kitten Gray Kitty [sic]</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">image</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">mb-0</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">figcaption</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">caption</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        Image by </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">creator</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemscope</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemtype</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://schema.org/Person</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://pixabay.com/photos/kitten-gray-kitty-kitty-756956/</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">rel</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">author noopener</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">url</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Godsgirl_madi</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">. </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">copyrightNotice</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Copyright (c) 2022</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">span</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">. License by </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://pixabay.com/service/license/</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">rel</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">license nofollow noopener</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">license</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Pixabay License</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">figcaption</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">meta</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">content</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Image of a small kitten with its head tilted, sitting in a basket weaved from nature material.</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">meta</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">itemprop</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">name</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">content</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">Kitten Gray Kitty [sic]</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">figure</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <h3>Screenshot of the output</h3>
 <p><img src="https://raw.githubusercontent.com/hydephp/hydephp.com/gh-pages/media/post-with-kitten-image.jpg" alt="" /></p>
 <h2>Deep dive into the Image object</h2>
 <p>If you are a package developer, or just curious, here is an overview of how the Image object is created internally.</p>
 <p>An <code>Image</code> object is created by passing an array of values to the constructor.</p>
 <p>Here is an example, with all the supported properties, and example values.</p>
-<pre><code class="language-php">public static function exampleImage(): self
-{
-  return new Hyde\Framework\Models\Image([
-    'path' =&gt; '_media/image.jpg',
-    'url' =&gt; 'https://picsum.photos/300/200',
-    'description' =&gt; 'A random image.',
-    'title' =&gt; 'An image from Picsum',
-    'copyright' =&gt; 'Copyright (c) 2022',
-    'license' =&gt; 'CC BY-NC-SA 4.0',
-    'licenseUrl' =&gt; 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
-    'credit' =&gt; 'https://picsum.photos',
-    'author' =&gt; 'John Doe',
-  ]);
-}
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">static</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">exampleImage</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">self</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">return</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Models</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Image</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">path</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">_media/image.jpg</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">url</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://picsum.photos/300/200</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">description</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">A random image.</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">title</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">An image from Picsum</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">copyright</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Copyright (c) 2022</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">license</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">CC BY-NC-SA 4.0</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">licenseUrl</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://creativecommons.org/licenses/by-nc-sa/4.0/</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">credit</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://picsum.photos</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">author</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">=&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">John Doe</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span></div><div class='line'><span style="color: #A6ACCD;">  </span><span style="color: #89DDFF;">]);</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -271,7 +239,7 @@ image:
  
     </section>
 
-    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+    <footer class="px-4 pt-12 pb-6 dark:text-white dark:bg-slate-900 bg-gray-100" style="margin-top: -1px;">
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
@@ -289,7 +257,7 @@ image:
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
 					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">

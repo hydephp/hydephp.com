@@ -47,9 +47,17 @@ blockquote.danger {
 	color: #ffffff;
 }
 
+.torchlight-enabled pre {
+    padding-top: 0px;
+    padding-bottom: 0px;
+	line-height: 1;
+}
+
+.torchlight-enabled .line {
+	line-height: 1.75;
+}
 
 /* Hyde UI Kit */
-
 
 .btn {
 	@apply px-6 py-2 mx-2 my-1 rounded;

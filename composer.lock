@@ -982,16 +982,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v2.0.0-RC.4",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "c155d34f7fea12245459b7eac93d8414a3da7ed1"
+                "reference": "87932531f421de04e65ff16e4f31854f0cb46ef7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/c155d34f7fea12245459b7eac93d8414a3da7ed1",
-                "reference": "c155d34f7fea12245459b7eac93d8414a3da7ed1",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/87932531f421de04e65ff16e4f31854f0cb46ef7",
+                "reference": "87932531f421de04e65ff16e4f31854f0cb46ef7",
                 "shasum": ""
             },
             "require": {
@@ -1030,7 +1030,7 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v2.0.0-RC.4"
+                "source": "https://github.com/hydephp/framework/tree/v2.0.1"
             },
             "funding": [
                 {
@@ -1042,7 +1042,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-09-30T17:45:57+00:00"
+            "time": "2025-10-04T16:00:29+00:00"
         },
         {
             "name": "hydephp/torchlight-commonmark",
