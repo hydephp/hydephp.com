@@ -39,7 +39,7 @@ jobs:
       run: php hyde build --pretty-urls --no-interaction
 
     - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/1.x" />' > _site/docs/index.html
+      run: echo '<meta http-equiv="refresh" content="0;url=/docs/2.x" />' > _site/docs/index.html
 
     - name: Run tests
       run: php bin/build-tests.php

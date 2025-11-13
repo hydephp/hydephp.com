@@ -4,7 +4,8 @@ description: "Stephen Ude-okolie shares how a simple pull request turned into a 
 category: "Guest Posts"
 author:
     name: "Stephen Ude-okolie"
-    github: "Chubbi-Stephen"
+    socials:
+        github: "Chubbi-Stephen"
 date: "2025-06-07 04:32"
 guest_post: true
 ---

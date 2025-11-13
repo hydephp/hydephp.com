@@ -133,7 +133,7 @@
         </div>
     </div>
 
-    <div id="transcript-container" class="mt-4 p-4 bg-gray-50 dark:bg-slate-800 rounded h-[16rem] relative overflow-hidden">
+    <div id="transcript-container" class="mt-4 p-4 bg-gray-50 dark:bg-slate-800 rounded h-64 relative overflow-hidden">
         <h3 class="font-semibold mb-4">Transcript</h3>
         <div id="transcript-wrapper" class="absolute inset-x-4 top-12 bottom-4 overflow-hidden">
             <div id="transcript" class="text-sm absolute w-full transition-transform duration-300 ease-out">
@@ -141,7 +141,7 @@
                     <?php
                     // Todo: Merge with the js to use this as the initial content
 
-                    $raw = file_get_contents(Hyde::mediaPath('podcast/introduction.srt'));
+                    $raw = file_get_contents(MediaFile::sourcePath('podcast/introduction.srt'));
 
                     // Split the SRT file into individual blocks based on double newlines
                     $blocks = preg_split('/\n\n|\r\n\r\n/', $raw);

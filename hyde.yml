@@ -1,0 +1,11 @@
+# HydePHP Configuration Override File
+# Settings here will override settings in config/hyde.php
+
+# Site Banner Configuration
+banner:
+  enabled: false
+  text: "HydePHP v2.0 is now available for download!"
+  color: "purple"  # Options: blue, green, red, yellow, purple, indigo, gray
+  button:
+    text: "Read Announcement"
+    link: "/posts/hydephp-version-2-0-released"
