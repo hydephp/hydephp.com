@@ -22,7 +22,7 @@
                     
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center flex items-center justify-center md:justify-start gap-3">
                         <span class="bg-clip-text text-transparent text-hyde-ribbon">HydePHP</span>
-                        <img src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo" class="inline-block h-[1em]">
+                        <img src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo" class="inline-block" style="height: 1em">
                     </h1>
                     
                     <div class="relative mb-0 text-xl font-semibold leading-relaxed text-gray-300 lg:text-2xl xl:text-3xl md:text-left text-center">
