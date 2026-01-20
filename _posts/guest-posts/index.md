@@ -49,9 +49,10 @@ category: "Guest Posts"
 author:
     name: "Your Name"
     website: "https://yourwebsite.com" # Optional
-    linkedin: "your_linkedin_handle" # Optional
-    github: "your_github_handle" # Optional
-    x: "your_x_handle" # Optional
+    socials:
+      linkedin: "your_linkedin_handle" # Optional
+      github: "your_github_handle" # Optional
+      x: "your_x_handle" # Optional
 date: "YYYY-MM-DD HH:MM"
 guest_post: true
 canonical_guest_post_url: "https://example.com/original-post" # Optional, for republished content
