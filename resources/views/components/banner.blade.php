@@ -2,7 +2,7 @@
     $bannerConfig = config('hyde.banner');
 @endphp
 
-@if($bannerConfig && isset($bannerConfig['text']))
+@if($bannerConfig && isset($bannerConfig['text']) && $bannerConfig['enabled'])
     @php
         $color = $bannerConfig['color'] ?? 'blue';
         $colorClasses = [

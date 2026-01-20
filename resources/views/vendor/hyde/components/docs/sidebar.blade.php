@@ -1,5 +1,9 @@
 @php
-$sidebar = app('navigation.sidebar')
+
+use Hyde\Framework\Features\Navigation\DocumentationSidebar;
+use App\Extend\VersionAwareNavigationMenuGenerator;
+
+$sidebar = VersionAwareNavigationMenuGenerator::newHandle(DocumentationSidebar::class, $page::class);
 @endphp
 <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none border-r border-gray-200/60 dark:border-gray-700/60 transition-all duration-300">
     <header id="sidebar-header" class="h-16">

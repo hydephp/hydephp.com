@@ -19,16 +19,16 @@
 <meta name="author" content="HydePHP">
 <meta name="description" content="HydePHP - Elegant and Powerful Static Site Generator">
 <meta name="keywords" content="HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP">
-<meta name="generator" content="HydePHP 1.8.0">
+<meta name="generator" content="HydePHP 2.0.1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:site_name" content="HydePHP">
 <meta property="og:url" content="https://hydephp.com/">
 <meta property="og:description" content="HydePHP - Elegant and Powerful Static Site Generator">
-<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
 
@@ -38,10 +38,11 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-    <link rel="stylesheet" href="../../media/app.css?v=fbec641625d79635ea18e6d2211f8dea">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
+    
 
-
-
+    
+    
 
 
 
@@ -51,33 +52,535 @@
 <!-- Sponsored by Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
 <!-- / Fathom -->
-</head>
+    <style>
+/* ========================================
+   HydePHP Docs - Modern Homepage Style
+   Light/Dark Mode Support
+   ======================================== */
+
+/* === SIDEBAR === */
+
+/* Light mode - subtle gradient */
+#sidebar {
+    background: linear-gradient(180deg, 
+        rgb(249, 250, 251) 0%, 
+        rgb(243, 244, 246) 100%);
+}
+
+/* Dark mode - deep purple gradient */
+.dark #sidebar {
+    background: linear-gradient(180deg, 
+        rgb(30, 20, 50) 0%, 
+        rgb(20, 15, 40) 50%,
+        rgb(15, 10, 30) 100%);
+}
+
+/* Sidebar brand with gradient text */
+#sidebar-brand strong a {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 50%,
+        rgb(252, 165, 165) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+/* Accent border on top of sidebar */
+#sidebar-header {
+    border-bottom: 2px solid transparent;
+    border-image: linear-gradient(90deg, 
+        rgb(236, 72, 153), 
+        rgb(251, 146, 120),
+        rgb(252, 165, 165)) 1;
+}
+
+/* Section headers */
+.sidebar-group-heading {
+    font-weight: 600;
+    letter-spacing: 0.025em;
+}
+
+/* Light mode text colors */
+.sidebar-group-heading {
+    color: rgb(55, 65, 81);
+}
+
+/* Dark mode text colors */
+.dark .sidebar-group-heading {
+    color: rgb(203, 213, 225);
+}
+
+/* Hover effect on group headers */
+.sidebar-group-header:hover .sidebar-group-heading {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.sidebar-group-header:hover {
+    background: rgba(236, 72, 153, 0.1) !important;
+}
+
+/* Reduced indentation for sidebar items */
+.sidebar-group-items {
+    margin-left: 0.5rem !important;
+    padding-left: 0.5rem !important;
+}
+
+.sidebar-item {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* Navigation links */
+.sidebar-item a {
+    transition: all 0.2s ease;
+    border-radius: 0.375rem;
+    margin-left: 0 !important;
+    padding-left: 0.75rem !important;
+}
+
+/* Light mode link colors */
+.sidebar-item a {
+    color: rgb(75, 85, 99);
+}
+
+/* Dark mode link colors */
+.dark .sidebar-item a {
+    color: rgb(148, 163, 184);
+}
+
+.sidebar-item a:hover {
+    background: rgba(236, 72, 153, 0.1);
+    border-left-color: rgb(236, 72, 153) !important;
+    padding-left: 1rem !important;
+}
+
+/* Light mode hover */
+.sidebar-item a:hover {
+    color: rgb(236, 72, 153);
+}
+
+/* Dark mode hover */
+.dark .sidebar-item a:hover {
+    color: rgb(248, 113, 113);
+}
+
+/* Active link */
+.sidebar-item a[aria-current="page"],
+.sidebar-item a.active {
+    color: rgb(236, 72, 153);
+    background: rgba(236, 72, 153, 0.15);
+    border-left-color: rgb(236, 72, 153) !important;
+    font-weight: 500;
+}
+
+.dark .sidebar-item a[aria-current="page"],
+.dark .sidebar-item a.active {
+    color: rgb(251, 146, 120);
+}
+
+/* Group toggle button */
+.sidebar-group-toggle {
+    transition: all 0.2s ease;
+}
+
+.sidebar-group-toggle {
+    color: rgb(107, 114, 128);
+}
+
+.dark .sidebar-group-toggle {
+    color: rgb(148, 163, 184);
+}
+
+.sidebar-group-header:hover .sidebar-group-toggle {
+    color: rgb(251, 146, 120);
+}
+
+/* Navigation container */
+#sidebar-navigation {
+    border-color: rgba(236, 72, 153, 0.2);
+}
+
+.dark #sidebar-navigation {
+    border-color: rgba(236, 72, 153, 0.2);
+}
+
+/* Scrollbar - hidden by default, visible on hover */
+#sidebar-navigation::-webkit-scrollbar {
+    width: 6px;
+}
+
+#sidebar-navigation::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#sidebar-navigation::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+/* Show scrollbar on sidebar hover */
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.3);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+#sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.5);
+}
+
+.dark #sidebar:hover #sidebar-navigation::-webkit-scrollbar-thumb:hover {
+    background: rgba(236, 72, 153, 0.7);
+}
+
+/* Footer links */
+#sidebar-footer {
+    border-top: 1px solid rgba(236, 72, 153, 0.2);
+}
+
+#sidebar-footer a {
+    transition: color 0.2s ease;
+}
+
+#sidebar-footer a {
+    color: rgb(107, 114, 128);
+}
+
+.dark #sidebar-footer a {
+    color: rgb(148, 163, 184);
+}
+
+#sidebar-footer a:hover {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* === MAIN CONTENT === */
+
+/* Main content background */
+#content {
+    background: linear-gradient(180deg,
+        rgb(248, 249, 251) 0%,
+        rgb(255, 255, 255) 100%);
+}
+
+.dark #content {
+    background: linear-gradient(180deg,
+        rgb(17, 24, 39) 0%,
+        rgb(10, 15, 28) 100%);
+}
+
+/* Document article */
+#document {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark #document {
+    background: rgba(30, 41, 55, 0.8);
+}
+
+/* Page title with gradient */
+#document-header h1 {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 50%,
+        rgb(252, 165, 165) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+}
+
+/* Links in content */
+#document a {
+    color: rgb(236, 72, 153);
+    transition: color 0.2s ease;
+}
+
+#document a:hover {
+    color: rgb(251, 146, 120);
+}
+
+/* Code blocks */
+#document pre {
+    background: rgb(30, 20, 50) !important;
+    border: 1px solid rgba(236, 72, 153, 0.2);
+    border-radius: 0.5rem;
+}
+
+#document code {
+    color: rgb(251, 146, 120);
+}
+
+#document pre code {
+    color: rgb(203, 213, 225);
+}
+
+/* Inline code */
+#document :not(pre) > code {
+    background: rgba(236, 72, 153, 0.1);
+    color: rgb(236, 72, 153);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-weight: 500;
+}
+
+.dark #document :not(pre) > code {
+    background: rgba(236, 72, 153, 0.2);
+    color: rgb(251, 146, 120);
+}
+
+
+/* === MOBILE NAVIGATION === */
+
+#mobile-navigation {
+    background: linear-gradient(90deg,
+        rgb(249, 250, 251) 0%,
+        rgb(243, 244, 246) 100%);
+}
+
+.dark #mobile-navigation {
+    background: linear-gradient(90deg,
+        rgb(30, 20, 50) 0%,
+        rgb(25, 18, 45) 100%);
+}
+
+#mobile-navigation strong a {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+
+/* === VERSION SWITCHER === */
+
+#version-switcher,
+#mobile-navigation button[aria-haspopup="listbox"] {
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+#version-switcher:hover,
+#mobile-navigation button[aria-haspopup="listbox"]:hover {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+
+/* === SEARCH === */
+
+/* Search button */
+button[aria-label="Open search window"],
+#searchMenuButton,
+#searchMenuButtonMobile {
+    background: rgba(236, 72, 153, 0.1);
+    border-color: rgba(236, 72, 153, 0.3);
+    transition: all 0.2s ease;
+}
+
+button[aria-label="Open search window"]:hover,
+#searchMenuButton:hover,
+#searchMenuButtonMobile:hover {
+    background: rgba(236, 72, 153, 0.2);
+    border-color: rgba(236, 72, 153, 0.5);
+}
+
+/* Search window */
+#searchMenu {
+    background: linear-gradient(180deg,
+        rgb(255, 255, 255) 0%,
+        rgb(249, 250, 251) 100%);
+    border: 2px solid rgba(236, 72, 153, 0.2);
+    box-shadow: 0 20px 25px -5px rgba(236, 72, 153, 0.1);
+}
+
+.dark #searchMenu {
+    background: linear-gradient(180deg,
+        rgb(30, 41, 55) 0%,
+        rgb(20, 30, 45) 100%);
+}
+
+/* Search input */
+#search-input {
+    border: 2px solid rgba(236, 72, 153, 0.2);
+    transition: all 0.2s ease;
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: rgb(236, 72, 153);
+    box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.1);
+}
+
+
+/* === THEME TOGGLE === */
+
+.theme-toggle-button {
+    transition: all 0.2s ease;
+}
+
+.theme-toggle-button {
+    color: rgb(107, 114, 128);
+}
+
+.dark .theme-toggle-button {
+    color: rgb(203, 213, 225);
+}
+
+.theme-toggle-button:hover {
+    color: rgb(251, 146, 120);
+}
+
+
+/* === BADGES === */
+
+/* Package badges styling */
+.images-inline img {
+    filter: saturate(1.2) brightness(1.1);
+    transition: transform 0.2s ease;
+}
+
+.images-inline img:hover {
+    transform: scale(1.05);
+}
+
+
+/* === MOBILE SIDEBAR TOGGLE === */
+
+#sidebar-toggle span {
+    background: rgb(107, 114, 128) !important;
+}
+
+.dark #sidebar-toggle span {
+    background: rgb(251, 146, 120) !important;
+}
+
+#sidebar-toggle.active span:nth-child(1) {
+    background: rgb(236, 72, 153) !important;
+}
+
+#sidebar-toggle.active span:nth-child(4) {
+    background: rgb(236, 72, 153) !important;
+}
+
+
+/* === FOOTER === */
+
+#document-footer a {
+    color: rgb(236, 72, 153);
+    transition: color 0.2s ease;
+}
+
+#document-footer a:hover {
+    color: rgb(251, 146, 120);
+}
+
+
+/* === ACCESSIBILITY === */
+
+#skip-to-content:focus {
+    background: linear-gradient(135deg, 
+        rgb(236, 72, 153) 0%, 
+        rgb(251, 146, 120) 100%);
+    border-color: rgb(251, 146, 120);
+}
+</style></head>
 <body id="hyde-docs" class="bg-white dark:bg-gray-900 dark:text-white min-h-screen w-screen relative overflow-x-hidden overflow-y-auto"
       x-data="{ sidebarOpen: false, searchWindowOpen: false }" x-on:keydown.escape="searchWindowOpen = false; sidebarOpen = false" x-on:keydown.slash="searchWindowOpen = true">
 
-    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation" class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
-    <strong class="px-2 mr-auto">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>    <nav id="mobile-navigation"
+     x-data="{ vopen:false }"
+     class="bg-white dark:bg-gray-800 md:hidden flex justify-between w-full h-16 z-40 fixed left-0 top-0 p-4 leading-8 shadow-lg print:hidden">
+
+    <strong class="px-2 mr-auto truncate">
                     <a href="../../docs/2.x/">
                 HydePHP Docs
             </a>
             </strong>
-    <ul class="flex items-center">
-        <li class="h-8 flex mr-1">
+
+    <ul class="flex items-center gap-2">
+        
+                    <li class="relative">
+                <button type="button"
+                        @click="vopen = !vopen"
+                        aria-haspopup="listbox"
+                        :aria-expanded="vopen.toString()"
+                        class="h-8 px-2 rounded-md border border-gray-300 dark:border-gray-700
+                               bg-white/80 dark:bg-gray-800/80 text-sm flex items-center gap-1">
+                    <span class="font-medium">2.x</span>
+                    <svg class="w-4 h-4 opacity-70" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.173l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+                    </svg>
+                </button>
+
+                <div x-cloak x-show="vopen" @click.outside="vopen=false"
+                     class="absolute right-0 mt-2 w-40 rounded-lg border border-gray-200 dark:border-gray-700
+                            bg-white dark:bg-gray-800 shadow-lg z-50 py-1">
+                                            <a href="../../docs/1.x/"
+                           class="flex items-center justify-between px-3 py-2 text-sm rounded-md
+                                   hover:bg-gray-50 dark:hover:bg-gray-700 ">
+                            <span>1.x</span>
+                            <span class="text-[11px] text-gray-500">old</span>
+                        </a>
+                                            <a href="../../docs/2.x/navigation-api"
+                           class="flex items-center justify-between px-3 py-2 text-sm rounded-md
+                                   bg-gray-100 dark:bg-gray-700 font-semibold ">
+                            <span>2.x</span>
+                            <span class="text-[11px] text-gray-500">current</span>
+                        </a>
+                                    </div>
+            </li>
+        
+        <li class="h-8 flex">
             <button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
         </li>
+
         <li class="h-8 flex">
-            <button id="sidebar-toggle" title="Toggle sidebar" aria-label="Toggle sidebar navigation menu" @click="sidebarOpen = ! sidebarOpen" :class="{'active' : sidebarOpen}">
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
-    <span class="icon-bar dark:bg-white h-0" role="presentation"></span>
+            <button 
+    id="sidebar-toggle" 
+    title="Toggle sidebar" 
+    aria-label="Toggle sidebar navigation menu"
+    @click="sidebarOpen = !sidebarOpen"
+    class="flex items-center justify-center w-8 h-8 px-2 py-1 hover:text-gray-700 dark:text-gray-200 opacity-75 hover:opacity-100"
+  >
+    <div class="relative w-5 h-4">
+        <div class="absolute top-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? 'rotate-45' : ''"></div>
+        <div class="absolute inset-0 my-auto w-5 h-0.5 bg-current transition-all duration-300 ease-in-out origin-center" :class="sidebarOpen ? '-rotate-45' : ''"></div>
+        <div class="absolute bottom-0 w-5 h-0.5 bg-current transition-all duration-300 ease-in-out" :class="sidebarOpen ? 'opacity-0' : ''"></div>
+    </div>
 </button>        </li>
     </ul>
-</nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none transition-all duration-300">
+</nav>    <aside id="sidebar" x-cloak :class="sidebarOpen ? 'visible left-0' : 'invisible -left-64 md:visible md:left-0'" class="bg-gray-100 dark:bg-gray-800 dark:text-gray-200 h-screen w-64 fixed z-30 md:flex flex-col shadow-lg md:shadow-none border-r border-gray-200/60 dark:border-gray-700/60 transition-all duration-300">
     <header id="sidebar-header" class="h-16">
         <div id="sidebar-brand" class="flex items-center justify-between h-16 py-4 px-2">
     <strong class="px-2">
@@ -91,11 +594,11 @@
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
 </div>    </header>
-    <nav id="sidebar-navigation" class="p-2 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
+    <nav id="sidebar-navigation" class="p-2 pb-6 overflow-y-auto border-y border-gray-300 dark:border-[#1b2533] h-full">
         <ul id="sidebar-items" role="list">
                             <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Getting Started</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Getting Started</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -109,23 +612,37 @@
             <a href="../../docs/2.x/quickstart" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Quickstart Guide
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/console-commands" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Console Commands
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/core-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Core Concepts
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/front-matter" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Front Matter
         </a>
-    </li>                                    </ul>
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/release-notes" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            v2 Release Notes
+        </a>
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+            <a href="../../docs/2.x/upgrade-guide" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
+            v2 Upgrade Guide
+        </a>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Creating Content</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Creating Content</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -139,27 +656,32 @@
             <a href="../../docs/2.x/blog-posts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Creating Blog Posts
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/static-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Markdown &amp; Blade Pages
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/documentation-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Documentation Pages
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/managing-assets" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Managing and Compiling Assets
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/compile-and-deploy" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Compile &amp; Deploy
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Digging Deeper</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Digging Deeper</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -173,39 +695,47 @@
             <a href="../../docs/2.x/customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Customizing your Site
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/navigation" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Navigation Menus
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/advanced-markdown" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Markdown
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/advanced-customization" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Advanced Customization
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/collections" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             File-based Collections
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/helpers" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Helpers and Utilities
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/troubleshooting" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Troubleshooting
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/updating-hyde" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Updating Hyde Projects
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: true }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Advanced Features</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Advanced Features</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -219,71 +749,269 @@
             <a href="../../docs/2.x/advanced-features" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/build-tasks" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Custom Build Tasks
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/hyde-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             HydePage API
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/in-memory-pages" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             InMemoryPages
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8 bg-black/5 dark:bg-black/10" role="listitem">
-            <a href="../../docs/2.x/navigation-api" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 dark:font-medium border-l-[0.325rem] border-indigo-500 transition-colors duration-300 ease-in-out hover:bg-black/10">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4 active -ml-8 pl-8" role="listitem">
+            <a href="../../docs/2.x/navigation-api" aria-current="true" class="-ml-8 pl-4 py-1 px-2 block text-indigo-600 dark:text-indigo-400 font-semibold border-l-[0.25rem] border-indigo-500 bg-indigo-50/50 dark:bg-indigo-900/20 transition-colors duration-300 ease-in-out hover:bg-indigo-50 dark:hover:bg-indigo-900/30">
             Navigation API
         </a>
 
                     <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents">
-<li><a href="#abstract">Abstract</a></li>
-<li><a href="#overview">Overview</a>
-<ul>
-<li><a href="#visualisation">Visualisation</a></li>
-<li><a href="#built-in-menus">Built-in Menus</a></li>
-</ul>
-</li>
-<li><a href="#creating-custom-menus">Creating Custom Menus</a>
-<ul>
-<li><a href="#introduction-overview">Introduction Overview</a></li>
-<li><a href="#high-level-example">High Level Example</a></li>
-</ul>
-</li>
-<li><a href="#class-reference">Class Reference</a></li>
-<li><a href="#navigationmenu">NavigationMenu</a>
-<ul>
-<li><a href="#quick-reference">Quick Reference</a></li>
-<li><a href="#creating-navigation-menus">Creating Navigation Menus</a></li>
-<li><a href="#adding-items-to-the-menu">Adding Items to the Menu</a></li>
-<li><a href="#accessing-items-in-the-menu">Accessing Items in the Menu</a></li>
-</ul>
-</li>
-<li><a href="#navigationitem">NavigationItem</a>
-<ul>
-<li><a href="#quick-reference-1">Quick Reference</a></li>
-<li><a href="#blade-example">Blade Example</a></li>
-<li><a href="#creating-navigation-items">Creating Navigation Items</a></li>
-<li><a href="#accessing-the-resolved-links">Accessing the resolved links</a></li>
-<li><a href="#accessing-the-label">Accessing the label</a></li>
-<li><a href="#accessing-the-priority">Accessing the priority</a></li>
-<li><a href="#checking-if-the-item-is-active">Checking if the item is active</a></li>
-</ul>
-</li>
-<li><a href="#navigationgroup">NavigationGroup</a>
-<ul>
-<li><a href="#quick-reference-2">Quick Reference</a></li>
-<li><a href="#usage-scenarios">Usage Scenarios</a></li>
-</ul>
-</li>
-</ul>
-
-            </li>                                    </ul>
+            <ul class="table-of-contents pb-3">
+                    <li class="my-0.5">
+                                    <a href="#abstract" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Abstract
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#overview" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Overview
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#visualisation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Visualisation
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#built-in-menus" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Built-in Menus
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-custom-menus" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating Custom Menus
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#introduction-overview" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Introduction Overview
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#high-level-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        High Level Example
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#step-1-create-the-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 1: Create the Menu
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#step-2-display-the-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Step 2: Display the Menu
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#next-steps-and-tips" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Next Steps &amp; Tips
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#class-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Class Reference
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#navigationmenu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        NavigationMenu
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#quick-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Quick Reference
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-navigation-menus" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating Navigation Menus
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#adding-items-to-the-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Adding Items to the Menu
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-items-in-the-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing Items in the Menu
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#navigationitem" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        NavigationItem
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#quick-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Quick Reference
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#blade-example" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Blade Example
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-navigation-items" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Creating Navigation Items
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#using-routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using Routes
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-external-urls" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Using External URLs
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-the-resolved-links" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing the resolved links
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-the-label" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing the label
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#accessing-the-priority" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Accessing the priority
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#checking-if-the-item-is-active" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Checking if the item is active
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#advanced-usage" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Advanced Usage
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#customizing-the-active-state" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Customizing the Active State
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#navigationgroup" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        NavigationGroup
+                    </a>
+                
+                                    <ul class="pl-2">
+                    <li class="my-0.5">
+                                    <a href="#quick-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Quick Reference
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#usage-scenarios" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
+                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
+                        Usage Scenarios
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+            </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Architecture Concepts</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Architecture Concepts</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -297,35 +1025,42 @@
             <a href="../../docs/2.x/architecture-concepts" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Introduction
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/autodiscovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Autodiscovery
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/automatic-routing" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Automatic Routing
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/dynamic-data-discovery" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Dynamic Data Discovery
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/page-models" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Page models
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/the-hydekernel" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The HydeKernel
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
+    </li>
+                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/extensions-api" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             The Extensions API
         </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
                     <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Extensions &amp; Integrations</h4>
+                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center group hover:bg-black/10"  @click="groupOpen = ! groupOpen" >
+                    <h4 class="sidebar-group-heading text-base font-semibold cursor-pointer dark:group-hover:text-white">Extensions &amp; Integrations</h4>
                                             <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
     <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
@@ -339,169 +1074,93 @@
             <a href="../../docs/2.x/extensions" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Extensions &amp; Integrations
         </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/realtime-compiler" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Realtime Compiler
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/third-party-integrations" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Third-Party Integrations
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/ui-kit" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            HydePHP UI Kit - Documentation
-        </a>
-    </li>                                    </ul>
-            </li>
-                    <li class="sidebar-group" role="listitem"  x-data="{ groupOpen: false }" >
-                <header class="sidebar-group-header p-2 px-4 -ml-2 flex justify-between items-center  group hover:bg-black/10 "  @click="groupOpen = ! groupOpen" >
-                    <h4 class="sidebar-group-heading text-base font-semibold  cursor-pointer dark:group-hover:text-white ">Data</h4>
-                                            <button class="sidebar-group-toggle opacity-50 group-hover:opacity-100">
-    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-open" x-show="groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M8 12L12 8L4 8L8 12Z" fill="currentColor" />
-    </svg>
-    <svg class="sidebar-group-toggle-icon sidebar-group-toggle-icon-closed" x-show="! groupOpen" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 8L8 12L8 4L12 8Z" fill="currentColor" />
-    </svg>
-</button>                                    </header>
-                <ul class="sidebar-group-items ml-4 px-2 mb-2" role="list"  x-show="groupOpen" >
-                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/base-markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Base Markdown Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/blade-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Blade Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/documentation-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Documentation Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/html-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Html Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-base-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Base Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-boot-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Boot Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-extensions-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Extensions Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-filesystem-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Filesystem Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-foundation-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Foundation Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-hyperlink-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Hyperlink Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-kernel-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel Kernel Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-string-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel String Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-kernel-view-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Kernel View Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/hyde-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Hyde Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/in-memory-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            In Memory Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/interacts-with-front-matter-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Interacts with Front Matter Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/markdown-page-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Markdown Page Methods
-        </a>
-    </li>                                            <li class="sidebar-item -ml-4 pl-4" role="listitem">
-            <a href="../../docs/2.x/markdown-post-methods" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
-            Markdown Post Methods
-        </a>
-    </li>                                    </ul>
+    </li>
+                                    </ul>
             </li>
             </ul>
     </nav>
-            <footer id="sidebar-footer" class="h-16 p-4 w-full bottom-0 left-0 text-center leading-8">
-            <p>
-            <a href="../../">Back to home page</a>
-    </p>        </footer>
     </aside>
+
     <main id="content" class="dark:bg-gray-900 min-h-screen bg-gray-50 md:bg-white absolute top-16 md:top-0 w-screen md:left-64 md:w-[calc(100vw_-_16rem)] print:top-0">
-        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert">
+        <div class="hidden md:flex items-center gap-2 absolute right-4 top-4 z-30">
+    <button type="button"
+            @click="searchWindowOpen = true; $nextTick(() => setTimeout(() => document.getElementById('search-input')?.focus(), 0));"
+            class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
+            bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800"
+            aria-label="Open search window">
+        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M12.9 14.32a7 7 0 111.414-1.414l3.387 3.387a1 1 0 01-1.414 1.414l-3.387-3.387zM14 9a5 5 0 11-10 0 5 5 0 0110 0z" clip-rule="evenodd"/>
+        </svg>
+        <span>Search</span>
+        <kbd class="ml-1 text-[10px] px-1.5 py-0.5 rounded border border-gray-300 dark:border-gray-600">/</kbd>
+    </button>
+</div>
+<style>
+@media (min-width: 768px){ #search-menu-button{ display:none !important; } }
+</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+        
+        <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
+            <h1>Navigation API</h1>
+            <div class="hidden md:block">
     
-    <header id="document-header" class="flex items-center flex-wrap justify-between prose-h1:mb-3">
-        <h1>Navigation API</h1>
-    </header>
-    <section id="document-main-content" itemprop="articleBody">
-        <blockquote class="warning"><p>This article covers advanced information that is only relevant if you want to create custom navigation menus. Instead, you may want to read the <a href="navigation">Navigation</a> article for a general overview.</p></blockquote>
-<h2>Abstract<a id="abstract" href="#abstract" class="heading-permalink" title="Permalink"></a></h2>
+    <div x-data="{ open:false }" class="relative">
+        <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
+            bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800">
+            <span class="font-medium">2.x</span>
+                            <span class="text-xs text-gray-500">current</span>
+                        <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.173l3.71-3.94a.75.75 0 111.08 1.04l-4.24 4.5a.75.75 0 01-1.08 0l-4.24-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/>
+            </svg>
+        </button>
+
+        <div x-cloak x-show="open" @click.outside="open=false"
+             class="absolute right-0 mt-2 min-w-[12rem] rounded-lg border border-gray-200 dark:border-gray-700
+                    bg-white dark:bg-gray-800 shadow-lg p-1 z-50">
+                                            <a href="../../docs/1.x/"
+                   class="flex items-center justify-between px-3 py-2 rounded-md text-sm
+                           hover:bg-gray-50 dark:hover:bg-gray-700                           ">
+                    <span>1.x</span>
+                    <span class="text-xs text-gray-500">old</span>
+                </a>
+                                            <a href="../../docs/2.x/navigation-api"
+                   class="flex items-center justify-between px-3 py-2 rounded-md text-sm
+                           bg-gray-100 dark:bg-gray-700 font-semibold                           ">
+                    <span>2.x</span>
+                    <span class="text-xs text-gray-500">current</span>
+                </a>
+                    </div>
+    </div>
+</div>
+        </header>
+                <section id="document-main-content" itemprop="articleBody">
+            <blockquote class="border-amber-500">
+    <p>This article covers advanced information that is only relevant if you want to create custom navigation menus. Instead, you may want to read the <a href="navigation">Navigation</a> article for a general overview.</p>
+</blockquote>
+<h2 id="abstract" class="group w-fit scroll-mt-2">Abstract<a href="#abstract" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>This article describes the Navigation API introduced in HydePHP v2. Both the main navigation menu and the documentation sidebar bundled with HydePHP are built with this API.
 However, if you are interested in creating your own custom navigation menus, you can also utilize this API - and this article will show you how.</p>
 <p>This article is intended for advanced users, as most users will not need to create custom navigation menus.
 For this reason, the documentation is very code-driven due to the technical nature of the API.
 We'll also be mixing in some practical examples of Blade and PHP code to illustrate how you can use the API in your own projects.</p>
-<h2>Overview<a id="overview" href="#overview" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="overview" class="group w-fit scroll-mt-2">Overview<a href="#overview" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The Navigation API consists of a set of classes within the <code>Hyde\Framework\Features\Navigation</code> namespace.</p>
 <p>Together, these form an object-oriented way to create and interact with navigation menus and their items.</p>
 <p>In short, a navigation menu is an instance of the <code>NavigationMenu</code> class. Each menu contains a collection of <code>NavigationItem</code> or <code>NavigationGroup</code> classes.
 The former represents a single item in the menu, while the latter represents a group of items.</p>
-<h3>Visualisation<a id="visualisation" href="#visualisation" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="visualisation" class="group w-fit scroll-mt-2">Visualisation<a href="#visualisation" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a visual representation of the structure of a navigation menu:</p>
-<pre><code class="language-php">namespace Hyde\Framework\Features\Navigation;
-
-class NavigationMenu {
-    protected Collection $items = [
-        new NavigationItem(destination: 'index.html', label: 'Home'),
-        new NavigationItem(destination: 'posts.html', label: 'Blog'),
-        new NavigationGroup(label: 'About', items: [
-            new NavigationItem(destination: 'about.html', label: 'About Us'),
-            new NavigationItem(destination: 'team.html', label: 'Our Team'),
-        ]),
-    ];
-}
-</code></pre>
-<h3>Built-in Menus<a id="built-in-menus" href="#built-in-menus" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">namespace</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">Navigation</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">protected</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Collection</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Home</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationGroup</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">About</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> items</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">about.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">About Us</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">team.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> label</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Our Team</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">]),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">];</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<h3 id="built-in-menus" class="group w-fit scroll-mt-2">Built-in Menus<a href="#built-in-menus" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP comes with two built-in menus: the main navigation menu and the documentation sidebar, both represented as child classes of the <code>NavigationMenu</code> class.
 They are bound into the service container as singletons and can be accessed through dependency injection.</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\MainNavigationMenu;
-use Hyde\Framework\Features\Navigation\DocumentationSidebar;
-
-/** @var \Hyde\Framework\Features\Navigation\MainNavigationMenu $menu */
-$menu = app('navigation.main')
-
-/** @var DocumentationSidebar $sidebar */
-$sidebar= app('navigation.sidebar')
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">MainNavigationMenu</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DocumentationSidebar</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@var</span><span style="color: #676E95;"> </span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #FFCB6B;">MainNavigationMenu</span><span style="color: #676E95;"> $menu */</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">app</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation.main</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">/** </span><span style="color: #F78C6C;">@var</span><span style="color: #676E95;"> </span><span style="color: #FFCB6B;">DocumentationSidebar</span><span style="color: #676E95;"> $sidebar */</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">sidebar</span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">app</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">navigation.sidebar</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">)</span></div></code></pre>
 <p>You can also get them through the static <code>get</code> helpers on the menu classes themselves.</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\MainNavigationMenu;
-use Hyde\Framework\Features\Navigation\DocumentationSidebar;
-
-$menu = MainNavigationMenu::get();
-$sidebar = DocumentationSidebar::get();
-</code></pre>
-<blockquote class="info"><p>Developer tip: The menus are only generated <em>after</em> the Hyde Kernel is booted. If you are getting BindingResolutionExceptions, ensure that you are not trying to access the menus too early in the application lifecycle. (Consider using the <code>booted</code> event.)</p></blockquote>
-<h2>Creating Custom Menus<a id="creating-custom-menus" href="#creating-custom-menus" class="heading-permalink" title="Permalink"></a></h2>
-<h3>Introduction Overview<a id="introduction-overview" href="#introduction-overview" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">MainNavigationMenu</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">DocumentationSidebar</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">MainNavigationMenu</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">();</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">sidebar </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">DocumentationSidebar</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">();</span></div></code></pre>
+<blockquote class="border-blue-500">
+    <p>Developer tip: The menus are only generated <em>after</em> the Hyde Kernel is booted. If you are getting BindingResolutionExceptions, ensure that you are not trying to access the menus too early in the application lifecycle. (Consider using the <code>booted</code> event.)</p>
+</blockquote>
+<h2 id="creating-custom-menus" class="group w-fit scroll-mt-2">Creating Custom Menus<a href="#creating-custom-menus" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
+<h3 id="introduction-overview" class="group w-fit scroll-mt-2">Introduction Overview<a href="#introduction-overview" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>When creating a custom menu, there are two ways to go about it:</p>
 <ol>
 <li>You can construct a NavigationMenu instance directly and add items to it. This works great for smaller menus that don't need any special logic, for example a footer menu or social media links.</li>
@@ -509,40 +1168,18 @@ $sidebar = DocumentationSidebar::get();
 </ol>
 <p>In both cases, the underlying API is the same, and you can use the helper methods and features provided by the APIs.</p>
 <p>In this section, you will first see some high level overviews of how the API can be used, then we'll dive in deeper and take a look at each class and method in detail.</p>
-<h3>High Level Example<a id="high-level-example" href="#high-level-example" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="high-level-example" class="group w-fit scroll-mt-2">High Level Example<a href="#high-level-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>To illustrate how you can create a custom menu, let's make something useful: A footer menu with social media links.</p>
-<h4>Step 1: Create the Menu<a id="step-1-create-the-menu" href="#step-1-create-the-menu" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="step-1-create-the-menu" class="group w-fit scroll-mt-2">Step 1: Create the Menu<a href="#step-1-create-the-menu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>To create our menu, we start by constructing a new NavigationMenu instance.
 We can then add our social media links as NavigationItem instances to the menu.</p>
-<pre><code class="language-php">$menu = new NavigationMenu();
-
-$menu-&gt;add([
-    // The first parameter is the URL, and the second is the label.
-    NavigationItem::create('https://twitter.com/hydephp', 'Twitter'),
-    NavigationItem::create('https://github.com/hydephp', 'GitHub'),
-    NavigationItem::create('https://hydephp.com', 'Website'),
-]);
-</code></pre>
-<h4>Step 2: Display the Menu<a id="step-2-display-the-menu" href="#step-2-display-the-menu" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #89DDFF;">();</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color: #89DDFF;">    </span><span style="color: #676E95;">// The first parameter is the URL, and the second is the label.</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://twitter.com/hydephp</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Twitter</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://github.com/hydephp</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">GitHub</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://hydephp.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Website</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #89DDFF;">]);</span></div></code></pre>
+<h4 id="step-2-display-the-menu" class="group w-fit scroll-mt-2">Step 2: Display the Menu<a href="#step-2-display-the-menu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>We can now iterate over the menu items to render them in our footer.</p>
-<pre><code class="language-blade">&lt;footer&gt;
-    &lt;ul&gt;
-        @foreach ($menu-&gt;getItems() as $item)
-            &lt;li&gt;&lt;a href=&quot;{{ $item-&gt;getLink() }}&quot;&gt;{{ $item-&gt;getLabel() }}&lt;/a&gt;&lt;/li&gt;
-        @endforeach
-    &lt;/ul&gt;
-&lt;/footer&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">footer</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">ul</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">@foreach </span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItems</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">as</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item)</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">()</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">@endforeach</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">ul</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">footer</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>This will result in the following HTML:</p>
-<pre><code class="language-html">&lt;footer&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href=&quot;https://twitter.com/hydephp&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://github.com/hydephp&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://hydephp.com&quot;&gt;Website&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/footer&gt;
-</code></pre>
-<h4>Next Steps &amp; Tips<a id="next-steps--tips" href="#next-steps--tips" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code data-theme="material-theme-palenight" data-lang="html" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">footer</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">ul</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://twitter.com/hydephp</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Twitter</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://github.com/hydephp</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">GitHub</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">https://hydephp.com</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">Website</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;&lt;/</span><span style="color: #F07178;">li</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">ul</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">footer</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<h4 id="next-steps-and-tips" class="group w-fit scroll-mt-2">Next Steps &amp; Tips<a href="#next-steps-and-tips" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Of course, this is an incredibly simplistic example to illustrate the core concepts.
 Where the Navigation API really shines is in more complex scenarios where you want to utilize things like
 HydePHP Routes to resolve dynamic relative urls, and to use features like groups, priorities, and active states helpers to check if a menu item is the current page being viewed.</p>
@@ -554,152 +1191,70 @@ HydePHP Routes to resolve dynamic relative urls, and to use features like groups
 <li>You can also construct NavigationItem instances directly, but the <code>create</code> method is a convenient shorthand, and can fill in data from routes, if you use them.</li>
 <li>It's also possible to set an item's priority as the third parameter, but here we don't need it, as they default to the order they are added.</li>
 </ul>
-<h2>Class Reference<a id="class-reference" href="#class-reference" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="class-reference" class="group w-fit scroll-mt-2">Class Reference<a href="#class-reference" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>Below is a reference of the classes and methods available in the Navigation API.</p>
-<h2>NavigationMenu<a id="navigationmenu" href="#navigationmenu" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="navigationmenu" class="group w-fit scroll-mt-2">NavigationMenu<a href="#navigationmenu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The <code>NavigationMenu</code> class represents a navigation menu. It contains a collection of items, which can be either <code>NavigationItem</code> or <code>NavigationGroup</code> instances.</p>
-<h3>Quick Reference<a id="quick-reference" href="#quick-reference" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="quick-reference" class="group w-fit scroll-mt-2">Quick Reference<a href="#quick-reference" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a quick reference of the methods available on the NavigationMenu class:</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationMenu;
-
-// Create a new NavigationMenu instance, optionally providing an array of items.
-$menu = new NavigationMenu($items = []);
-
-// Add a single item or an array of items to the menu.
-$menu-&gt;add(new NavigationItem());
-$menu-&gt;add([new NavigationItem()]);
-
-// Get all items in the menu as a sorted Collection.
-$menu-&gt;getItems(): Collection&lt;NavigationItem|NavigationGroup&gt;
-</code></pre>
-<h3>Creating Navigation Menus<a id="creating-navigation-menus" href="#creating-navigation-menus" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationMenu</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Create a new NavigationMenu instance, optionally providing an array of items.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[]);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Add a single item or an array of items to the menu.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">());</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">([</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">()]);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get all items in the menu as a sorted Collection.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItems</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Collection</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">NavigationItem</span><span style="color: #89DDFF;">|</span><span style="color: #A6ACCD;">NavigationGroup</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<h3 id="creating-navigation-menus" class="group w-fit scroll-mt-2">Creating Navigation Menus<a href="#creating-navigation-menus" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can create a new NavigationMenu instance by simply calling the constructor, optionally providing an array of items.</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationMenu;
-
-$menu = new NavigationMenu($items = []);
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationMenu</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[]);</span></div></code></pre>
 <p>Here is how to provide an array or Collection of <code>NavigationItem</code> and/or <code>NavigationGroup</code> instances directly to the constructor.</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationMenu;
-use Hyde\Framework\Features\Navigation\NavigationItem;
-use Hyde\Framework\Features\Navigation\NavigationGroup;
-
-$menu = new NavigationMenu([
-    new NavigationItem('index.html', 'Home'),
-    new NavigationItem('posts.html', 'Blog'),
-    new NavigationGroup('About', [
-        new NavigationItem('about.html', 'About Us'),
-        new NavigationItem('team.html', 'Our Team'),
-    ]),
-]);
-</code></pre>
-<h3>Adding Items to the Menu<a id="adding-items-to-the-menu" href="#adding-items-to-the-menu" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationMenu</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationItem</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationGroup</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Home</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">posts.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Blog</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationGroup</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">About</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">about.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">About Us</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">team.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Our Team</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]),</span></div><div class='line'><span style="color: #89DDFF;">]);</span></div></code></pre>
+<h3 id="adding-items-to-the-menu" class="group w-fit scroll-mt-2">Adding Items to the Menu<a href="#adding-items-to-the-menu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can also add items to the menu after it has been created by using the <code>add</code> method which can take a single item or an array of items, and can be fluently chained.</p>
-<pre><code class="language-php">$menu = (new NavigationMenu())
-    -&gt;add(new NavigationItem('contact.html', 'Contact Us'))
-    -&gt;add([
-        new NavigationItem('privacy.html', 'Privacy Policy'),
-        new NavigationItem('terms.html', 'Terms of Service'),
-    ]);
-</code></pre>
-<h3>Accessing Items in the Menu<a id="accessing-items-in-the-menu" href="#accessing-items-in-the-menu" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationMenu</span><span style="color: #89DDFF;">())</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">contact.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Contact Us</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">))</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">([</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">privacy.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Privacy Policy</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">terms.html</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Terms of Service</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">]);</span></div></code></pre>
+<h3 id="accessing-items-in-the-menu" class="group w-fit scroll-mt-2">Accessing Items in the Menu<a href="#accessing-items-in-the-menu" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>You can access all items in the menu by calling the <code>getItems</code> method, which will return a <code>Collection</code> of all items in the menu.</p>
-<pre><code class="language-php">$items = $menu-&gt;getItems();
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">menu</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItems</span><span style="color: #89DDFF;">();</span></div></code></pre>
 <p>The items will automatically be sorted by their priority, with lower numbers coming first, defaulting to the order they were added if no priority is set.</p>
-<h2>NavigationItem<a id="navigationitem" href="#navigationitem" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="navigationitem" class="group w-fit scroll-mt-2">NavigationItem<a href="#navigationitem" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The <code>NavigationItem</code> class is an abstraction for a navigation menu item containing useful information like the destination, label, and priority.</p>
-<h3>Quick Reference<a id="quick-reference-1" href="#quick-reference-1" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="quick-reference-2" class="group w-fit scroll-mt-2">Quick Reference<a href="#quick-reference-2" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a quick reference of the methods available on the <code>NavigationItem</code> class:</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationItem;
-
-// Create a new NavigationItem instance.
-$item = NavigationItem::create($destination, $label, $priority): NavigationItem;
-$item = new NavigationItem($destination, $label, $priority); // Same as above.
-
-// Get the link of the item.
-$item-&gt;getLink(): string;
-
-// Get the label of the item.
-$item-&gt;getLabel(): string;
-
-// Get the priority of the item.
-$item-&gt;getPriority(): int;
-
-// Check if the item is active. (Only works when the destination is a route)
-$item-&gt;isActive(): bool;
-</code></pre>
-<h3>Blade Example<a id="blade-example" href="#blade-example" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationItem</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Create a new NavigationItem instance.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">priority</span><span style="color: #89DDFF;">):</span><span style="color: #A6ACCD;"> NavigationItem</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">priority</span><span style="color: #89DDFF;">);</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Same as above.</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the link of the item.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the label of the item.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the priority of the item.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getPriority</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">int</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Check if the item is active. (Only works when the destination is a route)</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">isActive</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">bool</span><span style="color: #89DDFF;">;</span></div></code></pre>
+<h3 id="blade-example" class="group w-fit scroll-mt-2">Blade Example<a href="#blade-example" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is an example of how you can put it all together in a Blade template:</p>
-<pre><code class="language-blade">&lt;a href=&quot;{{ $item-&gt;getLink() }}&quot; @class(['active' =&gt; $item-&gt;isActive()])&gt;
-    {{ $item-&gt;getLabel() }}
-&lt;/a&gt;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">()</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;"> </span><span style="color: #82AAFF;">@class</span><span style="color: #89DDFF;">([</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">active</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;"> =&gt; $</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">isActive</span><span style="color: #89DDFF;">()])&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
 <p>This will output an anchor tag with the correct link and label, and if the item is active, it will add an <code>active</code> class to the tag.</p>
-<h3>Creating Navigation Items<a id="creating-navigation-items" href="#creating-navigation-items" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="creating-navigation-items" class="group w-fit scroll-mt-2">Creating Navigation Items<a href="#creating-navigation-items" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>There are two syntaxes for creating <code>NavigationItem</code> instances, you can use a standard constructor or the static create method.
 Both options provide the exact same signature and functionality, so it's just a matter of preference which one you use.</p>
 <p>The constructors take three parameters: the destination, the label, and the optional priority.
 The destination can be a <code>Route</code> instance, a route key string, or an external URL.</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationItem;
-
-$item = new NavigationItem($destination, $label, $priority);
-$item = NavigationItem::create($destination, $label, $priority);
-</code></pre>
-<h4>Using Routes<a id="using-routes" href="#using-routes" class="heading-permalink" title="Permalink"></a></h4>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationItem</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">priority</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">create</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">destination</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">priority</span><span style="color: #89DDFF;">);</span></div></code></pre>
+<h4 id="using-routes" class="group w-fit scroll-mt-2">Using Routes<a href="#using-routes" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>Using the HydePHP routing system is the recommended way to create navigation items leading to pages within your project,
 as they will automatically have links resolved to the correct URL, and Hyde can check if the items are active.
 Additionally, Hyde will use the page data as the label and priority defaults unless you override them.</p>
 <p>You can create routed navigation items by providing either a <code>Route</code> instance or a route key string as the destination.</p>
-<pre><code class="language-php">// Using a route key string.
-new NavigationItem('index');
-
-// Using the Routes facade to get a Route instance.
-new NavigationItem(Routes::get('index'));
-
-// Setting the label and/or priorities will override inferred data.
-new NavigationItem(Routes::get('index'), 'Custom Label', 25);
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// Using a route key string.</span></div><div class='line'><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Using the Routes facade to get a Route instance.</span></div><div class='line'><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">));</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Setting the label and/or priorities will override inferred data.</span></div><div class='line'><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">),</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Custom Label</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">25</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <p>Using a route key is more concise, but will not provide type safety as it will be treated as a link if the route does not exist,
 whereas providing an invalid route key to the <code>Routes</code> facade will throw an exception. It's up to you which one you prefer.</p>
-<h4>Using External URLs<a id="using-external-urls" href="#using-external-urls" class="heading-permalink" title="Permalink"></a></h4>
+<h4 id="using-external-urls" class="group w-fit scroll-mt-2">Using External URLs<a href="#using-external-urls" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h4>
 <p>You can also create navigation items that link to external URLs by providing a full URL as the destination.</p>
 <p>If you do not set a label for links, the label will default to the URL, and if you do not set a priority, it will default to <code>500</code>.</p>
-<pre><code class="language-php">// This will lead directly to the link, and use it as the label with a priority of 500.
-new NavigationItem('https://example.com');
-
-// You can also set a custom label and priority to override the defaults.
-new NavigationItem('https://example.com', 'External Link', 25);
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #676E95;">// This will lead directly to the link, and use it as the label with a priority of 500.</span></div><div class='line'><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// You can also set a custom label and priority to override the defaults.</span></div><div class='line'><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">External Link</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">25</span><span style="color: #89DDFF;">);</span></div></code></pre>
 <p>While it is discouraged to use external URLs for internal pages, as Hyde won't be able to resolve relative links or check active states,
 they are excellent for any time you want an absolute link to an external site or resource.</p>
 <p>Note that Hyde will not validate or modify the URL, so you are responsible for ensuring it's correct.</p>
-<h3>Accessing the resolved links<a id="accessing-the-resolved-links" href="#accessing-the-resolved-links" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="accessing-the-resolved-links" class="group w-fit scroll-mt-2">Accessing the resolved links<a href="#accessing-the-resolved-links" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The <code>getLink</code> method is designed to return a link that can be used in the <code>href</code> attribute of an anchor tag.</p>
 <p>If the destination is a route, the link will be resolved to the correct URL, using relative paths if possible. It will also respect the pretty URL setting.</p>
-<pre><code class="language-php">$item = new NavigationItem(Routes::get('index'));
-$item-&gt;getLink(); // Outputs 'index.html'
-
-$item = new NavigationItem('https://example.com');
-$item-&gt;getLink(); // Outputs 'https://example.com'
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #FFCB6B;">Routes</span><span style="color: #89DDFF;">::</span><span style="color: #82AAFF;">get</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">));</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Outputs &#39;index.html&#39;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">https://example.com</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLink</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Outputs &#39;https://example.com&#39;</span></div></code></pre>
 <p><strong>Tip:</strong> The item instances automatically turns into the resolved link when cast to a string. Perfect for your Blade templates!</p>
-<pre><code class="language-blade">&lt;a href=&quot;{{ $item }}&quot;&gt;{{ $item-&gt;getLabel() }}&lt;/a&gt;
-</code></pre>
-<h3>Accessing the label<a id="accessing-the-label" href="#accessing-the-label" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">href</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #82AAFF;">{{</span><span style="color: #C3E88D;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #C3E88D;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #82AAFF;">{{</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">()</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">}}</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">a</span><span style="color: #89DDFF;">&gt;</span></div></code></pre>
+<h3 id="accessing-the-label" class="group w-fit scroll-mt-2">Accessing the label<a href="#accessing-the-label" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The <code>getLabel</code> method returns the label of the item. This is the text that will be displayed in the navigation menu.</p>
-<pre><code class="language-php">$item = new NavigationItem('index', 'Home');
-$item-&gt;getLabel(); // Outputs 'Home'
-</code></pre>
-<h3>Accessing the priority<a id="accessing-the-priority" href="#accessing-the-priority" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Home</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Outputs &#39;Home&#39;</span></div></code></pre>
+<h3 id="accessing-the-priority" class="group w-fit scroll-mt-2">Accessing the priority<a href="#accessing-the-priority" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The <code>getPriority</code> method returns the priority of the item. This is a number that determines the order in which the items are displayed in the menu, where lower numbers come first.</p>
-<pre><code class="language-php">$item = new NavigationItem('index', 'Home', 25);
-$item-&gt;getPriority(); // Outputs 25
-</code></pre>
-<h3>Checking if the item is active<a id="checking-if-the-item-is-active" href="#checking-if-the-item-is-active" class="heading-permalink" title="Permalink"></a></h3>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">Home</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">25</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getPriority</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Outputs 25</span></div></code></pre>
+<h3 id="checking-if-the-item-is-active" class="group w-fit scroll-mt-2">Checking if the item is active<a href="#checking-if-the-item-is-active" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>The <code>isActive</code> method checks if the item is active (by comparing it to the Hyde page being compiled at the moment). This is useful for highlighting the current page in the navigation menu.</p>
-<pre><code class="language-php">$item = new NavigationItem('index');
-$item-&gt;isActive(); // Outputs true if the item is the current page, otherwise false.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">index</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">);</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">item</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">isActive</span><span style="color: #89DDFF;">();</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// Outputs true if the item is the current page, otherwise false.</span></div></code></pre>
 <!--
 Generated by Copilot, kinda cool, maybe something to implement?
 
@@ -718,57 +1273,41 @@ $item->isActive(fn($item) => $item->getLink() === 'index.html');
 
 This is useful if you want to check for a specific query parameter, or if you want to check if the item is active based on a more complex condition.
 -->
-<h2>NavigationGroup<a id="navigationgroup" href="#navigationgroup" class="heading-permalink" title="Permalink"></a></h2>
+<h2 id="navigationgroup" class="group w-fit scroll-mt-2">NavigationGroup<a href="#navigationgroup" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
 <p>The <code>NavigationGroup</code> class represents a group of items in a navigation menu. It contains a label, priority, and a collection of navigation items.
 This class is often used to create submenus or dropdowns in a navigation menu.</p>
 <p>The <code>NavigationGroup</code> class extends the <code>NavigationMenu</code> class, and thus inherits the same base methods and functionality,
 while also having shared methods with the <code>NavigationItem</code> class to render the groups in a Blade view.</p>
-<h3>Quick Reference<a id="quick-reference-2" href="#quick-reference-2" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="quick-reference-3" class="group w-fit scroll-mt-2">Quick Reference<a href="#quick-reference-3" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>Here is a quick reference of the methods available on the <code>NavigationGroup</code> class:</p>
-<pre><code class="language-php">use Hyde\Framework\Features\Navigation\NavigationGroup;
-
-// Create a new NavigationGroup instance.
-$group = new NavigationGroup($label, $items = [], $priority = 500);
-
-// Add a single item or an array of items to the group.
-$group-&gt;add(new NavigationItem());
-$group-&gt;add([new NavigationItem()]);
-
-// Get all items in the group as a Collection sorted by priority.
-$group-&gt;getItems(): Collection&lt;NavigationItem|NavigationGroup&gt;
-
-// Get the label of the group.
-$group-&gt;getLabel(): string;
-
-// Get the priority of the group.
-$group-&gt;getPriority(): int;
-
-// Get the group key, which is a normalized kebab-case version of the label.
-$group-&gt;getGroupKey(): string;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #F78C6C;">use</span><span style="color: #FFCB6B;"> </span><span style="color: #A6ACCD;">Hyde</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Framework</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Features</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">Navigation</span><span style="color: #89DDFF;">\</span><span style="color: #A6ACCD;">NavigationGroup</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Create a new NavigationGroup instance.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationGroup</span><span style="color: #89DDFF;">($</span><span style="color: #A6ACCD;">label</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">items </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[],</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">priority </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">500</span><span style="color: #89DDFF;">);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Add a single item or an array of items to the group.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">());</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">add</span><span style="color: #89DDFF;">([</span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">NavigationItem</span><span style="color: #89DDFF;">()]);</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get all items in the group as a Collection sorted by priority.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getItems</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> Collection</span><span style="color: #89DDFF;">&lt;</span><span style="color: #A6ACCD;">NavigationItem</span><span style="color: #89DDFF;">|</span><span style="color: #A6ACCD;">NavigationGroup</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the label of the group.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getLabel</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the priority of the group.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getPriority</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">int</span><span style="color: #89DDFF;">;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">// Get the group key, which is a normalized kebab-case version of the label.</span></div><div class='line'><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">group</span><span style="color: #89DDFF;">-&gt;</span><span style="color: #82AAFF;">getGroupKey</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">string</span><span style="color: #89DDFF;">;</span></div></code></pre>
 <p>As the <code>NavigationGroup</code> class extends the <code>NavigationMenu</code> class, please see the <code>NavigationMenu</code> section for detailed information of the methods available.</p>
-<h3>Usage Scenarios<a id="usage-scenarios" href="#usage-scenarios" class="heading-permalink" title="Permalink"></a></h3>
+<h3 id="usage-scenarios" class="group w-fit scroll-mt-2">Usage Scenarios<a href="#usage-scenarios" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h3>
 <p>HydePHP uses the <code>NavigationGroup</code> class to create dropdowns in the main navigation menu and the category groups in the documentation sidebar.</p>
 <p>In your own custom menus, you can use this class for the same types of functionality, and you can even nest groups within groups to create complex navigation structures.</p>
-    </section>
-    <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
-        <p class="edit-page-link">
+        </section>
+        <footer id="document-footer" class="flex items-center flex-wrap mt-8 prose-p:my-3 justify-between text-[90%]">
+            <p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
+<p class="edit-page-link">
     <a href="https://github.com/hydephp/develop/blob/master/docs/advanced-features/navigation-api.md">
         Edit Page
     </a>
 </p>
-    </footer>
-</article>    </main>
+        </footer>
+    </article>
+    </main>
 
     <div id="support">
         <div id="sidebar-backdrop" x-cloak="" x-show="sidebarOpen" x-transition @click="sidebarOpen = false" title="Click to close sidebar" class="w-screen h-screen fixed top-0 left-0 cursor-pointer z-10 bg-black/50"></div>
-                    <button id="searchMenuButton" x-on:click="searchWindowOpen = ! searchWindowOpen"
+                    <button id="search-menu-button" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
-        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block"
-        aria-label="Toggle search window">
+        class="absolute right-4 top-4 mr-4 z-10 opacity-75 hover:opacity-100 hidden md:block" aria-label="Toggle search window">
     <span x-show="! searchWindowOpen">
-        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24"
-                    viewBox="0 0 24 24" width="24" role="presentation">
+        Search <svg class="float-left mr-1 dark:fill-white" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24" role="presentation">
             <path d="M0 0h24v24H0z" fill="none"/>
             <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
     </span>
@@ -778,7 +1317,7 @@ $group-&gt;getGroupKey(): string;
         </svg>
     </span>
 </button>
-<button id="searchMenuButtonMobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
+<button id="search-menu-button-mobile" x-on:click="searchWindowOpen = ! searchWindowOpen"
         :title="searchWindowOpen ? 'Close search window' : 'Open search window'; $nextTick(() => { setTimeout(() => { document.getElementById('search-input').focus(); }); });"
         class="block md:hidden fixed bottom-4 right-4 z-10 rounded-full p-2 opacity-75 hover:opacity-100 fill-black bg-gray-200 dark:fill-gray-200 dark:bg-gray-700 print:hidden"
         aria-label="Toggle search menu">
@@ -788,46 +1327,168 @@ $group-&gt;getGroupKey(): string;
     </svg>
 </button>
 
-<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog"
-     class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
-    <aside x-on:click.away="searchWindowOpen = false" id="searchMenu"
-           class="prose dark:prose-invert bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto ">
-        <header class="flex justify-between pb-3 mb-3 border-b dark:border-gray-700 md:hidden">
+<div id="search-window-container" x-show="searchWindowOpen" x-cloak role="dialog" class="z-30 fixed top-0 left-0 w-screen h-screen flex flex-col items-center px-8 py-24 md:py-16">
+    <aside x-on:click.away="searchWindowOpen = false" id="search-menu"
+           class="bg-white dark:bg-gray-800 z-50 p-4 rounded-lg overflow-y-hidden
+        min-h-[300px] max-h-[75vh] w-[70ch] max-w-full cursor-auto
+        flex flex-col gap-4">
+
+        <header class="flex justify-between items-center border-b dark:border-gray-700 pb-3 md:hidden">
             <strong>Search the documentation site</strong>
-            <button @click="searchWindowOpen = false" title="Close search window" class="opacity-75 hover:opacity-100"
-                    aria-label="Close search window">
+            <button @click="searchWindowOpen = false" title="Close search window"
+                    class="opacity-75 hover:opacity-100" aria-label="Close search window">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                 </svg>
             </button>
         </header>
-        <div>
-            <div id="hyde-search">
-    <noscript>
-        The search feature requires JavaScript to be enabled in your browser.
-    </noscript>
-    <input class="w-full rounded text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3" type="search" name="search" id="search-input" placeholder="Search..." autocomplete="off" autofocus>
-</div>        </div>
-        <footer class="mt-auto -mb-2 leading-4 text-center font-mono hidden sm:flex justify-center">
+
+        <div class="grow">
+            <div id="hyde-search" x-data="hydeSearch">
+    <template id="search-highlight-template">
+        <mark class="bg-yellow-400 dark:bg-yellow-300"></mark>
+    </template>
+
+    <div class="relative">
+        <input type="search" name="search" id="search-input" x-model="searchTerm" @input="search()" placeholder="Search..." autocomplete="off" autofocus
+                class="w-full rounded-sm text-base leading-normal bg-gray-100 dark:bg-gray-700 py-2 px-3"
+        >
+
+        <div x-show="isLoading" class="absolute right-3 top-2.5">
+            <div class="animate-spin h-5 w-5 border-2 border-gray-500 rounded-full border-t-transparent"></div>
+        </div>
+    </div>
+
+    <div x-show="searchTerm" class="mt-4">
+        <p x-text="statusMessage" class="text-sm text-gray-600 dark:text-gray-400 mb-2 pb-2"></p>
+
+        <dl class="space-y-4 -mt-4 pl-2 -ml-2 max-h-[60vh] overflow-x-hidden overflow-y-auto">
+            <template x-for="result in results" :key="result.slug">
+                <div>
+                    <dt>
+                        <a :href="result.destination" x-text="result.title" class="text-indigo-600 dark:text-indigo-400 hover:underline font-medium"></a><span class="text-sm text-gray-600 dark:text-gray-400" x-text="`, ${result.matches} occurrence${result.matches !== 1 ? 's' : ''} found.`"></span>
+                    </dt>
+                    <dd class="mt-1 text-sm text-gray-700 dark:text-gray-300" x-html="result.context"></dd>
+                </div>
+            </template>
+        </dl>
+    </div>
+
+    <script>
+		/**
+ * This file provides support for the Alpine.js search component.
+ *
+ * It's automatically loaded by the hyde-search.blade.php component.
+ *
+ * It can be replaced by a custom implementation, at the developer's own risk,
+ * by providing a new compatible implementation in ./resources/js/HydeSearch.js.
+ *
+ * @param {string} searchIndexUrl
+ * @returns {Object}
+ */
+function initHydeSearch(searchIndexUrl) {
+    return {
+        searchIndex: [],
+        searchTerm: '',
+        results: [],
+        isLoading: true,
+        statusMessage: '',
+
+        async init() {
+            const response = await fetch(searchIndexUrl);
+            if (!response.ok) {
+                console.error('Could not load search index');
+                return;
+            }
+            this.searchIndex = await response.json();
+            this.isLoading = false;
+        },
+
+        search() {
+            const startTime = performance.now();
+            this.results = [];
+
+            if (!this.searchTerm) {
+                this.statusMessage = '';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const searchResults = this.searchIndex.filter(entry =>
+                entry.title.toLowerCase().includes(this.searchTerm.toLowerCase()) ||
+                entry.content.toLowerCase().includes(this.searchTerm.toLowerCase())
+            );
+
+            if (searchResults.length === 0) {
+                this.statusMessage = 'No results found.';
+                window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: false } }));
+                return;
+            }
+
+            const totalMatches = searchResults.reduce((acc, result) => {
+                return acc + (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            }, 0);
+
+            searchResults.sort((a, b) => {
+                return (b.content.match(new RegExp(this.searchTerm, 'gi')) || []).length
+                    - (a.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+            });
+
+            this.results = searchResults.map(result => {
+                const matches = (result.content.match(new RegExp(this.searchTerm, 'gi')) || []).length;
+                const context = this.getSearchContext(result.content);
+                return { ...result, matches, context };
+            });
+
+            const timeMs = Math.round((performance.now() - startTime) * 100) / 100;
+            this.statusMessage = `Found ${totalMatches} result${totalMatches !== 1 ? 's' : ''} in ${searchResults.length} pages. ~${timeMs}ms`;
+
+            window.dispatchEvent(new CustomEvent('search-results-updated', { detail: { hasResults: true } }));
+        },
+
+        getSearchContext(content) {
+            const searchTermPos = content.toLowerCase().indexOf(this.searchTerm.toLowerCase());
+            const sentenceStart = content.lastIndexOf('.', searchTermPos) + 1;
+            const sentenceEnd = content.indexOf('.', searchTermPos) + 1;
+            const sentence = content.substring(sentenceStart, sentenceEnd).trim();
+            const template = document.getElementById('search-highlight-template');
+
+            return sentence.replace(
+                new RegExp(this.searchTerm, 'gi'),
+                match => {
+                    const mark = template.content.querySelector('mark').cloneNode();
+                    mark.textContent = match;
+                    return mark.outerHTML;
+                }
+            );
+        }
+    };
+}
+
+        
+        document.addEventListener('alpine:init', () => {
+            Alpine.data('hydeSearch', () => 
+                initHydeSearch('../../docs/2.x/search.json')
+            );
+        });
+    </script>
+</div>
+        </div>
+
+        <footer x-data="{ hasResults: false }" @search-results-updated.window="hasResults = $event.detail.hasResults"
+                class="prose dark:prose-invert text-center font-mono hidden sm:block"
+                x-show="!hasResults">
             <small>
-                Press <code><kbd title="Forward slash">/</kbd></code> to open search window.
-                Use <code><kbd title="Escape key">esc</kbd></code> to close.
+                Press <code class="p-0"><kbd title="Forward slash" class="shadow-none">/</kbd></code> to open search window.
+                Use <code class="p-0"><kbd title="Escape key" class="shadow-none">esc</kbd></code> to close.
             </small>
         </footer>
     </aside>
 
-    <div id="search-window-backdrop" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0" title="Click to close search window"></div>
-</div>            <script src="https://cdn.jsdelivr.net/npm/hydesearch@0.2.1/dist/HydeSearch.min.js" defer></script>
-<script>
-    window.addEventListener('load', function () {
-        const searchIndexLocation = '../../docs/2.x/search.json';
-        const Search = new HydeSearch(searchIndexLocation);
+    <div id="search-window-backdrop" title="Click to close search window" class="w-screen h-screen cursor-pointer z-40 bg-black/50 absolute top-0"></div>
+</div>            </div>
 
-        Search.init();
-    });
-</script>            </div>
-
-    <script defer src="../../media/app.js?v=75d679fd6340a0a84d86b6fb82a7ef40"></script>
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
 
 
 <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>

@@ -1,125 +1,200 @@
 ---
 navigation:
     label: v2 Upgrade Guide
-    priority: 15
+    priority: 16
 ---
 
-# HydePHP v2.0 Release Notes
+# HydePHP v2.0 Upgrade Guide
 
 ## Overview
 
 HydePHP v2.0 represents a major evolution of the framework, introducing significant improvements to the asset system, navigation API, and overall developer experience. This release modernizes the frontend tooling by replacing Laravel Mix with Vite, completely rewrites the navigation system for better flexibility, and introduces numerous performance optimizations throughout the framework.
 
-## Major Features
+This document will guide you through the upgrade process. If you want to learn more about the new features, take a look at the [Release Notes](https://hydephp.com/docs/2.x/release-notes).
 
-### 🚀 Modern Frontend Tooling with Vite
-
-We've replaced Laravel Mix with Vite for a faster, more modern development experience:
-- **Instant Hot Module Replacement (HMR)** for real-time updates during development
-- **Direct asset compilation** into the `_media` folder for cleaner builds
-- **Updated build command**: Use `npm run build` instead of `npm run prod` (or `--vite` during the sit build)
-- **Vite facade** for seamless Blade template integration
-- **Optimized asset serving** through the realtime compiler
-- **Hyde Vite plugin** for enhanced integration
-
-### 🎨 Enhanced Asset Management System
-
-The new consolidated Asset API provides a more intuitive interface for handling media files:
-- **MediaFile instances** with fluent methods like `getLink()`, `getLength()`, and `getMimeType()`
-- **HydeFront facade** for CDN links and Tailwind configuration injection
-- **Intelligent caching** with CRC32 hashing for improved performance
-- **Automatic validation** to prevent missing assets from going unnoticed
-- **Lazy-loaded metadata** for optimal resource usage
-
-### 🧭 Redesigned Navigation API
-
-The navigation system has been completely rewritten for maximum flexibility:
-- **YAML configuration support** for defining navigation items
-- **Extra attributes** for custom styling and behavior
-- **Improved Routes facade** with Laravel-consistent naming conventions
-- **Natural priority ordering** using numeric prefixes in filenames
-- **Enhanced sidebar management** with better organization options
-
-### 📝 Improved Documentation Features
-
-Documentation pages now benefit from several enhancements:
-- **Alpine.js-powered search** with customizable implementation
-- **Blade-based table of contents** that's 40x faster than before
-- **Custom heading renderer** with improved permalink handling
-- **Colored blockquotes** now using Tailwind CSS classes
-- **Smart natural language processing** for search headings
-- **Dynamic source file links** in Markdown documents
-
-### 🎯 Better Developer Experience
-
-Numerous quality-of-life improvements for developers:
-- **PHP 8.4 support** and Laravel 11 compatibility
-- **ESM module support** for modern JavaScript development
-- **Tailwind CSS v4** with automated upgrade tools
-- **Enhanced data collections** with syntax validation
-- **Improved error messages** with clearer exception handling
-- **Interactive publish:views command** on Unix systems
-- **Extension callbacks** with `booting()` and `booted()` methods
-
-## Breaking Changes & Upgrade Guide
+## Before You Begin
 
 ### Prerequisites
 
-Before upgrading, ensure your application is running HydePHP v1.6 or later, as this version includes helpers to ease the migration process. It's ideal to use v1.8, if possible.
+Before upgrading to HydePHP v2.0, ensure your application is running **HydePHP v1.6 or later** (ideally v1.8). These versions include transition helpers that will make the migration process smoother.
 
-### High Impact Changes
+### Backup Your Project
 
-#### 1. Tailwind CSS v4 Upgrade
+Before starting the upgrade process, it's **strongly recommended** to:
 
-We've upgraded from Tailwind CSS v3 to v4. Run the automated upgrade tool to migrate your custom classes:
+- **Commit all changes to Git** - This allows you to easily revert if needed
+- **Create a backup** of your entire project directory
+- **Have a previous site build** so you can compare output
+
+If you're not already using Git for version control, now is an excellent time to initialize a repository:
+
+```bash
+git init
+git add .
+git commit -m "Pre-upgrade backup before HydePHP v2.0"
+```
+
+### Estimated Time
+
+The upgrade process typically takes **30-60 minutes** for most projects. Complex sites with extensive customizations may take up to 90 minutes. The majority of this time involves:
+
+- Updating and installing dependencies (~15 minutes)
+- Migrating configuration files (~20 minutes)
+- Testing and verifying the site (~15-30 minutes)
+
+## Step 1: Update Dependencies
+
+### Update Composer Dependencies
+
+Open your `composer.json` file and update the following dependencies:
+
+```json
+{
+    "require": {
+        "php": "^8.2",
+        "hyde/framework": "^2.0",
+        "laravel-zero/framework": "^11.0"
+    },
+    "require-dev": {
+        "hyde/realtime-compiler": "^4.0"
+    }
+}
+```
+
+Then run:
+
+```bash
+composer update
+```
+
+The dump-autoload script will likely fail, but this is expected and will be resolved in subsequent steps.
+
+### Update Node Dependencies
+
+Open your `package.json` file and replace the entire `devDependencies` section:
+
+**Before (v1.x with Laravel Mix):**
+```json
+{
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.2",
+        "autoprefixer": "^10.4.5",
+        "hydefront": "^3.4.1",
+        "laravel-mix": "^6.0.49",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.0.24"
+    }
+}
+```
+
+**After (v2.x with Vite):**
+```json
+{
+    "type": "module",
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.5.0",
+        "@tailwindcss/vite": "^4.1.0",
+        "autoprefixer": "^10.4.0",
+        "hyde-vite-plugin": "^1.1.0",
+        "hydefront": "^4.0.0",
+        "postcss": "^8.5.0",
+        "tailwindcss": "^4.1.0",
+        "vite": "^7.1.0"
+    }
+}
+```
+
+Update the NPM scripts in your `package.json`:
+
+```json
+{
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build"
+    }
+}
+```
+
+Then run:
+
+```bash
+npm install
+```
+
+## Step 2: Migrate from Laravel Mix to Vite
+
+### Delete the Old Mix Configuration
+
+Remove the `webpack.mix.js` file from your project root.
+
+### Create the New Vite Configuration
+
+Create a new `vite.config.js` file in your project root:
+
+```javascript
+import { defineConfig } from 'vite';
+import tailwindcss from "@tailwindcss/vite";
+import hyde from 'hyde-vite-plugin';
+
+export default defineConfig({
+    plugins: [
+        hyde({
+            input: ['resources/assets/app.css', 'resources/assets/app.js'],
+            watch: ['_pages', '_posts', '_docs'],
+            refresh: true,
+        }),
+        tailwindcss(),
+    ],
+});
+```
+
+### Update Your CSS imports
+
+Update `resources/assets/app.css`:
+
+**Before:**
+```css
+@import '~hydefront/dist/hyde.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] { display: none !important; }
+```
+
+**After:**
+```css
+@import 'hydefront/components/torchlight.css' layer(base);
+
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
+```
+
+## Step 3: Upgrade Tailwind CSS to v4
+
+Run the automated Tailwind upgrade tool:
 
 ```bash
 npx @tailwindcss/upgrade
 ```
 
-Review the [Tailwind v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide) for detailed breaking changes.
+Review the [Tailwind v4 Upgrade Guide](https://tailwindcss.com/docs/upgrade-guide) for detailed information about breaking changes in custom configurations.
 
-#### 2. ESM Module Migration
+## Step 4: Verify Vite Works
 
-Frontend tooling now uses ESM modules instead of CommonJS. If you have custom JavaScript, update to ESM syntax:
+Now you can run Vite build:
 
-**Before:**
-```javascript
-const module = require('module-name');
-module.exports = { /* ... */ };
+```bash
+npm run build
 ```
 
-**After:**
-```javascript
-import module from 'module-name';
-export default { /* ... */ };
-```
+## Step 5: Update Configuration Files
 
-#### 3. Navigation Configuration Format
+### Update `config/hyde.php`
 
-Update your navigation configuration to use the new array-based format:
-
-**Before:**
-```php
-'navigation' => [
-    'custom_items' => [
-        'Custom Item' => '/custom-page',
-    ],
-],
-```
-
-**After:**
-```php
-'navigation' => [
-    'custom_items' => [
-        ['label' => 'Custom Item', 'destination' => '/custom-page'],
-    ],
-],
-```
-
-#### 4. Features Configuration
-
-Replace static method calls with enum values in your `config/hyde.php`:
+#### Replace Features With Enum Values
 
 **Before:**
 ```php
@@ -137,20 +212,68 @@ Replace static method calls with enum values in your `config/hyde.php`:
 ],
 ```
 
-### General Impact Changes
+#### Update Navigation Configuration
 
-#### Post Author System
-
-The blog post author feature has been significantly improved:
-
-**Configuration changes:**
+**Before:**
 ```php
-// Before
+'navigation' => [
+    'custom_items' => [
+        'Custom Item' => '/custom-page',
+    ],
+],
+```
+
+**After:**
+```php
+'navigation' => [
+    'custom' => [
+        ['label' => 'Custom Item', 'destination' => '/custom-page'],
+    ],
+],
+```
+
+Or use the Navigation facade:
+
+```php
+use Hyde\Facades\Navigation;
+
+'navigation' => [
+    'custom' => [
+        Navigation::item('https://github.com/hydephp/hyde', 'GitHub', 200),
+    ],
+],
+```
+
+#### Update Subdirectory Display Setting
+
+**Before:**
+```php
+'navigation' => [
+    'subdirectories' => 'hidden',
+],
+```
+
+**After:**
+```php
+'navigation' => [
+    'subdirectory_display' => 'hidden',
+],
+```
+
+
+### Update Author Configuration
+
+If you're using blog post authors, update the configuration format:
+
+**Before:**
+```php
 'authors' => [
     Author::create('username', 'Display Name', 'https://example.com'),
 ],
+```
 
-// After
+**After:**
+```php
 'authors' => [
     'username' => Author::create(
         name: 'Display Name',
@@ -162,185 +285,260 @@ The blog post author feature has been significantly improved:
 ],
 ```
 
-Key changes:
-- Authors are now keyed by username
-- `Author::create()` returns an array instead of a `PostAuthor` instance
-- `Author::get()` returns `null` if not found (previously created new instance)
-- Usernames are automatically normalized (lowercase, underscores for spaces)
-- Authors support biographies, avatars, and social media links
-- A new `Hyde::authors()` method provides access to all site authors
-- Authors can be configured via YAML
+#### Rename Cache Busting Setting
 
-The way this system now works is that you first define authors in the config, Hyde the loads this during the booting process, and you can then access them using the get method.
-
-### Medium Impact Changes
-
-#### Asset API Updates
-
-All asset methods now return `MediaFile` instances instead of strings. This instance can be cast to a string which will automatically resolve to a relative link at that time. You can also call helper methods on it. When using Blade templates, thanks to the Stringable implementation no change will happen.
-
+**Before:**
 ```php
-// Methods renamed for clarity
-Hyde::asset('image.png');        // Previously: Hyde::mediaLink()
-Asset::get('image.png');         // Previously: Asset::mediaLink()
-Asset::exists('image.png');      // Previously: Asset::hasMediaFile()
-HydeFront::cdnLink('app.css');   // Previously: Asset::cdnLink()
+'enable_cache_busting' => true,
 ```
 
-Configuration changes:
-- Rename `hyde.enable_cache_busting` to `hyde.cache_busting`
-- Remove references to `hyde.hydefront_version` and `hyde.hydefront_cdn_url`
+**After:**
+```php
+'cache_busting' => true,
+```
 
-#### Routes Facade API
+#### Remove Deprecated HydeFront Settings
 
-Methods renamed to follow Laravel conventions:
+Remove these configuration options (they're now handled automatically):
 
 ```php
-// Before
+'hydefront_version' => ...,
+'hydefront_cdn_url' => ...,
+```
+
+### Update `config/docs.php`
+
+Reorganize the sidebar configuration:
+
+**Before:**
+```php
+'sidebar_order' => [
+    'readme',
+    'installation',
+],
+
+'table_of_contents' => [
+    'enabled' => true,
+],
+
+'sidebar_group_labels' => [
+    // ...
+],
+```
+
+**After:**
+```php
+'sidebar' => [
+    'order' => [
+        'readme',
+        'installation',
+    ],
+    
+    'labels' => [
+        // ...
+    ],
+
+    'table_of_contents' => [
+        'enabled' => true,
+        'min_heading_level' => 2,
+        'max_heading_level' => 4,
+    ],
+],
+```
+
+### Update `app/config.php`
+
+Add the new navigation service provider under the `'providers'` array:
+
+```php
+Hyde\Foundation\Providers\NavigationServiceProvider::class,
+```
+
+And add the following classes to the `'aliases'` array:
+
+```php
+'Vite' => \Hyde\Facades\Vite::class,
+'MediaFile' => \Hyde\Support\Filesystem\MediaFile::class,
+```
+
+## Step 6: Update Code References
+
+### Routes Facade API Changes
+
+**Before:**
+```php
 $route = Routes::get('route-name');        // Returns null if not found
 $route = Routes::getOrFail('route-name');  // Throws exception
+```
 
-// After
+**After:**
+```php
 $route = Routes::find('route-name');       // Returns null if not found
 $route = Routes::get('route-name');        // Throws exception
 ```
 
-#### DataCollection API
+### Asset API Updates
 
-- Class renamed from `DataCollections` to `DataCollection`
-- Syntax validation now throws `ParseException` for malformed files
-- Empty data files are no longer allowed
-- Directory creation is no longer automatic
-- The `route` function now throws `RouteNotFoundException` if route not found
+If you're using asset methods in custom code, note that they now return `MediaFile` instances:
 
-### Low Impact Changes
+```php
+// Methods renamed for clarity
+Hyde::asset('image.png');          // Previously: Hyde::mediaLink()
+Asset::get('image.png');           // Previously: Asset::mediaLink()
+Asset::exists('image.png');        // Previously: Asset::hasMediaFile()
+HydeFront::cdnLink('app.css');     // Previously: Asset::cdnLink()
+MediaFile::sourcePath('image.png') // Previously: Hyde::mediaPath()
+```
 
-#### Includes Facade Return Types
+The `MediaFile` instances are Stringable and will automatically resolve to relative links, so in most cases (especially in Blade templates), no code changes are needed.
 
-Methods now return `HtmlString` objects:
+### Includes Facade Return Types
 
+Methods now return `HtmlString` objects instead of raw strings:
+
+**Before:**
 ```blade
-{{-- Before: Required unescaped output --}}
 {!! Includes::html('partial') !!}
+```
 
-{{-- After: Automatic rendering --}}
+**After:**
+```blade
 {{ Includes::html('partial') }}
 ```
 
-⚠️ **Security Note:** Output is no longer escaped by default. Use `{{ e(Includes::html('foo')) }}` for user-generated content.
+**Security Note:** Output is no longer escaped by default. If you're including user-generated content, use `{{ e(Includes::html('foo')) }}` for escaping.
 
-#### Documentation Search Generation
+### DataCollections Renamed
 
-The documentation search page is now generated as an `InMemoryPage` instead of a post-build task, meaning it appears in the dashboard and route list.
+**Before:**
+```php
+use Hyde\Support\DataCollections;
+```
 
-#### Sidebar Configuration
+**After:**
+```php
+use Hyde\Support\DataCollection;
+```
 
-Documentation sidebar configuration has been reorganized:
-- `docs.sidebar_order` → `docs.sidebar.order`
-- `docs.table_of_contents` → `docs.sidebar.table_of_contents`
-- `docs.sidebar_group_labels` → `docs.sidebar.labels`
+## Step 7: Update Build Commands
 
-## New Features
+Update any CI/CD pipelines or build scripts:
 
-### Enhanced Blog Posts
+**Before:**
+```bash
+npm run prod
+php hyde build --run-prod
+```
 
-- **Simplified image front matter** with new "caption" field
-- **Date prefixes in filenames** for automatic publishing dates
-- **Rich markup data** with BlogPosting Schema.org type
-- **Author collections** accessible via `Hyde::authors()`
-- **Custom posts support** in blog feed component
+**After:**
+```bash
+npm run build
+php hyde build --vite
+```
 
-### Improved Build System
+The `--run-dev`, `--run-prod`, and `--run-prettier` flags have been removed. Use `--vite` instead.
 
-- **Vite integration** with HMR support in realtime compiler
-- **Smart asset compilation** - app.js only compiles when needed
-- **Environment variable support** for saving previews
-- **Grouped progress bars** for InMemoryPage instances
-- **Media asset transfers** via dedicated build task
+## Step 8: Clear Caches
 
-### Developer Tools
+Next, to ensure we have a clean slate, run the following commands:
 
-- **Interactive publish:views command** on Unix systems
-- **Custom HydeSearch.js** support for search customization
-- **Extension callbacks** with `booting()` and `booted()` methods
-- **Dynamic source file links** in Markdown documents (for example `[Home](/_pages/index.blade.php)`)
-- **Filesystem::ensureParentDirectoryExists()** helper method
+```bash
+composer dump-autoload
+php hyde cache:clear
+rm app/storage/framework/views/*.php
+```
 
-## Package Updates
+You may also want to republish any views you have published.
 
-### Realtime Compiler
-- Simplified asset file locator for media source directory
-- Added Vite HMR support
-- Experimental Laravel Herd support
+## Step 9: Rebuild Your Site
 
-### HydeFront
-- Complete migration from Sass to Tailwind CSS
-- Extracted CSS component partials
-- Removed legacy hyde.css file
+After completing all the configuration updates:
 
-## Performance Improvements
+```bash
+npm run build
 
-- **40x faster table of contents generation** using Blade components
-- **CRC32 hashing** replaces MD5 for cache busting (much faster)
-- **Lazy-loaded media metadata** with in-memory caching
-- **Cached media assets** in HydeKernel for instant access
+# Build your site
+php hyde build
 
-## Dependency Updates
+# Or use the realtime compiler for development
+php hyde serve
+```
 
-- **PHP**: Now requires 8.2–8.4 (dropped 8.1 support)
-- **Laravel**: Upgraded to version 11
-- **Tailwind CSS**: Upgraded to version 4
-- **Symfony/Yaml**: Updated to version 7
-- **Torchlight**: Switched to forked version for compatibility
+## Step 10: Test Your Site
+
+1. Test all navigation menus for correct ordering and appearance
+2. Verify media assets are loading correctly
+3. Check that all pages render properly
+4. Test the search functionality (if using documentation)
+5. Verify author information displays correctly on blog posts
+6. Test dark mode if you're using theme toggle buttons
 
 ## Migration Checklist
 
-- [ ] Upgrade to HydePHP v1.6 (preferably v1.8) before migrating to v2.0
-- [ ] Run `npx @tailwindcss/upgrade` for Tailwind v4 migration
-- [ ] Update `config/hyde.php` features to use enum values
-- [ ] Update navigation configuration to array format
-- [ ] Migrate custom JavaScript to ESM modules
-- [ ] Update author configuration format if using blog
-- [ ] Replace `npm run prod` with `npm run build` in CI/CD
-- [ ] Review and update any custom navigation implementations
-- [ ] Update Routes facade method calls if used in custom code
-- [ ] Test site menus for correct ordering and appearance
-- [ ] Verify media assets are loading correctly
-- [ ] Check that all DataCollection files have valid syntax
-- [ ] Update sidebar configuration structure in `config/docs.php`
-- [ ] Review Includes facade usage for security implications
+Use this checklist to track your upgrade progress:
 
-## Removed Features
+- [ ] Confirmed running HydePHP v1.6+ (preferably v1.8)
+- [ ] Updated `composer.json` dependencies
+- [ ] Ran `composer update`
+- [ ] Updated `package.json` dependencies and scripts
+- [ ] Added `"type": "module"` to `package.json`
+- [ ] Ran `npm install`
+- [ ] Deleted `webpack.mix.js`
+- [ ] Created `vite.config.js`
+- [ ] Updated `resources/assets/app.css` imports
+- [ ] Ran `npx @tailwindcss/upgrade` for Tailwind v4
+- [ ] Updated `config/hyde.php` features to use enum values
+- [ ] Updated navigation configuration to array format
+- [ ] Renamed `enable_cache_busting` to `cache_busting`
+- [ ] Removed deprecated HydeFront settings
+- [ ] Updated author configuration format (if using blog)
+- [ ] Reorganized sidebar configuration in `config/docs.php`
+- [ ] Updated Routes facade method calls (if used in custom code)
+- [ ] Updated Includes facade usage (if used in custom views)
+- [ ] Renamed DataCollections to DataCollection (if used)
+- [ ] Ran `npm run build`
+- [ ] Ran `php hyde build`
+- [ ] Tested site menus for correct ordering and appearance
+- [ ] Verified media assets load correctly
+- [ ] Checked all pages render properly
+- [ ] Tested documentation search (if applicable)
+- [ ] Verified blog author information (if applicable)
 
-### Deprecated Methods
-- `PostAuthor::getName()` - use `$author->name` property
-- `FeaturedImage::isRemote()` - use `Hyperlinks::isRemote()`
-- `DocumentationPage::getTableOfContents()` - use Blade component
-- `MarkdownService::withPermalinks()` and `canEnablePermalinks()`
+## Troubleshooting
 
-### Build Commands
-- `npm run prod` - replaced by `npm run build`
-- `--run-dev` and `--run-prod` flags - replaced by `--vite`
-- `--run-prettier` flag and Prettier dependency removed
+### Assets Not Compiling
 
-### Configuration Options
-- `hyde.hydefront_version` and `hyde.hydefront_cdn_url` - now handled automatically
-- `hyde.enable_cache_busting` - renamed to `hyde.cache_busting`
-- `hyde.navigation.subdirectories` - renamed to `hyde.navigation.subdirectory_display`
+If you encounter issues with asset compilation:
 
-### Components and Files
-- `hyde.css` from HydeFront - all styles now in `app.css`
-- `table-of-contents.css`, `heading-permalinks.css`, `blockquotes.css` - styles now use Tailwind
-- `.torchlight-enabled` CSS class
-- `<x-hyde::docs.search-input />` and `<x-hyde::docs.search-scripts />` components - replaced by `<x-hyde::docs.hyde-search />`
+1. Delete `node_modules` and `package-lock.json`
+2. Run `npm install` again
+3. Clear the `_media` directory
+4. Run `npm run build`
 
-## Support & Resources
+### Missing Routes
+
+If you get `RouteNotFoundException` errors:
+
+- Check that you've updated `Routes::get()` to `Routes::find()` for cases where the route might not exist
+- Verify your page source files are in the correct directories
+
+### Validation Errors
+
+If you get syntax validation errors from DataCollection:
+
+- Ensure all your YAML/JSON data files have valid syntax
+- Empty data files are no longer allowed in v2.0
+
+### Errors During build
+
+If you have published Blade views, those may need to be republished if they use old syntax. If you use custom code you may need to look closer at the full release diff.
+
+## Getting Help
+
+If you encounter issues during the upgrade:
 
 - **Documentation**: [https://hydephp.com/docs/2.x](https://hydephp.com/docs/2.x)
-- **Upgrade Guide**: [https://hydephp.com/docs/2.x/upgrade-guide](https://hydephp.com/docs/2.x/upgrade-guide)
-- **GitHub Issues**: [https://github.com/hydephp/develop/issues](https://github.com/hydephp/develop/issues)
-- **Community Discord**: [https://discord.gg/hydephp](https://discord.gg/hydephp)
+- **GitHub Issues**: [https://github.com/hydephp/hyde/issues](https://github.com/hydephp/hyde/issues)
+- **Community Discord**: [https://discord.hydephp.com](https://discord.hydephp.com)
 
----
-
-For the complete changelog with all pull request references, see the [full changelog](https://github.com/hydephp/hyde/releases/tag/v2.0.0).
+For the complete changelog with all pull request references, see the [full release notes](https://github.com/hydephp/hyde/releases/tag/v2.0.0).

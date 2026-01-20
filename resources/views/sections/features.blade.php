@@ -16,7 +16,7 @@
 						<a href="#about" class="btn btn-lg btn-default">
 							Learn more
 					</a>
-					<a href="docs/1.x/index.html" class="btn btn-lg btn-secondary">
+					<a href="docs/2.x/index.html" class="btn btn-lg btn-secondary">
 						Explore the docs
 					</a>
 				</div>

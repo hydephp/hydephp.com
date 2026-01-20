@@ -96,4 +96,25 @@ return [
     */
 
     'prose_classes' => 'prose dark:prose-invert',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Heading Permalinks
+    |--------------------------------------------------------------------------
+    |
+    | HydePHP can automatically add permalink anchors to headings in your
+    | documentation pages. This setting controls which page classes should
+    | have heading permalinks enabled.
+    |
+    */
+
+    'permalinks' => [
+        'enabled' => true,
+        'min_level' => 2,
+        'max_level' => 6,
+        'pages' => [
+            \Hyde\Pages\DocumentationPage::class,
+            \App\Extend\Pages\v1DocumentationPage::class,
+        ],
+    ],
 ];

@@ -24,14 +24,14 @@
 
 <link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
 <link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
-<meta name="generator" content="HydePHP 2.0.0-RC.4">
+<meta name="generator" content="HydePHP 2.0.1">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@HydeFramework">
 <meta name="twitter:creator" content="@EmmaDSCodes">
 <meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:site_name" content="HydePHP">
-<meta property="og:image" content="https://opengraph.githubassets.com/1/hydephp/hyde">
+<meta property="og:image" content="https://hydephp.com/media/banner.png">
 <meta property="og:image:alt" content="GitHub OpenGraph Image">
 
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=e5155684">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
     
 
     
@@ -59,80 +59,105 @@
 <body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
     x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
     <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
-    <div class="bg-purple-600 text-white py-3 px-4 text-center">
-        <div class="flex items-center justify-center space-x-4">
-            <span class="text-sm md:text-base font-medium">
-                HydePHP creator Emma De Silva is speaking at the Laravel Meetup Stockholm 2025!
-            </span>
-
-                            <a href="/posts/hydephp-creator-speaking-at-the-laravel-meetup-stockholm-2025"
-                   class="inline-block px-3 py-1 text-xs font-medium rounded-md border-2 border-current hover:bg-white hover:text-purple-600 transition-colors duration-200 relative z-10">
-                    Read More
-                </a>
-                    </div>
-    </div>
-
+    
     <nav aria-label="Main navigation" id="main-navigation"
-	 class="flex flex-wrap items-center justify-between p-4 shadow-lg sm:shadow-xl md:shadow-none dark:bg-gray-800">
-	<div class="flex grow items-center shrink-0 text-gray-700 dark:text-gray-200">
-		<a aria-label="Home page link" href="../" class="font-bold px-4">
-	<img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" alt="HydePHP Logo" class="inline">
-	HydePHP
-</a>
-		<div class="ml-auto">
-			<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+     class=" relative ">
+    <div class=" bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none ">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
+                <div class="flex items-center">
+                    <a aria-label="Home page link" href="../" 
+   class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+    <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
+         alt="HydePHP Logo" 
+         class=" inline ">
+    <span class=" font-bold ">
+        HydePHP
+    </span>
+</a>				</div>
+
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
+					<!-- Desktop Navigation Links -->
+					<div class="hidden md:flex items-center gap-8">
+													<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+											</div>
+
+					<!-- Documentation Button -->
+					<a id="docs-nav-button" href="../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+											</a>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="block md:hidden">
+						<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1  hover:text-gray-700 dark:text-gray-200 "
+								aria-label="Toggle navigation menu">
+							<svg x-show="! navigationOpen" title="Open Navigation Menu" class=" dark:fill-gray-200 " style="display: block;"
+								 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Open Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"/>
+								<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+							</svg>
+							<svg x-show="navigationOpen" title="Close Navigation Menu" class=" dark:fill-gray-200 " style="display: none;"
+								 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Close Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+						</button>
+					</div>
+
+										<div class="hidden md:block">
+						<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
         <span class="sr-only">Toggle dark theme</span>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
         <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
     </button>
+					</div>
+									</div>
+			</div>
 		</div>
 	</div>
 
-	<div class="block md:hidden">
-		<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1 hover:text-gray-700 dark:text-gray-200"
-				aria-label="Toggle navigation menu">
-			<svg x-show="! navigationOpen" title="Open Navigation Menu" class="dark:fill-gray-200" style="display: block;"
-				 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Open Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"/>
-				<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-			</svg>
-			<svg x-show="navigationOpen" title="Close Navigation Menu" class="dark:fill-gray-200" style="display: none;"
-				 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
-				 width="24"><title>Close Menu</title>
-				<path d="M0 0h24v24H0z" fill="none"></path>
-				<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-			</svg>
-		</button>
-	</div>
-
+	<!-- Mobile Navigation Links -->
 	<div id="main-navigation-links"
-		 class="w-full  md:flex grow md:grow-0 md:items-center md:w-auto px-6 -mx-4 border-t mt-3 pt-3 md:border-none md:mt-0 md:py-0 border-gray-200 dark:border-gray-700"
+		 class="md:hidden  bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 "
 		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
-		<ul aria-label="Navigation links" class="md:grow md:flex justify-end">
-							<li class="md:mx-2">
-					<a href="../" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>				</li>
-							<li class="md:mx-2">
-					<a href="../about" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>				</li>
-							<li class="md:mx-2">
-					<a href="../demos" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>				</li>
-							<li class="md:mx-2">
-					<a href="../posts" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>				</li>
-							<li class="md:mx-2">
-					<a href="https://github.com/hydephp/hyde" class="navigation-link block my-2 md:my-0 md:inline-block py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>				</li>
-					</ul>
-		<a id="docs-nav-button" href="../docs/1.x/" class="inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group">
-			<span class="absolute top-0 left-0 w-full h-full  hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
-			<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold  bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
-		</a>
+		<div class="mx-auto max-w-7xl px-6">
+			<ul aria-label="Navigation links" class="py-4 space-y-2">
+									<li>
+						<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
+									<li>
+						<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+					</li>
+									<li>
+						<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+					</li>
+									<li>
+						<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+					</li>
+									<li>
+						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+					</li>
+								<li class="max-[375px]:block hidden">
+					<a href="../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </nav>
-
     <section>
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="creating-a-new-hyde-site-from-scratch" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert">
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
     <meta itemprop="identifier" content="creating-a-new-hyde-site-from-scratch">
             <meta itemprop="url" content="https://hydephp.com/posts/creating-a-new-hyde-site-from-scratch">
     
@@ -166,8 +191,7 @@ I'm using Windows PowerShell here, but you can follow along with Bash as well.</
 <p>This guide will mostly be example-driven. If you have any questions, send me a tweet at @<a href="https://twitter.com/EmmaDSCodes">EmmaDSCodes</a>.</p>
 <h2>Creating a new project</h2>
 <p>Creating a site with Hyde is easy, especially when using Composer!</p>
-<pre><code class="language-bash">composer create-project hyde/hyde tutorial-demo
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">composer</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">create-project</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde/hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">tutorial-demo</span></div></code></pre>
 <p>This command will create a new directory named <code>tutorial-demo</code> containing
 the base Hyde app which includes everything you need to get started.</p>
 <blockquote>
@@ -178,8 +202,7 @@ so substitute that for whatever your directory is named.</p>
 <p>Next, enter the created directory using the command <code>cd tutorial-demo</code>.</p>
 <p>We can compile the static site right away.
 To do this we use the HydeCLI to run the command in our terminal.</p>
-<pre><code class="language-bash">php hyde build
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>This will compile the default welcome page stored in <code>_pages/index.blade.php</code>.
 The static site files are stored in <code>_site/</code> which now contains an index.html file.
 Let's open it up in our browser and take a look!</p>
@@ -191,8 +214,7 @@ Let's open it up in our browser and take a look!</p>
 <p>Hyde comes with a few different options to use as the index.html.
 The one we have right now, the default, is called 'welcome'.</p>
 <p>We can change our homepage using the following Hyde command which will present us with a few options.</p>
-<pre><code class="language-bash">php hyde publish:homepage
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">publish:homepage</span></div></code></pre>
 <p>We'll select the one named 'posts'.</p>
 <p><img src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/63z7wlmmbfjhsvp4c6q2.png" alt="Terminal output screenshot" /></p>
 <p>This will save the 'posts' template to the <code>_pages/index.blade.php</code> file.</p>
@@ -213,24 +235,13 @@ Instead, let's use the interactive Hyde command to scaffold it for us!</p>
 <p>The command we are using is the <code>php hyde make:post</code> command,
 which gives asks us for input and then generates the boring stuff for us.
 It will then create a Markdown file containing our input as front matter.</p>
-<pre><code class="language-bash">php hyde make:post
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:post</span></div></code></pre>
 <p><img src="https://hydephp.com/media/Screenshot%202022-03-25%20222236-min.png" alt="Terminal output screenshot" /></p>
 <p>Let's take a look at the file that was created for us! As you can see it is stored in the _posts directory.
 A slug was automatically created from the title and the date was automatically parsed from the current time.</p>
-<pre><code class="language-markdown">---
-title: Hello World!
-description: This will show up in the article excerpt and SEO meta tags
-category: demo
-author: Emma
-date: 2022-03-25 21:20
----
-
-## Write something awesome.
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Hello World!</span></div><div class='line'><span style="color: #F07178;">description</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">This will show up in the article excerpt and SEO meta tags</span></div><div class='line'><span style="color: #F07178;">category</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">demo</span></div><div class='line'><span style="color: #F07178;">author</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">Emma</span></div><div class='line'><span style="color: #F07178;">date</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">2022-03-25 21:20</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">## </span><span style="color: #FFCB6B;">Write something awesome.</span></div></code></pre>
 <p>Let's rebuild the site and take a look!</p>
-<pre><code class="language-bash">php hyde build
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">build</span></div></code></pre>
 <p>As you can see, the excerpt automatically shows up in the feed on the homepage!
 I also added some extra text in the Markdown section to populate the post.</p>
 <p><img src="https://hydephp.com/media/mockup-blogpostexample-min.png" alt="Screenshot of generated homepage and blog post" /></p>
@@ -241,15 +252,9 @@ Files in the _pages directory are automatically compiled into static HTML.</p>
 <p>Let's try it!</p>
 <p>I'll use the command line to create the file as we can use the make:command like before.
 Currently, Markdown pages only use the title front matter option, so we can pass it in as an argument.</p>
-<pre><code class="language-bash">php hyde make:page &quot;About Us&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">About Us</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>This creates a file saved as <code>_pages/about-us.md</code> with the following content:</p>
-<pre><code class="language-markdown">---
-title: About Us
----
-
-# About Us
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="markdown" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'><span style="color: #F07178;">title</span><span style="color: #89DDFF;">:</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">About Us</span></div><div class='line'><span style="color: #A6ACCD;">---</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;"># </span><span style="color: #FFCB6B;">About Us</span></div></code></pre>
 <p>I'll add some extra content for demo purposes and then rebuild the site.</p>
 <p><img src="https://hydephp.com/media/screely-1648247108115-min.png" alt="Screenshot of generated Markdown page" /></p>
 <p>Markdown pages are great for rapidly building simple pages, but they can be a bit limiting.
@@ -261,19 +266,9 @@ Let's swap it out with a page based on a Blade view!</p>
 but instead of using the <code>.md</code> extension, we use the <code>.blade.php</code> extension.</p>
 <p>Let's create the file using the CLI. We can use the same command as before,
 but we'll need to specify that we want to create a Blade page.</p>
-<pre><code class="language-bash">php hyde make:page &quot;About Us&quot; --type=&quot;blade&quot;
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">make:page</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">About Us</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">--type=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">blade</span><span style="color: #89DDFF;">&quot;</span></div></code></pre>
 <p>Let's take a look at the file that was saved as <code>_pages/about-us.blade.php</code>.</p>
-<pre><code class="language-blade">@extends('hyde::layouts.app')
-@section('content')
-@php($title = &quot;About Us&quot;)
-
-&lt;main class=&quot;mx-auto max-w-7xl py-16 px-8&quot;&gt;
-    &lt;h1 class=&quot;text-center text-3xl font-bold&quot;&gt;About Us&lt;/h1&gt;
-&lt;/main&gt;
-
-@endsection
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="blade" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #89DDFF;">@extends</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">hyde::layouts.app</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@section</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">content</span><span style="color: #89DDFF;">&#39;</span><span style="color: #A6ACCD;">)</span></div><div class='line'><span style="color: #89DDFF;">@php</span><span style="color: #A6ACCD;">(</span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">title </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">About Us</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;">)</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">mx-auto max-w-7xl py-16 px-8</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">&lt;</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;"> </span><span style="color: #C792EA;">class</span><span style="color: #89DDFF;">=</span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;">text-center text-3xl font-bold</span><span style="color: #89DDFF;">&quot;</span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;">About Us</span><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">h1</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'><span style="color: #89DDFF;">&lt;/</span><span style="color: #F07178;">main</span><span style="color: #89DDFF;">&gt;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #89DDFF;">@endsection</span></div></code></pre>
 <p>As you can see, the default layout is used, that way we get all the base styling.
 The page title and heading are set to the title we passed in.</p>
 <blockquote>
@@ -291,11 +286,9 @@ It is also what powers the <a href="https://hydephp.com/docs">Hyde documentation
 <p>Creating documentation pages is a piece of cake.
 We start by creating a file following the format of kebab-case-version-of-the-title.md in the _docs directory.
 We don't even need any front matter.</p>
-<pre><code class="language-bash">echo &quot;# Hello World!&quot; &gt; _docs/hello-world.md
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #82AAFF;">echo</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&quot;</span><span style="color: #C3E88D;"># Hello World!</span><span style="color: #89DDFF;">&quot;</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">&gt;</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_docs/hello-world.md</span></div></code></pre>
 <p>We can run the rebuild command to save time by compiling just the page we created.</p>
-<pre><code class="language-bash">php hyde rebuild _docs/hello-world.md
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">php</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">hyde</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">rebuild</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">_docs/hello-world.md</span></div></code></pre>
 <p>The page will then be saved in <code>_site/docs/hello-world.html</code>.</p>
 <p>The sidebar will like magic be populated with all the documentation pages.
 The page titles in the sidebar are generated from the filename,
@@ -324,14 +317,9 @@ which Hyde injects automatically on pages that use Torchlight (unless disabled i
 <p>Once you have the token you need to set it in your <code>.env</code> file.
 If you don't have one you can copy the example file supplied with the project using this command
 (or by renaming/copying it manually, alternatively just create a new file called <code>.env</code>):</p>
-<pre><code class="language-bash">cp .env.example .env
-
-## or
-touch .env
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #FFCB6B;">cp</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">.env.example</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">.env</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #676E95;">## or</span></div><div class='line'><span style="color: #FFCB6B;">touch</span><span style="color: #A6ACCD;"> </span><span style="color: #C3E88D;">.env</span></div></code></pre>
 <p>Then in the .env file, add your API token like so:</p>
-<pre><code class="language-bash">TORCHLIGHT_TOKEN=torch_abcdefg123
-</code></pre>
+<pre><code data-theme="material-theme-palenight" data-lang="bash" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #A6ACCD;">TORCHLIGHT_TOKEN</span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;">torch_abcdefg123</span></div></code></pre>
 <p>What's even cooler is that adding the token makes Hyde
 automatically enable the Torchlight CommonMark extension.</p>
 <p>Now when we run the build command you will notice it takes a bit longer,
@@ -345,6 +333,11 @@ Send me a Tweet if you have any questions or suggestions! I'm <a href="https://t
 <li>The documentation is hosted at <a href="https://hydephp.com/docs/">hydephp.com/docs</a>.</li>
 <li>Find the source code on <a href="https://github.com/hydephp/hyde">GitHub</a>.</li>
 </ul>
+<br><p>
+    <i>
+        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
+    </i>
+</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -354,7 +347,7 @@ Send me a Tweet if you have any questions or suggestions! I'm <a href="https://t
  
     </section>
 
-    <footer class="px-4 pt-12 pb-6  dark:text-white dark:bg-slate-900 bg-gray-100">
+    <footer class="px-4 pt-12 pb-6 dark:text-white dark:bg-slate-900 bg-gray-100" style="margin-top: -1px;">
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
@@ -372,7 +365,7 @@ Send me a Tweet if you have any questions or suggestions! I'm <a href="https://t
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../docs/1.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
 					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
