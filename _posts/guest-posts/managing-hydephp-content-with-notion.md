@@ -14,7 +14,7 @@ canonical_guest_post_url: "https://brice.codes/posts/managing-a-static-sites-con
 ---
 
 
-This posts dives into the development journey that resulted in the website [tuli.space](https://tuli.space).
+This post dives into the development journey that resulted in the website [tuli.space](https://tuli.space).
 
 ## Background
 My partner, Tuli, is an incredible Chicago-based movement artist, educator, producer, and choreographer.
