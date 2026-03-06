@@ -195,7 +195,7 @@
             </div>
         </div>
         <div aria-label="Article body" itemprop="articleBody">
-                    <p>This post dives into the development journey that resulted in the website <a href="https://tuli.space rel="nofollow external noopener" target="_blank">tuli.space</a>.</p>
+                    <p>This post dives into the development journey that resulted in the website <a href="https://tuli.space" rel="nofollow external noopener" target="_blank">tuli.space</a>.</p>
 <h2>Background</h2>
 <p>My partner, Tuli, is an incredible Chicago-based movement artist, educator, producer, and choreographer.
 Tuli has made a significant impact within the dance community in Chicago. However, SquareSpace had grown to be
@@ -214,15 +214,15 @@ simple set of initial goals and requirements:</p>
 <li>Basic analytics must be available</li>
 </ul>
 <h2>First thing's first</h2>
-<p>The initial approach was simple enough. I'd use the marvelous static site generator <a href="https://hydephp.com rel="nofollow external noopener" target="_blank">HydePHP</a>,
-which is built on top of <a href="https://laravel-zero.com rel="nofollow external noopener" target="_blank">Laravel Zero</a>.</p>
-<p>Any client-side interactivity could be accomplished with <a href="https://alpinejs.dev rel="nofollow external noopener" target="_blank">Alpine.js</a>, a lightweight JavaScript
+<p>The initial approach was simple enough. I'd use the marvelous static site generator <a href="https://hydephp.com" rel="nofollow external noopener" target="_blank">HydePHP</a>,
+which is built on top of <a href="https://laravel-zero.com" rel="nofollow external noopener" target="_blank">Laravel Zero</a>.</p>
+<p>Any client-side interactivity could be accomplished with <a href="https://alpinejs.dev" rel="nofollow external noopener" target="_blank">Alpine.js</a>, a lightweight JavaScript
 framework.</p>
 <p>Cheap(ish) hosting would be on AWS. Specifically: an S3 bucket configured to host a static site with a CloudFront
 distribution in front of it (for both SSL and caching), a Lambda function to serverlessly process contact form
 submissions (validating a reCAPTCHA verification, persisting submissions in DynamoDB, and notifying Tuli via an email
 sent by SES). AWS resources would be managed via CloudFormation templates.</p>
-<p>The front end of the contact form would use <a href="https://developers.google.com/recaptcha rel="nofollow external noopener" target="_blank">Google's reCAPTCHA</a> for protection
+<p>The front end of the contact form would use <a href="https://developers.google.com/recaptcha" rel="nofollow external noopener" target="_blank">Google's reCAPTCHA</a> for protection
 against automated submissions.</p>
 <p>Deployments would be as simple as pushing up changes and letting a GitHub Actions workflow
 handle generating the static site's files, syncing them to S3, and creating a cache invalidation in CloudFront.</p>
@@ -265,7 +265,7 @@ methods which parses the YAML files and registers the page(s) for each model (an
 extends HydePHP's <code>HydePage</code> class).</p>
 <h2>A page out of Eloquent's book</h2>
 <p>Now that I had a way to load all models into a collection, I figured it would be nice to be able to interact with the
-data in a way similar to which I'm accustomed (<a href="https://laravel.com/docs/12.x/eloquent rel="nofollow external noopener" target="_blank">Eloquent</a>). So of course I built
+data in a way similar to which I'm accustomed (<a href="https://laravel.com/docs/12.x/eloquent" rel="nofollow external noopener" target="_blank">Eloquent</a>). So of course I built
 out an ORM-esque set of functionality.</p>
 <p>To start, I needed a base (abstract) class from which all of my model classes would inherit. The constructor of my base
 model class would accept an associative array (or <code>FrontMatter</code> class instance, which is included with HydePHP). I overrode
@@ -304,8 +304,8 @@ variable. There was a key piece missing, however: Open Graph images. Links to pa
 shared on social media, so of course we need a unique Open Graph image for each page.</p>
 <p>Remember that part earlier in this article where I mentioned HydePHP is built on top of Laravel Zero? This makes the
 framework extremely powerful and ripe for customization. I won't go into much detail here, but in summary I implemented
-a custom command to loop through each defined page and generate an Open Graph image using <a href="https://image.intervention.io/v3 rel="nofollow external noopener" target="_blank">Intervention Image</a>.
-You can read more about how I've done <a href="https://brice.codes/posts/generating-open-graph-images-for-each-post-in-hyde.html rel="nofollow external noopener" target="_blank">something similar for this blog here</a>.</p>
+a custom command to loop through each defined page and generate an Open Graph image using <a href="https://image.intervention.io/v3" rel="nofollow external noopener" target="_blank">Intervention Image</a>.
+You can read more about how I've done <a href="https://brice.codes/posts/generating-open-graph-images-for-each-post-in-hyde.html" rel="nofollow external noopener" target="_blank">something similar for this blog here</a>.</p>
 <p>Now I could reference image file names in my YAML model definitions, run a command, and end up with generated images for
 each page. Naturally, this processes ended up as part of the GitHub Actions deployment workflow, but more on that soon.</p>
 <h2>Enter CloudFormation</h2>
@@ -316,7 +316,7 @@ each page. Naturally, this processes ended up as part of the GitHub Actions depl
 <li>a proxy for Plausible.io (CloudFront with Lambda@Edge)</li>
 </ul>
 <p>The static site template and contact form are pretty routine. The proxy, however, took a bit of tinkering.
-I wanted to proxy <a href="https://plausible.io rel="nofollow external noopener" target="_blank">Plausible.io</a>'s analytics script because it's not uncommon for adblockers to
+I wanted to proxy <a href="https://plausible.io" rel="nofollow external noopener" target="_blank">Plausible.io</a>'s analytics script because it's not uncommon for adblockers to
 block this script (even though Plausible anonymizes most of the data). There are two parts to this: serving the initial
 JavaScript when a request is made to a subdomain of <code>tuli.space</code> at <code>/js/script.js</code>, and proxying requests made to
 <code>/api/event</code> to Plausible's API.</p>
@@ -357,10 +357,10 @@ as the result of a button click, and GitHub Actions supports triggering workflow
 writing this article, Notion's outgoing webhooks do not support including a body for the request. This is an issue
 because GitHub's API requires specifying the branch in a JSON payload when triggering a workflow.</p>
 <h2>One more CloudFormation template</h2>
-<p>First I tried using <a href="https://zapier.com rel="nofollow external noopener" target="_blank">Zapier</a>, which worked. However, it only worked on a paid plan due to tier
+<p>First I tried using <a href="https://zapier.com" rel="nofollow external noopener" target="_blank">Zapier</a>, which worked. However, it only worked on a paid plan due to tier
 limitations (I was on the free trial). I couldn't justify paying for Zapier, forever, for a single button. Instead, I
 reached for AWS Lambda. Using API Gateway to sit in front of a Lambda function for invocation used to be a requirement
-for something like this, but in 2022, AWS introduced <a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/ rel="nofollow external noopener" target="_blank">Lambda Function URLs</a>.</p>
+for something like this, but in 2022, AWS introduced <a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/" rel="nofollow external noopener" target="_blank">Lambda Function URLs</a>.</p>
 <p>This means all I had to do was create a Lambda function that, among verifying the request used a valid secret, triggered
 a workflow in GitHub Actions. This workflow was responsible for running the <code>sync:all</code> command, opening a Pull Request
 with the resulting files, and merging it. Upon merge, a secondary workflow kicked off to deploy (as a commit was just
