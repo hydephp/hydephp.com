@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HydePHP - Managing HydePHP content with Notion</title>
+
+ 
+<link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
+
+
+<link rel="canonical" href="https://hydephp.com/posts/guest-posts/managing-hydephp-content-with-notion">
+<meta name="description" content="A journey into how I productionized a HydePHP site and empowered the site owner to self-manage.">
+<meta name="twitter:title" content="HydePHP - Managing HydePHP content with Notion">
+<meta name="author" content="Brice Hartmann">
+<meta name="keywords" content="Guest Posts">
+<meta name="url" content="https://hydephp.com/posts/guest-posts/managing-hydephp-content-with-notion">
+<meta property="og:description" content="A journey into how I productionized a HydePHP site and empowered the site owner to self-manage.">
+<meta property="og:title" content="HydePHP - Managing HydePHP content with Notion">
+<meta property="og:url" content="https://hydephp.com/posts/guest-posts/managing-hydephp-content-with-notion">
+<meta property="og:article:published_time" content="2026-03-05T23:00:00+00:00">
+<meta property="og:type" content="article">
+
+
+<link rel="sitemap" href="https://hydephp.com/sitemap.xml" type="application/xml" title="Sitemap">
+<link rel="alternate" href="https://hydephp.com/feed.xml" type="application/rss+xml" title="HydePHP RSS Feed">
+<meta name="generator" content="HydePHP 2.0.1">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@HydeFramework">
+<meta name="twitter:creator" content="@EmmaDSCodes">
+<meta name="twitter:description" content="Make static websites, blogs, and documentation pages with the tools you already know and love.">
+<meta name="twitter:image" content="https://hydephp.com/media/banner.png">
+<meta property="og:site_name" content="HydePHP">
+<meta property="og:image" content="https://hydephp.com/media/banner.png">
+<meta property="og:image:alt" content="GitHub OpenGraph Image">
+
+
+ 
+
+
+<style>[x-cloak] {display: none!important}</style>
+
+
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
+    
+
+    
+    
+
+
+
+<meta id="meta-color-scheme" name="color-scheme" content="light">
+<script>if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); document.getElementById('meta-color-scheme').setAttribute('content', 'dark');} else { document.documentElement.classList.remove('dark') } </script>
+
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->
+</head>
+<body id="app" class="flex flex-col min-h-screen overflow-x-hidden antialiased bg-standard"
+    x-data="{ navigationOpen: false }" x-on:keydown.escape="navigationOpen = false;">
+    <a href="#content" id="skip-to-content" class="sr-only focus:not-sr-only bg-black border-4 border-yellow-400 focus:absolute focus:mt-2 focus:mx-auto focus:p-2 focus:w-64 h-auto left-0 overflow-auto right-0 rounded-md text-center text-lg text-white top-auto z-50 ">Skip to content</a>
+    
+    <nav aria-label="Main navigation" id="main-navigation"
+     class=" relative ">
+    <div class=" bg-white dark:bg-gray-800 shadow-lg sm:shadow-xl md:shadow-none ">
+        <div class="mx-auto max-w-7xl px-6">
+            <div class="flex h-16 md:h-18 items-center justify-between">
+                <!-- Left side: Brand -->
+                <div class="flex items-center">
+                    <a aria-label="Home page link" href="../../" 
+   class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
+    <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
+         alt="HydePHP Logo" 
+         class=" inline ">
+    <span class=" font-bold ">
+        HydePHP
+    </span>
+</a>				</div>
+
+				<!-- Right side: Navigation items -->
+				<div class="flex items-center gap-8">
+					<!-- Desktop Navigation Links -->
+					<div class="hidden md:flex items-center gap-8">
+													<a href="../../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+											</div>
+
+					<!-- Documentation Button -->
+					<a id="docs-nav-button" href="../../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
+							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
+											</a>
+
+					<!-- Mobile Menu Toggle -->
+					<div class="block md:hidden">
+						<button id="navigation-toggle-button" @click="navigationOpen = ! navigationOpen" class="flex items-center px-3 py-1  hover:text-gray-700 dark:text-gray-200 "
+								aria-label="Toggle navigation menu">
+							<svg x-show="! navigationOpen" title="Open Navigation Menu" class=" dark:fill-gray-200 " style="display: block;"
+								 id="open-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Open Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"/>
+								<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+							</svg>
+							<svg x-show="navigationOpen" title="Close Navigation Menu" class=" dark:fill-gray-200 " style="display: none;"
+								 id="close-main-navigation-menu-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24"
+								 width="24"><title>Close Menu</title>
+								<path d="M0 0h24v24H0z" fill="none"></path>
+								<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+							</svg>
+						</button>
+					</div>
+
+										<div class="hidden md:block">
+						<button @click="toggleTheme" class="theme-toggle-button flex items-center px-2 py-1 hover:text-gray-700 dark:text-gray-200" title="Toggle theme">
+        <span class="sr-only">Toggle dark theme</span>
+        <svg width="1.25rem" height="1.25rem" class="w-5 h-5 hidden dark:block" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        <svg width="1.25rem" height="1.25rem" class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+    </button>
+					</div>
+									</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Mobile Navigation Links -->
+	<div id="main-navigation-links"
+		 class="md:hidden  bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 "
+		 :class="navigationOpen ? '' : 'hidden'" x-cloak>
+		<div class="mx-auto max-w-7xl px-6">
+			<ul aria-label="Navigation links" class="py-4 space-y-2">
+									<li>
+						<a href="../../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+					</li>
+									<li>
+						<a href="../../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+					</li>
+									<li>
+						<a href="../../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+					</li>
+									<li>
+						<a href="../../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+					</li>
+									<li>
+						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
+					</li>
+								<li class="max-[375px]:block hidden">
+					<a href="../../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+    <section>
+        
+    <main id="content" class="mx-auto max-w-7xl py-16 px-8">
+        <article aria-label="Article" id="guest-posts/managing-hydephp-content-with-notion" itemscope itemtype="https://schema.org/Article"
+    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    <meta itemprop="identifier" content="guest-posts/managing-hydephp-content-with-notion">
+            <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/managing-hydephp-content-with-notion">
+    
+    <header aria-label="Header section" role="doc-pageheader">
+        <h1 itemprop="headline" class="mb-4">Managing HydePHP content with Notion</h1>
+        <div id="byline" aria-label="About the post" role="doc-introduction">
+            Posted <time itemprop="dateCreated datePublished" datetime="2026-03-05T23:00:00+00:00" title="Thursday Mar 5th, 2026, at 11:00pm">Mar 5th, 2026</time>            by guest author
+<address itemprop="author" itemscope itemtype="https://schema.org/Person" aria-label="The post author" style="display: inline;">
+            <a href="https://brice.codes" rel="author nofollow external" target="_blank" itemprop="url" aria-label="The author's website">
+                        <span itemprop="name" aria-label="The author's name">Brice Hartmann</span>
+                    </a>
+    </address>
+            in the category "Guest Posts"        </div>
+                   <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-0 mt-2">
+                Originally posted at <a href="https://brice.codes/posts/managing-a-static-sites-content-with-notion.html?ref=hydephp.com" class="text-indigo-600 dark:text-indigo-400 hover:underline" rel="canonical nofollow external noopener" target="_blank">
+                    brice.codes
+                </a>
+            </p>
+            </header>
+    
+            <div class="my-6 p-4 border border-indigo-200 dark:border-indigo-800 bg-indigo-50 dark:bg-indigo-900/30 rounded-lg shadow-sm">
+            <div class="flex items-start">
+                <div class="shrink-0 mt-0.5">
+                    <svg class="h-5 w-5 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-indigo-800 dark:text-indigo-300 mt-0">Community Contribution</h3>
+                    <div class="my-0 text-sm text-gray-700 dark:text-gray-300">
+                        <p class="mt-0 mb-1">This article was written by a member of the HydePHP community. We're excited to share diverse perspectives and expertise!</p>
+                        <p class="my-0 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for and ownership of their content. Read more about our <a href="../../legal#guest-posts" class="text-indigo-600 dark:text-indigo-400 hover:underline">guest posts here</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div aria-label="Article body" itemprop="articleBody">
+                    <p>This post dives into the development journey that resulted in the website <a href="https://tuli.space rel="nofollow external noopener" target="_blank">tuli.space</a>.</p>
+<h2>Background</h2>
+<p>My partner, Tuli, is an incredible Chicago-based movement artist, educator, producer, and choreographer.
+Tuli has made a significant impact within the dance community in Chicago. However, SquareSpace had grown to be
+frustrating and was no longer meeting the needs of this career.</p>
+<p>Like many software engineers, hearing about an outstanding problem I felt I could address with code (and coffee) made
+my brain twitch. Being stuck on an unwieldy and restrictive website builder simply wouldn't do. With Tuli's blessing,
+we dove in and started planning.</p>
+<h2>Initial requirements</h2>
+<p>After a healthy amount of brain-fueled exercises (brain-picking, brain-storming, brain-dumping...) we landed on a relatively
+simple set of initial goals and requirements:</p>
+<ul>
+<li>A website to house information about Tuli's career: ongoing involvements, previous work, upcoming events, etc</li>
+<li>This website must be simple, mobile responsive, quick to update, and not take months to build</li>
+<li>Hosting and tooling for this project should be relatively cheap (or at least cheaper than SquareSpace)</li>
+<li>A contact form is needed, with protection against spam and bots</li>
+<li>Basic analytics must be available</li>
+</ul>
+<h2>First thing's first</h2>
+<p>The initial approach was simple enough. I'd use the marvelous static site generator <a href="https://hydephp.com rel="nofollow external noopener" target="_blank">HydePHP</a>,
+which is built on top of <a href="https://laravel-zero.com rel="nofollow external noopener" target="_blank">Laravel Zero</a>.</p>
+<p>Any client-side interactivity could be accomplished with <a href="https://alpinejs.dev rel="nofollow external noopener" target="_blank">Alpine.js</a>, a lightweight JavaScript
+framework.</p>
+<p>Cheap(ish) hosting would be on AWS. Specifically: an S3 bucket configured to host a static site with a CloudFront
+distribution in front of it (for both SSL and caching), a Lambda function to serverlessly process contact form
+submissions (validating a reCAPTCHA verification, persisting submissions in DynamoDB, and notifying Tuli via an email
+sent by SES). AWS resources would be managed via CloudFormation templates.</p>
+<p>The front end of the contact form would use <a href="https://developers.google.com/recaptcha rel="nofollow external noopener" target="_blank">Google's reCAPTCHA</a> for protection
+against automated submissions.</p>
+<p>Deployments would be as simple as pushing up changes and letting a GitHub Actions workflow
+handle generating the static site's files, syncing them to S3, and creating a cache invalidation in CloudFront.</p>
+<p>I've worked with each of these technologies before, so the learning curve would be relatively shallow. So far so good.</p>
+<h2>Code code code</h2>
+<p>So, filled with aspiration and armed with a terminal, I broke ground. The initial project generation and organization was
+easy enough; HydePHP has an amazing convention-based approach to managing pages, posts, media, and more. After some back
+and forth about colors, styling, and layout, we finally settled on project theming that was Good Enough. I am a man of
+many digital talents; visual design is not one of them.</p>
+<h2>Copy and assets</h2>
+<p>The original plan was based on the assumption that content and images would not need to be updated frequently. Tuli
+could just make an update in our shared Notion page, leave a comment notifying me of the desired changes, and throw
+something at me if I was taking too long to start manually inputting the changes. I was hard-coding content in the Blade
+templates, which worked well for most things. Images were simply downloaded, converted to a .webp format with the <code>cwebp</code>
+CLI tool, and committed directly to the repository.</p>
+<h2>List/detail pages</h2>
+<p>Here's where things started to get interesting: out-of-the-box HydePHP generates an HTML file per Markdown file or
+Blade template. This was great for the surface-level pages, but what about pages that followed a list/detail pattern?
+Was I really willing to copy/paste Blade templates, all having the same structure, and just manually update the content
+and image source(s) dozens of times? No, I was not.</p>
+<p>So what's a humble developer to do when a framework doesn't behave the way a project needs? Well, <em>read the source</em>
+of course! A really cool thing about HydePHP is that it's both open source and extensible. I dug into how pages are generated
+and stumbled across the <code>DataCollection</code> class. As the beginning of the source's docblock states, the class:</p>
+<blockquote>
+<p>Automatically generates Laravel Collections from static data files</p>
+</blockquote>
+<p>That sounds perfect for this use case. I had a collection of data and I wanted a reasonable way to manage and
+programmatically interact with it.</p>
+<h2>Extending HydePHP</h2>
+<p>I knew from reading the docs (which you should always do) that HydePHP was designed to be extensible. After a little more
+digging I found the <code>HydeExtension</code> abstract class which (again from the beginning of the docblock) states:</p>
+<blockquote>
+<p>When creating a HydePHP extension, you should create a class that extends this one</p>
+</blockquote>
+<p>Sounds straightforward enough! I created a directory for my &quot;models&quot; (YAML files), extended the <code>DataCollection</code> class to
+point to it, and extended the <code>HydeExtension</code> class. I also created a class I named <code>ModelContainer</code>, responsible
+for holding all parsed models in memory (as an Illuminate <code>Collection</code>), which I bound to the service container as
+a singleton. More on this later. In my HydePHP extension class, I implemented <code>discoverFiles</code> and <code>discoverPages</code>
+methods which parses the YAML files and registers the page(s) for each model (another class I created, <code>ModelPage</code>, that
+extends HydePHP's <code>HydePage</code> class).</p>
+<h2>A page out of Eloquent's book</h2>
+<p>Now that I had a way to load all models into a collection, I figured it would be nice to be able to interact with the
+data in a way similar to which I'm accustomed (<a href="https://laravel.com/docs/12.x/eloquent rel="nofollow external noopener" target="_blank">Eloquent</a>). So of course I built
+out an ORM-esque set of functionality.</p>
+<p>To start, I needed a base (abstract) class from which all of my model classes would inherit. The constructor of my base
+model class would accept an associative array (or <code>FrontMatter</code> class instance, which is included with HydePHP). I overrode
+the PHP magic <code>__get</code> method and used some reflection wizardry to implement ways to access attributes in an object-oriented
+way. I also implemented a way for the child classes to specify &quot;casts&quot; (just for string-backed enums and Carbon instances),
+some basic relationships, and instances of the <code>Markdown</code> class (also shipped with HydePHP). In my YAML files, I referenced
+the names of files containing markdown, allowing me to write things like event descriptions and personal biographies in
+markdown instead of including it in the YAML files themselves.</p>
+<p>Each YAML file uses a unique string (&quot;slug&quot;) as an identifier (instead of incrementing integers).</p>
+<h2>Relationships in YAML</h2>
+<p>For relationships, I wanted a way to denote when models are related to each other. Events belong to Venues (and Venues
+have many Events). People (educators) belong to many Events and vice versa. I implemented some simple classes named
+<code>BelongsTo</code>, <code>HasMany</code>, and <code>BelongsToMany</code>. These relationship classes are responsible for resolving an instance (or
+collection of instances) of related model(s), based upon the relationship method defined on the model class.</p>
+<p><code>BelongsTo</code> and <code>HasMany</code> relationships were easy: simply resolve models based upon a Fully Qualified Class Name and an
+identifier. For <code>BelongsToMany</code>, however, I needed the equivalent of a pivot table. To solve this problem, I ended up with
+an approach that stores pivot data in an additional YAML file; one file per <code>BelongsToMany</code> relationship. This file
+contains a simple list of foreign identifier pairs with each item in the list representing a relationship.</p>
+<h2>Collections for scopes</h2>
+<p>There was one piece of the ORM puzzle missing for my use case, however: scopes. I wanted a way to filter a collection
+of models using a fluent syntax, similar to Eloquent scopes applied to a query builder. To accomplish this I extended
+Illuminate's <code>Collection</code> class, once per type of model, and defined my &quot;scopes&quot; to be methods that return a filtered
+collection.</p>
+<p>With attributes, casts, markdown file references, relationships, and scopes, I now had everything I needed to work with data
+stored in YAML files using my makeshift Object-Relational Mapping feature. The result is being able to programmatically
+interact with models.</p>
+<h2>Putting together progress</h2>
+<p>This is all great, but without a way to display the data to the website's visitors, it isn't more much than an implementation
+exercise. So next, I created classes that extend the aforementioned <code>ModelPage</code> class. These classes defined: an output
+directory for the final pages, the name of a Blade template, the FQCN of the relevant model, and methods for the page's
+title and description.</p>
+<h2>Metadata and Open Graph</h2>
+<p>The methods for the page's title and description are used to add meta tags to the <code>head</code> of the resulting HTML page.
+These methods are easily accessible as HydePHP makes the page instance available in the Blade template as the <code>$page</code>
+variable. There was a key piece missing, however: Open Graph images. Links to pages within this website would surely be
+shared on social media, so of course we need a unique Open Graph image for each page.</p>
+<p>Remember that part earlier in this article where I mentioned HydePHP is built on top of Laravel Zero? This makes the
+framework extremely powerful and ripe for customization. I won't go into much detail here, but in summary I implemented
+a custom command to loop through each defined page and generate an Open Graph image using <a href="https://image.intervention.io/v3 rel="nofollow external noopener" target="_blank">Intervention Image</a>.
+You can read more about how I've done <a href="https://brice.codes/posts/generating-open-graph-images-for-each-post-in-hyde.html rel="nofollow external noopener" target="_blank">something similar for this blog here</a>.</p>
+<p>Now I could reference image file names in my YAML model definitions, run a command, and end up with generated images for
+each page. Naturally, this processes ended up as part of the GitHub Actions deployment workflow, but more on that soon.</p>
+<h2>Enter CloudFormation</h2>
+<p>Of course, this project needed infrastructure. I created CloudFormation templates for:</p>
+<ul>
+<li>the static site itself (S3 + CloudFront distribution)</li>
+<li>the contact form (Lambda + DynamoDB + SES)</li>
+<li>a proxy for Plausible.io (CloudFront with Lambda@Edge)</li>
+</ul>
+<p>The static site template and contact form are pretty routine. The proxy, however, took a bit of tinkering.
+I wanted to proxy <a href="https://plausible.io rel="nofollow external noopener" target="_blank">Plausible.io</a>'s analytics script because it's not uncommon for adblockers to
+block this script (even though Plausible anonymizes most of the data). There are two parts to this: serving the initial
+JavaScript when a request is made to a subdomain of <code>tuli.space</code> at <code>/js/script.js</code>, and proxying requests made to
+<code>/api/event</code> to Plausible's API.</p>
+<h2>Putting theory into practice</h2>
+<p>With all of the above, plus a quick and dirty GitHub Actions workflow, I was ready to deploy the first version of the
+website. All that was remaining was the data, stored in <code>.yml</code> and <code>.md</code> files (and images).</p>
+<p>Very, very quickly, Tuli and I realized how tedious of a process collecting all the data would be, communicating the
+content to me, and me putting it into files that could be committed to the repository. There must be a more efficient way.</p>
+<h2>Notion to the rescue</h2>
+<p>All of our communication about what needed to change was happening in Notion. Wait a minute, I thought, Notion has an API!
+I created four databases in Notion, which would become the source of truth for all website resources: people, events,
+venues, and blog posts. With the help of Claude Code, I again created some custom commands.</p>
+<p>This time, the commands were responsible for querying for data via Notion's API and writing it in predetermined formats
+to YAML files. Markdown content came from the Notion database item's page itself, which was transformed from rich text.
+Images were downloaded separately, converted to <code>.webp</code> (if not already done), and placed in the <code>_media</code> directory. I
+also created a <code>sync:all</code> command, which invokes all other sync commands.</p>
+<p>Now, all I had to do each time Tuli needed to make an update to a detail page's resource, was run a command, commit,
+and push to GitHub. The GitHub actions workflow took care of the rest.</p>
+<h2>Tentative success</h2>
+<p>At this point I was feeling pretty accomplished. The combination of HydePHP and Notion had been successfully
+frankensteined into an improvised CMS. There was only one problem remaining: I still had to personally run commands
+from my laptop every time Tuli made a change. Close, but no cigar.</p>
+<p>I theorized about how I could transfer my command-invoking powers to Tuli. Briefly, I considered setting up the project
+on Tuli's laptop and creating a shortcut of some kind to do the deed. This didn't feel quite right because updating the
+site was still tied to <em>a</em> laptop, even if it wasn't <em>my</em> laptop.</p>
+<h2>Simple button</h2>
+<p>As a general rule when working with technology, I like to imagine what I (or a client) <em>wants</em> without considering
+what is <em>technically feasible</em>. Then, I work backwards a trim scope into something that can be accomplish. What did I
+want in this case? A simple button. All I wanted was a button somewhere Tuli could click that would kick off the entire
+process. Is that too much to ask?</p>
+<h2>Remaining pieces</h2>
+<p>Lots of hidden requirements revealed themselves once I pulled on the threads of my desired button. If I spun up a simple
+static site with a single button, I'd still need to protect the site with some form of authorization. Furthermore,
+once this theoretical button was clicked, there still needed to be somewhere the actual sync command was run. Not to
+mention a way for the result to be committed to source control.</p>
+<p>It turned out the answer was already staring me in the face: Notion and GitHub Actions. Notion supports firing a webhook
+as the result of a button click, and GitHub Actions supports triggering workflows via API calls. Unfortunately, as of
+writing this article, Notion's outgoing webhooks do not support including a body for the request. This is an issue
+because GitHub's API requires specifying the branch in a JSON payload when triggering a workflow.</p>
+<h2>One more CloudFormation template</h2>
+<p>First I tried using <a href="https://zapier.com rel="nofollow external noopener" target="_blank">Zapier</a>, which worked. However, it only worked on a paid plan due to tier
+limitations (I was on the free trial). I couldn't justify paying for Zapier, forever, for a single button. Instead, I
+reached for AWS Lambda. Using API Gateway to sit in front of a Lambda function for invocation used to be a requirement
+for something like this, but in 2022, AWS introduced <a href="https://aws.amazon.com/blogs/aws/announcing-aws-lambda-function-urls-built-in-https-endpoints-for-single-function-microservices/ rel="nofollow external noopener" target="_blank">Lambda Function URLs</a>.</p>
+<p>This means all I had to do was create a Lambda function that, among verifying the request used a valid secret, triggered
+a workflow in GitHub Actions. This workflow was responsible for running the <code>sync:all</code> command, opening a Pull Request
+with the resulting files, and merging it. Upon merge, a secondary workflow kicked off to deploy (as a commit was just
+pushed to <code>main</code>, after all). One more CloudFormation template later, I was ready for my simple button.</p>
+<h2>Status update</h2>
+<p>As soon as I tested the button in Notion, another problem made itself painfully obvious: how would I know if it worked?
+Short of refreshing the page looking for specific changes and asking Tuli to create a GitHub account, we were deploying
+in the dark.</p>
+<p>I returned to my CloudFormation template and added some more functionality. When a <code>GET</code> request to the same URL came
+through, the Lambda function would respond with HTML displaying the status. This status is either that the project was
+currently being deployed, or how long ago the project was last deployed. For bonus points, I added a simple JavaScript
+<code>setTimeout</code> to refresh the page periodically.</p>
+<h2>Conclusion</h2>
+<p>Finally, the project had reached maturity and was ready for regular use, sans developer effort. Tuli had a control panel
+ready at a moment's notice, including ways to edit content, upload images, deploy changes, and monitor the deployment.
+This could even be done from a mobile device.</p>
+<p><img src="https://brice.codes/media/2026-03-05-managing-a-static-sites-content-with-notion-tuli-space.png" alt="tuli.space Notion control panel" /></p>
+<p>Not too shabby for a static site on a budget.</p>
+
+            </div>
+    <span class="sr-only">End of article</span>
+            <footer class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <div class="bg-gray-50 dark:bg-gray-800/50 rounded-lg p-6 shadow-sm">
+                <div class="flex flex-col sm:flex-row items-start gap-4">
+                    <div class="shrink-0 hidden sm:block">
+                                                    <div class="h-16 w-16 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center">
+                                <svg class="h-8 w-8 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
+                                </svg>
+                            </div>
+                                            </div>
+                    
+                    <div class="flex-1">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100 mt-0">About the Author</h3>
+                        <p class="my-1 text-gray-700 dark:text-gray-300">Thanks to <strong>Brice Hartmann</strong> for contributing this insightful article to the HydePHP community.</p>
+                        
+                        <div class="flex flex-wrap gap-3 mt-2">
+                            <span class="text-sm text-gray-500 dark:text-gray-400 font-semibold">Author links:</span>
+                                                            <a href="https://brice.codes?ref=hydephp.com" class="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300" rel="nofollow external noopener" target="_blank">
+                                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418" />
+                                    </svg>
+                                    Website
+                                </a>
+                                                        
+                                                        
+                                                            <a href="https://github.com/bricehartmann" class="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300" rel="nofollow external noopener" target="_blank">
+                                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    GitHub
+                                </a>
+                                                        
+                                                            <a href="https://linkedin.com/in/brice-hartmann" class="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300" rel="nofollow external noopener" target="_blank">
+                                    <svg class="h-4 w-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                    </svg>
+                                    LinkedIn
+                                </a>
+                                                    </div>
+                    </div>
+                </div>
+                
+                <div class="mt-5 text-center">
+                    <div class="text-sm text-gray-500 dark:text-gray-400">
+                        <p>Want to contribute a post to HydePHP? We'd love to hear from you!</p>
+                        <a href="https://hydephp.com/posts/guest-posts/" class="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-medium mt-0">
+                            <svg class="w-4 h-4 mr-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+                            </svg>
+                            Submit Your Own Guest Post
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </article>
+    </main>
+
+ 
+    </section>
+
+    <footer class="px-4 pt-12 pb-6 dark:text-white dark:bg-slate-900 bg-gray-100" style="margin-top: -1px;">
+	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
+		<div class="block md:w-1/3 px-2 mx:px-0">
+			<span class="flex items-center w-fit">
+				<a href="../../" class="flex items-center mr-4">
+					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
+					
+					<span class="ml-2 text-lg font-black">HydePHP</span>
+				</a>
+			</span>
+			
+			<p class="font-light text-left text-gray-700 text-sm pl-1 pr-6 lg:pr-8 pt-2 dark:text-gray-300 ">
+				Create websites, blogs, documentation sites, and more, with the power of Laravel and the simplicity of Markdown. Your next website is minutes away from becoming a reality.
+			</p>
+		</div>
+		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
+			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
+				<li><a href="../../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					Documentation</a></li>
+					
+					<li><a href="../../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Community Portal
+					</a></li>
+					
+					<li><a href="../../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Legal Information
+					</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Developers</li>
+					<li><a href="../../community.html#developers" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Developer Resources
+					</a></li>
+					<li><a href="https://github.com/hydephp/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">GitHub Organization</a></li>
+					<li><a href="https://github.com/hydephp/develop" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">Source Code</a></li>
+				</ul>
+				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
+					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
+					<li><a href="../../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Sitemap
+					</a></li>
+					<li><a href="../../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						Blog Posts
+					</a></li>
+					
+					<li><a href="../../feed.xml" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+						RSS Feed
+					</a></li>
+				</ul>
+				<div class="flex flex-col w-full text-gray-300 dark:text-gray-700">
+					<div class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Connect</div>
+					<div class="flex justify-start pl-4 mt-2">
+						
+						<a title="GitHub Organization" class="items-center block mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://github.com/HydePHP">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+							</svg>
+						</a>
+						<a title="Twitter &commat;HydeFramework" class="items-center block  mr-4  dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://twitter.com/HydeFramework">
+							<svg viewBox="0 0 24 24" class="w-5 h-5 fill-current" xmlns="http://www.w3.org/1000/svg">
+								<path d="M23.954 4.569a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.691 8.094 4.066 6.13 1.64 3.161a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.061a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63a9.936 9.936 0 002.46-2.548l-.047-.02z" />
+							</svg>
+						</a>
+						<a title="Discord Server" class="items-center block  mr-4 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="https://discord.hydephp.com">
+							<svg class="w-5 h-5 fill-current"  width="71" height="55" viewBox="0 0 71 55" fill="none" xmlns="http://www.w3.org/1000/svg"> <g clip-path="url(#clip0)"> <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill=""/> </g> <defs> <clipPath id="clip0"> <rect width="71" height="55" fill="white"/> </clipPath> </defs> </svg>
+						</a>
+						<a title="Contact Information" class="items-center block dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white" target="_blank" rel="noopener" href="/contact">
+							<svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm6.93 6h-2.95c-.32-1.25-.78-2.45-1.38-3.56 1.84.63 3.37 1.91 4.33 3.56zM12 4.04c.83 1.2 1.48 2.53 1.91 3.96h-3.82c.43-1.43 1.08-2.76 1.91-3.96zM4.26 14C4.1 13.36 4 12.69 4 12s.1-1.36.26-2h3.38c-.08.66-.14 1.32-.14 2 0 .68.06 1.34.14 2H4.26zm.82 2h2.95c.32 1.25.78 2.45 1.38 3.56-1.84-.63-3.37-1.9-4.33-3.56zm2.95-8H5.08c.96-1.66 2.49-2.93 4.33-3.56C8.81 5.55 8.35 6.75 8.03 8zM12 19.96c-.83-1.2-1.48-2.53-1.91-3.96h3.82c-.43 1.43-1.08 2.76-1.91 3.96zM14.34 14H9.66c-.09-.66-.16-1.32-.16-2 0-.68.07-1.35.16-2h4.68c.09.65.16 1.32.16 2 0 .68-.07 1.34-.16 2zm.25 5.56c.6-1.11 1.06-2.31 1.38-3.56h2.95c-.96 1.65-2.49 2.93-4.33 3.56zM16.36 14c.08-.66.14-1.32.14-2 0-.68-.06-1.34-.14-2h3.38c.16.64.26 1.31.26 2s-.1 1.36-.26 2h-3.38z"/></svg>
+						</a>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-4 mb-6 prose mx-auto text-center text-sm dark:prose-invert">
+					</div>
+		<div class="relative pt-6 text-center text-gray-600 dark:text-gray-300 border-t border-gray-300 dark:border-gray-800 "> 
+			<div class="prose mx-auto text-center text-sm dark:prose-invert">
+				<p>Site proudly built with <a href="https://github.com/hydephp/hyde">HydePHP</a> 🎩</p>
+			</div>
+			<a href="#app" aria-label="Go to top of page" class="float-right bottom-0 right-4 absolute">
+				<button title="Scroll to top">
+					<svg role="presentation" class="fill-current text-gray-500 h-6 w-6" xmlns="http://www.w3.org/1000/svg" viewBox="0 0 20 20">
+						<path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+					</svg>
+				</button>
+			</a>
+		</div>
+	</div>
+</footer> 
+
+    <script defer src="https://hydephp.com/media/app.js?v=ab671ebd"></script>
+
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
+
+<script>
+    function toggleTheme() {
+        if (localStorage.getItem('color-theme') === 'dark' || !('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem('color-theme', 'light');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'light');
+        } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem('color-theme', 'dark');
+            document.getElementById('meta-color-scheme').setAttribute('content', 'dark');
+        }
+    }
+</script>
+
+
+
+ 
+</body>
+</html>
