@@ -42,7 +42,11 @@
     @endif
     <div aria-label="Article body" itemprop="articleBody">
         @if($page->matter('guest_post'))
-            {!! preg_replace('/<a\s+(?![^>]*rel=)[^>]*(href=[\'"]https?:[^"\']*)(?![^>]*rel=)[^>]*>/i', '<a $1 rel="nofollow external noopener" target="_blank">', $content) !!}
+            {!! preg_replace(
+                '/<a(\s+(?:(?!rel=)[^>])*)href=([\'""])(https?:[^"\']*)\2((?:\s+(?:(?!rel=)[^>])*)?)\s*>/i',
+                '<a$1href=$2$3$2$4 rel="nofollow external noopener" target="_blank">',
+                $content
+            ) !!}
         @else
             {{ $content }}
         @endif
