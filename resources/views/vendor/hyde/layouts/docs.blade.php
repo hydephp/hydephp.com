@@ -19,10 +19,12 @@
             </div>
             @if(config('docs.table_of_contents.enabled', true) && isset($page->markdown))
                 @php
-                    $tocItems = (new \Hyde\Framework\Actions\GeneratesTableOfContents($page->markdown))->execute();
+                    // Strip fenced code blocks before parsing so headings inside code examples don't leak into the TOC
+                    $tocMarkdown = preg_replace('/^```[\s\S]*?^```\s*$/m', '', (string) $page->markdown);
+                    $tocItems = (new \Hyde\Framework\Actions\GeneratesTableOfContents($tocMarkdown))->execute();
                 @endphp
                 @if(!empty($tocItems))
-                    <aside id="on-this-page" class="hidden xl:block w-56 shrink-0 sticky top-0 h-screen overflow-y-auto py-12 pr-6 print:hidden">
+                    <aside id="on-this-page" class="w-56 shrink-0 sticky top-0 h-screen overflow-y-auto print:hidden">
                         <div class="border-l border-gray-200 dark:border-gray-700 pl-4">
                             <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">On this page</h5>
                             <x-hyde::docs.table-of-contents :items="$tocItems" />

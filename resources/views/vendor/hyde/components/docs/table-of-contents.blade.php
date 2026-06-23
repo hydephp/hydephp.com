@@ -6,7 +6,7 @@
             <li class="my-0.5">
                 @if(isset($item['identifier']))
                     <a href="#{{ $item['identifier'] }}" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
-                        {{ $item['title'] }}
+                        {{ preg_replace('/\[([^\]]+)\]\([^\)]*\)/', '$1', $item['title']) }}
                     </a>
                 @endif
 
