@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=b11c7ed1">
     
 
     
@@ -667,351 +667,7 @@ button[aria-label="Open search window"]:hover,
             Documentation Pages
         </a>
 
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents pb-3">
-                    <li class="my-0.5">
-                                    <a href="#introduction-to-hyde-documentation-pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction to Hyde Documentation Pages
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#best-practices-and-hyde-expectations" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Best Practices and Hyde Expectations
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#filenames" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Filenames
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#advanced-usage-and-customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Advanced Usage and Customization
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#creating-documentation-pages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Creating Documentation Pages
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-is-optional" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter Is Optional
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#yaml" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        ```yaml
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#priority-5" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        priority: 5
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#dynamic-content-generation" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Dynamic Content Generation
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-reference" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter Reference
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#sidebar-ordering" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Ordering
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#basic-priority-syntax" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Basic Priority Syntax
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#explicit-priority-syntax" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Explicit Priority Syntax
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-labels" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Labels
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-grouping" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Grouping
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#using-front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Using Front Matter
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#automatic-subdirectory-based-grouping" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Automatic Subdirectory-Based Grouping
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hiding-items" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Hiding Items
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Customization
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#output-directory" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Output Directory
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#automatic-navigation-menu" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Automatic Navigation Menu
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-header-name" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Header Name
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-footer-customization" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Footer Customization
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#sidebar-page-order" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Sidebar Page Order
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#setting-sidebar-group-labels" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Setting Sidebar Group Labels
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#setting-sidebar-group-priorities" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Setting Sidebar Group Priorities
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#numerical-prefix-sidebar-ordering" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Numerical Prefix Sidebar Ordering
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#important-notes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Important Notes
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#using-numerical-prefix-ordering-in-subdirectories" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Using Numerical Prefix Ordering in Subdirectories
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#table-of-contents-settings" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Table of Contents Settings
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#using-flattened-output-paths" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Using Flattened Output Paths
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#search-feature" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Search Feature
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#using-the-search" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Using the Search
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#search-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Search Features
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hiding-pages-from-indexing" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Hiding Pages from Indexing
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#live-search-with-the-realtime-compiler" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Live Search with the Realtime Compiler
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#automatic-edit-page-button" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Automatic &quot;Edit Page&quot; Button
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#introduction" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Configuration
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#changing-the-button-text" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Changing the Button Text
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#changing-the-position" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Changing the Position
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#adding-a-button-icon" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Adding a Button Icon
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#changing-the-blade-view" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Changing the Blade View
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-            </li>
+    </li>
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/managing-assets" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Managing and Compiling Assets
@@ -1205,7 +861,9 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+</style>        <div class="flex">
+            <div class="flex-1 min-w-0">
+                <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Creating Documentation Pages</h1>
@@ -1253,7 +911,7 @@ button[aria-label="Open search window"]:hover,
                     })(this)"
                     class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
                 >
-                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg width="14" height="14" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
@@ -1959,6 +1617,311 @@ For example: Both <code>_docs/01-installation.md</code> and <code>_docs/01_insta
 </p>
         </footer>
     </article>
+            </div>
+                                                                <aside id="on-this-page" class="hidden xl:block w-56 shrink-0 sticky top-0 h-screen overflow-y-auto py-12 pr-6 print:hidden">
+                        <div class="border-l border-gray-200 dark:border-gray-700 pl-4">
+                            <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">On this page</h5>
+                            <ul class="pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction-to-hyde-documentation-pages" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Introduction to Hyde Documentation Pages
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#best-practices-and-hyde-expectations" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Best Practices and Hyde Expectations
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#filenames" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Filenames
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#advanced-usage-and-customization" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Advanced Usage and Customization
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#creating-documentation-pages" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Creating Documentation Pages
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-is-optional" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter Is Optional
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#yaml" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        ```yaml
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#priority-5" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        priority: 5
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#dynamic-content-generation" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Dynamic Content Generation
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-reference" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter Reference
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#sidebar-ordering" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Ordering
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#basic-priority-syntax" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Basic Priority Syntax
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#explicit-priority-syntax" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Explicit Priority Syntax
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-labels" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Labels
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-grouping" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Grouping
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#using-front-matter" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Using Front Matter
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-subdirectory-based-grouping" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Automatic Subdirectory-Based Grouping
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hiding-items" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Hiding Items
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#customization" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Customization
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#output-directory" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Output Directory
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-navigation-menu" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Automatic Navigation Menu
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-header-name" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Header Name
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-footer-customization" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Footer Customization
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#sidebar-page-order" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Sidebar Page Order
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#setting-sidebar-group-labels" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Setting Sidebar Group Labels
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#setting-sidebar-group-priorities" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Setting Sidebar Group Priorities
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#numerical-prefix-sidebar-ordering" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Numerical Prefix Sidebar Ordering
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#important-notes" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Important Notes
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-numerical-prefix-ordering-in-subdirectories" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Using Numerical Prefix Ordering in Subdirectories
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#table-of-contents-settings" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Table of Contents Settings
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-flattened-output-paths" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Using Flattened Output Paths
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#search-feature" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Search Feature
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#using-the-search" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Using the Search
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#search-features" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Search Features
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hiding-pages-from-indexing" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Hiding Pages from Indexing
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#live-search-with-the-realtime-compiler" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Live Search with the Realtime Compiler
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-edit-page-button" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Automatic &quot;Edit Page&quot; Button
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Introduction
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#configuration" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Configuration
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#changing-the-button-text" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Changing the Button Text
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#changing-the-position" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Changing the Position
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#adding-a-button-icon" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Adding a Button Icon
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#changing-the-blade-view" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Changing the Blade View
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                        </div>
+                    </aside>
+                                    </div>
     </main>
 
     <div id="support">
