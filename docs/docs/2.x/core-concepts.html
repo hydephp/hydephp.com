@@ -38,7 +38,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=2f3c434f">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=b11c7ed1">
     
 
     
@@ -623,291 +623,7 @@ button[aria-label="Open search window"]:hover,
             Core Concepts
         </a>
 
-                    <span class="sr-only">Table of contents</span>
-            <ul class="table-of-contents pb-3">
-                    <li class="my-0.5">
-                                    <a href="#introduction-to-the-hyde-framework" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Introduction to the Hyde Framework
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#the-hydecli" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        The HydeCLI
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#directory-structure" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Directory Structure
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-models" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Models
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#file-autodiscovery" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        File Autodiscovery
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#paths-identifiers-and-route-keys" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Paths, Identifiers, and Route Keys
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#convention-over-configuration" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Convention Over Configuration
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-in-markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter in Markdown
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        ```markdown
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#date-2023-03-14" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        date: &quot;2023-03-14&quot;
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown-comes-here" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Markdown Comes Here
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#front-matter-in-blade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter in Blade
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#automatic-routing" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Automatic Routing
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#global-page-data" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Global Page Data
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#terminology" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Terminology
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#table-of-contents" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Table of contents
-                    </a>
-                
-                                    <ul class="pl-2">
-                    <li class="my-0.5">
-                                    <a href="#tools" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Tools
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#languages" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Languages
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#general-concepts" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        General Concepts
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hydephp-features" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HydePHP Features
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#hydephp" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HydePHP
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#laravel" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Laravel
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#front-matter" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Front Matter
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#markdown" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Markdown
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#blade" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Blade
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#yaml" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        YAML
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#php" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        PHP
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#html" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        HTML
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#tailwind-css" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Tailwind CSS
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#composer" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Composer
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#static-sites" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Static Sites
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#version-control" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Version Control
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#git" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Git
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#autodiscovery" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Autodiscovery
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-types" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Types
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#page-identifiers" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Page Identifiers
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#routes" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Routes
-                    </a>
-                
-                            </li>
-                    <li class="my-0.5">
-                                    <a href="#route-keys" class="-ml-8 pl-8 opacity-80 hover:opacity-100 hover:bg-gray-200/20 transition-all duration-300">
-                        <span class="text-[75%] opacity-50 hover:opacity-100 transition-opacity duration-300">#</span>
-                        Route Keys
-                    </a>
-                
-                            </li>
-            </ul>
-                            </li>
-            </ul>
-            </li>
+    </li>
                                             <li class="sidebar-item -ml-4 pl-4" role="listitem">
             <a href="../../docs/2.x/front-matter" class="-ml-8 pl-4 py-1 px-2 block border-l-[0.325rem] border-transparent transition-colors duration-300 ease-in-out hover:bg-black/10">
             Front Matter
@@ -1145,7 +861,9 @@ button[aria-label="Open search window"]:hover,
 </div>
 <style>
 @media (min-width: 768px){ #search-menu-button{ display:none !important; } }
-</style>        <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
+</style>        <div class="flex">
+            <div class="flex-1 min-w-0">
+                <article id="document" itemscope itemtype="https://schema.org/Article" class="mx-auto lg:ml-8 max-w-3xl p-12 md:px-16 max-w-[1000px] min-h-[calc(100vh_-_4rem)] prose dark:prose-invert torchlight-enabled">
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Core HydePHP Concepts</h1>
@@ -1193,7 +911,7 @@ button[aria-label="Open search window"]:hover,
                     })(this)"
                     class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
                 >
-                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <svg width="14" height="14" style="flex-shrink:0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                         <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                         <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
                     </svg>
@@ -1827,6 +1545,257 @@ identifier binding Page objects to Route objects, and is used to generate the fi
 </p>
         </footer>
     </article>
+            </div>
+                                                                <aside id="on-this-page" class="hidden xl:block w-56 shrink-0 sticky top-0 h-screen overflow-y-auto py-12 pr-6 print:hidden">
+                        <div class="border-l border-gray-200 dark:border-gray-700 pl-4">
+                            <h5 class="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-3">On this page</h5>
+                            <ul class="pb-3">
+                    <li class="my-0.5">
+                                    <a href="#introduction-to-the-hyde-framework" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Introduction to the Hyde Framework
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#the-hydecli" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        The HydeCLI
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#directory-structure" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Directory Structure
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#page-models" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Page Models
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#file-autodiscovery" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        File Autodiscovery
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#paths-identifiers-and-route-keys" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Paths, Identifiers, and Route Keys
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#convention-over-configuration" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Convention Over Configuration
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#front-matter" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-in-markdown" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter in Markdown
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        ```markdown
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#date-2023-03-14" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        date: &quot;2023-03-14&quot;
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown-comes-here" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Markdown Comes Here
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#front-matter-in-blade" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter in Blade
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#automatic-routing" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Automatic Routing
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#global-page-data" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Global Page Data
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#terminology" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Terminology
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#table-of-contents" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Table of contents
+                    </a>
+                
+                                    <ul class="pl-3">
+                    <li class="my-0.5">
+                                    <a href="#tools" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Tools
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#languages" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Languages
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#general-concepts" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        General Concepts
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hydephp-features" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        HydePHP Features
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#hydephp" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        HydePHP
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#laravel" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Laravel
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#front-matter" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Front Matter
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#markdown" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Markdown
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#blade" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Blade
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#yaml" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        YAML
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#php" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        PHP
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#html" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        HTML
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#tailwind-css" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Tailwind CSS
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#composer" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Composer
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#static-sites" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Static Sites
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#version-control" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Version Control
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#git" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Git
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#autodiscovery" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Autodiscovery
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#page-types" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Page Types
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#page-identifiers" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Page Identifiers
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#routes" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Routes
+                    </a>
+                
+                            </li>
+                    <li class="my-0.5">
+                                    <a href="#route-keys" class="block opacity-70 hover:opacity-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200 text-sm leading-snug py-0.5">
+                        Route Keys
+                    </a>
+                
+                            </li>
+            </ul>
+                            </li>
+            </ul>
+                        </div>
+                    </aside>
+                                    </div>
     </main>
 
     <div id="support">
