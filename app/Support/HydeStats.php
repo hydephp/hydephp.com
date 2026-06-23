@@ -9,6 +9,23 @@ class HydeStats
 {
     public static function fetch(): array
     {
+        // TODO: Remove this fake array and uncomment the API logic when the analytics service is back online.
+        return [
+            // Analytics API (Mocked Data)
+            'packagist_installs'   => 28100,
+            'github_views'         => 78400,
+            'github_clones'        => 203600,
+
+            // GitHub repo API (Mocked Data)
+            'stars'       => 449,
+            'forks'       => null,
+            'watchers'    => null,
+            'open_issues' => null,
+
+            'fetched_at'  => now()->toIso8601String(),
+        ];
+
+        /* Original logic commented out
         // Cache for 3 hours; let exceptions bubble so the build fails on errors.
         return Cache::remember('hyde.stats.v1', now()->addHours(3), function () {
             $analytics = Http::timeout(10)
@@ -40,6 +57,7 @@ class HydeStats
                 'fetched_at'  => now()->toIso8601String(),
             ];
         });
+        */
     }
 
     public static function short(int|float|null $n): string
