@@ -894,7 +894,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Automatic Routing</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -924,6 +925,90 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Automatic Routing
+
+&gt;info This covers an intermediate topic which is not required for basic usage, but is useful if you want to use the framework to design custom Blade templates.
+
+### High-level overview
+
+If you&#039;ve ever worked in an MVC framework, you are probably familiar with the concept of routing.
+And you are probably also familiar with how boring and tedious it can be. Thankfully, Hyde takes the pain out of routing
+through the Hyde Autodiscovery process.
+
+Internally, when booting the HydeCLI application, Hyde will automatically discover all the content files in the source
+directories, and create a route index for all of them. This index works as a two-way link between source files and compiled files.
+
+Don&#039;t worry if this sounds complex, as the key takeaway is that the index is created and maintained automatically.
+Nevertheless, the routing system provides several helpers that you can optionally use in your Blade views to
+automatically resolve relative links and other useful features.
+
+You can see all the routes and their corresponding source files by running the `hyde route:list` command.
+
+```bash
+php hyde route:list
+```
+
+### Accessing routes
+
+Each route in your site is represented by a Route object. It&#039;s very easy to get a Route object instance from the Router&#039;s index.
+There are a few ways to do this, but most commonly you&#039;ll use the Routes facade&#039;s `get()` method where you provide a route key,
+and it will return the Route object. The route key is generally `&lt;page-output-directory/page-identifier&gt;`. Here are some examples:
+
+```php
+// Source file: _pages/index.md/index.blade.php
+// Compiled file: _site/index.html
+Routes::get(&#039;index&#039;)
+
+// Source file: _posts/my-post.md
+// Compiled file: _site/posts/my-post.html
+Routes::get(&#039;posts/my-post&#039;)
+
+// Source file: _docs/readme.md
+// Compiled file: _site/docs/readme.html
+Routes::get(&#039;docs/readme&#039;)
+```
+
+### Using the `x-link` component
+
+When designing Blade layouts it can be useful to use the `x-link` component to automatically resolve relative links.
+
+You can of course use it just like a normal anchor tag like so:
+
+```blade
+&lt;x-link href=&quot;index.html&quot;&gt;Home&lt;/x-link&gt;
+```
+
+But where it really shines is when you supply a route. This will then resolve the proper relative link, and format it to use pretty URLs if your site is configured to use them.
+
+```blade
+&lt;x-link :href=&quot;Routes::get(&#039;index&#039;)&quot;&gt;Home&lt;/x-link&gt;
+```
+
+You can also supply extra attributes like classes:
+
+```blade
+&lt;x-link :href=&quot;Routes::get(&#039;index&#039;)&quot; class=&quot;btn btn-primary&quot;&gt;Home&lt;/x-link&gt;
+```</textarea>
+            </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
             <blockquote class="border-blue-500">

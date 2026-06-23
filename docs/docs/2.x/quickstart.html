@@ -949,7 +949,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Quickstart Guide</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -979,6 +980,105 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Quickstart Guide
+
+## Installing HydePHP Using Composer
+
+The recommended method of installing Hyde is using Composer, which installs the required dependencies on a per-project basis.
+
+```bash
+composer create-project hyde/hyde
+```
+
+### Requirements
+
+Hyde is based on [Laravel 11](https://laravel.com/docs/11.x/releases)
+which requires a minimum PHP version of 8.2.
+You should also have [Composer](https://getcomposer.org/) installed.
+
+To use some features like [compiling your own assets](managing-assets)
+you also need NodeJS and NPM.
+
+## Using the Hyde CLI
+
+The main way to interact with Hyde is through the [HydeCLI](console-commands), a Laravel Artisan-based command-line interface. Learn more about the HydeCLI in the [console commands](console-commands) documentation.
+
+## Starting a Development Server
+
+To make previewing your site a breeze you can use the realtime compiler, which builds your pages on the fly.
+
+```bash
+php hyde serve
+```
+Simply run the serve command, and you will be able to preview your site at [http://localhost:8080](http://localhost:8080).
+
+## Creating Content
+
+### Directory structure
+
+Creating content with Hyde is easy! Simply place source files in one of the source directories,
+and Hyde will automatically discover, parse, and compile them to static HTML.
+The directory and file extension of a source file will determine how HydePHP parses and compiles it.
+Please see the [directory structure](core-concepts#directory-structure) section for more information.
+
+### Scaffolding files
+
+You can scaffold blog post files using the `php hyde make:post` command which automatically creates the front matter, based on your input selections.
+You can also scaffold pages with the `php hyde make:page` command.
+
+```bash
+php hyde make:post
+php hyde make:page
+```
+
+### Compiling to static HTML
+
+Now that you have some amazing content, you&#039;ll want to compile your site into static HTML. Thankfully, this is as easy as executing the `build` command, after which your compiled site is stored in the `_site` directory.
+
+```bash
+php hyde build
+```
+
+When building the site, Hyde will scan your source directories for files and compile them into static HTML using the appropriate layout depending
+on what kind of page it is. You don&#039;t have to worry about routing as Hyde takes care of everything, including creating navigation menus!
+
+### Managing assets
+
+Hyde comes bundled with a precompiled and minified `app.css` file, containing all the Tailwind you need for the default views meaning that you don&#039;t even need to use NPM. However, Hyde is already configured to use Vite to compile your assets if you feel like there&#039;s a need to build the assets yourself. See more on the [Managing Assets](managing-assets) page.
+
+### Deploying your site
+
+You are now ready to show your site to the world! Simply copy the `_site` directory to your web server&#039;s document root, and you&#039;re ready to go.
+
+You can even use GitHub Pages to host your site for free. That&#039;s what the Hyde website does, using an Actions CI workflow that automatically builds and deploys this site.
+
+## Further Reading
+
+Here&#039;s some ideas of what to read next:
+
+- [Architecture Concepts &amp; Directory Structure](core-concepts)
+- [Console Commands with the HydeCLI](console-commands)
+- [Creating Blog Posts](blog-posts)</textarea>
+            </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
             <h2 id="installing-hydephp-using-composer" class="group w-fit scroll-mt-2">Installing HydePHP Using Composer<a href="#installing-hydephp-using-composer" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>

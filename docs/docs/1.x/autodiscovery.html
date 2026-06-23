@@ -924,7 +924,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Autodiscovery</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -954,6 +955,126 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Autodiscovery
+
+## Introduction
+
+HydePHP aims to reduce the amount of configuration you need to do to get a site up and running.
+To that end, Hyde uses a process called autodiscovery to automatically find and register your pages.
+
+This article will go into detail about how autodiscovery works as well as the lifecycle of the HydeKernel.
+
+### The short version
+
+Hyde will use the information in the page model classes to scan the source directories for matching files which are
+parsed using instructions from the model&#039;s class, resulting in data used to construct objects that get stored in the HydeKernel.
+
+### Prerequisites
+
+Before reading this article, you should be familiar with the following concepts:
+-  [Page Models](page-models)
+-  [The HydeKernel](the-hydekernel)
+
+## Booting Pipeline
+
+The autodiscovery is run when the HydeKernel boots. It does so in three distinct steps, which run in sequence as each
+step depends on the previous one. Each discovery step runs in a `FoundationCollection` which both runs the actual
+discovery process and stores the discovered data in memory.
+
+#### The steps are as follows:
+
+1. **Step one:** The file collection discovers all the source files and stores them in memory
+2. **Step two:** The page collection parses all the source files into page model objects
+3. **Step three:** The route collection generates route objects for all the pages
+
+#### Interacting with the collections
+
+Usually, you will interact with the collection data through intermediaries.
+* For example, if you call `MarkdownPost::get(&#039;my-post&#039;)`, Hyde will retrieve that page from the page collection.
+* If you call `Routes::get(&#039;index&#039;)`, Hyde will retrieve that route from the route collection.
+
+## The HydeKernel
+
+If you have not yet read the [HydeKernel Documentation](the-hydekernel), here&#039;s a quick recap:
+
+The HydeKernel encapsulates a HydePHP project, providing helpful methods for interacting with it.
+It is also responsible for booting the application, which includes the autodiscovery process.
+
+The kernel is created very early on in the application lifecycle, in the `bootstrap.php` file, where it is also bound
+as a singleton into the application service container.
+
+At this point you might be wondering why we&#039;re talking about the kernel when this article is about autodiscovery.
+Well, as you&#039;ll see in just a moment, the kernel is responsible for initiating the autodiscovery process.
+The kernel is also where the discovered data is stored in memory, so it&#039;s important to understand how it works.
+
+### The kernel lifecycle
+
+Now that we know the role of the HydeKernel, let&#039;s take a look at its lifecycle. The kernel is &quot;lazy-booted&quot;, meaning
+that all the heavy lifting only happens when you actually need it. Once booted, the kernel data will stay in memory
+until the console application is terminated.
+
+The kernel data is primarily stored in three collections that get generated during the kernel&#039;s boot process.
+Let&#039;s take a look at a simplified version of the kernel&#039;s boot method to see how this works.
+
+```php
+public function boot(): void
+{
+    $this-&gt;files = FileCollection::boot($this);
+    $this-&gt;pages = PageCollection::boot($this);
+    $this-&gt;routes = RouteCollection::boot($this);
+
+    // Scroll down to see what this is used for
+    $this-&gt;booted = true;
+}
+```
+
+Here you&#039;ll see that we boot the three collections. This is where all the autodiscovery magic happens!
+
+#### Deep dive into lazy-booting
+
+If you&#039;re curious about how the kernel is lazy-booted, here&#039;s how it works!
+Feel free to skip this section if this doesn&#039;t interest you.
+
+```php
+// This will boot the kernel if it hasn&#039;t been booted yet
+public function pages(): PageCollection
+{
+    $this-&gt;needsToBeBooted();
+
+    return $this-&gt;pages;
+}
+
+// This is the method that triggers the boot process
+protected function needsToBeBooted(): void
+{
+    if (! $this-&gt;booted) {
+        $this-&gt;boot();
+    }
+}
+```
+
+Yeah, it&#039;s really unglamorous I know. But it works! Having it like this will ensure that any time you call `Hyde::pages()`,
+that underlying collection will always have been booted and be ready to use.</textarea>
+            </div>
         </header>
         <div class="border-l-4 bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:text-amber-100 dark:border-amber-800 mt-3 -mb-2 print:hidden" aria-live="polite">
     <div class="pl-4 pr-3 py-3">

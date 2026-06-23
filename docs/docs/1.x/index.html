@@ -849,7 +849,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Elegant and Powerful Static Site Generator</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -879,6 +880,95 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Elegant and Powerful Static Site Generator
+
+&lt;style&gt;.images-inline img { display: inline; margin: 4px 2px;}&lt;/style&gt;
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/hyde/framework?include_prereleases)](https://packagist.org/packages/hyde/framework)
+[![Total Downloads on Packagist](https://img.shields.io/packagist/dt/hyde/framework)](https://packagist.org/packages/hyde/framework)
+[![Test Coverage](https://codecov.io/gh/hydephp/develop/branch/master/graph/badge.svg?token=G6N2161TOT)](https://codecov.io/gh/hydephp/develop)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hydephp/develop/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hydephp/develop/?branch=master)
+[![Psalm Type Coverage](https://shepherd.dev/github/hydephp/develop/coverage.svg)](https://shepherd.dev/github/hydephp/develop)
+![License MIT](https://img.shields.io/github/license/hydephp/hyde)
+{.images-inline .not-prose}
+
+## About HydePHP
+
+HydePHP is a Static Site Generator focused on writing content, not markup. With Hyde, it is easy to create static
+websites, blogs, and documentation pages using Markdown and (optionally) Laravel&#039;s Blade.
+
+Operated entirely through the command-line, HydePHP provides developers with a fast and efficient way to create high-quality websites with ease.
+Unlike traditional web development frameworks, sites compiled with HydePHP don&#039;t require any server to run,
+making it an ideal choice for building lightweight and fast-loading websites.
+
+Compared with other static site builders, Hyde is blazingly fast and seriously simple to get started with, yet it has the
+full power of Laravel waiting for you when you need it, as Hyde is powered by Laravel Zero, a stripped-down version of
+the robust and popular Laravel Framework, optimized for console applications.
+
+Hyde makes creating websites easy and fun by taking care of the boring stuff, like routing, writing boilerplate, and
+endless configuration. Instead, when you create a new Hyde project, everything you need to get started is already there
+-- including precompiled TailwindCSS, well-crafted Blade templates, and easy-to-use asset management.
+
+Hyde was inspired by JekyllRB and is designed for developers who are comfortable writing posts in Markdown, and it requires
+virtually no configuration out of the box as it favours convention over configuration and is preconfigured with sensible defaults.
+
+## Installation
+
+HydePHP is a command-line interface (CLI) application that is installed on a per-project basis.
+
+To use HydePHP, your system must have PHP version 8.1 or later installed, along with Composer, and access to a terminal.
+
+The recommended method of installation is using Composer.
+
+```bash
+composer create-project hyde/hyde
+```
+
+Once installed, you can access the HydeCLI from the project root using the `hyde` command.
+
+```bash
+php hyde info
+```
+
+## Usage
+
+Creating static websites with HydePHP is incredibly easy. First you need some content. You can just drop Markdown files
+in any of the source directories, or let Hyde scaffold the files for you using one of the many commands.
+
+```bash
+php hyde make:post &quot;My First Post&quot;
+php hyde make:page &quot;About Me&quot;
+```
+
+Once you have some content, you can run the build command to compile the content into beautiful static HTML.
+
+```bash
+php hyde build
+```
+
+And that&#039;s it, your amazing website is ready to be shared with the world!
+
+### To learn more, head over to the [quickstart page](quickstart).</textarea>
+            </div>
         </header>
         <div class="border-l-4 bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:text-amber-100 dark:border-amber-800 mt-3 -mb-2 print:hidden" aria-live="polite">
     <div class="pl-4 pr-3 py-3">
