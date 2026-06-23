@@ -924,7 +924,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>The Extensions API</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -954,6 +955,184 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># The Extensions API
+
+## Introduction
+
+The Extensions API is a powerful interface designed for package developers who want to extend the functionality of HydePHP.
+
+Using the API, you can hook directly into the HydePHP Kernel and extend sites with custom page types and new features.
+
+This documentation page functions heavily through examples, so it&#039;s recommended that the sections are read in order.
+
+### Prerequisites
+
+Before creating your extension, it will certainly be helpful if you first become familiar with
+the basic internal architecture of HydePHP, as well as how the auto-discovery system works,
+so you can understand how your code works with the internals.
+
+- [Core concepts overview](core-concepts)
+- [Architecture concepts](architecture-concepts)
+- [Autodiscovery](autodiscovery)
+
+### The why and how of the Extensions API
+
+HydePHP being a static site generator, the Extensions API is centred around [Page Models](page-models),
+which you are hopefully already familiar with, otherwise you should read up on them first.
+
+What the Extensions API does is to allow you to create custom page types, and tell HydePHP how to discover them.
+This may sound like a small thing, but it&#039;s actually incredibly powerful as the page models are the foundation
+of HydePHP&#039;s functionality. They tell the system how to discover pages, how to render them,
+and how they interact with the site.
+
+Any other functionality you want to add to HydePHP, such as new commands or configuration options,
+can be added the same way as you would in Laravel, and are thus not part of our API.
+See the [Laravel package development guide](https://laravel.com/docs/10.x/packages) for more.
+
+## Creating Your Extension Class
+
+The entry-point for your extension is your Extensions class. Within this, you can register the custom page classes.
+If needed, you can also register discovery handlers which can run custom logic at various parts of the boot process.
+
+In this article we will create an extension that registers a new type of page, a `JsonPageExtension`.
+
+The first step is to create a class that extends the `HydeExtension` class:
+
+```php
+use Hyde\Foundation\Concerns\HydeExtension;
+
+class JsonPageExtension extends HydeExtension {
+    //
+}
+```
+
+In here, we will register our extension class name in the `getPageClasses` method:
+
+```php
+class JsonPageExtension extends HydeExtension {
+    public static function getPageClasses(): array {
+        return [
+            JsonPage::class,
+        ];
+    }
+}
+```
+
+Hyde will then use the information from the `JsonPage` class to automatically discover the pages when booting the Kernel.
+For example, if you specify the file extension and source directory, that is all Hyde needs to know to discover the pages.
+
+If our pages need more complex discovery logic, we can create custom handlers. so let&#039;s take a quick look at that next.
+
+### Discovery handlers
+
+The discovery handlers let you run code at various points of the booting process. This is usually only needed if your
+page models cannot provide the information required for Hyde run the standard auto-discovery, and thus need custom logic.
+
+Usually in these cases, you would only need to add files to the Kernel `FileCollection`,
+though the `HydeExtension` class offers the following three discovery handlers, in case you need them:
+
+```php
+/** Runs during file discovery */
+public function discoverFiles(FileCollection $collection): void;
+
+/** Runs during page discovery */
+public function discoverPages(PageCollection $collection): void;
+
+/** Runs during route discovery */
+public function discoverRoutes(RouteCollection $collection): void;
+```
+
+Any of these can be implemented in your extension class, and they will be called during the discovery. As you can see,
+the instance of the discovery collection is injected into the method for you to interact with.
+
+#### Discovery handler example
+
+Let&#039;s go crazy and implement a discovery handler to collect `JsonPage` files from an external API! We will do this
+by implementing the `discoverPages` method in our extension class, and from there inject pages retrieved from our API.
+
+```php
+class JsonPageExtension extends HydeExtension {
+    public function discoverPages(PageCollection $collection): void {
+        $pages = Http::get(&#039;https://example.com/my-api&#039;)-&gt;collect();
+
+        $pages-&gt;each(function (array $page) use ($collection): void {
+            $collection-&gt;addPage(JsonPage::fromArray($page));
+        });
+    }
+}
+```
+
+Since the discovery steps are handled sequentially, the added pages will automatically be discovered as routes without
+us having to implement that handler method. As we inject the page objects directly, we bypass the need for the `FileCollection`.
+
+## Registering Your Extension
+
+Now that we have our extension class, we need to register it with HydePHP.
+
+It&#039;s important that your class is registered before the HydeKernel boots. Therefore, an excellent place for this is the
+`register` method of your extensions service provider,  where you call the `registerExtension` method of the `HydeKernel`
+singleton instance, which you can access via the `Hyde\Hyde` facade, or via the service container.
+
+```php
+use Hyde\Hyde;
+use Hyde\Foundation\HydeKernel;
+use Illuminate\Support\ServiceProvider;
+
+class JsonPageExtensionServiceProvider extends ServiceProvider {
+    public function register(): void {
+        // Via the service container:
+        $this-&gt;app-&gt;make(HydeKernel::class)-&gt;registerExtension(JsonPageExtension::class);
+
+        // Or via the facade:
+        Hyde::registerExtension(JsonPageExtension::class);
+    }
+}
+```
+
+### Packaging your extension
+
+To make your extension available to other HydePHP users, you can make it into a [Composer](https://getcomposer.org/) package,
+and publish it to [Packagist](https://packagist.org/) for others to install.
+
+If you register your service provider in your package&#039;s `composer.json` file, your extension automatically be enabled when
+the package is installed in a HydePHP project!
+
+```json
+{
+  &quot;extra&quot;: {
+    &quot;laravel&quot;: {
+      &quot;providers&quot;: [
+        &quot;My\\Namespace\\JsonPageExtensionServiceProvider&quot;
+      ]
+    }
+  }
+}
+```
+
+### Telling the world about your extension
+
+Next up, why not send us a Tweet at [@HydeFramework](https://twitter.com/HydeFramework) and tell us about your extension,
+so we can feature it?</textarea>
+            </div>
         </header>
         <div class="border-l-4 bg-amber-50 text-amber-900 border-amber-200 dark:bg-amber-900/20 dark:text-amber-100 dark:border-amber-800 mt-3 -mb-2 print:hidden" aria-live="polite">
     <div class="pl-4 pr-3 py-3">

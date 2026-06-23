@@ -864,7 +864,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>HydePHP UI Kit - Documentation</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -894,6 +895,190 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># HydePHP UI Kit - Documentation
+
+The HydePHP UI Kit is a collection of minimalistic and un-opinionated TailwindCSS components for Laravel Blade,
+intended to be used with HydePHP. Note that these components may require CSS classes not present in the bundled app.css
+file and that you may need to recompile the CSS file using the included Tailwind and Vite configuration.
+
+## Screenshot
+
+Here are some of the components you can use to build your next project! As you can see, all components support both light and dark mode out of the box, just like the rest of HydePHP.
+
+![Components Screenshot](https://raw.githubusercontent.com/hydephp/ui-kit/art/header-large-min.png)
+
+## Components
+
+Please make sure you&#039;re familiar with [Laravel Blade](https://laravel.com/docs/blade) before using the HydePHP UI Kit.
+
+&gt;info Tip: Most components allow you to pass any additional HTML attributes to the element!
+
+### Buttons
+
+#### Primary
+
+```blade
+&lt;x-hyde-ui::button-primary&gt;
+    Primary Button
+&lt;/x-hyde-ui::button-primary&gt;
+```
+
+#### Secondary
+
+```blade
+&lt;x-hyde-ui::button-secondary&gt;
+    Secondary Button
+&lt;/x-hyde-ui::button-secondary&gt;
+```
+
+### Input
+
+The base component is `&lt;x-hyde-ui::input /&gt;`, any additional attributes will be passed to the input element as seen below.
+
+```blade
+&lt;x-hyde-ui::input type=&quot;text&quot; name=&quot;name&quot; placeholder=&quot;Name&quot; value=&quot;John Doe&quot; /&gt;
+```
+
+### Card
+
+An incredibly versatile component that can be used for a wide variety of purposes.
+
+In the most basic form, a card is just a container with a white background and a shadow.
+However, it also supports two slots: `title` and `footer`.
+
+```blade
+&lt;x-hyde-ui::card&gt;
+    A card with some content.
+&lt;/x-hyde-ui::card&gt;
+```
+
+```blade
+&lt;x-hyde-ui::card&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        Card Title
+    &lt;/x-slot&gt;
+&lt;/x-hyde-ui::card&gt;
+```
+
+```blade
+&lt;x-hyde-ui::card&gt;
+    &lt;x-slot name=&quot;footer&quot;&gt;
+       Some footer content.
+    &lt;/x-slot&gt;
+&lt;/x-hyde-ui::card&gt;
+```
+
+Why not combine the components?
+
+```blade
+&lt;x-hyde-ui::card&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        My Amazing Card
+    &lt;/x-slot&gt;
+
+    A card with some content and a footer with a button.
+
+    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center&quot;&gt;
+        &lt;x-hyde-ui::button-primary&gt;
+            Primary Button
+        &lt;/x-hyde-ui::button-primary&gt;
+    &lt;/x-slot&gt;
+&lt;/x-hyde-ui::card&gt;
+```
+
+### Typography Components
+
+#### Heading
+
+This component will create a styled `&lt;h1&gt;` level heading centred on the page.
+
+```blade
+&lt;x-hyde-ui::heading&gt;
+    Lorem ipsum dolor sit amet.
+&lt;/x-hyde-ui::heading&gt;
+```
+
+#### Prose
+
+This simple component will create an `&lt;article&gt;` element with [TailwindCSS Typography](https://tailwindcss.com/docs/typography-plugin) (prose) styles applied.
+
+```blade
+&lt;x-hyde-ui::prose&gt;
+    &lt;h2&gt;Prose Heading&lt;/h2&gt;
+    &lt;p&gt;Prose paragraph&lt;/p&gt;
+&lt;/x-hyde-ui::prose&gt;
+```
+
+#### Markdown
+
+This component will convert any Markdown within it to HTML using the Hyde Markdown compiler.
+
+```blade
+&lt;x-hyde-ui::markdown&gt;
+    ## Markdown Heading
+
+    Hello world!
+&lt;/x-hyde-ui::markdown&gt;
+```
+
+&gt;info Tip: You may also want to wrap this in the prose element or the Markdown will not be styled.
+
+### What&#039;s Next?
+
+The UI kit is minimal by design. It&#039;s up to you to create something amazing, we just want to give you a head start.
+You can get surprisingly far when you combine the components. Take this newsletter signup card for example!
+
+```blade
+&lt;x-hyde-ui::card&gt;
+    &lt;x-slot name=&quot;title&quot;&gt;
+        Let your creativity flow!
+    &lt;/x-slot&gt;
+
+    &lt;x-slot name=&quot;main&quot; style=&quot;padding-top: 0; padding-bottom: 0;&quot;&gt;
+        &lt;x-hyde-ui::prose&gt;
+            &lt;x-hyde-ui::markdown&gt;
+                The UI kit is minimal by design. It&#039;s up to **you** to create something _amazing_.
+
+                Maybe create a form to collect newsletter subscriptions?
+            &lt;/x-hyde-ui::markdown&gt;
+        &lt;/x-hyde-ui::prose&gt;
+    &lt;/x-slot&gt;
+
+    &lt;x-slot name=&quot;footer&quot; class=&quot;text-center flex&quot;&gt;
+        &lt;x-hyde-ui::input placeholder=&quot;Enter email&quot; /&gt;
+
+        &lt;x-hyde-ui::button-primary&gt;
+            Subscribe
+        &lt;/x-hyde-ui::button-primary&gt;
+    &lt;/x-slot&gt;
+&lt;/x-hyde-ui::card&gt;
+```
+
+![Newsletter Screenshot](https://raw.githubusercontent.com/hydephp/ui-kit/art/newsletter-signup-example-min.png)
+
+## GitHub Repository
+
+You can find the source code for the UI Kit on GitHub at [hydephp/ui-kit](https://github.com/hydephp/ui-kit).</textarea>
+            </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
             <p>The HydePHP UI Kit is a collection of minimalistic and un-opinionated TailwindCSS components for Laravel Blade,

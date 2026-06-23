@@ -1101,7 +1101,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Navigation API</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -1131,6 +1132,448 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Navigation API
+
+&gt;warning This article covers advanced information that is only relevant if you want to create custom navigation menus. Instead, you may want to read the [Navigation](navigation) article for a general overview.
+
+## Abstract
+
+This article describes the Navigation API introduced in HydePHP v2. Both the main navigation menu and the documentation sidebar bundled with HydePHP are built with this API.
+However, if you are interested in creating your own custom navigation menus, you can also utilize this API - and this article will show you how.
+
+This article is intended for advanced users, as most users will not need to create custom navigation menus.
+For this reason, the documentation is very code-driven due to the technical nature of the API.
+We&#039;ll also be mixing in some practical examples of Blade and PHP code to illustrate how you can use the API in your own projects.
+
+## Overview
+
+The Navigation API consists of a set of classes within the `Hyde\Framework\Features\Navigation` namespace.
+
+Together, these form an object-oriented way to create and interact with navigation menus and their items.
+
+In short, a navigation menu is an instance of the `NavigationMenu` class. Each menu contains a collection of `NavigationItem` or `NavigationGroup` classes.
+The former represents a single item in the menu, while the latter represents a group of items.
+
+### Visualisation
+
+Here is a visual representation of the structure of a navigation menu:
+
+```php
+namespace Hyde\Framework\Features\Navigation;
+
+class NavigationMenu {
+    protected Collection $items = [
+        new NavigationItem(destination: &#039;index.html&#039;, label: &#039;Home&#039;),
+        new NavigationItem(destination: &#039;posts.html&#039;, label: &#039;Blog&#039;),
+        new NavigationGroup(label: &#039;About&#039;, items: [
+            new NavigationItem(destination: &#039;about.html&#039;, label: &#039;About Us&#039;),
+            new NavigationItem(destination: &#039;team.html&#039;, label: &#039;Our Team&#039;),
+        ]),
+    ];
+}
+```
+
+### Built-in Menus
+
+HydePHP comes with two built-in menus: the main navigation menu and the documentation sidebar, both represented as child classes of the `NavigationMenu` class.
+They are bound into the service container as singletons and can be accessed through dependency injection.
+
+```php
+use Hyde\Framework\Features\Navigation\MainNavigationMenu;
+use Hyde\Framework\Features\Navigation\DocumentationSidebar;
+
+/** @var \Hyde\Framework\Features\Navigation\MainNavigationMenu $menu */
+$menu = app(&#039;navigation.main&#039;)
+
+/** @var DocumentationSidebar $sidebar */
+$sidebar= app(&#039;navigation.sidebar&#039;)
+```
+
+You can also get them through the static `get` helpers on the menu classes themselves.
+
+```php
+use Hyde\Framework\Features\Navigation\MainNavigationMenu;
+use Hyde\Framework\Features\Navigation\DocumentationSidebar;
+
+$menu = MainNavigationMenu::get();
+$sidebar = DocumentationSidebar::get();
+```
+
+&gt;info Developer tip: The menus are only generated *after* the Hyde Kernel is booted. If you are getting BindingResolutionExceptions, ensure that you are not trying to access the menus too early in the application lifecycle. (Consider using the `booted` event.)
+
+## Creating Custom Menus
+
+### Introduction Overview
+
+When creating a custom menu, there are two ways to go about it:
+
+1. You can construct a NavigationMenu instance directly and add items to it. This works great for smaller menus that don&#039;t need any special logic, for example a footer menu or social media links.
+2. You can create a custom class that extends the NavigationMenu class. This is useful for larger menus that require more complex logic, or that you want to reuse in multiple places in your application or in a package.
+
+In both cases, the underlying API is the same, and you can use the helper methods and features provided by the APIs.
+
+In this section, you will first see some high level overviews of how the API can be used, then we&#039;ll dive in deeper and take a look at each class and method in detail.
+
+### High Level Example
+
+To illustrate how you can create a custom menu, let&#039;s make something useful: A footer menu with social media links.
+
+#### Step 1: Create the Menu
+
+To create our menu, we start by constructing a new NavigationMenu instance.
+We can then add our social media links as NavigationItem instances to the menu.
+
+```php
+$menu = new NavigationMenu();
+
+$menu-&gt;add([
+    // The first parameter is the URL, and the second is the label.
+    NavigationItem::create(&#039;https://twitter.com/hydephp&#039;, &#039;Twitter&#039;),
+    NavigationItem::create(&#039;https://github.com/hydephp&#039;, &#039;GitHub&#039;),
+    NavigationItem::create(&#039;https://hydephp.com&#039;, &#039;Website&#039;),
+]);
+```
+
+#### Step 2: Display the Menu
+
+We can now iterate over the menu items to render them in our footer.
+
+```blade
+&lt;footer&gt;
+    &lt;ul&gt;
+        @foreach ($menu-&gt;getItems() as $item)
+            &lt;li&gt;&lt;a href=&quot;{{ $item-&gt;getLink() }}&quot;&gt;{{ $item-&gt;getLabel() }}&lt;/a&gt;&lt;/li&gt;
+        @endforeach
+    &lt;/ul&gt;
+&lt;/footer&gt;
+```
+
+This will result in the following HTML:
+
+```html
+&lt;footer&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;https://twitter.com/hydephp&quot;&gt;Twitter&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://github.com/hydephp&quot;&gt;GitHub&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;https://hydephp.com&quot;&gt;Website&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/footer&gt;
+```
+
+#### Next Steps &amp; Tips
+
+Of course, this is an incredibly simplistic example to illustrate the core concepts.
+Where the Navigation API really shines is in more complex scenarios where you want to utilize things like
+HydePHP Routes to resolve dynamic relative urls, and to use features like groups, priorities, and active states helpers to check if a menu item is the current page being viewed.
+
+The object-oriented nature of the API also makes this perfect for package developers wanting to create dynamic and reusable navigation menus that even can be further extended and customized by the end user.
+
+Here are some general tips to keep in mind when working with the Navigation API:
+- You can use the `add` method to add single items or arrays of items. You can also pass an array of items directly to the menu constructor.
+- The navigation menu items is stored in a Laravel Collection, and is type safe to support both `NavigationItem` and `NavigationGroup` instances.
+- You can also construct NavigationItem instances directly, but the `create` method is a convenient shorthand, and can fill in data from routes, if you use them.
+- It&#039;s also possible to set an item&#039;s priority as the third parameter, but here we don&#039;t need it, as they default to the order they are added.
+
+## Class Reference
+
+Below is a reference of the classes and methods available in the Navigation API.
+
+## NavigationMenu
+
+The `NavigationMenu` class represents a navigation menu. It contains a collection of items, which can be either `NavigationItem` or `NavigationGroup` instances.
+
+### Quick Reference
+
+Here is a quick reference of the methods available on the NavigationMenu class:
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationMenu;
+
+// Create a new NavigationMenu instance, optionally providing an array of items.
+$menu = new NavigationMenu($items = []);
+
+// Add a single item or an array of items to the menu.
+$menu-&gt;add(new NavigationItem());
+$menu-&gt;add([new NavigationItem()]);
+
+// Get all items in the menu as a sorted Collection.
+$menu-&gt;getItems(): Collection&lt;NavigationItem|NavigationGroup&gt;
+```
+
+### Creating Navigation Menus
+
+You can create a new NavigationMenu instance by simply calling the constructor, optionally providing an array of items.
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationMenu;
+
+$menu = new NavigationMenu($items = []);
+```
+
+Here is how to provide an array or Collection of `NavigationItem` and/or `NavigationGroup` instances directly to the constructor.
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationMenu;
+use Hyde\Framework\Features\Navigation\NavigationItem;
+use Hyde\Framework\Features\Navigation\NavigationGroup;
+
+$menu = new NavigationMenu([
+    new NavigationItem(&#039;index.html&#039;, &#039;Home&#039;),
+    new NavigationItem(&#039;posts.html&#039;, &#039;Blog&#039;),
+    new NavigationGroup(&#039;About&#039;, [
+        new NavigationItem(&#039;about.html&#039;, &#039;About Us&#039;),
+        new NavigationItem(&#039;team.html&#039;, &#039;Our Team&#039;),
+    ]),
+]);
+```
+
+### Adding Items to the Menu
+
+You can also add items to the menu after it has been created by using the `add` method which can take a single item or an array of items, and can be fluently chained.
+
+```php
+$menu = (new NavigationMenu())
+    -&gt;add(new NavigationItem(&#039;contact.html&#039;, &#039;Contact Us&#039;))
+    -&gt;add([
+        new NavigationItem(&#039;privacy.html&#039;, &#039;Privacy Policy&#039;),
+        new NavigationItem(&#039;terms.html&#039;, &#039;Terms of Service&#039;),
+    ]);
+```
+
+### Accessing Items in the Menu
+
+You can access all items in the menu by calling the `getItems` method, which will return a `Collection` of all items in the menu.
+
+```php
+$items = $menu-&gt;getItems();
+```
+
+The items will automatically be sorted by their priority, with lower numbers coming first, defaulting to the order they were added if no priority is set.
+
+## NavigationItem
+
+The `NavigationItem` class is an abstraction for a navigation menu item containing useful information like the destination, label, and priority.
+
+### Quick Reference
+
+Here is a quick reference of the methods available on the `NavigationItem` class:
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationItem;
+
+// Create a new NavigationItem instance.
+$item = NavigationItem::create($destination, $label, $priority): NavigationItem;
+$item = new NavigationItem($destination, $label, $priority); // Same as above.
+
+// Get the link of the item.
+$item-&gt;getLink(): string;
+
+// Get the label of the item.
+$item-&gt;getLabel(): string;
+
+// Get the priority of the item.
+$item-&gt;getPriority(): int;
+
+// Check if the item is active. (Only works when the destination is a route)
+$item-&gt;isActive(): bool;
+```
+
+### Blade Example
+
+Here is an example of how you can put it all together in a Blade template:
+
+```blade
+&lt;a href=&quot;{{ $item-&gt;getLink() }}&quot; @class([&#039;active&#039; =&gt; $item-&gt;isActive()])&gt;
+    {{ $item-&gt;getLabel() }}
+&lt;/a&gt;
+```
+
+This will output an anchor tag with the correct link and label, and if the item is active, it will add an `active` class to the tag.
+
+### Creating Navigation Items
+
+There are two syntaxes for creating `NavigationItem` instances, you can use a standard constructor or the static create method.
+Both options provide the exact same signature and functionality, so it&#039;s just a matter of preference which one you use.
+
+The constructors take three parameters: the destination, the label, and the optional priority.
+The destination can be a `Route` instance, a route key string, or an external URL.
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationItem;
+
+$item = new NavigationItem($destination, $label, $priority);
+$item = NavigationItem::create($destination, $label, $priority);
+```
+
+#### Using Routes
+
+Using the HydePHP routing system is the recommended way to create navigation items leading to pages within your project,
+as they will automatically have links resolved to the correct URL, and Hyde can check if the items are active.
+Additionally, Hyde will use the page data as the label and priority defaults unless you override them.
+
+You can create routed navigation items by providing either a `Route` instance or a route key string as the destination.
+
+```php
+// Using a route key string.
+new NavigationItem(&#039;index&#039;);
+
+// Using the Routes facade to get a Route instance.
+new NavigationItem(Routes::get(&#039;index&#039;));
+
+// Setting the label and/or priorities will override inferred data.
+new NavigationItem(Routes::get(&#039;index&#039;), &#039;Custom Label&#039;, 25);
+```
+
+Using a route key is more concise, but will not provide type safety as it will be treated as a link if the route does not exist,
+whereas providing an invalid route key to the `Routes` facade will throw an exception. It&#039;s up to you which one you prefer.
+
+#### Using External URLs
+
+You can also create navigation items that link to external URLs by providing a full URL as the destination.
+
+If you do not set a label for links, the label will default to the URL, and if you do not set a priority, it will default to `500`.
+
+```php
+// This will lead directly to the link, and use it as the label with a priority of 500.
+new NavigationItem(&#039;https://example.com&#039;);
+
+// You can also set a custom label and priority to override the defaults.
+new NavigationItem(&#039;https://example.com&#039;, &#039;External Link&#039;, 25);
+```
+
+While it is discouraged to use external URLs for internal pages, as Hyde won&#039;t be able to resolve relative links or check active states,
+they are excellent for any time you want an absolute link to an external site or resource.
+
+Note that Hyde will not validate or modify the URL, so you are responsible for ensuring it&#039;s correct.
+
+### Accessing the resolved links
+
+The `getLink` method is designed to return a link that can be used in the `href` attribute of an anchor tag.
+
+If the destination is a route, the link will be resolved to the correct URL, using relative paths if possible. It will also respect the pretty URL setting.
+
+```php
+$item = new NavigationItem(Routes::get(&#039;index&#039;));
+$item-&gt;getLink(); // Outputs &#039;index.html&#039;
+
+$item = new NavigationItem(&#039;https://example.com&#039;);
+$item-&gt;getLink(); // Outputs &#039;https://example.com&#039;
+```
+
+**Tip:** The item instances automatically turns into the resolved link when cast to a string. Perfect for your Blade templates!
+
+```blade
+&lt;a href=&quot;{{ $item }}&quot;&gt;{{ $item-&gt;getLabel() }}&lt;/a&gt;
+```
+
+### Accessing the label
+
+The `getLabel` method returns the label of the item. This is the text that will be displayed in the navigation menu.
+
+```php
+$item = new NavigationItem(&#039;index&#039;, &#039;Home&#039;);
+$item-&gt;getLabel(); // Outputs &#039;Home&#039;
+```
+
+### Accessing the priority
+
+The `getPriority` method returns the priority of the item. This is a number that determines the order in which the items are displayed in the menu, where lower numbers come first.
+
+```php
+$item = new NavigationItem(&#039;index&#039;, &#039;Home&#039;, 25);
+$item-&gt;getPriority(); // Outputs 25
+```
+
+### Checking if the item is active
+
+The `isActive` method checks if the item is active (by comparing it to the Hyde page being compiled at the moment). This is useful for highlighting the current page in the navigation menu.
+
+```php
+$item = new NavigationItem(&#039;index&#039;);
+$item-&gt;isActive(); // Outputs true if the item is the current page, otherwise false.
+```
+
+&lt;!--
+Generated by Copilot, kinda cool, maybe something to implement?
+
+### Advanced Usage
+
+#### Customizing the Active State
+
+By default, the `isActive` method will check if the item&#039;s destination matches the current page being compiled.
+
+However, you can also provide a custom callback to the method to determine if the item is active.
+
+```php
+$item = new NavigationItem(&#039;index&#039;);
+$item-&gt;isActive(fn($item) =&gt; $item-&gt;getLink() === &#039;index.html&#039;);
+```
+
+This is useful if you want to check for a specific query parameter, or if you want to check if the item is active based on a more complex condition.
+--&gt;
+
+## NavigationGroup
+
+The `NavigationGroup` class represents a group of items in a navigation menu. It contains a label, priority, and a collection of navigation items.
+This class is often used to create submenus or dropdowns in a navigation menu.
+
+The `NavigationGroup` class extends the `NavigationMenu` class, and thus inherits the same base methods and functionality,
+while also having shared methods with the `NavigationItem` class to render the groups in a Blade view.
+
+### Quick Reference
+
+Here is a quick reference of the methods available on the `NavigationGroup` class:
+
+```php
+use Hyde\Framework\Features\Navigation\NavigationGroup;
+
+// Create a new NavigationGroup instance.
+$group = new NavigationGroup($label, $items = [], $priority = 500);
+
+// Add a single item or an array of items to the group.
+$group-&gt;add(new NavigationItem());
+$group-&gt;add([new NavigationItem()]);
+
+// Get all items in the group as a Collection sorted by priority.
+$group-&gt;getItems(): Collection&lt;NavigationItem|NavigationGroup&gt;
+
+// Get the label of the group.
+$group-&gt;getLabel(): string;
+
+// Get the priority of the group.
+$group-&gt;getPriority(): int;
+
+// Get the group key, which is a normalized kebab-case version of the label.
+$group-&gt;getGroupKey(): string;
+```
+
+As the `NavigationGroup` class extends the `NavigationMenu` class, please see the `NavigationMenu` section for detailed information of the methods available.
+
+### Usage Scenarios
+
+HydePHP uses the `NavigationGroup` class to create dropdowns in the main navigation menu and the category groups in the documentation sidebar.
+
+In your own custom menus, you can use this class for the same types of functionality, and you can even nest groups within groups to create complex navigation structures.</textarea>
+            </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
             <blockquote class="border-amber-500">

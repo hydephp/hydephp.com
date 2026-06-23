@@ -928,7 +928,8 @@ button[aria-label="Open search window"]:hover,
         
         <header id="document-header" class="flex items-start flex-wrap justify-between prose-h1:mb-3">
             <h1>Extensions &amp; Integrations</h1>
-            <div class="hidden md:block">
+            <div class="hidden md:flex items-center gap-2">
+                <div class="hidden md:block">
     
     <div x-data="{ open:false }" class="relative">
         <button id="version-switcher-inline" type="button" @click="open = !open" class="inline-flex items-center gap-2 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700
@@ -958,6 +959,64 @@ button[aria-label="Open search window"]:hover,
                     </div>
     </div>
 </div>
+                <button
+                    id="copy-markdown-btn"
+                    type="button"
+                    title="Copy page as Markdown"
+                    onclick="(function(btn){
+                        var md = document.getElementById('page-markdown-source').value;
+                        navigator.clipboard.writeText(md).then(function(){
+                            btn.querySelector('.btn-label').textContent = 'Copied!';
+                            setTimeout(function(){ btn.querySelector('.btn-label').textContent = 'Copy Markdown'; }, 2000);
+                        });
+                    })(this)"
+                    class="inline-flex items-center gap-1.5 h-9 px-3 text-sm rounded-md border border-gray-300 dark:border-gray-700 bg-white/80 dark:bg-gray-800/80 backdrop-blur hover:bg-white dark:hover:bg-gray-800 transition-colors"
+                >
+                    <svg class="w-3.5 h-3.5 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span class="btn-label">Copy Markdown</span>
+                </button>
+                <textarea id="page-markdown-source" class="sr-only" readonly aria-hidden="true"># Extensions &amp; Integrations
+
+## HydePHP - Extensible by design
+
+HydePHP is designed to be extensible, and comes with a number of built-in extensions and integrations,
+as well as support for third-party extensions and integrations.
+
+## First-Party Extensions &amp; Integrations
+
+### Realtime Compiler
+
+The Hyde Realtime Compiler is included with Hyde installations and is what powers the `php hyde serve` command.
+- Learn more about the [Realtime Compiler](realtime-compiler) in the documentation.
+
+### UI Kit
+
+The [HydePHP UI Kit](https://github.com/hydephp/ui-kit) is a set of minimalistic Blade &amp; Tailwind components to kickstart development of custom Blade views for your HydePHP site.
+- Learn more at https://github.com/hydephp/ui-kit and see the documentation at https://hydephp.github.io/ui-kit
+
+### GitHub Action
+
+The [GitHub Action for HydePHP](https://github.com/hydephp/action) is hands-down the easiest way to build and deploy your Hyde site to GitHub Pages.
+- Learn more at https://github.com/hydephp/action and see the documentation at https://hydephp.github.io/action
+
+## Integration with Third-Party Services
+
+All third-party integrations are listed on the [Third-Party Integrations](third-party-integrations) page. Below is a summary.
+
+### Torchlight
+
+Torchlight is an amazing API for syntax highlighting, and is supported natively by HydePHP.
+- Learn more about [Torchlight](third-party-integrations#torchlight) in the documentation.
+
+## Contribute
+
+Have an idea for an extension or integration? Let me know! I&#039;d love to hear from you. Get in touch on
+[GitHub](https://github.com/hydephp/hyde) or send me a DM on [Twitter](https://twitter.com/CodeWithCaen).
+You may also want to look at the [Extension API](extensions-api) documentation to learn how to create extensions.</textarea>
+            </div>
         </header>
                 <section id="document-main-content" itemprop="articleBody">
             <h2 id="hydephp-extensible-by-design" class="group w-fit scroll-mt-2">HydePHP - Extensible by design<a href="#hydephp-extensible-by-design" class="heading-permalink opacity-0 ml-1 transition-opacity duration-300 ease-linear px-1 group-hover:opacity-100 focus:opacity-100 group-hover:grayscale-0 focus:grayscale-0" title="Permalink">#</a></h2>
