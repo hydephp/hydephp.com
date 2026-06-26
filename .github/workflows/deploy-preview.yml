@@ -6,6 +6,7 @@ on:
 
 jobs:
   build-and-deploy-preview:
+    if: false # Temporarily disabled
     runs-on: ubuntu-24.04
     environment:
       name: pull-request-preview
@@ -100,12 +101,13 @@ jobs:
           https://ci.hydephp.com/api/deployment-previews
 
   comment-on-pull-request:
+    if: false # Temporarily disabled
     runs-on: ubuntu-24.04
     permissions:
       pull-requests: write
 
     # Only run if a comment was not already made
-    if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && !contains(github.event.pull_request.body, 'A [live preview]') }}
+    # if: ${{ github.event_name == 'pull_request' && github.event.action == 'opened' && !contains(github.event.pull_request.body, 'A [live preview]') }}
     steps:
       - uses: actions/github-script@v5
         with:
