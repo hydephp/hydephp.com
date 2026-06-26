@@ -142,7 +142,7 @@
 
 {{-- ===================== PRINCIPLES ===================== --}}
 <section class="bg-gray-50 px-6 py-20 dark:bg-[#0b1020] md:py-28">
-	<div class="mx-auto max-w-5xl">
+	<div class="mx-auto max-w-6xl">
 		<div class="mb-12 max-w-2xl">
 			<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">Principles</p>
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">What Hyde stands for</h2>
@@ -190,7 +190,7 @@
 
 {{-- ===================== CTA ===================== --}}
 <section class="bg-gray-50 px-6 py-20 text-center dark:bg-[#0b1020] md:py-28">
-	<div class="mx-auto max-w-2xl">
+	<div class="mx-auto max-w-3xl">
 		<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">Get involved</p>
 		<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Join the community</h2>
 		<p class="mt-5 text-lg text-gray-600 dark:text-slate-300">
