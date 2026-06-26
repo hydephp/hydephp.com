@@ -14,7 +14,7 @@
             
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Latest
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                <span class="text-cyan-400">
                     Posts
                 </span>
             </h2>

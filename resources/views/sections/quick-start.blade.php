@@ -15,7 +15,7 @@
             
             <h2 class="mb-4 sm:mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-bold leading-tight text-gray-900">
                 Start your journey
-                <span class="inline mt-1 sm:mt-2 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                <span class="inline mt-1 sm:mt-2 text-cyan-600">
                     here.
                 </span>
             </h2>
