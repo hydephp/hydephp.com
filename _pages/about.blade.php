@@ -44,113 +44,27 @@
 		background-size: 22px 22px;
 	}
 
-	/* 3D-ish lift for the floating code window */
-	.code-window {
-		transform: perspective(1400px) rotateY(-14deg) rotateX(5deg);
-		transform-style: preserve-3d;
-	}
+
 </style>
 
 {{-- ============================ HERO ============================ --}}
-<section class="hero-bg relative overflow-hidden px-6 pt-24 pb-20 md:pt-32 md:pb-28">
-	<div class="relative mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+<section class="hero-bg relative overflow-hidden px-6 pt-16 pb-14 md:pt-20 md:pb-18">
+	<div class="relative mx-auto max-w-3xl">
 
-		{{-- Left: copy --}}
-		<div class="text-center lg:text-left">
-			<div class="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-1.5 text-xs font-semibold tracking-wide text-pink-700 dark:border-pink-500/20 dark:bg-pink-500/10 dark:text-pink-300">
-				<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-				OPEN SOURCE &middot; MIT LICENSED
-			</div>
-
-			<h1 class="mt-8 text-5xl font-extrabold leading-[1.05] tracking-tight text-gray-900 dark:text-white md:text-7xl">
-				The story behind
-				<span class="block text-pink-600 dark:text-pink-400">HydePHP</span>
-			</h1>
-
-			<p class="mx-auto mt-7 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-slate-300 lg:mx-0">
-				HydePHP is an open-source static site generator that brings the power of the
-				Laravel ecosystem to content-focused websites.
-			</p>
-
-			{{-- CTAs --}}
-			<div class="mt-9 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-				<a href="{{ DocumentationPage::home() }}"
-				   class="group inline-flex items-center gap-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 px-6 py-3.5 font-semibold text-white shadow-lg shadow-pink-500/25 transition hover:shadow-pink-500/40 hover:brightness-110">
-					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-					Read the Documentation
-					<svg class="h-4 w-4 transition group-hover:translate-x-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-				</a>
-				<a href="https://github.com/hydephp" rel="noopener nofollow"
-				   class="inline-flex items-center gap-2.5 rounded-xl border border-gray-300 bg-white px-6 py-3.5 font-semibold text-gray-800 transition hover:bg-gray-50 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:bg-white/10">
-					<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
-					View on GitHub
-				</a>
-			</div>
-
-			{{-- Feature strip --}}
-			<div class="mt-12 grid max-w-2xl grid-cols-1 divide-y divide-gray-200 rounded-2xl border border-gray-200 bg-white/60 sm:grid-cols-3 sm:divide-x sm:divide-y-0 dark:divide-white/10 dark:border-white/10 dark:bg-white/[0.03] lg:mx-0">
-				@foreach ([
-					['lightning', 'Blazing fast', 'Static by default'],
-					['code', 'Laravel ecosystem', 'Familiar &amp; powerful'],
-					['cube', 'Markdown first', 'Write content, ship fast'],
-				] as [$icon, $heading, $sub])
-					<div class="flex items-center gap-3 px-5 py-4">
-						<span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-pink-50 text-pink-600 dark:bg-pink-500/10 dark:text-pink-400">
-							@if ($icon === 'lightning')
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-							@elseif ($icon === 'code')
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg>
-							@else
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-							@endif
-						</span>
-						<div class="text-left">
-							<p class="text-sm font-semibold text-gray-900 dark:text-white">{{ $heading }}</p>
-							<p class="text-xs text-gray-500 dark:text-slate-400">{!! $sub !!}</p>
-						</div>
-					</div>
-				@endforeach
-			</div>
+		<div class="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-1.5 text-xs font-semibold tracking-wide text-pink-700 dark:border-pink-500/20 dark:bg-pink-500/10 dark:text-pink-300">
+			<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+			OPEN SOURCE &middot; MIT LICENSED
 		</div>
 
-		{{-- Right: floating code window illustration --}}
-		<div class="relative hidden lg:block" aria-hidden="true">
-			{{-- ambient sphere --}}
-			<div class="absolute -right-10 top-4 h-72 w-72 rounded-full bg-gradient-to-br from-fuchsia-500 to-purple-700 opacity-40 blur-2xl"></div>
-			{{-- dotted floor --}}
-			<div class="dot-grid absolute inset-x-0 bottom-0 h-40 text-slate-700/40 [mask-image:linear-gradient(to_top,black,transparent)]"></div>
+		<h1 class="mt-8 text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl whitespace-nowrap">
+			The story behind <span class="text-pink-600 dark:text-pink-400">HydePHP</span>
+		</h1>
 
-			<div class="code-window relative rounded-2xl border border-white/10 bg-[#0d1326] shadow-2xl shadow-purple-900/40 ring-1 ring-white/5">
-				{{-- window chrome --}}
-				<div class="flex items-center gap-2 border-b border-white/5 px-5 py-3.5">
-					<span class="h-3 w-3 rounded-full bg-rose-400/80"></span>
-					<span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
-					<span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
-				</div>
-				{{-- code --}}
-				<pre class="overflow-x-auto px-6 py-6 font-mono text-[15px] leading-7"><code><span class="text-pink-400">route</span><span class="text-slate-500">(</span><span class="text-emerald-400">'/about'</span><span class="text-slate-500">,</span> <span class="text-purple-400">function</span> <span class="text-slate-500">() {</span>
-    <span class="text-purple-400">return</span> <span class="text-pink-400">view</span><span class="text-slate-500">(</span><span class="text-emerald-400">'about'</span><span class="text-slate-500">);</span>
-<span class="text-slate-500">});</span></code></pre>
+		<p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-slate-300">
+			HydePHP is an open-source static site generator that brings the power of the
+			Laravel ecosystem to content-focused websites.
+		</p>
 
-				{{-- footer row: file + perf gauge --}}
-				<div class="flex items-center justify-between gap-4 border-t border-white/5 px-6 py-5">
-					<div class="flex items-center gap-3 rounded-xl border border-white/5 bg-white/[0.03] px-4 py-3">
-						<svg class="h-7 w-7 text-pink-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-						<span class="font-mono text-sm text-slate-300">index.md</span>
-					</div>
-					<div class="relative flex h-16 w-16 items-center justify-center">
-						<svg class="h-16 w-16 -rotate-90" viewBox="0 0 36 36">
-							<circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" class="text-white/10" stroke-width="3"/>
-							<circle cx="18" cy="18" r="15.9" fill="none" stroke="currentColor" class="text-cyan-400" stroke-width="3" stroke-dasharray="100 100" stroke-linecap="round"/>
-						</svg>
-						<div class="absolute text-center leading-none">
-							<span class="block text-lg font-bold text-cyan-300">100</span>
-							<span class="block text-[7px] uppercase tracking-wider text-slate-400">Perf</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </section>
 
