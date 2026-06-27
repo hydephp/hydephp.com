@@ -58,8 +58,7 @@
 
       <h2 class="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-100 mb-4">
         Why Choose
-        <span class="bg-clip-text text-transparent
-                     bg-gradient-to-r from-[#B1368F] via-[#D94E6B] to-[#F15A4A]">
+        <span class="text-cyan-400">
           HydePHP?
         </span>
       </h2>

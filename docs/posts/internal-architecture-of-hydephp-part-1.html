@@ -9,15 +9,15 @@
 <link rel="shortcut icon" href="../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
+<link rel="canonical" href="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1.html">
 <meta name="description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
 <meta name="twitter:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
 <meta name="author" content="Emma">
 <meta name="keywords" content="deepdives">
-<meta name="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
+<meta name="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1.html">
 <meta property="og:description" content="This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.">
 <meta property="og:title" content="HydePHP - Internal Architecture of HydePHP - Part 1: Introduction">
-<meta property="og:url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
+<meta property="og:url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1.html">
 <meta property="og:article:published_time" content="2022-05-11T20:35:00+00:00">
 <meta property="og:image" content="https://hydephp.com/media/tech-5090539_1920.jpg?v=49f03762">
 <meta property="og:type" content="article">
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=a785db63">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=1f67dd9e">
     
 
     
@@ -67,7 +67,7 @@
             <div class="flex h-16 md:h-18 items-center justify-between">
                 <!-- Left side: Brand -->
                 <div class="flex items-center">
-                    <a aria-label="Home page link" href="../" 
+                    <a aria-label="Home page link" href="../index.html" 
    class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
     <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
          alt="HydePHP Logo" 
@@ -81,16 +81,16 @@
 				<div class="flex items-center gap-8">
 					<!-- Desktop Navigation Links -->
 					<div class="hidden md:flex items-center gap-8">
-													<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
-													<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
-													<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
-													<a href="../repositories"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
-													<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="../index.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../about.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../demos.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../repositories.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
+													<a href="../posts.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
 													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
 											</div>
 
 					<!-- Documentation Button -->
-					<a id="docs-nav-button" href="../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+					<a id="docs-nav-button" href="../docs/2.x/index.html" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
 													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 											</a>
@@ -133,25 +133,25 @@
 		<div class="mx-auto max-w-7xl px-6">
 			<ul aria-label="Navigation links" class="py-4 space-y-2">
 									<li>
-						<a href="../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+						<a href="../index.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
 					</li>
 									<li>
-						<a href="../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+						<a href="../about.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
 					</li>
 									<li>
-						<a href="../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+						<a href="../demos.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
 					</li>
 									<li>
-						<a href="../repositories"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
+						<a href="../repositories.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
 					</li>
 									<li>
-						<a href="../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+						<a href="../posts.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
 					</li>
 									<li>
 						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
 					</li>
 								<li class="max-[375px]:block hidden">
-					<a href="../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+					<a href="../docs/2.x/index.html" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
 				</li>
 			</ul>
 		</div>
@@ -161,9 +161,9 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="internal-architecture-of-hydephp-part-1" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    class="post-article mx-auto prose dark:prose-invert">
     <meta itemprop="identifier" content="internal-architecture-of-hydephp-part-1">
-            <meta itemprop="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1">
+            <meta itemprop="url" content="https://hydephp.com/posts/internal-architecture-of-hydephp-part-1.html">
     
     <header aria-label="Header section" role="doc-pageheader">
         <h1 itemprop="headline" class="mb-4">Internal Architecture of HydePHP - Part 1: Introduction</h1>
@@ -253,7 +253,15 @@
 <h3>General Models</h3>
 <p>These are mainly used to have a clearly defined schema for the data they contain to ensure a predictable and consistent data structure.</p>
 <p>For example, here is the <code>Author</code> model, which contains the data for an Author of a blog post.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">class</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">Author</span><span style="color: #A6ACCD;"> </span><span style="color: #676E95;">// (Stripped of content for brevity and illustration purposes)</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">username</span><span style="color: #89DDFF;">;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">?</span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">name </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null;</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">?</span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">website </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">__construct</span><span style="color: #89DDFF;">(</span><span style="color: #F78C6C;">string</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">username</span><span style="color: #89DDFF;">,</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">?</span><span style="color: #F78C6C;">array</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">data </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">[])</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<pre><code class="language-php">class Author // (Stripped of content for brevity and illustration purposes)
+{
+    public string $username;
+    public ?string $name = null;
+    public ?string $website = null;
+
+    public function __construct(string $username, ?array $data = [])
+}
+</code></pre>
 <h3>Page Models</h3>
 <p>Page Models are used to store the data for a static page type.</p>
 <blockquote>
@@ -285,7 +293,18 @@
 <p>When a Concern Trait primarily adds data to a class it usually is prefixed with <code>Has</code>.</p>
 <p>For example: <code>HasAuthor</code>, <code>HasMetadata</code>, etc. Though I should mention that these traits often have logic pertaining to generating, parsing, and modifying the data type it adds.</p>
 <p>For example, here is a concern that creates and stores a <code>DateString</code> model from a Page model's front matter.</p>
-<pre><code data-theme="material-theme-palenight" data-lang="php" class='torchlight' style='background-color: #292D3E; --theme-selection-background: #00000080;'><!-- Syntax highlighted by torchlight.dev --><div class='line'><span style="color: #C792EA;">trait</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">HasDateString</span></div><div class='line'><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">?</span><span style="color: #FFCB6B;">DateString</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">$</span><span style="color: #A6ACCD;">date </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">null;</span></div><div class='line'>&nbsp;</div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #C792EA;">public</span><span style="color: #A6ACCD;"> </span><span style="color: #C792EA;">function</span><span style="color: #A6ACCD;"> </span><span style="color: #82AAFF;">constructDateString</span><span style="color: #89DDFF;">():</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">void</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">if</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">(</span><span style="color: #82AAFF;">isset</span><span style="color: #89DDFF;">($this-&gt;</span><span style="color: #A6ACCD;">matter</span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">date</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">]))</span><span style="color: #A6ACCD;"> </span><span style="color: #89DDFF;">{</span></div><div class='line'><span style="color: #A6ACCD;">            </span><span style="color: #89DDFF;">$this-&gt;</span><span style="color: #A6ACCD;">date </span><span style="color: #89DDFF;">=</span><span style="color: #A6ACCD;"> </span><span style="color: #F78C6C;">new</span><span style="color: #A6ACCD;"> </span><span style="color: #FFCB6B;">DateString</span><span style="color: #89DDFF;">($this-&gt;</span><span style="color: #A6ACCD;">matter</span><span style="color: #89DDFF;">[</span><span style="color: #89DDFF;">&#39;</span><span style="color: #C3E88D;">date</span><span style="color: #89DDFF;">&#39;</span><span style="color: #89DDFF;">]);</span></div><div class='line'><span style="color: #A6ACCD;">        </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #A6ACCD;">    </span><span style="color: #89DDFF;">}</span></div><div class='line'><span style="color: #89DDFF;">}</span></div></code></pre>
+<pre><code class="language-php">trait HasDateString
+{
+    public ?DateString $date = null;
+
+    public function constructDateString(): void
+    {
+        if (isset($this-&gt;matter['date'])) {
+            $this-&gt;date = new DateString($this-&gt;matter['date']);
+        }
+    }
+}
+</code></pre>
 <h4>Logic/Action Concerns</h4>
 <p>These are similar to <code>Actions</code> but whereas Actions are often part of <code>Services</code> (eg. as <em>ServiceActions</em>), Logic and Action Concerns are Traits that perform logic that can be used in many unrelated places.</p>
 <p>For example, <code>ValidatesExistence</code> can be used to validate that a file exists. <code>AsksToRebuildSite</code> can be used to ask the user if they want to rebuild the site when running a HydeCLI command.</p>
@@ -302,11 +321,6 @@ Also, make sure to check out the <strong><a href="internal-architecture-of-hydep
 		margin: 0;
 	}
 </style>
-<br><p>
-    <i>
-        Syntax highlighting by <a href="https://torchlight.dev/" rel="noopener nofollow">Torchlight.dev</a>
-    </i>
-</p>
 
             </div>
     <span class="sr-only">End of article</span>
@@ -320,7 +334,7 @@ Also, make sure to check out the <strong><a href="internal-architecture-of-hydep
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="../" class="flex items-center mr-4">
+				<a href="../index.html" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -334,14 +348,14 @@ Also, make sure to check out the <strong><a href="internal-architecture-of-hydep
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../docs/2.x/index.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../community.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../legal.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
@@ -355,10 +369,10 @@ Also, make sure to check out the <strong><a href="internal-architecture-of-hydep
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../sitemap.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../posts.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					

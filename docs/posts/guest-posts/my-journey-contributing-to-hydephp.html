@@ -9,15 +9,15 @@
 <link rel="shortcut icon" href="../../media/favicon.ico" type="image/x-icon">
 
 
-<link rel="canonical" href="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
+<link rel="canonical" href="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp.html">
 <meta name="description" content="Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source.">
 <meta name="twitter:title" content="HydePHP - My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development">
 <meta name="author" content="Stephen Ude-okolie">
 <meta name="keywords" content="Guest Posts">
-<meta name="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
+<meta name="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp.html">
 <meta property="og:description" content="Stephen Ude-okolie shares how a simple pull request turned into a deep dive into HydePHP’s architecture, Laravel testing practices, and the rewarding challenges of contributing to open source.">
 <meta property="og:title" content="HydePHP - My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development">
-<meta property="og:url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
+<meta property="og:url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp.html">
 <meta property="og:article:published_time" content="2025-06-07T04:32:00+00:00">
 <meta property="og:type" content="article">
 
@@ -41,7 +41,7 @@
 <style>[x-cloak] {display: none!important}</style>
 
 
-            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=a785db63">
+            <link rel="stylesheet" href="https://hydephp.com/media/app.css?v=1f67dd9e">
     
 
     
@@ -67,7 +67,7 @@
             <div class="flex h-16 md:h-18 items-center justify-between">
                 <!-- Left side: Brand -->
                 <div class="flex items-center">
-                    <a aria-label="Home page link" href="../../" 
+                    <a aria-label="Home page link" href="../../index.html" 
    class="flex items-center gap-2  font-bold px-4 text-gray-700 dark:text-gray-200  transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-transparent rounded">
     <img src="https://hydephp.com/media/logo-masked32-min.png?v=16f489c2" 
          alt="HydePHP Logo" 
@@ -81,16 +81,16 @@
 				<div class="flex items-center gap-8">
 					<!-- Desktop Navigation Links -->
 					<div class="hidden md:flex items-center gap-8">
-													<a href="../../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
-													<a href="../../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
-													<a href="../../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
-													<a href="../../repositories"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
-													<a href="../../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+													<a href="../../index.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+													<a href="../../about.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+													<a href="../../demos.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+													<a href="../../repositories.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
+													<a href="../../posts.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
 													<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
 											</div>
 
 					<!-- Documentation Button -->
-					<a id="docs-nav-button" href="../../docs/2.x/" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
+					<a id="docs-nav-button" href="../../docs/2.x/index.html" class="hidden min-[376px]:block  inline-block relative mb-5 md:ml-4 mt-4 md:mt-0 md:mb-0 group ">
 													<span class="absolute top-0 left-0 w-full h-full hidden md:inline mt-1 ml-1 bg-black dark:bg-gray-600 rounded group-hover:m-0"></span>
 							<span class="relative inline-block md:w-full h-full px-3 py-1 text-base font-bold bg-white border-2 border-black rounded fold-bold group-hover:bg-violet-300 dark:group-hover:bg-violet-200 group-hover:text-gray-900 dark:text-black">Documentation</span>
 											</a>
@@ -133,25 +133,25 @@
 		<div class="mx-auto max-w-7xl px-6">
 			<ul aria-label="Navigation links" class="py-4 space-y-2">
 									<li>
-						<a href="../../"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
+						<a href="../../index.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Home</a>
 					</li>
 									<li>
-						<a href="../../about"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
+						<a href="../../about.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">About</a>
 					</li>
 									<li>
-						<a href="../../demos"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
+						<a href="../../demos.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Demos</a>
 					</li>
 									<li>
-						<a href="../../repositories"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
+						<a href="../../repositories.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Repositories</a>
 					</li>
 									<li>
-						<a href="../../posts"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
+						<a href="../../posts.html"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">Blog</a>
 					</li>
 									<li>
 						<a href="https://github.com/hydephp/hyde"  class="my-2 md:my-0 py-1 text-gray-700 hover:text-gray-900 dark:text-gray-100">GitHub</a>
 					</li>
 								<li class="max-[375px]:block hidden">
-					<a href="../../docs/2.x/" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
+					<a href="../../docs/2.x/index.html" class="my-2 md:my-0 py-1  text-gray-700 hover:text-gray-900 dark:text-gray-100 ">Documentation</a>
 				</li>
 			</ul>
 		</div>
@@ -161,9 +161,9 @@
         
     <main id="content" class="mx-auto max-w-7xl py-16 px-8">
         <article aria-label="Article" id="guest-posts/my-journey-contributing-to-hydephp" itemscope itemtype="https://schema.org/Article"
-    class="post-article mx-auto prose dark:prose-invert torchlight-enabled">
+    class="post-article mx-auto prose dark:prose-invert">
     <meta itemprop="identifier" content="guest-posts/my-journey-contributing-to-hydephp">
-            <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp">
+            <meta itemprop="url" content="https://hydephp.com/posts/guest-posts/my-journey-contributing-to-hydephp.html">
     
     <header aria-label="Header section" role="doc-pageheader">
         <h1 itemprop="headline" class="mb-4">My Journey Contributing to HydePHP: A Beginner’s Perspective on Open Source Development</h1>
@@ -186,7 +186,7 @@
                     <h3 class="text-sm font-medium text-indigo-800 dark:text-indigo-300 mt-0">Community Contribution</h3>
                     <div class="my-0 text-sm text-gray-700 dark:text-gray-300">
                         <p class="mt-0 mb-1">This article was written by a member of the HydePHP community. We're excited to share diverse perspectives and expertise!</p>
-                        <p class="my-0 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for and ownership of their content. Read more about our <a href="../../legal#guest-posts" class="text-indigo-600 dark:text-indigo-400 hover:underline">guest posts here</a>.</p>
+                        <p class="my-0 text-xs text-gray-500 dark:text-gray-400 max-w-3xl">The content reflects the author's own views and opinions. While we've reviewed this post for quality and adherence to our guidelines, the author retains full responsibility for and ownership of their content. Read more about our <a href="../../legal.html#guest-posts" class="text-indigo-600 dark:text-indigo-400 hover:underline">guest posts here</a>.</p>
                     </div>
                 </div>
             </div>
@@ -308,7 +308,7 @@
 	<div class="container flex flex-col justify-between max-w-6xl px-4 mx-auto overflow-hidden lg:flex-row">
 		<div class="block md:w-1/3 px-2 mx:px-0">
 			<span class="flex items-center w-fit">
-				<a href="../../" class="flex items-center mr-4">
+				<a href="../../index.html" class="flex items-center mr-4">
 					<img  class="w-auto h-8 mt-1 text-black dark:text-white fill-current" src="/media/logo.svg" />
 					
 					<span class="ml-2 text-lg font-black">HydePHP</span>
@@ -322,14 +322,14 @@
 		<div class="flex flex-wrap md:flex-nowrap whitespace-nowrap md:w-2/3 mt-3 sm:mt-6 mb-4 text-sm  lg:mt-0">
 			<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 				<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Resources</li>
-				<li><a href="../../docs/2.x/" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+				<li><a href="../../docs/2.x/index.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 					Documentation</a></li>
 					
-					<li><a href="../../community" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../../community.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Community Portal
 					</a></li>
 					
-					<li><a href="../../legal" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../../legal.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Legal Information
 					</a></li>
 				</ul>
@@ -343,10 +343,10 @@
 				</ul>
 				<ul class="flex flex-col w-fit sm:w-full pr-4 p-0 font-normal text-left text-gray-300 dark:text-gray-700 list-none">
 					<li class="inline-block px-3 py-2 font-medium tracking-wide text-black dark:text-white uppercase mt-4 md:mt-0">Extra</li>
-					<li><a href="../../sitemap" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../../sitemap.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Sitemap
 					</a></li>
-					<li><a href="../../posts" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
+					<li><a href="../../posts.html" class="inline-block px-3 py-2 dark:text-gray-300 text-gray-700 no-underline hover:text-black dark:hover:text-white">
 						Blog Posts
 					</a></li>
 					

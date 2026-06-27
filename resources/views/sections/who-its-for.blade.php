@@ -14,7 +14,7 @@
             
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
                 Who's it
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-400">
+                <span class="text-cyan-400">
                     for?
                 </span>
             </h2>

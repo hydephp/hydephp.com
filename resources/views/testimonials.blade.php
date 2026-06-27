@@ -13,7 +13,7 @@
             
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 What People Are
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                <span class="text-cyan-600">
                     Saying
                 </span>
             </h2>
