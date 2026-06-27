@@ -50,12 +50,6 @@
 {{-- ============================ HERO ============================ --}}
 <section class="hero-bg relative overflow-hidden px-6 pt-16 pb-14 md:pt-20 md:pb-18">
 	<div class="relative mx-auto max-w-3xl">
-
-		<div class="inline-flex items-center gap-2 rounded-full border border-pink-200 bg-pink-50 px-4 py-1.5 text-xs font-semibold tracking-wide text-pink-700 dark:border-pink-500/20 dark:bg-pink-500/10 dark:text-pink-300">
-			<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-			OPEN SOURCE &middot; MIT LICENSED
-		</div>
-
 		<h1 class="mt-8 text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl whitespace-nowrap">
 			The story behind <span class="text-pink-600 dark:text-pink-400">HydePHP</span>
 		</h1>
@@ -70,66 +64,28 @@
 
 {{-- ===================== WHY HYDE EXISTS ===================== --}}
 <section class="bg-white px-6 py-20 dark:bg-[#0a0e1a] md:py-28">
-	<div class="mx-auto grid max-w-6xl gap-14 lg:grid-cols-2 lg:gap-16">
-
-		{{-- Left: prose --}}
-		<div>
-			<p class="eyebrow mb-3 inline-flex rounded-full border border-pink-200 px-3 py-1 text-pink-600 dark:border-pink-500/30 dark:text-pink-400">Our story</p>
-			<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Why Hyde exists</h2>
-			<div class="prose prose-lg max-w-none dark:prose-invert">
-				<p>
-					Spinning up a simple website shouldn't mean fighting your tools. Yet too often, building
-					a blog or a documentation site turns into hours of boilerplate, routing, and configuration
-					before you write a single word of content.
-				</p>
-				<p>
-					Hyde was born from a simple belief: <mark>if you can write Markdown, you should be able to
-					ship a website.</mark> Inspired by static site generators like Jekyll, but built for the PHP
-					world, Hyde lets you drop Markdown and Blade files into source folders and compiles them into
-					fast, static HTML &mdash; with navigation, sidebars, and metadata generated automatically.
-				</p>
-			</div>
-		</div>
-
-		{{-- Right: pull-quote + highlight cards --}}
-		<div class="space-y-6">
-			<figure class="relative overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 p-8 dark:border-white/10 dark:bg-white/[0.03]">
-				<div class="dot-grid pointer-events-none absolute -right-2 top-4 h-24 w-24 text-pink-500/40"></div>
-				<svg class="h-9 w-9 text-pink-500" viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 6C6.5 6 4 8.6 4 12v6h6v-6H7c0-1.9 1.1-3 2.5-3V6zm10 0c-3 0-5.5 2.6-5.5 6v6h6v-6h-3c0-1.9 1.1-3 2.5-3V6z"/></svg>
-				<blockquote class="mt-4 text-2xl font-bold leading-snug text-gray-900 dark:text-white">
-					Write content.<br>We'll handle the rest.
-				</blockquote>
-				<figcaption class="mt-4 text-xs font-semibold uppercase tracking-wider text-gray-400 dark:text-slate-500">The Hyde principle</figcaption>
-			</figure>
-
-			<div class="grid gap-5 sm:grid-cols-3">
-				@foreach ([
-					['rocket', 'Fast', 'Static HTML output for top performance'],
-					['cube', 'Simple', 'Convention over configuration'],
-					['heart', 'Open', 'Built by the community, for the community'],
-				] as [$icon, $heading, $body])
-					<div class="rounded-2xl border border-gray-200 bg-white p-5 transition hover:border-pink-300 dark:border-white/10 dark:bg-white/[0.03] dark:hover:border-pink-500/40">
-						<span class="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-pink-50 text-pink-600 dark:bg-pink-500/10 dark:text-pink-400">
-							@if ($icon === 'rocket')
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.3-2 5-2 5s3.7-.5 5-2c.7-.8.7-2 0-2.8a2 2 0 0 0-3 0z"/><path d="M12 15 9 12a13 13 0 0 1 7-9 13 13 0 0 1 5 0 13 13 0 0 1 0 5 13 13 0 0 1-9 7z"/><path d="M9 12H4s.5-2.8 2-4c1.7-1.3 5 0 5 0M12 15v5s2.8-.5 4-2c1.3-1.7 0-5 0-5"/></svg>
-							@elseif ($icon === 'cube')
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-							@else
-								<svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.5-1.5 3-3.3 3-5.5A4.5 4.5 0 0 0 12 5 4.5 4.5 0 0 0 2 8.5c0 2.2 1.5 4 3 5.5l7 7z"/></svg>
-							@endif
-						</span>
-						<h3 class="text-base font-semibold text-gray-900 dark:text-white">{{ $heading }}</h3>
-						<p class="mt-1 text-sm text-gray-500 dark:text-slate-400">{{ $body }}</p>
-					</div>
-				@endforeach
-			</div>
+	<div class="mx-auto max-w-3xl">
+		<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">Our story</p>
+		<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Why Hyde exists</h2>
+		<div class="prose prose-lg max-w-none dark:prose-invert">
+			<p>
+				Spinning up a simple website shouldn't mean fighting your tools. Yet too often, building
+				a blog or a documentation site turns into hours of boilerplate, routing, and configuration
+				before you write a single word of content.
+			</p>
+			<p>
+				Hyde was born from a simple belief: <mark>if you can write Markdown, you should be able to
+				ship a website.</mark> Inspired by static site generators like Jekyll, but built for the PHP
+				world, Hyde lets you drop Markdown and Blade files into source folders and compiles them into
+				fast, static HTML &mdash; with navigation, sidebars, and metadata generated automatically.
+			</p>
 		</div>
 	</div>
 </section>
 
 {{-- ===================== PRINCIPLES ===================== --}}
 <section class="bg-gray-50 px-6 py-20 dark:bg-[#0b1020] md:py-28">
-	<div class="mx-auto max-w-6xl">
+	<div class="mx-auto max-w-3xl">
 		<div class="mb-12 max-w-2xl">
 			<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">Principles</p>
 			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">What Hyde stands for</h2>
@@ -157,7 +113,6 @@
 {{-- ===================== PEOPLE ===================== --}}
 <section class="bg-white px-6 py-20 dark:bg-[#0a0e1a] md:py-28">
 	<div class="mx-auto max-w-3xl">
-		<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">The team</p>
 		<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Who builds Hyde</h2>
 		<div class="prose prose-lg max-w-none dark:prose-invert">
 			<p>
