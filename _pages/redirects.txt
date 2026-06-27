@@ -1,2 +1,2 @@
 /docs/index.html => /docs/2.x
-/repositories => /community#repositories
+/repositories.html => /community#repositories
