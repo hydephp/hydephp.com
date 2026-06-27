@@ -113,6 +113,7 @@
 {{-- ===================== PEOPLE ===================== --}}
 <section class="bg-white px-6 py-20 dark:bg-[#0a0e1a] md:py-28">
 	<div class="mx-auto max-w-3xl">
+		<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">The team</p>
 		<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Who builds HydePHP</h2>
 		<div class="prose prose-lg max-w-none dark:prose-invert">
 			<p>
@@ -146,7 +147,7 @@
 				Star us on GitHub
 			</a>
 			<a href="https://discord.hydephp.com" rel="noopener nofollow"
-			   class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-pink-500 via-fuchsia-500 to-purple-600 px-6 py-3 font-semibold text-white shadow-lg shadow-pink-500/25 transition hover:brightness-110">
+			   class="inline-flex items-center gap-2 rounded-xl bg-pink-600 px-6 py-3 font-semibold text-white shadow-lg shadow-pink-500/25 transition hover:brightness-110">
 				Join the Discord
 			</a>
 			<a href="{{ DocumentationPage::home() }}"
