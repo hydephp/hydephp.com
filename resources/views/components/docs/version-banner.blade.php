@@ -49,7 +49,7 @@
 @endphp
 
 @if(!$isCurrent && $versions && $currentLabelKey)
-<div class="border-l-4 {{ $bannerClass }} mt-3 -mb-2 print:hidden" aria-live="polite">
+<div class="border-l-4 {{ $bannerClass }} mt-3 mb-4 print:hidden" aria-live="polite">
     <div class="pl-4 pr-3 py-3">
         <div class="flex items-center gap-3">
             {{-- Contextual icon --}}
