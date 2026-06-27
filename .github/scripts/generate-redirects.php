@@ -47,7 +47,7 @@ foreach ($lines as $index => $line) {
         $fromPath .= 'index.html';
     }
 
-    $outputFile = "{$outputRoot}/{$fromPath}";
+    $outputFile = "{$outputRoot}/{$fromPath}.html";
     $outputDirectory = dirname($outputFile);
 
     if (! is_dir($outputDirectory) && ! mkdir($outputDirectory, 0775, true) && ! is_dir($outputDirectory)) {
