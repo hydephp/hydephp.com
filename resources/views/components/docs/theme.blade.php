@@ -21,17 +21,15 @@
         rgb(15, 10, 30) 100%);
 }
 
-/* Sidebar brand with gradient text */
+/* Sidebar brand text */
 #sidebar-brand strong a {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 50%,
-        rgb(252, 165, 165) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(17, 24, 39);
     font-weight: 700;
     font-size: 1.125rem;
+}
+
+.dark #sidebar-brand strong a {
+    color: rgb(255, 255, 255);
 }
 
 /* Accent border on top of sidebar */
@@ -61,12 +59,7 @@
 
 /* Hover effect on group headers */
 .sidebar-group-header:hover .sidebar-group-heading {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(236, 72, 153);
 }
 
 .sidebar-group-header:hover {
@@ -208,12 +201,7 @@
 }
 
 #sidebar-footer a:hover {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(236, 72, 153);
 }
 
 
@@ -246,16 +234,14 @@
     background: rgba(30, 41, 55, 0.8);
 }
 
-/* Page title with gradient */
+/* Page title */
 #document-header h1 {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 50%,
-        rgb(252, 165, 165) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(17, 24, 39);
     font-weight: 800;
+}
+
+.dark #document-header h1 {
+    color: rgb(255, 255, 255);
 }
 
 /* Links in content */
@@ -293,8 +279,8 @@
 }
 
 .dark #document :not(pre) > code {
-    background: rgba(236, 72, 153, 0.2);
-    color: rgb(251, 146, 120);
+    background: rgba(236, 72, 153, 0.15);
+    color: rgb(236, 72, 153);
 }
 
 
@@ -313,12 +299,11 @@
 }
 
 #mobile-navigation strong a {
-    background: linear-gradient(135deg, 
-        rgb(236, 72, 153) 0%, 
-        rgb(251, 146, 120) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: rgb(17, 24, 39);
+}
+
+.dark #mobile-navigation strong a {
+    color: rgb(255, 255, 255);
 }
 
 

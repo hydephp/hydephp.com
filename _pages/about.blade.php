@@ -48,17 +48,16 @@
 </style>
 
 {{-- ============================ HERO ============================ --}}
-<section class="hero-bg relative overflow-hidden px-6 pt-16 pb-14 md:pt-20 md:pb-18">
+<section class="hero-bg relative overflow-hidden px-6 py-16 md:py-20">
 	<div class="relative mx-auto max-w-3xl">
 		<h1 class="mt-8 text-4xl font-extrabold leading-[1.05] tracking-tight text-gray-900 dark:text-white md:text-5xl lg:text-6xl whitespace-nowrap">
 			The story behind <span class="text-pink-600 dark:text-pink-400">HydePHP</span>
 		</h1>
 
-		<p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-slate-300">
+		<p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600 dark:text-slate-300 mb-2">
 			HydePHP is an open-source static site generator that brings the power of the
 			Laravel ecosystem to content-focused websites.
 		</p>
-
 	</div>
 </section>
 
