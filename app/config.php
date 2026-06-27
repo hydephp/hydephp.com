@@ -108,6 +108,7 @@ return [
         'MediaFile' => \Hyde\Support\Filesystem\MediaFile::class,
         'Includes' => \Hyde\Support\Includes::class,
         'Feature' => \Hyde\Enums\Feature::class,
+        'HydeFront' => \Hyde\Facades\HydeFront::class,
     ],
 
 ];
