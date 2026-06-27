@@ -279,8 +279,8 @@
 }
 
 .dark #document :not(pre) > code {
-    background: rgba(236, 72, 153, 0.2);
-    color: rgb(251, 146, 120);
+    background: rgba(236, 72, 153, 0.15);
+    color: rgb(236, 72, 153);
 }
 
 
