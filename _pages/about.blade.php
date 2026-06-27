@@ -89,19 +89,6 @@
 					fast, static HTML &mdash; with navigation, sidebars, and metadata generated automatically.
 				</p>
 			</div>
-
-			{{-- Laravel Zero callout --}}
-			<div class="mt-8 flex items-start gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-6 dark:border-white/10 dark:bg-white/[0.03]">
-				<span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-pink-500 to-purple-600 text-white shadow-lg shadow-pink-500/20">
-					<svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.7l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.7l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="m3.3 7 8.7 5 8.7-5M12 22V12"/></svg>
-				</span>
-				<p class="text-sm leading-relaxed text-gray-600 dark:text-slate-300">
-					Under the hood, Hyde is powered by
-					<a href="https://laravel-zero.com" rel="noopener nofollow" class="font-semibold text-pink-600 hover:underline dark:text-pink-400">Laravel Zero</a>,
-					a stripped-down version of the Laravel framework. You get the elegance of Blade templating and
-					the familiarity of the Laravel ecosystem &mdash; without the overhead of a full web application.
-				</p>
-			</div>
 		</div>
 
 		{{-- Right: pull-quote + highlight cards --}}
