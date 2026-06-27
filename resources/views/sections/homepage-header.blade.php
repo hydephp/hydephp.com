@@ -14,12 +14,6 @@
             <!-- Left Content -->
             <div class="flex flex-col items-center w-full md:items-start md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <div class="relative md:text-left text-center">
-                    <!-- Version badge -->
-                    <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium text-hyde-cyan bg-hyde-cyan/10 border border-hyde-cyan/20 rounded-full backdrop-blur-sm">
-                        <div class="w-1.5 h-1.5 bg-hyde-cyan rounded-full mr-2 animate-pulse"></div>
-                        Version 2.0 Released
-                    </div>
-                    
                     <h1 class="relative mb-6 text-5xl font-black leading-tight text-white lg:text-6xl xl:text-7xl md:text-left text-center flex items-center justify-center md:justify-start gap-3">
                         <span class="text-white">HydePHP</span>
                         <img src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo" class="inline-block" style="height: 1em">
