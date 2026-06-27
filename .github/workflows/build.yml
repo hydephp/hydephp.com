@@ -78,8 +78,8 @@ jobs:
     - name: Copy favicon to site root
       run: cp docs/media/favicon.ico docs/favicon.ico
 
-    - name: Create docs redirect
-      run: echo '<meta http-equiv="refresh" content="0;url=/docs/2.x" />' > docs/docs/index.html
+    - name: Create redirects
+      run: php .github/scripts/generate-redirects.php
 
     - name: Commit changes
       uses: EndBug/add-and-commit@v9 
