@@ -88,13 +88,13 @@
 	<div class="mx-auto max-w-3xl">
 		<div class="mb-12 max-w-2xl">
 			<p class="eyebrow mb-3 text-pink-600 dark:text-pink-400">Principles</p>
-			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">What Hyde stands for</h2>
+			<h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">What HydePHP stands for</h2>
 			<p class="mt-4 text-lg text-gray-600 dark:text-slate-300">A few principles guide every decision in the framework.</p>
 		</div>
 		<div class="grid gap-6 md:grid-cols-2">
 			@foreach ([
 				['01', 'Content over markup', 'Your words come first. Write in Markdown or Blade and let Hyde handle the templates, layouts, and HTML.'],
-				['02', 'Convention over configuration', 'Sensible defaults mean Hyde works the moment you install it. Files are discovered automatically — no routing required.'],
+				['02', 'Convention over configuration', 'Sensible defaults mean HydePHP works the moment you install it. Files are discovered automatically — no routing required.'],
 				['03', 'Simple, yet hackable', 'Start with a polished TailwindCSS frontend, then extend and override anything with Blade components when you need to.'],
 				['04', 'Open and free', 'Hyde is MIT licensed and built in the open. No paywalls, no lock-in — just a tool you can trust and contribute to.'],
 			] as [$num, $heading, $body])
@@ -113,7 +113,7 @@
 {{-- ===================== PEOPLE ===================== --}}
 <section class="bg-white px-6 py-20 dark:bg-[#0a0e1a] md:py-28">
 	<div class="mx-auto max-w-3xl">
-		<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Who builds Hyde</h2>
+		<h2 class="mb-8 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">Who builds HydePHP</h2>
 		<div class="prose prose-lg max-w-none dark:prose-invert">
 			<p>
 				Hyde was created by <a href="https://twitter.com/EmmaDSCodes" rel="noopener nofollow">Emma De Silva</a>,
@@ -160,6 +160,4 @@
 		</p>
 	</div>
 </section>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
 @endsection
