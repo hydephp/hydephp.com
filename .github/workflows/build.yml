@@ -81,9 +81,11 @@ jobs:
     - name: Create redirects
       run: php .github/scripts/generate-redirects.php
 
+    - name: Copy documentation markdown for AI agents
+      run: php .github/scripts/copy-documentation-markdown.php
+
     - name: Commit changes
       uses: EndBug/add-and-commit@v9 
       with:
         add: 'docs'
         message: 'Build the site'
-        
