@@ -176,7 +176,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 </ul>
 <h3>Deprecated</h3>
 <ul>
-<li>for soon-to-be removed features.</li>
+<li>Deprecated the <code>rebuild</code> command. It has no remaining internal consumers now that the realtime compiler renders pages in-memory, and single-page builds can silently leave aggregate outputs (sitemap, RSS, search index, navigation) stale. It will be removed in v3.0; use <code>Hyde\Framework\Actions\StaticPageBuilder::handle()</code> instead if you need to build a single page programmatically.</li>
 </ul>
 <h3>Removed</h3>
 <ul>
@@ -190,6 +190,7 @@ and this project adheres to <a href="https://semver.org/spec/v2.0.0.html">Semant
 <li>Fixed realtime compiler loading assets from production URL when configured in <a href="https://github.com/hydephp/develop/pull/2418">https://github.com/hydephp/develop/pull/2418</a></li>
 <li>Updated the scroll to top button to smooth scroll to the top of the page in <a href="https://github.com/hydephp/develop/pull/2458">https://github.com/hydephp/develop/pull/2458</a></li>
 <li>Fix build command trying to use Vite in site builds if server is running in <a href="https://github.com/hydephp/develop/issues/2483">https://github.com/hydephp/develop/issues/2483</a></li>
+<li>Fixed missing content type headers for JSON and XML in the realtime compiler in <a href="https://github.com/hydephp/develop/pull/2496">https://github.com/hydephp/develop/pull/2496</a></li>
 </ul>
 <h3>Security</h3>
 <ul>
