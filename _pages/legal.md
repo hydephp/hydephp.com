@@ -157,9 +157,9 @@ The HydePHP logo is based on the following graphics from the Twitter Twemoji pro
 ### Sponsorships and Affiliates
 
 - Thank you to [UptimeRobot](https://uptimerobot.com/?rid=33f574d058c2f3) for sponsoring the [HydePHP Status Monitor](https://status.hydephp.com/) page!
-- Thank you to [Fathom Analytics](https://usefathom.com/) for sponsoring HydePHP with privacy-focused analytics!
-  - Our analytics dashboard is [publicly available](https://app.usefathom.com/share/tbqmayhy/hydephp.com).
-  - You can get a $10 discount by using our [affiliate link](https://usefathom.com/ref/NMDUJJ).
+- Thank you to [Fathom Analytics](https://usefathom.com/){:rel="sponsored"} for sponsoring HydePHP with privacy-focused analytics!
+  - Our analytics dashboard is [publicly available](https://app.usefathom.com/share/tbqmayhy/hydephp.com){:rel="sponsored"}.
+  - You can get a $10 discount by using our [affiliate link](https://usefathom.com/ref/NMDUJJ){:rel="sponsored"}.
 
 Want to sponsor the HydePHP project? Send us an email at hello@hydephp.com!<br>
 You can also ping the creator on Twitter at [@EmmaDSCodes](https://twitter.com/EmmaDSCodes){:rel="noopener"}.
