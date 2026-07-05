@@ -133,6 +133,75 @@ These are the footnotes added by the human editor to point out issues in the AI 
 [^1]: Technically we just launched the recipe and scout sites a few days before.
 [^2]: Hey! I kinda like them. I mean check out [Lemonade Days](https://lemonade-days.hydephp.site/?ref=nordlys) - it's so summery!
 
-Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com/hydephp/nordlys-demo?ref=blog) and the live preview is at [nordlys.hydephp.site](https://nordlys.hydephp.site/?ref=blog). And below is the player for the promo video Fable generated.
+Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com/hydephp/nordlys-demo?ref=blog) and the live preview is at [nordlys.hydephp.site](https://nordlys.hydephp.site/?ref=blog).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ij-r085aEU8?si=OADy8O96FwKo6EeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<script>
+(() => {
+  const videoId = "ij-r085aEU8";
+
+  window.addEventListener("load", () => {
+    const img = document.querySelector(
+      'article figure[itemprop="image"] img[src*="nordlys"]'
+    );
+
+    if (!img) return;
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "cover-video";
+    wrapper.setAttribute("aria-hidden", "true");
+
+    const ratio =
+      img.naturalWidth && img.naturalHeight
+        ? `${img.naturalWidth} / ${img.naturalHeight}`
+        : "16 / 9";
+
+    wrapper.style.aspectRatio = ratio;
+
+    const iframe = document.createElement("iframe");
+
+    iframe.src =
+    `https://www.youtube.com/embed/${videoId}` +
+    `?autoplay=1` +
+    `&mute=1` +
+    `&playsinline=1` +
+    `&controls=0` +
+    `&disablekb=1` +
+    `&fs=0` +
+    `&iv_load_policy=3` +
+    `&cc_load_policy=0` +
+    `&loop=1` +
+    `&playlist=${videoId}` +
+    `&rel=0`;
+
+    iframe.title = "Background video";
+    iframe.loading = "lazy";
+    iframe.allow =
+      "autoplay; encrypted-media; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("tabindex", "-1");
+
+    wrapper.appendChild(iframe);
+
+    img.replaceWith(wrapper);
+  });
+})();
+</script>
+
+<style>
+.cover-video {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+}
+
+.cover-video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  pointer-events: none;
+}
+</style>
