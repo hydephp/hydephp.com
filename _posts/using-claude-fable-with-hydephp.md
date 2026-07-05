@@ -20,15 +20,15 @@ Try out the demo site at (nordlys.hydephp.site)[https://nordlys.hydephp.site/?re
 
 ## Letting Claude Drive
 
-HydePHP has had a few demo sites over the years — a recipe blog, a photography
-portfolio, a scout troop site. They're fine. They show the basics. But none of them
+HydePHP has had a few demo sites over the years[^1] — a recipe blog, a photography
+portfolio, a scout troop site. They're fine.[^2] They show the basics. But none of them
 really flexes the parts of Hyde we're proudest of: DataCollections feeding Blade
 pages, custom components, the docs module living side by side with a blog, all of it
 compiling down to plain static HTML.
 
 So we ran an experiment: give Claude Fable 5 the brief and see what comes back. The
 brief was short — *build a demo that shows off Hyde's advanced features, and don't
-give it that generic AI-generated look.* What came back is [Nordlys Air](https://github.com/hydephp),
+give it that generic AI-generated look.* What came back is [Nordlys Air](https://nordlys.hydephp.site/?ref=blog),
 a fictional bush airline flying six routes above the Arctic Circle, complete with a
 live split-flap departures board, engineering-drawing aircraft profiles, and a crew
 operations manual.
@@ -114,10 +114,21 @@ could build that."
 
 ## Try it yourself
 
-The full project is available as a standard Hyde repository — clone it, run
+The full project is available as a standard Hyde [repository](https://github.com/hydephp/nordlys-demo?ref=blog) — clone it, run
 `composer install && php hyde build`, and poke around. Change a route's status in
 its YAML file and rebuild to watch the board update. Add an aircraft. Break the
 timetable. That's what it's for.
 
 And if you build something with Hyde — with or without an AI copilot — we'd love
 to see it.
+
+## Footnotes
+
+These are the footnotes added by the human editor to point out issues in the AI text.
+
+[^1]: Technically we just launched the recipe and scout sites.
+[^2]: Hey! I kinda like them. I mean check out [Lemonade Days](https://lemonade-days.hydephp.site/?ref=nordlys) - it's so summery!
+
+Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com/hydephp/nordlys-demo?ref=blog) and the live preview is at [nordlys.hydephp.site](https://nordlys.hydephp.site/?ref=blog). And below is the player for the promo video Fable generated.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ij-r085aEU8?si=OADy8O96FwKo6EeA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
