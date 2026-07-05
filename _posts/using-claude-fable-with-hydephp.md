@@ -12,7 +12,7 @@ image:
 
 ## Editor's note
 
-Everything after this setion was written by an AI. Don't stop reading. I know most of us are bored of AI written content, but I assure you, this one is different. I want you to give it a chance. And I'm about to tell you why.
+Everything after this section was written by an AI. Don't stop reading. I know most of us are bored of AI written content, but I assure you, this one is different. I want you to give it a chance. And I'm about to tell you why.
 
 If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuenly blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.
 
