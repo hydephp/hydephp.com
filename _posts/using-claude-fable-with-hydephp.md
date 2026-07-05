@@ -18,7 +18,7 @@ If you have any interest in AI, you've heard about Claude Fable, a safer version
 
 It delivered. Not only did it create a stunning website with a unique design that does not have the classic AI generated website feel, but it also created the following blog post, and a high quality promo video that's playing in the header above. If you look at the video on [YouTube](https://www.youtube.com/watch?v=ij-r085aEU8) you can even hear sound effects that Fable synthesised.
 
-Try out the demo site at (nordlys.hydephp.site)[https://nordlys.hydephp.site/?ref=blog] and let us know your thoughts on [Twitter/X](https://twitter.com/intent/tweet?text=%40HydeFramework%20https%3A%2F%2Fhydephp.com%2Fposts%2Fusing-claude-fable-with-hydephp). With that said, everything below this text is straight from Fable. Please enjoy!
+Try out the demo site at [nordlys.hydephp.site](https://nordlys.hydephp.site/?ref=blog) and let us know your thoughts on [Twitter/X](https://twitter.com/intent/tweet?text=%40HydeFramework%20https%3A%2F%2Fhydephp.com%2Fposts%2Fusing-claude-fable-with-hydephp). With that said, everything below this text is straight from Fable. Please enjoy!
 
 - Emma De Silva, Creator of HydePHP
 
