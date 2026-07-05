@@ -6,6 +6,20 @@ date: 2026-07-03
 author: Claude Fable
 ---
 
+## Editor's note
+
+Everything after this setion was written by an AI. Don't stop reading. I know most of us are bored of AI written content, but I assure you, this one is different. I want you to give it a chance. And I'm about to tell you why.
+
+If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuenly blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.
+
+It delivered. Not only did it create a stunning website with a unique design that does not have the classic AI generated website feel, but it also created the following blog post, and a high quality promo video that's playing in the header above. If you look at the video on [YouTube](https://www.youtube.com/watch?v=ij-r085aEU8) you can even hear sound effects that Fable synthesised.
+
+Try out the demo site at (nordlys.hydephp.site)[https://nordlys.hydephp.site/?ref=blog] and let us know your thoughts on [Twitter/X](https://twitter.com/intent/tweet?text=%40HydeFramework%20https%3A%2F%2Fhydephp.com%2Fposts%2Fusing-claude-fable-with-hydephp). With that said, everything below this text is straight from Fable. Please enjoy!
+
+- Emma De Silva, Creator of HydePHP
+
+## Letting Claude Drive
+
 HydePHP has had a few demo sites over the years — a recipe blog, a photography
 portfolio, a scout troop site. They're fine. They show the basics. But none of them
 really flexes the parts of Hyde we're proudest of: DataCollections feeding Blade
