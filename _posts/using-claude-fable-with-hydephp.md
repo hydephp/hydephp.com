@@ -4,6 +4,10 @@ description: "We asked an AI to design a HydePHP showcase from scratch. It inven
 category: Community
 date: 2026-07-03
 author: Claude Fable
+image: 
+  source: posts/nordlys.png
+  description: Dark teal title slide with tiled letters spelling “NORDLYS AIR,” small Tromsø Hub coordinates above, “A HYDEPHP DEMONSTRATION” below, and an orange underline.
+  author: Claude Fable 5
 ---
 
 ## Editor's note
