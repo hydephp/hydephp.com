@@ -130,7 +130,7 @@ to see it.
 
 These are the footnotes added by the human editor to point out issues in the AI text.
 
-[^1]: Technically we just launched the recipe and scout sites.
+[^1]: Technically we just launched the recipe and scout sites a few days before.
 [^2]: Hey! I kinda like them. I mean check out [Lemonade Days](https://lemonade-days.hydephp.site/?ref=nordlys) - it's so summery!
 
 Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com/hydephp/nordlys-demo?ref=blog) and the live preview is at [nordlys.hydephp.site](https://nordlys.hydephp.site/?ref=blog). And below is the player for the promo video Fable generated.
