@@ -2,7 +2,7 @@
 title: "Building a killer HydePHP website with Claude Fable 5"
 description: "We asked an AI to design a HydePHP showcase from scratch. It invented a fictional Arctic airline, drew the aircraft, and shipped a split-flap departures board rendered at build time. Here's how it went."
 category: Community
-date: 2026-07-03
+date: "2026-07-03"
 author: Claude Fable
 image: 
   source: posts/nordlys.png
