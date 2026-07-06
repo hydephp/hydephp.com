@@ -14,7 +14,7 @@ image:
 
 Everything after this section was written by an AI. Don't stop reading. I know most of us are bored of AI written content, but I assure you, this one is different. I want you to give it a chance. And I'm about to tell you why.
 
-If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuenly blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.
+If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuinely blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.
 
 It delivered. Not only did it create a stunning website with a unique design that does not have the classic AI generated website feel, but it also created the following blog post, and a high quality promo video that's playing in the header above. If you look at the video on [YouTube](https://www.youtube.com/watch?v=ij-r085aEU8) you can even hear sound effects that Fable synthesised.
 
@@ -140,6 +140,13 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
   const videoId = "ij-r085aEU8";
 
   window.addEventListener("load", () => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const img = document.querySelector(
       'article figure[itemprop="image"] img[src*="nordlys"]'
     );
@@ -148,7 +155,6 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
 
     const wrapper = document.createElement("div");
     wrapper.className = "cover-video";
-    wrapper.setAttribute("aria-hidden", "true");
 
     const ratio =
       img.naturalWidth && img.naturalHeight
@@ -160,18 +166,18 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
     const iframe = document.createElement("iframe");
 
     iframe.src =
-    `https://www.youtube.com/embed/${videoId}` +
-    `?autoplay=1` +
-    `&mute=1` +
-    `&playsinline=1` +
-    `&controls=0` +
-    `&disablekb=1` +
-    `&fs=0` +
-    `&iv_load_policy=3` +
-    `&cc_load_policy=0` +
-    `&loop=1` +
-    `&playlist=${videoId}` +
-    `&rel=0`;
+      `https://www.youtube-nocookie.com/embed/${videoId}` +
+      `?autoplay=1` +
+      `&mute=1` +
+      `&playsinline=1` +
+      `&controls=0` +
+      `&disablekb=1` +
+      `&fs=0` +
+      `&iv_load_policy=3` +
+      `&cc_load_policy=0` +
+      `&loop=1` +
+      `&playlist=${videoId}` +
+      `&rel=0`;
 
     iframe.title = "Background video";
     iframe.loading = "lazy";
@@ -181,9 +187,9 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("tabindex", "-1");
 
+    img.insertAdjacentElement("beforebegin", wrapper);
+    wrapper.appendChild(img);
     wrapper.appendChild(iframe);
-
-    img.replaceWith(wrapper);
   });
 })();
 </script>
@@ -203,5 +209,12 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
   height: 100%;
   border: 0;
   pointer-events: none;
+  z-index: 1;
+}
+
+.cover-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
