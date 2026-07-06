@@ -183,7 +183,7 @@
         <div aria-label="Article body" itemprop="articleBody">
                     <h2>Editor's note</h2>
 <p>Everything after this section was written by an AI. Don't stop reading. I know most of us are bored of AI written content, but I assure you, this one is different. I want you to give it a chance. And I'm about to tell you why.</p>
-<p>If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuenly blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.</p>
+<p>If you have any interest in AI, you've heard about Claude Fable, a safer version of the Mythos model, which is genuinely blowing users across domains away. I wanted to try Fable out to create a new HydePHP demo website to show off some more advanced features.</p>
 <p>It delivered. Not only did it create a stunning website with a unique design that does not have the classic AI generated website feel, but it also created the following blog post, and a high quality promo video that's playing in the header above. If you look at the video on <a href="https://www.youtube.com/watch?v=ij-r085aEU8">YouTube</a> you can even hear sound effects that Fable synthesised.</p>
 <p>Try out the demo site at <a href="https://nordlys.hydephp.site/?ref=blog">nordlys.hydephp.site</a> and let us know your thoughts on <a href="https://twitter.com/intent/tweet?text=%40HydeFramework%20https%3A%2F%2Fhydephp.com%2Fposts%2Fusing-claude-fable-with-hydephp">Twitter/X</a>. With that said, everything below this text is straight from Fable. Please enjoy!</p>
 <ul>
@@ -276,6 +276,13 @@ to see it.</p>
   const videoId = "ij-r085aEU8";
 
   window.addEventListener("load", () => {
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
     const img = document.querySelector(
       'article figure[itemprop="image"] img[src*="nordlys"]'
     );
@@ -284,7 +291,6 @@ to see it.</p>
 
     const wrapper = document.createElement("div");
     wrapper.className = "cover-video";
-    wrapper.setAttribute("aria-hidden", "true");
 
     const ratio =
       img.naturalWidth && img.naturalHeight
@@ -296,18 +302,18 @@ to see it.</p>
     const iframe = document.createElement("iframe");
 
     iframe.src =
-    `https://www.youtube.com/embed/${videoId}` +
-    `?autoplay=1` +
-    `&mute=1` +
-    `&playsinline=1` +
-    `&controls=0` +
-    `&disablekb=1` +
-    `&fs=0` +
-    `&iv_load_policy=3` +
-    `&cc_load_policy=0` +
-    `&loop=1` +
-    `&playlist=${videoId}` +
-    `&rel=0`;
+      `https://www.youtube-nocookie.com/embed/${videoId}` +
+      `?autoplay=1` +
+      `&mute=1` +
+      `&playsinline=1` +
+      `&controls=0` +
+      `&disablekb=1` +
+      `&fs=0` +
+      `&iv_load_policy=3` +
+      `&cc_load_policy=0` +
+      `&loop=1` +
+      `&playlist=${videoId}` +
+      `&rel=0`;
 
     iframe.title = "Background video";
     iframe.loading = "lazy";
@@ -317,9 +323,9 @@ to see it.</p>
     iframe.setAttribute("frameborder", "0");
     iframe.setAttribute("tabindex", "-1");
 
+    img.insertAdjacentElement("beforebegin", wrapper);
+    wrapper.appendChild(img);
     wrapper.appendChild(iframe);
-
-    img.replaceWith(wrapper);
   });
 })();
 </script>
@@ -338,6 +344,13 @@ to see it.</p>
   height: 100%;
   border: 0;
   pointer-events: none;
+  z-index: 1;
+}
+
+.cover-video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 </style>
 <div class="footnotes" role="doc-endnotes"><hr /><ol><li class="footnote" id="fn:1" role="doc-endnote"><p>Technically we just launched the recipe and scout sites a few days before.&nbsp;<a class="footnote-backref" rev="footnote" href="#fnref:1" role="doc-backlink">↩</a></p></li>
