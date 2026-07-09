@@ -4,7 +4,7 @@ return [
     'paths' => [
         resource_path('views'),
         base_path('_pages'),
-        base_path('_templates'),
+        base_path('_layouts'),
     ],
 
     'compiled' => env(
