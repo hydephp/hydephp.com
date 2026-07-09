@@ -24,11 +24,7 @@
             href="{{ $home ?? '/' }}"
             class="flex items-center gap-2.5 rounded-sm font-['Fraunces',serif] text-xl font-semibold text-white no-underline [font-variation-settings:'opsz'_40,'SOFT'_30] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
         >
-            <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" focusable="false" class="block">
-                <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
-                <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
-                <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
-            </svg>
+            <img src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo" class="inline-block" style="height: 2.5rem">
             HydePHP
         </a>
 
