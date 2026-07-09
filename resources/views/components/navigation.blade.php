@@ -1,22 +1,7 @@
-{{--
-    Main navigation — HydePHP
-
-    A single, self-contained component. Pulls its links from `navigation.main`,
-    keeps your visual design, adds an accessible mobile menu (Alpine.js) and a
-    "Get started" button pointing at the docs.
-
-    Place at:  resources/views/components/navigation.blade.php
-    Use with:  <x-navigation />
-
-    Needs:  Alpine.js (bundled with Hyde) and the "Fraunces" font loaded.
---}}
-
 @php
     /** @var \Hyde\Framework\Features\Navigation\NavigationMenu $navigation */
     $navigation = app('navigation.main');
 
-    // This nav is intentionally flat, so any dropdown groups are flattened into
-    // plain links. Replace this with a group-aware loop if you ever want dropdowns.
     $items = collect($navigation->getItems())->flatMap(fn ($item) =>
         $item instanceof \Hyde\Framework\Features\Navigation\NavigationGroup
             ? $item->getItems()
@@ -24,7 +9,7 @@
     );
 
     $home       = \Hyde\Foundation\Facades\Routes::get('index');
-    $getStarted = \Hyde\Foundation\Facades\Routes::get('docs/index'); // change the key if your docs entry point differs
+    $getStarted = \Hyde\Foundation\Facades\Routes::get('docs/index');
 @endphp
 
 <nav
