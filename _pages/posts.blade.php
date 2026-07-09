@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,419 +7,222 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
 <style>
-:root{
-  --ink:#14111c;
-  --ink-2:#1c1827;
-  --ink-3:#252031;
-  --paper:#ece7da;
-  --paper-ink:#2b2433;
-  --violet:#8d7bf5;
-  --violet-dim:#5e50b8;
-  --gold:#d6a24a;
-  --fog:#a49cba;
-  --line:rgba(164,156,186,.16);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  background:var(--ink);
-  color:#e9e5f2;
-  font-family:'Instrument Sans',system-ui,sans-serif;
-  font-size:17px;line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-}
-::selection{background:var(--violet);color:var(--ink)}
-a{color:inherit}
-.mono{font-family:'JetBrains Mono',monospace}
-.wrap{max-width:1000px;margin:0 auto;padding:0 28px}
-
-/* ---------- Nav ---------- */
-nav{
-  position:sticky;top:0;z-index:50;
-  background:color-mix(in srgb, var(--ink) 86%, transparent);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:28px;height:64px}
-.wordmark{
-  display:flex;align-items:center;gap:10px;text-decoration:none;
-  font-family:'Fraunces',serif;font-weight:600;font-size:1.25rem;
-  font-variation-settings:'opsz' 40,'SOFT' 30;
-}
-.nav-links{display:flex;gap:24px;margin-left:auto;align-items:center}
-.nav-links a{text-decoration:none;font-size:.92rem;color:var(--fog);transition:color .15s}
-.nav-links a:hover{color:#fff}
-.nav-links a.here{color:#fff;border-bottom:2px solid transparent;border-image:linear-gradient(to right,var(--gold),var(--violet)) 1;padding-bottom:2px}
-.nav-links a.cta{color:var(--ink);background:var(--gold);padding:7px 16px;border-radius:99px;font-weight:600;border:none}
-.nav-links a.cta:hover{background:#e5b25e;color:var(--ink)}
-
-/* ---------- Masthead ---------- */
-.masthead{
-  text-align:center;padding:76px 0 0;
-}
-.masthead .over{
-  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.26em;
-  text-transform:uppercase;color:var(--gold);
-}
-.masthead h1{
-  font-family:'Fraunces',serif;font-weight:420;
-  font-size:clamp(2.8rem,6.5vw,4.6rem);line-height:1;letter-spacing:-.015em;
-  margin-top:16px;
-  font-variation-settings:'opsz' 144,'SOFT' 40,'WONK' 1;
-}
-.masthead h1 em{font-style:italic;color:var(--violet);font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1}
-.masthead .rule{
-  max-width:520px;margin:28px auto 0;
-  display:flex;align-items:center;gap:16px;
-  color:var(--fog);
-}
-.masthead .rule::before,.masthead .rule::after{
-  content:'';flex:1;height:1px;
-  background:linear-gradient(to right, transparent, var(--line) 30%, var(--line) 70%, transparent);
-}
-.masthead .rule span{
-  font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.16em;
-}
-.masthead .rule a{color:var(--gold);text-decoration:none}
-.masthead .rule a:hover{text-decoration:underline}
-
-/* ---------- Filters ---------- */
-.filters{
-  display:flex;gap:10px;justify-content:center;flex-wrap:wrap;
-  padding:36px 0 0;
-}
-.filters button{
-  font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.1em;
-  color:var(--fog);border:1px solid var(--line);border-radius:99px;
-  padding:6px 16px;background:none;cursor:pointer;
-  transition:color .15s,border-color .15s;
-}
-.filters button:hover{color:#fff;border-color:var(--fog)}
-.filters button.on{
-  color:var(--ink);background:var(--gold);border-color:var(--gold);
-}
-.filters button:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
-
-/* ---------- Featured dispatch ---------- */
-.featured-outer{padding:48px 0 0}
-.featured{
-  display:block;text-decoration:none;
-  border:1px solid var(--line);border-radius:16px;
-  padding:52px 56px;position:relative;overflow:hidden;
-  background:
-    radial-gradient(700px 340px at 85% -20%, rgba(141,123,245,.16), transparent 65%),
-    radial-gradient(500px 300px at 0% 110%, rgba(214,162,74,.08), transparent 60%),
-    var(--ink-2);
-  transition:border-color .2s;
-}
-.featured:hover{border-color:var(--violet-dim)}
-.featured .flag{
-  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--gold);
-  display:flex;align-items:center;gap:12px;
-}
-.featured .flag::after{content:'';width:44px;height:1px;background:linear-gradient(to right,var(--gold),transparent)}
-.featured h2{
-  font-family:'Fraunces',serif;font-weight:440;
-  font-size:clamp(1.8rem,3.8vw,2.7rem);line-height:1.1;letter-spacing:-.012em;
-  margin-top:18px;max-width:20ch;
-  font-variation-settings:'opsz' 144,'SOFT' 40,'WONK' 1;
-}
-.featured p{color:var(--fog);margin-top:16px;max-width:58ch}
-.featured .byline{
-  display:flex;align-items:center;gap:14px;margin-top:28px;
-  font-size:.85rem;color:var(--fog);
-}
-.featured .avatar{
-  width:34px;height:34px;border-radius:50%;flex:none;
-  background:radial-gradient(circle at 32% 28%, var(--violet), var(--violet-dim));
-  display:flex;align-items:center;justify-content:center;
-  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
-  color:#fff;font-size:1rem;
-}
-.featured .byline b{color:#e9e5f2;font-weight:600}
-.featured .byline .sep{color:var(--ink-3)}
-.featured .go{
-  position:absolute;right:44px;bottom:40px;
-  font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--gold);
-}
-
-/* ---------- The ledger of dispatches ---------- */
-.ledger-outer{padding:72px 0 40px}
-.yr{
-  display:grid;grid-template-columns:170px 1fr;gap:40px;
-  padding:44px 0 12px;
-}
-.yr + .yr{border-top:1px solid var(--line)}
-.yr .year{
-  font-family:'Fraunces',serif;font-weight:380;font-style:italic;
-  font-size:2.6rem;color:var(--ink-3);line-height:1;
-  font-variation-settings:'opsz' 144,'SOFT' 80;
-  position:sticky;top:96px;align-self:start;
-  -webkit-text-stroke:1px rgba(164,156,186,.35);
-}
-.post{
-  display:grid;grid-template-columns:100px 1fr auto;gap:24px;align-items:baseline;
-  padding:20px 0;border-bottom:1px solid var(--line);
-  text-decoration:none;position:relative;
-}
-.post:last-child{border-bottom:none}
-.post::before{
-  content:'';position:absolute;left:-24px;top:26px;
-  width:10px;height:2px;background:var(--gold);
-  opacity:0;transform:translateX(-6px);transition:opacity .15s,transform .15s;
-}
-.post:hover::before{opacity:1;transform:none}
-.post .date{
-  font-family:'JetBrains Mono',monospace;font-size:.74rem;color:var(--fog);
-  letter-spacing:.06em;white-space:nowrap;
-}
-.post h3{
-  font-family:'Fraunces',serif;font-weight:470;font-size:1.28rem;line-height:1.25;
-  letter-spacing:-.005em;transition:color .15s;
-  font-variation-settings:'opsz' 60,'SOFT' 50;
-}
-.post:hover h3{color:var(--violet)}
-.post .desc{
-  color:var(--fog);font-size:.92rem;margin-top:5px;max-width:56ch;
-  font-family:'Instrument Sans',sans-serif;font-weight:400;
-}
-.post .tag{
-  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.12em;
-  text-transform:uppercase;white-space:nowrap;
-  color:var(--fog);border:1px solid var(--line);border-radius:99px;padding:3px 12px;
-}
-.post .tag.release{color:var(--gold);border-color:rgba(214,162,74,.4)}
-.post .tag.devlog{color:var(--violet);border-color:rgba(141,123,245,.4)}
-
-/* ---------- Pager + RSS note ---------- */
-.pager-row{
-  display:flex;align-items:center;justify-content:space-between;gap:20px;
-  padding:20px 0 0;flex-wrap:wrap;
-}
-.older{
-  text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.8rem;
-  color:var(--fog);border:1px solid var(--line);border-radius:99px;padding:9px 20px;
-  transition:color .15s,border-color .15s;
-}
-.older:hover{color:#fff;border-color:var(--fog)}
-.rss-note{
-  color:var(--fog);font-size:.88rem;font-style:italic;
-  font-family:'Fraunces',serif;font-variation-settings:'SOFT' 80;
-}
-.rss-note a{color:var(--gold);text-decoration:none;font-style:normal}
-.rss-note a:hover{text-decoration:underline}
-
-footer{border-top:1px solid var(--line);padding:34px 0;color:var(--fog);font-size:.85rem;margin-top:80px}
-.foot-inner{max-width:1160px;margin:0 auto;padding:0 28px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
-.foot-inner .links{margin-left:auto;display:flex;gap:20px}
-.foot-inner a{text-decoration:none;color:var(--fog)}
-.foot-inner a:hover{color:#fff}
-
-/* Reveals */
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-}
-
-@media (max-width:860px){
-  .yr{grid-template-columns:1fr;gap:8px;padding-top:36px}
-  .yr .year{position:static;font-size:2rem}
-  .post{grid-template-columns:1fr;gap:4px;padding:18px 0}
-  .post .tag{justify-self:start;margin-top:6px}
-  .featured{padding:36px 28px 44px}
-  .featured .go{position:static;display:inline-block;margin-top:24px}
-}
-@media (max-width:640px){
-  .nav-links a:not(.cta){display:none}
-}
+::selection{background:#8d7bf5;color:#14111c}
 </style>
 </head>
-<body>
+<body class="bg-[#14111c] text-[#e9e5f2] antialiased font-['Instrument_Sans'] text-[17px] leading-[1.65]">
 
-<nav>
-  <div class="nav-inner">
-    <a class="wordmark" href="#">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+<nav class="sticky top-0 z-50 border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/[.86] backdrop-blur-xl">
+  <div class="mx-auto flex h-16 max-w-[1160px] items-center gap-7 px-7">
+    <a class="flex items-center gap-2.5 no-underline font-[Fraunces] text-xl font-semibold [font-variation-settings:'opsz'_40,'SOFT'_30]" href="#">
+      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" class="block">
         <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
         <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
         <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
       </svg>
       HydePHP
     </a>
-    <div class="nav-links">
-      <a href="#">Docs</a>
-      <a href="#">About</a>
-      <a href="#" class="here">Blog</a>
-      <a href="#">GitHub</a>
-      <a href="#" class="cta">Get started</a>
+    <div class="ml-auto flex items-center gap-6">
+      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">Docs</a>
+      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">About</a>
+      <a href="#" class="border-b-2 border-transparent pb-0.5 text-[.92rem] text-white no-underline [border-image:linear-gradient(to_right,#d6a24a,#8d7bf5)_1] max-[640px]:hidden">Blog</a>
+      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">GitHub</a>
+      <a href="#" class="rounded-full bg-[#d6a24a] px-4 py-[7px] text-[.92rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] hover:text-[#14111c]">Get started</a>
     </div>
   </div>
 </nav>
 
-<header class="masthead wrap">
-  <p class="over">The HydePHP Blog</p>
-  <h1>Notes &amp; <em>Dispatches</em></h1>
-  <div class="rule">
-    <span>Est. 2022 · 47 entries · <a href="#">Subscribe by RSS</a></span>
+<header class="mx-auto max-w-[1000px] px-7 pt-[76px] text-center">
+  <p class="font-['JetBrains_Mono'] text-[.72rem] uppercase tracking-[.26em] text-[#d6a24a]">The HydePHP Blog</p>
+  <h1 class="mt-4 font-[Fraunces] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
+    Notes &amp; <em class="italic text-[#8d7bf5] [font-variation-settings:'opsz'_144,'SOFT'_100,'WONK'_1]">Dispatches</em>
+  </h1>
+  <div class="mx-auto mt-7 flex max-w-[520px] items-center gap-4 text-[#a49cba]">
+    <span aria-hidden="true" class="h-px flex-1 bg-gradient-to-r from-transparent via-[rgba(164,156,186,.16)] to-transparent"></span>
+    <span class="font-['JetBrains_Mono'] text-[.72rem] tracking-[.16em]">Est. 2022 · 47 entries · <a href="#" class="text-[#d6a24a] no-underline hover:underline">Subscribe by RSS</a></span>
+    <span aria-hidden="true" class="h-px flex-1 bg-gradient-to-r from-transparent via-[rgba(164,156,186,.16)] to-transparent"></span>
   </div>
 </header>
 
-<div class="filters wrap" role="group" aria-label="Filter posts by category">
-  <button class="on">All</button>
-  <button>Releases</button>
-  <button>Devlog</button>
-  <button>Tutorials</button>
-  <button>Essays</button>
+<div class="mx-auto flex max-w-[1000px] flex-wrap justify-center gap-2.5 px-7 pt-9" role="group" aria-label="Filter posts by category">
+  <button class="filter-pill rounded-full border px-4 py-1.5 font-['JetBrains_Mono'] text-[.74rem] tracking-[.1em] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5] border-[#d6a24a] bg-[#d6a24a] text-[#14111c]" aria-pressed="true">All</button>
+  <button class="filter-pill rounded-full border border-[rgba(164,156,186,.16)] px-4 py-1.5 font-['JetBrains_Mono'] text-[.74rem] tracking-[.1em] text-[#a49cba] transition-colors hover:border-[#a49cba] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" aria-pressed="false">Releases</button>
+  <button class="filter-pill rounded-full border border-[rgba(164,156,186,.16)] px-4 py-1.5 font-['JetBrains_Mono'] text-[.74rem] tracking-[.1em] text-[#a49cba] transition-colors hover:border-[#a49cba] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" aria-pressed="false">Devlog</button>
+  <button class="filter-pill rounded-full border border-[rgba(164,156,186,.16)] px-4 py-1.5 font-['JetBrains_Mono'] text-[.74rem] tracking-[.1em] text-[#a49cba] transition-colors hover:border-[#a49cba] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" aria-pressed="false">Tutorials</button>
+  <button class="filter-pill rounded-full border border-[rgba(164,156,186,.16)] px-4 py-1.5 font-['JetBrains_Mono'] text-[.74rem] tracking-[.1em] text-[#a49cba] transition-colors hover:border-[#a49cba] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" aria-pressed="false">Essays</button>
 </div>
 
 <!-- Featured -->
-<div class="featured-outer wrap reveal">
-  <a class="featured" href="#">
-    <p class="flag">Latest dispatch</p>
-    <h2>Rebuilding the publish command for version three</h2>
-    <p>One command now does the work of three. A look inside the v3 CLI cleanup: why the old publish commands had to go, how the interactive picker works, and what "designing a command surface" actually means in practice.</p>
-    <div class="byline">
-      <span class="avatar" aria-hidden="true">E</span>
-      <span><b>Emma De Silva</b></span>
-      <span class="sep">·</span>
+<div class="reveal mx-auto max-w-[1000px] px-7 pt-12 opacity-0 translate-y-[14px] transition duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
+  <a class="relative block overflow-hidden rounded-2xl border border-[rgba(164,156,186,.16)] bg-[#1c1827] p-[52px] no-underline transition-colors hover:border-[#5e50b8] max-[860px]:px-7 max-[860px]:pb-11 max-[860px]:pt-9" style="background: radial-gradient(700px 340px at 85% -20%, rgba(141,123,245,.16), transparent 65%), radial-gradient(500px 300px at 0% 110%, rgba(214,162,74,.08), transparent 60%), #1c1827;" href="#">
+    <p class="flex items-center gap-3 font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.22em] text-[#d6a24a]">
+      Latest dispatch
+      <span aria-hidden="true" class="h-px w-11 bg-gradient-to-r from-[#d6a24a] to-transparent"></span>
+    </p>
+    <h2 class="mt-[18px] max-w-[20ch] font-[Fraunces] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.1] tracking-[-.012em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">Rebuilding the publish command for version three</h2>
+    <p class="mt-4 max-w-[58ch] text-[#a49cba]">One command now does the work of three. A look inside the v3 CLI cleanup: why the old publish commands had to go, how the interactive picker works, and what "designing a command surface" actually means in practice.</p>
+    <div class="mt-7 flex items-center gap-3.5 text-[.85rem] text-[#a49cba]">
+      <span class="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full font-[Fraunces] text-base font-medium italic text-white [font-variation-settings:'SOFT'_90]" style="background: radial-gradient(circle at 32% 28%, #8d7bf5, #5e50b8);" aria-hidden="true">E</span>
+      <span><b class="font-semibold text-[#e9e5f2]">Emma De Silva</b></span>
+      <span class="text-[#252031]">·</span>
       <span>July 2, 2026</span>
-      <span class="sep">·</span>
+      <span class="text-[#252031]">·</span>
       <span>8 min read</span>
     </div>
-    <span class="go">Read the dispatch →</span>
+    <span class="absolute bottom-10 right-11 font-['JetBrains_Mono'] text-[.78rem] text-[#d6a24a] max-[860px]:static max-[860px]:mt-6 max-[860px]:inline-block">Read the dispatch →</span>
   </a>
 </div>
 
 <!-- The ledger -->
-<main class="ledger-outer wrap">
+<main class="mx-auto max-w-[1000px] px-7 pb-10 pt-[72px]">
 
-  <div class="yr reveal">
-    <div class="year">2026</div>
+  <div class="reveal grid grid-cols-[170px_1fr] gap-10 px-0 pb-3 pt-11 opacity-0 translate-y-[14px] transition duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[860px]:grid-cols-1 max-[860px]:gap-2 max-[860px]:pt-9">
+    <div class="sticky top-24 self-start font-[Fraunces] text-[2.6rem] font-[380] italic leading-none text-[#252031] [-webkit-text-stroke:1px_rgba(164,156,186,.35)] [font-variation-settings:'opsz'_144,'SOFT'_80] max-[860px]:static max-[860px]:text-[2rem]">2026</div>
     <div>
-      <a class="post" href="#">
-        <span class="date">Jun 14</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Jun 14</span>
         <span>
-          <h3>Writing design docs for AI agents</h3>
-          <p class="desc">Why HydePHP now ships a design philosophy document, and what changed when the newest contributor stopped being human.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Writing design docs for AI agents</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">Why HydePHP now ships a design philosophy document, and what changed when the newest contributor stopped being human.</p>
         </span>
-        <span class="tag devlog">Devlog</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(141,123,245,.4)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#8d7bf5] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Devlog</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">May 20</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">May 20</span>
         <span>
-          <h3>Saying no to the --config flag</h3>
-          <p class="desc">Every rejected feature is a design decision. The case against a generic config override, argued in public.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Saying no to the --config flag</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">Every rejected feature is a design decision. The case against a generic config override, argued in public.</p>
         </span>
-        <span class="tag devlog">Devlog</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(141,123,245,.4)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#8d7bf5] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Devlog</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">Mar 08</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Mar 08</span>
         <span>
-          <h3>Documentation sites in fifteen minutes</h3>
-          <p class="desc">From an empty folder to a searchable, sidebar-navigated docs site, one Markdown file at a time.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Documentation sites in fifteen minutes</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">From an empty folder to a searchable, sidebar-navigated docs site, one Markdown file at a time.</p>
         </span>
-        <span class="tag">Tutorial</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(164,156,186,.16)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#a49cba] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Tutorial</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">Jan 22</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Jan 22</span>
         <span>
-          <h3>HydePHP 2.3: smarter navigation</h3>
-          <p class="desc">Automatic menu grouping, per-page priorities, and a handful of quality-of-life fixes from community reports.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">HydePHP 2.3: smarter navigation</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">Automatic menu grouping, per-page priorities, and a handful of quality-of-life fixes from community reports.</p>
         </span>
-        <span class="tag release">Release</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(214,162,74,.4)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#d6a24a] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Release</span>
       </a>
     </div>
   </div>
 
-  <div class="yr reveal">
-    <div class="year">2025</div>
+  <div class="reveal grid grid-cols-[170px_1fr] gap-10 border-t border-[rgba(164,156,186,.16)] px-0 pb-3 pt-11 opacity-0 translate-y-[14px] transition duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[860px]:grid-cols-1 max-[860px]:gap-2 max-[860px]:pt-9">
+    <div class="sticky top-24 self-start font-[Fraunces] text-[2.6rem] font-[380] italic leading-none text-[#252031] [-webkit-text-stroke:1px_rgba(164,156,186,.35)] [font-variation-settings:'opsz'_144,'SOFT'_80] max-[860px]:static max-[860px]:text-[2rem]">2025</div>
     <div>
-      <a class="post" href="#">
-        <span class="date">Nov 30</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Nov 30</span>
         <span>
-          <h3>How Hyde compiles your site</h3>
-          <p class="desc">A guided tour through the build pipeline, from page discovery to the moment your HTML hits the disk.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">How Hyde compiles your site</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">A guided tour through the build pipeline, from page discovery to the moment your HTML hits the disk.</p>
         </span>
-        <span class="tag">Essay</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(164,156,186,.16)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#a49cba] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Essay</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">Sep 12</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Sep 12</span>
         <span>
-          <h3>Blade components for static sites</h3>
-          <p class="desc">You don't need a running app to benefit from components. Patterns for reusable, testable static templates.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Blade components for static sites</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">You don't need a running app to benefit from components. Patterns for reusable, testable static templates.</p>
         </span>
-        <span class="tag">Tutorial</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(164,156,186,.16)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#a49cba] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Tutorial</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">Apr 03</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Apr 03</span>
         <span>
-          <h3>HydePHP 2.0 released</h3>
-          <p class="desc">A leaner core, a refreshed frontend, and two hundred thousand downloads of lessons folded back into the architecture.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">HydePHP 2.0 released</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">A leaner core, a refreshed frontend, and two hundred thousand downloads of lessons folded back into the architecture.</p>
         </span>
-        <span class="tag release">Release</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(214,162,74,.4)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#d6a24a] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Release</span>
       </a>
     </div>
   </div>
 
-  <div class="yr reveal">
-    <div class="year">2024</div>
+  <div class="reveal grid grid-cols-[170px_1fr] gap-10 border-t border-[rgba(164,156,186,.16)] px-0 pb-3 pt-11 opacity-0 translate-y-[14px] transition duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[860px]:grid-cols-1 max-[860px]:gap-2 max-[860px]:pt-9">
+    <div class="sticky top-24 self-start font-[Fraunces] text-[2.6rem] font-[380] italic leading-none text-[#252031] [-webkit-text-stroke:1px_rgba(164,156,186,.35)] [font-variation-settings:'opsz'_144,'SOFT'_80] max-[860px]:static max-[860px]:text-[2rem]">2024</div>
     <div>
-      <a class="post" href="#">
-        <span class="date">Oct 17</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Oct 17</span>
         <span>
-          <h3>Why your blog doesn't need a database</h3>
-          <p class="desc">The quiet case for static publishing: cheaper hosting, zero patching, and content that survives every framework you'll ever leave.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Why your blog doesn't need a database</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">The quiet case for static publishing: cheaper hosting, zero patching, and content that survives every framework you'll ever leave.</p>
         </span>
-        <span class="tag">Essay</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(164,156,186,.16)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#a49cba] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Essay</span>
       </a>
-      <a class="post" href="#">
-        <span class="date">Jun 05</span>
+      <a class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]" href="#">
+        <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition group-hover:translate-x-0 group-hover:opacity-100"></span>
+        <span class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">Jun 05</span>
         <span>
-          <h3>Deploying Hyde sites anywhere</h3>
-          <p class="desc">GitHub Pages, Netlify, a five-dollar VPS, or a Raspberry Pi in your closet. If it serves files, it serves Hyde.</p>
+          <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">Deploying Hyde sites anywhere</h3>
+          <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">GitHub Pages, Netlify, a five-dollar VPS, or a Raspberry Pi in your closet. If it serves files, it serves Hyde.</p>
         </span>
-        <span class="tag">Tutorial</span>
+        <span class="whitespace-nowrap rounded-full border border-[rgba(164,156,186,.16)] px-3 py-[3px] font-['JetBrains_Mono'] text-[.68rem] uppercase tracking-[.12em] text-[#a49cba] max-[860px]:mt-1.5 max-[860px]:justify-self-start">Tutorial</span>
       </a>
     </div>
   </div>
 
-  <div class="pager-row reveal">
-    <a class="older" href="#">Older dispatches →</a>
-    <p class="rss-note">No newsletter popup here. <a href="#">Subscribe by RSS</a>, like nature intended.</p>
+  <div class="reveal flex flex-wrap items-center justify-between gap-5 pt-5 opacity-0 translate-y-[14px] transition duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
+    <a class="rounded-full border border-[rgba(164,156,186,.16)] px-5 py-[9px] font-['JetBrains_Mono'] text-[.8rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Older dispatches →</a>
+    <p class="font-[Fraunces] text-[.88rem] italic text-[#a49cba] [font-variation-settings:'SOFT'_80]">No newsletter popup here. <a href="#" class="not-italic text-[#d6a24a] no-underline hover:underline">Subscribe by RSS</a>, like nature intended.</p>
   </div>
 </main>
 
-<footer>
-  <div class="foot-inner">
+<footer class="mt-20 border-t border-[rgba(164,156,186,.16)] py-[34px] text-[.85rem] text-[#a49cba]">
+  <div class="mx-auto flex max-w-[1160px] flex-wrap items-center gap-6 px-7">
     <span>Site proudly built with HydePHP 🎩</span>
-    <div class="links">
-      <a href="#">GitHub</a>
-      <a href="#">Discord</a>
-      <a href="#">RSS</a>
-      <a href="#">Legal</a>
+    <div class="ml-auto flex gap-5">
+      <a href="#" class="no-underline text-[#a49cba] hover:text-white">GitHub</a>
+      <a href="#" class="no-underline text-[#a49cba] hover:text-white">Discord</a>
+      <a href="#" class="no-underline text-[#a49cba] hover:text-white">RSS</a>
+      <a href="#" class="no-underline text-[#a49cba] hover:text-white">Legal</a>
     </div>
   </div>
 </footer>
 
 <script>
 (function(){
-  // Filter pills (visual toggle for the concept)
-  const pills = document.querySelectorAll('.filters button');
-  pills.forEach(function(p){
-    p.addEventListener('click', function(){
-      pills.forEach(function(x){ x.classList.remove('on'); });
-      p.classList.add('on');
+  const active = ['border-[#d6a24a]', 'bg-[#d6a24a]', 'text-[#14111c]'];
+  const inactive = ['border-[rgba(164,156,186,.16)]', 'text-[#a49cba]', 'hover:border-[#a49cba]', 'hover:text-white'];
+  const pills = document.querySelectorAll('.filter-pill');
+
+  pills.forEach(function(pill){
+    pill.addEventListener('click', function(){
+      pills.forEach(function(other){
+        other.classList.remove(...active);
+        other.classList.add(...inactive);
+        other.setAttribute('aria-pressed', 'false');
+      });
+      pill.classList.remove(...inactive);
+      pill.classList.add(...active);
+      pill.setAttribute('aria-pressed', 'true');
     });
   });
 
-  // Section reveals
   const io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      entry.target.classList.remove('opacity-0', 'translate-y-[14px]');
+      entry.target.classList.add('opacity-100', 'translate-y-0');
+      io.unobserve(entry.target);
     });
   }, { threshold: 0.08 });
+
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 })();
 </script>
