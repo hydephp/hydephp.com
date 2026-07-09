@@ -1,0 +1,412 @@
+1
+00:00:00,000 --> 00:00:03,040
+All right, static site generators, everybody's talking about them.
+
+2
+00:00:03,040 --> 00:00:04,720
+Seems like a new one pops up every day.
+
+3
+00:00:04,720 --> 00:00:08,560
+Right. And this time we're doing a deep dive on HydePHP.
+
+4
+00:00:08,560 --> 00:00:10,240
+At least that's what their docs are calling it.
+
+5
+00:00:10,240 --> 00:00:11,120
+Catchy name.
+
+6
+00:00:11,120 --> 00:00:13,920
+It really is. And they're making some bold claims.
+
+7
+00:00:13,920 --> 00:00:16,640
+Elegance and power. All in one package.
+
+8
+00:00:16,640 --> 00:00:20,480
+Yeah, that focused on writing content, not markup line, caught my eye.
+
+9
+00:00:20,480 --> 00:00:23,520
+Right. Because who wants to mess around with HTML tags all day?
+
+10
+00:00:23,520 --> 00:00:24,160
+Not me.
+
+11
+00:00:24,160 --> 00:00:25,920
+Speak for yourself. I kind of like them.
+
+12
+00:00:25,920 --> 00:00:27,360
+Yeah, but I see their point.
+
+13
+00:00:27,360 --> 00:00:29,760
+They mentioned using Markdown, which is great for, well,
+
+14
+00:00:29,760 --> 00:00:34,800
+you know, just writing. And Laravel, which is a PHP framework, right?
+
+15
+00:00:34,800 --> 00:00:37,600
+Kind of seems like overkill for a static site.
+
+16
+00:00:37,600 --> 00:00:39,520
+Well, they're actually using Laravel Zero.
+
+17
+00:00:39,520 --> 00:00:42,800
+It's a stripped down version of Laravel built for speed.
+
+18
+00:00:42,800 --> 00:00:45,520
+So they get the structure of a framework without all the bloat.
+
+19
+00:00:45,520 --> 00:00:49,760
+Ah, so it's like they optimized it specifically for static sites?
+
+20
+00:00:49,760 --> 00:00:53,760
+Exactly. They're playing to the strength of static sites, which is smart.
+
+21
+00:00:53,760 --> 00:00:57,920
+And speaking of strengths, they really hype up the whole blazing fast angle.
+
+22
+00:00:57,920 --> 00:01:00,080
+But is speed really that big of a deal?
+
+23
+00:01:00,080 --> 00:01:04,000
+Absolutely. First off, user experience, slow site,
+
+24
+00:01:04,000 --> 00:01:05,360
+say goodbye to visitors.
+
+25
+00:01:05,360 --> 00:01:08,080
+Ouch. Yeah, nobody's got time for that spinny wheel of doom.
+
+26
+00:01:08,080 --> 00:01:11,120
+Exactly. But it's also about the developer experience.
+
+27
+00:01:11,120 --> 00:01:14,880
+If building and rebuilding the site is super fast, like they claim,
+
+28
+00:01:14,880 --> 00:01:17,440
+it makes the developer's life way easier.
+
+29
+00:01:17,440 --> 00:01:20,800
+Quicker iterations, faster feedback loops, you know the drill.
+
+30
+00:01:20,800 --> 00:01:23,680
+Makes sense. It's like the faster you can see your changes,
+
+31
+00:01:23,680 --> 00:01:25,200
+the faster you can get stuff done.
+
+32
+00:01:25,200 --> 00:01:29,200
+They also talk about being simple to get started, but powerful when you need it.
+
+33
+00:01:29,200 --> 00:01:31,120
+Right. Like that classic balancing act.
+
+34
+00:01:31,120 --> 00:01:34,080
+Exactly. But who are they targeting with that message?
+
+35
+00:01:34,080 --> 00:01:36,560
+Who's the ideal HydePHP user?
+
+36
+00:01:36,560 --> 00:01:39,360
+Well, they definitely assume some command line comfort.
+
+37
+00:01:39,360 --> 00:01:42,320
+You got to be okay, getting your hands a little dirty with code.
+
+38
+00:01:42,320 --> 00:01:45,200
+So not exactly aimed at your average WordPress blogger, though?
+
+39
+00:01:45,200 --> 00:01:46,400
+Probably not.
+
+40
+00:01:46,400 --> 00:01:50,240
+But they do emphasize no endless configuration,
+
+41
+00:01:50,240 --> 00:01:53,120
+which suggests a streamlined experience.
+
+42
+00:01:53,120 --> 00:01:57,200
+Might appeal to folks familiar with Jekyll or other minimal setups.
+
+43
+00:01:57,200 --> 00:02:00,160
+So previous static site experience's a plus. Got it.
+
+44
+00:02:00,160 --> 00:02:03,040
+And they even include Tailwind CSS by default.
+
+45
+00:02:03,040 --> 00:02:05,760
+Smart move. Tailwind's super popular for a reason.
+
+46
+00:02:05,760 --> 00:02:08,400
+For those who haven't used it, what's the big deal with Tailwind?
+
+47
+00:02:08,400 --> 00:02:10,960
+It's a utility-first CSS framework.
+
+48
+00:02:10,960 --> 00:02:14,720
+Basically pre-built styles, you can apply directly to your HTML,
+
+49
+00:02:14,720 --> 00:02:16,320
+make styling super fast.
+
+50
+00:02:16,320 --> 00:02:19,520
+Ah, so it's like building blocks for your website's design.
+
+51
+00:02:19,520 --> 00:02:22,160
+Exactly. And by including it by default,
+
+52
+00:02:22,160 --> 00:02:25,040
+they're knocking out a setup step right off the bat.
+
+53
+00:02:25,040 --> 00:02:27,600
+Plus, Tailwind's known for producing clean,
+
+54
+00:02:27,600 --> 00:02:29,040
+professional looking sites.
+
+55
+00:02:29,040 --> 00:02:31,760
+So it aligns with that elegance thing they're going for.
+
+56
+00:02:31,760 --> 00:02:34,000
+Okay, you've convinced me, I'm ready to give it a shot.
+
+57
+00:02:34,000 --> 00:02:37,680
+But real talk, how is time when we're talking to get this thing up and run it?
+
+58
+00:02:37,680 --> 00:02:38,720
+Not bad at all, actually.
+
+59
+00:02:38,720 --> 00:02:42,800
+You need PHP 8.1 or higher, pretty standard stuff.
+
+60
+00:02:42,800 --> 00:02:43,360
+Check.
+
+61
+00:02:43,360 --> 00:02:46,240
+And Composer, it's a package manager for PHP.
+
+62
+00:02:46,240 --> 00:02:48,240
+Helps you wrangle all the dependencies.
+
+63
+00:02:48,240 --> 00:02:50,400
+Right, kind of like, what's it called?
+
+64
+00:02:50,400 --> 00:02:52,080
+NPM for JavaScript?
+
+65
+00:02:52,080 --> 00:02:53,280
+Yeah, kind of like that.
+
+66
+00:02:53,280 --> 00:02:53,520
+Yeah.
+
+67
+00:02:53,520 --> 00:02:58,320
+And installation's a breeze just follow the instructions on the HydePHP website.
+
+68
+00:02:58,320 --> 00:02:59,840
+No crazy workarounds or anything?
+
+69
+00:02:59,840 --> 00:03:01,680
+Nope, they keep it nice and straight forward.
+
+70
+00:03:01,680 --> 00:03:02,560
+Music to my ears.
+
+71
+00:03:02,560 --> 00:03:04,560
+Okay, so I've got it installed.
+
+72
+00:03:04,560 --> 00:03:07,040
+I'm ready to roll what's the workflow actually like?
+
+73
+00:03:07,040 --> 00:03:08,160
+Almost too easy.
+
+74
+00:03:08,160 --> 00:03:11,360
+You basically just drop your Markdown files into a specific folder
+
+75
+00:03:11,360 --> 00:03:14,000
+or use Hyde's commands to generate some starter templates.
+
+76
+00:03:14,000 --> 00:03:16,000
+Then you run hyde build and bam,
+
+77
+00:03:16,000 --> 00:03:19,760
+you've got a directory full of static HTML ready to deploy wherever you want.
+
+78
+00:03:19,760 --> 00:03:22,160
+Hold on, did you just say drop Markdown files and go?
+
+79
+00:03:22,160 --> 00:03:23,200
+That's it?
+
+80
+00:03:23,200 --> 00:03:23,760
+Pretty much.
+
+81
+00:03:23,760 --> 00:03:25,200
+It's surprisingly streamlined.
+
+82
+00:03:25,200 --> 00:03:26,960
+I got to ask what's the catch.
+
+83
+00:03:26,960 --> 00:03:29,120
+Well, the big question is customization.
+
+84
+00:03:29,120 --> 00:03:31,200
+They talk a big game about ease of use,
+
+85
+00:03:31,200 --> 00:03:32,320
+but how far does that go?
+
+86
+00:03:32,320 --> 00:03:35,520
+Can you really get under the hood and tweak things?
+
+87
+00:03:35,520 --> 00:03:39,040
+Or do you hit a point where you need to break out the full Laravel toolkit?
+
+88
+00:03:39,040 --> 00:03:41,440
+Yeah, that's something to consider.
+
+89
+00:03:41,440 --> 00:03:41,680
+Yeah.
+
+90
+00:03:41,680 --> 00:03:44,400
+Like is it truly flexible or more of a
+
+91
+00:03:44,400 --> 00:03:47,040
+works great if you stay within the lines kind of thing?
+
+92
+00:03:47,040 --> 00:03:47,840
+Exactly.
+
+93
+00:03:47,840 --> 00:03:49,520
+That's something you'd want to investigate further.
+
+94
+00:03:49,520 --> 00:03:52,160
+Especially if you're planning on building something really custom.
+
+95
+00:03:52,160 --> 00:03:55,440
+But for simpler sites or getting up and running quickly,
+
+96
+00:03:55,440 --> 00:03:58,160
+HydePHP looks pretty darn slick.
+
+97
+00:03:58,160 --> 00:03:59,200
+It really does.
+
+98
+00:03:59,200 --> 00:04:02,080
+So to sum it all up, HydePHP.
+
+99
+00:04:02,080 --> 00:04:04,400
+It's like that shiny new sports car in the showroom.
+
+100
+00:04:04,400 --> 00:04:07,520
+Potentially powerful promises a smooth ride,
+
+101
+00:04:07,520 --> 00:04:10,400
+but maybe take it for a test drive before you sign on the dotted line.
+
+102
+00:04:10,400 --> 00:04:15,280
+That being said, that test drive might just inspire your next awesome website.
+
+103
+00:04:15,280 --> 00:04:16,400
+This has been the Deep Dive.
+
