@@ -17,25 +17,7 @@
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] font-['Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.7] antialiased">
 
-<nav class="sticky top-0 z-50 border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/85 backdrop-blur-xl">
-  <div class="mx-auto flex h-16 max-w-[1160px] items-center gap-7 px-7">
-    <a class="flex items-center gap-2.5 no-underline font-['Fraunces',serif] text-xl font-semibold [font-variation-settings:'opsz'_40,'SOFT'_30]" href="#">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" class="block">
-        <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
-        <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
-        <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
-      </svg>
-      HydePHP
-    </a>
-    <div class="ml-auto flex items-center gap-6">
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">Docs</a>
-      <a href="#" class="relative pb-0.5 text-[.92rem] text-white no-underline after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:bg-gradient-to-r after:from-[#d6a24a] after:to-[#8d7bf5] max-[640px]:hidden">About</a>
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">Blog</a>
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">GitHub</a>
-      <a href="#" class="rounded-full bg-[#d6a24a] px-4 py-[7px] text-[.92rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] hover:text-[#14111c]">Get started</a>
-    </div>
-  </div>
-</nav>
+<x-navigation />
 
 <header class="bg-[radial-gradient(700px_340px_at_50%_-10%,rgba(141,123,245,.12),transparent_70%)] py-[96px] pb-[84px] text-center max-[640px]:py-[72px] max-[640px]:pb-[60px]">
   <div class="mx-auto max-w-[1160px] px-7">

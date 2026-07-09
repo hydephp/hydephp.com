@@ -19,25 +19,7 @@
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.65] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
 
-<nav class="sticky top-0 z-50 border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/85 backdrop-blur-xl">
-  <div class="mx-auto flex h-16 max-w-[1160px] items-center gap-7 px-7">
-    <a class="flex items-center gap-2.5 no-underline [font-family:'Fraunces',serif] text-xl font-semibold [font-variation-settings:'opsz'_40,'SOFT'_30]" href="#">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-        <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
-        <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
-        <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
-      </svg>
-      HydePHP
-    </a>
-    <div class="ml-auto flex items-center gap-6">
-      <a class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden" href="#">Docs</a>
-      <a class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden" href="#">About</a>
-      <a class="border-b-2 border-transparent pb-0.5 text-[.92rem] text-white no-underline [border-image:linear-gradient(to_right,#d6a24a,#8d7bf5)_1] max-[640px]:hidden" href="#">Demos</a>
-      <a class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden" href="#">GitHub</a>
-      <a class="rounded-full bg-[#d6a24a] px-4 py-[7px] text-[.92rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] hover:text-[#14111c]" href="#">Get started</a>
-    </div>
-  </div>
-</nav>
+<x-navigation />
 
 <header class="mx-auto max-w-[1160px] px-7 pb-[30px] pt-[88px]">
   <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Live demos · The Exhibition</p>

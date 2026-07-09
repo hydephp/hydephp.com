@@ -14,25 +14,7 @@
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] antialiased font-['Instrument_Sans'] text-[17px] leading-[1.65]">
 
-<nav class="sticky top-0 z-50 border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/[.86] backdrop-blur-xl">
-  <div class="mx-auto flex h-16 max-w-[1160px] items-center gap-7 px-7">
-    <a class="flex items-center gap-2.5 no-underline font-[Fraunces] text-xl font-semibold [font-variation-settings:'opsz'_40,'SOFT'_30]" href="#">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true" class="block">
-        <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
-        <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
-        <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
-      </svg>
-      HydePHP
-    </a>
-    <div class="ml-auto flex items-center gap-6">
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">Docs</a>
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">About</a>
-      <a href="#" class="border-b-2 border-transparent pb-0.5 text-[.92rem] text-white no-underline [border-image:linear-gradient(to_right,#d6a24a,#8d7bf5)_1] max-[640px]:hidden">Blog</a>
-      <a href="#" class="text-[.92rem] text-[#a49cba] no-underline transition-colors hover:text-white max-[640px]:hidden">GitHub</a>
-      <a href="#" class="rounded-full bg-[#d6a24a] px-4 py-[7px] text-[.92rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] hover:text-[#14111c]">Get started</a>
-    </div>
-  </div>
-</nav>
+<x-navigation />
 
 <header class="mx-auto max-w-[1000px] px-7 pt-[76px] text-center">
   <p class="font-['JetBrains_Mono'] text-[.72rem] uppercase tracking-[.26em] text-[#d6a24a]">The HydePHP Blog</p>
