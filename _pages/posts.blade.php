@@ -165,17 +165,7 @@
   </div>
 </main>
 
-<footer class="mt-20 border-t border-[rgba(164,156,186,.16)] py-[34px] text-[.85rem] text-[#a49cba]">
-  <div class="mx-auto flex max-w-[1160px] flex-wrap items-center gap-6 px-7">
-    <span>Site proudly built with HydePHP 🎩</span>
-    <div class="ml-auto flex gap-5">
-      <a href="#" class="no-underline text-[#a49cba] hover:text-white">GitHub</a>
-      <a href="#" class="no-underline text-[#a49cba] hover:text-white">Discord</a>
-      <a href="#" class="no-underline text-[#a49cba] hover:text-white">RSS</a>
-      <a href="#" class="no-underline text-[#a49cba] hover:text-white">Legal</a>
-    </div>
-  </div>
-</footer>
+<x-footer />
 
 <script>
 (function(){
