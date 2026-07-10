@@ -6611,16 +6611,16 @@
         },
         {
             "name": "hyde/realtime-compiler",
-            "version": "v4.0.0",
+            "version": "v4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/realtime-compiler.git",
-                "reference": "e74209facca3065cda0eec5cb54484fcf0343526"
+                "reference": "781f00bf731ff78845452a243cf305cdc11c2226"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/e74209facca3065cda0eec5cb54484fcf0343526",
-                "reference": "e74209facca3065cda0eec5cb54484fcf0343526",
+                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/781f00bf731ff78845452a243cf305cdc11c2226",
+                "reference": "781f00bf731ff78845452a243cf305cdc11c2226",
                 "shasum": ""
             },
             "require": {
@@ -6665,7 +6665,7 @@
             "description": "HydePHP Realtime Compiler Server",
             "support": {
                 "issues": "https://github.com/hydephp/realtime-compiler/issues",
-                "source": "https://github.com/hydephp/realtime-compiler/tree/v4.0.0"
+                "source": "https://github.com/hydephp/realtime-compiler/tree/v4.5.0"
             },
             "funding": [
                 {
@@ -6677,7 +6677,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2025-09-30T10:12:17+00:00"
+            "time": "2026-07-09T23:56:00+00:00"
         }
     ],
     "aliases": [],
