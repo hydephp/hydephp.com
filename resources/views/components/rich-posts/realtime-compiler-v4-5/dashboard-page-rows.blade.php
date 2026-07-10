@@ -1,3 +1,4 @@
+<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:285px;border:0;border-radius:14px;color-scheme:dark;background:#0a0a0d;" srcdoc="
 <!DOCTYPE html>
 <html>
   <head>
@@ -295,3 +296,4 @@
     </div>
   </body>
 </html>
+"></iframe>
