@@ -200,11 +200,11 @@
          right edge of the preview button two slots over */
       .btn.align-preview .tip {
         left: auto;
-        right: -34px;
+        right: -135px;
       }
       .btn.align-preview .tip::before {
         left: auto;
-        right: 49px;
+        right: 44px;
         transform: translateY(-50%) rotate(45deg);
       }
       .hint {
