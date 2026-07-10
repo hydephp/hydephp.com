@@ -1,1 +1,252 @@
-<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:250px;border:0;border-radius:14px;color-scheme:dark" srcdoc="<html><head><meta charset='utf-8'><style>:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:#0f0f12;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;color:#e7e7ea;padding:16px}.mono{font-family:ui-monospace,'JetBrains Mono',Menlo,monospace}.panel{background:#16161b;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:6px 6px 2px}.glabel{font-size:11px;letter-spacing:.12em;color:#5c5c65;font-weight:600;padding:12px 12px 8px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px}.row:hover{background:rgba(255,255,255,.028)}.left{display:flex;align-items:center;gap:11px;min-width:0}.fi{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex:0 0 auto}.fi.md{background:rgba(91,140,255,.16);color:#7ea2ff}.fi.gen{background:rgba(226,169,78,.14);color:#e2a94e;font-size:12px}.flow{font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.src{color:#c9c9d0;cursor:pointer;text-decoration:underline dotted transparent;text-underline-offset:3px}.src:hover{text-decoration:underline dotted rgba(201,201,208,.75)}.arrow{color:#4f4f58;margin:0 8px}.rk{color:#f0e2c8;cursor:pointer;text-decoration:underline solid transparent;text-underline-offset:3px;background:rgba(226,169,78,.14);border-bottom:1px solid rgba(226,169,78,.55);border-radius:2px;padding:0 3px}.rk:hover{text-decoration:underline solid rgba(240,226,200,.85)}.ext{color:#5c5c65}.gen-src{color:#7a7a83;font-style:italic}.acts{display:flex;align-items:center;gap:4px;flex:0 0 auto}.btn{position:relative;width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#9a9aa3;border:1px solid transparent}.btn:hover{background:rgba(255,255,255,.06);color:#e7e7ea;border-color:rgba(255,255,255,.09)}.btn.off{color:#45454d}.tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#26262e;color:#e7e7ea;border:1px solid rgba(255,255,255,.1);font-size:12px;white-space:nowrap;padding:5px 9px;border-radius:7px;opacity:0;pointer-events:none;transition:opacity .12s;z-index:5}.btn:hover .tip{opacity:1}.btn.last .tip{left:auto;right:0;transform:none}.btn.wide .tip{left:auto;right:0;transform:none}.hint{font-size:11.5px;color:#5c5c65;padding:8px 12px 10px;line-height:1.5}</style></head><body><div class='panel'><div class='glabel'>_PAGES</div><div class='row'><div class='left'><div class='fi md'>md</div><div class='flow mono'><span class='src' title='Open in editor'>_pages/about.md</span><span class='arrow'>&rarr;</span><span class='rk' title='Open in preview'>about</span><span class='ext'>.html</span></div></div><div class='acts'><div class='btn'><span class='tip'>Edit</span><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 20h9'/><path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/></svg></div><div class='btn'><span class='tip'>Delete</span><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18'/><path d='M8 6V4h8v2'/><path d='M18 6l-1 14H7L6 6'/></svg></div><div class='btn last'><span class='tip'>Open preview</span><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z'/><circle cx='12' cy='12' r='3'/></svg></div></div></div><div class='glabel'>DYNAMICALLY GENERATED</div><div class='row'><div class='left'><div class='fi gen'>&#9889;</div><div class='flow mono'><span class='gen-src'>generated</span><span class='arrow'>&rarr;</span><span>docs/search</span><span class='ext'>.json</span></div></div><div class='acts'><div class='btn wide off'><span class='tip'>In-memory pages cannot be edited</span><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M12 20h9'/><path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/></svg></div><div class='btn off'><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18'/><path d='M8 6V4h8v2'/><path d='M18 6l-1 14H7L6 6'/></svg></div><div class='btn last'><span class='tip'>Open preview</span><svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'><path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z'/><circle cx='12' cy='12' r='3'/></svg></div></div></div><div class='hint'>Hover a path or a button. Source underlines dotted (opens your editor); output underlines solid (opens the preview).</div></div></body></html>"></iframe>
+<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:250px;border:0;border-radius:14px;color-scheme:dark" srcdoc="
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <style>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #0f0f12;
+        font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: #e7e7ea;
+        padding: 16px;
+      }
+      .mono {
+        font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+      }
+      .panel {
+        background: #16161b;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        padding: 6px 6px 2px;
+      }
+      .glabel {
+        font-size: 11px;
+        letter-spacing: 0.12em;
+        color: #5c5c65;
+        font-weight: 600;
+        padding: 12px 12px 8px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+      }
+      .row:hover {
+        background: rgba(255, 255, 255, 0.028);
+      }
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        min-width: 0;
+      }
+      .fi {
+        width: 22px;
+        height: 22px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 700;
+        flex: 0 0 auto;
+      }
+      .fi.md {
+        background: rgba(91, 140, 255, 0.16);
+        color: #7ea2ff;
+      }
+      .fi.gen {
+        background: rgba(226, 169, 78, 0.14);
+        color: #e2a94e;
+        font-size: 12px;
+      }
+      .flow {
+        font-size: 13.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .src {
+        color: #c9c9d0;
+        cursor: pointer;
+        text-decoration: underline dotted transparent;
+        text-underline-offset: 3px;
+      }
+      .src:hover {
+        text-decoration: underline dotted rgba(201, 201, 208, 0.75);
+      }
+      .arrow {
+        color: #4f4f58;
+        margin: 0 8px;
+      }
+      .rk {
+        color: #f0e2c8;
+        cursor: pointer;
+        text-decoration: underline solid transparent;
+        text-underline-offset: 3px;
+        background: rgba(226, 169, 78, 0.14);
+        border-bottom: 1px solid rgba(226, 169, 78, 0.55);
+        border-radius: 2px;
+        padding: 0 3px;
+      }
+      .rk:hover {
+        text-decoration: underline solid rgba(240, 226, 200, 0.85);
+      }
+      .ext {
+        color: #5c5c65;
+      }
+      .gen-src {
+        color: #7a7a83;
+        font-style: italic;
+      }
+      .acts {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex: 0 0 auto;
+      }
+      .btn {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #9a9aa3;
+        border: 1px solid transparent;
+      }
+      .btn:hover {
+        background: rgba(255, 255, 255, 0.06);
+        color: #e7e7ea;
+        border-color: rgba(255, 255, 255, 0.09);
+      }
+      .btn.off {
+        color: #45454d;
+      }
+      .tip {
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        background: #26262e;
+        color: #e7e7ea;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 12px;
+        white-space: nowrap;
+        padding: 5px 9px;
+        border-radius: 7px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.12s;
+        z-index: 5;
+      }
+      .btn:hover .tip {
+        opacity: 1;
+      }
+      .btn.last .tip {
+        left: auto;
+        right: 0;
+        transform: none;
+      }
+      .btn.wide .tip {
+        left: auto;
+        right: 0;
+        transform: none;
+      }
+      .hint {
+        font-size: 11.5px;
+        color: #5c5c65;
+        padding: 8px 12px 10px;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='panel'>
+      <div class='glabel'>_PAGES</div>
+      <div class='row'>
+        <div class='left'>
+          <div class='fi md'>md</div>
+          <div class='flow mono'>
+            <span class='src' title='Open in editor'>_pages/about.md</span>
+            <span class='arrow'>&rarr;</span>
+            <span class='rk' title='Open in preview'>about</span>
+            <span class='ext'>.html</span>
+          </div>
+        </div>
+        <div class='acts'>
+          <div class='btn'>
+            <span class='tip'>Edit</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M12 20h9'/>
+              <path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/>
+            </svg>
+          </div>
+          <div class='btn'>
+            <span class='tip'>Delete</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M3 6h18'/>
+              <path d='M8 6V4h8v2'/>
+              <path d='M18 6l-1 14H7L6 6'/>
+            </svg>
+          </div>
+          <div class='btn last'>
+            <span class='tip'>Open preview</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z'/>
+              <circle cx='12' cy='12' r='3'/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class='glabel'>DYNAMICALLY GENERATED</div>
+      <div class='row'>
+        <div class='left'>
+          <div class='fi gen'>&#9889;</div>
+          <div class='flow mono'>
+            <span class='gen-src'>generated</span>
+            <span class='arrow'>&rarr;</span>
+            <span>docs/search</span>
+            <span class='ext'>.json</span>
+          </div>
+        </div>
+        <div class='acts'>
+          <div class='btn wide off'>
+            <span class='tip'>In-memory pages cannot be edited</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M12 20h9'/>
+              <path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/>
+            </svg>
+          </div>
+          <div class='btn off'>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M3 6h18'/>
+              <path d='M8 6V4h8v2'/>
+              <path d='M18 6l-1 14H7L6 6'/>
+            </svg>
+          </div>
+          <div class='btn last'>
+            <span class='tip'>Open preview</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z'/>
+              <circle cx='12' cy='12' r='3'/>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class='hint'>Hover a path or a button. Source underlines dotted (opens your editor); output underlines solid (opens the preview).</div>
+    </div>
+  </body>
+</html>
+"></iframe>
