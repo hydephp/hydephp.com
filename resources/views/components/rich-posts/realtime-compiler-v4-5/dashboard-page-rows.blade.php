@@ -1,4 +1,3 @@
-<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:250px;border:0;border-radius:14px;color-scheme:dark" srcdoc="
 <!DOCTYPE html>
 <html>
   <head>
@@ -25,6 +24,22 @@
         border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 14px;
         padding: 6px 6px 2px;
+      }
+      .panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 12px 10px;
+        margin-bottom: 4px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .panel-header h2 {
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        color: #8b8f9c;
+        margin: 0;
       }
       .glabel {
         font-size: 11px;
@@ -134,6 +149,8 @@
       .btn.off {
         color: #45454d;
       }
+
+      /* ---- tooltip bubble + arrow ---- */
       .tip {
         position: absolute;
         bottom: calc(100% + 8px);
@@ -151,18 +168,43 @@
         transition: opacity 0.12s;
         z-index: 5;
       }
+      .tip::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        width: 7px;
+        height: 7px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        background: #26262e;
+        border-right: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
       .btn:hover .tip {
         opacity: 1;
       }
-      .btn.last .tip {
-        left: auto;
-        right: 0;
-        transform: none;
-      }
+      .btn.last .tip,
       .btn.wide .tip {
         left: auto;
         right: 0;
         transform: none;
+      }
+      .btn.last .tip::before,
+      .btn.wide .tip::before {
+        left: auto;
+        right: 11px;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      /* aligns this button's tooltip so its right edge matches the
+         right edge of the preview button two slots over */
+      .btn.align-preview .tip {
+        left: auto;
+        right: -34px;
+      }
+      .btn.align-preview .tip::before {
+        left: auto;
+        right: 49px;
+        transform: translateY(-50%) rotate(45deg);
       }
       .hint {
         font-size: 11.5px;
@@ -174,6 +216,9 @@
   </head>
   <body>
     <div class='panel'>
+      <div class='panel-header'>
+        <h2>Dashboard page rows (Illustration)</h2>
+      </div>
       <div class='glabel'>_PAGES</div>
       <div class='row'>
         <div class='left'>
@@ -229,7 +274,8 @@
               <path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/>
             </svg>
           </div>
-          <div class='btn off'>
+          <div class='btn off align-preview'>
+            <span class='tip'>Cannot delete in-memory pages</span>
             <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
               <path d='M3 6h18'/>
               <path d='M8 6V4h8v2'/>
@@ -249,4 +295,3 @@
     </div>
   </body>
 </html>
-"></iframe>
