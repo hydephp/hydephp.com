@@ -83,7 +83,7 @@
     <div class="mt-8 flex items-center gap-[18px]">
       <div>
         <div class="font-['Fraunces',serif] text-[1.4rem] font-medium italic [font-variation-settings:'opsz'_60,'SOFT'_100,'WONK'_1]">Emma De Silva</div>
-        <div class="text-[.8rem] text-[#8a7f70]">Creator &amp; maintainer · Laravel contributor</div>
+        <div class="text-[.8rem] text-[#8a7f70]">Creator &amp; maintainer of HydePHP</div>
       </div>
     </div>
   </div>
