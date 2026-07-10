@@ -28,11 +28,14 @@
     }
     
     .top h1 {
-      font-size: 15px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: #8b8f9c;
       margin: 0;
-      font-weight: 650;
     }
-    
+ 
     .tools {
       display: flex;
       align-items: center;
@@ -280,7 +283,7 @@
 </head>
 <body>
   <div class='top'>
-    <h1>HydePHP Preview Server</h1>
+    <h1>Exception Handler (Illustration)</h1>
     <div class='tools'>
       <span>Ask AI</span>
       <span class='dot'></span>

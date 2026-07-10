@@ -33,9 +33,11 @@
         padding: 16px 16px 0 16px;
       }
       .heading {
-        color: #ffffff;
-        font-weight: 600;
-        font-size: 15px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .09em;
+        text-transform: uppercase;
+        color: #8b8f9c;
         margin-bottom: 14px;
       }
       .grid {
@@ -149,7 +151,7 @@
     </style>
   </head>
   <body>
-    <div class='heading'>Media gallery excerpt</div>
+    <div class='heading'>Media gallery (Illustration)</div>
     <div class='grid'>
       <div class='tile'>
         <div class='thumb css'>
