@@ -40,7 +40,7 @@
         <article class="max-w-[640px] px-[54px] py-11 max-[720px]:px-[26px] max-[720px]:py-8">
           <p class="mt-5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.18em] text-[#d6a24a]">Essays</p>
           <h2 class="mb-1.5 mt-3.5 [font-family:'Fraunces',serif] text-[2.5rem] font-[450] leading-[1.08] tracking-[-.01em] [font-variation-settings:'opsz'_144,'SOFT'_40] max-[720px]:text-[1.9rem]">A Study in Static</h2>
-          <p class="mt-5 text-[.82rem] text-[#a49cba]">July 9, 2026 · 2 min read</p>
+          <p id="post-date" class="mt-5 text-[.82rem] text-[#a49cba]"></p><script>document.getElementById("post-date").textContent=new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})+" · 2 min read";</script>
           <p class="mt-5 text-[#cfc8e0]">Every site has two natures. The one you write, and the one you ship. Hyde keeps them in the same file.</p>
           <h3 class="mt-7 [font-family:'Fraunces',serif] text-[1.3rem] font-medium text-[#8d7bf5] [font-variation-settings:'SOFT'_60]">The experiment</h3>
           <ul class="ml-0.5 mt-3.5 list-none">
@@ -59,7 +59,7 @@
         <div class="pt-[34px] [font-family:'JetBrains_Mono',monospace] text-[.86rem] leading-[1.85] max-[720px]:text-[.78rem]">
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">1</span><span class="text-[#8a7f70]">---</span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">2</span><span><span class="text-[#7a5cc4]">title</span><span class="text-[#8a7f70]">: &quot;A Study in Static&quot;</span></span></div>
-          <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">3</span><span><span class="text-[#7a5cc4]">date</span><span class="text-[#8a7f70]">: 2026-07-09</span></span></div>
+          <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">3</span><span><span class="text-[#7a5cc4]">date</span><span id="today-date" class="text-[#8a7f70]"></span></span></div><script>document.getElementById("today-date").textContent=": "+new Date().toLocaleDateString("sv-SE");</script>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">4</span><span><span class="text-[#7a5cc4]">category</span><span class="text-[#8a7f70]">: essays</span></span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">5</span><span class="text-[#8a7f70]">---</span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">6</span><span> </span></div>
