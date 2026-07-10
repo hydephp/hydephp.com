@@ -69,4 +69,4 @@ Thanks for reading this article, feel free to let me know your thoughts on Twitt
 
 ### Epilogue
 
-P.S. Hope you liked the code illustrations in this blog post! Tried something new instead of images. They take use of the Blade in Markdown feature where I can just include Laravel Blade snippets right in the blog post Markdown!
+P.S. Hope you liked the code illustrations in this blog post! Tried something new instead of images. They take use of the [Blade in Markdown](https://hydephp.com/docs/2.x/advanced-markdown) feature where I can just include Laravel Blade snippets right in the blog post Markdown!
