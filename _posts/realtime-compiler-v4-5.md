@@ -66,3 +66,7 @@ composer update hyde/realtime-compiler
 ```
 
 Thanks for reading this article, feel free to let me know your thoughts on Twitter/X where I'm [@EmmaDSCodes](https://x.com/EmmaDSCodes)!
+
+### Epilogue
+
+P.S. Hope you liked the code illustrations in this blog post! Tried something new instead of images. They take use of the Blade in Markdown feature where I can just include Laravel Blade snippets right in the blog post Markdown!
