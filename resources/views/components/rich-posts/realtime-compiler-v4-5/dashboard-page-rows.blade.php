@@ -212,6 +212,10 @@
         color: #5c5c65;
         padding: 8px 12px 10px;
         line-height: 1.5;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     </style>
   </head>
