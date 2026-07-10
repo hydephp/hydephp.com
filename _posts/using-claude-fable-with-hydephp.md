@@ -208,7 +208,6 @@ Also, the source code is at [github.com/hydephp/nordlys-demo](https://github.com
   width: 100%;
   height: 100%;
   border: 0;
-  pointer-events: none;
   z-index: 1;
 }
 
