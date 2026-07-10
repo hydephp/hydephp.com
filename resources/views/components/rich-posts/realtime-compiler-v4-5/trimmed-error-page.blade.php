@@ -1,4 +1,26 @@
-<iframe title="Trimmed error page" loading="lazy" style="width:100%;height:620px;border:0;border-radius:14px;color-scheme:dark;background:#0a0a0d;" srcdoc="
+<style>
+.error-page-scroll {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: 14px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.error-page {
+  display: block;
+  width: 100%;
+  min-width: 960;
+  max-width: none;
+  height: 390px;
+
+  border: 0;
+  border-radius: 14px;
+  color-scheme: dark;
+  background: #0a0a0d;
+}
+</style>
+<div class="error-page-scroll"><iframe title="Trimmed error page" class="error-page" loading="lazy" style="width:100%;height:390px;border:0;border-radius:14px;color-scheme:dark;background:#0a0a0d;" srcdoc="
 <html>
 <head>
   <meta charset='utf-8'>
@@ -63,7 +85,6 @@
     
     .wrap {
       display: flex;
-      height: calc(620px - 49px);
     }
     
     .side {
@@ -286,9 +307,9 @@
     <h1>Exception Handler (Illustration)</h1>
     <div class='tools'>
       <span>Ask AI</span>
-      <span class='dot'></span>
-      <span class='dot'></span>
-      <span class='dot'></span>
+      <span class='dot' style='opacity: 0.5; background: whitesmoke;'></span>
+      <span class='dot' style='opacity: 0.5; background: darkorange;'></span>
+      <span class='dot' style='opacity: 0.5; background: cornflowerblue;'></span>
       <span class='copy'>Copy report</span>
     </div>
   </div>
@@ -349,15 +370,15 @@
         <div class='code-inner'>
           <div class='cline'>
             <span class='ln'>51</span>&nbsp;&nbsp;
-            <span class='k'>public function</span> 
-            <span class='f'>getRoute</span>(<span class='t'>string</span> $routeKey): <span class='t'>Route</span>
+            <span class='k'>public function</span>&nbsp;
+            <span class='f'>getRoute</span>(<span class='t'>string</span> $routeKey):&nbsp;<span class='t'>Route</span>
           </div>
           <div class='cline'>
             <span class='ln'>52</span>&nbsp;&nbsp;{
           </div>
           <div class='cline hi'>
             <span class='ln'>53</span>&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class='k'>return</span> $this->get($routeKey) ?? <span class='k'>throw new</span> <span class='t'>RouteNotFoundException</span>($routeKey);
+            <span class='k'>return</span>&nbsp;$this->get($routeKey) ??&nbsp;<span class='k'>throw new</span>&nbsp;<span class='t'>RouteNotFoundException</span>($routeKey);
           </div>
           <div class='cline'>
             <span class='ln'>54</span>&nbsp;&nbsp;}
@@ -404,4 +425,4 @@
   </div>
 </body>
 </html>
-"></iframe>
+"></iframe></div>
