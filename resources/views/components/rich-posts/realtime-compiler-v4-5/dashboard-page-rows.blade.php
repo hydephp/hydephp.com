@@ -1,4 +1,4 @@
-<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:285px;border:0;border-radius:14px;color-scheme:dark;background:#0a0a0d;" srcdoc="
+<iframe title="Dashboard page rows" loading="lazy" style="width:100%;height:328px;border:0;border-radius:14px;color-scheme:dark;background:#0a0a0d;" srcdoc="
 <!DOCTYPE html>
 <html>
   <head>
@@ -81,6 +81,12 @@
         background: rgba(91, 140, 255, 0.16);
         color: #7ea2ff;
       }
+      .fi.blade {
+        background: rgba(240, 87, 92, 0.16);
+        color: #f0575c;
+        font-size: 12px;
+        letter-spacing: 2px;
+      }
       .fi.gen {
         background: rgba(226, 169, 78, 0.14);
         color: #e2a94e;
@@ -92,34 +98,37 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
+      /* ---- source path: plain text, dotted underline on hover ---- */
       .src {
-        color: #c9c9d0;
+        color: #e7e7ea;
         cursor: pointer;
         text-decoration: underline dotted transparent;
         text-underline-offset: 3px;
       }
       .src:hover {
-        text-decoration: underline dotted rgba(201, 201, 208, 0.75);
+        text-decoration: underline dotted rgba(231, 231, 234, 0.75);
       }
+
       .arrow {
         color: #4f4f58;
         margin: 0 8px;
       }
+
+      /* ---- output route key: plain text, solid underline + blue on hover (matches .route-key-link) ---- */
       .rk {
-        color: #f0e2c8;
+        color: #e7e7ea;
+        font-weight: 500;
         cursor: pointer;
-        text-decoration: underline solid transparent;
-        text-underline-offset: 3px;
-        background: rgba(226, 169, 78, 0.14);
-        border-bottom: 1px solid rgba(226, 169, 78, 0.55);
-        border-radius: 2px;
-        padding: 0 3px;
+        text-decoration: none;
       }
       .rk:hover {
-        text-decoration: underline solid rgba(240, 226, 200, 0.85);
+        color: #5b8def;
+        text-decoration: underline;
       }
+
       .ext {
-        color: #5c5c65;
+        color: #8b8f9c;
       }
       .gen-src {
         color: #7a7a83;
@@ -128,7 +137,6 @@
       .acts {
         display: flex;
         align-items: center;
-        gap: 4px;
         flex: 0 0 auto;
       }
       .btn {
@@ -196,8 +204,6 @@
         right: 11px;
         transform: translateY(-50%) rotate(45deg);
       }
-      /* aligns this button's tooltip so its right edge matches the
-         right edge of the preview button two slots over */
       .btn.align-preview .tip {
         left: auto;
         right: -135px;
@@ -212,10 +218,10 @@
         color: #5c5c65;
         padding: 8px 12px 10px;
         line-height: 1.5;
-
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-top: 4px;
       }
     </style>
   </head>
@@ -225,14 +231,14 @@
         <h2>Dashboard page rows (Illustration)</h2>
       </div>
       <div class='glabel'>_PAGES</div>
+
       <div class='row'>
         <div class='left'>
           <div class='fi md'>md</div>
           <div class='flow mono'>
             <span class='src' title='Open in editor'>_pages/about.md</span>
             <span class='arrow'>&rarr;</span>
-            <span class='rk' title='Open in preview'>about</span>
-            <span class='ext'>.html</span>
+            <span class='rk' title='Open in preview'>about</span><span class='ext'>.html</span>
           </div>
         </div>
         <div class='acts'>
@@ -260,6 +266,42 @@
           </div>
         </div>
       </div>
+
+      <div class='row'>
+        <div class='left'>
+          <div class='fi blade'>{}</div>
+          <div class='flow mono'>
+            <span class='src' title='Open in editor'>_pages/index.blade.php</span>
+            <span class='arrow'>&rarr;</span>
+            <span class='rk' title='Open in preview'>index</span><span class='ext'>.html</span>
+          </div>
+        </div>
+        <div class='acts'>
+          <div class='btn'>
+            <span class='tip'>Edit</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M12 20h9'/>
+              <path d='M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z'/>
+            </svg>
+          </div>
+          <div class='btn'>
+            <span class='tip'>Delete</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M3 6h18'/>
+              <path d='M8 6V4h8v2'/>
+              <path d='M18 6l-1 14H7L6 6'/>
+            </svg>
+          </div>
+          <div class='btn last'>
+            <span class='tip'>Open preview</span>
+            <svg viewBox='0 0 24 24' width='15' height='15' fill='none' stroke='currentColor' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'>
+              <path d='M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z'/>
+              <circle cx='12' cy='12' r='3'/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
       <div class='glabel'>DYNAMICALLY GENERATED</div>
       <div class='row'>
         <div class='left'>
@@ -267,8 +309,7 @@
           <div class='flow mono'>
             <span class='gen-src'>generated</span>
             <span class='arrow'>&rarr;</span>
-            <span>docs/search</span>
-            <span class='ext'>.json</span>
+            <span class='rk' title='Open in preview'>docs/search</span><span class='ext'>.json</span>
           </div>
         </div>
         <div class='acts'>
@@ -296,8 +337,8 @@
           </div>
         </div>
       </div>
-      <div class='hint'>Hover a path or a button. Source underlines dotted (opens your editor); output underlines solid (opens the preview).</div>
     </div>
+    <div class='hint'>Hover a path or a button. Source underlines dotted (opens your editor); output underlines solid and turns blue (opens the preview).</div>
   </body>
 </html>
 "></iframe>
