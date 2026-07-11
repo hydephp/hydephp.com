@@ -134,11 +134,36 @@ class SyncCommand extends Command
                 return false;
             }
 
+            $contents = $response->body();
+
+            if ($destination === '_pages/license.md') {
+                $contents = $this->wrapLicenseFile($contents);
+            }
+
             $path = Hyde::path($destination);
             File::ensureDirectoryExists(dirname($path));
-            File::put($path, $response->body());
+            File::put($path, $contents);
         }
 
         return true;
+    }
+
+    /**
+     * Wrap the raw LICENSE.md contents in a Markdown header and fenced code block.
+     */
+    protected function wrapLicenseFile(string $contents): string
+    {
+        $contents = trim($contents);
+
+        return <<<MARKDOWN
+        # HydePHP Software License
+
+        The following is the license for the HydePHP Software:
+
+        ```
+        {$contents}
+        ```
+
+        MARKDOWN;
     }
 }
