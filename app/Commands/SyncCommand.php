@@ -22,9 +22,9 @@ class SyncCommand extends Command
      */
     protected array $files = [
         'https://raw.githubusercontent.com/hydephp/develop/master/CHANGELOG.md' => '_pages/changelog.md',
-        'https://raw.githubusercontent.com/hydephp/.github/master/LICENSE.md' => '_pages/license.md',
-        'https://raw.githubusercontent.com/hydephp/.github/master/SECURITY.md' => '_pages/security.md',
-        'https://raw.githubusercontent.com/hydephp/.github/master/CONTRIBUTING.md' => '_pages/contributing.md',
+        'https://raw.githubusercontent.com/hydephp/develop/master/LICENSE.md' => '_pages/license.md',
+        'https://raw.githubusercontent.com/hydephp/develop/master/SECURITY.md' => '_pages/security.md',
+        'https://raw.githubusercontent.com/hydephp/develop/master/CONTRIBUTING.md' => '_pages/contributing.md',
         'https://raw.githubusercontent.com/hydephp/.github/master/CODE_OF_CONDUCT.md' => '_pages/code-of-conduct.md',
     ];
 
