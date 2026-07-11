@@ -353,6 +353,11 @@ return [
         // These are the route keys of pages that should not show up in the navigation menu.
         'exclude' => [
             '404',
+            'changelog',
+            'code-of-conduct',
+            'contributing',
+            'license',
+            'security',
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
