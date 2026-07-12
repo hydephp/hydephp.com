@@ -9,28 +9,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### About
 
-Keep an Unreleased section at the top to track upcoming changes.
+We keep an Unreleased section at the top to track upcoming changes.
 
 This serves two purposes:
 
-1. People can see what changes they might expect in upcoming releases
-2. At release time, you can move the Unreleased section changes into a new release version section.
+1. People can see what changes they might expect in upcoming releases.
+2. At release time, we can move the Unreleased section changes into a new release version section.
 
 ### Added
 - Added a configuration option to disable the footer scroll-to-top button independently of the footer in https://github.com/hydephp/develop/pull/2459
-- Added a custom error page to the realtime compiler server to produce more helpful exception output in https://github.com/hydephp/develop/pull/2505
-- Redesigned the dashboard in the realtime compiler server to have a more modern and capable design https://github.com/hydephp/develop/pull/2508
-
-_Changes to the realtime compiler requires an update to v4.5 or later of the `hyde/realtime-compiler` package in your project's `composer.json`.
+- Added Blade Blocks for rendering Blade and Blade components from fenced code blocks in Markdown pages. They are controlled by the existing `markdown.enable_blade` option. ([#2504](https://github.com/hydephp/develop/pull/2504))
 
 ### Changed
-- Upgraded default realtime comiler version to v4.5 in https://github.com/hydephp/develop/pull/2510
+- Blade in Markdown is now enabled by default. The `markdown.enable_blade` option controls both `[Blade]:` directives and executable Blade Blocks; set it to `false` when compiling untrusted or unreviewed Markdown.
+- Raw HTML in Markdown is now enabled by default. Set `markdown.allow_html` to `false` when compiling untrusted or unreviewed Markdown to strip potentially unsafe HTML tags.
 
 ### Deprecated
-- Deprecated the `rebuild` command. It has no remaining internal consumers now that the realtime compiler renders pages in-memory, and single-page builds can silently leave aggregate outputs (sitemap, RSS, search index, navigation) stale. It will be removed in v3.0; use `Hyde\Framework\Actions\StaticPageBuilder::handle()` instead if you need to build a single page programmatically.
+- for changes that will be removed in upcoming releases.
 
 ### Removed
-- for now removed features.
+- Removed the `rebuild` command. It had no remaining internal consumers now that the realtime compiler renders pages in-memory, and single-page builds can silently leave aggregate outputs (sitemap, RSS, search index, navigation) stale. Use `Hyde\Framework\Actions\StaticPageBuilder::handle()` instead if you need to build a single page programmatically.
 
 ### Fixed
 - Improved documentation page detection in MarkdownService so it works for child classes in https://github.com/hydephp/develop/pull/2332
