@@ -24,6 +24,11 @@
             foreach ($candidateGroup->getItems() as $candidateItem) {
                 if ($candidateItem->isActive()) {
                     $activeItem = $candidateItem;
+
+                    // The sidebar cannot always resolve the active group on its own, so we
+                    // take the group that actually contains the page we are rendering.
+                    $activeGroup = $candidateGroup;
+
                     break 2;
                 }
             }
@@ -68,6 +73,28 @@
 
         return $html . '</ul>';
     };
+
+    $abstract = $page->matter->get('abstract') ?? $page->matter->get('description');
+
+    $readingTime = isset($page->markdown)
+        ? \Hyde\Support\ReadingTime::fromString($page->markdown->body())->formatUsingClosure(
+            fn (int $minutes): string => sprintf('%d min read', max($minutes, 1))
+        )
+        : null;
+
+    $lastModified = \App\Repositories\DocumentationDateRepository::lastModified($page->getSourcePath());
+
+    // The documentation sources live in the develop monorepo, where each version has its own branch.
+    $docsVersion = $page->getDocumentationVersion()?->name;
+    $docsSourceFile = $docsVersion !== null
+        ? \Illuminate\Support\Str::after($page->identifier, "$docsVersion/")
+        : $page->identifier;
+
+    $editSourceUrl = sprintf('https://github.com/hydephp/develop/blob/%s/docs/%s.md', $docsVersion ?? 'master', $docsSourceFile);
+    $reportIssueUrl = 'https://github.com/hydephp/hyde/issues/new?'.http_build_query([
+        'title' => sprintf('Documentation issue: %s', $page->title),
+        'body' => sprintf("**Page:** %s\n\n", Hyde::url($page->getRouteKey())),
+    ]);
 
     $headerLinks = (array) config('docs.header_links', [
         'Blog' => Hyde::relativeLink('blog'),
@@ -478,17 +505,40 @@
             line-height: 1.08;
         }
 
-        #document-header p {
+        #document-header p,
+        #document-header .docs-abstract {
             max-width: 58ch;
             margin: 14px 0 0;
             color: var(--docs-fog);
             font-size: 1.1rem;
         }
 
-        #document-header > :not(h1):not(p) {
+        #document-header .docs-abstract p {
+            margin: 0;
+            color: inherit;
+            font-size: inherit;
+        }
+
+        .docs-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 26px;
+            margin: 26px 0 0;
             color: var(--docs-fog);
             font-family: 'JetBrains Mono', monospace;
             font-size: .74rem;
+        }
+
+        .docs-meta a {
+            color: var(--docs-violet);
+            text-decoration: none;
+        }
+
+        .docs-meta a:hover {
+            color: #b6aaff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         #document-main-content { padding-top: 1px; }
@@ -847,6 +897,30 @@
             border-left: 2px solid transparent;
             border-image: linear-gradient(to bottom, var(--docs-gold), var(--docs-violet)) 1;
             color: #fff;
+        }
+
+        .docs-toc-links {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px solid var(--docs-line);
+        }
+
+        .docs-toc-links:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: 0;
+        }
+
+        .docs-toc .docs-toc-links a {
+            padding: 5px 0;
+            border-left: 0;
+            color: var(--docs-violet);
+        }
+
+        .docs-toc .docs-toc-links a:hover {
+            color: #b6aaff;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
 
         /* Search */
@@ -1304,6 +1378,20 @@
                 @if($article)
                     <header id="document-header">
                         {{ $article->renderHeader() }}
+
+                        @if($abstract)
+                            <div class="docs-abstract">{{ Hyde::markdown($abstract) }}</div>
+                        @endif
+
+                        <div class="docs-meta">
+                            @if($readingTime)
+                                <span>{{ $readingTime }}</span>
+                            @endif
+                            @if($lastModified)
+                                <span>Updated {{ $lastModified->format('M Y') }}</span>
+                            @endif
+                            <a href="{{ $editSourceUrl }}" rel="noopener">Edit this page on GitHub</a>
+                        </div>
                     </header>
                     <section id="document-main-content" itemprop="articleBody">
                         {{ $article->renderBody() }}
@@ -1315,14 +1403,17 @@
             </article>
         </main>
 
-        @if($tableOfContents !== [])
-            <aside class="docs-toc" aria-label="On this page">
+        <aside class="docs-toc" aria-label="On this page">
+            @if($tableOfContents !== [])
                 <h2 class="docs-toc-heading">On this page</h2>
                 {!! $renderToc($tableOfContents) !!}
-            </aside>
-        @else
-            <div aria-hidden="true"></div>
-        @endif
+            @endif
+
+            <nav class="docs-toc-links" aria-label="Page actions">
+                <a href="{{ $editSourceUrl }}" rel="noopener">Edit on GitHub</a>
+                <a href="{{ $reportIssueUrl }}" rel="noopener">Report an issue</a>
+            </nav>
+        </aside>
     </div>
 
     @if(Hyde\Facades\Features::hasDocumentationSearch())
