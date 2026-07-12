@@ -100,6 +100,7 @@
             --docs-line-strong: rgba(164, 156, 186, .3);
             --docs-line-paper: rgba(43, 36, 51, .14);
             --docs-topbar-height: 60px;
+            --docs-sidebar-width: 264px;
         }
 
         [x-cloak] { display: none !important; }
@@ -177,6 +178,14 @@
             font-variation-settings: 'opsz' 40, 'SOFT' 30;
             font-weight: 600;
             text-decoration: none;
+        }
+
+        .docs-wordmark-logo {
+            display: block;
+            width: 24px;
+            height: 24px;
+            flex: 0 0 24px;
+            object-fit: contain;
         }
 
         .docs-product-name {
@@ -328,7 +337,7 @@
         /* Layout */
         .docs-shell {
             display: grid;
-            grid-template-columns: 264px minmax(0, 1fr) 220px;
+            grid-template-columns: var(--docs-sidebar-width) minmax(0, 1fr) 220px;
             width: min(100%, 1440px);
             margin: 0 auto;
         }
@@ -338,8 +347,11 @@
             position: sticky;
             top: var(--docs-topbar-height);
             align-self: start;
+            width: var(--docs-sidebar-width);
+            min-width: var(--docs-sidebar-width);
+            max-width: var(--docs-sidebar-width);
             height: calc(100vh - var(--docs-topbar-height));
-            padding: 30px 24px 40px;
+            padding: 36px 24px 60px;
             overflow-y: auto;
             border-right: 1px solid var(--docs-line);
             background: var(--docs-ink);
@@ -349,14 +361,14 @@
 
         .docs-sidebar-version { display: none; margin-bottom: 24px; }
 
-        .docs-side-group { margin: 0 0 30px; list-style: none; }
+        .docs-side-group { margin: 0 0 34px; list-style: none; }
 
         .docs-side-group-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .docs-side-group-heading {
@@ -365,6 +377,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: .68rem;
             font-weight: 400;
+            line-height: 1.4;
             letter-spacing: .22em;
             text-transform: uppercase;
         }
@@ -393,7 +406,7 @@
             padding: 6px 0 6px 14px;
             border-left: 1px solid var(--docs-line);
             color: var(--docs-fog);
-            font-size: .92rem;
+            font: 400 .92rem/1.55 'Instrument Sans', system-ui, sans-serif;
             text-decoration: none;
             transition: color .15s ease, border-color .15s ease;
         }
@@ -999,7 +1012,8 @@
         .docs-site-footer a { color: var(--docs-violet); }
 
         @media (max-width: 1200px) {
-            .docs-shell { grid-template-columns: 250px minmax(0, 1fr); }
+            :root { --docs-sidebar-width: 250px; }
+            .docs-shell { grid-template-columns: var(--docs-sidebar-width) minmax(0, 1fr); }
             .docs-toc { display: none; }
             .docs-sidebar-inline-toc { display: block; }
         }
@@ -1020,6 +1034,8 @@
                 left: 0;
                 z-index: 50;
                 width: min(320px, 88vw);
+                min-width: 0;
+                max-width: min(320px, 88vw);
                 height: auto;
                 transform: translateX(-105%);
                 transition: transform .25s ease;
@@ -1077,11 +1093,7 @@
     <header class="docs-topbar">
         <div class="docs-topbar-inner">
             <a class="docs-wordmark" href="{{ $homeRoute ?? Hyde::relativeLink('') }}" aria-label="HydePHP documentation home">
-                <svg width="24" height="24" viewBox="0 0 26 26" fill="none" aria-hidden="true">
-                    <ellipse cx="13" cy="20" rx="11" ry="3" fill="#d6a24a"/>
-                    <rect x="6.5" y="5" width="13" height="15" rx="2" fill="#8d7bf5"/>
-                    <rect x="6.5" y="16" width="13" height="2.5" fill="#d6a24a"/>
-                </svg>
+                <img class="docs-wordmark-logo" src="{{ Asset::get('logo.svg') }}" alt="" width="24" height="24">
                 <span>{{ config('hyde.name', 'HydePHP') }}</span>
             </a>
 
