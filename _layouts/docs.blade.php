@@ -125,7 +125,7 @@
             color: var(--docs-ink);
         }
 
-        body#hyde-docs a { color: inherit; }
+        a { color: inherit; }
 
         /* Keep form controls inheriting by default without out-specificitying
            the deliberately styled search and version controls below. */
