@@ -85,6 +85,20 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Redirects
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define redirects as source and destination path pairs. Hyde
+    | will register them as pages and generate them as part of the site build.
+    |
+    */
+
+    'redirects' => [
+        // 'old-page' => 'new-page',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Sitemap Generation
     |--------------------------------------------------------------------------
     |
@@ -117,7 +131,7 @@ return [
         'filename' => 'feed.xml',
 
         // The channel description.
-        'description' => env('SITE_NAME', 'HydePHP').' RSS Feed',
+        'description' => env('SITE_NAME', 'HydePHP') . ' RSS Feed',
     ],
 
     /*
@@ -221,7 +235,7 @@ return [
         // Meta::name('twitter:creator', '@HydeFramework'),
         // Meta::name('description', 'My Hyde Blog'),
         // Meta::name('keywords', 'Static Sites, Blogs, Documentation'),
-        Meta::name('generator', 'HydePHP v'.Hyde\Hyde::version()),
+        Meta::name('generator', 'HydePHP v' . Hyde\Hyde::version()),
         Meta::property('site_name', env('SITE_NAME', 'HydePHP')),
     ],
 
@@ -313,7 +327,7 @@ return [
     | You can disable it completely by changing the setting to `false`.
     |
     | To read about the many configuration options here, visit:
-    | https://hydephp.com/docs/1.x/customization#footer
+    | https://hydephp.com/docs/2.x/customization#footer
     |
     */
 

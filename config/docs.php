@@ -14,6 +14,26 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Documentation Versions
+    |--------------------------------------------------------------------------
+    |
+    | Each version maps `_docs/<version>` to `docs/<version>`.
+    | Leave this empty to disable versioning. When enabled, documentation
+    | files outside registered version directories are ignored.
+    |
+    | The default version defaults to the last entry in the list.
+    |
+    */
+
+    'versions' => [
+        // '1.x',
+        // '2.x',
+    ],
+
+    'default_version' => null,
+
+    /*
+    |--------------------------------------------------------------------------
     | Sidebar Settings
     |--------------------------------------------------------------------------
     |
@@ -25,7 +45,7 @@ return [
 
     'sidebar' => [
         // The title in the sidebar header
-        'header' => env('SITE_NAME', 'HydePHP').' Docs',
+        'header' => env('SITE_NAME', 'HydePHP') . ' Docs',
 
         // When using a grouped sidebar, should the groups be collapsible?
         'collapsible' => true,
@@ -94,7 +114,7 @@ return [
     | Collaborative Source Editing Location
     |--------------------------------------------------------------------------
     |
-    | @see https://hydephp.com/docs/1.x/documentation-pages#automatic-edit-page-button
+    | @see https://hydephp.com/docs/2.x/documentation-pages#automatic-edit-page-button
     |
     | By adding a base URL here, Hyde will use it to create "edit source" links
     | to your documentation pages. Hyde expects this to be a GitHub path, but
@@ -118,7 +138,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Hyde comes with an easy to use search feature for documentation pages.
-    | @see https://hydephp.com/docs/1.x/documentation-pages#search-feature
+    | @see https://hydephp.com/docs/2.x/documentation-pages#search-feature
     |
     */
 
