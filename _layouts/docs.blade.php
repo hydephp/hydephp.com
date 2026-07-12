@@ -125,8 +125,11 @@
         }
 
         body#hyde-docs a { color: inherit; }
-        body#hyde-docs button, body#hyde-docs input { font: inherit; }
-        body#hyde-docs button { color: inherit; }
+
+        /* Keep form controls inheriting by default without out-specificitying
+           the deliberately styled search and version controls below. */
+        button, input { font: inherit; }
+        button { color: inherit; }
 
         .docs-skip-link {
             position: fixed;
@@ -184,11 +187,16 @@
             white-space: nowrap;
         }
 
-        .docs-search-trigger {
+        /* Keep these controls at the compact dimensions from the concept.
+           The body typography and framework button reset must not scale them up. */
+        body#hyde-docs .docs-search-trigger {
             display: flex;
             align-items: center;
+            flex: 0 0 280px;
             gap: 10px;
             width: 280px;
+            height: 36px;
+            min-height: 36px;
             margin-left: auto;
             padding: 7px 12px;
             border: 1px solid var(--docs-line);
@@ -196,10 +204,18 @@
             background: var(--docs-ink-2);
             color: var(--docs-fog);
             cursor: pointer;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .78rem;
+            font: 400 .78rem/1.35 'JetBrains Mono', monospace;
+            letter-spacing: .01em;
             text-align: left;
+            white-space: nowrap;
+            appearance: none;
             transition: border-color .15s ease, color .15s ease;
+        }
+
+        body#hyde-docs .docs-search-trigger > svg {
+            width: 13px;
+            height: 13px;
+            flex: 0 0 13px;
         }
 
         .docs-search-trigger:hover,
@@ -209,34 +225,51 @@
             outline: none;
         }
 
-        .docs-search-trigger kbd {
+        body#hyde-docs .docs-search-trigger kbd {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+            height: 20px;
             margin-left: auto;
             padding: 0 6px;
             border: 1px solid var(--docs-line);
             border-radius: 4px;
+            background: transparent;
             color: inherit;
-            font: inherit;
-            font-size: .68rem;
+            font: 400 .68rem/1 'JetBrains Mono', monospace;
+            box-shadow: none;
         }
 
         .docs-version-switcher { position: relative; }
 
-        .docs-version-button {
+        body#hyde-docs .docs-version-button {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: 7px;
+            width: auto;
+            height: 28px;
+            min-height: 28px;
             padding: 3px 10px;
             border: 1px solid rgba(214, 162, 74, .4);
             border-radius: 999px;
             background: transparent;
             color: var(--docs-gold);
             cursor: pointer;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .72rem;
-            line-height: 1.5;
+            font: 400 .72rem/1 'JetBrains Mono', monospace;
+            letter-spacing: 0;
+            white-space: nowrap;
+            appearance: none;
         }
 
-        .docs-version-button svg { transition: transform .15s ease; }
+        body#hyde-docs .docs-version-button svg {
+            width: 12px;
+            height: 12px;
+            flex: 0 0 12px;
+        }
+
+        body#hyde-docs .docs-version-button svg { transition: transform .15s ease; }
 
         .docs-version-menu {
             position: absolute;
@@ -569,18 +602,110 @@
             content: '';
         }
 
+        /* Hyde's Markdown converter adds semantic classes to coloured
+           blockquotes. Drive the component from an accent variable so those
+           variants stay distinct instead of being flattened by the base theme. */
         #document-main-content blockquote {
+            --docs-quote-accent: var(--docs-violet);
+            --docs-quote-accent-rgb: 141, 123, 245;
+
             margin: 26px 0 0;
             padding: 18px 22px;
             border: 0;
-            border-left: 2px solid transparent;
-            border-image: linear-gradient(to bottom, var(--docs-gold), var(--docs-violet)) 1;
-            background: linear-gradient(90deg, rgba(141, 123, 245, .07), transparent 70%);
-            color: var(--docs-fog);
+            border-left: 2px solid var(--docs-quote-accent);
+            border-image: none;
+            background: linear-gradient(
+                90deg,
+                rgba(var(--docs-quote-accent-rgb), .09),
+                rgba(var(--docs-quote-accent-rgb), .025) 72%,
+                transparent
+            );
+            color: var(--docs-text);
             font-style: normal;
         }
 
-        #document-main-content blockquote p:first-child { margin-top: 0; }
+        /* Hyde adds the shared `blockquote` class to every coloured quote.
+           Do not treat that shared class as the normal variant. */
+        #document-main-content blockquote:not([class]),
+        #document-main-content blockquote.normal,
+        #document-main-content blockquote[class~='normal'],
+        #document-main-content blockquote.blockquote:not(.info):not(.warning):not(.danger):not(.success):not([class*='info-']):not([class*='warning-']):not([class*='danger-']):not([class*='success-']):not([class*='-info']):not([class*='-warning']):not([class*='-danger']):not([class*='-success']) {
+            border-left-color: transparent;
+            border-image: linear-gradient(to bottom, var(--docs-gold), var(--docs-violet)) 1;
+            background: linear-gradient(90deg, rgba(141, 123, 245, .07), transparent 72%);
+        }
+
+        /* Support Hyde's current semantic names plus the common class-name
+           forms used by earlier builds and customized Markdown renderers. */
+        #document-main-content blockquote:is(
+            .info,
+            .blockquote-info,
+            .quote-info,
+            [class~='info'],
+            [class*='-info'],
+            [class*='info-'],
+            [class*='blue']
+        ) {
+            --docs-quote-accent: #60a5fa;
+            --docs-quote-accent-rgb: 96, 165, 250;
+            border-left-color: #60a5fa;
+            border-image: none;
+            background: linear-gradient(90deg, rgba(96, 165, 250, .10), rgba(96, 165, 250, .025) 72%, transparent);
+        }
+
+        #document-main-content blockquote:is(
+            .warning,
+            .blockquote-warning,
+            .quote-warning,
+            [class~='warning'],
+            [class*='-warning'],
+            [class*='warning-'],
+            [class*='amber'],
+            [class*='yellow']
+        ) {
+            --docs-quote-accent: #d6a24a;
+            --docs-quote-accent-rgb: 214, 162, 74;
+            border-left-color: #d6a24a;
+            border-image: none;
+            background: linear-gradient(90deg, rgba(214, 162, 74, .10), rgba(214, 162, 74, .025) 72%, transparent);
+        }
+
+        #document-main-content blockquote:is(
+            .danger,
+            .blockquote-danger,
+            .quote-danger,
+            [class~='danger'],
+            [class*='-danger'],
+            [class*='danger-'],
+            [class*='red']
+        ) {
+            --docs-quote-accent: #e08f7a;
+            --docs-quote-accent-rgb: 224, 143, 122;
+            border-left-color: #e08f7a;
+            border-image: none;
+            background: linear-gradient(90deg, rgba(224, 143, 122, .10), rgba(224, 143, 122, .025) 72%, transparent);
+        }
+
+        #document-main-content blockquote:is(
+            .success,
+            .blockquote-success,
+            .quote-success,
+            [class~='success'],
+            [class*='-success'],
+            [class*='success-'],
+            [class*='green'],
+            [class*='emerald']
+        ) {
+            --docs-quote-accent: #78c99b;
+            --docs-quote-accent-rgb: 120, 201, 155;
+            border-left-color: #78c99b;
+            border-image: none;
+            background: linear-gradient(90deg, rgba(120, 201, 155, .10), rgba(120, 201, 155, .025) 72%, transparent);
+        }
+
+        #document-main-content blockquote > :first-child { margin-top: 0; }
+        #document-main-content blockquote > :last-child { margin-bottom: 0; }
+        #document-main-content blockquote p { color: inherit; }
 
         #document-main-content table {
             width: 100%;
