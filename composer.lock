@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "df37937e0fb95cab3e7e63f843056784",
+    "content-hash": "f396477195921933e272a12a925b9753",
     "packages": [
         {
             "name": "brick/math",
@@ -6611,16 +6611,16 @@
         },
         {
             "name": "hyde/realtime-compiler",
-            "version": "v4.5.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/realtime-compiler.git",
-                "reference": "781f00bf731ff78845452a243cf305cdc11c2226"
+                "reference": "f4377b39552dce7af2fa07869f07771aad02d3a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/781f00bf731ff78845452a243cf305cdc11c2226",
-                "reference": "781f00bf731ff78845452a243cf305cdc11c2226",
+                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/f4377b39552dce7af2fa07869f07771aad02d3a8",
+                "reference": "f4377b39552dce7af2fa07869f07771aad02d3a8",
                 "shasum": ""
             },
             "require": {
@@ -6636,6 +6636,7 @@
             "suggest": {
                 "hyde/framework": "This package requires Hyde Framework version v1.0.0 or higher."
             },
+            "default-branch": true,
             "bin": [
                 "bin/server.php"
             ],
@@ -6665,11 +6666,11 @@
             "description": "HydePHP Realtime Compiler Server",
             "support": {
                 "issues": "https://github.com/hydephp/realtime-compiler/issues",
-                "source": "https://github.com/hydephp/realtime-compiler/tree/v4.5.0"
+                "source": "https://github.com/hydephp/realtime-compiler/tree/master"
             },
             "funding": [
                 {
-                    "url": "https://www.buymeacoffee.com/caen",
+                    "url": "https://www.buymeacoffee.com/emma",
                     "type": "custom"
                 },
                 {
@@ -6677,13 +6678,14 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-07-09T23:56:00+00:00"
+            "time": "2026-07-11T23:37:24+00:00"
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "hyde/framework": 20
+        "hyde/framework": 20,
+        "hyde/realtime-compiler": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
