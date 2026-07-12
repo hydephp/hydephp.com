@@ -665,105 +665,71 @@
             content: '';
         }
 
-        /* Hyde's Markdown converter adds semantic classes to coloured
-           blockquotes. Drive the component from an accent variable so those
-           variants stay distinct instead of being flattened by the base theme. */
+        /* Coloured blockquotes are callouts. Hyde's Markdown converter tags each
+           variant with a Tailwind border class (and leaves plain quotes bare), so
+           each rule below just sets the accent colour and the label text, which
+           the shared ::before renders. */
         #document-main-content blockquote {
-            --docs-quote-accent: var(--docs-violet);
-            --docs-quote-accent-rgb: 141, 123, 245;
+            --docs-quote-accent: var(--docs-gold);
+            --docs-quote-accent-rgb: 214, 162, 74;
+            --docs-quote-label: 'Note';
 
-            margin: 26px 0 0;
-            padding: 18px 22px;
+            margin: 28px 0 0;
+            padding: 20px 26px 22px;
             border: 0;
-            border-left: 2px solid var(--docs-quote-accent);
-            border-image: none;
+            border-left: 3px solid var(--docs-quote-accent);
+            border-radius: 0 10px 10px 0;
             background: linear-gradient(
                 90deg,
-                rgba(var(--docs-quote-accent-rgb), .09),
-                rgba(var(--docs-quote-accent-rgb), .025) 72%,
+                rgba(var(--docs-quote-accent-rgb), .075),
+                rgba(var(--docs-quote-accent-rgb), .02) 60%,
                 transparent
-            );
+            ), var(--docs-ink-2);
             color: var(--docs-text);
             font-style: normal;
         }
 
-        /* Hyde adds the shared `blockquote` class to every coloured quote.
-           Do not treat that shared class as the normal variant. */
-        #document-main-content blockquote:not([class]),
-        #document-main-content blockquote.normal,
-        #document-main-content blockquote[class~='normal'],
-        #document-main-content blockquote.blockquote:not(.info):not(.warning):not(.danger):not(.success):not([class*='info-']):not([class*='warning-']):not([class*='danger-']):not([class*='success-']):not([class*='-info']):not([class*='-warning']):not([class*='-danger']):not([class*='-success']) {
+        #document-main-content blockquote::before {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--docs-quote-accent);
+            content: var(--docs-quote-label);
+            font-family: 'Fraunces', serif;
+            font-size: 1.02rem;
+            font-style: italic;
+            font-variation-settings: 'opsz' 24, 'SOFT' 40, 'WONK' 1;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        /* Plain quotes keep the gold-to-violet spine used elsewhere in the theme. */
+        #document-main-content blockquote:not([class]) {
             border-left-color: transparent;
             border-image: linear-gradient(to bottom, var(--docs-gold), var(--docs-violet)) 1;
-            background: linear-gradient(90deg, rgba(141, 123, 245, .07), transparent 72%);
         }
 
-        /* Support Hyde's current semantic names plus the common class-name
-           forms used by earlier builds and customized Markdown renderers. */
-        #document-main-content blockquote:is(
-            .info,
-            .blockquote-info,
-            .quote-info,
-            [class~='info'],
-            [class*='-info'],
-            [class*='info-'],
-            [class*='blue']
-        ) {
+        #document-main-content blockquote:is(.border-blue-500, .info) {
             --docs-quote-accent: #60a5fa;
             --docs-quote-accent-rgb: 96, 165, 250;
-            border-left-color: #60a5fa;
-            border-image: none;
-            background: linear-gradient(90deg, rgba(96, 165, 250, .10), rgba(96, 165, 250, .025) 72%, transparent);
+            --docs-quote-label: 'Good to know';
         }
 
-        #document-main-content blockquote:is(
-            .warning,
-            .blockquote-warning,
-            .quote-warning,
-            [class~='warning'],
-            [class*='-warning'],
-            [class*='warning-'],
-            [class*='amber'],
-            [class*='yellow']
-        ) {
-            --docs-quote-accent: #d6a24a;
-            --docs-quote-accent-rgb: 214, 162, 74;
-            border-left-color: #d6a24a;
-            border-image: none;
-            background: linear-gradient(90deg, rgba(214, 162, 74, .10), rgba(214, 162, 74, .025) 72%, transparent);
-        }
-
-        #document-main-content blockquote:is(
-            .danger,
-            .blockquote-danger,
-            .quote-danger,
-            [class~='danger'],
-            [class*='-danger'],
-            [class*='danger-'],
-            [class*='red']
-        ) {
+        #document-main-content blockquote:is(.border-amber-500, .warning) {
             --docs-quote-accent: #e08f7a;
             --docs-quote-accent-rgb: 224, 143, 122;
-            border-left-color: #e08f7a;
-            border-image: none;
-            background: linear-gradient(90deg, rgba(224, 143, 122, .10), rgba(224, 143, 122, .025) 72%, transparent);
+            --docs-quote-label: 'Heads up';
         }
 
-        #document-main-content blockquote:is(
-            .success,
-            .blockquote-success,
-            .quote-success,
-            [class~='success'],
-            [class*='-success'],
-            [class*='success-'],
-            [class*='green'],
-            [class*='emerald']
-        ) {
+        #document-main-content blockquote:is(.border-red-600, .danger) {
+            --docs-quote-accent: #e5484d;
+            --docs-quote-accent-rgb: 229, 72, 77;
+            --docs-quote-label: 'Danger zone';
+        }
+
+        #document-main-content blockquote:is(.border-green-500, .success) {
             --docs-quote-accent: #78c99b;
             --docs-quote-accent-rgb: 120, 201, 155;
-            border-left-color: #78c99b;
-            border-image: none;
-            background: linear-gradient(90deg, rgba(120, 201, 155, .10), rgba(120, 201, 155, .025) 72%, transparent);
+            --docs-quote-label: 'Pro tip';
         }
 
         #document-main-content blockquote > :first-child { margin-top: 0; }
