@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c642abf5b597c0c4b541e7a7c90c474c",
+    "content-hash": "df37937e0fb95cab3e7e63f843056784",
     "packages": [
         {
             "name": "brick/math",
@@ -986,16 +986,16 @@
         },
         {
             "name": "hyde/framework",
-            "version": "v2.0.2",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "eb2574f90f5b58bf52d7654a7bffbf3d58213660"
+                "reference": "d7b22ec7f9578ed5021f5a56aae35e7dc912e925"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/eb2574f90f5b58bf52d7654a7bffbf3d58213660",
-                "reference": "eb2574f90f5b58bf52d7654a7bffbf3d58213660",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/d7b22ec7f9578ed5021f5a56aae35e7dc912e925",
+                "reference": "d7b22ec7f9578ed5021f5a56aae35e7dc912e925",
                 "shasum": ""
             },
             "require": {
@@ -1034,11 +1034,11 @@
             "description": "The HydePHP Framework",
             "support": {
                 "issues": "https://github.com/hydephp/framework/issues",
-                "source": "https://github.com/hydephp/framework/tree/v2.0.2"
+                "source": "https://github.com/hydephp/framework/tree/master"
             },
             "funding": [
                 {
-                    "url": "https://www.buymeacoffee.com/caen",
+                    "url": "https://www.buymeacoffee.com/emma",
                     "type": "custom"
                 },
                 {
@@ -1046,7 +1046,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-04-03T18:32:53+00:00"
+            "time": "2026-07-12T14:34:32+00:00"
         },
         {
             "name": "hydephp/torchlight-commonmark",
@@ -6682,7 +6682,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {},
+    "stability-flags": {
+        "hyde/framework": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
