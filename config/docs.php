@@ -49,7 +49,7 @@ return [
         'header' => 'Documentation',
 
         // When using a grouped sidebar, should the groups be collapsible?
-        'collapsible' => true,
+        'collapsible' => false,
 
         // A string of Markdown to show in the footer. Set to `false` to disable.
         'footer' => '[Back to home page](../)',
