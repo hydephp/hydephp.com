@@ -736,6 +736,31 @@
         #document-main-content blockquote > :last-child { margin-bottom: 0; }
         #document-main-content blockquote p { color: inherit; }
 
+        /* The Coloured Blockquotes docs need to show what the quotes look like in
+           Hyde's default Blade views, so quotes inside this wrapper opt out of the
+           callout treatment and render with the stock Tailwind styling instead. */
+        #document-main-content .docs-default-blockquotes {
+            margin-top: 1.5rem;
+        }
+
+        #document-main-content .docs-default-blockquotes blockquote {
+            margin: 12px 0 0;
+            padding: 10px 16px;
+            border: 0;
+            border-left: 4px solid #d1d5db;
+            border-image: none;
+            border-radius: 0;
+            background: #272e3f;
+            color: #d1d5db;
+        }
+
+        #document-main-content .docs-default-blockquotes blockquote::before { content: none; }
+        #document-main-content .docs-default-blockquotes blockquote p { margin: 0; }
+        #document-main-content .docs-default-blockquotes blockquote.border-blue-500 { border-left-color: #3b82f6; }
+        #document-main-content .docs-default-blockquotes blockquote.border-amber-500 { border-left-color: #f59e0b; }
+        #document-main-content .docs-default-blockquotes blockquote.border-red-600 { border-left-color: #dc2626; }
+        #document-main-content .docs-default-blockquotes blockquote.border-green-500 { border-left-color: #22c55e; }
+
         #document-main-content table {
             width: 100%;
             margin: 22px 0 0;
