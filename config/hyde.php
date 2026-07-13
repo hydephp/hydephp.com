@@ -94,7 +94,7 @@ return [
     */
 
     'redirects' => [
-        // 'old-page' => 'new-page',
+        'blog' => 'posts',
     ],
 
     /*
