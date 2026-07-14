@@ -1,3 +1,7 @@
+@php
+    $docsIndex      = \Hyde\Foundation\Facades\Routes::getOrFail('docs/index');
+    $docsQuickstart = \Hyde\Foundation\Facades\Routes::getOrFail('docs/' . config('docs.default_version') . '/quickstart');
+@endphp
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
 <head>
@@ -24,7 +28,7 @@
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
         <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd" aria-label="Copy install command">copy</button>
       </div>
-      <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Read the documentation</a>
+      <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsIndex }}">Read the documentation</a>
     </div>
   </header>
 
@@ -181,7 +185,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
           <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
           <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd2" aria-label="Copy install command">copy</button>
         </div>
-        <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Quickstart guide</a>
+        <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsQuickstart }}">Quickstart guide</a>
       </div>
     </div>
   </section>
