@@ -24,7 +24,7 @@
 <header class="mx-auto max-w-[1160px] px-7 pb-[30px] pt-[88px]">
   <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Live demos · The Exhibition</p>
   <h1 class="mt-[18px] max-w-[16ch] [font-family:'Fraunces',serif] text-[clamp(2.6rem,6vw,4.6rem)] font-[410] leading-[1.02] tracking-[-.016em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
-    Hyde has as many <em class="text-[#8d7bf5] [font-variation-settings:'opsz'_144,'SOFT'_100,'WONK'_1]">natures</em> as you need.
+    Hyde has as many natures as you need.
   </h1>
   <p class="mt-[18px] max-w-[52ch] text-[1.06rem] text-[#a49cba]">Every site below is HydePHP: same generator, same Markdown, same build command. None of them look like it, and none of them look like each other. Each exhibit takes over this page as you reach it.</p>
 </header>

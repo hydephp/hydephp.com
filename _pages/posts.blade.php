@@ -19,7 +19,7 @@
 <header class="mx-auto max-w-[1000px] px-7 pt-[76px] text-center">
   <p class="font-['JetBrains_Mono'] text-[.72rem] uppercase tracking-[.26em] text-[#d6a24a]">The HydePHP Blog</p>
   <h1 class="mt-4 font-[Fraunces] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
-    Notes &amp; <em class="italic text-[#8d7bf5] [font-variation-settings:'opsz'_144,'SOFT'_100,'WONK'_1]">Dispatches</em>
+    Notes &amp; Dispatches
   </h1>
   <div class="mx-auto mt-7 flex max-w-[520px] items-center gap-4 text-[#a49cba]">
     <span aria-hidden="true" class="h-px flex-1 bg-gradient-to-r from-transparent via-[rgba(164,156,186,.16)] to-transparent"></span>

@@ -23,7 +23,7 @@
   <div class="mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">About the project</p>
     <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Fraunces',serif] text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.06] tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
-      The strange case of a <em class="text-[#8d7bf5] [font-variation-settings:'opsz'_144,'SOFT'_100,'WONK'_1]">static</em> site generator.
+      The strange case of a static site generator.
     </h1>
     <p class="mx-auto mt-5 max-w-[52ch] text-[1.08rem] text-[#a49cba]">Where Hyde came from, what it believes, and why it will still be here when your next redesign rolls around.</p>
   </div>
