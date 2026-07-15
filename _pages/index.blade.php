@@ -1,6 +1,6 @@
 @php
-    $docsIndex      = \Hyde\Foundation\Facades\Routes::getOrFail('docs/index');
-    $docsQuickstart = \Hyde\Foundation\Facades\Routes::getOrFail('docs/' . config('docs.default_version') . '/quickstart');
+    $docsIndex      = \Hyde\Foundation\Facades\Routes::get('docs/index');
+    $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 @endphp
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
