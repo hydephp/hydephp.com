@@ -569,22 +569,22 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "7.14.0",
+            "version": "7.14.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de"
+                "reference": "fa88c57803501ad0770f5cddb1e60525d49da9a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/aef242412e13128b5049864867bb49fc37dd39de",
-                "reference": "aef242412e13128b5049864867bb49fc37dd39de",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/fa88c57803501ad0770f5cddb1e60525d49da9a1",
+                "reference": "fa88c57803501ad0770f5cddb1e60525d49da9a1",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "guzzlehttp/promises": "^2.5.1",
-                "guzzlehttp/psr7": "^2.12.4",
+                "guzzlehttp/psr7": "^2.12.5",
                 "php": "^7.2.5 || ^8.0",
                 "psr/http-client": "^1.0",
                 "symfony/deprecation-contracts": "^2.5 || ^3.0",
@@ -677,7 +677,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
-                "source": "https://github.com/guzzle/guzzle/tree/7.14.0"
+                "source": "https://github.com/guzzle/guzzle/tree/7.14.2"
             },
             "funding": [
                 {
@@ -693,7 +693,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T22:54:09+00:00"
+            "time": "2026-07-14T18:15:01+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -781,16 +781,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "2.12.4",
+            "version": "2.12.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c"
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
-                "reference": "51e27f9e2b332ab3e72f4520d5ff4f3c68c3577c",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9365d578a9fd1552ad6ca9c3cb530708526feb09",
+                "reference": "9365d578a9fd1552ad6ca9c3cb530708526feb09",
                 "shasum": ""
             },
             "require": {
@@ -880,7 +880,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.12.4"
+                "source": "https://github.com/guzzle/psr7/tree/2.12.5"
             },
             "funding": [
                 {
@@ -896,7 +896,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-07-08T15:56:20+00:00"
+            "time": "2026-07-13T01:27:20+00:00"
         },
         {
             "name": "guzzlehttp/uri-template",
@@ -990,12 +990,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "d7b22ec7f9578ed5021f5a56aae35e7dc912e925"
+                "reference": "1006f008168e35587393cbdbfa25698ad5b8d0fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/d7b22ec7f9578ed5021f5a56aae35e7dc912e925",
-                "reference": "d7b22ec7f9578ed5021f5a56aae35e7dc912e925",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/1006f008168e35587393cbdbfa25698ad5b8d0fe",
+                "reference": "1006f008168e35587393cbdbfa25698ad5b8d0fe",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1046,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-07-12T14:34:32+00:00"
+            "time": "2026-07-15T17:44:44+00:00"
         },
         {
             "name": "hydephp/torchlight-commonmark",
@@ -2469,16 +2469,16 @@
         },
         {
             "name": "league/commonmark",
-            "version": "2.8.2",
+            "version": "2.8.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/commonmark.git",
-                "reference": "59fb075d2101740c337c7216e3f32b36c204218b"
+                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/59fb075d2101740c337c7216e3f32b36c204218b",
-                "reference": "59fb075d2101740c337c7216e3f32b36c204218b",
+                "url": "https://api.github.com/repos/thephpleague/commonmark/zipball/1902f60f984235023acbe03db6ad614a37b3c3e7",
+                "reference": "1902f60f984235023acbe03db6ad614a37b3c3e7",
                 "shasum": ""
             },
             "require": {
@@ -2500,8 +2500,8 @@
                 "github/gfm": "0.29.0",
                 "michelf/php-markdown": "^1.4 || ^2.0",
                 "nyholm/psr7": "^1.5",
-                "phpstan/phpstan": "^1.8.2",
-                "phpunit/phpunit": "^9.5.21 || ^10.5.9 || ^11.0.0",
+                "phpstan/phpstan": "^2.0.0",
+                "phpunit/phpunit": "^9.5.21 || ^10.5.9 || ^11.0.0 || ^12.0.0 || ^13.0.0",
                 "scrutinizer/ocular": "^1.8.1",
                 "symfony/finder": "^5.3 | ^6.0 | ^7.0 || ^8.0",
                 "symfony/process": "^5.4 | ^6.0 | ^7.0 || ^8.0",
@@ -2572,7 +2572,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-19T13:16:38+00:00"
+            "time": "2026-07-12T15:29:16+00:00"
         },
         {
             "name": "league/config",
@@ -2846,16 +2846,16 @@
         },
         {
             "name": "nesbot/carbon",
-            "version": "3.13.0",
+            "version": "3.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
-                "reference": "40f6618f052df16b545f626fbf9a878e6497d16a"
+                "reference": "2937ad3d1d2c506fd2bc97d571438a95641f44e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/40f6618f052df16b545f626fbf9a878e6497d16a",
-                "reference": "40f6618f052df16b545f626fbf9a878e6497d16a",
+                "url": "https://api.github.com/repos/CarbonPHP/carbon/zipball/2937ad3d1d2c506fd2bc97d571438a95641f44e2",
+                "reference": "2937ad3d1d2c506fd2bc97d571438a95641f44e2",
                 "shasum": ""
             },
             "require": {
@@ -2947,7 +2947,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-18T13:49:15+00:00"
+            "time": "2026-07-09T18:23:49+00:00"
         },
         {
             "name": "nette/schema",
