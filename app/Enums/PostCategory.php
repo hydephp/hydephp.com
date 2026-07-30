@@ -23,6 +23,19 @@ enum PostCategory: string
     }
 
     /**
+     * Get the display name used when the category names a group of posts, rather than a single one.
+     */
+    public function pluralLabel(): string
+    {
+        return match($this) {
+            self::Devlog => 'Devlogs',
+            self::Release => 'Releases',
+            self::Tutorial => 'Tutorials',
+            self::Essay => 'Essays',
+        };
+    }
+
+    /**
      * Get the HEX text color used in the HTML.
      */
     public function textColor(): string
