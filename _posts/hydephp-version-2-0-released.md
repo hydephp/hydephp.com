@@ -1,7 +1,7 @@
 ---
 title: 'HydePHP Version v2.0 Released'
 description: "A major evolution of the framework with modern frontend tooling, redesigned navigation API, and enhanced developer experience."
-category: releases
+category: release
 author: Emma
 date: '2025-10-01 20:00'
 image: media/v2-cover-min.png

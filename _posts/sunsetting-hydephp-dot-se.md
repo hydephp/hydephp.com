@@ -1,7 +1,7 @@
 ---
 title: Sunsetting the HydePHP.se domain in favour of HydePHP.com
 description: The infrastructure domain "HydePHP.se" is sunset, in favour of the canonical HydePHP.com
-category: announcements
+category: devlog
 author: Emma
 date: 2023-05-25 14:59
 hiddenFromHomepage: true

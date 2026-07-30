@@ -1,7 +1,7 @@
 ---
 title: Automate HydePHP sites using GitHub Actions and GitHub Pages
 description: HydePHP is a framework for building static websites. While the most common way to interact with HydePHP is through the command line, you can actually manage an entire site using GitHub.
-category: Guides
+category: tutorial
 author: Emma
 date: 2022-06-20 12:09
 ---
@@ -173,4 +173,3 @@ If you want to take your CI further, here are some ideas that the [HydePHP.com D
 * Hyde already comes with compiled Tailwind CSS for all the built-in templates, however, if you add your own classes, you can always use the pre-installed Laravel Mix feature to compile the assets in the CI build process.
   
 * Want to enable code syntax highlighting? Hyde has first-party support for [Torchlight.dev](https://torchlight.dev/), an API service for amazing syntax highlighting. Note that Torchlight requires a (free) API token. You should never store credentials in your GitHub repository. Instead, store the API key in your [GitHub Action Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets) and add it to your .env file during the CI build process.
-

@@ -1,7 +1,7 @@
 ---
 title: 'HydePHP v1.8 Released'
 description: "Enhancing internationalization support and improving file handling in preparation for the v2 release."
-category: releases
+category: release
 author: Emma
 date: '2025-05-17 12:00'
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Managing HydePHP content with Notion"
 description: "A journey into how I productionized a HydePHP site and empowered the site owner to self-manage."
-category: "Guest Posts"
+category: tutorial
 author:
   name: "Brice Hartmann"
   website: "https://brice.codes"

@@ -1,7 +1,7 @@
 ---
 title: 'HydePHP Version v1.5 Released'
 description: "In this release, several new features and improvements have been introduced."
-category: releases
+category: release
 author: Emma
 date: '2024-02-13 12:00'
 ---

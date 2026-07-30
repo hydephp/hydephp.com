@@ -1,7 +1,7 @@
 ---
 title: "Creating a static photography portfolio landing site with HydePHP"
 date: "Aug 27, 2022"
-category: tutorials
+category: tutorial
 description: "In this blog post, we'll be creating a simple photography portfolio site using HydePHP and Markdown. No coding is needed!"
 author: Emma
 ---
