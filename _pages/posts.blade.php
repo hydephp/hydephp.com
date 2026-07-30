@@ -123,7 +123,7 @@
   </h1>
   <div class="mx-auto mt-7 flex max-w-[560px] items-center gap-4 text-[#a49cba]">
     <span aria-hidden="true" class="h-px flex-1 bg-gradient-to-r from-transparent via-[rgba(164,156,186,.16)] to-transparent"></span>
-    <span class="font-['JetBrains_Mono'] text-[.72rem] tracking-[.16em]">Est. {{ $firstYear }} · {{ $total }} entries · <a href="{{ $feed }}" class="text-[#d6a24a] no-underline hover:underline">Subscribe by RSS</a></span>
+    <span class="font-['JetBrains_Mono'] text-[.72rem] tracking-[.16em]">Est. {{ $firstYear }} · {{ $total }} entries · <a href="{{ $feed }}" class="text-[#a49cba] no-underline hover:underline">Subscribe by RSS</a></span>
     <span aria-hidden="true" class="h-px flex-1 bg-gradient-to-r from-transparent via-[rgba(164,156,186,.16)] to-transparent"></span>
   </div>
 </header>
