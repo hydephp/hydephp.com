@@ -170,7 +170,7 @@
           Latest dispatch
           <span aria-hidden="true" class="h-px w-11 origin-left bg-gradient-to-r from-[#d6a24a] to-transparent transition-transform duration-500 ease-out group-hover:scale-x-[1.6] motion-reduce:transition-none motion-reduce:group-hover:scale-x-100"></span>
         </p>
-        <h2 class="mt-[18px] max-w-[20ch] font-['Instrument_Serif'] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.2] tracking-[-.012em]">{{ $featured['title'] }}</h2>
+        <h2 class="mt-[18px] max-w-[20ch] font-['Instrument_Serif'] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.1] tracking-[-.012em]">{{ $featured['title'] }}</h2>
         <p class="mt-4 max-w-[58ch] text-[#a49cba]">{{ $featured['description'] }}</p>
         <div class="mt-7 flex flex-wrap items-center gap-3.5 text-[.85rem] text-[#a49cba]">
           <span class="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full font-['Instrument_Serif'] text-base font-medium italic text-white" style="background: radial-gradient(circle at 32% 28%, #8d7bf5, #5e50b8);" aria-hidden="true">{{ mb_substr($featured['author']?->name ?? 'H', 0, 1) }}</span>

@@ -19,7 +19,7 @@
 
   <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Static sites · Laravel · Markdown</p>
-    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Instrument_Serif',serif] text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.22] tracking-[-.015em]">
+    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Instrument_Serif',serif] text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.04] tracking-[-.015em]">
       Every Markdown file has a <em class="text-[#8d7bf5]">second nature</em>.
     </h1>
     <p class="mx-auto mt-[22px] max-w-[52ch] text-[1.08rem] text-[#a49cba]">HydePHP transforms the plain files you already write into fast, elegant static sites. Laravel's tooling works behind the curtain. No database, no runtime, no fuss.</p>
@@ -95,7 +95,7 @@
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The transformation</p>
-      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.2] tracking-[-.01em]">Write. Build. Vanish from the server bill.</h2>
+      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Write. Build. Vanish from the server bill.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">The whole workflow is three moves. What comes out is plain HTML you can host anywhere, from a five-dollar VPS to a free static host.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-3 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-1">
@@ -125,7 +125,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">What's in the box</p>
-      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.2] tracking-[-.01em]">Familiar to Artisans. Gentle to everyone else.</h2>
+      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Familiar to Artisans. Gentle to everyone else.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">Hyde is built on Laravel Zero. If you know Artisan and Blade you already know Hyde, and if you don't, Markdown is all you need to get a site out the door.</p>
     </div>
     <div class="mt-[54px] border-t border-[rgba(164,156,186,.16)]">
@@ -176,7 +176,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="border-t border-[rgba(164,156,186,.16)] py-[110px] text-center max-[720px]:py-20" style="background: radial-gradient(600px 300px at 50% 0%, rgba(141,123,245,.14), transparent 70%);">
     <div class="reveal mx-auto max-w-[1160px] px-7 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Begin the experiment</p>
-      <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.2] tracking-[-.01em]">Your next site is one command away.</h2>
+      <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Your next site is one command away.</h2>
       <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
         <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
           <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>

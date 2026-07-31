@@ -22,7 +22,7 @@
 <header class="bg-[radial-gradient(700px_340px_at_50%_-10%,rgba(141,123,245,.12),transparent_70%)] py-[96px] pb-[84px] text-center max-[640px]:py-[72px] max-[640px]:pb-[60px]">
   <div class="mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">About the project</p>
-    <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Instrument_Serif',serif] text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.2] tracking-[-.015em]">
+    <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Instrument_Serif',serif] text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.06] tracking-[-.015em]">
       The strange case of a static site generator.
     </h1>
     <p class="mx-auto mt-5 max-w-[52ch] text-[1.08rem] text-[#a49cba]">Where Hyde came from, what it believes, and why it will still be here when your next redesign rolls around.</p>
@@ -45,7 +45,7 @@
 <!-- Principles -->
 <section class="reveal mx-auto max-w-[1160px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Principles</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">Opinions we're prepared to defend.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em]">Opinions we're prepared to defend.</h2>
   <div class="mt-12 border-t border-[rgba(164,156,186,.16)]">
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Instrument_Serif',serif] text-[1.3rem] font-[480]">Zero config until you want it</h3>
@@ -92,7 +92,7 @@
 <!-- Timeline -->
 <section class="reveal mx-auto max-w-[720px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The record so far</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">Four years, versioned carefully.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em]">Four years, versioned carefully.</h2>
   <div class="relative mt-12 pl-9 before:absolute before:bottom-[6px] before:left-2 before:top-[6px] before:w-[2px] before:bg-gradient-to-b before:from-[#d6a24a] before:to-[#8d7bf5]">
     <div class="relative pb-10 before:absolute before:left-[-33.5px] before:top-2 before:h-[11px] before:w-[11px] before:rounded-full before:border-2 before:border-[#d6a24a] before:bg-[#14111c] before:content-['']">
       <span class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.16em] text-[#d6a24a]">2022</span>
@@ -120,7 +120,7 @@
 <!-- Stewardship -->
 <section class="reveal mx-auto max-w-[1160px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Stewardship</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">The fine print, in large type.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em]">The fine print, in large type.</h2>
   <div class="mt-12 grid grid-cols-4 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
     <div class="bg-[#1c1827] px-[26px] py-7">
       <div class="font-['Instrument_Serif',serif] text-2xl font-[440]">MIT</div>
@@ -145,7 +145,7 @@
 <section class="border-t border-[rgba(164,156,186,.16)] bg-[radial-gradient(600px_300px_at_50%_0%,rgba(214,162,74,.08),transparent_70%)] py-[100px] text-center">
   <div class="reveal mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The other side of this page</p>
-    <h2 class="mx-auto mt-3.5 max-w-[22ch] font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">You've read enough. Build something.</h2>
+    <h2 class="mx-auto mt-3.5 max-w-[22ch] font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em]">You've read enough. Build something.</h2>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 font-['JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>

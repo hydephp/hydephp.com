@@ -23,7 +23,7 @@
 
 <header class="mx-auto max-w-[1160px] px-7 pb-[30px] pt-[88px]">
   <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Live demos · The Exhibition</p>
-  <h1 class="mt-[18px] max-w-[16ch] [font-family:'Instrument_Serif',serif] text-[clamp(2.6rem,6vw,4.6rem)] font-[410] leading-[1.2] tracking-[-.016em]">
+  <h1 class="mt-[18px] max-w-[16ch] [font-family:'Instrument_Serif',serif] text-[clamp(2.6rem,6vw,4.6rem)] font-[410] leading-[1.02] tracking-[-.016em]">
     Hyde has as many natures as you need.
   </h1>
   <p class="mt-[18px] max-w-[52ch] text-[1.06rem] text-[#a49cba]">Every site below is HydePHP: same generator, same Markdown, same build command. None of them look like it, and none of them look like each other. Each exhibit takes over this page as you reach it.</p>
@@ -135,7 +135,7 @@
 <section class="bg-[radial-gradient(600px_300px_at_50%_0%,rgba(141,123,245,.13),transparent_70%)] py-[120px] text-center">
   <div class="mx-auto max-w-[1160px] px-7 opacity-0 translate-y-4 transition-[opacity,transform] duration-[600ms] ease-[ease]" data-reveal>
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Exhibit no. 4</p>
-    <h2 class="mx-auto mt-4 max-w-[20ch] [font-family:'Instrument_Serif',serif] text-[clamp(2rem,4.4vw,3.2rem)] font-[420] leading-[1.2] tracking-[-.014em]">
+    <h2 class="mx-auto mt-4 max-w-[20ch] [font-family:'Instrument_Serif',serif] text-[clamp(2rem,4.4vw,3.2rem)] font-[420] leading-[1.08] tracking-[-.014em]">
       This space is <em class="text-[#d6a24a]">reserved</em> for your site.
     </h2>
     <p class="mx-auto mt-[18px] max-w-[48ch] text-[#a49cba]">Every exhibit started as the same blank project. Yours will too.</p>
