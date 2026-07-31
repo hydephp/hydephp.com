@@ -59,7 +59,7 @@
       <a class="text-[#a49cba] no-underline hover:text-white" href="#">Notes &amp; Dispatches</a><b class="px-1.5 font-normal text-[#d6a24a]">/</b>Devlog
     </p>
     <span class="font-mono mt-[26px] inline-block rounded-full border border-[rgba(141,123,245,.4)] px-3.5 py-1 text-[.68rem] uppercase tracking-[.16em] text-[#8d7bf5]">Devlog</span>
-    <h1 class="font-instrument-serif mx-auto mt-5 max-w-[19ch] text-[clamp(2.2rem,5.2vw,3.7rem)] font-[420] leading-[1.07] tracking-[-.014em]">Rebuilding the publish command for version three</h1>
+    <h1 class="font-instrument-serif mx-auto mt-5 max-w-[19ch] text-[clamp(2.2rem,5.2vw,3.7rem)] font-[420] leading-[1.2] tracking-[-.014em]">Rebuilding the publish command for version three</h1>
     <p class="mx-auto mt-5 max-w-[54ch] text-[1.12rem] leading-[1.6] text-[#a49cba]">One command now does the work of three. Why the old publish commands had to go, how the interactive picker works, and what designing a command surface actually means.</p>
     <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5 text-[.88rem] text-[#a49cba]">
       <span class="font-instrument-serif flex h-[38px] w-[38px] flex-none items-center justify-center rounded-full bg-[radial-gradient(circle_at_32%_28%,#8d7bf5,#5e50b8)] font-medium italic text-white" aria-hidden="true">E</span>
