@@ -33,7 +33,7 @@
 <link rel="alternate" type="application/rss+xml" title="{{ config('hyde.name', 'HydePHP') }} RSS Feed" href="{{ $feed }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   // Marks the document as script-capable before the first paint. That is what lets this page ship
@@ -118,7 +118,7 @@
 
 <header class="mx-auto max-w-[1000px] px-7 pt-[76px] text-center">
   <p class="font-['JetBrains_Mono'] text-[.72rem] uppercase tracking-[.26em] text-[#d6a24a]">The HydePHP Blog</p>
-  <h1 class="mt-4 font-[Fraunces] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
+  <h1 class="mt-4 font-['Instrument_Serif'] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none tracking-[-.015em]">
     Notes <span class="text-[0.85em] opacity-50">&amp;</span> Dispatches
   </h1>
   <div class="mx-auto mt-7 flex max-w-[560px] items-center gap-4 text-[#a49cba]">
@@ -170,10 +170,10 @@
           Latest dispatch
           <span aria-hidden="true" class="h-px w-11 origin-left bg-gradient-to-r from-[#d6a24a] to-transparent transition-transform duration-500 ease-out group-hover:scale-x-[1.6] motion-reduce:transition-none motion-reduce:group-hover:scale-x-100"></span>
         </p>
-        <h2 class="mt-[18px] max-w-[20ch] font-[Fraunces] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.1] tracking-[-.012em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">{{ $featured['title'] }}</h2>
+        <h2 class="mt-[18px] max-w-[20ch] font-['Instrument_Serif'] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.1] tracking-[-.012em]">{{ $featured['title'] }}</h2>
         <p class="mt-4 max-w-[58ch] text-[#a49cba]">{{ $featured['description'] }}</p>
         <div class="mt-7 flex flex-wrap items-center gap-3.5 text-[.85rem] text-[#a49cba]">
-          <span class="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full font-[Fraunces] text-base font-medium italic text-white [font-variation-settings:'SOFT'_90]" style="background: radial-gradient(circle at 32% 28%, #8d7bf5, #5e50b8);" aria-hidden="true">{{ mb_substr($featured['author']?->name ?? 'H', 0, 1) }}</span>
+          <span class="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full font-['Instrument_Serif'] text-base font-medium italic text-white" style="background: radial-gradient(circle at 32% 28%, #8d7bf5, #5e50b8);" aria-hidden="true">{{ mb_substr($featured['author']?->name ?? 'H', 0, 1) }}</span>
           <span><b class="font-semibold text-[#e9e5f2]">{{ $featured['author']?->name ?? config('hyde.name', 'HydePHP') }}</b></span>
           <span class="text-[#252031]" aria-hidden="true">·</span>
           <time datetime="{{ $featured['datetime'] }}">{{ $featured['date'] }}</time>
@@ -196,7 +196,7 @@
         @if ($entries->min('index') >= $perPage) data-deferred @endif
       >
         <div class="reveal grid grid-cols-[170px_1fr] gap-10 pb-3 pt-11 max-[860px]:grid-cols-1 max-[860px]:gap-2 max-[860px]:pt-9">
-          <div class="sticky top-24 self-start font-[Fraunces] text-[2.6rem] font-[380] italic leading-none text-[#252031] [-webkit-text-stroke:1px_rgba(164,156,186,.35)] [font-variation-settings:'opsz'_144,'SOFT'_80] max-[860px]:static max-[860px]:text-[2rem]">{{ $year }}</div>
+          <div class="sticky top-24 self-start font-['Instrument_Serif'] text-[2.6rem] font-[380] italic leading-none text-[#252031] [-webkit-text-stroke:1px_rgba(164,156,186,.35)] max-[860px]:static max-[860px]:text-[2rem]">{{ $year }}</div>
           <div>
             @foreach ($entries as $entry)
               <a
@@ -215,7 +215,7 @@
               >
                 <time datetime="{{ $entry['datetime'] }}" class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">{{ $entry['day'] }}</time>
                 <span class="transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none">
-                  <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">{{ $entry['title'] }}</h3>
+                  <h3 class="font-['Instrument_Serif'] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors group-hover:text-[#8d7bf5]">{{ $entry['title'] }}</h3>
                   <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">{{ $entry['description'] }}</p>
                 </span>
                 <span class="flex flex-none items-center gap-2 max-[860px]:mt-1.5 max-[860px]:justify-self-start">
@@ -240,7 +240,7 @@
       x-transition:enter-end="opacity-100 translate-y-0"
       class="py-20 text-center"
     >
-      <p class="font-[Fraunces] text-[1.7rem] font-[420] italic text-[#a49cba] [font-variation-settings:'SOFT'_80]">Nothing in the ledger for that.</p>
+      <p class="font-['Instrument_Serif'] text-[1.7rem] font-[420] italic text-[#a49cba]">Nothing in the ledger for that.</p>
       <p class="mt-3 text-[.92rem] text-[#6f6785]">Try a different category, or <button type="button" @click="filterBy('all')" class="text-[#d6a24a] underline decoration-dotted underline-offset-4 hover:text-[#e5b25e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]">show everything</button>.</p>
     </div>
 
@@ -271,7 +271,7 @@
     </div>
 
     <div class="reveal flex flex-wrap items-center justify-center gap-5 pt-12">
-      <p class="text-center font-[Fraunces] text-[.88rem] italic text-[#a49cba] [font-variation-settings:'SOFT'_80]">No newsletter popup here. <a href="{{ $feed }}" class="not-italic text-[#d6a24a] no-underline hover:underline">Subscribe by RSS</a>, like nature intended.</p>
+      <p class="text-center font-['Instrument_Serif'] text-[.88rem] italic text-[#a49cba]">No newsletter popup here. <a href="{{ $feed }}" class="not-italic text-[#d6a24a] no-underline hover:underline">Subscribe by RSS</a>, like nature intended.</p>
     </div>
   </main>
 </div>

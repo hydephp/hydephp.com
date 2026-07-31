@@ -10,7 +10,7 @@
   <title>HydePHP · Markdown with a second nature</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
@@ -19,8 +19,8 @@
 
   <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Static sites · Laravel · Markdown</p>
-    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Fraunces',serif] text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.04] tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
-      Every Markdown file has a <em class="text-[#8d7bf5] [font-variation-settings:'opsz'_144,'SOFT'_100,'WONK'_1]">second nature</em>.
+    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Instrument_Serif',serif] text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.04] tracking-[-.015em]">
+      Every Markdown file has a <em class="text-[#8d7bf5]">second nature</em>.
     </h1>
     <p class="mx-auto mt-[22px] max-w-[52ch] text-[1.08rem] text-[#a49cba]">HydePHP transforms the plain files you already write into fast, elegant static sites. Laravel's tooling works behind the curtain. No database, no runtime, no fuss.</p>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
@@ -38,15 +38,15 @@
       <div class="absolute inset-0 overflow-hidden text-[#eae6f4]" style="background: radial-gradient(900px 480px at 78% -10%, rgba(141,123,245,.16), transparent 60%), radial-gradient(700px 420px at 95% 100%, rgba(214,162,74,.08), transparent 60%), #1c1827;" aria-hidden="true">
         <div class="flex items-center gap-[18px] border-b border-[rgba(164,156,186,.16)] px-[26px] py-4 text-[.82rem] text-[#a49cba]">
           <span class="h-2 w-2 shrink-0 rounded-full bg-[#d6a24a]"></span>
-          <span class="[font-family:'Fraunces',serif] text-[.95rem] text-white">A Study in Static</span>
+          <span class="[font-family:'Instrument_Serif',serif] text-[.95rem] text-white">A Study in Static</span>
           <span class="ml-auto flex gap-4 [font-family:'JetBrains_Mono',monospace] max-[720px]:hidden">Home · Essays · About</span>
         </div>
         <article class="max-w-[640px] px-[54px] py-11 max-[720px]:px-[26px] max-[720px]:py-8">
           <p class="mt-5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.18em] text-[#d6a24a]">Essays</p>
-          <h2 class="mb-1.5 mt-3.5 [font-family:'Fraunces',serif] text-[2.5rem] font-[450] leading-[1.08] tracking-[-.01em] [font-variation-settings:'opsz'_144,'SOFT'_40] max-[720px]:text-[1.9rem]">A Study in Static</h2>
+          <h2 class="mb-1.5 mt-3.5 [font-family:'Instrument_Serif',serif] text-[2.5rem] font-[450] leading-[1.08] tracking-[-.01em] max-[720px]:text-[1.9rem]">A Study in Static</h2>
           <p id="post-date" class="mt-5 text-[.82rem] text-[#a49cba]"></p><script>document.getElementById("post-date").textContent=new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})+" · 2 min read";</script>
           <p class="mt-5 text-[#cfc8e0]">Every site has two natures. The one you write, and the one you ship. Hyde keeps them in the same file.</p>
-          <h3 class="mt-7 [font-family:'Fraunces',serif] text-[1.3rem] font-medium text-[#8d7bf5] [font-variation-settings:'SOFT'_60]">The experiment</h3>
+          <h3 class="mt-7 [font-family:'Instrument_Serif',serif] text-[1.3rem] font-medium text-[#8d7bf5]">The experiment</h3>
           <ul class="ml-0.5 mt-3.5 list-none">
             <li class="relative py-[7px] pl-[26px] text-[#cfc8e0] before:absolute before:left-0.5 before:top-[15px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">One Markdown file</li>
             <li class="relative py-[7px] pl-[26px] text-[#cfc8e0] before:absolute before:left-0.5 before:top-[15px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">One build command</li>
@@ -95,24 +95,24 @@
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The transformation</p>
-      <h2 class="mt-3.5 [font-family:'Fraunces',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em] [font-variation-settings:'opsz'_100,'SOFT'_40]">Write. Build. Vanish from the server bill.</h2>
+      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Write. Build. Vanish from the server bill.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">The whole workflow is three moves. What comes out is plain HTML you can host anywhere, from a five-dollar VPS to a free static host.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-3 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-1">
       <div class="bg-[#1c1827] px-7 py-8">
-        <h3 class="[font-family:'Fraunces',serif] text-xl font-medium [font-variation-settings:'SOFT'_50]">Write</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-xl font-medium">Write</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">Markdown for content, Blade when you want full control. Front matter handles the metadata.</p>
         <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">// or plain .md, your call</span>
 php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24a]">&quot;A Study in Static&quot;</span></pre>
       </div>
       <div class="bg-[#1c1827] px-7 py-8">
-        <h3 class="[font-family:'Fraunces',serif] text-xl font-medium [font-variation-settings:'SOFT'_50]">Build</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-xl font-medium">Build</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">One command compiles everything: pages, posts, docs, navigation, RSS, sitemap.</p>
         <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">$ php hyde <span class="text-[#8d7bf5]">build</span>
 <span class="text-[#8fce8f]">✓ 80 files compiled in 756 ms</span></pre>
       </div>
       <div class="bg-[#1c1827] px-7 py-8">
-        <h3 class="[font-family:'Fraunces',serif] text-xl font-medium [font-variation-settings:'SOFT'_50]">Ship</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-xl font-medium">Ship</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">The output is a folder of static files. No PHP on the server, nothing to patch at 2 am.</p>
         <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">_site/
 ├── index.html
@@ -125,12 +125,12 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">What's in the box</p>
-      <h2 class="mt-3.5 [font-family:'Fraunces',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em] [font-variation-settings:'opsz'_100,'SOFT'_40]">Familiar to Artisans. Gentle to everyone else.</h2>
+      <h2 class="mt-3.5 [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Familiar to Artisans. Gentle to everyone else.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">Hyde is built on Laravel Zero. If you know Artisan and Blade you already know Hyde, and if you don't, Markdown is all you need to get a site out the door.</p>
     </div>
     <div class="mt-[54px] border-t border-[rgba(164,156,186,.16)]">
       <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
-        <h3 class="[font-family:'Fraunces',serif] text-[1.35rem] font-[480] [font-variation-settings:'SOFT'_50]">Two dialects, one site</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-[1.35rem] font-[480]">Two dialects, one site</h3>
         <p class="text-[.95rem] text-[#a49cba]">Mix Markdown pages and Blade views freely in the same project. Sprinkle in YAML front matter when a page needs metadata, skip it when it doesn't.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">---</span>
 <span class="text-[#8d7bf5]">navigation</span>:
@@ -138,19 +138,19 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 <span class="text-[#6f6786]">---</span></pre>
       </div>
       <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
-        <h3 class="[font-family:'Fraunces',serif] text-[1.35rem] font-[480] [font-variation-settings:'SOFT'_50]">A frontend you don't have to build</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-[1.35rem] font-[480]">A frontend you don't have to build</h3>
         <p class="text-[.95rem] text-[#a49cba]">Ships with a full Tailwind frontend, responsive navigation, dark mode, and customizable Blade components. Publish the templates when you want to make it yours.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">php hyde <span class="text-[#8d7bf5]">publish</span> <span class="text-[#d6a24a]">views</span></pre>
       </div>
       <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
-        <h3 class="[font-family:'Fraunces',serif] text-[1.35rem] font-[480] [font-variation-settings:'SOFT'_50]">Documentation sites in minutes</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-[1.35rem] font-[480]">Documentation sites in minutes</h3>
         <p class="text-[.95rem] text-[#a49cba]">Drop Markdown files in a folder and get a searchable docs site with a generated sidebar. This very concept page's real-world sibling documents Hyde itself.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">_docs/
 ├── index.md
 └── getting-started.md</pre>
       </div>
       <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
-        <h3 class="[font-family:'Fraunces',serif] text-[1.35rem] font-[480] [font-variation-settings:'SOFT'_50]">Everything is versionable</h3>
+        <h3 class="[font-family:'Instrument_Serif',serif] text-[1.35rem] font-[480]">Everything is versionable</h3>
         <p class="text-[.95rem] text-[#a49cba]">No database means your whole site lives in Git. Content, config, and templates travel together, and every deploy is reproducible from a single commit.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">git push <span class="text-[#6f6786]"># that's the deploy</span></pre>
       </div>
@@ -159,16 +159,16 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 
   <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
     <div class="flex flex-wrap justify-between gap-6 rounded-[14px] border border-[rgba(164,156,186,.16)] px-10 py-[30px] [font-family:'JetBrains_Mono',monospace] max-[720px]:p-6" style="background: linear-gradient(180deg, #1c1827, #14111c);">
-      <div><div class="[font-family:'Fraunces',serif] text-[2.1rem] font-[420] [font-variation-settings:'opsz'_100]">203<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub clones</div></div>
-      <div><div class="[font-family:'Fraunces',serif] text-[2.1rem] font-[420] [font-variation-settings:'opsz'_100]">28<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Packagist installs</div></div>
-      <div><div class="[font-family:'Fraunces',serif] text-[2.1rem] font-[420] [font-variation-settings:'opsz'_100]">449</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub stars</div></div>
-      <div><div class="[font-family:'Fraunces',serif] text-[2.1rem] font-[420] [font-variation-settings:'opsz'_100]">MIT</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Licensed, forever</div></div>
+      <div><div class="[font-family:'Instrument_Serif',serif] text-[2.1rem] font-[420]">203<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub clones</div></div>
+      <div><div class="[font-family:'Instrument_Serif',serif] text-[2.1rem] font-[420]">28<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Packagist installs</div></div>
+      <div><div class="[font-family:'Instrument_Serif',serif] text-[2.1rem] font-[420]">449</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub stars</div></div>
+      <div><div class="[font-family:'Instrument_Serif',serif] text-[2.1rem] font-[420]">MIT</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Licensed, forever</div></div>
     </div>
   </section>
 
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <figure class="mx-auto max-w-[820px] text-center">
-      <blockquote class="[font-family:'Fraunces',serif] text-[clamp(1.5rem,3vw,2.1rem)] italic leading-[1.35] [font-variation-settings:'opsz'_100,'SOFT'_70]">&quot;I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises. Docs: <b class="font-medium text-[#d6a24a]">10/10</b>. Project: <b class="font-medium text-[#d6a24a]">10/10</b>.&quot;</blockquote>
+      <blockquote class="[font-family:'Instrument_Serif',serif] text-[clamp(1.5rem,3vw,2.1rem)] italic leading-[1.35]">&quot;I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises. Docs: <b class="font-medium text-[#d6a24a]">10/10</b>. Project: <b class="font-medium text-[#d6a24a]">10/10</b>.&quot;</blockquote>
       <figcaption class="mt-6 text-[.9rem] text-[#a49cba]"><a class="text-[#8d7bf5] no-underline" href="#">@peteralexbizjak</a> on X</figcaption>
     </figure>
   </section>
@@ -176,7 +176,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="border-t border-[rgba(164,156,186,.16)] py-[110px] text-center max-[720px]:py-20" style="background: radial-gradient(600px 300px at 50% 0%, rgba(141,123,245,.14), transparent 70%);">
     <div class="reveal mx-auto max-w-[1160px] px-7 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Begin the experiment</p>
-      <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Fraunces',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em] [font-variation-settings:'opsz'_100,'SOFT'_40]">Your next site is one command away.</h2>
+      <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Instrument_Serif',serif] text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Your next site is one command away.</h2>
       <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
         <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
           <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>

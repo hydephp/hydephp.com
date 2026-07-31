@@ -6,7 +6,7 @@
 <title>404 · Lost in Ink · HydePHP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 :root{
@@ -49,20 +49,17 @@ a{color:inherit}
   text-transform:uppercase;color:var(--gold);
 }
 .big{
-  font-family:'Fraunces',serif;font-weight:400;
+  font-family:'Instrument Serif',serif;font-weight:400;
   font-size:clamp(5rem,15vw,11rem);line-height:.86;letter-spacing:-.02em;margin-top:10px;
-  font-variation-settings:'opsz' 144,'SOFT' 40,'WONK' 1;
   display:flex;align-items:baseline;gap:.06em;
 }
 .big .four{color:#e9e5f2}
 .big .zero{
   color:var(--violet);font-style:italic;
-  font-variation-settings:'opsz' 144,'SOFT' 100,'WONK' 1;
 }
 .left h1{
-  font-family:'Fraunces',serif;font-weight:440;font-size:clamp(1.5rem,3vw,2.1rem);
+  font-family:'Instrument Serif',serif;font-weight:440;font-size:clamp(1.5rem,3vw,2.1rem);
   line-height:1.14;margin-top:22px;letter-spacing:-.01em;max-width:18ch;
-  font-variation-settings:'opsz' 100,'SOFT' 50;
 }
 .blurb{color:var(--fog);margin-top:16px;max-width:44ch}
 .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}
