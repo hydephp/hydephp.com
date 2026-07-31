@@ -499,8 +499,8 @@
             font-family: 'Instrument Serif', serif;
             font-size: clamp(2.1rem, 4vw, 3rem);
             font-weight: 430;
-            letter-spacing: -.012em;
-            line-height: 1.08;
+            letter-spacing: 0;
+            line-height: 1.2;
         }
 
         #document-header p,
@@ -554,7 +554,7 @@
             font-family: 'Instrument Serif', serif;
             font-size: 1.7rem;
             font-weight: 470;
-            letter-spacing: -.01em;
+            letter-spacing: 0;
         }
 
         #document-main-content h3 {

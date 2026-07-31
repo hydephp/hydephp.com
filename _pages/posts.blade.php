@@ -118,7 +118,7 @@
 
 <header class="mx-auto max-w-[1000px] px-7 pt-[76px] text-center">
   <p class="font-['JetBrains_Mono'] text-[.72rem] uppercase tracking-[.26em] text-[#d6a24a]">The HydePHP Blog</p>
-  <h1 class="mt-4 font-['Instrument_Serif'] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none tracking-[-.015em]">
+  <h1 class="mt-4 font-['Instrument_Serif'] text-[clamp(2.8rem,6.5vw,4.6rem)] font-[420] leading-none">
     Notes <span class="text-[0.85em] opacity-50">&amp;</span> Dispatches
   </h1>
   <div class="mx-auto mt-7 flex max-w-[560px] items-center gap-4 text-[#a49cba]">
@@ -170,7 +170,7 @@
           Latest dispatch
           <span aria-hidden="true" class="h-px w-11 origin-left bg-gradient-to-r from-[#d6a24a] to-transparent transition-transform duration-500 ease-out group-hover:scale-x-[1.6] motion-reduce:transition-none motion-reduce:group-hover:scale-x-100"></span>
         </p>
-        <h2 class="mt-[18px] max-w-[20ch] font-['Instrument_Serif'] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.2] tracking-[-.012em]">{{ $featured['title'] }}</h2>
+        <h2 class="mt-[18px] max-w-[20ch] font-['Instrument_Serif'] text-[clamp(1.8rem,3.8vw,2.7rem)] font-[440] leading-[1.2]">{{ $featured['title'] }}</h2>
         <p class="mt-4 max-w-[58ch] text-[#a49cba]">{{ $featured['description'] }}</p>
         <div class="mt-7 flex flex-wrap items-center gap-3.5 text-[.85rem] text-[#a49cba]">
           <span class="flex h-[34px] w-[34px] flex-none items-center justify-center rounded-full font-['Instrument_Serif'] text-base font-medium italic text-white" style="background: radial-gradient(circle at 32% 28%, #8d7bf5, #5e50b8);" aria-hidden="true">{{ mb_substr($featured['author']?->name ?? 'H', 0, 1) }}</span>
@@ -215,7 +215,7 @@
               >
                 <time datetime="{{ $entry['datetime'] }}" class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">{{ $entry['day'] }}</time>
                 <span class="transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none">
-                  <h3 class="font-['Instrument_Serif'] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors group-hover:text-[#8d7bf5]">{{ $entry['title'] }}</h3>
+                  <h3 class="font-['Instrument_Serif'] text-[1.28rem] font-[470] leading-[1.25] transition-colors group-hover:text-[#8d7bf5]">{{ $entry['title'] }}</h3>
                   <p class="mt-[5px] max-w-[56ch] font-['Instrument_Sans'] text-[.92rem] font-normal text-[#a49cba]">{{ $entry['description'] }}</p>
                 </span>
                 <span class="flex flex-none items-center gap-2 max-[860px]:mt-1.5 max-[860px]:justify-self-start">
