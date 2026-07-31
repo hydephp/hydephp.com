@@ -12,13 +12,12 @@
     // is in the HTML regardless; this only decides where the enhanced view draws its page breaks.
     $perPage = 12;
 
-    // The search index handed to Alpine. It mirrors the rendered ledger one-for-one, carrying only
+    // The filter index handed to Alpine. It mirrors the rendered ledger one-for-one, carrying only
     // what filtering needs, so the enhancement never has to re-render or duplicate any markup.
     $describe = fn (array $entry, int $index): array => [
         'i' => $index,
         'c' => $entry['category']->value,
         'y' => $entry['year'],
-        't' => mb_strtolower(implode(' ', [$entry['title'], $entry['description'], $entry['category']->label()])),
     ];
 @endphp
 <!DOCTYPE html>
@@ -92,18 +91,6 @@
 
   .pill .tally { margin-left: .5em; opacity: .6; font-variant-numeric: tabular-nums }
 
-  /* The browser's own search reset is bright blue, which fights the palette, so it gets redrawn. */
-  input[type="search"]::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    width: .8em;
-    height: .8em;
-    cursor: pointer;
-    background-color: #6f6785;
-    transition: background-color .25s ease;
-    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 3l10 10M13 3L3 13' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  }
-  input[type="search"]:hover::-webkit-search-cancel-button { background-color: #e9e5f2 }
-
   @media (prefers-reduced-motion: reduce) {
     .js .reveal { opacity: 1; transform: none; transition: none }
     .stagger { transition-delay: 0ms !important }
@@ -135,8 +122,8 @@
     'perPage' => $perPage,
 ]))">
 
-  {{-- Filtering and search are enhancements, so their controls stay hidden until Alpine can run
-       them. Without scripts the reader simply gets the whole archive, which is the honest fallback. --}}
+  {{-- Filtering is an enhancement, so its controls stay hidden until Alpine can run them. Without
+       scripts the reader simply gets the whole archive, which is the honest fallback. --}}
   <div class="mx-auto max-w-[1000px] px-7 pt-9" x-cloak>
     <div class="flex flex-wrap justify-center gap-2.5" role="group" aria-label="Filter posts by category">
       <button type="button" class="pill" aria-pressed="true" @click="filterBy('all')" :aria-pressed="category === 'all'" :data-empty="tally('all') === 0">
@@ -148,21 +135,6 @@
         </button>
       @endforeach
     </div>
-
-    <label class="mx-auto mt-5 flex max-w-[400px] items-center gap-3 rounded-full border border-[rgba(164,156,186,.16)] bg-[#1c1827]/70 px-4 py-2 transition-colors duration-300 focus-within:border-[#5e50b8] focus-within:bg-[#1c1827] motion-reduce:transition-none">
-      <svg aria-hidden="true" class="h-4 w-4 flex-none text-[#6f6785]" viewBox="0 0 20 20" fill="none">
-        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.6"/>
-        <path d="M13.5 13.5 17 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-      </svg>
-      <span class="sr-only">Search the archive</span>
-      <input
-        type="search"
-        placeholder="Search the archive…"
-        x-model.debounce.150ms="query"
-        @keydown.escape.prevent="query = ''"
-        class="w-full bg-transparent font-['JetBrains_Mono'] text-[.78rem] text-[#e9e5f2] placeholder:text-[#6f6785] focus:outline-none"
-      >
-    </label>
 
     <p class="mt-4 text-center font-['JetBrains_Mono'] text-[.7rem] uppercase tracking-[.2em] text-[#6f6785]">
       <span x-text="count"></span> <span x-text="count === 1 ? 'dispatch' : 'dispatches'"></span>
@@ -310,7 +282,6 @@
         perPage: config.perPage,
 
         category: 'all',
-        query: '',
         page: 1,
 
         init() {
@@ -324,23 +295,12 @@
             element.removeAttribute('data-deferred');
           });
 
-          this.$watch('query', () => {
-            this.page = 1;
-            this.sync();
-          });
-
           window.addEventListener('popstate', () => this.readLocation());
         },
 
-        /** The search box contents, normalised for comparison against the index. */
-        get term() {
-          return this.query.trim().toLowerCase();
-        },
-
-        /** Does an indexed post survive the current category and search terms? */
+        /** Does an indexed post survive the current category filter? */
         keep(post, category) {
-          return (category === 'all' || post.c === category)
-              && (this.term === '' || post.t.includes(this.term));
+          return category === 'all' || post.c === category;
         },
 
         /** Ledger entries matching the current filters, in the order they are rendered. */
@@ -408,10 +368,10 @@
         },
 
         get isFiltered() {
-          return this.category !== 'all' || this.term !== '';
+          return this.category !== 'all';
         },
 
-        /** Per-category totals for the filter pills, narrowed by whatever is in the search box. */
+        /** Per-category totals shown on the filter pills. */
         tally(category) {
           return this.everything.filter((post) => this.keep(post, category)).length;
         },
@@ -439,7 +399,6 @@
 
         reset() {
           this.category = 'all';
-          this.query = '';
           this.page = 1;
           this.sync();
         },
@@ -465,7 +424,6 @@
           const params = new URLSearchParams();
 
           if (this.category !== 'all') params.set('category', this.category);
-          if (this.term !== '') params.set('q', this.query.trim());
           if (this.page > 1) params.set('page', this.page);
 
           const query = params.toString();
@@ -478,7 +436,6 @@
           const category = params.get('category');
 
           this.category = this.categories.includes(category) ? category : 'all';
-          this.query = params.get('q') || '';
           this.page = Math.min(Math.max(1, parseInt(params.get('page'), 10) || 1), this.pageCount);
 
           // A link can ask for a page or category that no longer exists. Write back what was
