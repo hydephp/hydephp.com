@@ -59,7 +59,7 @@
       <a class="text-[#a49cba] no-underline hover:text-white" href="#">Notes &amp; Dispatches</a><b class="px-1.5 font-normal text-[#d6a24a]">/</b>Devlog
     </p>
     <span class="font-mono mt-[26px] inline-block rounded-full border border-[rgba(141,123,245,.4)] px-3.5 py-1 text-[.68rem] uppercase tracking-[.16em] text-[#8d7bf5]">Devlog</span>
-    <h1 class="font-instrument-serif mx-auto mt-5 max-w-[19ch] text-[clamp(2.2rem,5.2vw,3.7rem)] font-[420] leading-[1.2]">Rebuilding the publish command for version three</h1>
+    <h1 class="font-instrument-serif mx-auto mt-5 max-w-[19ch] text-[clamp(2.2rem,5.2vw,3.7rem)] font-[420] leading-[1.2] tracking-[-.014em]">Rebuilding the publish command for version three</h1>
     <p class="mx-auto mt-5 max-w-[54ch] text-[1.12rem] leading-[1.6] text-[#a49cba]">One command now does the work of three. Why the old publish commands had to go, how the interactive picker works, and what designing a command surface actually means.</p>
     <div class="mt-8 flex flex-wrap items-center justify-center gap-3.5 text-[.88rem] text-[#a49cba]">
       <span class="font-instrument-serif flex h-[38px] w-[38px] flex-none items-center justify-center rounded-full bg-[radial-gradient(circle_at_32%_28%,#8d7bf5,#5e50b8)] font-medium italic text-white" aria-hidden="true">E</span>
@@ -88,13 +88,13 @@
 
   <p class="mt-5 text-[#d6d0e4]">Each one had its own flags, its own prompts, and its own slightly different idea of what "publishing" meant. None of them were wrong. Together, they were a maze.</p>
 
-  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470]">Three front doors is zero front doors</h2>
+  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470] tracking-[-.01em]">Three front doors is zero front doors</h2>
   <p class="mt-5 text-[#d6d0e4]">The problem with parallel commands is discovery. A newcomer running <code class="font-mono whitespace-nowrap rounded-[5px] border border-[rgba(164,156,186,.16)] bg-[#252031] px-1.5 py-[1.5px] text-[.82em] text-[#e9e5f2]">php hyde list</code> sees three publish entries and has to reverse-engineer the taxonomy before they can act. Is a homepage a view? Are configs publishable per-file? The command list, which should be a map, becomes a quiz.</p>
   <p class="mt-5 text-[#d6d0e4]">A CLI is an API with a human on the other end, and it deserves the same design care. When we review a PHP interface we ask whether the method names reveal the model. The old publish commands revealed the git history instead: each was added when a need appeared, named for the moment rather than the whole.</p>
 
   <blockquote class="font-instrument-serif mt-9 border-l-2 border-transparent py-1.5 pl-7 text-[1.35rem] italic leading-[1.45] text-[#e9e5f2] [border-image:linear-gradient(to_bottom,#d6a24a,#8d7bf5)_1]">A command surface should describe what the tool believes, and Hyde believes publishing is one action with many targets.</blockquote>
 
-  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470]">The new shape</h2>
+  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470] tracking-[-.01em]">The new shape</h2>
   <p class="mt-5 text-[#d6d0e4]">Version three collapses everything into a single verb. Run it bare and Hyde asks what you want, using the same prompt toolkit Laravel developers already know:</p>
 
   <div class="mt-[26px] overflow-hidden rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827]">
@@ -136,7 +136,7 @@
 &lt;/<span class="text-[#7a5cc4]">nav</span>&gt;</pre>
   </div>
 
-  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470]">What we removed, and how</h2>
+  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470] tracking-[-.01em]">What we removed, and how</h2>
   <p class="mt-5 text-[#d6d0e4]">Deleting public API is a promise-keeping exercise, so the removal follows the same rules as every Hyde release:</p>
   <ul class="ml-1 mt-4 list-none">
     <li class="relative py-[6px] pl-6 text-[#d6d0e4] before:absolute before:left-0 before:top-[17px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">The old command names keep working in v3 as aliases that forward to the new command.</li>
@@ -145,7 +145,7 @@
   </ul>
   <p class="mt-5 text-[#d6d0e4]">We also said no to some things along the way. A generic <code class="font-mono whitespace-nowrap rounded-[5px] border border-[rgba(164,156,186,.16)] bg-[#252031] px-1.5 py-[1.5px] text-[.82em] text-[#e9e5f2]">--config</code> override flag was proposed and rejected, because a flag that can change anything documents nothing. That decision got its own <a class="border-b border-[#5e50b8] text-[#8d7bf5] no-underline" href="#">write-up in May</a>.</p>
 
-  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470]">The lesson for your own tools</h2>
+  <h2 class="font-instrument-serif mt-14 text-[1.75rem] font-[470] tracking-[-.01em]">The lesson for your own tools</h2>
   <p class="mt-5 text-[#d6d0e4]">If you maintain a CLI, run <code class="font-mono whitespace-nowrap rounded-[5px] border border-[rgba(164,156,186,.16)] bg-[#252031] px-1.5 py-[1.5px] text-[.82em] text-[#e9e5f2]">list</code> on it and read the output as a stranger. Every command that makes a newcomer ask "how is this different from that one?" is a design debt with compounding interest. Merging three commands into one deleted code, deleted docs, and deleted a whole category of confused issues before they could be filed.</p>
   <p class="mt-5 text-[#d6d0e4]">Version three is being built in the open, and the publish rebuild is on the beta branch now. Try it, break it, and tell me what the picker should do that it doesn't. The issue tracker is the front door, and a human answers it.</p>
 

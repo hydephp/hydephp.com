@@ -50,7 +50,7 @@ a{color:inherit}
 }
 .big{
   font-family:'Instrument Serif',serif;font-weight:400;
-  font-size:clamp(5rem,15vw,11rem);line-height:1;letter-spacing:0;margin-top:10px;
+  font-size:clamp(5rem,15vw,11rem);line-height:.86;letter-spacing:-.02em;margin-top:10px;
   display:flex;align-items:baseline;gap:.06em;
 }
 .big .four{color:#e9e5f2}
@@ -59,7 +59,7 @@ a{color:inherit}
 }
 .left h1{
   font-family:'Instrument Serif',serif;font-weight:440;font-size:clamp(1.5rem,3vw,2.1rem);
-  line-height:1.2;margin-top:22px;letter-spacing:0;max-width:18ch;
+  line-height:1.14;margin-top:22px;letter-spacing:-.01em;max-width:18ch;
 }
 .blurb{color:var(--fog);margin-top:16px;max-width:44ch}
 .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}

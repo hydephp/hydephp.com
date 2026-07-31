@@ -22,7 +22,7 @@
 <header class="bg-[radial-gradient(700px_340px_at_50%_-10%,rgba(141,123,245,.12),transparent_70%)] py-[96px] pb-[84px] text-center max-[640px]:py-[72px] max-[640px]:pb-[60px]">
   <div class="mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">About the project</p>
-    <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Instrument_Serif',serif] text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.2]">
+    <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Instrument_Serif',serif] text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.2] tracking-[-.015em]">
       The strange case of a static site generator.
     </h1>
     <p class="mx-auto mt-5 max-w-[52ch] text-[1.08rem] text-[#a49cba]">Where Hyde came from, what it believes, and why it will still be here when your next redesign rolls around.</p>
@@ -34,18 +34,18 @@
   <p class="mt-0 text-[#d6d0e4] first-letter:float-left first-letter:pr-3.5 first-letter:pt-2 first-letter:font-['Instrument_Serif',serif] first-letter:text-[4.4rem] first-letter:font-medium first-letter:leading-[.82] first-letter:text-[#d6a24a]">Hyde started with a simple frustration. Jekyll, the Ruby generator that popularized the modern static site, had the right idea: write plain files, run one command, ship folders of HTML. But for a developer who lives in PHP and thinks in Laravel, reaching for a Ruby toolchain every time you want a simple site feels like borrowing a neighbor's kitchen to make toast.</p>
   <p class="mt-[18px] text-[#d6d0e4]">So Hyde takes Jekyll's philosophy and rebuilds it on the tools Laravel developers already trust. Blade for templating. Artisan-style commands for the workflow. Composer for everything else. The name is a small literary joke with a serious point: Jekyll and Hyde are the same person, and your Markdown and your website are the same file. Hyde just brings out the other side.</p>
 
-  <h2 class="mt-[60px] font-['Instrument_Serif',serif] text-[1.8rem] font-[470]">What Hyde optimizes for</h2>
+  <h2 class="mt-[60px] font-['Instrument_Serif',serif] text-[1.8rem] font-[470] tracking-[-.01em]">What Hyde optimizes for</h2>
   <p class="mt-[18px] text-[#d6d0e4]">Most tools optimize for the first five minutes. Hyde does too, a new project compiles out of the box with zero configuration, but the real design work went into the five years after that. Content lives in plain Markdown files that any tool can read, so nothing you write is held hostage by the generator. The frontend ships complete but every template can be published into your project and made yours. Configuration exists in layers: ignore it entirely, set a few values in YAML, or drop down to full PHP config files when a project demands it.</p>
   <p class="mt-[18px] text-[#d6d0e4]">That's the pattern everywhere in Hyde. Simple by default, powerful when asked, and never a cliff between the two.</p>
 
-  <h2 class="mt-[60px] font-['Instrument_Serif',serif] text-[1.8rem] font-[470]">What Hyde is not</h2>
+  <h2 class="mt-[60px] font-['Instrument_Serif',serif] text-[1.8rem] font-[470] tracking-[-.01em]">What Hyde is not</h2>
   <p class="mt-[18px] text-[#d6d0e4]">Honesty is cheaper than churn, so here it is. Hyde builds static sites: blogs, documentation, portfolios, marketing pages, anything that can be compiled ahead of time and served as files. If you need user accounts, a checkout flow, or a dashboard that changes by the second, you want full Laravel, and Hyde will wave at you warmly from across the street. Plenty of people run both: Laravel for the app, Hyde for the docs and the blog.</p>
 </section>
 
 <!-- Principles -->
 <section class="reveal mx-auto max-w-[1160px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Principles</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2]">Opinions we're prepared to defend.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">Opinions we're prepared to defend.</h2>
   <div class="mt-12 border-t border-[rgba(164,156,186,.16)]">
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Instrument_Serif',serif] text-[1.3rem] font-[480]">Zero config until you want it</h3>
@@ -76,7 +76,7 @@
       </svg>
     </div>
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.18em] text-[#8a7f70]">A note from the maintainer</p>
-    <h2 class="mt-3 font-['Instrument_Serif',serif] text-[1.9rem] font-[460]">Why I keep building this</h2>
+    <h2 class="mt-3 font-['Instrument_Serif',serif] text-[1.9rem] font-[460] tracking-[-.01em]">Why I keep building this</h2>
     <p class="mt-4 text-[.99rem] text-[#3b3345]">I built Hyde because I wanted it to exist, and I maintain it because other people turned out to want it too. That's the whole business plan. There's no venture funding waiting for a return, no telemetry phoning home, no premium tier holding features for ransom. It's MIT licensed, and it stays that way.</p>
     <p class="mt-4 text-[.99rem] text-[#3b3345]">What you get instead is a maintainer who uses Hyde daily, answers issues personally, and treats the documentation as part of the product rather than an apology for it. When you file a bug, a human who knows every line of the codebase reads it.</p>
     <p class="mt-4 text-[.99rem] text-[#3b3345]">Give it twenty minutes. If it doesn't feel right, your Markdown files will work anywhere else. But I don't think you'll need them to.</p>
@@ -92,7 +92,7 @@
 <!-- Timeline -->
 <section class="reveal mx-auto max-w-[720px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The record so far</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2]">Four years, versioned carefully.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">Four years, versioned carefully.</h2>
   <div class="relative mt-12 pl-9 before:absolute before:bottom-[6px] before:left-2 before:top-[6px] before:w-[2px] before:bg-gradient-to-b before:from-[#d6a24a] before:to-[#8d7bf5]">
     <div class="relative pb-10 before:absolute before:left-[-33.5px] before:top-2 before:h-[11px] before:w-[11px] before:rounded-full before:border-2 before:border-[#d6a24a] before:bg-[#14111c] before:content-['']">
       <span class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.16em] text-[#d6a24a]">2022</span>
@@ -120,7 +120,7 @@
 <!-- Stewardship -->
 <section class="reveal mx-auto max-w-[1160px] px-7 pb-[100px]">
   <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Stewardship</p>
-  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2]">The fine print, in large type.</h2>
+  <h2 class="mt-3.5 font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">The fine print, in large type.</h2>
   <div class="mt-12 grid grid-cols-4 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[900px]:grid-cols-2 max-[640px]:grid-cols-1">
     <div class="bg-[#1c1827] px-[26px] py-7">
       <div class="font-['Instrument_Serif',serif] text-2xl font-[440]">MIT</div>
@@ -145,7 +145,7 @@
 <section class="border-t border-[rgba(164,156,186,.16)] bg-[radial-gradient(600px_300px_at_50%_0%,rgba(214,162,74,.08),transparent_70%)] py-[100px] text-center">
   <div class="reveal mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The other side of this page</p>
-    <h2 class="mx-auto mt-3.5 max-w-[22ch] font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2]">You've read enough. Build something.</h2>
+    <h2 class="mx-auto mt-3.5 max-w-[22ch] font-['Instrument_Serif',serif] text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.2] tracking-[-.01em]">You've read enough. Build something.</h2>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 font-['JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
