@@ -206,7 +206,6 @@
                 x-transition:leave-end="opacity-0"
                 @if ($entry['index'] >= $perPage) data-deferred @endif
               >
-                <span aria-hidden="true" class="absolute -left-6 top-[26px] h-0.5 w-2.5 -translate-x-1.5 bg-[#d6a24a] opacity-0 transition duration-300 group-hover:translate-x-0 group-hover:opacity-100 motion-reduce:transition-none"></span>
                 <time datetime="{{ $entry['datetime'] }}" class="whitespace-nowrap font-['JetBrains_Mono'] text-[.74rem] tracking-[.06em] text-[#a49cba]">{{ $entry['day'] }}</time>
                 <span class="transition-transform duration-300 ease-out group-hover:translate-x-1 motion-reduce:transform-none motion-reduce:transition-none">
                   <h3 class="font-[Fraunces] text-[1.28rem] font-[470] leading-[1.25] tracking-[-.005em] transition-colors [font-variation-settings:'opsz'_60,'SOFT'_50] group-hover:text-[#8d7bf5]">{{ $entry['title'] }}</h3>
