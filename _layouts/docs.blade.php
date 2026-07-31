@@ -108,7 +108,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -200,8 +200,9 @@
             gap: 9px;
             flex: 0 0 auto;
             color: #fff;
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.15rem;
+            font-variation-settings: 'opsz' 40, 'SOFT' 30;
             font-weight: 600;
             text-decoration: none;
         }
@@ -496,8 +497,9 @@
         #document > h1 {
             margin: 0;
             color: #e9e5f2;
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: clamp(2.1rem, 4vw, 3rem);
+            font-variation-settings: 'opsz' 144, 'SOFT' 40, 'WONK' 1;
             font-weight: 430;
             letter-spacing: -.012em;
             line-height: 1.08;
@@ -551,8 +553,9 @@
 
         #document-main-content h2 {
             margin: 52px 0 0;
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.7rem;
+            font-variation-settings: 'opsz' 100, 'SOFT' 50;
             font-weight: 470;
             letter-spacing: -.01em;
         }
@@ -560,8 +563,9 @@
         #document-main-content h3 {
             margin: 36px 0 0;
             color: var(--docs-violet);
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.2rem;
+            font-variation-settings: 'SOFT' 60;
             font-weight: 500;
         }
 
@@ -690,9 +694,10 @@
             margin-bottom: 8px;
             color: var(--docs-quote-accent);
             content: var(--docs-quote-label);
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.02rem;
             font-style: italic;
+            font-variation-settings: 'opsz' 24, 'SOFT' 40, 'WONK' 1;
             font-weight: 600;
             line-height: 1.3;
         }
@@ -829,7 +834,7 @@
             border-radius: 12px;
             background: var(--docs-ink-2);
             color: #e9e5f2;
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1rem;
             text-decoration: none;
         }
@@ -951,7 +956,7 @@
         }
 
         .docs-search-header strong {
-            font-family: 'Instrument Serif', serif;
+            font-family: 'Fraunces', serif;
             font-size: 1.15rem;
             font-weight: 550;
         }
