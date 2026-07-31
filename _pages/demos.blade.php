@@ -6,7 +6,7 @@
 <title>The Exhibition · HydePHP Demos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -23,7 +23,7 @@
 
 <header class="mx-auto max-w-[1160px] px-7 pb-[30px] pt-[88px]">
   <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Live demos · The Exhibition</p>
-  <h1 class="mt-[18px] max-w-[16ch] [font-family:'Fraunces',serif] text-[clamp(2.6rem,6vw,4.6rem)] font-[410] leading-[1.02] tracking-[-.016em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
+  <h1 class="mt-[18px] max-w-[16ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.6rem,6vw,4.6rem)] font-[410] leading-[1.02] tracking-[-.016em]">
     Hyde has as many natures as you need.
   </h1>
   <p class="mt-[18px] max-w-[52ch] text-[1.06rem] text-[#a49cba]">Every site below is HydePHP: same generator, same Markdown, same build command. None of them look like it, and none of them look like each other. Each exhibit takes over this page as you reach it.</p>
@@ -32,18 +32,18 @@
 <div class="mx-auto max-w-[1160px] px-7 pb-[110px] pt-11">
   <p class="border-b border-[rgba(164,156,186,.16)] pb-3.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.24em] text-[#a49cba]">Programme · Three exhibits · All built with Hyde, all open source</p>
   <a href="#nordlys" class="group flex items-baseline gap-7 border-b border-[rgba(164,156,186,.16)] py-[26px] no-underline transition-[padding-left] duration-300 ease-[ease] hover:pl-5 max-[640px]:gap-4 max-[640px]:py-5">
-    <span class="w-11 flex-none [font-family:'Fraunces',serif] text-[1.3rem] italic text-[#a49cba] transition-colors [font-variation-settings:'SOFT'_80] group-hover:text-[#e8501e] max-[640px]:w-[30px]">i.</span>
-    <span class="[font-family:'Fraunces',serif] text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1] group-hover:text-[#e8501e]">Nordlys Air</span>
+    <span class="w-11 flex-none [font-family:'Playfair_Display',serif] opacity-90 text-[1.3rem] italic text-[#a49cba] transition-colors group-hover:text-[#e8501e] max-[640px]:w-[30px]">i.</span>
+    <span class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors group-hover:text-[#e8501e]">Nordlys Air</span>
     <span class="ml-auto max-w-[24ch] text-right text-[.9rem] text-[#a49cba] transition-colors max-[860px]:hidden">An airline above the Arctic Circle</span>
   </a>
   <a href="#lemonade" class="group flex items-baseline gap-7 border-b border-[rgba(164,156,186,.16)] py-[26px] no-underline transition-[padding-left] duration-300 ease-[ease] hover:pl-5 max-[640px]:gap-4 max-[640px]:py-5">
-    <span class="w-11 flex-none [font-family:'Fraunces',serif] text-[1.3rem] italic text-[#a49cba] transition-colors [font-variation-settings:'SOFT'_80] group-hover:text-[#f2cf3a] max-[640px]:w-[30px]">ii.</span>
-    <span class="[font-family:'Fraunces',serif] text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1] group-hover:text-[#f2cf3a]">Lemonade Days</span>
+    <span class="w-11 flex-none [font-family:'Playfair_Display',serif] opacity-90 text-[1.3rem] italic text-[#a49cba] transition-colors group-hover:text-[#f2cf3a] max-[640px]:w-[30px]">ii.</span>
+    <span class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors group-hover:text-[#f2cf3a]">Lemonade Days</span>
     <span class="ml-auto max-w-[24ch] text-right text-[.9rem] text-[#a49cba] transition-colors max-[860px]:hidden">An endless Los Angeles summer</span>
   </a>
   <a href="#alpine" class="group flex items-baseline gap-7 border-b border-[rgba(164,156,186,.16)] py-[26px] no-underline transition-[padding-left] duration-300 ease-[ease] hover:pl-5 max-[640px]:gap-4 max-[640px]:py-5">
-    <span class="w-11 flex-none [font-family:'Fraunces',serif] text-[1.3rem] italic text-[#a49cba] transition-colors [font-variation-settings:'SOFT'_80] group-hover:text-[#7fb08c] max-[640px]:w-[30px]">iii.</span>
-    <span class="[font-family:'Fraunces',serif] text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1] group-hover:text-[#7fb08c]">Alpine Scouts</span>
+    <span class="w-11 flex-none [font-family:'Playfair_Display',serif] opacity-90 text-[1.3rem] italic text-[#a49cba] transition-colors group-hover:text-[#7fb08c] max-[640px]:w-[30px]">iii.</span>
+    <span class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2rem,5.4vw,4rem)] font-normal leading-none tracking-[-.015em] transition-colors group-hover:text-[#7fb08c]">Alpine Scouts</span>
     <span class="ml-auto max-w-[24ch] text-right text-[.9rem] text-[#a49cba] transition-colors max-[860px]:hidden">A troop site done by Friday</span>
   </a>
 </div>
@@ -59,7 +59,7 @@
   <div class="mx-auto max-w-[1160px] px-7 opacity-0 translate-y-4 transition-[opacity,transform] duration-[600ms] ease-[ease]" data-reveal>
     <div class="flex flex-wrap items-baseline gap-7">
       <span class="rounded-full border border-[#e8501e] px-3.5 py-[5px] [font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.24em] text-[#e8501e]">Exhibit i</span>
-      <h2 class="[font-family:'Fraunces',serif] text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">Nordlys Air</h2>
+      <h2 class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em]">Nordlys Air</h2>
       <a class="ml-auto whitespace-nowrap rounded-full border border-[#14333b] bg-[#14333b] px-5 py-[9px] [font-family:'JetBrains_Mono',monospace] text-[.8rem] text-[#e9eeed] no-underline transition-transform hover:-translate-y-0.5 max-[860px]:ml-0" href="https://nordlys.hydephp.site/">Visit the live site ↗</a>
     </div>
     <p class="mt-5 max-w-[60ch] text-[1.04rem] text-[#3c5a61]">A fictional Arctic airline with scheduled routes, a fleet page, an ops manual, and a timetable it refuses to miss. Built to prove a Hyde site can carry a complete design system: technical grids, schematic illustrations, and a type treatment that would survive a Norwegian aviation authority audit.</p>
@@ -83,7 +83,7 @@
   <div class="mx-auto max-w-[1160px] px-7 opacity-0 translate-y-4 transition-[opacity,transform] duration-[600ms] ease-[ease]" data-reveal>
     <div class="flex flex-wrap items-baseline gap-7">
       <span class="rounded-full border border-[#c9ae2e] px-3.5 py-[5px] [font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.24em] text-[#8a7414]">Exhibit ii</span>
-      <h2 class="[font-family:'Fraunces',serif] text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">Lemonade Days</h2>
+      <h2 class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em]">Lemonade Days</h2>
       <a class="ml-auto whitespace-nowrap rounded-full border border-[#f2cf3a] bg-[#f2cf3a] px-5 py-[9px] [font-family:'JetBrains_Mono',monospace] text-[.8rem] text-[#26241a] no-underline transition-transform hover:-translate-y-0.5 max-[860px]:ml-0" href="https://lemonade-days.hydephp.site/">Visit the live site ↗</a>
     </div>
     <p class="mt-5 max-w-[60ch] text-[1.04rem] text-[#5c5636]">Sun-drenched recipes from a Los Angeles that never runs out of July. Full-bleed photography, a serif that belongs on a juice label, and a reading experience built entirely from Markdown posts. Proof that static doesn't mean stiff.</p>
@@ -107,7 +107,7 @@
   <div class="mx-auto max-w-[1160px] px-7 opacity-0 translate-y-4 transition-[opacity,transform] duration-[600ms] ease-[ease]" data-reveal>
     <div class="flex flex-wrap items-baseline gap-7">
       <span class="rounded-full border border-[#8a5a33] px-3.5 py-[5px] [font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.24em] text-[#8a5a33]">Exhibit iii</span>
-      <h2 class="[font-family:'Fraunces',serif] text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">Alpine Scouts</h2>
+      <h2 class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.2rem,5vw,3.6rem)] font-[420] leading-[1.02] tracking-[-.015em]">Alpine Scouts</h2>
       <a class="ml-auto whitespace-nowrap rounded-full border border-[#1e4633] bg-[#1e4633] px-5 py-[9px] [font-family:'JetBrains_Mono',monospace] text-[.8rem] text-[#efe7db] no-underline transition-transform hover:-translate-y-0.5 max-[860px]:ml-0" href="https://alpine-scouts.hydephp.site/">Visit the live site ↗</a>
     </div>
     <p class="mt-5 max-w-[60ch] text-[1.04rem] text-[#4c5f50]">Not every site needs to be a statement. Troop 404's site is what most of the web actually is: news, an about page, a gear checklist, and a join form, assembled from Hyde's stock components with a palette swap. Warm, clear, and done by Friday. That's the exhibit.</p>
@@ -135,8 +135,8 @@
 <section class="bg-[radial-gradient(600px_300px_at_50%_0%,rgba(141,123,245,.13),transparent_70%)] py-[120px] text-center">
   <div class="mx-auto max-w-[1160px] px-7 opacity-0 translate-y-4 transition-[opacity,transform] duration-[600ms] ease-[ease]" data-reveal>
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.24em] text-[#d6a24a]">Exhibit no. 4</p>
-    <h2 class="mx-auto mt-4 max-w-[20ch] [font-family:'Fraunces',serif] text-[clamp(2rem,4.4vw,3.2rem)] font-[420] leading-[1.08] tracking-[-.014em] [font-variation-settings:'opsz'_144,'SOFT'_40,'WONK'_1]">
-      This space is <em class="text-[#d6a24a] [font-variation-settings:'SOFT'_100,'WONK'_1]">reserved</em> for your site.
+    <h2 class="mx-auto mt-4 max-w-[20ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2rem,4.4vw,3.2rem)] font-[420] leading-[1.08] tracking-[-.014em]">
+      This space is <em class="text-[#d6a24a]">reserved</em> for your site.
     </h2>
     <p class="mx-auto mt-[18px] max-w-[48ch] text-[#a49cba]">Every exhibit started as the same blank project. Yours will too.</p>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
@@ -145,7 +145,7 @@
       </div>
       <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Follow the quickstart</a>
     </div>
-    <p class="mt-10 [font-family:'Fraunces',serif] italic text-[#a49cba] [font-variation-settings:'SOFT'_80]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="#">Submit your site to the exhibition.</a></p>
+    <p class="mt-10 [font-family:'Playfair_Display',serif] opacity-90 italic text-[#a49cba]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="#">Submit your site to the exhibition.</a></p>
   </div>
 </section>
 

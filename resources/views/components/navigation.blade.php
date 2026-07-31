@@ -22,7 +22,7 @@
         {{-- Brand --}}
         <a
             href="{{ $home ?? '/' }}"
-            class="flex items-center gap-2.5 rounded-sm font-['Fraunces',serif] text-xl font-semibold text-white no-underline [font-variation-settings:'opsz'_40,'SOFT'_30] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
+            class="flex items-center gap-2.5 rounded-sm font-['Playfair_Display',serif] opacity-90 text-xl font-semibold text-white no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
         >
             <img src="{{ Asset::get('logo.svg') }}" alt="HydePHP Logo" class="inline-block" style="height: 2.5rem">
             HydePHP
