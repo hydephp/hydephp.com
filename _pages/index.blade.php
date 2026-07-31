@@ -1,9 +1,10 @@
 @php
-    $docsIndex      = \Hyde\Foundation\Facades\Routes::get('docs/index');
-    $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
+$docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/index');
+$docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 @endphp
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,16 +14,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
 
   <x-navigation />
 
   <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
-    <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Static sites · Laravel · Markdown</p>
-    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.04] tracking-[-.015em]">
-      Every Markdown file has a <em class="text-[#8d7bf5]">second nature</em>.
+    <p class="[font-family:'JetBrains_Mono',monospace] text-[1rem] uppercase tracking-[.22em] text-[#d6a24a]">Welcome to HydePHP</p>
+    <h1 class="mx-auto mt-[22px] max-w-[36ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2rem,5.4vw,3.8rem)] font-[420] leading-[1.04] tracking-[-.015em]">
+      <span class="opacity-90">The static site generator with the power of</span> <em class="text-[#8d7bf5]">Laravel</em> <span class="opacity-90">and the simplicity of</span> <em class="text-[#8d7bf5]">Markdown</em><span class="opacity-90">.</span>
     </h1>
-    <p class="mx-auto mt-[22px] max-w-[52ch] text-[1.08rem] text-[#a49cba]">HydePHP transforms the plain files you already write into fast, elegant static sites. Laravel's tooling works behind the curtain. No database, no runtime, no fuss.</p>
+    <p class="mx-auto mt-[22px] max-w-[60ch] text-[1.2rem] text-[#a49cba]">HydePHP is a static site generator with two natures: Markdown and Blade on the surface, the full Laravel framework underneath. Plain files in, elegant static sites out.</p>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
@@ -44,7 +46,14 @@
         <article class="max-w-[640px] px-[54px] py-11 max-[720px]:px-[26px] max-[720px]:py-8">
           <p class="mt-5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.18em] text-[#d6a24a]">Essays</p>
           <h2 class="mb-1.5 mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[2.5rem] font-[450] leading-[1.08] tracking-[-.01em] max-[720px]:text-[1.9rem]">A Study in Static</h2>
-          <p id="post-date" class="mt-5 text-[.82rem] text-[#a49cba]"></p><script>document.getElementById("post-date").textContent=new Date().toLocaleDateString("en-US",{month:"long",day:"numeric",year:"numeric"})+" · 2 min read";</script>
+          <p id="post-date" class="mt-5 text-[.82rem] text-[#a49cba]"></p>
+          <script>
+            document.getElementById("post-date").textContent = new Date().toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric"
+            }) + " · 2 min read";
+          </script>
           <p class="mt-5 text-[#cfc8e0]">Every site has two natures. The one you write, and the one you ship. Hyde keeps them in the same file.</p>
           <h3 class="mt-7 [font-family:'Playfair_Display',serif] opacity-90 text-[1.3rem] font-medium text-[#8d7bf5]">The experiment</h3>
           <ul class="ml-0.5 mt-3.5 list-none">
@@ -63,7 +72,10 @@
         <div class="pt-[34px] [font-family:'JetBrains_Mono',monospace] text-[.86rem] leading-[1.85] max-[720px]:text-[.78rem]">
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">1</span><span class="text-[#8a7f70]">---</span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">2</span><span><span class="text-[#7a5cc4]">title</span><span class="text-[#8a7f70]">: &quot;A Study in Static&quot;</span></span></div>
-          <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">3</span><span><span class="text-[#7a5cc4]">date</span><span id="today-date" class="text-[#8a7f70]"></span></span></div><script>document.getElementById("today-date").textContent=": "+new Date().toLocaleDateString("sv-SE");</script>
+          <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">3</span><span><span class="text-[#7a5cc4]">date</span><span id="today-date" class="text-[#8a7f70]"></span></span></div>
+          <script>
+            document.getElementById("today-date").textContent = ": " + new Date().toLocaleDateString("sv-SE");
+          </script>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">4</span><span><span class="text-[#7a5cc4]">category</span><span class="text-[#8a7f70]">: essays</span></span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">5</span><span class="text-[#8a7f70]">---</span></div>
           <div class="flex whitespace-pre-wrap pr-5"><span class="w-14 shrink-0 pr-[22px] text-right text-[.76rem] leading-[2.1] text-[#a99f92] max-[720px]:w-10 max-[720px]:pr-3.5">6</span><span> </span></div>
@@ -84,8 +96,8 @@
       <div class="absolute bottom-0 top-0 z-[5] w-0.5 bg-[linear-gradient(to_bottom,#d6a24a,#8d7bf5,#d6a24a)] shadow-[0_0_24px_rgba(214,162,74,.45)]" id="seam" style="left: 58%;">
         <button class="absolute left-1/2 top-1/2 flex h-[52px] w-[52px] -translate-x-1/2 -translate-y-1/2 cursor-col-resize items-center justify-center rounded-full border-[1.5px] border-[#d6a24a] bg-[#14111c] shadow-[0_6px_24px_rgba(0,0,0,.55)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#8d7bf5]" id="handle" aria-label="Reveal slider. Use arrow keys to move between the Markdown source and the built site." role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
           <svg class="block" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M7 4 L3 10 L7 16" stroke="#d6a24a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M13 4 L17 10 L13 16" stroke="#8d7bf5" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M7 4 L3 10 L7 16" stroke="#d6a24a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13 4 L17 10 L13 16" stroke="#8d7bf5" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </button>
       </div>
@@ -159,10 +171,22 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 
   <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
     <div class="flex flex-wrap justify-between gap-6 rounded-[14px] border border-[rgba(164,156,186,.16)] px-10 py-[30px] [font-family:'JetBrains_Mono',monospace] max-[720px]:p-6" style="background: linear-gradient(180deg, #1c1827, #14111c);">
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">203<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub clones</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">28<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Packagist installs</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">449</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub stars</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">MIT</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Licensed, forever</div></div>
+      <div>
+        <div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">203<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div>
+        <div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub clones</div>
+      </div>
+      <div>
+        <div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">28<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div>
+        <div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Packagist installs</div>
+      </div>
+      <div>
+        <div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">449</div>
+        <div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub stars</div>
+      </div>
+      <div>
+        <div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">MIT</div>
+        <div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Licensed, forever</div>
+      </div>
     </div>
   </section>
 
@@ -190,7 +214,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <x-footer />
 
   <script>
-    (function(){
+    (function() {
       const stage = document.getElementById('stage');
       const jekyll = document.getElementById('jekyll');
       const seam = document.getElementById('seam');
@@ -199,7 +223,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 
       let pct = 58;
 
-      function apply(p){
+      function apply(p) {
         pct = Math.max(4, Math.min(96, p));
         jekyll.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
         seam.style.left = pct + '%';
@@ -210,8 +234,9 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
         apply(58);
       } else {
         apply(96);
-        let target = 58, cur = 96;
-        requestAnimationFrame(function tick(){
+        let target = 58,
+          cur = 96;
+        requestAnimationFrame(function tick() {
           cur += (target - cur) * 0.045;
           apply(cur);
           if (Math.abs(cur - target) > 0.4) requestAnimationFrame(tick);
@@ -220,49 +245,76 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
       }
 
       let dragging = false;
-      function toPct(clientX){
+
+      function toPct(clientX) {
         const r = stage.getBoundingClientRect();
         return ((clientX - r.left) / r.width) * 100;
       }
-      stage.addEventListener('pointerdown', function(e){
+      stage.addEventListener('pointerdown', function(e) {
         dragging = true;
         stage.setPointerCapture(e.pointerId);
         apply(toPct(e.clientX));
       });
-      stage.addEventListener('pointermove', function(e){
+      stage.addEventListener('pointermove', function(e) {
         if (dragging) apply(toPct(e.clientX));
       });
-      stage.addEventListener('pointerup', function(){ dragging = false; });
-      stage.addEventListener('pointercancel', function(){ dragging = false; });
-
-      handle.addEventListener('keydown', function(e){
-        if (e.key === 'ArrowLeft')  { apply(pct - 3); e.preventDefault(); }
-        if (e.key === 'ArrowRight') { apply(pct + 3); e.preventDefault(); }
-        if (e.key === 'Home') { apply(4); e.preventDefault(); }
-        if (e.key === 'End')  { apply(96); e.preventDefault(); }
+      stage.addEventListener('pointerup', function() {
+        dragging = false;
+      });
+      stage.addEventListener('pointercancel', function() {
+        dragging = false;
       });
 
-      [['copyCmd'],['copyCmd2']].forEach(function(pair){
+      handle.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          apply(pct - 3);
+          e.preventDefault();
+        }
+        if (e.key === 'ArrowRight') {
+          apply(pct + 3);
+          e.preventDefault();
+        }
+        if (e.key === 'Home') {
+          apply(4);
+          e.preventDefault();
+        }
+        if (e.key === 'End') {
+          apply(96);
+          e.preventDefault();
+        }
+      });
+
+      [
+        ['copyCmd'],
+        ['copyCmd2']
+      ].forEach(function(pair) {
         const btn = document.getElementById(pair[0]);
         if (!btn) return;
-        btn.addEventListener('click', function(){
-          navigator.clipboard.writeText('composer create-project hyde/hyde').then(function(){
+        btn.addEventListener('click', function() {
+          navigator.clipboard.writeText('composer create-project hyde/hyde').then(function() {
             btn.textContent = 'copied';
-            setTimeout(function(){ btn.textContent = 'copy'; }, 1600);
+            setTimeout(function() {
+              btn.textContent = 'copy';
+            }, 1600);
           });
         });
       });
 
-      const io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
+      const io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(en) {
           if (en.isIntersecting) {
             en.target.classList.remove('opacity-0', 'translate-y-[14px]');
             io.unobserve(en.target);
           }
         });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+      }, {
+        threshold: 0.12
+      });
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        io.observe(el);
+      });
     })();
   </script>
 </body>
+
 </html>
