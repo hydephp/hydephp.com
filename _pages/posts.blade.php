@@ -2,7 +2,10 @@
     use App\Repositories\BlogArchiveRepository;
 
     $featured = BlogArchiveRepository::featured();
-    $ledger = BlogArchiveRepository::ledgerByYear();
+    $ledger = BlogArchiveRepository::ledger();
+    $ledgerByYear = collect([$featured + ['index' => -1]])
+        ->concat($ledger)
+        ->groupBy('year');
     $counts = BlogArchiveRepository::categoryCounts();
     $total = BlogArchiveRepository::entries()->count();
     $firstYear = BlogArchiveRepository::firstYear();
@@ -12,8 +15,8 @@
     // is in the HTML regardless; this only decides where the enhanced view draws its page breaks.
     $perPage = 12;
 
-    // The filter index handed to Alpine. It mirrors the rendered ledger one-for-one, carrying only
-    // what filtering needs, so the enhancement never has to re-render or duplicate any markup.
+    // The filter index handed to Alpine carries only what filtering needs, so the enhancement
+    // can control the server-rendered rows without re-rendering their contents.
     $describe = fn (array $entry, int $index): array => [
         'i' => $index,
         'c' => $entry['category']->value,
@@ -37,6 +40,12 @@
   // the entire archive as HTML while still opening on page one, without the rest of the ledger
   // flashing past first. If Alpine never arrives, the class comes back off and everything shows.
   document.documentElement.classList.add('js');
+
+  // A filtered URL must not paint the default featured card while Alpine is still loading.
+  // Alpine removes this hand-off class once x-show has taken control of the card.
+  if (@js(array_keys($counts)).includes(new URLSearchParams(window.location.search).get('category'))) {
+    document.documentElement.classList.add('archive-filtered');
+  }
   window.addEventListener('load', function () {
     setTimeout(function () {
       if (! window.Alpine) document.documentElement.classList.remove('js');
@@ -52,6 +61,10 @@
 
   /* Ledger rows past the first page. Hidden pre-paint, then handed over to Alpine's x-show. */
   .js [data-deferred] { display: none }
+
+  /* Prevent default archive content flashing on a direct link to a filtered archive. */
+  .js.archive-filtered [data-featured],
+  .js.archive-filtered [data-ledger] { display: none }
 
   /* Scroll reveal. Scoped to .js so a scriptless page never hides its own content. */
   .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease-out, transform .6s ease-out }
@@ -116,7 +129,7 @@
 </header>
 
 <div x-data="archive(@js([
-    'ledger' => BlogArchiveRepository::ledger()->map($describe)->all(),
+    'ledger' => $ledger->map($describe)->all(),
     'featured' => $describe($featured, -1),
     'categories' => array_keys($counts),
     'perPage' => $perPage,
@@ -136,20 +149,13 @@
       @endforeach
     </div>
 
-    <p class="mt-4 text-center font-['JetBrains_Mono'] text-[.7rem] uppercase tracking-[.2em] text-[#6f6785]">
-      <span x-text="count"></span> <span x-text="count === 1 ? 'dispatch' : 'dispatches'"></span>
-      <span x-show="isFiltered" x-transition.opacity>
-        ·
-        <button type="button" @click="reset()" class="text-[#d6a24a] uppercase tracking-[.2em] underline decoration-dotted underline-offset-4 hover:text-[#e5b25e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]">Clear</button>
-      </span>
-    </p>
-
-    {{-- Screen readers get told what changed; sighted readers see it in the line above. --}}
+    {{-- Announce filter changes without adding a redundant visible count. --}}
     <p class="sr-only" aria-live="polite" x-text="announcement"></p>
   </div>
 
   {{-- Featured --}}
   <div
+    data-featured
     x-show="showFeatured"
     x-transition:enter="transition duration-500 ease-out motion-reduce:transition-none"
     x-transition:enter-start="opacity-0 -translate-y-2"
@@ -182,9 +188,9 @@
   </div>
 
   {{-- The ledger --}}
-  <main class="mx-auto max-w-[1000px] scroll-mt-24 px-7 pb-10 pt-[72px]" id="archive" x-ref="ledger">
+  <main data-ledger class="mx-auto max-w-[1000px] scroll-mt-24 px-7 pb-10 pt-[72px]" id="archive" x-ref="ledger">
 
-    @foreach ($ledger as $year => $entries)
+    @foreach ($ledgerByYear as $year => $entries)
       <section
         x-show="yearVisible({{ $year }})"
         @if ($entries->min('index') >= $perPage) data-deferred @endif
@@ -197,6 +203,7 @@
                 class="group relative grid grid-cols-[100px_1fr_auto] items-baseline gap-6 border-b border-[rgba(164,156,186,.16)] py-5 no-underline max-[860px]:grid-cols-1 max-[860px]:gap-1 max-[860px]:py-[18px]"
                 href="{{ $entry['route'] }}"
                 x-show="visible({{ $entry['index'] }})"
+                @if ($entry['index'] === -1) x-cloak @endif
                 :style="{ '--stagger': order({{ $entry['index'] }}) * 26 + 'ms' }"
                 x-transition:enter="stagger transition duration-500 ease-out motion-reduce:transition-none"
                 x-transition:enter-start="opacity-0 translate-y-3"
@@ -234,7 +241,7 @@
       class="py-20 text-center"
     >
       <p class="font-[Fraunces] text-[1.7rem] font-[420] italic text-[#a49cba] [font-variation-settings:'SOFT'_80]">Nothing in the ledger for that.</p>
-      <p class="mt-3 text-[.92rem] text-[#6f6785]">Try a different category, or <button type="button" @click="reset()" class="text-[#d6a24a] underline decoration-dotted underline-offset-4 hover:text-[#e5b25e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]">show everything</button>.</p>
+      <p class="mt-3 text-[.92rem] text-[#6f6785]">Try a different category, or <button type="button" @click="filterBy('all')" class="text-[#d6a24a] underline decoration-dotted underline-offset-4 hover:text-[#e5b25e] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]">show everything</button>.</p>
     </div>
 
     {{-- Pagination is purely an enhancement: the markup above already holds every post. --}}
@@ -294,6 +301,10 @@
             element.removeAttribute('data-deferred');
           });
 
+          // x-show now owns the featured card, so the pre-paint URL guard can step aside without
+          // exposing it for a frame on filtered links.
+          this.$nextTick(() => document.documentElement.classList.remove('archive-filtered'));
+
           window.addEventListener('popstate', () => this.readLocation());
         },
 
@@ -304,7 +315,11 @@
 
         /** Ledger entries matching the current filters, in the order they are rendered. */
         get matches() {
-          return this.ledger.filter((post) => this.keep(post, this.category));
+          const candidates = this.category === 'all'
+            ? this.ledger
+            : [this.featured].concat(this.ledger);
+
+          return candidates.filter((post) => this.keep(post, this.category));
         },
 
         /** The entries the enhanced view is currently showing. */
@@ -332,9 +347,9 @@
           return this.shown.some((post) => post.y === year);
         },
 
-        /** The newest post keeps its spotlight as long as it survives the filters itself. */
+        /** The spotlight belongs to the default archive view; filters use the normal ledger row. */
         get showFeatured() {
-          return this.keep(this.featured, this.category);
+          return this.category === 'all';
         },
 
         get pageCount() {
@@ -357,17 +372,13 @@
           );
         },
 
-        /** Everything matching the filters, spotlight included, which is what the reader counts. */
+        /** Everything visible in the enhanced view, including the spotlight on the default view. */
         get count() {
           return this.matches.length + (this.showFeatured ? 1 : 0);
         },
 
         get isEmpty() {
           return this.count === 0;
-        },
-
-        get isFiltered() {
-          return this.category !== 'all';
         },
 
         /** Per-category totals shown on the filter pills. */
@@ -392,12 +403,6 @@
         filterBy(category) {
           // Pressing the active pill again lifts the filter, so the pills work as a toggle.
           this.category = this.category === category && category !== 'all' ? 'all' : category;
-          this.page = 1;
-          this.sync();
-        },
-
-        reset() {
-          this.category = 'all';
           this.page = 1;
           this.sync();
         },
