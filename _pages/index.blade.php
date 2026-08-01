@@ -19,11 +19,15 @@
 
   <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Since 2022 · Open source · MIT</p>
-    <h1 class="mx-auto mt-[22px] max-w-[640px] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.4rem,5.4vw,4.3rem)] font-[420] leading-[1] tracking-[-.015em]">
-      The power of <em class="text-[#8d7bf5]">Laravel</em>.<br>The simplicity of <em class="text-[#8d7bf5]">Markdown</em>.
-    </h1>
-    <p class="mx-auto mt-[26px] max-w-[59ch] text-[1.08rem] text-[#a49cba]">HydePHP is a static site generator with two natures: Markdown and Blade on the surface, the full Laravel framework underneath.</p>
-    <div class="mt-[34px] flex flex-wrap items-center justify-center gap-5">
+    <h1 class="mt-[30px] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(3rem,7.6vw,5.4rem)] font-bold leading-[.95] tracking-[-.02em]">HydePHP</h1>
+    <p class="mt-[18px] [font-family:'Playfair_Display',serif] text-[clamp(1.6rem,3.6vw,2.6rem)] font-[400] leading-[1.1] tracking-[-.01em] text-[#cfc8e0]">The static site generator for PHP.</p>
+    <div class="mx-auto mt-[38px] flex max-w-[900px] items-center gap-7 max-[720px]:gap-4">
+      <span class="h-px flex-1 bg-[rgba(164,156,186,.3)]" aria-hidden="true"></span>
+      <p class="[font-family:'Playfair_Display',serif] text-[clamp(1rem,2.2vw,1.4rem)] italic leading-[1.3] text-[#8d7bf5]">The power of Laravel. The simplicity of Markdown.</p>
+      <span class="h-px flex-1 bg-[rgba(164,156,186,.3)]" aria-hidden="true"></span>
+    </div>
+    <p class="mx-auto mt-[36px] max-w-[62ch] text-[1.08rem] text-[#a49cba]">A PHP static site generator built on Laravel. Markdown and Blade go in, a folder of fast static HTML comes out — no database, no server, nothing to keep alive.</p>
+    <div class="mt-[44px] flex flex-wrap items-center justify-center gap-6">
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
         <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd" aria-label="Copy install command">copy</button>
