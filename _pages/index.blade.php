@@ -13,16 +13,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* The build sequence in "The transformation". Armed by script, so the
-       final state is what renders without JS or with reduced motion. */
-    .typed{display:inline-block;overflow:hidden;white-space:pre;vertical-align:bottom;box-sizing:content-box;border-right:2px solid transparent}
-    .typed.caret-solid{border-right-color:#d6a24a}
-    .typed.caret-blink{animation:caret .85s step-end infinite}
-    .emit{display:inline-block;vertical-align:bottom}
-    @keyframes caret{0%,55%{border-right-color:#d6a24a}56%,100%{border-right-color:transparent}}
-    @media (prefers-reduced-motion:reduce){.typed{border-right-color:transparent;animation:none}}
-  </style>
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
 
@@ -112,32 +102,32 @@
     </div>
   </div>
 
-  <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20" id="transformation">
+  <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The transformation</p>
       <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Write. Build. Vanish from the server bill.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">The whole workflow is three moves. What comes out is plain HTML you can host anywhere, from a five-dollar VPS to a free static host.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-3 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-1">
-      <div class="bg-[#1c1827] px-7 py-8" id="writeCard">
+      <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Write</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">Markdown for content, Blade when you want full control. Front matter handles the metadata.</p>
         <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">// or plain .md, your call</span>
-<span class="typed" data-typed>php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24a]">&quot;A Study in Static&quot;</span></span></pre>
+php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24a]">&quot;A Study in Static&quot;</span></pre>
       </div>
-      <div class="bg-[#1c1827] px-7 py-8" id="buildCard">
+      <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Build</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">One command compiles everything: pages, posts, docs, navigation, RSS, sitemap.</p>
-        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="typed" data-typed>$ php hyde <span class="text-[#8d7bf5]">build</span></span>
-<span class="emit text-[#8fce8f]" data-emitted id="buildResult">✓ 80 files compiled in 756 ms</span></pre>
+        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">$ php hyde <span class="text-[#8d7bf5]">build</span>
+<span class="text-[#8fce8f]">✓ 80 files compiled in 756 ms</span></pre>
       </div>
-      <div class="bg-[#1c1827] px-7 py-8" id="shipCard">
+      <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Ship</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">The output is a folder of static files. No PHP on the server, nothing to patch at 2 am.</p>
-        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="emit" data-emitted="ship">_site/</span>
-<span class="emit" data-emitted="ship">├── index.html</span>
-<span class="emit" data-emitted="ship">├── posts/</span>
-<span class="emit" data-emitted="ship">└── <span class="text-[#d6a24a]">feed.xml</span></span></pre>
+        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">_site/
+├── index.html
+├── posts/
+└── <span class="text-[#d6a24a]">feed.xml</span></pre>
       </div>
     </div>
   </section>
@@ -291,72 +281,6 @@
         updateHero();
         addEventListener('scroll', queueHeroUpdate, { passive: true });
         addEventListener('resize', queueHeroUpdate);
-      }
-
-      if (!reduced) {
-        const typed = document.querySelectorAll('#transformation [data-typed]');
-        const emitted = document.querySelectorAll('#transformation [data-emitted]');
-
-        typed.forEach(function(el){ el.style.width = '0'; });
-        emitted.forEach(function(el){ el.style.opacity = '0'; el.style.transform = 'translateY(4px)'; });
-
-        const wait = function(ms){ return new Promise(function(r){ setTimeout(r, ms); }); };
-
-        // Resolves once the card is on screen, so on narrow layouts each step
-        // waits for its own column instead of running out of sight.
-        const onScreen = function(el){
-          return new Promise(function(resolve){
-            const ob = new IntersectionObserver(function(entries){
-              if (entries[0].isIntersecting) { ob.disconnect(); resolve(); }
-            }, { threshold: 0.3 });
-            ob.observe(el);
-          });
-        };
-
-        function type(el, msPerChar){
-          const chars = el.textContent.length;
-          el.classList.add('caret-solid');
-          const anim = el.animate(
-            [{ width: '0ch' }, { width: chars + 'ch' }],
-            { duration: chars * msPerChar, easing: 'steps(' + chars + ', end)', fill: 'forwards' }
-          );
-          return anim.finished.then(function(){
-            el.style.width = 'auto';
-            anim.cancel();
-            el.classList.remove('caret-solid');
-          });
-        }
-
-        function emit(el){
-          el.style.transition = 'opacity .34s ease, transform .34s ease';
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-        }
-
-        (async function runBuild(){
-          const writeCmd = typed[0];
-          const buildCmd = typed[1];
-          const result = document.getElementById('buildResult');
-          const files = document.querySelectorAll('[data-emitted="ship"]');
-
-          await onScreen(document.getElementById('writeCard'));
-          await wait(240);
-          await type(writeCmd, 22);
-
-          await Promise.all([wait(360), onScreen(document.getElementById('buildCard'))]);
-          await type(buildCmd, 34);
-
-          buildCmd.classList.add('caret-blink');
-          await wait(560);
-          buildCmd.classList.remove('caret-blink');
-          emit(result);
-
-          await Promise.all([wait(260), onScreen(document.getElementById('shipCard'))]);
-          for (const file of files) {
-            emit(file);
-            await wait(110);
-          }
-        })();
       }
 
       let pct = 58;
