@@ -26,7 +26,14 @@ you also need NodeJS and NPM.
 
 ## Using the Hyde CLI
 
-The main way to interact with Hyde is through the [HydeCLI](console-commands), a Laravel Artisan-based command-line interface. Learn more about the HydeCLI in the [console commands](console-commands) documentation.
+The main way to interact with Hyde is through the [HydeCLI](console-commands), a Laravel Artisan-based command-line interface.
+Once installed, you can access the HydeCLI from the project root using the `hyde` command.
+
+```terminal
+php hyde info
+```
+
+Learn more about the HydeCLI in the [console commands](console-commands) documentation.
 
 ## Starting a Development Server
 
@@ -54,6 +61,13 @@ You can also scaffold pages with the `php hyde make:page` command.
 ```terminal
 php hyde make:post
 php hyde make:page
+```
+
+Both commands will prompt you for the details they need. You can also pass the title directly to skip the first prompt.
+
+```terminal
+php hyde make:post "My First Post"
+php hyde make:page "About Me"
 ```
 
 ### Compiling to static HTML
@@ -84,3 +98,4 @@ Here's some ideas of what to read next:
 - [Architecture Concepts & Directory Structure](core-concepts)
 - [Console Commands with the HydeCLI](console-commands)
 - [Creating Blog Posts](blog-posts)
+- [Compiling and Deploying your Site](compile-and-deploy)
