@@ -18,6 +18,8 @@ class ValidateSiteBuildTask extends PreBuildTask
      */
     public function run(?OutputStyle $output = null): int
     {
+        $this->startClock();
+
         if ($output) {
             $this->output = $output;
         }
