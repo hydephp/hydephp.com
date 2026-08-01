@@ -76,12 +76,6 @@
 
     $abstract = $page->matter->get('abstract') ?? $page->matter->get('description');
 
-    $readingTime = isset($page->markdown)
-        ? \Hyde\Support\ReadingTime::fromString($page->markdown->body())->formatUsingClosure(
-            fn (int $minutes): string => sprintf('%d min read', max($minutes, 1))
-        )
-        : null;
-
     $lastModified = \App\Repositories\DocumentationDateRepository::lastModified($page->getSourcePath());
 
     // The documentation sources live in the develop monorepo, where each version has its own branch.
@@ -1377,13 +1371,9 @@
                         @endif
 
                         <div class="docs-meta">
-                            @if($readingTime)
-                                <span>{{ $readingTime }}</span>
-                            @endif
                             @if($lastModified)
                                 <span>Updated {{ $lastModified->format('M Y') }}</span>
                             @endif
-                            <a href="{{ $editSourceUrl }}" rel="noopener">Edit this page on GitHub</a>
                         </div>
                     </header>
                     <section id="document-main-content" itemprop="articleBody">
