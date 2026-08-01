@@ -513,28 +513,6 @@
             font-size: inherit;
         }
 
-        .docs-meta {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 10px 26px;
-            margin: 26px 0 0;
-            color: var(--docs-fog);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: .74rem;
-        }
-
-        .docs-meta a {
-            color: var(--docs-violet);
-            text-decoration: none;
-        }
-
-        .docs-meta a:hover {
-            color: #b6aaff;
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
         #document-main-content { padding-top: 1px; }
 
         #document-main-content h2,
@@ -895,6 +873,12 @@
             margin-top: 0;
             padding-top: 0;
             border-top: 0;
+        }
+
+        .docs-last-updated {
+            margin: 0 0 12px;
+            color: var(--docs-fog);
+            font-size: .74rem;
         }
 
         .docs-toc .docs-toc-links a {
@@ -1370,11 +1354,6 @@
                             <div class="docs-abstract">{{ Hyde::markdown($abstract) }}</div>
                         @endif
 
-                        <div class="docs-meta">
-                            @if($lastModified)
-                                <span>Updated {{ $lastModified->format('M Y') }}</span>
-                            @endif
-                        </div>
                     </header>
                     <section id="document-main-content" itemprop="articleBody">
                         {{ $article->renderBody() }}
@@ -1392,10 +1371,15 @@
                 {!! $renderToc($tableOfContents) !!}
             @endif
 
-            <nav class="docs-toc-links" aria-label="Page actions">
-                <a href="{{ $editSourceUrl }}" rel="noopener">Edit on GitHub</a>
-                <a href="{{ $reportIssueUrl }}" rel="noopener">Report an issue</a>
-            </nav>
+            <div class="docs-toc-links">
+                @if($lastModified)
+                    <p class="docs-last-updated">Updated {{ $lastModified->format('M Y') }}</p>
+                @endif
+                <nav aria-label="Page actions">
+                    <a href="{{ $editSourceUrl }}" rel="noopener">Edit on GitHub</a>
+                    <a href="{{ $reportIssueUrl }}" rel="noopener">Report an issue</a>
+                </nav>
+            </div>
         </aside>
     </div>
 
