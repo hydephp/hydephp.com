@@ -27,7 +27,7 @@
     <p class="mt-[18px] [font-family:'Playfair_Display',serif] text-[clamp(1.6rem,3.6vw,2.6rem)] font-[400] leading-[1.1] tracking-[-.01em] text-[#cfc8e0]">The static site generator for PHP.</p>
     <div class="mx-auto mt-[38px] flex max-w-[900px] items-center gap-7 max-[720px]:gap-4">
       <span class="h-px flex-1 bg-[rgba(164,156,186,.3)]" aria-hidden="true"></span>
-      <p class="[font-family:'Playfair_Display',serif] text-[clamp(1rem,2.2vw,1.4rem)] italic leading-[1.3] text-[#8d7bf5]">The power of Laravel. The simplicity of Markdown.</p>
+      <p class="[font-family:'Playfair_Display',serif] text-[clamp(1rem,2.2vw,1.4rem)] italic leading-[1.3] text-[#8d7bf5]">The power of Laravel meets the simplicity of Markdown.</p>
       <span class="h-px flex-1 bg-[rgba(164,156,186,.3)]" aria-hidden="true"></span>
     </div>
     <p class="mx-auto mt-[36px] max-w-[62ch] text-[1.08rem] text-[#a49cba]">A PHP static site generator built on Laravel. Markdown and Blade go in, a folder of fast static HTML comes out — no database, no server, nothing to keep alive.</p>
