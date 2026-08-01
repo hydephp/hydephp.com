@@ -90,6 +90,25 @@
         'body' => sprintf("**Page:** %s\n\n", Hyde::url($page->getRouteKey())),
     ]);
 
+    $versionNotice = null;
+    $stableVersion = \Hyde\Framework\Features\Documentation\Versioning\DocumentationVersions::default();
+
+    if ($switcherCurrentVersion !== null && $stableVersion !== null && $switcherCurrentVersion->name !== $stableVersion->name) {
+        $versionOrder = $switcherVersions->keys()->all();
+        $currentPosition = array_search($switcherCurrentVersion->name, $versionOrder, true);
+        $stablePosition = array_search($stableVersion->name, $versionOrder, true);
+
+        if ($currentPosition !== false && $stablePosition !== false) {
+            $versionNotice = [
+                'kind' => $currentPosition < $stablePosition ? 'outdated' : 'upcoming',
+                'stable' => $stableVersion->name,
+                'route' => $switcherCurrentPage !== null
+                    ? (\Hyde\Framework\Features\Documentation\Versioning\DocumentationVersions::getEquivalentRoute($switcherCurrentPage, $stableVersion) ?? $stableVersion->home())
+                    : $stableVersion->home(),
+            ];
+        }
+    }
+
     $headerLinks = (array) config('docs.header_links', [
         'Blog' => Hyde::relativeLink('blog'),
         'GitHub' => 'https://github.com/hydephp/hyde',
@@ -480,6 +499,72 @@
         }
 
         .docs-breadcrumb-separator { padding: 0 6px; color: var(--docs-gold); }
+
+        /* Version notices */
+        .docs-version-notice {
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr);
+            align-items: start;
+            gap: 5px 12px;
+            margin: 0 0 34px;
+            padding: 16px 20px 18px;
+            border: 1px solid var(--docs-notice-line);
+            border-left: 3px solid var(--docs-notice-accent);
+            border-radius: 7px;
+            background: var(--docs-notice-tint);
+            color: var(--docs-text);
+            font-size: .95rem;
+            line-height: 1.6;
+        }
+
+        .docs-version-notice--outdated {
+            --docs-notice-accent: var(--docs-gold);
+            --docs-notice-line: rgba(214, 162, 74, .26);
+            --docs-notice-tint: rgba(214, 162, 74, .07);
+        }
+
+        .docs-version-notice--upcoming {
+            --docs-notice-accent: #e0834c;
+            --docs-notice-line: rgba(224, 131, 76, .28);
+            --docs-notice-tint: rgba(224, 131, 76, .08);
+        }
+
+        .docs-version-notice > svg {
+            grid-area: 1 / 1;
+            margin-top: 1px;
+            color: var(--docs-notice-accent);
+        }
+
+        .docs-version-notice strong {
+            grid-area: 1 / 2;
+            color: var(--docs-notice-accent);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem;
+            font-weight: 500;
+            letter-spacing: .14em;
+            line-height: 1.5;
+            text-transform: uppercase;
+        }
+
+        .docs-version-notice p {
+            grid-area: 2 / 2;
+            max-width: 62ch;
+            margin: 0;
+        }
+
+        .docs-version-notice a {
+            grid-area: 3 / 2;
+            justify-self: start;
+            margin-top: 9px;
+            color: var(--docs-notice-accent);
+            font-size: .9rem;
+            text-decoration: underline;
+            text-decoration-color: var(--docs-notice-line);
+            text-decoration-thickness: 1px;
+            text-underline-offset: 4px;
+        }
+
+        .docs-version-notice a:hover { text-decoration-color: currentColor; }
 
         #document-header {
             display: block;
@@ -1123,6 +1208,8 @@
             #document-main-content p,
             #document-main-content li,
             #document-main-content td { color: #222; }
+
+            .docs-version-notice { color: #222; }
         }
     </style>
 </head>
@@ -1332,6 +1419,28 @@
 
         <main id="content" class="docs-main">
             <article id="document" itemscope itemtype="https://schema.org/Article">
+                @if($versionNotice !== null)
+                    <aside class="docs-version-notice docs-version-notice--{{ $versionNotice['kind'] }}" role="note">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
+                            <path d="M12 4 2.9 20h18.2L12 4Z" stroke-width="1.7" stroke-linejoin="round"/>
+                            <path d="M12 10.5v4" stroke-width="1.7" stroke-linecap="round"/>
+                            <circle cx="12" cy="17.3" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+
+                        @if($versionNotice['kind'] === 'outdated')
+                            <strong>Outdated version</strong>
+                            <p>You are reading the documentation for HydePHP {{ $switcherCurrentVersion->name }}, which is no longer the latest release.</p>
+                        @else
+                            <strong>Unreleased version</strong>
+                            <p>You are reading the documentation for {{ $switcherCurrentVersion->name }}, an upcoming version still in development. Anything described here may change before release.</p>
+                        @endif
+
+                        @if($versionNotice['route'] !== null)
+                            <a href="{{ $versionNotice['route'] }}">Go to the {{ $versionNotice['stable'] }} documentation</a>
+                        @endif
+                    </aside>
+                @endif
+
                 @if($activeGroup !== null || $activeItem !== null)
                     <p class="docs-breadcrumb">
                         @if($activeGroup !== null)
