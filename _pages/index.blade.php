@@ -1,6 +1,7 @@
 @php
     $docsIndex      = \Hyde\Foundation\Facades\Routes::get('docs/index');
     $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
+    $statistics     = \App\Support\HomepageStatistics::cards();
 @endphp
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
@@ -218,10 +219,9 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 
   <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
     <div class="flex flex-wrap justify-between gap-6 rounded-[14px] border border-[rgba(164,156,186,.16)] px-10 py-[30px] [font-family:'JetBrains_Mono',monospace] max-[720px]:p-6" style="background: linear-gradient(180deg, #1c1827, #14111c);">
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">203<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub clones</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">28<i class="text-[1.2rem] italic text-[#d6a24a]">k</i></div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Packagist installs</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">449</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">GitHub stars</div></div>
-      <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">MIT</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">Licensed, forever</div></div>
+      @foreach ($statistics as $statistic)
+        <div><div class="[font-family:'Playfair_Display',serif] opacity-90 text-[2.1rem] font-[420]">{{ $statistic['value'] }}@if ($statistic['suffix'])<i class="text-[1.2rem] italic text-[#d6a24a]">{{ $statistic['suffix'] }}</i>@endif</div><div class="mt-0.5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.16em] text-[#a49cba]">{{ $statistic['label'] }}</div></div>
+      @endforeach
     </div>
   </section>
 
