@@ -19,7 +19,8 @@
 
   <header class="relative isolate overflow-hidden" id="hero">
   <div class="pointer-events-none absolute -inset-x-[5%] -inset-y-[12%] bg-cover bg-center bg-no-repeat will-change-[transform,filter,opacity]" id="heroBackground" style="background-image: url('{{ asset('hero-background.png') }}');" aria-hidden="true"></div>
-  <div class="pointer-events-none absolute inset-0 will-change-[transform,opacity]" id="heroSmoke" style="background: radial-gradient(ellipse at 20% 100%, rgba(105, 96, 143, .28), transparent 42%), radial-gradient(ellipse at 75% 105%, rgba(49, 43, 70, .72), transparent 48%), linear-gradient(to bottom, transparent 58%, #14111c 100%); opacity: .12; filter: blur(8px);" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-0 will-change-[transform,opacity]" id="heroSmoke" style="background: radial-gradient(ellipse at 20% 100%, rgba(105, 96, 143, .28), transparent 42%), radial-gradient(ellipse at 75% 105%, rgba(49, 43, 70, .72), transparent 48%); opacity: .12; filter: blur(8px);" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[42%]" style="background: linear-gradient(to bottom, transparent 0%, rgba(20, 17, 28, .72) 58%, #14111c 100%);" aria-hidden="true"></div>
   <div class="relative z-10 mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Since 2022 · Open source · MIT</p>
     <h1 class="mt-[30px] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(3rem,7.6vw,5.4rem)] font-bold leading-[.95] tracking-[-.02em]">HydePHP</h1>
@@ -213,11 +214,11 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
         let heroFrame;
         function updateHero(){
           const rect = hero.getBoundingClientRect();
-          const progress = Math.max(0, Math.min(1, -rect.top / rect.height));
+          const progress = Math.max(0, Math.min(1, (hero.offsetTop - rect.top) / rect.height));
 
-          heroBackground.style.transform = 'translate3d(0,' + (progress * 90) + 'px,0) scale(' + (1.08 + progress * .04) + ')';
-          heroBackground.style.opacity = 1 - progress * .78;
-          heroBackground.style.filter = 'blur(' + (progress * 14) + 'px)';
+          heroBackground.style.transform = 'translate3d(0,' + (progress * 105) + 'px,0) scale(' + (1.06 + progress * .1) + ')';
+          heroBackground.style.opacity = 1 - progress * .68;
+          heroBackground.style.filter = 'brightness(' + (1 - progress * .48) + ') blur(' + (progress * 14) + 'px)';
           heroSmoke.style.opacity = .12 + progress * .88;
           heroSmoke.style.transform = 'translate3d(0,' + (-progress * 34) + 'px,0) scale(' + (1 + progress * .12) + ')';
           heroFrame = null;
