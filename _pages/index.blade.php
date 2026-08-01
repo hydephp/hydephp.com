@@ -17,7 +17,8 @@
 
   <x-navigation />
 
-  <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
+  <header class="bg-cover bg-center bg-no-repeat" style="background-image: url('{{ asset('hero-background.png') }}');">
+  <div class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
     <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Since 2022 · Open source · MIT</p>
     <h1 class="mt-[30px] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(3rem,7.6vw,5.4rem)] font-bold leading-[.95] tracking-[-.02em]">HydePHP</h1>
     <p class="mt-[18px] [font-family:'Playfair_Display',serif] text-[clamp(1.6rem,3.6vw,2.6rem)] font-[400] leading-[1.1] tracking-[-.01em] text-[#cfc8e0]">The static site generator for PHP.</p>
@@ -34,6 +35,7 @@
       </div>
       <a class="text-[.95rem] font-medium text-[#e9e5f2] underline decoration-[rgba(164,156,186,.55)] decoration-1 underline-offset-[6px] transition-colors hover:text-white hover:decoration-[#d6a24a] focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8d7bf5]" href="{{ $docsIndex }}">Read the documentation</a>
     </div>
+  </div>
   </header>
 
   <div class="mx-auto max-w-[1160px] px-7 pt-[54px]">
