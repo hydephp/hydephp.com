@@ -18,17 +18,17 @@
   <x-navigation />
 
   <header class="mx-auto max-w-[1160px] px-7 pb-5 pt-[72px] text-center">
-    <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Static sites · Laravel · Markdown</p>
-    <h1 class="mx-auto mt-[22px] max-w-[15ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.6rem,6.2vw,4.9rem)] font-[420] leading-[1.04] tracking-[-.015em]">
-      Every Markdown file has a <em class="text-[#8d7bf5]">second nature</em>.
+    <p class="[font-family:'JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">Since 2022 · Open source · MIT</p>
+    <h1 class="mx-auto mt-[22px] max-w-[640px] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(2.4rem,5.4vw,4.3rem)] font-[420] leading-[1] tracking-[-.015em]">
+      The power of <em class="text-[#8d7bf5]">Laravel</em>.<br>The simplicity of <em class="text-[#8d7bf5]">Markdown</em>.
     </h1>
-    <p class="mx-auto mt-[22px] max-w-[52ch] text-[1.08rem] text-[#a49cba]">HydePHP transforms the plain files you already write into fast, elegant static sites. Laravel's tooling works behind the curtain. No database, no runtime, no fuss.</p>
-    <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
+    <p class="mx-auto mt-[26px] max-w-[59ch] text-[1.08rem] text-[#a49cba]">HydePHP is a static site generator with two natures: Markdown and Blade on the surface, the full Laravel framework underneath.</p>
+    <div class="mt-[34px] flex flex-wrap items-center justify-center gap-5">
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
         <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd" aria-label="Copy install command">copy</button>
       </div>
-      <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsIndex }}">Read the documentation</a>
+      <a class="text-[.95rem] font-medium text-[#e9e5f2] underline decoration-[rgba(164,156,186,.55)] decoration-1 underline-offset-[6px] transition-colors hover:text-white hover:decoration-[#d6a24a] focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8d7bf5]" href="{{ $docsIndex }}">Read the documentation</a>
     </div>
   </header>
 
