@@ -131,6 +131,56 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
     </div>
   </section>
 
+  <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
+    <div class="max-w-[640px]">
+      <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Four kinds of pages</p>
+      <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">A page type for every kind of writing.</h2>
+      <p class="mt-4 max-w-[56ch] text-[#a49cba]">The directory a file lives in decides what it becomes. Mix all four in the same project — Hyde works out the routing, the navigation, and the layouts.</p>
+    </div>
+    <div class="mt-[54px] grid grid-cols-4 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
+      <div class="bg-[#1c1827] px-7 py-8">
+        <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] tracking-[.06em] text-[#d6a24a]">_pages/*.md</p>
+        <h3 class="mt-3 [font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Markdown pages</h3>
+        <p class="mt-2 min-h-[72px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">The shortest path to a page. Write the content, keep the file, get static HTML.</p>
+        <ul class="mt-[18px] list-none border-t border-[rgba(164,156,186,.16)] pt-3.5">
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">No config to write</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">Front matter optional</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">Auto-added to navigation</li>
+        </ul>
+      </div>
+      <div class="bg-[#1c1827] px-7 py-8">
+        <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] tracking-[.06em] text-[#8d7bf5]">_pages/*.blade.php</p>
+        <h3 class="mt-3 [font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Blade pages</h3>
+        <p class="mt-2 min-h-[72px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">For the pages Markdown can't carry. Full control over the markup, with PHP at hand.</p>
+        <ul class="mt-[18px] list-none border-t border-[rgba(164,156,186,.16)] pt-3.5">
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">The full Blade syntax</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">Components and layouts</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">Sits beside your Markdown</li>
+        </ul>
+      </div>
+      <div class="bg-[#1c1827] px-7 py-8">
+        <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] tracking-[.06em] text-[#d6a24a]">_posts/*.md</p>
+        <h3 class="mt-3 [font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Blog posts</h3>
+        <p class="mt-2 min-h-[72px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">A blog that assembles itself. Drop the file in, and the feeds follow along.</p>
+        <ul class="mt-[18px] list-none border-t border-[rgba(164,156,186,.16)] pt-3.5">
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">Authors, dates, categories</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">Generated post feed</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">RSS out of the box</li>
+        </ul>
+      </div>
+      <div class="bg-[#1c1827] px-7 py-8">
+        <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] tracking-[.06em] text-[#8d7bf5]">_docs/*.md</p>
+        <h3 class="mt-3 [font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Documentation</h3>
+        <p class="mt-2 min-h-[72px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">A whole documentation site from a folder of Markdown. This one runs on it.</p>
+        <ul class="mt-[18px] list-none border-t border-[rgba(164,156,186,.16)] pt-3.5">
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">Sidebar built for you</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">Search and page tables</li>
+          <li class="relative py-[5px] pl-[22px] text-[.86rem] text-[#cfc8e0] before:absolute before:left-0 before:top-[13px] before:h-0.5 before:w-2.5 before:bg-[#8d7bf5] before:content-['']">Torchlight highlighting</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">What's in the box</p>
