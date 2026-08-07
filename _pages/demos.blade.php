@@ -1,3 +1,6 @@
+@php
+$docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
+@endphp
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -143,7 +146,7 @@
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
       </div>
-      <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Follow the quickstart</a>
+      <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="{{ $docsQuickstart }}">Follow the quickstart</a>
     </div>
     <p class="mt-10 [font-family:'Playfair_Display',serif] opacity-90 italic text-[#a49cba]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="#">Submit your site to the exhibition.</a></p>
   </div>
