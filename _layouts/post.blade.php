@@ -313,16 +313,12 @@
 
 <header class="pt-14 text-center sm:pt-20" style="background: radial-gradient(640px 300px at 50% -10%, rgba(141,123,245,.11), transparent 70%);">
   <div class="mx-auto max-w-[1160px] px-7">
-    <p class="font-mono text-[.72rem] uppercase tracking-[.16em] text-[#a49cba]">
+    <p class="flex flex-wrap items-center justify-center gap-x-3 font-mono text-[.72rem] uppercase tracking-[.16em] text-[#a49cba]">
       <a class="text-[#a49cba] no-underline hover:text-white" href="{{ $blog ?? Hyde::relativeLink('posts') }}">Notes &amp; Dispatches</a>
       @if ($category)
-        <b class="px-1.5 font-normal text-[#d6a24a]">/</b>{{ $category->label() }}
+        <b class="font-normal text-[#d6a24a]">/</b><span>{{ $category->label() }}</span>
       @endif
     </p>
-
-    @if ($category)
-      <span class="font-mono mt-[26px] inline-block rounded-full border px-3.5 py-1 text-[.68rem] uppercase tracking-[.16em]" style="border-color: {{ $category->borderColor() }}; color: {{ $category->textColor() }}">{{ $category->label() }}</span>
-    @endif
 
     <h1 class="font-playfair mx-auto mt-5 max-w-[19ch] text-[clamp(2.2rem,5.2vw,3.7rem)] font-[420] leading-[1.07] tracking-[-.014em]">{{ $page->title }}</h1>
 
