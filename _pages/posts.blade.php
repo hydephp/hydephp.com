@@ -42,9 +42,16 @@
   document.documentElement.classList.add('js');
 
   // A filtered URL must not paint the default featured card while Alpine is still loading.
-  // Alpine removes this hand-off class once x-show has taken control of the card.
-  if (@js(array_keys($counts)).includes(new URLSearchParams(window.location.search).get('category'))) {
+  // Capture the category before removing it from the address bar, then let Alpine consume the
+  // captured value. This keeps incoming links working while making the cleanup effectively instant.
+  const archiveParams = new URLSearchParams(window.location.search);
+  const archiveCategory = archiveParams.get('category');
+  if (@js(array_keys($counts)).includes(archiveCategory)) {
     document.documentElement.classList.add('archive-filtered');
+    window.__archiveInitialCategory = archiveCategory;
+    archiveParams.delete('category');
+    const archiveQuery = archiveParams.toString();
+    history.replaceState(null, '', window.location.pathname + (archiveQuery ? '?' + archiveQuery : '') + window.location.hash);
   }
   window.addEventListener('load', function () {
     setTimeout(function () {
@@ -423,11 +430,10 @@
           this.$refs.ledger.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
         },
 
-        /** Keeps the address bar in step with the view, so any filtered page can be linked to. */
+        /** Keep pagination in the address bar without making category tabs URL stateful. */
         sync() {
           const params = new URLSearchParams();
 
-          if (this.category !== 'all') params.set('category', this.category);
           if (this.page > 1) params.set('page', this.page);
 
           const query = params.toString();
@@ -437,13 +443,15 @@
 
         readLocation() {
           const params = new URLSearchParams(window.location.search);
-          const category = params.get('category');
+          const category = window.__archiveInitialCategory || params.get('category');
+          delete window.__archiveInitialCategory;
 
           this.category = this.categories.includes(category) ? category : 'all';
           this.page = Math.min(Math.max(1, parseInt(params.get('page'), 10) || 1), this.pageCount);
 
-          // A link can ask for a page or category that no longer exists. Write back what was
-          // actually settled on, so the address bar never disagrees with what is on screen.
+          // Category is a supported input for links, but it is intentionally transient. Remove
+          // it immediately after hydration so changing tabs never creates URL state or history.
+          // A link can also ask for a page that no longer exists, so settle that value here too.
           this.sync();
         },
       };
