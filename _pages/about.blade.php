@@ -22,7 +22,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 
 <x-navigation />
 
-<header class="bg-[radial-gradient(700px_340px_at_50%_-10%,rgba(141,123,245,.12),transparent_70%)] py-[96px] pb-[84px] text-center max-[640px]:py-[72px] max-[640px]:pb-[60px]">
+<header class="bg-[radial-gradient(700px_340px_at_50%_-10%,rgba(141,123,245,.12),transparent_70%)] py-[96px] pb-[32px] text-center max-[640px]:py-[72px] max-[640px]:pb-[40px]">
   <div class="mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.74rem] uppercase tracking-[.22em] text-[#d6a24a]">About the project</p>
     <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Playfair_Display',serif] opacity-90 text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.06] tracking-[-.015em]">
@@ -33,7 +33,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 </header>
 
 <!-- The story -->
-<section class="reveal mx-auto max-w-[720px] px-7 pb-[100px] pt-10">
+<section class="reveal mx-auto max-w-[720px] px-7 pb-[100px] pt-4">
   <p class="mt-0 text-[#d6d0e4] first-letter:float-left first-letter:pr-3.5 first-letter:pt-2 first-letter:font-['Playfair_Display',serif] first-letter:opacity-90 first-letter:text-[4.4rem] first-letter:font-medium first-letter:leading-[.82] first-letter:text-[#d6a24a]">Hyde started with a simple frustration. Jekyll, the Ruby generator that popularized the modern static site, had the right idea: write plain files, run one command, ship folders of HTML. But for a developer who lives in PHP and thinks in Laravel, reaching for a Ruby toolchain every time you want a simple site feels like borrowing a neighbor's kitchen to make toast.</p>
   <p class="mt-[18px] text-[#d6d0e4]">So Hyde takes Jekyll's philosophy and rebuilds it on the tools Laravel developers already trust. Blade for templating. Artisan-style commands for the workflow. Composer for everything else. The name is a small literary joke with a serious point: Jekyll and Hyde are the same person, and your Markdown and your website are the same file. Hyde just brings out the other side.</p>
 
