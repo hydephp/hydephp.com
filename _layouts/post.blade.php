@@ -1,6 +1,7 @@
 @php
     use App\Enums\PostCategory;
     use App\Repositories\BlogArchiveRepository;
+    use App\Support\GuestLinkPolicy;
     use Hyde\Foundation\Facades\Routes;
     use Hyde\Support\ReadingTime;
 
@@ -11,6 +12,14 @@
     $category = $page->category ? PostCategory::tryFrom($page->category) : null;
     $author = $page->author;
     $minutes = max(1, ReadingTime::fromString($page->markdown->body())->getMinutes());
+
+    // Guest content isn't editorially reviewed the way staff posts are, so every link it contains
+    // — in the body, or in the byline the author supplied — gets a conservative rel treatment.
+    $isGuestPost = (bool) $page->matter('guest_post', false);
+    $articleHtml = $isGuestPost ? GuestLinkPolicy::markLinks((string) $content) : (string) $content;
+    $guestRel = fn (string $base = ''): string => $isGuestPost
+        ? implode(' ', array_unique(array_filter([...explode(' ', $base), ...explode(' ', GuestLinkPolicy::REL)])))
+        : $base;
 
     $blog = Routes::get('posts');
 
@@ -40,6 +49,7 @@
         $service === 'twitter', $service === 'x' => "https://twitter.com/$handle",
         $service === 'mastodon' => "https://mastodon.social/@$handle",
         $service === 'bluesky' => "https://bsky.app/profile/$handle",
+        $service === 'linkedin' => "https://linkedin.com/in/$handle",
         default => $handle,
     };
 @endphp
@@ -393,7 +403,7 @@
     <meta itemprop="datePublished" content="{{ $page->date->datetime }}">
   @endif
 
-  <article id="post-body" itemprop="articleBody" aria-label="Article">{{ $content }}</article>
+  <article id="post-body" itemprop="articleBody" aria-label="Article">{!! $articleHtml !!}</article>
 
   <div class="mt-16 text-center text-[1.1rem] tracking-[.5em] text-[#d6a24a]" aria-hidden="true">🎩</div>
 
@@ -411,10 +421,10 @@
         @endif
         <div class="font-mono mt-2.5 flex flex-wrap gap-4 text-[.74rem]">
           @foreach ($author->socials ?? [] as $service => $handle)
-            <a class="text-[#8d7bf5] underline decoration-[#8d7bf5] underline-offset-[6px] transition-colors hover:text-white" href="{{ $socialUrl($service, $handle) }}" rel="noopener">↗ {{ ucfirst($service) }}</a>
+            <a class="text-[#8d7bf5] underline decoration-[#8d7bf5] underline-offset-[6px] transition-colors hover:text-white" href="{{ $socialUrl($service, $handle) }}" rel="{{ $guestRel('noopener') }}">↗ {{ ucfirst($service) }}</a>
           @endforeach
           @if ($author->website)
-            <a class="text-[#8d7bf5] underline decoration-[#8d7bf5] underline-offset-[6px] transition-colors hover:text-white" href="{{ $author->website }}" rel="author noopener">↗ {{ parse_url($author->website, PHP_URL_HOST) ?? $author->website }}</a>
+            <a class="text-[#8d7bf5] underline decoration-[#8d7bf5] underline-offset-[6px] transition-colors hover:text-white" href="{{ $author->website }}" rel="{{ $guestRel('author noopener') }}">↗ {{ parse_url($author->website, PHP_URL_HOST) ?? $author->website }}</a>
           @endif
           <a class="text-[#8d7bf5] underline decoration-[#8d7bf5] underline-offset-[6px] transition-colors hover:text-white" href="{{ $blog ?? Hyde::relativeLink('posts') }}">↗ More dispatches</a>
         </div>
