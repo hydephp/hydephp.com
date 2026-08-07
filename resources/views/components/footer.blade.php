@@ -4,7 +4,7 @@
     <div class="ml-auto flex gap-5">
       <a class="text-[#a49cba] no-underline hover:text-white" href="https://github.com/hydephp/hyde">GitHub</a>
       <a class="text-[#a49cba] no-underline hover:text-white" href="https://discord.hydephp.com">Discord</a>
-      <a class="text-[#a49cba] no-underline hover:text-white" href="{{ Hyde::url('feed.xml') }}">RSS</a>
+      <a class="text-[#a49cba] no-underline hover:text-white" href="{{ Hyde::relativeLink(config('hyde.rss.filename', 'feed.xml')) }}">RSS</a>
       <a class="text-[#a49cba] no-underline hover:text-white" href="{{ \Hyde\Foundation\Facades\Routes::get('license') ?? '/license' }}">Legal</a>
     </div>
   </div>

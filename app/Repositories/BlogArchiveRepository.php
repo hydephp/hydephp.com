@@ -85,6 +85,30 @@ class BlogArchiveRepository
             ->all();
     }
 
+    /**
+     * The entries on either side of a post, which the post page links to as adjacent dispatches.
+     *
+     * Entries run newest first, so the neighbour listed before a post is the newer one. A post
+     * that is not on the timeline at all, such as a dated one, simply has no neighbours.
+     *
+     * @return array{previous: ?array, next: ?array} The older and newer entry respectively.
+     */
+    public static function adjacent(string $routeKey): array
+    {
+        $entries = static::entries();
+
+        $position = $entries->search(fn (array $entry): bool => $entry['route']->getRouteKey() === $routeKey);
+
+        if ($position === false) {
+            return ['previous' => null, 'next' => null];
+        }
+
+        return [
+            'previous' => $entries->get($position + 1),
+            'next' => $entries->get($position - 1),
+        ];
+    }
+
     /** The year of the oldest post, used for the "Est." line in the masthead. */
     public static function firstYear(): int
     {
