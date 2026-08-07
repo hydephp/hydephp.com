@@ -22,6 +22,9 @@
         : $base;
 
     $blog = Routes::get('posts');
+    $categoryUrl = $category
+        ? ($blog ?? Hyde::relativeLink('posts')).'?'.http_build_query(['category' => $category->value])
+        : null;
 
     // Post pages sit one directory down, so the feed needs a link relative to this page.
     // Hyde::url() only resolves to an absolute URL once a site URL is configured.
@@ -316,7 +319,7 @@
     <p class="flex flex-wrap items-center justify-center gap-x-3 font-mono text-[.72rem] uppercase tracking-[.16em] text-[#a49cba]">
       <a class="text-[#a49cba] no-underline hover:text-white" href="{{ $blog ?? Hyde::relativeLink('posts') }}">Notes &amp; Dispatches</a>
       @if ($category)
-        <b class="font-normal text-[#d6a24a]">/</b><span>{{ $category->label() }}</span>
+        <b class="font-normal text-[#d6a24a]">/</b><a class="text-[#a49cba] no-underline hover:text-white" href="{{ $categoryUrl }}">{{ $category->label() }}</a>
       @endif
     </p>
 
