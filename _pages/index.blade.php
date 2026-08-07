@@ -35,11 +35,11 @@ $statistics = \App\Support\HomepageStatistics::cards();
       </div>
       <p class="mx-auto mt-[36px] max-w-[62ch] text-[1.08rem] text-[#a49cba]">Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with the simplicity of Markdown. Your next project starts here.</p>
       <div class="mt-[44px] flex flex-wrap items-center justify-center gap-6">
-        <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
+        <div class="flex h-[50px] items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
           <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
           <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd" aria-label="Copy install command">copy</button>
         </div>
-        <a class="text-[.95rem] font-medium text-[#e9e5f2] underline decoration-[rgba(164,156,186,.55)] decoration-1 underline-offset-[6px] transition-colors hover:text-white hover:decoration-[#d6a24a] focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8d7bf5]" href="{{ $docsIndex }}">Read the documentation</a>
+        <a class="inline-flex h-[50px] items-center rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] text-[.95rem] font-medium text-[#e9e5f2] transition-colors hover:border-[rgba(214,162,74,.45)] hover:bg-[#231e30] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" href="{{ $docsIndex }}">Read the documentation</a>
       </div>
     </div>
   </header>
