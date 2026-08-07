@@ -1,3 +1,6 @@
+@php
+$docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -150,12 +153,12 @@
       <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 font-['JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
         <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
       </div>
-      <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="#">Follow the quickstart</a>
+      <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsQuickstart }}">Follow the quickstart</a>
     </div>
     <div class="mt-11 flex justify-center gap-7 font-['JetBrains_Mono',monospace] text-[.8rem] max-[640px]:flex-col max-[640px]:gap-3">
-      <a class="text-[#a49cba] no-underline hover:text-white" href="#"><b class="font-normal text-[#8d7bf5]">↗</b> Star on GitHub</a>
-      <a class="text-[#a49cba] no-underline hover:text-white" href="#"><b class="font-normal text-[#8d7bf5]">↗</b> Join the Discord</a>
-      <a class="text-[#a49cba] no-underline hover:text-white" href="#"><b class="font-normal text-[#8d7bf5]">↗</b> Read the source</a>
+      <a class="text-[#a49cba] no-underline hover:text-white" href="https://github.com/hydephp/hyde"><b class="font-normal text-[#8d7bf5]">↗</b> Star on GitHub</a>
+      <a class="text-[#a49cba] no-underline hover:text-white" href="https://discord.hydephp.com"><b class="font-normal text-[#8d7bf5]">↗</b> Join the Discord</a>
+      <a class="text-[#a49cba] no-underline hover:text-white" href="https://github.com/hydephp/develop"><b class="font-normal text-[#8d7bf5]">↗</b> Read the source</a>
     </div>
   </div>
 </section>
