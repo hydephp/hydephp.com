@@ -42,14 +42,25 @@
   document.documentElement.classList.add('js');
 
   // A filtered URL must not paint the default featured card while Alpine is still loading.
-  // Capture the category before removing it from the address bar, then let Alpine consume the
-  // captured value. This keeps incoming links working while making the cleanup effectively instant.
+  // Capture incoming archive state before removing it from the address bar, then let Alpine
+  // consume the captured values. This keeps incoming links working while making cleanup instant.
   const archiveParams = new URLSearchParams(window.location.search);
   const archiveCategory = archiveParams.get('category');
+  const archivePage = archiveParams.get('page');
+  let archiveUrlChanged = false;
+
   if (@js(array_keys($counts)).includes(archiveCategory)) {
     document.documentElement.classList.add('archive-filtered');
     window.__archiveInitialCategory = archiveCategory;
     archiveParams.delete('category');
+    archiveUrlChanged = true;
+  }
+  if (archivePage !== null) {
+    window.__archiveInitialPage = archivePage;
+    archiveParams.delete('page');
+    archiveUrlChanged = true;
+  }
+  if (archiveUrlChanged) {
     const archiveQuery = archiveParams.toString();
     history.replaceState(null, '', window.location.pathname + (archiveQuery ? '?' + archiveQuery : '') + window.location.hash);
   }
@@ -430,28 +441,23 @@
           this.$refs.ledger.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
         },
 
-        /** Keep pagination in the address bar without making category tabs URL stateful. */
+        /** Keep transient archive state out of the address bar. */
         sync() {
-          const params = new URLSearchParams();
-
-          if (this.page > 1) params.set('page', this.page);
-
-          const query = params.toString();
-
-          history.replaceState(null, '', window.location.pathname + (query ? '?' + query : '') + window.location.hash);
+          history.replaceState(null, '', window.location.pathname + window.location.hash);
         },
 
         readLocation() {
           const params = new URLSearchParams(window.location.search);
-          const category = window.__archiveInitialCategory || params.get('category');
+          const category = window.__archiveInitialCategory ?? params.get('category');
+          const page = window.__archiveInitialPage ?? params.get('page');
           delete window.__archiveInitialCategory;
+          delete window.__archiveInitialPage;
 
           this.category = this.categories.includes(category) ? category : 'all';
-          this.page = Math.min(Math.max(1, parseInt(params.get('page'), 10) || 1), this.pageCount);
+          this.page = Math.min(Math.max(1, parseInt(page, 10) || 1), this.pageCount);
 
-          // Category is a supported input for links, but it is intentionally transient. Remove
-          // it immediately after hydration so changing tabs never creates URL state or history.
-          // A link can also ask for a page that no longer exists, so settle that value here too.
+          // Category and page are supported inputs for links, but intentionally transient. Remove
+          // them immediately after hydration so the address bar never becomes archive UI state.
           this.sync();
         },
       };
