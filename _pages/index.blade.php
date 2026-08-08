@@ -142,9 +142,9 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   </section>
 
   <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
-    <div class="max-w-[640px]">
+    <div class="max-w-[900px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Four kinds of pages</p>
-      <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">A page type for every kind of writing.</h2>
+      <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em] min-[961px]:whitespace-nowrap">A page type for every kind of writing.</h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">The directory a file lives in decides what it becomes. Mix all four in the same project — Hyde works out the routing, the navigation, and the layouts.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-4 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
@@ -194,11 +194,11 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <div class="max-w-[640px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">What's in the box</p>
-      <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Familiar to Artisans. Gentle to everyone else.</h2>
+      <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]"><span class="whitespace-nowrap">Familiar to Artisans.</span> <span class="whitespace-nowrap">Gentle to everyone else.</span></h2>
       <p class="mt-4 max-w-[56ch] text-[#a49cba]">Hyde is built on Laravel Zero. If you know Artisan and Blade you already know Hyde, and if you don't, Markdown is all you need to get a site out the door.</p>
     </div>
     <div class="mt-[54px] border-t border-[rgba(164,156,186,.16)]">
-      <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
+      <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Two dialects, one site</h3>
         <p class="text-[.95rem] text-[#a49cba]">Mix Markdown pages and Blade views freely in the same project. Sprinkle in YAML front matter when a page needs metadata, skip it when it doesn't.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">---</span>
@@ -206,19 +206,19 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <span class="text-[#8d7bf5]">priority</span>: <span class="text-[#d6a24a]">1</span>
 <span class="text-[#6f6786]">---</span></pre>
       </div>
-      <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
+      <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">A frontend you don't have to build</h3>
         <p class="text-[.95rem] text-[#a49cba]">Ships with a full Tailwind frontend, responsive navigation, dark mode, and customizable Blade components. Publish the templates when you want to make it yours.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">php hyde <span class="text-[#8d7bf5]">publish</span> <span class="text-[#d6a24a]">views</span></pre>
       </div>
-      <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
+      <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Documentation sites in minutes</h3>
         <p class="text-[.95rem] text-[#a49cba]">Drop Markdown files in a folder and get a searchable docs site with a generated sidebar. This very concept page's real-world sibling documents Hyde itself.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">_docs/
 ├── index.md
 └── getting-started.md</pre>
       </div>
-      <div class="grid grid-cols-[280px_1fr_340px] items-start gap-10 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
+      <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Everything is versionable</h3>
         <p class="text-[.95rem] text-[#a49cba]">No database means your whole site lives in Git. Content, config, and templates travel together, and every deploy is reproducible from a single commit.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">git push <span class="text-[#6f6786]"># that's the deploy</span></pre>
