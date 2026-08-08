@@ -35,10 +35,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
       </div>
       <p class="mx-auto mt-[36px] max-w-[62ch] text-[1.08rem] text-[#a49cba]">Transform your ideas into blazing-fast websites. Combine the power of Laravel's ecosystem with the simplicity of Markdown. Your next project starts here.</p>
       <div class="mt-[44px] flex flex-wrap items-center justify-center gap-6">
-        <div class="flex h-[50px] items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
-          <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
-          <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd" aria-label="Copy install command">copy</button>
-        </div>
+        <x-copy-command />
         <a class="inline-flex h-[50px] items-center rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] text-[.95rem] font-medium text-[#e9e5f2] transition-colors hover:border-[rgba(214,162,74,.45)] hover:bg-[#231e30] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" href="{{ $docsIndex }}">Read the documentation</a>
       </div>
     </div>
@@ -252,10 +249,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Begin the experiment</p>
       <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Your next site is one command away.</h2>
       <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
-        <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
-          <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
-          <button class="border-l border-[rgba(164,156,186,.16)] pl-3.5 text-[.78rem] text-[#a49cba] transition-colors hover:text-white focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" id="copyCmd2" aria-label="Copy install command">copy</button>
-        </div>
+        <x-copy-command />
         <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsQuickstart }}">Quickstart guide</a>
       </div>
     </div>
@@ -364,14 +358,9 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
         }
       });
 
-      [
-        ['copyCmd'],
-        ['copyCmd2']
-      ].forEach(function(pair) {
-        const btn = document.getElementById(pair[0]);
-        if (!btn) return;
+      document.querySelectorAll('[data-copy-command]').forEach(function(btn) {
         btn.addEventListener('click', function() {
-          navigator.clipboard.writeText('composer create-project hyde/hyde').then(function() {
+          navigator.clipboard.writeText(btn.dataset.copyCommand).then(function() {
             btn.textContent = 'copied';
             setTimeout(function() {
               btn.textContent = 'copy';

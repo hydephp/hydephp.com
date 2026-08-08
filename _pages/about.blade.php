@@ -150,13 +150,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The other side of this page</p>
     <h2 class="mx-auto mt-3.5 max-w-none whitespace-nowrap font-['Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em] max-[640px]:max-w-[22ch] max-[640px]:whitespace-normal">You've read enough. Build something.</h2>
     <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
-      <div class="flex items-center gap-4 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 font-['JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
-        <code class="flex-1 whitespace-nowrap text-left"><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</code>
-        <button type="button" data-copy-command="composer create-project hyde/hyde" class="flex shrink-0 items-center gap-1.5 rounded-md px-2 py-1 text-[.72rem] text-[#a49cba] transition-colors hover:bg-white/5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" aria-label="Copy composer command">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.8"/></svg>
-          <span data-copy-label>Copy</span>
-        </button>
-      </div>
+      <x-copy-command />
       <a class="flex items-center rounded-[10px] border border-[#8d7bf5] bg-[#8d7bf5] px-[22px] py-3 text-[.9rem] font-medium text-[#14111c] no-underline shadow-[0_0_24px_rgba(141,123,245,.28)] transition-colors hover:border-[#a294f7] hover:bg-[#a294f7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" href="{{ $docsQuickstart }}">Follow the quickstart</a>
     </div>
     <div class="mt-11 flex justify-center gap-7 font-['JetBrains_Mono',monospace] text-[.8rem] max-[640px]:flex-col max-[640px]:gap-3">
@@ -180,14 +174,13 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 
   document.querySelectorAll('[data-copy-command]').forEach(function(button){
     button.addEventListener('click', async function(){
-      const label = button.querySelector('[data-copy-label]');
       try {
         await navigator.clipboard.writeText(button.dataset.copyCommand);
-        label.textContent = 'Copied';
-        window.setTimeout(function(){ label.textContent = 'Copy'; }, 1600);
+        button.textContent = 'copied';
+        window.setTimeout(function(){ button.textContent = 'copy'; }, 1600);
       } catch (_) {
-        label.textContent = 'Unable to copy';
-        window.setTimeout(function(){ label.textContent = 'Copy'; }, 1600);
+        button.textContent = 'unable to copy';
+        window.setTimeout(function(){ button.textContent = 'copy'; }, 1600);
       }
     });
   });
