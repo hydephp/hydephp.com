@@ -22,7 +22,7 @@ Because HTML is allowed inside the title modifier, you can even pass links or cu
 
 ### Source
 
-```markdown
+````markdown
 ```php title="app/Models/Post.php"
 <?php
 
@@ -36,8 +36,7 @@ class Post
     }
 }
 ```
-
-```
+````
 
 ### Result
 
@@ -53,7 +52,6 @@ class Post
         echo 'Hello World!';
     }
 }
-
 ```
 
 ---
@@ -66,15 +64,14 @@ Lines beginning with a `$ ` prompt are intelligently highlighted as commands. Ev
 
 ### Source
 
-```markdown
+````markdown
 ```terminal title="Installing Hyde"
 $ composer require hyde/framework
 
  Building your static site!
  Created 12 files in 0.4 seconds
 ```
-
-```
+````
 
 ### Result
 
@@ -83,7 +80,6 @@ $ composer require hyde/framework
 
  Building your static site!
  Created 12 files in 0.4 seconds
-
 ```
 
 ---
@@ -94,7 +90,7 @@ Want to make your terminal output look incredibly authentic? By adding the `xml`
 
 ### Source
 
-```markdown
+````markdown
 ```terminal xml title="Build output"
 $ php hyde build
 
@@ -103,8 +99,7 @@ $ php hyde build
 <question>Continue? (Y/n)</question>
 <error>Build failed (just kidding!)</error>
 ```
-
-```
+````
 
 ### Result
 
@@ -115,7 +110,6 @@ $ php hyde build
 <comment>Restart the development server.</comment>
 <question>Continue? (Y/n)</question>
 <error>Build failed (just kidding!)</error>
-
 ```
 
 ---
@@ -126,7 +120,7 @@ HydePHP v3 enables Blade in Markdown by default (provided it's a trusted source)
 
 ### Source
 
-```markdown
+````markdown
 ```blade component(alert)
 ---
 type: warning
@@ -135,8 +129,7 @@ title: Pay Attention!
 
 This content is passed directly to the component **slot**!
 ```
-
-```
+````
 
 *(When rendered in your project, this will pass the YAML front matter as attributes to your `alert.blade.php` component, and inject the parsed Markdown into the `$slot` variable.)*
 
@@ -152,7 +145,6 @@ Just publish the views:
 
 ```bash
 php hyde publish:views components
-
 ```
 
 You can now edit files like `markdown/code-block.blade.php` and `markdown/terminal.blade.php` to your exact specifications. Happy coding!
