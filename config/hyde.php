@@ -353,7 +353,8 @@ return [
         // Lower values show up first in the menu. The default is 999.
         'order' => [
             'index' => 0,
-            'posts' => 10,
+            'demos' => 10,
+            'posts' => 20,
             'docs/index' => 100,
         ],
 
@@ -362,7 +363,7 @@ return [
         'labels' => [
             'index' => 'Home',
             'posts' => 'Blog',
-            'docs/index' => 'Docs',
+            'docs/index' => 'Documentation',
         ],
 
         // These are the route keys of pages that should not show up in the navigation menu.
