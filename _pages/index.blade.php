@@ -226,7 +226,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
     </div>
   </section>
 
-  <section class="reveal mx-auto max-w-[1160px] px-7 pb-[110px] pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:pb-20">
+  <section class="reveal mx-auto max-w-[1160px] px-7 pb-0 pt-0 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
     <div class="flex flex-wrap justify-between gap-6 rounded-[14px] border border-[rgba(164,156,186,.16)] px-10 py-[30px] [font-family:'JetBrains_Mono',monospace] max-[720px]:p-6" style="background: linear-gradient(180deg, #1c1827, #14111c);">
       @foreach ($statistics as $statistic)
       <div>
