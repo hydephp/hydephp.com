@@ -361,6 +361,7 @@ return [
         // Simply add the route key as the array key, and the label as the value.
         'labels' => [
             'index' => 'Home',
+            'posts' => 'Blog',
             'docs/index' => 'Docs',
         ],
 
