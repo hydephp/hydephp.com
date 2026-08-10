@@ -205,6 +205,99 @@
     white-space: pre;
   }
 
+  /* Terminal fences are figures with their own title bar, so they need to opt out of the
+     article's generic pre treatment. Keeping this scoped to the shared Hyde component makes
+     terminal blocks match the post concept without changing ordinary fenced code blocks. */
+  #post-body figure.hyde-terminal {
+    margin: 26px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--ink-2);
+    color: #d8d2e8;
+  }
+
+  #post-body .hyde-terminal-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--ink-2);
+    color: var(--fog);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    line-height: 1.2;
+  }
+
+  #post-body pre.hyde-terminal-body {
+    margin: 0;
+    padding: 18px 20px;
+    overflow-x: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #d8d2e8;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .82rem;
+    line-height: 1.8;
+  }
+
+  #post-body .hyde-terminal-body code {
+    display: block;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    white-space: pre;
+  }
+
+  /* Titled code blocks use the same window language as terminals, with the filepath in the
+     header and the detected fence language kept as a quiet label on the right. */
+  #post-body .hyde-code-block {
+    margin: 26px 0 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--ink-2);
+  }
+
+  #post-body .hyde-code-block-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--line);
+    background: var(--ink-2);
+    color: var(--fog);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: .72rem;
+    line-height: 1.2;
+  }
+
+  #post-body .hyde-code-block-tab {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  #post-body .hyde-code-block-language {
+    margin-left: auto;
+    color: #6f6786;
+    text-transform: lowercase;
+  }
+
+  #post-body .hyde-code-block-body > pre {
+    margin: 0;
+    padding: 18px 20px;
+    overflow-x: auto;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
   #post-body ul, #post-body ol { margin: 16px 0 0 4px; padding: 0 }
   #post-body ul { list-style: none }
   #post-body ol { padding-left: 24px }
@@ -306,6 +399,48 @@
   @media (prefers-reduced-motion: reduce) {
     .progress { transition: none }
   }
+
+  /* Temporary until HydeFront v4 is released. These values follow the post concept's terminal
+     palette: gold prompts, lavender command text, muted struck text, and green output. */
+  .hyde-terminal-command { color: #d8d2e8 }
+  .hyde-terminal-prompt { color: #d6a24a; -webkit-user-select: none; user-select: none }
+  .hyde-terminal-info, .hyde-terminal-fg-green { color: #8fce8f }
+  .hyde-terminal-question, .hyde-terminal-fg-gray { color: #6f6786 }
+  .hyde-terminal-comment { color: #8a7f70 }
+  .hyde-terminal-error, .hyde-terminal-fg-red { color: #e5484d }
+  .hyde-terminal-fg-black { color: #292d3e }
+  .hyde-terminal-fg-blue { color: #6b68c9 }
+  .hyde-terminal-fg-magenta { color: #7a5cc4 }
+  .hyde-terminal-fg-yellow { color: #8a6d3b }
+  .hyde-terminal-fg-cyan { color: #6b68c9 }
+  .hyde-terminal-fg-white { color: #d8d2e8 }
+  .hyde-terminal-fg-bright-red { color: #f07178 }
+  .hyde-terminal-fg-bright-green { color: #b7e3a5 }
+  .hyde-terminal-fg-bright-yellow { color: #e5c27b }
+  .hyde-terminal-fg-bright-blue { color: #9b98f2 }
+  .hyde-terminal-fg-bright-magenta { color: #a88be8 }
+  .hyde-terminal-fg-bright-cyan { color: #9e9bf2 }
+  .hyde-terminal-fg-bright-white { color: #fff }
+  .hyde-terminal-bg-black { background-color: #292d3e }
+  .hyde-terminal-bg-red { background-color: #e5484d }
+  .hyde-terminal-bg-green { background-color: #8fce8f }
+  .hyde-terminal-bg-yellow { background-color: #d6a24a }
+  .hyde-terminal-bg-blue { background-color: #6b68c9 }
+  .hyde-terminal-bg-magenta { background-color: #7a5cc4 }
+  .hyde-terminal-bg-cyan { background-color: #6b68c9 }
+  .hyde-terminal-bg-white { background-color: #d8d2e8 }
+  .hyde-terminal-bg-gray { background-color: #6f6786 }
+  .hyde-terminal-bg-bright-red { background-color: #f07178 }
+  .hyde-terminal-bg-bright-green { background-color: #b7e3a5 }
+  .hyde-terminal-bg-bright-yellow { background-color: #e5c27b }
+  .hyde-terminal-bg-bright-blue { background-color: #9b98f2 }
+  .hyde-terminal-bg-bright-magenta { background-color: #a88be8 }
+  .hyde-terminal-bg-bright-cyan { background-color: #9e9bf2 }
+  .hyde-terminal-bg-bright-white { background-color: #fff }
+  .hyde-terminal-bold { font-weight: 600 }
+  .hyde-terminal-underscore { text-decoration-line: underline }
+  .hyde-terminal-strikethrough { text-decoration-line: line-through }
+  .hyde-terminal-underscore.hyde-terminal-strikethrough { text-decoration-line: underline line-through }
 </style>
 </head>
 <body class="bg-[#14111c] text-[17.5px] leading-[1.75] text-[#e9e5f2]">
