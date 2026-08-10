@@ -990,12 +990,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "52b74e4ac4476aca0bc4a7a69f7f498fb3d62110"
+                "reference": "922cb2b6e00240d4f15b616585a8abef045c0476"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/52b74e4ac4476aca0bc4a7a69f7f498fb3d62110",
-                "reference": "52b74e4ac4476aca0bc4a7a69f7f498fb3d62110",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/922cb2b6e00240d4f15b616585a8abef045c0476",
+                "reference": "922cb2b6e00240d4f15b616585a8abef045c0476",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1046,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-08-03T17:43:05+00:00"
+            "time": "2026-08-08T21:27:41+00:00"
         },
         {
             "name": "hydephp/torchlight-commonmark",
