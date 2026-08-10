@@ -88,19 +88,6 @@
   ::selection { background: var(--violet); color: var(--ink) }
   [x-cloak] { display: none !important }
 
-  /* The reading progress bar sits on the bottom edge of the sticky navigation. It is fixed
-     rather than absolute because the shared navigation component is not a positioned parent. */
-  .progress {
-    position: fixed;
-    top: calc(4rem - 1px);
-    left: 0;
-    z-index: 51;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(to right, var(--gold), var(--violet));
-    box-shadow: 0 0 12px rgba(214, 162, 74, .4);
-  }
-
   /* Everything below styles the rendered Markdown, which arrives without any classes of its own.
      The concept's article was hand-written HTML, so these rules restate its typography as
      element selectors scoped to the article body. */
@@ -396,10 +383,6 @@
     #post-body table { display: block; overflow-x: auto }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .progress { transition: none }
-  }
-
   /* Temporary until HydeFront v4 is released. These values follow the post concept's terminal
      palette: gold prompts, lavender command text, muted struck text, and green output. */
   .hyde-terminal-command { color: #d8d2e8 }
@@ -446,8 +429,6 @@
 <body class="bg-[#14111c] text-[17.5px] leading-[1.75] text-[#e9e5f2]">
 
 <x-navigation />
-
-<div class="progress" id="progress" aria-hidden="true"></div>
 
 <header class="pt-14 text-center sm:pt-20" style="background: radial-gradient(640px 300px at 50% -10%, rgba(141,123,245,.11), transparent 70%);">
   <div class="mx-auto max-w-[1160px] px-7">
@@ -618,17 +599,5 @@
   <x-footer />
 </div>
 
-<script>
-(function(){
-  const bar = document.getElementById('progress');
-  function update(){
-    const h = document.documentElement;
-    const max = h.scrollHeight - h.clientHeight;
-    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
-  }
-  document.addEventListener('scroll', update, { passive: true });
-  update();
-})();
-</script>
 </body>
 </html>
