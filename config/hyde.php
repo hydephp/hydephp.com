@@ -299,6 +299,14 @@ return [
     */
 
     'authors' => [
+        'emma_de_silva' => Author::create(
+            name: 'Emma De Silva',
+            website: 'https://emma.desilva.se',
+            bio: 'Creator and maintainer of HydePHP. Laravel contributor, conference speaker, and firm believer that a command line is a user interface.',
+            socials: [
+                'github' => 'emmadesilva',
+            ],
+        ),
         'mr_hyde' => Author::create(
             // The following settings are used in the default blog post template.
             name: 'Mr. Hyde', // Optional display name
