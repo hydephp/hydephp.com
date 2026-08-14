@@ -149,10 +149,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   <div class="reveal mx-auto max-w-[1160px] px-7">
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The other side of this page</p>
     <h2 class="mx-auto mt-3.5 max-w-none whitespace-nowrap font-['Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.4vw,2.6rem)] font-[430] leading-[1.12] tracking-[-.01em] max-[640px]:max-w-[22ch] max-[640px]:whitespace-normal">You've read enough. Build something.</h2>
-    <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
-      <x-copy-command />
-      <a class="flex items-center rounded-[10px] border border-[#8d7bf5] bg-[#8d7bf5] px-[22px] py-3 text-[.9rem] font-medium text-[#14111c] no-underline shadow-[0_0_24px_rgba(141,123,245,.28)] transition-colors hover:border-[#a294f7] hover:bg-[#a294f7] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#8d7bf5]" href="{{ $docsQuickstart }}">Follow the quickstart</a>
-    </div>
+    <x-project-cta :quickstart="$docsQuickstart" />
     <div class="mt-11 flex justify-center gap-7 font-['JetBrains_Mono',monospace] text-[.8rem] max-[640px]:flex-col max-[640px]:gap-3">
       <a class="text-[#a49cba] no-underline hover:text-white" href="https://github.com/hydephp/hyde"><b class="font-normal text-[#8d7bf5]">↗</b> Star on GitHub</a>
       <a class="text-[#a49cba] no-underline hover:text-white" href="https://discord.hydephp.com"><b class="font-normal text-[#8d7bf5]">↗</b> Join the Discord</a>

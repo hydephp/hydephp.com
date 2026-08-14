@@ -142,12 +142,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
       This space is <em class="text-[#d6a24a]">reserved</em> for your site.
     </h2>
     <p class="mx-auto mt-[18px] max-w-[48ch] text-[#a49cba]">Every exhibit started as the same blank project. Yours will too.</p>
-    <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
-      <div class="flex items-center gap-3.5 rounded-[10px] border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-[18px] py-3 [font-family:'JetBrains_Mono',monospace] text-[.9rem] text-[#d8d2e8]">
-        <span><span class="text-[#d6a24a]">$</span> composer create-project hyde/hyde</span>
-      </div>
-      <a class="border-b border-[rgba(164,156,186,.16)] pb-0.5 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:border-[#a49cba] hover:text-white" href="{{ $docsQuickstart }}">Follow the quickstart</a>
-    </div>
+    <x-project-cta :quickstart="$docsQuickstart" />
     <p class="mt-10 [font-family:'Playfair_Display',serif] opacity-90 italic text-[#a49cba]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="#">Submit your site to the exhibition.</a></p>
   </div>
 </section>
@@ -158,6 +153,19 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 (function(){
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const items = document.querySelectorAll('[data-reveal]');
+
+  document.querySelectorAll('[data-copy-command]').forEach(function(button){
+    button.addEventListener('click', async function(){
+      try {
+        await navigator.clipboard.writeText(button.dataset.copyCommand);
+        button.textContent = 'copied';
+        window.setTimeout(function(){ button.textContent = 'copy'; }, 1600);
+      } catch (_) {
+        button.textContent = 'unable to copy';
+        window.setTimeout(function(){ button.textContent = 'copy'; }, 1600);
+      }
+    });
+  });
 
   if (reduced) {
     items.forEach(function(el){

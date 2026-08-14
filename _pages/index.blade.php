@@ -248,10 +248,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
     <div class="reveal mx-auto max-w-[1160px] px-7 opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Begin the experiment</p>
       <h2 class="mx-auto mt-3.5 max-w-[20ch] [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Your next site is one command away.</h2>
-      <div class="mt-[34px] flex flex-wrap items-center justify-center gap-3.5">
-        <x-copy-command />
-        <a class="flex items-center rounded-[10px] border border-[rgba(164,156,186,.16)] px-[22px] py-3 text-[.9rem] font-medium text-[#e9e5f2] no-underline transition-colors hover:border-[#a49cba] hover:bg-white/5" href="{{ $docsQuickstart }}">Quickstart guide</a>
-      </div>
+      <x-project-cta :quickstart="$docsQuickstart" />
     </div>
   </section>
 
