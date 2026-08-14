@@ -69,7 +69,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <div class="mt-[30px] flex flex-wrap gap-11 [font-family:'JetBrains_Mono',monospace] text-[.76rem] text-[#14333b] max-[860px]:gap-6">
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Medium</span>Blade components · Tailwind · data collections</span>
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Demonstrates</span>Custom design systems on Hyde</span>
-      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="#" class="underline">github.com/hydephp/nordlys ↗</a></span>
+      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="https://github.com/hydephp/nordlys-demo" class="underline">github.com/hydephp/nordlys ↗</a></span>
     </div>
     <div class="motion-frame mt-12 overflow-hidden rounded-[14px] border border-[rgba(20,51,59,.25)] bg-[#f4f7f6] shadow-[0_40px_80px_-40px_rgba(20,51,59,.5)] -rotate-[.6deg] transition-[transform,box-shadow] duration-[350ms] ease-[ease] hover:rotate-0 hover:scale-[1.005]">
       <div class="flex items-center gap-2.5 border-b border-[rgba(20,51,59,.15)] px-4 py-2.5 [font-family:'JetBrains_Mono',monospace] text-[.74rem] text-[#14333b]">
@@ -93,7 +93,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <div class="mt-[30px] flex flex-wrap gap-11 [font-family:'JetBrains_Mono',monospace] text-[.76rem] text-[#26241a] max-[860px]:gap-6">
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Medium</span>Markdown posts · image-led layouts · RSS</span>
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Demonstrates</span>Photo-heavy blogging on Hyde</span>
-      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="#" class="underline">github.com/hydephp/lemonade ↗</a></span>
+      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="https://github.com/hydephp/lemonade-days-demo" class="underline">github.com/hydephp/lemonade ↗</a></span>
     </div>
     <div class="motion-frame mt-12 overflow-hidden rounded-[14px] border border-[rgba(38,36,26,.2)] bg-[#fffdf2] shadow-[0_40px_80px_-40px_rgba(120,100,20,.45)] -rotate-[.6deg] transition-[transform,box-shadow] duration-[350ms] ease-[ease] hover:rotate-0 hover:scale-[1.005]">
       <div class="flex items-center gap-2.5 border-b border-[rgba(38,36,26,.12)] px-4 py-2.5 [font-family:'JetBrains_Mono',monospace] text-[.74rem] text-[#26241a]">
@@ -117,7 +117,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <div class="mt-[30px] flex flex-wrap gap-11 [font-family:'JetBrains_Mono',monospace] text-[.76rem] text-[#1e4633] max-[860px]:gap-6">
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Medium</span>Stock Hyde components · one config file</span>
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Demonstrates</span>What the basics get you</span>
-      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="#" class="underline">github.com/hydephp/alpine ↗</a></span>
+      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="https://github.com/hydephp/alpine-scouts-demo" class="underline">github.com/hydephp/alpine ↗</a></span>
     </div>
     <div class="motion-frame mt-12 overflow-hidden rounded-[14px] border border-[rgba(30,70,51,.25)] bg-[#f7f1e8] shadow-[0_40px_80px_-40px_rgba(30,70,51,.5)] -rotate-[.6deg] transition-[transform,box-shadow] duration-[350ms] ease-[ease] hover:rotate-0 hover:scale-[1.005]">
       <div class="flex items-center gap-2.5 border-b border-[rgba(30,70,51,.15)] px-4 py-2.5 [font-family:'JetBrains_Mono',monospace] text-[.74rem] text-[#1e4633]">
