@@ -116,7 +116,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <p class="mt-5 max-w-[60ch] text-[1.04rem] text-[#4c5f50]">Not every site needs to be a statement. Troop 404's site is what most of the web actually is: news, an about page, a gear checklist, and a join form, assembled from Hyde's stock components with a palette swap. Warm, clear, and done by Friday. That's the exhibit.</p>
     <div class="mt-[30px] flex flex-wrap gap-11 [font-family:'JetBrains_Mono',monospace] text-[.76rem] text-[#1e4633] max-[860px]:gap-6">
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Medium</span>Stock Hyde components · one config file</span>
-      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Demonstrates</span>What defaults get you</span>
+      <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Demonstrates</span>What the basics get you</span>
       <span><span class="mb-1 block uppercase tracking-[.18em] opacity-55">Source</span><a href="#" class="underline">github.com/hydephp/alpine ↗</a></span>
     </div>
     <div class="motion-frame mt-12 overflow-hidden rounded-[14px] border border-[rgba(30,70,51,.25)] bg-[#f7f1e8] shadow-[0_40px_80px_-40px_rgba(30,70,51,.5)] -rotate-[.6deg] transition-[transform,box-shadow] duration-[350ms] ease-[ease] hover:rotate-0 hover:scale-[1.005]">
