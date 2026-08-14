@@ -76,7 +76,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
         <span class="flex gap-[5px]"><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i></span>
         <span class="opacity-70">nordlys.hydephp.site</span>
       </div>
-      <img class="block h-auto w-full" src="demo-nordlys.png" alt="Nordlys Air demo site: a technical, blueprint-styled homepage for a fictional Arctic airline with the headline 'We fly the polar night'">
+      <img class="block h-auto w-full" src="{{ Hyde::asset('demos/nordlys-air.webp') }}" alt="Nordlys Air demo site: a technical, blueprint-styled homepage for a fictional Arctic airline with the headline 'We fly the polar night'">
     </div>
   </div>
 </section>
@@ -100,7 +100,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
         <span class="flex gap-[5px]"><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i></span>
         <span class="opacity-70">lemonade-days.hydephp.site</span>
       </div>
-      <img class="block h-auto w-full" src="demo-lemonade.png" alt="Lemonade Days demo site: a warm summery recipe blog with a beach photo hero and the headline 'Squeeze the Day: A Taste of LA Summer'">
+      <img class="block h-auto w-full" src="{{ Hyde::asset('demos/lemonade-days.webp') }}" alt="Lemonade Days demo site: a warm summery recipe blog with a beach photo hero and the headline 'Squeeze the Day: A Taste of LA Summer'">
     </div>
   </div>
 </section>
@@ -124,7 +124,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
         <span class="flex gap-[5px]"><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i><i class="block h-2 w-2 rounded-full bg-current opacity-40"></i></span>
         <span class="opacity-70">alpine-scouts.hydephp.site</span>
       </div>
-      <img class="block h-auto w-full" src="demo-alpine.png" alt="Alpine Scouts demo site: a cozy scout troop homepage with a campfire photo and the headline 'Adventure Awaits. Join Troop 404'">
+      <img class="block h-auto w-full" src="{{ Hyde::asset('demos/alpine-scouts.webp') }}" alt="Alpine Scouts demo site: a cozy scout troop homepage with a campfire photo and the headline 'Adventure Awaits. Join Troop 404'">
     </div>
   </div>
 </section>
