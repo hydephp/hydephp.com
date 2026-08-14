@@ -240,7 +240,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
   <section class="reveal mx-auto max-w-[1160px] px-7 py-[110px] opacity-0 translate-y-[14px] transition-all duration-[600ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100 motion-reduce:transition-none max-[720px]:py-20">
     <figure class="mx-auto max-w-[820px] text-center">
       <blockquote class="[font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.5rem,3vw,2.1rem)] italic leading-[1.35]">&quot;I'm not a PHP developer and I can barely write a function in this language, but the project actually delivers on what it promises. Docs: <b class="font-medium text-[#d6a24a]">10/10</b>. Project: <b class="font-medium text-[#d6a24a]">10/10</b>.&quot;</blockquote>
-      <figcaption class="mt-6 text-[.9rem] text-[#a49cba]"><a class="text-[#8d7bf5] no-underline" href="#">@peteralexbizjak</a> on X</figcaption>
+      <figcaption class="mt-6 text-[.9rem] text-[#a49cba]"><a class="text-[#8d7bf5] no-underline" href="https://x.com/peteralexbizjak">@peteralexbizjak</a> on X</figcaption>
     </figure>
   </section>
 
