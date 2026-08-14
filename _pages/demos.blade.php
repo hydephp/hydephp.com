@@ -143,7 +143,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     </h2>
     <p class="mx-auto mt-[18px] max-w-[48ch] text-[#a49cba]">Every exhibit started as the same blank project. Yours will too.</p>
     <x-project-cta :quickstart="$docsQuickstart" />
-    <p class="mt-10 [font-family:'Playfair_Display',serif] opacity-90 italic text-[#a49cba]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="#">Submit your site to the exhibition.</a></p>
+    <p class="mt-10 [font-family:'Playfair_Display',serif] opacity-90 italic text-[#a49cba]">Built something with Hyde? <a class="text-[#8d7bf5] no-underline hover:underline" href="https://github.com/hydephp/hydephp.com/edit/main/_pages/demos.blade.php">Submit your site to the exhibition.</a></p>
   </div>
 </section>
 
