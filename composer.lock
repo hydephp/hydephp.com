@@ -990,12 +990,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/framework.git",
-                "reference": "922cb2b6e00240d4f15b616585a8abef045c0476"
+                "reference": "57004a1f56aa2c353b5ffec223811e44579b42ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/framework/zipball/922cb2b6e00240d4f15b616585a8abef045c0476",
-                "reference": "922cb2b6e00240d4f15b616585a8abef045c0476",
+                "url": "https://api.github.com/repos/hydephp/framework/zipball/57004a1f56aa2c353b5ffec223811e44579b42ea",
+                "reference": "57004a1f56aa2c353b5ffec223811e44579b42ea",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1046,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-08-08T21:27:41+00:00"
+            "time": "2026-08-12T13:26:03+00:00"
         },
         {
             "name": "hydephp/torchlight-commonmark",
@@ -6615,12 +6615,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/hydephp/realtime-compiler.git",
-                "reference": "f4377b39552dce7af2fa07869f07771aad02d3a8"
+                "reference": "0e76cb844dd0118e63fd0a32d900ce4d10b57da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/f4377b39552dce7af2fa07869f07771aad02d3a8",
-                "reference": "f4377b39552dce7af2fa07869f07771aad02d3a8",
+                "url": "https://api.github.com/repos/hydephp/realtime-compiler/zipball/0e76cb844dd0118e63fd0a32d900ce4d10b57da3",
+                "reference": "0e76cb844dd0118e63fd0a32d900ce4d10b57da3",
                 "shasum": ""
             },
             "require": {
@@ -6678,7 +6678,7 @@
                     "type": "open_collective"
                 }
             ],
-            "time": "2026-07-11T23:37:24+00:00"
+            "time": "2026-08-12T13:26:00+00:00"
         }
     ],
     "aliases": [],
