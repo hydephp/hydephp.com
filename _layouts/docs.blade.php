@@ -233,6 +233,7 @@
             border-left: 1px solid var(--docs-line);
             color: var(--docs-fog);
             font-size: .9rem;
+            text-decoration: none;
             white-space: nowrap;
         }
 
@@ -1224,12 +1225,12 @@
 
     <header class="docs-topbar">
         <div class="docs-topbar-inner">
-            <a class="docs-wordmark" href="{{ $homeRoute ?? Hyde::relativeLink('') }}" aria-label="HydePHP documentation home">
+            <a class="docs-wordmark" href="{{ Hyde::relativeLink('') }}" aria-label="HydePHP home">
                 <img class="docs-wordmark-logo" src="{{ Asset::get('logo.svg') }}" alt="" width="24" height="24">
                 <span>{{ config('hyde.name', 'HydePHP') }}</span>
             </a>
 
-            <span class="docs-product-name">{{ $sidebar->getHeader() }}</span>
+            <a class="docs-product-name" href="{{ $homeRoute ?? Hyde::relativeLink('docs') }}">{{ $sidebar->getHeader() }}</a>
 
             @if(Hyde\Facades\Features::hasDocumentationSearch())
                 <button class="docs-search-trigger" type="button"
