@@ -240,9 +240,9 @@
     white-space: pre;
   }
 
-  /* Titled code blocks use the same window language as terminals, with the filepath in the
-     header and the detected fence language kept as a quiet label on the right. */
-  #post-body .hyde-code-block {
+  /* Titled code blocks use the same framed panel as terminals. Hyde's current component puts
+     the label in a figcaption and the pre directly beneath it. */
+  #post-body figure.hyde-code-block {
     margin: 26px 0 0;
     overflow: hidden;
     border: 1px solid var(--line);
@@ -250,10 +250,8 @@
     background: var(--ink-2);
   }
 
-  #post-body .hyde-code-block-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  #post-body .hyde-code-block-label {
+    margin: 0;
     padding: 12px 16px;
     border-bottom: 1px solid var(--line);
     background: var(--ink-2);
@@ -261,22 +259,10 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: .72rem;
     line-height: 1.2;
+    overflow-wrap: anywhere;
   }
 
-  #post-body .hyde-code-block-tab {
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  #post-body .hyde-code-block-language {
-    margin-left: auto;
-    color: #6f6786;
-    text-transform: lowercase;
-  }
-
-  #post-body .hyde-code-block-body > pre {
+  #post-body figure.hyde-code-block > pre {
     margin: 0;
     padding: 18px 20px;
     overflow-x: auto;
@@ -284,6 +270,11 @@
     border-radius: 0;
     background: transparent;
   }
+
+  /* Untitled fences keep the ordinary single pre panel. The neutral wrapper owns the spacing,
+     preventing the wrapper and pre from each drawing a separate rounded box. */
+  #post-body div.hyde-code-block { margin: 26px 0 0; }
+  #post-body div.hyde-code-block > pre { margin: 0; }
 
   #post-body ul, #post-body ol { margin: 16px 0 0 4px; padding: 0 }
   #post-body ul { list-style: none }

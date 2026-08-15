@@ -701,6 +701,56 @@
             white-space: pre;
         }
 
+        /* Hyde's Markdown components wrap terminal fences and titled code blocks in figures.
+           Restate the docs panel treatment on that semantic markup so the generic pre styles do
+           not create a second, inset box inside the component. */
+        #document-main-content figure.hyde-terminal,
+        #document-main-content figure.hyde-code-block {
+            margin: 22px 0 0;
+            overflow: hidden;
+            border: 1px solid var(--docs-line);
+            border-radius: 14px;
+            background: var(--docs-ink-2);
+            color: #d8d2e8;
+        }
+
+        #document-main-content .hyde-terminal-header,
+        #document-main-content .hyde-code-block-label {
+            margin: 0;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--docs-line);
+            background: var(--docs-ink-2);
+            color: var(--docs-fog);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            line-height: 1.2;
+        }
+
+        #document-main-content pre.hyde-terminal-body,
+        #document-main-content figure.hyde-code-block > pre {
+            margin: 0;
+            padding: 18px 20px;
+            border: 0;
+            border-radius: 0;
+            background: transparent;
+            color: #d8d2e8;
+        }
+
+        #document-main-content .hyde-terminal-body code {
+            display: block;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            color: inherit;
+            font: inherit;
+            white-space: pre;
+        }
+
+        /* Untitled code blocks use a neutral div wrapper. Its child keeps the standard docs
+           pre panel, with the component wrapper owning the vertical rhythm. */
+        #document-main-content div.hyde-code-block { margin: 22px 0 0; }
+        #document-main-content div.hyde-code-block > pre { margin: 0; }
+
         #document-main-content ul,
         #document-main-content ol { margin: 14px 0 0 4px; padding: 0; }
 
