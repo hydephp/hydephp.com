@@ -503,7 +503,7 @@
   </figure>
 @endif
 
-<main class="mx-auto max-w-[720px] px-7 py-14 pb-20" itemscope itemtype="https://schema.org/BlogPosting">
+<main id="content" class="mx-auto max-w-[720px] px-7 py-14 pb-20" itemscope itemtype="https://schema.org/BlogPosting">
   <meta itemprop="headline" content="{{ $page->title }}">
   @if ($page->date)
     <meta itemprop="datePublished" content="{{ $page->date->datetime }}">
