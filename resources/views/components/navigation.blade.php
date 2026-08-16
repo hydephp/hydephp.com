@@ -48,7 +48,7 @@
             <li>
                 <a
                     href="{{ $getStarted ?? '#' }}"
-                    class="rounded-full bg-[#d6a24a] px-4 py-[7px] text-[.92rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
+                    class="rounded-full border border-[#aa8038]/70 bg-[#aa8038]/[.025] px-5 py-[7px] text-[.92rem] font-semibold text-[#bd9145] no-underline shadow-[0_0_10px_rgba(170,128,56,.08)] transition-[color,border-color,background-color,box-shadow] hover:border-[#bd9145]/85 hover:bg-[#aa8038]/[.05] hover:text-[#c9a05a] hover:shadow-[0_0_12px_rgba(170,128,56,.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#aa8038]/60 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
                 >Get started</a>
             </li>
         </ul>
@@ -107,7 +107,7 @@
                 <a
                     href="{{ $getStarted ?? '#' }}"
                     @click="navigationOpen = false"
-                    class="block rounded-full bg-[#d6a24a] px-4 py-2 text-center text-[.95rem] font-semibold text-[#14111c] no-underline transition-colors hover:bg-[#e5b25e] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70"
+                    class="block rounded-full border border-[#aa8038]/70 bg-[#aa8038]/[.025] px-4 py-2 text-center text-[.95rem] font-semibold text-[#bd9145] no-underline shadow-[0_0_10px_rgba(170,128,56,.08)] transition-[color,border-color,background-color,box-shadow] hover:border-[#bd9145]/85 hover:bg-[#aa8038]/[.05] hover:text-[#c9a05a] hover:shadow-[0_0_12px_rgba(170,128,56,.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#aa8038]/60"
                 >Get started</a>
             </li>
         </ul>
