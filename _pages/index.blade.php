@@ -216,7 +216,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
     <div class="mt-[54px] border-t border-[rgba(164,156,186,.16)]">
       <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Two dialects, one site</h3>
-        <p class="text-[.95rem] text-[#a49cba]">Mix Markdown pages and Blade views freely in the same project. Sprinkle in YAML front matter when a page needs metadata, skip it when it doesn't.</p>
+        <p class="text-[.95rem] text-[#a49cba]">Mix Markdown pages and Blade views freely in the same project. Sprinkle in YAML front matter when a page needs metadata, skip it when it doesn't. Hyde's magic does its best to configure your site for you.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">---</span>
 <span class="text-[#8d7bf5]">navigation</span>:
   <span class="text-[#8d7bf5]">priority</span>: <span class="text-[#d6a24a]">1</span>
@@ -224,12 +224,12 @@ $statistics = \App\Support\HomepageStatistics::cards();
       </div>
       <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">A frontend you don't have to build</h3>
-        <p class="text-[.95rem] text-[#a49cba]">Ships with a full Tailwind frontend, responsive navigation, dark mode, and customizable Blade components. Publish the templates when you want to make it yours.</p>
+        <p class="text-[.95rem] text-[#a49cba]">Ships with a full Tailwind frontend, responsive navigation, dark mode, and customizable Blade components. Publish the templates when you want to make it yours. Or easily toss them in favour of your own design system.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">php hyde <span class="text-[#8d7bf5]">publish</span> <span class="text-[#d6a24a]">views</span></pre>
       </div>
       <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Documentation sites in minutes</h3>
-        <p class="text-[.95rem] text-[#a49cba]">Drop Markdown files in a folder and get a searchable docs site with a generated sidebar. This very concept page's real-world sibling documents Hyde itself.</p>
+        <p class="text-[.95rem] text-[#a49cba]">Drop Markdown files in a folder and get a searchable docs site with an automatically built sidebar. The HydePHP documentation site is powered by HydePHP and we wouldn't want it any other way.</p>
         <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">_docs/
 ├── index.md
 └── getting-started.md</pre>
@@ -237,7 +237,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
       <div class="grid grid-cols-[320px_1fr_320px] items-start gap-8 border-b border-[rgba(164,156,186,.16)] py-9 max-[960px]:grid-cols-1 max-[960px]:gap-3.5">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-[1.35rem] font-[480]">Everything is versionable</h3>
         <p class="text-[.95rem] text-[#a49cba]">No database means your whole site lives in Git. Content, config, and templates travel together, and every deploy is reproducible from a single commit.</p>
-        <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">git push <span class="text-[#6f6786]"># that's the deploy</span></pre>
+        <pre class="overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#1c1827] px-4 py-3.5 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">git push <span class="text-[#6f6786]"># That's the deploy</span></pre>
       </div>
     </div>
   </section>
