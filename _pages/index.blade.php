@@ -45,12 +45,12 @@ $statistics = \App\Support\HomepageStatistics::cards();
     <p class="mb-3.5 text-center [font-family:'JetBrains_Mono',monospace] text-[.75rem] uppercase tracking-[.12em] text-[#a49cba]">DRAG THE SEAM <b class="font-normal text-[#d6a24a]">⟷</b> TO BUILD</p>
     <div class="relative h-[560px] touch-none cursor-col-resize overflow-hidden rounded-2xl border border-[rgba(164,156,186,.16)] shadow-[0_40px_90px_-40px_rgba(0,0,0,.7)] max-[720px]:h-[640px]" id="stage" aria-label="Interactive demo: drag to reveal the built site behind the Markdown source">
       <div class="absolute inset-0 overflow-hidden text-[#eae6f4]" style="background: radial-gradient(900px 480px at 78% -10%, rgba(141,123,245,.16), transparent 60%), radial-gradient(700px 420px at 95% 100%, rgba(214,162,74,.08), transparent 60%), #1c1827;" aria-hidden="true">
-        <div class="flex items-center gap-[18px] border-b border-[rgba(164,156,186,.16)] px-[26px] py-4 text-[.82rem] text-[#a49cba]">
+        <div class="flex items-center gap-[18px] border-b border-[rgba(164,156,186,.16)] py-4 pl-[calc(20%+26px)] pr-[26px] text-[.82rem] text-[#a49cba] max-[720px]:px-[26px]">
           <span class="h-2 w-2 shrink-0 rounded-full bg-[#d6a24a]"></span>
           <span class="[font-family:'Playfair_Display',serif] opacity-90 text-[.95rem] text-white">A Study in Static</span>
           <span class="ml-auto flex gap-4 [font-family:'JetBrains_Mono',monospace] max-[720px]:hidden">Home · Essays · About</span>
         </div>
-        <article class="max-w-[640px] px-[54px] py-11 max-[720px]:px-[26px] max-[720px]:py-8">
+        <article class="ml-[20%] max-w-[640px] px-[54px] py-11 max-[720px]:ml-0 max-[720px]:px-[26px] max-[720px]:py-8">
           <p class="mt-5 [font-family:'JetBrains_Mono',monospace] text-[.7rem] uppercase tracking-[.18em] text-[#d6a24a]">Essays</p>
           <h2 class="mb-1.5 mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[2.5rem] font-[450] leading-[1.08] tracking-[-.01em] max-[720px]:text-[1.9rem]">A Study in Static</h2>
           <p id="post-date" class="mt-5 text-[.82rem] text-[#a49cba]"></p>
@@ -101,7 +101,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
       </div>
 
       <div class="absolute bottom-0 top-0 z-[5] w-0.5 bg-[linear-gradient(to_bottom,#d6a24a,#8d7bf5,#d6a24a)] shadow-[0_0_24px_rgba(214,162,74,.45)]" id="seam" style="left: 58%;">
-        <button class="absolute left-1/2 top-1/2 flex h-[52px] w-[52px] -translate-x-1/2 -translate-y-1/2 cursor-col-resize items-center justify-center rounded-full border-[1.5px] border-[#d6a24a] bg-[#14111c] shadow-[0_6px_24px_rgba(0,0,0,.55)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#8d7bf5]" id="handle" aria-label="Reveal slider. Use arrow keys to move between the Markdown source and the built site." role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="58">
+        <button class="absolute left-1/2 top-1/2 flex h-[52px] w-[52px] -translate-x-1/2 -translate-y-1/2 cursor-col-resize items-center justify-center rounded-full border-[1.5px] border-[#d6a24a] bg-[#14111c] shadow-[0_6px_24px_rgba(0,0,0,.55)] transition-transform hover:scale-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[3px] focus-visible:outline-[#8d7bf5]" id="handle" aria-label="Reveal slider. Use arrow keys to move between the Markdown source and the built site." role="slider" aria-valuemin="20" aria-valuemax="100" aria-valuenow="58">
           <svg class="block" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M7 4 L3 10 L7 16" stroke="#d6a24a" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
             <path d="M13 4 L17 10 L13 16" stroke="#8d7bf5" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round" />
@@ -294,10 +294,15 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
 
       let pct = 58;
 
+      function minPct() {
+        return window.matchMedia('(max-width: 720px)').matches ? 4 : 20;
+      }
+
       function apply(p) {
-        pct = Math.max(4, Math.min(96, p));
+        pct = Math.max(minPct(), Math.min(96, p));
         jekyll.style.clipPath = 'inset(0 ' + (100 - pct) + '% 0 0)';
         seam.style.left = pct + '%';
+        handle.setAttribute('aria-valuemin', minPct());
         handle.setAttribute('aria-valuenow', Math.round(pct));
       }
 
@@ -346,7 +351,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
           e.preventDefault();
         }
         if (e.key === 'Home') {
-          apply(4);
+          apply(minPct());
           e.preventDefault();
         }
         if (e.key === 'End') {
