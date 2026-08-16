@@ -6,11 +6,11 @@ These are the version ranges of HydePHP, and their support status. We follow [Se
 
 | Version | Supported          | Classification       | Compatible Versions      |
 |---------|--------------------|----------------------|--------------------------|
-| 3.x     | :construction:     | Upcoming             | Laravel 13 / PHP 8.3-8.5 |
-| 2.x     | :white_check_mark: | General Availability | Laravel 11 / PHP 8.2-8.4 |
-| 1.x LTS | :white_check_mark: | Long Term Support    | Laravel 10 / PHP 8.1-8.2 |
-| < 0.64  | :x:                | Beta                 | Laravel 10 / PHP 8.0-8.1 |
-| < 0.8   | :x:                | Alpha                | Laravel 10 / PHP 8.0-8.1 |
+| 3.x     | 🚧     | Upcoming             | Laravel 13 / PHP 8.3-8.5 |
+| 2.x     | ✅ | General Availability | Laravel 11 / PHP 8.2-8.4 |
+| 1.x LTS | ✅ | Long Term Support    | Laravel 10 / PHP 8.1-8.2 |
+| < 0.64  | ❌                | Beta                 | Laravel 10 / PHP 8.0-8.1 |
+| < 0.8   | ❌                | Alpha                | Laravel 10 / PHP 8.0-8.1 |
 
 
 ## Reporting a Vulnerability

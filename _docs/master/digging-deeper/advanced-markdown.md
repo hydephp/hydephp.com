@@ -49,11 +49,12 @@ For multi-line Blade, use an executable `blade render` fenced block:
 The Blade is evaluated at build time, and the rendered output is wrapped in a
 `<div class="blade-block not-prose">` element. When compiling a page, the `$page` variable is available to the block.
 
-You can also render a Blade component using the `blade component(name)` directive. Component data is passed using YAML
-front matter at the start of the block:
+You can also render a Blade component using the `blade component="name"` directive. The component name is given as an
+HTML-style attribute, mirroring Laravel's own `<x-dynamic-component component="name" />` syntax. Component data is
+passed using YAML front matter at the start of the block:
 
 ````markdown
-```blade component(alert)
+```blade component="alert"
 ---
 type: warning
 title: Check this
@@ -65,7 +66,7 @@ If the block does not start with YAML front matter, its content is rendered as M
 component slot. This is useful when the component does not need any data:
 
 ````markdown
-```blade component(alert)
+```blade component="alert"
 This content is passed to the component **slot**.
 ```
 ````
@@ -74,7 +75,7 @@ To pass both component data and Markdown slot content, enclose the data in YAML 
 it:
 
 ````markdown
-```blade component(alert)
+```blade component="alert"
 ---
 type: warning
 title: Check this
@@ -83,6 +84,9 @@ title: Check this
 This content is passed to the component **slot**.
 ```
 ````
+
+Double quotes are the canonical style, but single quotes are accepted as well, so `blade component='alert'` is
+equivalent. The name must be quoted and cannot contain whitespace.
 
 A fence using only `blade` is an ordinary syntax-highlighted code sample and is not executed. Unsupported Blade block
 directives, including `blade component` without a component name, throw an exception.
@@ -96,8 +100,7 @@ be reviewed both for the text they publish and for executable directives hidden 
 If your site accepts Markdown outside that trusted review process, or builds pull requests before they have been
 reviewed, disable Blade in Markdown in the `config/markdown.php` file:
 
-```php
-// filepath: config/markdown.php
+```php title="config/markdown.php"
 'enable_blade' => false,
 ```
 
@@ -140,13 +143,36 @@ $ php hyde publish
 Lines beginning with a `$ ` prompt are highlighted as commands. The prompt is excluded from text selection, so you
 can select and copy the command without including it.
 
-### Symfony Console formatting
+### Window titles
 
-Add the `xml` modifier to style four commonly used Symfony Console formatter tags using colors from Hyde's terminal
-theme:
+Without a `title` modifier, the title bar displays `Terminal`. Add the modifier to replace that label:
 
 ````markdown
-```terminal xml
+```terminal title="Installing Hyde"
+$ composer require hyde/framework
+```
+````
+
+Which renders as:
+
+```terminal title="Installing Hyde"
+$ composer require hyde/framework
+```
+
+Double quotes are canonical, but single quotes are also accepted, which is useful when the title contains a double
+quote. The title is HTML-escaped when rendered.
+
+Set `title=""` to omit the title bar entirely.
+
+The `title` modifier must use a quoted value with no whitespace around the `=`, such as `title="Build output"`.
+Unquoted values, unclosed quotes, and whitespace around the `=` are reported as errors instead of being guessed at.
+
+### Terminal formatting tags
+
+Terminal blocks support formatting tags for styling console output with Hyde's terminal theme:
+
+````markdown
+```terminal
 <info>Published successfully!</info>
 <comment>Restart the development server.</comment>
 <question>Continue?</question>
@@ -161,17 +187,34 @@ theme:
 | `<question>` | Cyan               |
 | `<error>`    | Emphasized red     |
 
-The formatter only recognizes these four tags. All other terminal content, including HTML, is escaped and displayed
-as text. Without the `xml` modifier, the formatter tags are also displayed as ordinary terminal output.
+Colours and text formatting can also be set directly, with the `fg`, `bg`, and `options` attributes. Combine them by
+separating them with semicolons, and close the tag with `</>`:
+
+````markdown
+```terminal
+<fg=gray>Created 12 files in 0.4 seconds</>
+<fg=black;bg=red;options=bold> ERROR </>
+```
+````
+
+The colours are `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, and `white`, each with a brighter
+`bright-` prefixed variant, except for bright black, which is called `gray`. The `options` attribute takes any of
+`bold`, `underscore`, and `strikethrough`, separated by commas.
+
+Tags nest, so a tag written inside another one combines with it. Styling does not carry across lines, and any tag
+left open at the end of a line is closed there.
+
+Anything that is not one of these tags, including HTML, is escaped and displayed as text. To show a tag as text
+instead of styling it, escape it with a backslash, like `\<info>`.
 
 The terminal markup provides stable styling hooks for customization. Use `hyde-terminal-body` to change the output
-area's default text and background colors, and `hyde-terminal` to style the outer container. The
-`hyde-terminal-info`, `hyde-terminal-comment`, `hyde-terminal-question`, and `hyde-terminal-error` classes target the
-four formatter tags individually.
+area's default text and background colours, and `hyde-terminal` to style the outer container. Each formatting tag is
+marked up with a class of its own, like `hyde-terminal-info`, `hyde-terminal-fg-gray`, `hyde-terminal-bg-red`, and
+`hyde-terminal-strikethrough`, so you can restyle the palette from your own CSS.
 
 You can customize the terminal markup and Tailwind classes by publishing Hyde's Blade components:
 
-```bash
+```terminal
 php hyde publish:views components
 ```
 
@@ -222,61 +265,39 @@ The coloured blockquotes also support inline Markdown, just like normal blockquo
 
 Note that these currently do not support multi-line blockquotes.
 
-## Code Block Filepaths
+## Code Block Titles
 
-When browsing these documentation pages you may have noticed a label in the top right corner of code blocks specifying the file path.
-These are also created by using a custom Hyde feature that turns code comments into automatic code blocks.
+Add a `title` modifier to a fenced code block to show a title or filename in a header above the code.
 
 ### Usage
 
-Simply add a code comment with the path in the **first line** of a fenced code block like so:
-
-````markdown
-// filepath: _docs/advanced-markdown.md
-```php
-‎// filepath: hello-world.php
-
+````markdown title="_docs/advanced-markdown.md"
+```php title="hello-world.php"
 echo 'Hello World!';
 ```
 ````
 
 Which becomes:
 
-```php
-// filepath: hello-world.php
-
+```php title="hello-world.php"
 echo 'Hello World!';
 ```
 
-### Alternative syntax
-
-The syntax is rather forgiving, by design, and supports using both `//` and `#` for comments.
-The colon is also optional, and the 'filepath' string is case-insensitive. So the following is also perfectly valid:
-
-````markdown
-```js
-‎// filepath hello.js
-console.log('Hello World!');
-```
-````
-
-If you have a newline after the filepath, like in the first example, it will be removed so your code stays readable.
-
 ### Advanced usage
 
-Since HTML in Markdown is enabled by default, anything within the path label will be rendered as HTML. This means you
-can add links, or even images to the label. This requires `allow_html` to remain `true` in `config/markdown.php`.
+Since HTML in Markdown is enabled by default, anything within the title will be rendered as HTML. This means you
+can add links, or even images to the label.
 
-````markdown
-// filepath: <a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md" rel="nofollow noopener" target="_blank">View file on Github</a>
-```markdown
-‎// filepath: <a href="https://github.com">View file on Github</a>
+````markdown title='<a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md" rel="nofollow noopener" target="_blank">View file on Github</a>'
+```markdown title='<a href="https://github.com">View file on Github</a>'
+Hello World!
 ```
 ````
 
-### Limitations
+### Customizations
 
-The filepaths are hidden on mobile devices using CSS to prevent them from overlapping with the code block.
+See [Composable Markdown Blocks](composable-markdown-blocks#code-blocks) for the code block view contract, its class
+hooks, and how to publish and customize the markup.
 
 
 ## Heading Permalinks
@@ -289,8 +310,7 @@ The feature is enabled by default for documentation pages. When enabled, Hyde wi
 
 You can enable it for other page types by adding the page class to the `permalinks.pages` array in the `config/markdown.php` file, or disable it for all pages by setting the array to an empty array.
 
-```php
-// filepath: config/markdown.php
+```php title="config/markdown.php"
 'permalinks' => [
     'pages' => [
         \Hyde\Pages\DocumentationPage::class,
@@ -368,8 +388,7 @@ To convert Markdown, HydePHP uses the GitHub Flavored Markdown extension. HydePH
 project source is normally trusted and reviewed. If you process Markdown from outside your trusted review process, set
 the `allow_html` option to `false` in your `config/markdown.php` file to strip potentially unsafe HTML tags.
 
-```php
-// filepath: config/markdown.php
+```php title="config/markdown.php"
 'allow_html' => false,
 ```
 
@@ -382,8 +401,7 @@ We do this by adding the `.prose` CSS class to the HTML elements containing the 
 
 You can easily edit these classes, for example if you want to customize the prose colours, in the `config/markdown.php` file.
 
-```php
-// filepath: config/markdown.php
+```php title="config/markdown.php"
 'prose_classes' => 'prose dark:prose-invert', // [tl! remove]
 'prose_classes' => 'prose dark:prose-invert prose-img:inline', // [tl! add]
 ```
