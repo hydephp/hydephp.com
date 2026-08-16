@@ -121,14 +121,30 @@ $statistics = \App\Support\HomepageStatistics::cards();
       <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Write</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">Markdown for content, Blade when you want full control. Front matter handles the metadata.</p>
-        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">// or plain .md, your call</span>
+        <div class="mt-[18px] overflow-hidden rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c]">
+          <div class="flex items-center gap-[7px] border-b border-[rgba(164,156,186,.12)] px-4 py-2.5">
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="ml-1.5 [font-family:'JetBrains_Mono',monospace] text-[.68rem] tracking-[.06em] text-[#6f6786]">~/blog</span>
+          </div>
+          <pre class="overflow-x-auto p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]"><span class="text-[#6f6786]">// or plain .md, your call</span>
 php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24a]">&quot;A Study in Static&quot;</span></pre>
+        </div>
       </div>
       <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Build</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">One command compiles everything: pages, posts, docs, navigation, RSS, sitemap.</p>
-        <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">$ php hyde <span class="text-[#8d7bf5]">build</span>
+        <div class="mt-[18px] overflow-hidden rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c]">
+          <div class="flex items-center gap-[7px] border-b border-[rgba(164,156,186,.12)] px-4 py-2.5">
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="h-[7px] w-[7px] rounded-full bg-[rgba(164,156,186,.3)]"></span>
+            <span class="ml-1.5 [font-family:'JetBrains_Mono',monospace] text-[.68rem] tracking-[.06em] text-[#6f6786]">~/blog</span>
+          </div>
+          <pre class="overflow-x-auto p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8]">$ php hyde <span class="text-[#8d7bf5]">build</span>
 <span class="text-[#8fce8f]">✓ 80 files compiled in 756 ms</span></pre>
+        </div>
       </div>
       <div class="bg-[#1c1827] px-7 py-8">
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Ship</h3>
