@@ -61,7 +61,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
               year: "numeric"
             }) + " · 2 min read";
           </script>
-          <p class="mt-5 text-[#cfc8e0]">Every site has two natures. The one you write, and the one you ship. Hyde keeps them in the same file.</p>
+          <p class="mt-5 text-[#cfc8e0]">Every site has two natures. The one you write, and<br class="hidden lg:block"> the one you ship. Hyde keeps them in the same file.</p>
           <h3 class="mt-7 [font-family:'Playfair_Display',serif] opacity-90 text-[1.3rem] font-medium text-[#8d7bf5]">The experiment</h3>
           <ul class="ml-0.5 mt-3.5 list-none">
             <li class="relative py-[7px] pl-[26px] text-[#cfc8e0] before:absolute before:left-0.5 before:top-[15px] before:h-0.5 before:w-2.5 before:bg-[#d6a24a] before:content-['']">One Markdown file</li>
