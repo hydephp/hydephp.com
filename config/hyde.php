@@ -361,6 +361,7 @@ return [
         // Lower values show up first in the menu. The default is 999.
         'order' => [
             'index' => 0,
+            'about' => 5,
             'demos' => 10,
             'posts' => 20,
             'docs/index' => 100,
