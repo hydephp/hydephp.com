@@ -140,12 +140,28 @@ class SyncCommand extends Command
                 $contents = $this->wrapLicenseFile($contents);
             }
 
+            if ($destination === '_pages/security.md') {
+                $contents = $this->replaceSecurityStatusEmoji($contents);
+            }
+
             $path = Hyde::path($destination);
             File::ensureDirectoryExists(dirname($path));
             File::put($path, $contents);
         }
 
         return true;
+    }
+
+    /**
+     * Replace GitHub emoji shortcodes unsupported by the Markdown renderer.
+     */
+    protected function replaceSecurityStatusEmoji(string $contents): string
+    {
+        return str_replace(
+            [':construction:', ':white_check_mark:', ':warning:', ':x:'],
+            ['🚧', '✅', '⚠️', '❌'],
+            $contents,
+        );
     }
 
     /**
