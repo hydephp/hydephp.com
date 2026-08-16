@@ -28,13 +28,13 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     <h1 class="mx-auto mt-[22px] max-w-[18ch] font-['Playfair_Display',serif] opacity-90 text-[clamp(2.4rem,5.6vw,4.2rem)] font-[420] leading-[1.06] tracking-[-.015em]">
       The strange case of a static site generator.
     </h1>
-    <p class="mx-auto mt-5 max-w-[52ch] text-[1.08rem] text-[#a49cba]">Where Hyde came from, what it believes, and why it will still be here when your next redesign rolls around.</p>
+    <p class="mx-auto mt-5 max-w-[52ch] text-[1.08rem] text-[#a49cba]">Where HydePHP came from, what it believes, and why it will still be here when your next redesign rolls around.</p>
   </div>
 </header>
 
 <!-- The story -->
 <section class="reveal mx-auto max-w-[720px] px-7 pb-[100px] pt-4">
-  <p class="mt-0 text-[#d6d0e4] first-letter:float-left first-letter:pr-3.5 first-letter:pt-2 first-letter:font-['Playfair_Display',serif] first-letter:opacity-90 first-letter:text-[4.4rem] first-letter:font-medium first-letter:leading-[.82] first-letter:text-[#d6a24a]">Hyde started with a simple frustration. Jekyll, the Ruby generator that popularized the modern static site, had the right idea: write plain files, run one command, ship folders of HTML. But for a developer who lives in PHP and thinks in Laravel, reaching for a Ruby toolchain every time you want a simple site feels like borrowing a neighbor's kitchen to make toast.</p>
+  <p class="mt-0 text-[#d6d0e4] first-letter:float-left first-letter:pr-3.5 first-letter:pt-2 first-letter:font-['Playfair_Display',serif] first-letter:opacity-90 first-letter:text-[4.4rem] first-letter:font-medium first-letter:leading-[.82] first-letter:text-[#d6a24a]">HydePHP started with a simple frustration. Jekyll, the Ruby generator that popularized the modern static site, had the right idea: write plain files, run one command, ship folders of HTML. But for a developer who lives in PHP and thinks in Laravel, reaching for a Ruby toolchain every time you want a simple site feels like borrowing a neighbor's kitchen to make toast.</p>
   <p class="mt-[18px] text-[#d6d0e4]">So Hyde takes Jekyll's philosophy and rebuilds it on the tools Laravel developers already trust. Blade for templating. Artisan-style commands for the workflow. Composer for everything else. The name is a small literary joke with a serious point: Jekyll and Hyde are the same person, and your Markdown and your website are the same file. Hyde just brings out the other side.</p>
 
   <h2 class="mt-[60px] font-['Playfair_Display',serif] opacity-90 text-[1.8rem] font-[470] tracking-[-.01em]">What Hyde optimizes for</h2>
