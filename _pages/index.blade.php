@@ -161,7 +161,7 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
     <div class="max-w-[900px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">Four kinds of pages</p>
       <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em] min-[961px]:whitespace-nowrap">A page type for every kind of writing.</h2>
-      <p class="mt-4 max-w-[56ch] text-[#a49cba]">The directory a file lives in decides what it becomes. Mix all four in the same project — Hyde works out the routing, the navigation, and the layouts.</p>
+      <p class="mt-4 max-w-[56ch] text-[#a49cba]">The directory a file lives in decides what it becomes. Mix and choose between them freely. Hyde works out the routing, the navigation, and the layouts.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-4 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-2 max-[560px]:grid-cols-1">
       <div class="bg-[#1c1827] px-7 py-8">
