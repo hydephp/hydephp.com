@@ -150,9 +150,9 @@ php hyde <span class="text-[#8d7bf5]">make:post</span> <span class="text-[#d6a24
         <h3 class="[font-family:'Playfair_Display',serif] opacity-90 text-xl font-medium">Ship</h3>
         <p class="mt-2 min-h-[66px] text-[.92rem] text-[#a49cba] max-[960px]:min-h-0">The output is a folder of static files. No PHP on the server, nothing to patch at 2 am.</p>
         <pre class="mt-[18px] overflow-x-auto rounded-lg border border-[rgba(164,156,186,.16)] bg-[#14111c] p-4 [font-family:'JetBrains_Mono',monospace] text-[.78rem] leading-[1.7] text-[#d8d2e8] min-[961px]:mt-auto min-[961px]:h-[120px]">_site/
-├── index.html
 ├── posts/
-└── <span class="text-[#d6a24a]">feed.xml</span></pre>
+├── index.html
+└── feed.xml</pre>
       </div>
     </div>
   </section>
