@@ -115,7 +115,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
     <div class="max-w-[900px]">
       <p class="[font-family:'JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.22em] text-[#d6a24a]">The transformation</p>
       <h2 class="mt-3.5 [font-family:'Playfair_Display',serif] opacity-90 text-[clamp(1.9rem,3.6vw,2.8rem)] font-[430] leading-[1.12] tracking-[-.01em]">Write. Build. Vanish from the server bill.</h2>
-      <p class="mt-4 max-w-[56ch] text-[#a49cba]">The whole workflow is three moves. What comes out is plain HTML you can host anywhere, from a five-dollar VPS to a free static host.</p>
+      <p class="mt-4 max-w-[56ch] text-[#a49cba]">The whole workflow is three moves. What comes out is plain HTML you can host anywhere, from a five-dollar VPS to a free static hosting provider.</p>
     </div>
     <div class="mt-[54px] grid grid-cols-3 gap-px overflow-hidden rounded-[14px] border border-[rgba(164,156,186,.16)] bg-[rgba(164,156,186,.16)] max-[960px]:grid-cols-1">
       <div class="bg-[#1c1827] px-7 py-8">
