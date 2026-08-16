@@ -95,7 +95,8 @@ return [
 
     'redirects' => [
         'blog' => 'posts',
-        'features' => 'about'
+        'features' => 'about',
+        'guides/installation' => 'docs',
     ],
 
     /*
