@@ -72,10 +72,26 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 <!-- Letter from the maintainer -->
 <section class="reveal mx-auto max-w-[1160px] px-7 pb-[100px]">
   <div class="relative mx-auto max-w-[680px] rounded-xl border border-[rgba(43,36,51,.14)] bg-[#ece7da] px-[60px] pb-12 pt-14 text-[#2b2433] shadow-[0_40px_90px_-40px_rgba(0,0,0,.75)] max-[640px]:px-[30px] max-[640px]:pb-10 max-[640px]:pt-11">
-    <div class="absolute right-[52px] top-11 flex h-[58px] w-[58px] items-center justify-center rounded-full shadow-[inset_0_2px_6px_rgba(255,255,255,.35),inset_0_-3px_8px_rgba(0,0,0,.3),0_4px_14px_rgba(0,0,0,.2)] [background:radial-gradient(circle_at_34%_30%,#e5b25e,#b3801f_70%)] max-[640px]:right-7 max-[640px]:top-[30px] max-[640px]:h-[46px] max-[640px]:w-[46px]" aria-hidden="true">
-      <svg width="26" height="26" viewBox="0 0 26 26" fill="none" class="opacity-85">
-        <ellipse cx="13" cy="19" rx="9" ry="2.4" fill="#5c3f0e"/>
-        <rect x="7.5" y="6" width="11" height="12.5" rx="1.6" fill="#5c3f0e"/>
+    <div class="absolute right-[52px] top-11 h-[58px] w-[58px] -rotate-6 [filter:drop-shadow(0_6px_12px_rgba(43,36,51,.28))] max-[640px]:right-7 max-[640px]:top-[30px] max-[640px]:h-[46px] max-[640px]:w-[46px]" aria-hidden="true">
+      <svg viewBox="0 0 100 100" class="h-full w-full">
+        <defs>
+          <radialGradient id="sealWax" cx="32%" cy="26%" r="80%">
+            <stop offset="0%" stop-color="#eec076"/>
+            <stop offset="52%" stop-color="#c8912c"/>
+            <stop offset="100%" stop-color="#8c6110"/>
+          </radialGradient>
+          <radialGradient id="sealCore" cx="36%" cy="30%" r="76%">
+            <stop offset="0%" stop-color="#dcab57"/>
+            <stop offset="100%" stop-color="#a4731a"/>
+          </radialGradient>
+        </defs>
+        <path fill="url(#sealWax)" d="M93.50 46.20Q93.89 50.00 93.64 53.82Q93.38 57.65 91.85 61.16Q90.31 64.67 88.42 67.88Q86.54 71.10 84.49 74.16Q82.43 77.22 79.26 79.16Q76.09 81.10 73.16 83.06Q70.22 85.02 67.37 87.45Q64.51 89.87 61.02 91.28Q57.53 92.69 53.76 93.34Q50.00 93.99 46.27 93.14Q42.54 92.29 39.18 90.63Q35.82 88.97 32.21 88.02Q28.60 87.07 25.38 85.13Q22.15 83.18 19.72 80.32Q17.29 77.45 15.01 74.48Q12.73 71.52 11.40 68.03Q10.07 64.54 9.15 60.95Q8.24 57.36 8.09 53.68Q7.94 50.00 9.23 46.52Q10.51 43.04 11.06 39.53Q11.60 36.02 12.08 32.20Q12.56 28.38 14.41 25.04Q16.26 21.69 18.84 18.81Q21.42 15.94 24.91 14.27Q28.40 12.60 32.01 11.55Q35.62 10.50 39.09 9.16Q42.56 7.82 46.28 7.93Q50.00 8.04 53.58 8.73Q57.16 9.42 60.81 9.84Q64.46 10.26 67.89 11.67Q71.31 13.09 74.50 15.05Q77.68 17.01 80.07 19.89Q82.45 22.77 83.80 26.24Q85.15 29.70 87.30 32.67Q89.44 35.65 91.28 39.02Q93.11 42.40 93.50 46.20Z"/>
+        <path fill="url(#sealCore)" stroke="#77510a" stroke-opacity=".5" stroke-width="1.4" d="M82.82 46.57Q83.41 50.00 83.09 53.48Q82.77 56.97 81.60 60.26Q80.43 63.55 78.35 66.32Q76.27 69.08 74.24 71.88Q72.22 74.68 69.42 76.72Q66.61 78.77 63.27 79.65Q59.92 80.53 56.67 81.55Q53.42 82.58 49.97 82.89Q46.51 83.20 43.06 82.60Q39.60 82.00 36.40 80.55Q33.20 79.09 30.81 76.53Q28.42 73.96 26.05 71.55Q23.67 69.13 21.59 66.35Q19.50 63.58 18.79 60.18Q18.08 56.79 17.62 53.39Q17.17 50.00 17.34 46.55Q17.51 43.09 18.48 39.75Q19.46 36.40 21.06 33.27Q22.66 30.14 25.49 28.03Q28.32 25.92 31.16 24.10Q34.00 22.29 36.86 20.34Q39.73 18.38 43.13 17.71Q46.53 17.03 50.00 17.03Q53.46 17.03 56.86 17.75Q60.25 18.47 63.36 19.97Q66.47 21.47 69.51 23.22Q72.54 24.97 74.54 27.84Q76.55 30.71 77.81 33.88Q79.08 37.05 80.65 40.10Q82.23 43.15 82.82 46.57Z"/>
+        <g font-family="'Playfair Display',serif" font-size="40" font-weight="600" font-style="italic" text-anchor="middle" letter-spacing="-3">
+          <text x="50.9" y="63.4" fill="#5e3d05" fill-opacity=".5">DS</text>
+          <text x="49.2" y="61.8" fill="#ffe9b8" fill-opacity=".5">DS</text>
+          <text x="50" y="62.6" fill="#cb9a3c">DS</text>
+        </g>
       </svg>
     </div>
     <p class="font-['JetBrains_Mono',monospace] text-[.72rem] uppercase tracking-[.18em] text-[#8a7f70]">A note from the maintainer</p>
