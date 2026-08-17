@@ -52,7 +52,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   <div class="mt-12 border-t border-[rgba(164,156,186,.16)]">
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Playfair_Display',serif] opacity-90 text-[1.3rem] font-[480]">Zero config until you want it</h3>
-      <p class="text-[.97rem] text-[#a49cba]">A fresh project builds with no setup at all. Every default is chosen so that doing nothing is a reasonable decision, and every default can be overridden the moment it isn't.</p>
+      <p class="text-[.97rem] text-[#a49cba]">A fresh project builds with no setup at all. Every default is chosen so that doing nothing is a reasonable decision, and every default can be overridden the moment it isn't for your site.</p>
     </div>
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Playfair_Display',serif] opacity-90 text-[1.3rem] font-[480]">Your content outlives the tool</h3>
@@ -60,7 +60,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
     </div>
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Playfair_Display',serif] opacity-90 text-[1.3rem] font-[480]">Boring on purpose</h3>
-      <p class="text-[.97rem] text-[#a49cba]">Semantic versioning, written upgrade guides, and a test suite that runs on every commit. Excitement belongs in your content, never in your build pipeline.</p>
+      <p class="text-[.97rem] text-[#a49cba]">Semantic versioning, written upgrade guides, and a test suite that runs on every source code commit. Excitement belongs in your content, never in your build pipeline.</p>
     </div>
     <div class="grid grid-cols-[300px_1fr] gap-10 border-b border-[rgba(164,156,186,.16)] py-8 max-[900px]:grid-cols-1 max-[900px]:gap-2.5">
       <h3 class="font-['Playfair_Display',serif] opacity-90 text-[1.3rem] font-[480]">Small enough to understand</h3>
