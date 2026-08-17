@@ -97,6 +97,18 @@ return [
         'blog' => 'posts',
         'features' => 'about',
         'guides/installation' => '/docs/2.x',
+        'docs/1.x/configuration' => '/docs/1.x/customization',
+        'docs/1.x/directory-structure' => '/docs/1.x/architecture-concepts#directory-structure',
+        'docs/1.x/getting-started' => '/docs/1.x/quickstart',
+        'docs/1.x/installation' => '/docs/1.x/quickstart',
+        'docs/2.x/configuration' => '/docs/2.x/customization',
+        'docs/2.x/directory-structure' => '/docs/2.x/architecture-concepts#directory-structure',
+        'docs/2.x/getting-started' => '/docs/2.x/quickstart',
+        'docs/2.x/installation' => '/docs/2.x/quickstart',
+        'docs/master/configuration' => '/docs/master/customization',
+        'docs/master/directory-structure' => '/docs/master/architecture-concepts#directory-structure',
+        'docs/master/getting-started' => '/docs/master/quickstart',
+        'docs/master/installation' => '/docs/master/quickstart',
     ],
 
     /*
