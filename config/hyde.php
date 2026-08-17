@@ -394,9 +394,12 @@ return [
             '404',
             'changelog',
             'code-of-conduct',
+            'community',
             'contributing',
+            'legal',
             'license',
             'security',
+            'sitemap',
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
