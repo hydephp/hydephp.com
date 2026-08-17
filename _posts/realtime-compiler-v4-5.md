@@ -1,7 +1,7 @@
 ---
 title: A new error page and dashboard for the realtime compiler
 description: "Realtime compiler v4.5 replaces the dated error page and dashboard with versions built for how HydePHP sites actually work."
-category: releases
+category: release
 author: Emma
 date: "2026-07-10 10:00"
 ---
