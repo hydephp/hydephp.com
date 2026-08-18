@@ -1,7 +1,7 @@
 ---
 title: 'Introducing the HydePHP GitHub Action'
 description: "The easiest way to build and deploy your static sites!"
-category: announcements
+category: devlog
 author: Emma
 date: '2024-01-28 16:00'
 image: 'media/hydephp-github-action-cover.png'

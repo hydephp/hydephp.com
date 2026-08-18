@@ -22,9 +22,9 @@
 |
 */
 
-use Hyde\Enums\Feature;
 use Hyde\Facades\Author;
 use Hyde\Facades\Meta;
+use Hyde\Enums\Feature;
 use Hyde\Facades\Navigation;
 
 return [
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => 'https://hydephp.com/',
+    'url' => env('SITE_URL', 'http://localhost'),
 
     /*
     |--------------------------------------------------------------------------
@@ -81,7 +81,35 @@ return [
     |
     */
 
-    'pretty_urls' => false,
+    'pretty_urls' => true,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Redirects
+    |--------------------------------------------------------------------------
+    |
+    | Here you may define redirects as source and destination path pairs. Hyde
+    | will register them as pages and generate them as part of the site build.
+    |
+    */
+
+    'redirects' => [
+        'blog' => 'posts',
+        'features' => 'about',
+        'guides/installation' => '/docs/2.x',
+        'docs/1.x/configuration' => '/docs/1.x/customization',
+        'docs/1.x/directory-structure' => '/docs/1.x/architecture-concepts#directory-structure',
+        'docs/1.x/getting-started' => '/docs/1.x/quickstart',
+        'docs/1.x/installation' => '/docs/1.x/quickstart',
+        'docs/2.x/configuration' => '/docs/2.x/customization',
+        'docs/2.x/directory-structure' => '/docs/2.x/architecture-concepts#directory-structure',
+        'docs/2.x/getting-started' => '/docs/2.x/quickstart',
+        'docs/2.x/installation' => '/docs/2.x/quickstart',
+        'docs/master/configuration' => '/docs/master/customization',
+        'docs/master/directory-structure' => '/docs/master/architecture-concepts#directory-structure',
+        'docs/master/getting-started' => '/docs/master/quickstart',
+        'docs/master/installation' => '/docs/master/quickstart',
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -117,7 +145,7 @@ return [
         'filename' => 'feed.xml',
 
         // The channel description.
-        'description' => env('SITE_NAME', 'HydePHP').' RSS Feed',
+        'description' => env('SITE_NAME', 'HydePHP') . ' RSS Feed',
     ],
 
     /*
@@ -138,13 +166,13 @@ return [
     | Site Output Directory
     |--------------------------------------------------------------------------
     |
-    | This setting specifies the output path for your site, useful to for
+    | This setting specifies the output path for your site, useful to, for
     | example, store the site in the docs/ directory for GitHub Pages.
     | The path is relative to the root of your project.
     |
     */
 
-    'output_directory' => 'docs',
+    'output_directory' => '_site',
 
     /*
     |--------------------------------------------------------------------------
@@ -163,8 +191,7 @@ return [
         \Hyde\Pages\BladePage::class => '_pages',
         \Hyde\Pages\MarkdownPage::class => '_pages',
         \Hyde\Pages\MarkdownPost::class => '_posts',
-        \Hyde\Pages\DocumentationPage::class => '_docs/2.x',
-        \App\Extend\Pages\v1DocumentationPage::class => '_docs/1.x',
+        \Hyde\Pages\DocumentationPage::class => '_docs',
     ],
 
     /*
@@ -186,8 +213,7 @@ return [
         \Hyde\Pages\BladePage::class => '',
         \Hyde\Pages\MarkdownPage::class => '',
         \Hyde\Pages\MarkdownPost::class => 'posts',
-        \Hyde\Pages\DocumentationPage::class => 'docs/2.x',
-        \App\Extend\Pages\v1DocumentationPage::class => 'docs/1.x',
+        \Hyde\Pages\DocumentationPage::class => 'docs',
     ],
 
     /*
@@ -219,23 +245,30 @@ return [
     */
 
     'meta' => [
-        Meta::name('author', 'HydePHP'),
-        Meta::name('description', 'HydePHP - Elegant and Powerful Static Site Generator'),
-        Meta::name('keywords', 'HydePHP, Static Site Generator, Static Site Builder, Static Sites, Blogs, Documentation, Hyde, PHP'),
-        Meta::name('generator', 'HydePHP '.Hyde\Hyde::version()),
-        Meta::name('twitter:card', 'summary'),
-        Meta::name('twitter:site', '@HydeFramework'),
-        Meta::name('twitter:creator', '@EmmaDSCodes'),
-        Meta::name('twitter:title', 'HydePHP - Elegant and Powerful Static Site Generator'),
-        Meta::name('twitter:description', 'Make static websites, blogs, and documentation pages with the tools you already know and love.'),
-        Meta::name('twitter:image', 'https://hydephp.com/media/banner.png'),
+        // Meta::name('author', 'Mr. Hyde'),
+        // Meta::name('twitter:creator', '@HydeFramework'),
+        // Meta::name('description', 'My Hyde Blog'),
+        // Meta::name('keywords', 'Static Sites, Blogs, Documentation'),
+        Meta::name('generator', 'HydePHP v' . Hyde\Hyde::version()),
         Meta::property('site_name', env('SITE_NAME', 'HydePHP')),
-        Meta::property('url', 'https://hydephp.com/'),
-        Meta::property('title', 'HydePHP'),
-        Meta::property('description', 'HydePHP - Elegant and Powerful Static Site Generator'),
-        Meta::property('image', 'https://hydephp.com/media/banner.png'),
-        Meta::property('image:alt', 'GitHub OpenGraph Image'),
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Custom head and script HTML hooks
+    |--------------------------------------------------------------------------
+    |
+    | While the best way to add custom `<head>` and `<body>` code is to use the
+    | Blade components, you can also add them here. This is useful for adding
+    | scripts like analytics codes, chat widgets, or even custom styles.
+    |
+    */
+
+    // Add any extra HTML to include in the <head> tag
+    'head' => '',
+
+    // Add any extra HTML to include before the closing <body> tag
+    'scripts' => '',
 
     /*
     |--------------------------------------------------------------------------
@@ -244,7 +277,6 @@ return [
     |
     | Some of Hyde's features are optional. Feel free to disable the features
     | you don't need by removing or commenting them out from this array.
-    | This config concept is directly inspired by Laravel Jetstream.
     |
     */
 
@@ -274,16 +306,34 @@ return [
     | However, it's tedious to have to add those to each and every
     | post you make, and keeping them updated is even harder.
     |
-    | Here you can add predefined authors. When writing posts,
-    | just specify the username in the front matter, and the
-    | rest of the data will be pulled from a matching entry.
+    | To solve this problem, you can add predefined authors with this setting.
+    | When writing posts just specify the author's username (the array key).
+    | Hyde will pull the matching data from here and fill in the blanks.
     |
     */
 
     'authors' => [
-        'emma' => Author::create(
-            name: 'Emma',
-            website: 'https://twitter.com/EmmaDSCodes'
+        'emma_de_silva' => Author::create(
+            name: 'Emma De Silva',
+            website: 'https://emma.desilva.se',
+            bio: 'Creator and maintainer of HydePHP. Laravel contributor, conference speaker, and firm believer that a command line is a user interface.',
+            socials: [
+                'github' => 'emmadesilva',
+            ],
+        ),
+        'mr_hyde' => Author::create(
+            // The following settings are used in the default blog post template.
+            name: 'Mr. Hyde', // Optional display name
+            website: 'https://hydephp.com', // Optional website URL
+
+            // The following settings are not used in the bundled templates,
+            // but you can use them in your own custom views, for example.
+            // bio: 'The mysterious author of HydePHP',
+            // avatar: 'avatar.png',
+            // socials: [
+            //     'twitter' => 'HydeFramework',
+            //     'github' => 'hydephp',
+            // ],
         ),
     ],
 
@@ -294,12 +344,12 @@ return [
     |
     | Here you can customize the footer Markdown text for your site.
     |
-    | If you don't want to write Markdown here, you use a Markdown include.
+    | If you don't want to write Markdown here, you can use a Markdown include.
     | You can also customize the Blade view if you want a more complex footer.
     | You can disable it completely by changing the setting to `false`.
     |
     | To read about the many configuration options here, visit:
-    | https://hydephp.com/docs/1.x/customization#footer
+    | https://hydephp.com/docs/2.x/customization#footer
     |
     */
 
@@ -312,6 +362,10 @@ return [
     |
     | If you are looking to customize the main navigation menu, this is the place!
     |
+    | All these settings uses Route Keys to identify the page you want to configure.
+    | A route key is simply the URL path to the page, without the file extension.
+    | So `_site/posts/hello-world.html` has the route key 'posts/hello-world'.
+    |
     */
 
     'navigation' => [
@@ -321,7 +375,9 @@ return [
         // Lower values show up first in the menu. The default is 999.
         'order' => [
             'index' => 0,
-            'posts' => 1200,
+            'about' => 5,
+            'demos' => 10,
+            'posts' => 20,
             'docs/index' => 100,
         ],
 
@@ -329,40 +385,33 @@ return [
         // Simply add the route key as the array key, and the label as the value.
         'labels' => [
             'index' => 'Home',
-            'docs/index' => 'Docs',
             'posts' => 'Blog',
+            'docs/index' => 'Documentation',
         ],
 
         // These are the route keys of pages that should not show up in the navigation menu.
         'exclude' => [
             '404',
-            'dashboard',
-            'privacy',
-            'legal',
             'changelog',
-            'license',
-            'security',
-            'contributing',
             'code-of-conduct',
             'community',
-            'docs/1.x/index',
-            'testimonials',
-            'accessibility',
+            'contributing',
+            'legal',
+            'license',
+            'security',
             'sitemap',
-            'docs/2.x/index',
-            'features', // merged with about
         ],
 
         // Any extra links you want to add to the navigation menu can be added here.
         // To get started quickly, you can uncomment the defaults here.
         // See the documentation link above for more information.
         'custom' => [
-            Navigation::item('https://github.com/hydephp/hyde', 'GitHub', 1200),
+            // Navigation::item('https://github.com/hydephp/hyde', 'GitHub', 200),
         ],
 
         // How should pages in subdirectories be displayed in the menu?
         // You can choose between 'dropdown', 'flat', and 'hidden'.
-        'subdirectories' => 'hidden',
+        'subdirectory_display' => 'hidden',
     ],
 
     /*
@@ -370,14 +419,12 @@ return [
     | Cache Busting
     |--------------------------------------------------------------------------
     |
-    | Any assets loaded using the Asset::mediaLink() helper will automatically
-    | have a cache busting query string appended to the URL. This is useful
+    | Any assets loaded using the Hyde Asset helpers will automatically have
+    | a "cache busting" query string appended to the URL. This is useful
     | when you want to force browsers to load a new version of an asset.
+    | All included Blade templates use this feature to load assets.
     |
-    | The mediaLink helper is used in the built-in views to load the
-    | default stylesheets and scripts, and thus use this feature.
-    |
-    | To disable cache busting, set this setting to false.
+    | To disable the cache busting, set this setting to false.
     |
     */
 
@@ -428,7 +475,7 @@ return [
     |
     | Here you can configure settings for the built-in realtime compiler server.
     | The server also includes a magic dashboard feature that supercharges
-    | your local development! This feature can alo be customised here.
+    | your local development! This feature can also be customised here.
     |
     */
 
@@ -440,7 +487,7 @@ return [
         'host' => env('SERVER_HOST', 'localhost'),
 
         // Should preview pages be saved to the output directory?
-        'save_preview' => false,
+        'save_preview' => env('SERVER_SAVE_PREVIEW', false),
 
         // Should the live edit feature be enabled?
         'live_edit' => env('SERVER_LIVE_EDIT', true),
@@ -456,7 +503,6 @@ return [
             // Should the dashboard show tips?
             'tips' => true,
         ],
-
     ],
 
     /*
@@ -472,7 +518,7 @@ return [
 
     // Change the file extensions to be considered as media files and are copied to the output directory.
     // If you want to add more extensions, add it to the empty merge array, or just override the entire array.
-    'media_extensions' => array_merge(['srt', 'wav'], \Hyde\Support\Filesystem\MediaFile::EXTENSIONS),
+    'media_extensions' => array_merge([], \Hyde\Support\Filesystem\MediaFile::EXTENSIONS),
 
     // The list of directories that are considered to be safe to empty upon site build.
     // If the site output directory is set to a directory that is not in this list,
@@ -484,5 +530,8 @@ return [
 
     // Where should the build manifest be saved? (Relative to project root, for example _site/build-manifest.json)
     'build_manifest_path' => 'app/storage/framework/cache/build-manifest.json',
+
+    // Should the theme toggle buttons be displayed in the layouts?
+    'theme_toggle_buttons' => true,
 
 ];

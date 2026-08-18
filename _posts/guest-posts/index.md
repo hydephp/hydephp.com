@@ -1,7 +1,7 @@
 ---
 title: 'Introducing Guest Posts on HydePHP.com'
 description: "We're excited to announce that HydePHP.com is now accepting guest posts from the community. Learn how you can contribute and share your knowledge with fellow developers."
-category: 'Guest Posts'
+category: devlog
 author:
     name: HydePHP Team
     website: "https://hydephp.com"

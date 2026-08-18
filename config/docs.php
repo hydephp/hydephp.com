@@ -12,11 +12,26 @@
 
 return [
 
+    /*
+    |--------------------------------------------------------------------------
+    | Documentation Versions
+    |--------------------------------------------------------------------------
+    |
+    | Each version maps `_docs/<version>` to `docs/<version>`.
+    | Leave this empty to disable versioning. When enabled, documentation
+    | files outside registered version directories are ignored.
+    |
+    | The default version defaults to the last entry in the list.
+    |
+    */
+
     'versions' => [
-        '1.x' => 'old',
-        '2.x' => 'current',
-        // 'master' => 'upcoming',
+        '1.x',
+        '2.x',
+        'master',
     ],
+
+    'default_version' => '2.x',
 
     /*
     |--------------------------------------------------------------------------
@@ -31,13 +46,30 @@ return [
 
     'sidebar' => [
         // The title in the sidebar header
-        'header' => env('SITE_NAME', 'HydePHP').' Docs',
+        'header' => 'Documentation',
 
         // When using a grouped sidebar, should the groups be collapsible?
-        'collapsible' => true,
+        'collapsible' => false,
 
-        // Should the sidebar footer be shown?
-        'footer' => false,
+        // A string of Markdown to show in the footer. Set to `false` to disable.
+        'footer' => '[Back to home page](../)',
+
+        /*
+        |--------------------------------------------------------------------------
+        | Sidebar Page Order
+        |--------------------------------------------------------------------------
+        |
+        | In the generated Documentation pages the navigation links in the sidebar
+        | default to sort alphabetically. You can reorder the page identifiers
+        | in the list below, and the links will get sorted in that order.
+        |
+        | The items will get a priority of 500 plus the order its found in the list.
+        | Pages without a priority will fall back to the default priority of 999.
+        |
+        | You can also set explicit priorities in front matter or by specifying
+        | a value to the array key in the list to override the inferred value.
+        |
+        */
 
         'order' => [
             'readme',
@@ -45,16 +77,37 @@ return [
             'getting-started',
         ],
 
+        /*
+        |--------------------------------------------------------------------------
+        | Sidebar Labels
+        |--------------------------------------------------------------------------
+        |
+        | Define custom labels for sidebar items. The array key should be the
+        | page identifier, and the value should be the display label.
+        |
+        */
+
         'labels' => [
-            'extensions' => 'Extensions & Integrations',
+            \Hyde\Pages\DocumentationPage::homeRouteName() => 'Docs',
         ],
+
+        /*
+        |--------------------------------------------------------------------------
+        | Table of Contents Settings
+        |--------------------------------------------------------------------------
+        |
+        | The Hyde Documentation Module comes with a fancy Sidebar that, by default,
+        | has a Table of Contents included. Here, you can configure its behavior,
+        | content, look and feel. You can also disable the feature completely.
+        |
+        */
 
         'table_of_contents' => [
             'enabled' => true,
+            'min_heading_level' => 2,
+            'max_heading_level' => 4,
         ],
 
-        'min_heading_level' => 2,
-        'max_heading_level' => 3,
     ],
 
     /*
@@ -62,7 +115,7 @@ return [
     | Collaborative Source Editing Location
     |--------------------------------------------------------------------------
     |
-    | @see https://hydephp.com/docs/1.x/documentation-pages#automatic-edit-page-button
+    | @see https://hydephp.com/docs/2.x/documentation-pages#automatic-edit-page-button
     |
     | By adding a base URL here, Hyde will use it to create "edit source" links
     | to your documentation pages. Hyde expects this to be a GitHub path, but
@@ -72,13 +125,12 @@ return [
     |
     | Example: https://github.com/hydephp/docs/blob/master
     |          Do not specify the filename or extension, Hyde will do that for you.
-    | Setting the setting to null will disable the feature.
+    |          Setting this to null will disable the feature.
     |
     */
 
-    'source_file_location_base' => 'https://github.com/hydephp/develop/blob/master/docs',
-    'source_file_location_base_v1' => 'https://github.com/hydephp/develop/blob/1.x/docs',
-    'edit_source_link_text' => 'Edit Page',
+    // 'source_file_location_base' => 'https://github.com/<user>/<repo>/<[blob/edit]>/<branch>',
+    'edit_source_link_text' => 'Edit Source',
     'edit_source_link_position' => 'footer', // 'header', 'footer', or 'both'
 
     /*
@@ -87,7 +139,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Hyde comes with an easy to use search feature for documentation pages.
-    | @see https://hydephp.com/docs/1.x/documentation-pages#search-feature
+    | @see https://hydephp.com/docs/2.x/documentation-pages#search-feature
     |
     */
 
@@ -117,5 +169,4 @@ return [
     */
 
     'flattened_output_paths' => true,
-
 ];

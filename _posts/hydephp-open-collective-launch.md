@@ -1,6 +1,6 @@
 ---
 title: HydePHP OpenCollective Launch
-category: announcements
+category: devlog
 date: "2024-02-17"
 author: Emma
 description: HydePHP now has its own OpenCollective, providing a platform where users and companies can contribute financially to help fund the development of HydePHP.

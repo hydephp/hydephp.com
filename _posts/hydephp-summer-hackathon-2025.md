@@ -1,6 +1,6 @@
 ---
 title: "HydePHP is Joining ODHack #14 - Come Build with Us!"
-category: community
+category: devlog
 date: "2025-05-28 18:00"
 author: HydePHP Team
 description: Ready to build something amazing? HydePHP is part of OnlyDust's ODHack Summer Hackathon!

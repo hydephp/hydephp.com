@@ -1,0 +1,409 @@
+---
+navigation:
+    label: "Advanced Markdown"
+    priority: 27
+abstract: "HydePHP extends standard Markdown with extra features and helpers, including the ability to use Laravel Blade directly inside your Markdown files."
+---
+
+# Advanced Markdown
+
+## Introduction
+
+Since HydePHP makes heavy use of Markdown, there are some extra features and helpers created just for Hyde to make using Markdown even easier and more powerful!
+
+## Using Blade in Markdown
+
+Hyde supports [Laravel Blade](https://laravel.com/docs/10.x/blade) in Markdown through single-line BladeDown directives
+and full Blade blocks. Both forms are enabled by default in HydePHP v3.
+
+To use Blade in your Markdown files, simply use the Blade shortcode directive, followed by your desired Blade string.
+
+### Standard syntax
+
+```markdown
+ [Blade]: {{ "Hello World!" }} // Will render: 'Hello World!'
+```
+
+### Blade includes
+
+Only single-line shortcode directives are supported. If you need to use multi-line Blade code, use an `@include`
+directive to render a more complex Blade template. You can pass data to includes by specifying an array to the second argument.
+
+```markdown
+ [Blade]: @include("hello-world")
+ [Blade]: @include("hello", ["name" => "World"])
+```
+
+### Blade blocks
+
+For multi-line Blade, use an executable `blade render` fenced block:
+
+````markdown
+```blade render
+@php($world = 'world')
+
+{{ "Hello $world" }}
+```
+````
+
+The Blade is evaluated at build time, and the rendered output is wrapped in a
+`<div class="blade-block not-prose">` element. When compiling a page, the `$page` variable is available to the block.
+
+You can also render a Blade component using the `blade component="name"` directive. The component name is given as an
+HTML-style attribute, mirroring Laravel's own `<x-dynamic-component component="name" />` syntax. Component data is
+passed using YAML front matter at the start of the block:
+
+````markdown
+```blade component="alert"
+---
+type: warning
+title: Check this
+---
+```
+````
+
+If the block does not start with YAML front matter, its content is rendered as Markdown and passed directly to the
+component slot. This is useful when the component does not need any data:
+
+````markdown
+```blade component="alert"
+This content is passed to the component **slot**.
+```
+````
+
+To pass both component data and Markdown slot content, enclose the data in YAML front matter and add the Markdown after
+it:
+
+````markdown
+```blade component="alert"
+---
+type: warning
+title: Check this
+---
+
+This content is passed to the component **slot**.
+```
+````
+
+Double quotes are the canonical style, but single quotes are accepted as well, so `blade component='alert'` is
+equivalent. The name must be quoted and cannot contain whitespace.
+
+A fence using only `blade` is an ordinary syntax-highlighted code sample and is not executed. Unsupported Blade block
+directives, including `blade component` without a component name, throw an exception.
+
+### Trusting Markdown content
+
+Blade directives and Blade blocks are both controlled by `markdown.enable_blade`, and can execute arbitrary PHP during
+the site build. Hyde projects normally treat source files committed to the project as trusted: content changes should
+be reviewed both for the text they publish and for executable directives hidden in the source.
+
+If your site accepts Markdown outside that trusted review process, or builds pull requests before they have been
+reviewed, disable Blade in Markdown in the `config/markdown.php` file:
+
+```php title="config/markdown.php"
+'enable_blade' => false,
+```
+
+Disabling Blade in Markdown is not a sandbox for contributors who can add arbitrary project files, since they could
+add a malicious Blade template instead. Treat project-level write access as trusted and review source changes before
+building them in a privileged environment.
+
+### Limitations
+
+All `[Blade]:` shortcodes must be the first word on a new line, and only single-line shortcodes are supported. Use
+Blade blocks for multi-line code.
+
+## Terminal Code Blocks
+
+Use the `terminal` language on a fenced code block to render command output as a terminal window. This is a built-in
+Markdown feature and does not require a Torchlight API token.
+
+````markdown
+```terminal
+$ php hyde publish
+
+ Which group would you like to publish?
+ ❯ views    Blade templates and components
+   configs  Configuration files
+   layouts  Page and homepage layouts
+```
+````
+
+Which renders as:
+
+```terminal
+$ php hyde publish
+
+ Which group would you like to publish?
+ ❯ views    Blade templates and components
+   configs  Configuration files
+   layouts  Page and homepage layouts
+```
+
+Lines beginning with a `$ ` prompt are highlighted as commands. The prompt is excluded from text selection, so you
+can select and copy the command without including it.
+
+### Window titles
+
+Without a `title` modifier, the title bar displays `Terminal`. Add the modifier to replace that label:
+
+````markdown
+```terminal title="Installing Hyde"
+$ composer require hyde/framework
+```
+````
+
+Which renders as:
+
+```terminal title="Installing Hyde"
+$ composer require hyde/framework
+```
+
+Double quotes are canonical, but single quotes are also accepted, which is useful when the title contains a double
+quote. The title is HTML-escaped when rendered.
+
+Set `title=""` to omit the title bar entirely.
+
+The `title` modifier must use a quoted value with no whitespace around the `=`, such as `title="Build output"`.
+Unquoted values, unclosed quotes, and whitespace around the `=` are reported as errors instead of being guessed at.
+
+### Terminal formatting tags
+
+Terminal blocks support formatting tags for styling console output with Hyde's terminal theme:
+
+````markdown
+```terminal
+<info>Published successfully!</info>
+<comment>Restart the development server.</comment>
+<question>Continue?</question>
+<error>Build failed.</error>
+```
+````
+
+| Tag          | Hyde default style |
+| ------------ | ------------------ |
+| `<info>`     | Green              |
+| `<comment>`  | Amber              |
+| `<question>` | Cyan               |
+| `<error>`    | Emphasized red     |
+
+Colours and text formatting can also be set directly, with the `fg`, `bg`, and `options` attributes. Combine them by
+separating them with semicolons, and close the tag with `</>`:
+
+````markdown
+```terminal
+<fg=gray>Created 12 files in 0.4 seconds</>
+<fg=black;bg=red;options=bold> ERROR </>
+```
+````
+
+The colours are `black`, `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, and `white`, each with a brighter
+`bright-` prefixed variant, except for bright black, which is called `gray`. The `options` attribute takes any of
+`bold`, `underscore`, and `strikethrough`, separated by commas.
+
+Tags nest, so a tag written inside another one combines with it. Styling does not carry across lines, and any tag
+left open at the end of a line is closed there.
+
+Anything that is not one of these tags, including HTML, is escaped and displayed as text. To show a tag as text
+instead of styling it, escape it with a backslash, like `\<info>`.
+
+The terminal markup provides stable styling hooks for customization. Use `hyde-terminal-body` to change the output
+area's default text and background colours, and `hyde-terminal` to style the outer container. Each formatting tag is
+marked up with a class of its own, like `hyde-terminal-info`, `hyde-terminal-fg-gray`, `hyde-terminal-bg-red`, and
+`hyde-terminal-strikethrough`, so you can restyle the palette from your own CSS.
+
+You can customize the terminal markup and Tailwind classes by publishing Hyde's Blade components:
+
+```terminal
+php hyde publish:views components
+```
+
+The terminal component will be published to
+`resources/views/vendor/hyde/components/markdown/terminal.blade.php`.
+
+## Coloured Blockquotes
+
+The HydePHP Markdown converter also supports some extra directives and features. One of them being four different
+coloured blockquotes. Simply append the desired colour after the initial `>` character.
+
+```markdown
+‎> Normal Blockquote
+‎>info Info Blockquote
+‎>warning Warning Blockquote
+‎>danger Danger Blockquote
+‎>success Success Blockquote
+```
+
+<div class="docs-default-blockquotes">
+
+> Normal Blockquote
+>info Info Blockquote
+>warning Warning Blockquote
+>danger Danger Blockquote
+>success Success Blockquote
+
+</div>
+
+
+### Customizations
+
+You can easily customize these styles by publishing and editing the `markdown-blockquote.blade.php` file.
+
+```terminal
+php hyde publish:views components
+```
+
+### Markdown usage
+
+The coloured blockquotes also support inline Markdown, just like normal blockquotes.
+
+```markdown
+‎>info Formatting is **supported**!
+```
+
+### Limitations
+
+Note that these currently do not support multi-line blockquotes.
+
+## Code Block Titles
+
+Add a `title` modifier to a fenced code block to show a title or filename in a header above the code.
+
+### Usage
+
+````markdown title="_docs/advanced-markdown.md"
+```php title="hello-world.php"
+echo 'Hello World!';
+```
+````
+
+Which becomes:
+
+```php title="hello-world.php"
+echo 'Hello World!';
+```
+
+### Advanced usage
+
+Since HTML in Markdown is enabled by default, anything within the title will be rendered as HTML. This means you
+can add links, or even images to the label.
+
+````markdown title='<a href="https://github.com/hydephp/develop/blob/master/docs/digging-deeper/advanced-markdown.md" rel="nofollow noopener" target="_blank">View file on Github</a>'
+```markdown title='<a href="https://github.com">View file on Github</a>'
+Hello World!
+```
+````
+
+### Customizations
+
+See [Composable Markdown Blocks](composable-markdown-blocks#code-blocks) for the code block view contract, its class
+hooks, and how to publish and customize the markup.
+
+
+## Heading Permalinks
+
+Hyde automatically adds clickable permalink anchors to headings in documentation pages. When you hover over a heading, a `#` link appears that you can click to get a direct link to that section.
+
+### Usage & Configuration
+
+The feature is enabled by default for documentation pages. When enabled, Hyde will automatically add permalink anchors to headings between levels 2-4 (h2-h4). The permalinks are hidden by default and appear when hovering over the heading.
+
+You can enable it for other page types by adding the page class to the `permalinks.pages` array in the `config/markdown.php` file, or disable it for all pages by setting the array to an empty array.
+
+```php title="config/markdown.php"
+'permalinks' => [
+    'pages' => [
+        \Hyde\Pages\DocumentationPage::class,
+    ],
+],
+```
+
+### Advanced Customization
+
+Under the hood, Hyde uses a custom Blade-based heading renderer when converting Markdown to HTML. This allows for more flexibility and customization compared to standard Markdown parsers. You can also publish and customize the Blade component used to render the headings:
+
+```terminal
+php hyde publish:components
+```
+
+This will copy the `markdown-heading.blade.php` component to your views directory where you can modify its markup and behavior.
+
+
+## Dynamic Markdown Links
+
+HydePHP provides a powerful feature for automatically converting Markdown links to source files to the corresponding routes in the built site.
+
+This allows for a much better writing experience when using an IDE, as you can easily navigate to the source file by clicking on the link. Hyde will then automatically resolve the link to the correct route when building the site, formatting the links properly using dynamic relative paths and your configured `pretty_urls` setting.
+
+## Usage
+
+Using the feature is simple: Just use the source file path when linking to the page you want to resolve:
+
+```markdown
+[Home](/_pages/index.blade.php)
+[Docs](/_docs/index.md)
+[Featured Post](/_posts/hello-world.md)
+![Logo](/_media/logo.svg)
+```
+
+As you can see, it works for both pages and media assets. The leading slash is optional and will be ignored by Hyde, but including it often gives better IDE support.
+
+### Behind the Scenes
+
+During the build process, HydePHP converts source paths to their corresponding routes and evaluates them depending on the page being rendered.
+
+If your page is in the site root then:
+
+- `/_pages/index.blade.php` becomes `index.html`
+- `/_media/logo.svg` becomes `media/logo.svg`
+
+If your page is in a subdirectory then:
+
+- `/_pages/index.blade.php` becomes `../index.html`
+- `/_media/logo.svg` becomes `../media/logo.svg`
+
+Of course, if your page is in a more deeply nested directory, the number of `../` will increase accordingly.
+
+We will also match your configured preference for `pretty_urls` and only include the `.html` extension when desired.
+
+### Limitations
+
+There are some limitations and considerations to keep in mind when using this feature:
+
+- This feature will not work for dynamic routes (not backed by a file)
+- If you rename a file, links will break. Your IDE may warn about this.
+- If a file is not found, we will not be able to see it when evaluating links.
+- Relative links are not supported (so `../_pages/index.blade.php` will not work)
+
+## Configuration
+
+### Full configuration reference
+
+All Markdown-related configuration options are in the `config/markdown.php` file.
+You can find the full reference on the [Customization](customization#markdown-configuration) page.
+
+### Raw HTML Tags
+
+To convert Markdown, HydePHP uses the GitHub Flavored Markdown extension. HydePHP v3 allows raw HTML by default because
+project source is normally trusted and reviewed. If you process Markdown from outside your trusted review process, set
+the `allow_html` option to `false` in your `config/markdown.php` file to strip potentially unsafe HTML tags.
+
+```php title="config/markdown.php"
+'allow_html' => false,
+```
+
+When HTML is allowed, Hyde configures the `DisallowedRawHtml` CommonMark extension so that no HTML tags are stripped out.
+
+### Tailwind Typography Prose Classes
+
+HydePHP uses the [Tailwind Typography](https://tailwindcss.com/docs/typography-plugin) to style rendered Markdown.
+We do this by adding the `.prose` CSS class to the HTML elements containing the rendered Markdown, using the built-in Blade components.
+
+You can easily edit these classes, for example if you want to customize the prose colours, in the `config/markdown.php` file.
+
+```php title="config/markdown.php"
+'prose_classes' => 'prose dark:prose-invert', // [tl! remove]
+'prose_classes' => 'prose dark:prose-invert prose-img:inline', // [tl! add]
+```
+
+Please note that if you add any new classes, you may need to recompile your CSS file.

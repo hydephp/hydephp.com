@@ -1,11 +1,11 @@
 /*
-* This file is loaded into your Hyde/Hyde installation and is used to generate the styles for your project. 
+* This file is loaded into your Hyde/Hyde installation and is used to generate the styles for your project.
 * You can use this file to customize your TailwindCSS or to add new classes.
 *
-* The HydeFront package contains some base styles to make your site look even more amazing. 
+* The HydeFront package contains some base styles to make your site look even more amazing.
 *
 * The compiled result of this file is shipped with HydePHP and is found at _media/app.css,
-* so you don't need to compile this file unless you're making changes.
+* so you don't need to compile this file unless you're making changes to Tailwind styles.
 *
 * If you want, you can load the compiled file with minified styles for a base install from the CDN.
 * See https://hydephp.com/docs/1.x/managing-assets#loading-from-cdn
@@ -16,105 +16,3 @@
 @import 'tailwindcss';
 
 @config '../../tailwind.config.js';
-
-blockquote.info {
-	border-color: DodgerBlue;
-}
-blockquote.warning {
-	border-color: orange;
-}
-blockquote.danger {
-	border-color: red;
-}
-
-.bg-standard {
-	background: #ffffff;
-	color: #000000;
-}
-
-.bg-offset {
-	background-color: #f6f6f7;
-	color: #000000;
-}
-
-.dark .bg-standard {
-	background-color: #1e293b;
-	color: #ffffff;
-}
-
-.dark .bg-offset {
-	background-color: #172133;
-	color: #ffffff;
-}
-
-.torchlight-enabled pre {
-    padding-top: 0px;
-    padding-bottom: 0px;
-	line-height: 1;
-}
-
-.torchlight-enabled .line {
-	line-height: 1.75;
-}
-
-/* Hyde UI Kit */
-
-.btn {
-	@apply px-6 py-2 mx-2 my-1 rounded;
-}
-.btn-lg {
-	@apply px-10 py-3 mx-3 my-1 rounded;
-}
-.btn-default {
-	@apply text-white rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring focus:ring-indigo-300;
-}
-.btn-primary {
-	@apply text-white rounded-md bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300;
-}
-.btn-secondary {
-	@apply text-white rounded-md bg-slate-500 hover:bg-slate-600 focus:outline-none focus:ring focus:ring-slate-300;
-}
-
-img.ext-link {
-	display: inline;
-	margin: 0;
-	margin-left: 2px;
-	margin-top: -4px;
-}
-
-.dark img.ext-link {
-	filter: invert(100%);
-}
-
-.flex-list {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
-.flex-list li {
-	white-space: nowrap;
-	margin-right: 2.5rem;
-}
-
-.list-compact li > p {
-	margin-top: 0.25rem;
-	margin-bottom: 0.25rem;
-}
-
-#on-this-page {
-	display: none;
-	width: 14rem;
-	flex-shrink: 0;
-	position: sticky;
-	top: 0;
-	height: 100vh;
-	overflow-y: auto;
-	padding: 5.5rem 1.5rem 3rem 0;
-}
-
-@media (min-width: 1280px) {
-	#on-this-page {
-		display: block;
-	}
-}

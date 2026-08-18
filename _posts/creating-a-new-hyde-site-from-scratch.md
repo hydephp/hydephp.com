@@ -1,7 +1,7 @@
 ---
 title: Creating a new Hyde site from scratch
 description: This blog post will guide you through creating a new Hyde site, while also showcasing some neat features!
-category: tutorials
+category: tutorial
 author: Emma
 date: 2022-03-25 20:49
 updated: 2022-04-22 12:48
@@ -291,4 +291,3 @@ Send me a Tweet if you have any questions or suggestions! I'm [@EmmaDSCodes](htt
 - The homepage for Hyde is [hydephp.com](https://hydephp.com/).
 - The documentation is hosted at [hydephp.com/docs](https://hydephp.com/docs/).
 - Find the source code on [GitHub](https://github.com/hydephp/hyde).
-

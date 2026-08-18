@@ -1,6 +1,7 @@
 ---
 navigation:
     priority: 5
+abstract: "HydePHP's command line is built on Laravel Zero, so everything here will feel like Artisan. This page covers the console commands you'll reach for daily to scaffold files, compile your site, and manage assets."
 ---
 
 # Console Commands
@@ -47,7 +48,7 @@ Here is a quick reference of all the available commands. You can also run `php h
 |-----------------------------------------|---------------------------------------------------------------------------------------------|
 | [`build`](#build)                       | Build the static site                                                                       |
 | [`serve`](#serve)                       | Start the realtime compiler server                                                          |
-| [`rebuild`](#rebuild)                   | Run the static site builder for a single file                                               |
+| [`rebuild`](#rebuild)                   | Run the static site builder for a single file (Deprecated, will be removed in v3.0)         |
 | [`build:rss`](#build-rss)               | Generate the RSS feed                                                                       |
 | [`build:search`](#build-search)         | Generate the `docs/search.json` file                                                        |
 | [`build:sitemap`](#build-sitemap)       | Generate the `sitemap.xml` file                                                             |
@@ -82,6 +83,8 @@ Build the static site
 ## Run the static site builder for a single file
 
 <a name="rebuild" style="display: inline-block; position: absolute; margin-top: -5rem;"></a>
+
+>warning **Deprecated:** The `rebuild` command is deprecated and will be removed in HydePHP v3.0. It has no remaining internal consumers now that the realtime compiler renders pages in-memory, and building a single page can silently leave aggregate outputs (sitemap, RSS, search index, navigation) stale. If you need to build a single page programmatically, use `Hyde\Framework\Actions\StaticPageBuilder::handle()` instead.
 
 ```bash
 php hyde rebuild <path>

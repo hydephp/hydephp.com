@@ -1,7 +1,7 @@
 ---
 title: Creating a static HTML post using HydePHP
 description: In this tutorial, we go through the simple process of generating a static blog post
-category: tutorials
+category: tutorial
 author: Emma
 date: 2022-03-19 16:19
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Internal Architecture of HydePHP - Part 2: Services"
 description: Part two in the series on the internal architecture of HydePHP, this time we take a "Deep Dive" into Services.
-category: deepdives
+category: essay
 author: Emma
 date: 2022-05-12 19:54
 image:

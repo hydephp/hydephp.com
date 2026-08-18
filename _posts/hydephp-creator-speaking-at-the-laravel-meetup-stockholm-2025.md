@@ -1,7 +1,7 @@
 ---
 title: "HydePHP creator speaking at Laravel Meetup Stockholm"
 description: "On Wednesday, October 1, 2025, Emma De Silva, creator and maintainer of HydePHP, will be speaking at the Laravel Meetup Stockholm about how HydePHP can supercharge workflows with Laravel-powered static sites."
-category: news
+category: devlog
 author: Emma
 date: "2025-09-29 10:00"
 ---

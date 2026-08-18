@@ -1,4 +1,8 @@
-# Elegant and Powerful Static Site Generator
+---
+abstract: "HydePHP is a Static Site Generator focused on writing content, not markup, letting you build fast, lightweight static websites, blogs, and documentation with Markdown and Laravel Blade."
+---
+
+# Welcome to HydePHP
 
 <style>.images-inline img { display: inline; margin: 4px 2px;}</style>
 
@@ -10,7 +14,7 @@
 ![License MIT](https://img.shields.io/github/license/hydephp/hyde)
 {.images-inline .not-prose}
 
-## About HydePHP
+## The Elegant and Powerful Static Site Generator
 
 HydePHP is a Static Site Generator focused on writing content, not markup. With Hyde, it is easy to create static
 websites, blogs, and documentation pages using Markdown and (optionally) Laravel's Blade.

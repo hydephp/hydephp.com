@@ -2,6 +2,7 @@
 navigation:
     label: "Advanced Markdown"
     priority: 27
+abstract: "HydePHP extends standard Markdown with extra features and helpers, including the ability to use Laravel Blade directly inside your Markdown files."
 ---
 
 # Advanced Markdown
@@ -59,11 +60,16 @@ coloured blockquotes. Simply append the desired colour after the initial `>` cha
 ‎>success Success Blockquote
 ```
 
+<div class="docs-default-blockquotes">
+
 > Normal Blockquote
 >info Info Blockquote
 >warning Warning Blockquote
 >danger Danger Blockquote
 >success Success Blockquote
+
+</div>
+
 
 ### Customizations
 

@@ -1,7 +1,7 @@
 ---
 title: 'HydePHP Version v1.4 Released'
 description: "This new update brings Live Edit and a bunch of other DX enhancements"
-category: releases
+category: release
 author: Emma
 date: '2023-12-11 20:00'
 image: /media/live-edit-cover.png
