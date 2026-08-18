@@ -46,7 +46,7 @@
           HydePHP
         </a>
 
-        <p class="mt-5 max-w-[38ch] text-[.9rem] leading-[1.7] text-[#a49cba]">Websites, blogs, and documentation with the power of Laravel and the simplicity of Markdown. Write plain files, run one command, and ship a site that needs no server to stay alive.</p>
+        <p class="mt-5 max-w-[38ch] text-[.9rem] leading-[1.7] text-[#a49cba]">Create websites, blogs, and documentation with the power of Laravel and the simplicity of Markdown. Write plain files, run one command, and ship your next site.</p>
 
         <div class="mt-7 h-px max-w-[180px] bg-gradient-to-r from-[#d6a24a] to-transparent lg:hidden" aria-hidden="true"></div>
       </div>
