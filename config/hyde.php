@@ -266,7 +266,10 @@ return [
     */
 
     // Add any extra HTML to include in the <head> tag
-    'head' => '',
+    'head' => '
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->',
 
     // Add any extra HTML to include before the closing <body> tag
     'scripts' => '',
