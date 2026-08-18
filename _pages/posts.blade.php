@@ -129,6 +129,7 @@
     .pill:active, .pg:active:not(:disabled) { transform: none }
   }
 </style>
+{!! config('hyde.head') !!}
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] antialiased font-['Instrument_Sans'] text-[17px] leading-[1.65]">
 

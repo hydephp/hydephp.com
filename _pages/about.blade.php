@@ -17,6 +17,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   .reveal.in{opacity:1;transform:none}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 </style>
+{!! config('hyde.head') !!}
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] font-['Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.7] antialiased">
 

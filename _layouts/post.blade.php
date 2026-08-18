@@ -416,6 +416,7 @@
   .hyde-terminal-strikethrough { text-decoration-line: line-through }
   .hyde-terminal-underscore.hyde-terminal-strikethrough { text-decoration-line: underline line-through }
 </style>
+{!! config('hyde.head') !!}
 </head>
 <body class="bg-[#14111c] text-[17.5px] leading-[1.75] text-[#e9e5f2]">
 

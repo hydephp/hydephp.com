@@ -19,6 +19,7 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   .motion-frame{transform:none!important}
 }
 </style>
+{!! config('hyde.head') !!}
 </head>
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.65] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
 

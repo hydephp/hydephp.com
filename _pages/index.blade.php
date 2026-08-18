@@ -14,6 +14,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+{!! config('hyde.head') !!}
 </head>
 
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
