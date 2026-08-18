@@ -109,6 +109,7 @@ return [
         'docs/master/directory-structure' => '/docs/master/architecture-concepts#directory-structure',
         'docs/master/getting-started' => '/docs/master/quickstart',
         'docs/master/installation' => '/docs/master/quickstart',
+        'posts/ai-podast-episode' => 'posts/ai-podcast-episode',
     ],
 
     /*
