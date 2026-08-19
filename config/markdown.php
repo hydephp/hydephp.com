@@ -31,7 +31,6 @@ return [
     'extensions' => [
         \League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
         \League\CommonMark\Extension\Attributes\AttributesExtension::class,
-        \League\CommonMark\Extension\Footnote\FootnoteExtension::class,
     ],
 
     /*
@@ -70,13 +69,15 @@ return [
     | Blade-supported Markdown
     |--------------------------------------------------------------------------
     |
-    | This feature allows you to use basic Laravel Blade in Markdown files.
+    | This feature allows you to use Laravel Blade in Markdown files through
+    | both [Blade]: directives and executable fenced Blade blocks.
     |
-    | It's disabled by default since can be a security risk as it allows
-    | arbitrary PHP to run. But if your Markdown is trusted, try it out!
+    | Blade support is enabled by default because source files in Hyde projects are
+    | generally trusted and reviewed. Since Blade can execute arbitrary PHP,
+    | disable this when compiling untrusted or unreviewed Markdown.
     |
     | To see the syntax and usage, see the documentation:
-    | @see https://hydephp.com/docs/1.x/advanced-markdown#blade-support
+    | @see https://hydephp.com/docs/3.x/advanced-markdown#using-blade-in-markdown
     |
     */
 
@@ -99,22 +100,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Heading Permalinks
+    | Heading Permalinks Configuration
     |--------------------------------------------------------------------------
     |
-    | HydePHP can automatically add permalink anchors to headings in your
-    | documentation pages. This setting controls which page classes should
-    | have heading permalinks enabled.
+    | Here you can specify which page classes should have heading permalinks.
+    | By default, only documentation pages have permalinks enabled, but you
+    | are free to enable it for any kind of page by adding the page class.
     |
     */
 
     'permalinks' => [
-        'enabled' => true,
-        'min_level' => 2,
-        'max_level' => 6,
         'pages' => [
             \Hyde\Pages\DocumentationPage::class,
-            \App\Extend\Pages\v1DocumentationPage::class,
         ],
     ],
+
 ];

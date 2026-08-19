@@ -2,6 +2,7 @@
 navigation:
     label: "Customizing your Site"
     priority: 25
+abstract: "HydePHP favors convention over configuration with sensible defaults out of the box, but this page walks through the many options available for customizing your site."
 ---
 
 # Customizing Your Site
@@ -226,6 +227,15 @@ If you don't want to have a footer on your site, you can set the `'footer'` conf
 ```php
 // filepath: config/hyde.php
 'footer' => 'false',
+```
+
+#### Disabling the scroll-to-top button
+
+The footer includes a scroll-to-top button by default. If you want to keep the footer but hide this button, add the following to your configuration file:
+
+```php
+// filepath: config/hyde.php
+'footer_scroll_to_top_button' => false,
 ```
 
 ### Head and script HTML hooks

@@ -1,7 +1,7 @@
 ---
 title: Introducing images!
 description: The v0.10.0 release introduces featured images for blog posts.
-category: blog
+category: release
 author: Emma
 date: 2022-04-11 14:57
 ---

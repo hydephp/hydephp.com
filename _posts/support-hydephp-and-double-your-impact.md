@@ -1,6 +1,6 @@
 ---
 title: Support HydePHP and Double Your Impact!
-category: community
+category: devlog
 date: "2024-10-17 18:00"
 author: HydePHP Team
 description: Join Simon Hamp's matching donation campaign to support HydePHP and other open-source projects.

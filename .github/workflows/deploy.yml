@@ -1,0 +1,53 @@
+name: Build and deploy the site
+
+on:
+  push:
+    branches: [main]
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency: production
+
+jobs:
+  build:
+    environment:
+      name: production
+      url: https://hydephp.com
+
+    runs-on: ubuntu-24.04
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+          cache: npm
+
+      - name: Build and deploy HydePHP site
+        uses: hydephp/action@v2.1.0
+        with:
+          deploy-to: pages
+
+          env: |
+            SITE_URL=https://hydephp.com/
+            TORCHLIGHT_TOKEN=${{ secrets.TORCHLIGHT_TOKEN }}
+
+          config: |
+            pretty_urls: true
+
+          pre-build: |
+            npm install
+            npm run build
+            php hyde sync
+
+          post-build: |
+            touch _site/.nojekyll
+            echo "hydephp.com" > _site/CNAME
+            cp _site/media/favicon.ico _site/favicon.ico
+            php .github/scripts/copy-documentation-markdown.php

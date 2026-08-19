@@ -1,7 +1,7 @@
 ---
 title: "The Tale of Zoe: From Doodler to Best-Seller with HydePHP"
 description: "Once upon a time, in a land filled with pixels and code, there lived a young artist named Zoe. Zoe was a doodler—her sketchbooks brimmed with whimsical characters, enchanting landscapes, and magical creatures. Follow Zoe’s journey from doodler to best-selling artist with the help of HydePHP."
-category: "Guest Posts"
+category: tutorial
 author:
     name: "Luca Visciola"
     website: "https://hydephp.melasistema.com"

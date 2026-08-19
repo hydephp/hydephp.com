@@ -1,7 +1,7 @@
 ---
 title: 'Announcing the First Release Candidate of HydePHP'
 description: "We're excited to announce the first release candidate of HydePHP, a Laravel-based static site generator!"
-category: announcements
+category: release
 author: Emma
 date: '2023-03-07 22:33'
 image: _media/1500x500.png
@@ -37,5 +37,4 @@ You can also visit our website at [HydePHP.com](https://hydephp.com/) for more i
 
 
 _Disclaimer: We would like to clarify that HydePHP is an independent open-source project and is not affiliated with or endorsed by Laravel or its creators._
-
 

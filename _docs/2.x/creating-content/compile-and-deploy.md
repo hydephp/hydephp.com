@@ -2,6 +2,7 @@
 navigation:
     priority: 25
     label: "Compile & Deploy"
+abstract: "Once your HydePHP content is ready, this page covers running the build command to compile your site into static HTML and deploying it wherever you like."
 ---
 
 # Compile and Deploy Your Site
@@ -16,7 +17,7 @@ Now that you have some amazing content, you'll want to compile your site into st
 php hyde build
 ```
 
-**You can also compile a single file:**
+**You can also compile a single file, though this is deprecated and will be removed in v3.0 (use `Hyde\Framework\Actions\StaticPageBuilder::handle()` instead if you need this programmatically):**
 
 ```bash
 php hyde rebuild <filepath>
@@ -35,7 +36,7 @@ php hyde serve
 #### Learn more about these commands in the [console commands](console-commands) documentation:
 
 - [Build command](console-commands#build-the-static-site)
-- [Rebuild command](console-commands#build-a-single-file)
+- [Rebuild command (Deprecated)](console-commands#rebuild)
 - [Serve command](console-commands#start-the-realtime-compiler)
 
 ---

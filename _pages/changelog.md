@@ -9,27 +9,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### About
 
-Keep an Unreleased section at the top to track upcoming changes.
+We keep an Unreleased section at the top to track upcoming changes.
 
 This serves two purposes:
 
-1. People can see what changes they might expect in upcoming releases
-2. At release time, you can move the Unreleased section changes into a new release version section.
+1. People can see what changes they might expect in upcoming releases.
+2. At release time, we can move the Unreleased section changes into a new release version section.
 
 ### Added
-- for new features.
+- Added a configuration option to disable the footer scroll-to-top button independently of the footer in https://github.com/hydephp/develop/pull/2459
+- Added Blade Blocks for rendering Blade and Blade components from fenced code blocks in Markdown pages. They are controlled by the existing `markdown.enable_blade` option. ([#2504](https://github.com/hydephp/develop/pull/2504))
+- Added built-in `terminal` fenced code blocks with command prompt styling and an optional window title using the `title="…"` modifier. They support terminal formatting tags, including the named `<info>`, `<comment>`, `<question>`, and `<error>` styles, as well as colors and text formatting using the `fg`, `bg`, and `options` attributes. ([#2188](https://github.com/hydephp/develop/issues/2188), [#2485](https://github.com/hydephp/develop/issues/2485))
+- Added support for lazy `InMemoryPage` contents closures. The current page is passed as the first argument whenever the contents are requested.
 
 ### Changed
-- for changes in existing functionality.
+- Blade in Markdown is now enabled by default. The `markdown.enable_blade` option controls both `[Blade]:` directives and executable Blade Blocks; set it to `false` when compiling untrusted or unreviewed Markdown.
+- Raw HTML in Markdown is now enabled by default. Set `markdown.allow_html` to `false` when compiling untrusted or unreviewed Markdown to strip potentially unsafe HTML tags.
+- `InMemoryPage` now requires callers to select either `contents` or `view`; configuring both throws an `InvalidArgumentException` instead of silently giving contents precedence.
+- `InMemoryPage` now treats an empty string as an omitted `view`, matching the existing compile-time behavior and allowing literal contents to be used with an empty view value.
+- Pages with non-HTML output paths are now excluded from automatic navigation by default. Explicit navigation front matter now takes precedence over automatic navigation exclusions.
+- Fenced code blocks are now rendered through the publishable `components/markdown/code-block.blade.php` view, which changes the generated markup around the code. Syntax highlighting is unaffected, and the `hyde-code-block` and `hyde-code-block-label` classes are stable hooks for your own CSS.
+- Code block labels are now set with a `title="…"` modifier on the fence, replacing the `// filepath:` comment syntax, which is no longer recognized and must be replaced.
 
 ### Deprecated
-- for soon-to-be removed features.
+- for changes that will be removed in upcoming releases.
 
 ### Removed
-- for now removed features.
+- Removed the `rebuild` command. It had no remaining internal consumers now that the realtime compiler renders pages in-memory, and single-page builds can silently leave aggregate outputs (sitemap, RSS, search index, navigation) stale. Use `Hyde\Framework\Actions\StaticPageBuilder::handle()` instead if you need to build a single page programmatically.
+- Removed the `InMemoryPage` instance macro API. Use a contents closure for dynamic output, or extend `InMemoryPage` to add custom methods and behavior.
+- Removed the `components/filepath-label.blade.php` view, as the label markup now lives in the code block view. If this was published, port any customizations into `components/markdown/code-block.blade.php`.
 
 ### Fixed
 - Improved documentation page detection in MarkdownService so it works for child classes in https://github.com/hydephp/develop/pull/2332
+- Fixed bug causing build manifest to not generate when a site has dynamic pages in https://github.com/hydephp/develop/pull/2450
+- Fixed bug causing errors in the build manifest task not showing in console in https://github.com/hydephp/develop/pull/2451
+- Fixed realtime compiler loading assets from production URL when configured in https://github.com/hydephp/develop/pull/2418
+- Updated the scroll to top button to smooth scroll to the top of the page in https://github.com/hydephp/develop/pull/2458
+- Fix build command trying to use Vite in site builds if server is running in https://github.com/hydephp/develop/issues/2483
+- Fixed missing content type headers for JSON and XML in the realtime compiler in https://github.com/hydephp/develop/pull/2496
+- Fixed dashboard links not resolving properly when there is a trailing slash in the URL in https://github.com/hydephp/develop/pull/2499
 
 ### Security
 - in case of vulnerabilities.
@@ -1600,7 +1618,7 @@ Note that the goal with this release is to make the framework more stable and de
 ### Upgrade Guide
 
 Here are some instructions for upgrading an existing project.
-You should also read the standard upgrade guide first for general advice, https://hydephp.com/docs/1.x/updating-hyde.
+You should also read the standard upgrade guide first for general advice, https://hydephp.com/docs/2.x/updating-hyde.
 
 If you use Git, you may be able to automatically configure some of these by merging https://github.com/hydephp/hyde into your project. Alternatively, you can download the release and unzip it into your project directory, and using GitHub Desktop or VS Code (or whatever you use) to stage the new changes without affecting your project's configuration.
 
@@ -1847,7 +1865,7 @@ However, if you are a package developer, or if you have published Blade views or
 
 - Added configuration option `hyde.media_extensions` to allow you to specify additional comma separated media file types. https://github.com/hydephp/develop/issues/39
 - Adds a safer config option `hyde.output_directory` for customizing the output directory
-- Adds a file-based way to create and interact with collections, https://hydephp.com/docs/1.x/collections
+- Adds a file-based way to create and interact with collections, https://hydephp.com/docs/2.x/collections
 
 ### Removed
 

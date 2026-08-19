@@ -1,7 +1,7 @@
 ---
 title: What is Markdown?
 description: A short introduction to the Markdown text format.
-category: general
+category: essay
 author: Emma
 date: 2022-08-06 15:11
 ---

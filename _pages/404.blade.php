@@ -1,55 +1,196 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>404 - Page not found</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 · Lost in Ink · HydePHP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+{!! config('hyde.head') !!}
+<style>
+:root{
+  --ink:#14111c;
+  --ink-2:#1c1827;
+  --ink-3:#252031;
+  --paper:#ece7da;
+  --paper-2:#e3ddcd;
+  --paper-ink:#2b2433;
+  --violet:#8d7bf5;
+  --violet-dim:#5e50b8;
+  --gold:#d6a24a;
+  --fog:#a49cba;
+  --line:rgba(164,156,186,.16);
+  --line-paper:rgba(43,36,51,.14);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--ink);
+  color:#e9e5f2;
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+::selection{background:var(--violet);color:var(--ink)}
+a{color:inherit}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{max-width:1160px;margin:0 auto;padding:0 28px;width:100%}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+/* ---------- Stage ---------- */
+.stage{flex:1;display:flex;align-items:center;padding:60px 0}
+.grid{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;width:100%;
+}
 
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+/* Left: the message */
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold);
+}
+.big{
+  font-family:'Playfair Display',serif;font-weight:400;opacity:.9;
+  font-size:clamp(5rem,15vw,11rem);line-height:.86;letter-spacing:-.02em;margin-top:10px;
+  display:flex;align-items:baseline;gap:.06em;
+}
+.big .four{color:#e9e5f2}
+.big .zero{
+  color:var(--violet);font-style:italic;
+}
+.left h1{
+  font-family:'Playfair Display',serif;font-weight:440;font-size:clamp(1.5rem,3vw,2.1rem);
+  line-height:1.14;margin-top:22px;letter-spacing:-.01em;max-width:18ch;opacity:.9;
+}
+.blurb{color:var(--fog);margin-top:16px;max-width:44ch}
+.actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}
+.btn-primary{
+  text-decoration:none;background:var(--gold);color:var(--ink);
+  padding:11px 22px;border-radius:99px;font-weight:600;font-size:.95rem;
+  transition:background .15s;
+}
+.btn-primary:hover{background:#e5b25e}
+.btn-ghost{
+  text-decoration:none;color:var(--fog);font-size:.95rem;
+  border-bottom:1px solid var(--line);padding-bottom:2px;
+  transition:color .15s,border-color .15s;
+}
+.btn-ghost:hover{color:#fff;border-color:var(--fog)}
 
-    <!-- Styles -->
-    <style>html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent;-webkit-text-decoration-skip:objects}svg:not(:root){overflow:hidden}button{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button{overflow:visible}button{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}[type=checkbox],[type=radio]{-webkit-box-sizing:border-box;box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}[hidden]{display:none}html{-webkit-box-sizing:border-box;box-sizing:border-box;font-family:sans-serif}*,::after,::before{-webkit-box-sizing:inherit;box-sizing:inherit}p{margin:0}button{background:0 0;padding:0}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}*,::after,::before{border-width:0;border-style:solid;border-color:#dae1e7}[type=button],[type=reset],[type=submit],button{border-radius:0}button{font-family:inherit}[role=button],button{cursor:pointer}.bg-transparent{background-color:transparent}.bg-white{background-color:#fff}.bg-purple-light{background-color:#a779e9}.bg-no-repeat{background-repeat:no-repeat}.bg-cover{background-size:cover}.border-grey-light{border-color:#dae1e7}.hover\:border-grey:hover{border-color:#b8c2cc}.rounded-lg{border-radius:.5rem}.border-2{border-width:2px}.flex{display:-webkit-box;display:-ms-flexbox;display:flex}.items-center{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.justify-center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.font-sans{font-family:Nunito,sans-serif}.font-light{font-weight:300}.font-bold{font-weight:700}.font-black{font-weight:900}.h-1{height:.25rem}.leading-normal{line-height:1.5}.m-8{margin:2rem}.my-3{margin-top:.75rem;margin-bottom:.75rem}.mb-8{margin-bottom:2rem}.max-w-sm{max-width:30rem}.min-h-screen{min-height:100vh}.py-3{padding-top:.75rem;padding-bottom:.75rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pb-full{padding-bottom:100%}.absolute{position:absolute}.relative{position:relative}.pin{top:0;right:0;bottom:0;left:0}.text-black{color:#22292f}.text-grey-darkest{color:#3d4852}.text-grey-darker{color:#606f7b}.text-2xl{font-size:1.5rem}.text-5xl{font-size:3rem}.uppercase{text-transform:uppercase}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.tracking-wide{letter-spacing:.05em}.w-16{width:4rem}.w-full{width:100%}@media (min-width:768px){.md\:bg-left{background-position:left}.md\:bg-right{background-position:right}.md\:flex{display:-webkit-box;display:-ms-flexbox;display:flex}.md\:my-6{margin-top:1.5rem;margin-bottom:1.5rem}.md\:min-h-screen{min-height:100vh}.md\:pb-0{padding-bottom:0}.md\:text-3xl{font-size:1.875rem}.md\:text-15xl{font-size:9rem}.md\:w-1\/2{width:50%}}@media (min-width:992px){.lg\:bg-center{background-position:center}}</style>
-        
-    <!-- Sponsored by Fathom - beautiful, simple website analytics -->
-    <script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
-    <!-- / Fathom -->
+.suggest{
+  margin-top:40px;padding-top:24px;border-top:1px solid var(--line);
+}
+.suggest .label{
+  font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--fog);
+}
+.suggest .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.suggest .links a{
+  text-decoration:none;font-size:.88rem;color:#d6d0e4;
+  border:1px solid var(--line);border-radius:99px;padding:6px 15px;
+  transition:border-color .15s,color .15s;
+}
+.suggest .links a:hover{border-color:var(--violet-dim);color:#fff}
+
+/* Right: the manuscript that didn't compile */
+.card{
+  background:var(--paper);color:var(--paper-ink);
+  border-radius:12px;border:1px solid var(--line-paper);
+  overflow:hidden;
+  box-shadow:0 40px 90px -40px rgba(0,0,0,.75);
+  transform:rotate(1deg);
+}
+.card .chrome{
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid var(--line-paper);
+  padding:11px 18px;font-family:'JetBrains Mono',monospace;font-size:.74rem;color:#6d6478;
+}
+.card .tab{
+  background:var(--paper-2);border:1px solid var(--line-paper);border-bottom:none;
+  border-radius:6px 6px 0 0;padding:4px 12px;color:#9b3d2f;
+  transform:translateY(1px);display:flex;align-items:center;gap:7px;
+}
+.card .tab::before{content:'';width:7px;height:7px;border-radius:50%;background:#c0492f;display:block}
+.card .status{margin-left:auto;color:#9b3d2f}
+.card pre{
+  padding:24px 22px;font-family:'JetBrains Mono',monospace;font-size:.82rem;line-height:1.9;
+  counter-reset:ln;
+}
+.card .row{display:flex;white-space:pre-wrap}
+.card .row::before{
+  counter-increment:ln;content:counter(ln);
+  width:34px;flex:none;text-align:right;padding-right:18px;color:#a99f92;font-size:.72rem;
+}
+.card .fm{color:#8a7f70}
+.card .key{color:#7a5cc4}
+.card .str{color:#8a6d3b}
+.card .miss{
+  background:rgba(192,73,47,.14);color:#9b3d2f;
+  border-radius:3px;padding:0 4px;text-decoration:line-through;
+  text-decoration-color:rgba(155,61,47,.6);
+}
+.card .err{
+  border-top:1px solid var(--line-paper);
+  padding:14px 22px;font-family:'JetBrains Mono',monospace;font-size:.74rem;
+  color:#9b3d2f;background:rgba(192,73,47,.06);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.card .err b{font-weight:700}
+
+@media (max-width:860px){
+  .grid{grid-template-columns:1fr;gap:40px}
+  .card{transform:none;order:2}
+  .left{order:1}
+}
+</style>
 </head>
+<body>
 
-<!-- Error page and illustration by LaravelCollective: https://github.com/LaravelCollective/errors (License MIT) --->
+@php
+  $routes = \Hyde\Foundation\Facades\Routes::getFacadeRoot();
+@endphp
 
-<body class="antialiased font-sans">
-<div class="md:flex min-h-screen">
-    <div class="w-full md:w-1/2 bg-white flex items-center justify-center">
-        <div class="max-w-sm m-8">
-            <div class="text-black text-5xl md:text-15xl font-black">
-                404
-            </div>
+<x-navigation />
 
-            <div class="w-16 h-1 bg-purple-light my-3 md:my-6"></div>
+<main class="stage">
+  <div class="wrap grid">
 
-            <p class="text-grey-darker text-2xl md:text-3xl font-light mb-8 leading-normal">
-                Sorry, the page you are looking for could not be found.
-            </p>
-
-            <a href="{{ config('hyde.url') ?? '/' }}">
-                <button
-                    class="bg-transparent text-grey-darkest font-bold uppercase tracking-wide py-3 px-6 border-2 border-grey-light hover:border-grey rounded-lg">
-                    Go Home
-                </button>
-            </a>
+    <div class="left">
+      <p class="eyebrow">Error 404 · Page not found</p>
+      <div class="big"><span class="four">4</span><span class="zero">0</span><span class="four">4</span></div>
+      <h1>This page has a first nature, but never got a second.</h1>
+      <p class="blurb">Every page here starts as a file and gets compiled into a site. This one has no source, so there was nothing to render. Somewhere, a Markdown file is missing.</p>
+      <div class="actions">
+        <a class="btn-primary" href="{{ $routes->get('index') ?? '/' }}">Back to the homepage</a>
+        <a class="btn-ghost" href="{{ $routes->get('docs/2.x/search') ?? '/docs/2.x/search' }}">Search the docs instead</a>
+      </div>
+      <div class="suggest">
+        <span class="label">Try one of these instead</span>
+        <div class="links">
+          <a href="{{ $routes->get('docs/2.x/getting-started') ?? '/docs/2.x/getting-started' }}">Getting Started</a>
+          <a href="{{ $routes->get('docs/2.x/installation') ?? '/docs/2.x/installation' }}">Installation</a>
+          <a href="{{ $routes->get('demos') ?? '/demos' }}">Demos</a>
+          <a href="{{ $routes->get('posts') ?? '/posts' }}">Blog</a>
         </div>
-
+      </div>
     </div>
 
-    <div class="relative pb-full md:flex md:pb-0 md:min-h-screen w-full md:w-1/2">
-        <div style="background-image: url('https://cdn.jsdelivr.net/gh/LaravelCollective/errors@1.0/src/publish/svg/404.svg');"
-             class="absolute pin bg-cover bg-no-repeat md:bg-left lg:bg-center">
-        </div>
+    <div class="card" aria-hidden="true">
+      <div class="chrome">
+        <span class="tab">404.md</span>
+        <span class="status">unresolved</span>
+      </div>
+      <pre><div class="row"><span class="fm">---</span></div><div class="row"><span class="key">title</span><span class="fm">: </span><span class="miss">"Page not found"</span></div><div class="row"><span class="key">navigation</span><span class="fm">:</span></div><div class="row"><span class="fm">  </span><span class="key">hidden</span><span class="fm">: </span><span class="str">true</span></div><div class="row"><span class="fm">---</span></div><div class="row"> </div><div class="row"><span class="fm"># </span><span class="miss">Missing page</span></div></pre>
+      <div class="err">
+        <b>✦</b>
+        <span>$ hyde build · Could not resolve a source file.</span>
+      </div>
     </div>
-</div>
+
+  </div>
+</main>
+
+<x-footer />
+
 </body>
 </html>

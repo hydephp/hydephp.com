@@ -1,7 +1,7 @@
 ---
 title: "Internal Architecture of HydePHP - Part 1: Introduction"
 description: This first part in a series of the architecture of HydePHP will give an overview of design patterns and concepts in the Hyde Framework Core.
-category: deepdives
+category: essay
 author: Emma
 date: 2022-05-11 20:35
 image:
