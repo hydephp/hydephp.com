@@ -223,6 +223,7 @@
     #page-body table { display: block; overflow-x: auto }
   }
 </style>
+{!! config('hyde.head') !!}
 </head>
 {{-- Short documents like the security policy don't fill the viewport, so the column keeps the
      footer on the bottom edge rather than leaving it stranded mid-screen. --}}

@@ -109,6 +109,7 @@ return [
         'docs/master/directory-structure' => '/docs/master/architecture-concepts#directory-structure',
         'docs/master/getting-started' => '/docs/master/quickstart',
         'docs/master/installation' => '/docs/master/quickstart',
+        'posts/ai-podast-episode' => 'posts/ai-podcast-episode',
     ],
 
     /*
@@ -265,7 +266,10 @@ return [
     */
 
     // Add any extra HTML to include in the <head> tag
-    'head' => '',
+    'head' => '
+<!-- Sponsored by Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
+<!-- / Fathom -->',
 
     // Add any extra HTML to include before the closing <body> tag
     'scripts' => '',
