@@ -49,7 +49,7 @@ jobs:
           pre-build: |
             npm install
             npm run build
-            php hyde sync
+            # php hyde sync
 
           post-build: |
             touch _site/.nojekyll
