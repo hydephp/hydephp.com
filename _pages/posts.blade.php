@@ -28,7 +28,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog · HydePHP</title>
+<title>Blog - HydePHP</title>
 <meta name="description" content="Release notes, devlogs, tutorials, and essays from the HydePHP project.">
 <link rel="alternate" type="application/rss+xml" title="{{ config('hyde.name', 'HydePHP') }} RSS Feed" href="{{ $feed }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">

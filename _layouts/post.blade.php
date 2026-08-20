@@ -61,7 +61,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{{ $page->title }} · HydePHP Blog</title>
+<title>{{ $page->title }} - HydePHP Blog</title>
 @include('hyde::layouts.meta')
 <link rel="alternate" type="application/rss+xml" title="{{ config('hyde.name', 'HydePHP') }} RSS Feed" href="{{ $feed }}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
