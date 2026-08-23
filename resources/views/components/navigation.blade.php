@@ -10,6 +10,7 @@
 
     $home       = \Hyde\Foundation\Facades\Routes::get('index');
     $getStarted = \Hyde\Foundation\Facades\Routes::get('docs/index');
+    $github     = 'https://github.com/hydephp/hyde';
 @endphp
 
 <nav
@@ -44,6 +45,21 @@
                     >{{ $item->getLabel() }}</a>
                 </li>
             @endforeach
+
+            <li>
+                <a
+                    href="{{ $github }}"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="View HydePHP on GitHub"
+                    title="GitHub"
+                    class="flex h-9 w-9 items-center justify-center rounded-full border border-[rgba(164,156,186,.24)] bg-white/[.025] text-[#a49cba] transition-[color,border-color,background-color] hover:border-[rgba(164,156,186,.45)] hover:bg-white/[.05] hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 focus-visible:ring-offset-4 focus-visible:ring-offset-[#14111c]"
+                >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                    </svg>
+                </a>
+            </li>
 
             <li>
                 <a
@@ -102,6 +118,21 @@
                     >{{ $item->getLabel() }}</a>
                 </li>
             @endforeach
+
+            <li>
+                <a
+                    href="{{ $github }}"
+                    target="_blank"
+                    rel="noopener"
+                    @click="navigationOpen = false"
+                    class="flex items-center gap-3 rounded-lg px-3 py-2 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70"
+                >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+                        <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.26 5.69.41.36.78 1.07.78 2.16v3.2c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5Z" />
+                    </svg>
+                    GitHub
+                </a>
+            </li>
 
             <li class="mt-2">
                 <a
