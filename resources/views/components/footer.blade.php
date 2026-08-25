@@ -6,7 +6,7 @@
     // otherwise renders an empty href.
     $columns = [
         'Resources' => [
-            ['Documentation', Routes::get('docs/index') ?? '/docs'],
+            ['Documentation', Routes::get('docs/2.x/index') ?? '/docs/2.x/'],
             ['Community Portal', Routes::get('community') ?? '/community'],
             ['Legal Information', Routes::get('legal') ?? '/legal'],
         ],

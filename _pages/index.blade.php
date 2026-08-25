@@ -1,5 +1,5 @@
 @php
-$docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/index');
+$docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/2.x/index');
 $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 $statistics = \App\Support\HomepageStatistics::cards();
 @endphp

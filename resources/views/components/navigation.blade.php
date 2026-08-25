@@ -9,7 +9,7 @@
     );
 
     $home       = \Hyde\Foundation\Facades\Routes::get('index');
-    $getStarted = \Hyde\Foundation\Facades\Routes::get('docs/index');
+    $getStarted = \Hyde\Foundation\Facades\Routes::get('docs/2.x/index');
     $github     = 'https://github.com/hydephp/hyde';
 @endphp
 
