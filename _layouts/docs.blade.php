@@ -80,6 +80,7 @@
 
     // The documentation sources live in the develop monorepo, where each version has its own branch.
     $docsVersion = $page->getDocumentationVersion()?->name;
+    $isNonCurrentDocumentation = in_array($docsVersion, ['1.x', 'master'], true);
     $docsSourceFile = $docsVersion !== null
         ? \Illuminate\Support\Str::after($page->identifier, "$docsVersion/")
         : $page->identifier;
@@ -118,6 +119,10 @@
 <html lang="{{ config('hyde.language', 'en') }}" class="scroll-smooth">
 <head>
     @include('hyde::layouts.head')
+
+    @if($isNonCurrentDocumentation)
+        <meta name="robots" content="noindex,follow">
+    @endif
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
