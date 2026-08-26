@@ -9,7 +9,7 @@
  *
  *   Source: _docs/2.x/getting-started/core-concepts.md
  *   URL:    https://hydephp.com/docs/2.x/core-concepts        (HTML page)
- *   Output: docs/docs/2.x/core-concepts.md   ->  .../core-concepts.md
+ *   Output: _site/docs/2.x/core-concepts.md   ->  .../core-concepts.md
  *
  * Files inside a `redirects` directory are not copied verbatim. Instead we
  * emit a short pointer telling the reader where the page actually lives, so an
@@ -19,7 +19,7 @@
 const SITE_URL = 'https://hydephp.com';
 
 $sourceRoot = realpath(__DIR__ . '/../../_docs');
-$outputRoot = __DIR__ . '/../../docs/docs';
+$outputRoot = __DIR__ . '/../../_site/docs';
 
 if ($sourceRoot === false) {
     fwrite(STDERR, "Could not find the _docs directory.\n");

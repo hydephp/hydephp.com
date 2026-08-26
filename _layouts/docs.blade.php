@@ -81,6 +81,7 @@
     // The documentation sources live in the develop monorepo, where each version has its own branch.
     $docsVersion = $page->getDocumentationVersion()?->name;
     $isNonCurrentDocumentation = in_array($docsVersion, ['1.x', 'master'], true);
+    $markdownAlternateUrl = Hyde::url($page->getRouteKey().'.md');
     $docsSourceFile = $docsVersion !== null
         ? \Illuminate\Support\Str::after($page->identifier, "$docsVersion/")
         : $page->identifier;
@@ -123,6 +124,8 @@
     @if($isNonCurrentDocumentation)
         <meta name="robots" content="noindex,follow">
     @endif
+
+    <link rel="alternate" type="text/markdown" href="{{ $markdownAlternateUrl }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
