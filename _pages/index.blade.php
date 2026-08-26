@@ -2,6 +2,30 @@
 $docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/2.x/index');
 $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 $statistics = \App\Support\HomepageStatistics::cards();
+$canonicalUrl = Hyde::url('/');
+$ogImage = Hyde::url('media/og-image-index.png');
+$softwareVersion = \Hyde\Hyde::version();
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'SoftwareSourceCode',
+    'name' => 'HydePHP',
+    'description' => $description ?? 'HydePHP is a Laravel-powered static site generator for building fast websites, blogs, and documentation using Markdown and Blade.',
+    'url' => $canonicalUrl,
+    'codeRepository' => 'https://github.com/hydephp/hyde',
+    'programmingLanguage' => 'PHP',
+    'license' => 'https://opensource.org/license/mit',
+    'softwareVersion' => $softwareVersion,
+    'runtimePlatform' => 'PHP 8.2+',
+    'author' => [
+        '@type' => 'Organization',
+        'name' => 'HydePHP',
+        'url' => 'https://hydephp.com',
+        'sameAs' => [
+            'https://github.com/hydephp/hyde',
+            'https://packagist.org/packages/hyde/hyde',
+        ],
+    ],
+];
 @endphp
 @php($title = 'Laravel-Powered PHP Static Site Generator')
 @php($description = 'HydePHP is a Laravel-powered static site generator for building fast websites, blogs, and documentation using Markdown and Blade.')
@@ -10,6 +34,14 @@ $statistics = \App\Support\HomepageStatistics::cards();
 
 <head>
   @include('hyde::layouts.head')
+  <meta property="og:url" content="{{ $canonicalUrl }}">
+  <meta property="og:image" content="{{ $ogImage }}">
+  <meta property="og:image:alt" content="HydePHP - The static site generator for PHP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ $ogImage }}">
+  <script type="application/ld+json">
+    {!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+  </script>
 </head>
 
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
