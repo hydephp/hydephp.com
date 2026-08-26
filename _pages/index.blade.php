@@ -3,19 +3,13 @@ $docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/2.x/index');
 $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 $statistics = \App\Support\HomepageStatistics::cards();
 @endphp
+@php($title = 'Laravel-Powered PHP Static Site Generator')
+@php($description = 'HydePHP is a Laravel-powered static site generator for building fast websites, blogs, and documentation using Markdown and Blade.')
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HydePHP - The static site generator for PHP.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
-{!! config('hyde.head') !!}
+  @include('hyde::layouts.head')
 </head>
 
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
@@ -404,6 +398,9 @@ $statistics = \App\Support\HomepageStatistics::cards();
       });
     })();
   </script>
+  @if (Asset::exists('app.js'))
+    <script type="module" defer src="{{ Asset::get('app.js') }}"></script>
+  @endif
 </body>
 
 </html>

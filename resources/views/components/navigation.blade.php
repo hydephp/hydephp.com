@@ -14,8 +14,7 @@
 @endphp
 
 <nav
-    x-data="{ navigationOpen: false }"
-    @keydown.escape.window="if (navigationOpen) { navigationOpen = false; $refs.toggle?.focus() }"
+    data-navigation
     aria-label="Main navigation"
     class="sticky top-0 z-50 border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/85 backdrop-blur-xl"
 >
@@ -72,17 +71,16 @@
         {{-- Mobile toggle --}}
         <button
             type="button"
-            x-ref="toggle"
-            @click.stop="navigationOpen = ! navigationOpen"
-            :aria-expanded="navigationOpen ? 'true' : 'false'"
+            data-navigation-toggle
+            aria-expanded="false"
             aria-controls="main-navigation-mobile"
             aria-label="Toggle navigation menu"
             class="ml-auto flex items-center justify-center rounded-lg p-2 text-[#a49cba] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70 md:hidden"
         >
-            <svg x-show="! navigationOpen" style="display:block" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <svg data-navigation-open-icon width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                 <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
-            <svg x-show="navigationOpen" style="display:none" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+            <svg data-navigation-close-icon class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
                 <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
             </svg>
         </button>
@@ -91,15 +89,8 @@
     {{-- Mobile menu --}}
     <div
         id="main-navigation-mobile"
-        x-show="navigationOpen"
-        @click.outside="navigationOpen = false"
-        x-transition:enter="transition ease-out duration-150 motion-reduce:transition-none"
-        x-transition:enter-start="opacity-0 -translate-y-2"
-        x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-in duration-100 motion-reduce:transition-none"
-        x-transition:leave-start="opacity-100 translate-y-0"
-        x-transition:leave-end="opacity-0 -translate-y-2"
-        style="display:none"
+        data-navigation-menu
+        hidden
         class="border-b border-[rgba(164,156,186,.16)] bg-[#14111c]/95 backdrop-blur-xl md:hidden"
     >
         <ul class="mx-auto flex max-w-[1160px] flex-col gap-1 px-7 py-4">
@@ -107,7 +98,7 @@
                 <li>
                     <a
                         href="{{ $item }}"
-                        @click="navigationOpen = false"
+                        data-navigation-link
                         @foreach ($item->getExtraAttributes() as $attr => $value) {{ $attr }}="{{ $value }}" @endforeach
                         @if ($item->isActive()) aria-current="page" @endif
                         @class([
@@ -124,7 +115,7 @@
                     href="{{ $github }}"
                     target="_blank"
                     rel="noopener"
-                    @click="navigationOpen = false"
+                    data-navigation-link
                     class="flex items-center gap-3 rounded-lg px-3 py-2 text-[.95rem] text-[#a49cba] no-underline transition-colors hover:bg-white/5 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8d7bf5]/70"
                 >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
@@ -137,7 +128,7 @@
             <li class="mt-2">
                 <a
                     href="{{ $getStarted ?? '#' }}"
-                    @click="navigationOpen = false"
+                    data-navigation-link
                     class="block rounded-full border border-[#aa8038]/70 bg-[#aa8038]/[.025] px-4 py-2 text-center text-[.95rem] font-semibold text-[#bd9145] no-underline shadow-[0_0_10px_rgba(170,128,56,.08)] transition-[color,border-color,background-color,box-shadow] hover:border-[#bd9145]/85 hover:bg-[#aa8038]/[.05] hover:text-[#c9a05a] hover:shadow-[0_0_12px_rgba(170,128,56,.12)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#aa8038]/60"
                 >Get started</a>
             </li>
