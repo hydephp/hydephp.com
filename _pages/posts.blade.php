@@ -31,10 +31,7 @@
 <title>Blog - HydePHP</title>
 <meta name="description" content="Release notes, devlogs, tutorials, and essays from the HydePHP project.">
 <link rel="alternate" type="application/rss+xml" title="{{ config('hyde.name', 'HydePHP') }} RSS Feed" href="{{ $feed }}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
+@include('hyde::layouts.styles')
 <script>
   // Marks the document as script-capable before the first paint. That is what lets this page ship
   // the entire archive as HTML while still opening on page one, without the rest of the ledger
