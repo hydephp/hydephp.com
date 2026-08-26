@@ -2,6 +2,10 @@
 
 > HydePHP is a Laravel-powered static site generator for PHP. Build websites, blogs, and documentation using Markdown and Blade.
 
+## Agent guidance
+
+- Agent instructions: https://hydephp.com/agents.md
+
 ## Current documentation
 
 - Documentation: https://hydephp.com/docs/2.x/

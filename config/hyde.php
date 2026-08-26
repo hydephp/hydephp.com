@@ -267,6 +267,7 @@ return [
 
     // Add any extra HTML to include in the <head> tag
     'head' => '
+<link rel="describedby" href="/llms.txt">
 <!-- Sponsored by Fathom - beautiful, simple website analytics -->
 <script src="https://cdn.usefathom.com/script.js" data-site="TBQMAYHY" defer></script>
 <!-- / Fathom -->',
