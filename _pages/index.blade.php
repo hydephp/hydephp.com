@@ -2,20 +2,49 @@
 $docsIndex = \Hyde\Foundation\Facades\Routes::get('docs/2.x/index');
 $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.default_version') . '/quickstart');
 $statistics = \App\Support\HomepageStatistics::cards();
+$canonicalUrl = Hyde::url('/');
+$ogImage = Hyde::url('media/og-image-index.png');
+$softwareVersion = \Hyde\Hyde::version();
+$structuredData = [
+    '@context' => 'https://schema.org',
+    '@type' => 'SoftwareSourceCode',
+    'name' => 'HydePHP',
+    'description' => $description ?? 'HydePHP is a Laravel-powered static site generator for building fast websites, blogs, and documentation using Markdown and Blade.',
+    'url' => $canonicalUrl,
+    'codeRepository' => 'https://github.com/hydephp/hyde',
+    'programmingLanguage' => 'PHP',
+    'license' => 'https://opensource.org/license/mit',
+    'softwareVersion' => $softwareVersion,
+    'runtimePlatform' => 'PHP 8.2+',
+    'author' => [
+        '@type' => 'Organization',
+        'name' => 'HydePHP',
+        'url' => 'https://hydephp.com',
+        'sameAs' => [
+            'https://github.com/hydephp/hyde',
+            'https://packagist.org/packages/hyde/hyde',
+        ],
+    ],
+];
 @endphp
+@php($title = 'Laravel-Powered PHP Static Site Generator')
+@php($description = 'HydePHP is a Laravel-powered static site generator for building fast websites, blogs, and documentation using Markdown and Blade.')
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth motion-reduce:scroll-auto">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HydePHP - The static site generator for PHP.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,opsz,wght@0,5..1200,400..900;1,5..1200,400..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
-{!! config('hyde.head') !!}
+  @include('hyde::layouts.head')
+  <link rel="preload" href="{{ Asset::get('fonts/instrument-sans-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ Asset::get('fonts/playfair-display-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ Asset::get('fonts/playfair-display-latin-wght-italic.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <meta property="og:url" content="{{ $canonicalUrl }}">
+  <meta property="og:image" content="{{ $ogImage }}">
+  <meta property="og:image:alt" content="HydePHP - The static site generator for PHP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="{{ $ogImage }}">
+  <script type="application/ld+json">
+    {!! json_encode($structuredData, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) !!}
+  </script>
 </head>
 
 <body class="bg-[#14111c] text-[#e9e5f2] [font-family:'Instrument_Sans',system-ui,sans-serif] text-[17px] leading-[1.6] antialiased selection:bg-[#8d7bf5] selection:text-[#14111c]">
@@ -23,7 +52,7 @@ $statistics = \App\Support\HomepageStatistics::cards();
   <x-navigation />
 
   <header class="relative isolate overflow-hidden" id="hero">
-    <div class="pointer-events-none absolute -inset-x-[5%] -inset-y-[12%] bg-cover bg-center bg-no-repeat will-change-[transform,filter,opacity]" id="heroBackground" style="background-image: url('{{ asset('hero-background.webp') }}');" aria-hidden="true"></div>
+    <img class="pointer-events-none absolute -inset-x-[5%] -inset-y-[12%] h-full w-full max-w-none object-cover object-center will-change-[transform,filter,opacity]" id="heroBackground" src="{{ Asset::get('hero-background.webp') }}" alt="" width="1916" height="821" fetchpriority="high" decoding="async" aria-hidden="true">
     <div class="pointer-events-none absolute inset-0 will-change-[transform,opacity]" id="heroSmoke" style="background: radial-gradient(ellipse at 20% 100%, rgba(105, 96, 143, .28), transparent 42%), radial-gradient(ellipse at 75% 105%, rgba(49, 43, 70, .72), transparent 48%); opacity: .12; filter: blur(8px);" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[30%]" style="background: linear-gradient(to bottom, transparent 0%, rgba(20, 17, 28, .72) 65%, #14111c 100%);" aria-hidden="true"></div>
     <div class="relative z-10 mx-auto max-w-[1160px] px-7 pb-[140px] pt-[80px] text-center max-[720px]:pb-[100px]">
@@ -404,6 +433,9 @@ $statistics = \App\Support\HomepageStatistics::cards();
       });
     })();
   </script>
+  @if (Asset::exists('app.js'))
+    <script type="module" defer src="{{ Asset::get('app.js') }}"></script>
+  @endif
 </body>
 
 </html>

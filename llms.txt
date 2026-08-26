@@ -1,0 +1,19 @@
+# HydePHP
+
+> HydePHP is a Laravel-powered static site generator for PHP. Build websites, blogs, and documentation using Markdown and Blade.
+
+## Current documentation
+
+- Documentation: https://hydephp.com/docs/2.x/
+- Quickstart: https://hydephp.com/docs/2.x/quickstart
+- Upgrade guide: https://hydephp.com/docs/2.x/upgrade-guide
+- Changelog: https://hydephp.com/changelog
+
+## Source and packages
+
+- GitHub: https://github.com/hydephp/hyde
+- Packagist: https://packagist.org/packages/hyde/hyde
+
+## Versioning
+
+HydePHP 2.x is the current stable documentation. Documentation under /docs/1.x/ is legacy and should not be used for new projects.
