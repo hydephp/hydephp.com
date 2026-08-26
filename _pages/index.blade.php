@@ -34,6 +34,9 @@ $structuredData = [
 
 <head>
   @include('hyde::layouts.head')
+  <link rel="preload" href="{{ Asset::get('fonts/instrument-sans-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ Asset::get('fonts/playfair-display-latin-wght-normal.woff2') }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ Asset::get('fonts/playfair-display-latin-wght-italic.woff2') }}" as="font" type="font/woff2" crossorigin>
   <meta property="og:url" content="{{ $canonicalUrl }}">
   <meta property="og:image" content="{{ $ogImage }}">
   <meta property="og:image:alt" content="HydePHP - The static site generator for PHP">
@@ -49,7 +52,7 @@ $structuredData = [
   <x-navigation />
 
   <header class="relative isolate overflow-hidden" id="hero">
-    <div class="pointer-events-none absolute -inset-x-[5%] -inset-y-[12%] bg-cover bg-center bg-no-repeat will-change-[transform,filter,opacity]" id="heroBackground" style="background-image: url('{{ asset('hero-background.webp') }}');" aria-hidden="true"></div>
+    <img class="pointer-events-none absolute -inset-x-[5%] -inset-y-[12%] h-full w-full max-w-none object-cover object-center will-change-[transform,filter,opacity]" id="heroBackground" src="{{ Asset::get('hero-background.webp') }}" alt="" width="1916" height="821" fetchpriority="high" decoding="async" aria-hidden="true">
     <div class="pointer-events-none absolute inset-0 will-change-[transform,opacity]" id="heroSmoke" style="background: radial-gradient(ellipse at 20% 100%, rgba(105, 96, 143, .28), transparent 42%), radial-gradient(ellipse at 75% 105%, rgba(49, 43, 70, .72), transparent 48%); opacity: .12; filter: blur(8px);" aria-hidden="true"></div>
     <div class="pointer-events-none absolute inset-x-0 bottom-0 h-[30%]" style="background: linear-gradient(to bottom, transparent 0%, rgba(20, 17, 28, .72) 65%, #14111c 100%);" aria-hidden="true"></div>
     <div class="relative z-10 mx-auto max-w-[1160px] px-7 pb-[140px] pt-[80px] text-center max-[720px]:pb-[100px]">
