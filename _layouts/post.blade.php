@@ -65,7 +65,6 @@
 @include('hyde::layouts.meta')
 <link rel="alternate" type="application/rss+xml" title="{{ config('hyde.name', 'HydePHP') }} RSS Feed" href="{{ $feed }}">
 @include('hyde::layouts.styles')
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 <style>
   :root {
     --ink: #14111c;
@@ -587,6 +586,8 @@
 <div class="mt-20">
   <x-footer />
 </div>
+
+@include('hyde::layouts.scripts')
 
 </body>
 </html>

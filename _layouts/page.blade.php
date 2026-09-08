@@ -27,7 +27,6 @@
 <title>{{ $page->title }} - HydePHP</title>
 @include('hyde::layouts.meta')
 @include('hyde::layouts.styles')
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 <style>
   :root {
     --ink: #14111c;
@@ -249,6 +248,8 @@
 <div class="mt-auto pt-20">
   <x-footer />
 </div>
+
+@include('hyde::layouts.scripts')
 
 </body>
 </html>

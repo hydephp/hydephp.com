@@ -8,7 +8,6 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About - HydePHP</title>
 @include('hyde::layouts.styles')
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 <style>
   ::selection{background:#8d7bf5;color:#14111c}
   .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
@@ -225,5 +224,8 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   });
 })();
 </script>
+
+@include('hyde::layouts.scripts')
+
 </body>
 </html>

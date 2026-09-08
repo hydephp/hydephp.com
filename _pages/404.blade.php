@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 - Lost in Ink - HydePHP</title>
 @include('hyde::layouts.styles')
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 {!! config('hyde.head') !!}
 <style>
 :root{
@@ -189,6 +188,8 @@ a{color:inherit}
 </main>
 
 <x-footer />
+
+@include('hyde::layouts.scripts')
 
 </body>
 </html>

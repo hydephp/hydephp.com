@@ -8,7 +8,6 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Exhibition - HydePHP Demos</title>
 @include('hyde::layouts.styles')
-<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.3/dist/cdn.min.js" integrity="sha256-gOkV4d9/FmMNEkjOzVlyM2eNAWSUXisT+1RbMTTIgXI=" crossorigin="anonymous"></script>
 <style>
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){
@@ -188,5 +187,8 @@ $docsQuickstart = \Hyde\Foundation\Facades\Routes::get('docs/' . config('docs.de
   items.forEach(function(el){ io.observe(el); });
 })();
 </script>
+
+@include('hyde::layouts.scripts')
+
 </body>
 </html>

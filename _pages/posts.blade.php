@@ -484,5 +484,12 @@
     sections.forEach((section) => observer.observe(section));
   })();
 </script>
+
+@if(Vite::running())
+    {{ Vite::assets(['resources/assets/app.js']) }}
+@elseif(Asset::exists('app.js'))
+    <script type="module" defer src="{{ Asset::get('app.js') }}"></script>
+@endif
+
 </body>
 </html>
