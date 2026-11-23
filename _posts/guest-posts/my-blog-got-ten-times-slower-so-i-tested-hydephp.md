@@ -11,6 +11,7 @@ author:
       x: "umartechtalks"
 date: "2026-11-21 20:30"
 guest_post: true
+ai_disclosure: "The author used AI tools when writing this post."
 ---
 
 I am a Laravel developer, and until recently I did what most of us do with content pages. I let the framework render them on every visit. A blog post that had not changed in months still booted the application, ran its middleware, and queried the database for every single reader.
