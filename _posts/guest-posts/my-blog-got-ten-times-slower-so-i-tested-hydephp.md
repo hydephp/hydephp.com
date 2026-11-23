@@ -1,7 +1,7 @@
 ---
 title: "My Blog Got Ten Times Slower, So I Tested HydePHP"
 description: "A hosting move took my blog from half a second to over five seconds because every page was rendered on every visit. I ran a real test build with HydePHP 2.0.3 to see what static generation actually gives a Laravel developer. Here are the numbers I got."
-category: "Guest Posts"
+category: essay
 author:
     name: "Umar Farooq"
     website: "https://itsumarfarooq.com"
