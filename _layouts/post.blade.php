@@ -21,6 +21,9 @@
         ? implode(' ', array_unique(array_filter([...explode(' ', $base), ...explode(' ', GuestLinkPolicy::REL)])))
         : $base;
 
+    // Optional, author-written note on how AI was used. Shown under the byline when present.
+    $aiDisclosure = $page->matter('ai_disclosure');
+
     $blog = Routes::get('posts');
     $categoryUrl = $category
         ? ($blog ?? Hyde::relativeLink('posts')).'?'.http_build_query(['category' => $category->value])
@@ -454,6 +457,10 @@
 
       <span>{{ $minutes }} min read</span>
     </div>
+
+    @if ($aiDisclosure)
+      <p class="mx-auto mt-5 max-w-[54ch] font-mono text-[.72rem] leading-[1.6] text-[#6f6786]">{{ $aiDisclosure }}</p>
+    @endif
 
     <div class="mx-auto mt-11 h-px max-w-[220px] bg-gradient-to-r from-transparent via-[#d6a24a] to-transparent"></div>
   </div>
